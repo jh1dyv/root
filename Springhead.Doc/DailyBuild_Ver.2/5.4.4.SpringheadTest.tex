@@ -1,9 +1,122 @@
 % 5.4.4.SpringheadTest.tex
-%	Last update: 2018/05/17 F.Kanehori
+%	Last update: 2018/05/22 F.Kanehori
 %\newpage
 \subsubsection{SpringheadTest}
 \label{subsubsec:SpringheadTest}
 
+\medskip
+指定されたディレクトリ以下すべてのサブディレクトリを対象として、
+テストを実施するプログラム。
+どのサブディレクトリに対してどのようなテストを実施するかは、
+テスト制御ファイル \FILE{dailybuild.control} で制御することができる。
+制御方法の詳細については \REF{subsubsec:}{ControlParams} 及び\ 
+\REF{subsubsec:}{ConstDefs} を参照されたい。
+
+\bigskip
+\noindent
+起動方法
+\CMND{4pt}{python SpringheadTest.py [options] test-dir res-file ctl-file section}{-8pt}
+
+\noindent
+options \small{( $^\dagger$はデフォルトを示す)}
+\begin{narrow}[20pt]
+    \begin{tabular}{ll}
+	\tt{-c CONF}	& ビルド構成 (\tt{Debug, Release, Trace})\\
+	\tt{-p PLAT}	& プラットフォーム (\tt{x86, x64})\\
+	\tt{-r}		& 強制的にビルドする\\
+	\tt{-s}		& プログレスレポートをしない\\
+	\tt{-t TOOL}	& ツールセット (\tt{14.0$^\dagger$})\\
+	\tt{-C usage}	& Closed sourceの扱い方\\
+			& \begin{tabular}{@{\hspace{15pt}}ll}
+			    \tt{auto}	& テスト制御ファイルに従う\\
+			    \tt{use}	& 無条件に使用する\\
+			    \tt{unuse}	& 無条件に使用しない
+			\end{tabular}\\
+	\tt{-D}	& コマンドを表示するだけで実行はしない(dry run)\\
+	\tt{-S} & テスト結果累積ファイルを初期化する\\
+	\tt{-T value}	& 実行タイムアウト指定 (単位は秒)\\
+    \end{tabular}
+\end{narrow}
+
+\medskip
+\noindent
+引数
+\begin{narrow}[20pt]
+    \begin{tabular}{ll}
+	\tt{test-dir}	& テスト対象ディレクトリ$^\dagger$\\
+	\tt{res-file}	& テスト結果累積ファイル名$^\ddagger$\\
+	\tt{ctl-file}	& テスト制御ファイル名\\
+	\tt{section}	& テスト制御ファイルの対象セクション名\\
+			& \tt{Windows}または\tt{unix}を指定
+    \end{tabular}
+
+    \medskip
+    \footnotesize{\begin{tabular}{@{\hspace{20pt}}ll}
+	$\dagger$  & テストを起動するディレクトリから1階層上のディレクトリからの
+		     相対パスで指定する。\\
+		   & (例えば\FILE{top/Springhead/core/test}ならば
+		     \FILE{top/Springhead/core})\\
+	$\ddagger$ & テストを起動するディレクトリからの相対パスで指定する。\\
+    \end{tabular}}
+\end{narrow}
+
+\medskip
+\noindent
+処理の説明
+
+\begin{enumerate}
+  \item	テストディレクトリ\TT{core/test}に移動する。
+	\medskip
+
+  \item	\tt{TestResult}クラスを生成して、テスト結果累積ファイルを準備する。\\
+	\CMND{0pt}{res = TestResult(res_file, scratch, verbose=1)}{0pt}\\
+	\begin{tabular}{@{\hspace{20pt}}ll}
+	    \tt{res_file} & 起動引数で与えられた \it{res-file} を指定する\\
+	    \tt{scratch}  & 起動引数\TT{-S}が指定されていたらTrueを、
+			    さもなければFalseを指定する\\
+			  & この引数がTrueならテスト結果累積ファイルを初期化する。\\
+			  & この引数がFalseでかつ\TT{res_file}が存在するならば、
+			    そのファイルの内容を\\
+			&   初期値として読み出す。
+	\end{tabular}
+	\medskip
+
+  \item	\tt{ClosedSrcControl}クラスを生成して、Closed sourceの使用/不使用の
+	準備をする。\\
+	\CMND{0pt}
+	     {csc = ClosedSrcControl(csc_head, use_tmpl, unuse_tmpl, dry_run, verbose)}
+	     {0pt}\\
+	\begin{tabular}{@{\hspace{20pt}}ll}
+	    \tt{csc_head}   & Closed source使用/不使用定義マクロファイル名\\
+			    & \FILE{include/UseClosedSrcOrNot.h}を指定\\
+	    \tt{use_tmpl}   & 使用時のテンプレートファイル名\\
+			    & \FILE{test/bin/UseClosedSrc.h.template}を指定\\
+	    \tt{unuse_tmpl} & 不使用時のテンプレートファイル名\\
+			    & \FILE{test/bin/UnuseClosedSrc.h.template}を指定\\
+	    \tt{dry_run}    & 起動引数\TT{-D}が指定されていたらTrueを、
+			    さもなければFalseを指定する\\
+	\end{tabular}
+	\medskip
+
+  \item	\tt{Traverse}クラスを生成して、テスト実行の準備をする。\\
+	\CMND{0pt}{%
+		\hspace{-10pt}
+		\begin{tabular}{l}
+		    trv = Traverse(testid, res, csc, ctl_file, section,\CONT\\
+		    \hspace{50pt}toolset, platforms, configs, csusage, rebuild,\CONT\\
+		    \hspace{50pt}timeout, report, audit, dry_run, verbose)\\
+		\end{tabular}}
+		{0pt}\\
+	\medskip
+	引数の説明\\
+	\begin{tabular}{@{\hspace{20pt}}ll}
+	  \tt{testid}	& テスト識別子
+			  (\tt{TESTID.STUB, TESTID.TESTS, TESTID.SAMPLES}の何れか)\\
+			& テスト対象ディレクトリに応じて設定\\
+
+
+	\end{tabular}\\
+	\medskip
 
 
 
@@ -14,5 +127,15 @@
 
 
 
+
+
+
+
+
+
+
+
+
+\end{enumerate}
 
 % end: 5.4.4.SpringheadTest.tex
