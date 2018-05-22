@@ -1,0 +1,79 @@
+% 5.1.DailyBuildScriptTree.tex
+%	Last update: 2018/05/22 F.Kanehori
+
+\subsection{Script構成}
+\label{subsec:DailyBuildScriptTree}
+
+\noindent
+プログラム構造
+
+\vspace{-15pt}
+\noindent
+\begin{narrow}[\WID]
+    \begin{narrow}[20pt]\begin{minipage}{\textwidth}
+	\dirtree{%
+		.1 {\hspace{-10mm}I:/DailyBuild/Springhead/core/}.
+		.2 {test/}.
+		.3 \it{DailyBuild.bat or DailyBuild.sh}
+			\dtnoteOne{DailyBuild起動用スクリプト}.
+		.4 \it{DailyBuild.py}
+			\dtnote{レポジトリ管理}{subsubsec:DailyBuild}.
+		.5 \it{TestMainGit.py}
+			\dtnote{テスト実行及び成果物登録}{subsubsec:TestMainGit}.
+		.6 \tt{bin/}\it{SpringheadTest.py}
+			\dtnote{テスト実行制御}{subsubsec:SpringheadTest}.
+		.7 \tt{bin/}\it{GenResultLog.py}
+			\dtnote{テスト結果ファイル作成}{subsubsec:GenResultLog}.
+		.6 \tt{bin/}\it{VersionControlSystem.py}
+			\dtnote{日付・履歴ファイル作成}{subsubsec:VersionControlsystem}.
+		.2 {include/}.
+		.3 {SpringheadDoc.py}\dtnoteOne{Springheadリファレンスマニュアル作成}.
+		.2 {src/}.
+		.3 {SpringheadImpDoc.py}\dtnoteOne{Springhead SDK開発者マニュアル作成}.
+		.2 {doc/}.
+		.3 {MakeDoc.py}\dtnoteOne{Springhead Users Manual作成}.
+	}
+  \end{minipage}\end{narrow}
+\end{narrow}
+
+\bigskip
+\noindent
+クラス構成
+
+\vspace{-12pt}
+\noindent
+\begin{narrow}[\WID]
+    \begin{narrow}[20pt]\begin{minipage}{.8\textwidth}
+	\dirtree{%
+		.1 {\hspace{-10mm}\it{ClosedSrcControl}}
+			\dtnote{非公開ファイル制御}{subsubsec:ClosedSrcControl}.
+		.2 \it{ConstDefs}
+			\dtnote{共通定数定義}{subsubsec:ConstDefs}.
+	}
+	\dirtree{%
+		.1 \hspace{-10mm}\it{Traverse}
+			\dtnote{ディレクトリ毎の処理}{subsubsec:Traverse}.
+		.2 \it{ControlParams}
+			\dtnote{テスト制御ファイル管理}{subsubsec:ControlParams}.
+		.3 \it{ConstDefs}\rm{*}.
+		.2 \it{BuildAndRun}
+			\dtnote{ビルド＆実行}{subsubsec:BuildAndRun}.
+		.3 \it{VisualStudio}
+			\dtnote{Visual Studioラッパ}{subsubsec:VisualStudio}.
+		.3 \it{ConstDefs}\rm{*}.
+		.2 \it{KeyInterruption}
+			\dtnote{キーボード割込処理}{subsubsec:KeyInterruption}.
+		.2 \it{StructuredException}
+			\dtnote{例外ハンドラ}{subsubsec:StructuredException}.
+	}
+	\dirtree{%
+		.1 \hspace{-10mm}\it{TestResult}
+			\dtnote{テスト結果維持}{subsubsec:TestResult}.
+		.2 \it{ConstDefs}\rm{*}.
+    	}
+  \end{minipage}\end{narrow}
+  \medskip
+\end{narrow}
+\medskip
+
+% end: 5.1.DailyBuildScriptTree.tex

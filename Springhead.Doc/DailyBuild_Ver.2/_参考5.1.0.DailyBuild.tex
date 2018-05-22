@@ -1,0 +1,53 @@
+% 5.1.0.DailyBuild.tex
+%	Last update: 2018/05/14 F.Kanehori
+\subsection{タスクDailyBuild}
+\label{subsec:TaskDailyBuild}
+
+タスクDailyBuildの実行には、次のスクリプトを使用する。
+\medskip
+
+\begin{narrow}
+  \begin{tabular}{ll}
+	Windows	& \tt{DailyBuild.bat [options] <test-repository> <result-repository>} \\
+	unix	& \tt{DailyBuild.sh [options] <test-repository> <result-repository>} \\
+  \end{tabular}
+
+  \medskip
+  \begin{tabular}{lll}
+	\multicolumn{3}{l}{options} \\
+	& \tt{-c} config	& \tt{Debug}, \tt{Release}, \tt{Trace}
+				  のいずれか。\\
+	& \tt{-p} platform	& \tt{x86}, \tt{x64}のいずれか。\\
+	& \tt{-t} toolset	& ツールセットID (e.g. 14.0)。
+				  Windowsの場合のみ。\\
+	& \tt{-u}	& 自分自身を最新にする(git pull)のみで終了する。\\
+	& \tt{-U}	& 自分自身はそのままだが、テストリポジトは初期化してテスト\\
+	&		& を実行する。\\
+	& \tt{-A}	& 自分自身はそのまま、テストリポジトリも初期化せずにテスト\\
+	&		& を実行する。\\
+	& \tt{-D}	& 実行すべきコマンドを表示するだけで、実際には実行しない。\\
+  \end{tabular}
+
+  \medskip
+  \begin{tabular}{ll}
+	\tt{<test-repository>}	& 実際にテストを実行するリポジトリ(ディレクトリ)。\\
+				& 簡単に初期化できるようにするため、および安全のため、\\
+				& 別のディレクトリを指定する。\\
+	\tt{<result-repository>}& テスト結果(\TT{result.log})を格納するレポジトリ\\
+				& (ディレクトリ)。\\
+				& レポジトリを分けたのは、GitHubの容量増加を防ぐため。\\
+  \end{tabular}
+\end{narrow}
+
+\bigskip
+タスクDailyBuildは、次の引数で起動される。
+\medskip
+\begin{narrow}
+  \begin{tabular}{l}
+	\verb|% python DailyBuild.py -u SpringheadTest DailyBuildResult/Result| \\
+	\verb|% python DailyBuild.py -U SpringheadTest DailyBuildResult/Result| \\
+  \end{tabular}
+\end{narrow}
+\medskip
+
+% end: 5.1.0.DailyBuild.tex

@@ -1,0 +1,106 @@
+% 5.4.2.DailyBuild.tex
+%	Last update: 2018/05/22 F.Kanehori
+%\newpage
+\subsubsection{DailyBuild}
+\label{subsubsec:DailyBuild}
+
+\medskip
+\ref{subsec:DailyBuildEnvironmentVariable}で示したstep 1.からstep 3.までの
+処理を実行するプログラム。
+step 4.以降の処理は、ここから\tt{TestMainGit.py}を呼出して実行させる。
+
+\bigskip
+\noindent
+起動方法
+\CMND{4pt}{python DailyBuild.py [options] test-repository result-repository}{-8pt}
+
+\noindent
+options \small{( $^\dagger$はデフォルトを示す)}
+\begin{narrow}[20pt]
+    \begin{tabular}{ll}
+	\tt{-c CONF} & ビルド構成 (\tt{Debug, Release$^\dagger$, Trace})\\
+	\tt{-p PLAT} & プラットフォーム (\tt{x86, x64$^\dagger$})\\
+	\tt{-t TOOL} & ツールセット (\tt{14.0$^\dagger$})\\
+	\tt{-u} & step 1.のみ実行して終了する\\
+	\tt{-U} & step 2.以降のみ実行する\\
+	\tt{-A} & step 3.以降のみ実行する\\
+	\tt{-D} & コマンドを表示するだけで実行はしない(dry run)\\
+    \end{tabular}
+\end{narrow}
+
+\medskip
+\noindent
+引数
+\begin{narrow}[20pt]
+    \begin{tabular}{ll}
+	\tt{test-repository}	& テストレポジトリ\\
+				& 任意のディレクトリでよいが、
+				  既存のディレクトリの場合には、\\
+				& その内容はすべて破棄される。\\
+	\tt{result-repository}	& テスト結果記録用レポジトリ\\
+				& 通常\FILE{DailyBuildResult/Result}を指定する。\\
+    \end{tabular}
+    \small{\begin{tabular}{ll}
+	※& これらのディレクトリは、テストを起動するディレクトリから
+	    3階層上のディレクトリ\\
+	  & (例えば\FILE{top/Springhead/core/test}ならば\FILE{top})からの
+	    相対パスで指定すること。
+    \end{tabular}}
+\end{narrow}
+
+\medskip
+\noindent
+\bf{注意}
+\begin{narrow}[20pt]
+	第2引数で指定した``テスト結果記録用レポジトリ''へpushするためのアクセス権を
+	得るために、\tt{git.haselab.net}のユーザ名及びパスワードを記録したファイル
+	\FILE{hasegit.user}を上記\FILE{top}の直下に配置してある。
+	コマンドラインからのアクセスでパスワードを指定しなくてもよい方法が
+	見つけられるまで、このファイルを移動したり削除したりしないこと。
+	このファイルの内容は``\TT{DailyBuild:Haselab0}''である。
+\end{narrow}
+
+\bigskip
+\noindent
+ステップ毎の処理
+
+\medskip
+\begin{description}
+  \item	[step 1.]
+	レポジトリSpringhead及びDailyBuildResult/Resultを最新の状態にする。\\
+    	\CMND{-10pt}{git pull --all}{-8pt}\\
+	(このコマンドは、それぞれのレポジトリ内(gitの配下)で実行する必要がある。)\\
+	オプション\TT{-U}が指定されたならば、このstepは実行しない。\\
+	オプション\TT{-u}が指定されたならば、ここでプログラムを終了する。
+	\medskip
+
+  \item	[step 2.]
+	テストレポジトリを削除する。
+	これは毎回スクラッチからテストを実行するためである。
+	\medskip
+
+  \item	[step 3.]
+	テスト用レポジトリをcloneする。使用するコマンドは\\
+	\CMND{-10pt}{%
+		\begin{tabular}{l}
+		    git clone --recurse-submodules \CONT\\
+		    \hspace{40pt}https://github.com/sprphys/Springhead SpringheadTest\\
+		    git submodule update --init\\
+		\end{tabular}}
+		{0pt}
+	\medskip
+
+  \item	[step 4.以降]
+	テストレポジトリのテストディレクトリ\TT{("SpringheadTest/core/test")}へ
+	移動し、そこで\TT{TestMainGit}を実行する。\\
+	\CMND{-10pt}{%
+		\begin{tabular}{l}
+		    python TestMainGit.py -p x64 -c Release -t 14.0 \CONT\\
+		    \hspace{40pt}SpringheadTest DailyBuildResult/Result\\
+		\end{tabular}}
+		{0pt}
+
+\end{description}
+\medskip
+
+% end: 5.4.2.DailyBuild.tex
