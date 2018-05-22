@@ -1,0 +1,132 @@
+% 5.2.DailyBuildEnvironmentVariable.tex
+%	Last update: 2018/05/14 F.Kanehori
+
+\subsection{処理を制御する環境変数}
+\label{subsec:DailyBuildEnvironmentVariable}
+
+以下に示すDailyBuildの各ステップは、実行時の環境変数で制御することができる。
+各ステップの「制御変数名」に記述された環境変数が\TT{"skip"}と設定されて
+いるときに限りそのステップは実行されない。
+毎日のDailyBuildタスクの実行時にはこれらの環境変数はすべて未定義としておく。
+\begin{narrow}[s][15pt]
+	\bf{※} これはデバッグ及びローカルでのテストのときに使用する。
+\end{narrow}
+
+\bigskip
+\noindent
+\bf{各ステップの説明}：
+\begin{narrow}[10pt]\begin{enumerate}
+  \item	\tt{Springhead}の更新を反映する\\
+	\VUP
+	\begin{tabular}{ll}
+	    制御変数名	& \tt{DAILYBUILD_UPDATE_SPRINGHEAD}\\
+	    処理	& 以下のローカルレポジトリの内容を最新バージョンにする。\\
+	    		& \hspace{5mm}\FILE{I:/DailyBuild/Springhead/}\\
+			& \hspace{5mm}\FILE{I:/DailyBuild/DailyBuildResult/Result/}
+	\end{tabular}
+	\medskip
+
+  \item	テストディレクトリをクリアする\\
+	\VUP
+	\begin{tabular}{ll}
+	    制御変数名	& \tt{DAILYBUILD_CLEANUP_WORKSPACE}\\
+	    処理	& テストディレクトリ(SpringheadTest -- 引数で指定)
+			  をクリアする。\\
+			& 指定されたディレクトリがなければ何もしない。
+	\end{tabular}
+	\medskip
+
+  \item	SpringheadTestにソースツリーを取得する\\
+	\VUP
+	\begin{tabular}{ll}
+	    制御変数名	& \tt{DAILYBUILD_CLEANUP_WORKSPACE}\\
+	    処理	& テストディレクトリに最新バージョンをCloneする。
+	\end{tabular}
+	\medskip
+
+  \item	Springheadライブラリを作成する\\
+	\VUP
+	\begin{tabular}{ll}
+	    制御変数名	& DAILYBUILD_EXECUTE_STUBBUILD\\
+	    処理	& 呼出し時の引数及びオプションは次のとおり\\
+			& \tt{-p x64 -c Release -t 14.0 -C unuse -S} \CONT\\
+			& \hspace{20pt}\FILE{result/dailybuild.result}
+			  \FILE{dailybuild.control}\\
+			& resultファイルを初期化してからビルドする。
+	\end{tabular}
+	\medskip
+
+  \item	\FILE{src/tests}以下のテストを実行する\\
+	\VUP
+	\begin{tabular}{ll}
+	    制御変数名	& DAILYBUILD_EXECUTE_BUILDRUN\\
+	    処理	& 呼出し時の引数及びオプションは前項と同じ。\\
+			& ただしresultファイルの初期化は行なわない
+			  (オプション \tt{-S} なし)
+	\end{tabular}
+	\medskip
+
+  \item	\FILE{src/Samples}以下のビルドを実行する\\
+	\VUP
+	\begin{tabular}{ll}
+	    制御変数名	& DAILYBUILD_EXECUTE_SAMPLEBUILD\\
+	    処理	& 呼出し時の引数及びオプションは前項と同じ。\\
+			& ただしresultファイルの初期化は行なわない
+			  (オプション \tt{-S} なし)
+	\end{tabular}
+	\medskip
+
+  \item	結果ファイルをコミットする\\
+	\VUP
+	\begin{tabular}{ll}
+	    制御変数名	& DAILYBUILD_COMMIT_RESULTOG\\
+	    処理	& Springheadの最新コミットIDを取り出して記録ファイルを作成し、\\
+			& 結果ファイルとともにレポジトリに登録する。\\
+	    ファイル	& \FILE{Springhead.commit.id}, \FILE{result.log}\\
+	    登録先	& \FILE{git.haselab.net/DailyBuild/Result}
+	\end{tabular}
+	\medskip
+
+  \item	履歴ファイルを作成する\\
+	\VUP
+	\begin{tabular}{ll}
+	    制御変数名	& DAILYBUILD_GEN_HISTORY\\
+	    処理	& テスト履歴ファイル\FILE{History.log}及び
+			  タイムスタンプファイル\\
+			& \FILE{Test.date}を作成する。
+	\end{tabular}
+	\medskip
+
+  \item	ログファイルをWebにコピーする\\
+	\VUP
+	\begin{tabular}{ll}
+	    制御変数名	& DAILYBUILD_COPYTO_BUILDLOG\\
+	    処理	& テストログファイルをWebウェブサーバにコピーする。\\
+	    コピー先	& \verb|\\haselab\HomeDirs\WWW\docroots\| \CONT\\
+			& \hspace{40pt}\verb|springhead\daily_build/log| 以下
+	\end{tabular}
+	\medskip
+
+  \item	ドキュメントを作る\\
+	\VUP
+	\begin{tabular}{ll}
+	    制御変数名	& DAILYBUILD_EXECUTE_MAKEDOC\\
+	    処理	& doxygenによりドキュメントを作成する
+			  (\FILE{MakeDoc.py})
+	\end{tabular}
+	\medskip
+
+  \item	成果物をWebにコピー\\
+	\VUP
+	\begin{tabular}{ll}
+	    制御変数名	& DAILYBUILD_COPYTO_WEBBASE\\
+	    処理	& DailyBuildの成果物Webサーバにコピーする\\
+	    ファイル	& ライブラリファイル及びドキュメント\\
+	    コピー先	& \verb|\\haselab\HomeDirs\WWW\docroots\| \CONT\\
+			& \hspace{40pt}\verb|springhead\daily_build/generated| 以下
+	\end{tabular}
+	\medskip
+
+\end{enumerate}\end{narrow}
+
+% end: 5.2.DailyBuildEnvironmentVariable.tex

@@ -1,0 +1,67 @@
+% 5.1.DailyBuildScriptTree.tex
+%	Last update: 2018/05/14 F.Kanehori
+
+\subsection{Script構成}
+\label{subsec:DailyBuildScriptTree}
+
+\vspace{-15pt}
+\noindent
+\begin{narrow}[\WID]
+    \begin{narrow}[20pt]\begin{minipage}{\textwidth}
+	\dirtree{%
+		.1 {\hspace{-10mm}I:/DailyBuild/Springhead/core/test/}.
+		.2 \it{DailyBuild.bat or DailyBuild.sh}
+			\dtnoteOne{DailyBuild起動用スクリプト}.
+		.3 \it{DailyBuild.py}
+			\dtnote{レポジトリの維持}{subsubsec:DailyBuild}.
+		.4 \it{TestMainGit.py}
+			\dtnote{テスト実行及び成果物登録}{subsubsec:TestMainGit}.
+		.4 \tt{bin/}\it{SpringheadTest.py}
+			\dtnote{テスト全体制御}{subsubsec:SpringheadTest}.
+		.5 \tt{bin/}\it{ConstDefs.py}
+			\dtnote{共通定数定義}{subsubsec:ConstDefs}.
+		.5 \tt{bin/}\it{Traverse.py}
+			\dtnote{ディレクトリ毎の処理}{subsubsec:Traverse}.
+		.6 \tt{bin/}\it{ControlParams.py}
+			\dtnote{制御ファイル管理}{subsubsec:ControlParams}.
+		.7 \tt{bin/}\it{ConstDefs.py}\rm{*}.
+		.6 \tt{bin/}\it{BuildAndRun.py}
+			\dtnote{ビルドと実行}{subsubsec:BuildAndRun}.
+		.7 \tt{bin/}\it{VisualStudio.py}
+			\dtnote{VSラッパ}{subsubsec:VisualStudio}.
+		.8 \tt{bin/}\it{ConstDefs.py}\rm{*}.
+		.7 \tt{bin/}\it{KeyInterruption.py}
+			\dtnote{例外ハンドラ}{subsubsec:KeyInterruption}.
+		.7 \tt{bin/}\it{StructuredException.py}
+			\dtnote{例外ハンドラ}{subsubsec:StructuredException}.
+		.6 \tt{bin/}\it{TestResult.py}
+			\dtnote{テスト結果保持}{subsubsec:TestResult}.
+		.7 \tt{bin/}\it{ConstDefs.py}\rm{*}.
+		.6 \tt{bin/}\it{ClosedSrcControl.py}
+			\dtnote{非公開制御}{subsubsec:ClosedSrcControl}.
+		.7 \it{bin/ConstDefs.py}\rm{*}.
+		.6 \it{bin/KeyInterruption.py}\rm{*}.
+		.5 \it{bin/VersionControlSystem.py}
+			\dtnote{GitHubラッパ}{subsubsec:VersionControlSystem}.
+	}
+  \end{minipage}\end{narrow}
+\end{narrow}
+
+\medskip
+\begin{narrow}[\WID]
+    \begin{narrow}[20pt]\begin{minipage}{.8\textwidth}
+	\dirtree{%
+		.1 {\hspace{-10mm}I:/DailyBuild/Springhead/core/}.
+		.2 \tt{include/}\it{SpringheadDoc.py}
+			\dtnoteOne{ドキュメント作成制御}.
+		.2 \tt{src/}\it{SpringheadImpDoc.py}
+			\dtnoteOne{ドキュメント作成制御}.
+		.2 \tt{doc/SprManual/}\it{MakeDoc.py}
+			\dtnoteOne{ドキュメント作成制御}.
+    	}
+  \end{minipage}\end{narrow}
+  \medskip
+\end{narrow}
+\medskip
+
+% end: 5.1.DailyBuildScriptTree.tex
