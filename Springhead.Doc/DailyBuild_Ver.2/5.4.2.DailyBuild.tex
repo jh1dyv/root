@@ -1,13 +1,15 @@
 % 5.4.2.DailyBuild.tex
-%	Last update: 2018/05/22 F.Kanehori
+%	Last update: 2018/05/23 F.Kanehori
 %\newpage
 \subsubsection{DailyBuild}
 \label{subsubsec:DailyBuild}
 
 \medskip
-\ref{subsec:DailyBuildEnvironmentVariable}で示したstep 1.からstep 3.までの
-処理を実行するプログラム。
-step 4.以降の処理は、ここから\tt{TestMainGit.py}を呼出して実行させる。
+DailyBuildに関連するリポジトリSpringhead及びDailyBuild/Resultを
+最新の状態にする処理(\ref{subsec:DailyBuildEnvironmentVariable}
+DailyBuildEnvironmentVariableで示したstep 1.からstep 3.に相当)を実行する
+プログラム。
+step 4.以降の処理は、ここから\tt{TestMainGit}を呼出して実行させる。
 
 \bigskip
 \noindent
@@ -37,6 +39,7 @@ options \small{( $^\dagger$はデフォルトを示す)}
 				& 任意のディレクトリでよいが、
 				  既存のディレクトリの場合には、\\
 				& その内容はすべて破棄される。\\
+				& 通常\FILE{SpringheadTest}を指定する。\\
 	\tt{result-repository}	& テスト結果記録用レポジトリ\\
 				& 通常\FILE{DailyBuildResult/Result}を指定する。\\
     \end{tabular}

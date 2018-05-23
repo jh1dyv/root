@@ -1,11 +1,16 @@
 % 5.4.3.TestMainGit.tex
-%	Last update: 2018/05/22 F.Kanehori
+%	Last update: 2018/05/23 F.Kanehori
 %\newpage
 \subsubsection{TestMainGit}
 \label{subsubsec:TestMainGit}
 
 \medskip
-\ref{subsec:DailyBuildEnvironmentVariable}で示したstep 4.以降を実行するプログラム。
+\ref{subsec:DailyBuildEnvironmentVariable} DailyBuildEnvironmentVariableで示した
+step 4.以降の処理を実行するプログラム。
+ディレクトリ\Tt{src},\tt{src/tests},\tT{src/Samples}を対象とした
+``ビルド＆テスト''は下位プログラム\TT{SpringheadTest}で制御するが、
+それ以外の処理(テスト履歴ファイルの作成、テスト結果のリポジトリへの登録、
+ログファイルのWebサーバへのコピー等)は、このプログラムで直接制御する。
 
 \bigskip
 \noindent
