@@ -1,5 +1,5 @@
 % macro.tex
-%	Last update: 2018/05/22 F.Kanehori
+%	Last update: 2018/05/24 F.Kanehori
 
 \makeatletter
 
@@ -30,6 +30,15 @@
 \def\TT#1{{\tt@{\,#1\,}}}
 \def\Tt#1{{\tt@{\,#1}}}
 \def\tT#1{{\tt@{#1\,}}}
+\def\IT#1{{\it@{\,#1\,}}}
+\def\It#1{{\it@{\,#1}}}
+\def\iT#1{{\it@{#1\,}}}
+\def\Bf#1{{\bf@{\,#1\,}}}
+\def\BF#1{{\bf@{\,#1}}}
+\def\bF#1{{\bf@{#1\,}}}
+\def\Rm#1{{\rm@{\,#1\,}}}
+\def\RM#1{{\rm@{\,#1}}}
+\def\rM#1{{\rm@{#1\,}}}
 
 % other alias
 \let\URL\tt
@@ -67,7 +76,8 @@
 \def\FILE#1{\tt{\,"#1"\,}}	% for file name (double quoted)
 \def\ENV#1{\tt{#1}}		% for Windows environment variable name
 \def\ENVREF#1{\tt{\%#1\%}}	% for Windows environment variable reference
-\def\REF#1#2{``\ref{#1#2} #2''éQè∆}
+\def\Ref#1#2{\ref{#1:#2} #2}
+\def\REF#1#2{``\ref{#1:#2} #2''éQè∆}
 
 % source quotation
 \def\BEGINQUOTE{%

@@ -1,8 +1,43 @@
-% 5.4.4.SpringheadTest.tex
-%	Last update: 2018/05/17 F.Kanehori
+% 5.4.5.GenResultLog.tex
+%	Last update: 2018/05/24 F.Kanehori
 %\newpage
-\subsubsection{SpringheadTest}
-\label{subsubsec:SpringheadTest}
+\subsubsection{GenResultLog}
+\label{subsubsec:GenResultLog}
+
+\medskip
+テスト結果をファイルに書き出すプログラム。
+入力となるテスト結果は引数\TT{res-file}で指定し、
+\TT{TestResult}クラスのメソッド\TT{edit_result_log()}を用いて編集する。
+
+\bigskip
+\noindent
+起動方法
+\CMND{4pt}{python GenResultLog.py [options] type res-file [plat] [conf]}{-2pt}
+
+\noindent
+options
+\medskip
+%\vspace{3pt}
+\begin{narrow}[20pt]
+    \begin{tabular}{ll}
+	\tt{-o FILE}	& 出力ファイル名\\
+			& \small{※ テストを起動するディレクトリからの相対パスで指定}
+    \end{tabular}
+\end{narrow}
+
+\medskip
+\noindent
+引数
+\begin{narrow}[20pt]
+    \begin{tabular}{ll}
+	\tt{type}	& ログ編集タイプ\\
+			& \begin{tabular}{@{\hspace{20pt}}ll}
+				\tt{d} & ダンプ形式 (ファイル内容の確認用)\\
+				\tt{r} & \tT{result.log}形式
+			  \end{tabular}\\
+	\tt{res-file}	& テスト結果ファイル
+    \end{tabular}
+\end{narrow}
 
 
 
@@ -11,8 +46,4 @@
 
 
 
-
-
-
-
-% end: 5.4.4.SpringheadTest.tex
+% end: 5.4.5.GenResultLog.tex
