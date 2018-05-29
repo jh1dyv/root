@@ -1,0 +1,130 @@
+% 5.4.6.VersionInfo.tex
+%	Last update: 2018/05/29 F.Kanehori
+%\newpage
+\subsubsection{VersionInfo}
+\label{subsubsec:VersionInfo}
+
+\medskip
+\framebox[\linewidth][l]{%
+    \begin{tabular}{@{\hspace{15pt}}l}
+	現在、ここに記述する内容の実装(コード)は、
+	ファイル\FILE{VersionControlSystem.py}の\\
+	\TT{"__main__"}節に記述されている。
+	将来的には、この部分をファイル\FILE{VersionInfo.py}と\\
+	して独立させた方がよいであろう \CDOTS\ (TODO)。
+    \end{tabular}
+}
+
+\bigskip
+\noindent
+起動方法
+\CMND{4pt}{python VersionControlSystem.py [options] \{HEAD | all | commit-id\}}{-2pt}
+
+\noindent
+options
+\vspace{3pt}
+\begin{narrow}[20pt]
+    \begin{tabular}{ll}
+	\tt{-S $^{(1)}$} & Subversionを対象とする (DailyBuildでは使用しない)\\
+	\tt{-G $^{(2)}$} & GitHub.comを対象とする\\
+	\tt{-H $^{(3)}$} & git.haselab.netを対象とする\\
+	\tt{-f FNAME}	 & 旧バージョンから取得するファイル名
+    \end{tabular}
+\end{narrow}
+
+\medskip
+\begin{narrow}[f][20pt]
+    \begin{tabular}{ll}
+	$^{(1)}$ & GitHubに移行する前に使用していたもの。
+		   メンテナンスしないと動作しない可能性あり。\\
+		 & Webページの表示にも影響が出るので注意。\\
+	$^{(2)}$ & Springheadのレポジトリである\\
+	$^{(3)}$ & DailyBuild/Resultのレポジトリである
+    \end{tabular}
+\end{narrow}
+
+
+\medskip
+\noindent
+引数
+\begin{narrow}[20pt]
+    \begin{tabular}{ll}
+	\tt{HEAD}	& HEADバージョンを対象とする\\
+	\tt{all}	& すべてのバージョンを対象とする\\
+	\tt{commit-id}	& 指定したバージョンを対象とする
+    \end{tabular}
+\end{narrow}
+
+\medskip
+\noindent
+処理の説明
+
+\begin{enumerate}
+  \item	このプログラムは\TT{core/test}から起動されることを前提としている。
+
+  \item	gitはその管理下にあるディレクトリからアクセスしないといけない。
+	以下に、指定されたオプションと管理下ディレクトリの対応を示す。\\
+	\begin{narrow}[20pt]
+	    \begin{tabular}{|l|l|}\hline
+		\tt{-S} & \tt{url: http://springhead.info/spr2/Springhead/trunk/}\\
+			& \tt{dir: ../../..}\\\hline
+		\tt{-G} & \tt{url: http://github.com/sprphys/Springhead/}\\
+			& \tt{dir: ../../../../Springhead}\\\hline
+		\tt{-H}	& \tt{url: http://git.haselab.net/DailyBuild/Result/}\\
+			& \tt{dir: ../../../../DailyBuildResult/Result}\\\hline
+	    \end{tabular}
+	\end{narrow}
+	\medskip
+
+  \item	オプション\TT{-S}が指定された場合
+	\begin{narrow}[20pt]
+		この場合はクラス\TT{VersionControlSystem}のテストプログラム
+		そのものである。DailyBuildからは使用されない。
+	\end{narrow}
+	\medskip
+
+  \item	オプション\TT{-G}が指定された場合
+	\begin{enumerate}
+	  \item	オプション\TT{-f FNAME}が指定された場合
+		\begin{narrow}[20pt]
+			引数で指定されたバージョン(\TT{all}の場合は全バージョン)から
+			\TT{FNAME}で指定されたファイルを取得し、
+			次の形式で標準出力に出力する。
+
+			\medskip
+			\framebox{\begin{tabular}{@{\hspace{5pt}}l@{\hspace{5pt}}}
+			    \tt{--[\it{short-id,long-id,YYYY-mmdd,HH:MM:ss}]--}\\
+			    取得したファイルの内容
+			\end{tabular}}
+
+			\medskip
+			\iT{short-id}はコミットIDの短縮形式、
+			\iT{long-id}はコミットIDを表す。\\
+			引数\TT{all}が指定された場合は、上記の形式を全バージョンに
+			対して繰り返す。
+
+			\medskip
+		\end{narrow}
+
+	  \item	オプション\TT{-f FNAME}が指定されない場合
+		\begin{narrow}[20pt]
+			引数で指定されたバージョン(\TT{all}の場合は全バージョン)に
+			ついて、次の情報を標準出力に出力する。
+
+			\medskip
+			\framebox{\begin{tabular}{@{\hspace{5pt}}l@{\hspace{5pt}}}
+			    \it{short-id,long-id,YYYY-mmdd,HH:MM:SS}
+			\end{tabular}}
+
+			\medskip
+			\iT{short-id}はコミットIDの短縮形式、
+			\iT{long-id}はコミットIDを表す。\\
+			引数\TT{all}が指定された場合は、上記の形式を全バージョンに
+			対して繰り返す。
+
+		\end{narrow}
+	\end{enumerate}
+
+\end{enumerate}
+
+% end: 5.4.6.VersionInfo.tex

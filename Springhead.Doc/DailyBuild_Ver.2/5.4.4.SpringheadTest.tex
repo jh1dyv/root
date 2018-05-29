@@ -1,5 +1,5 @@
 % 5.4.4.SpringheadTest.tex
-%	Last update: 2018/05/24 F.Kanehori
+%	Last update: 2018/05/29 F.Kanehori
 %\newpage
 \subsubsection{SpringheadTest}
 \label{subsubsec:SpringheadTest}
@@ -69,7 +69,8 @@ options \small{( $^\dagger$はデフォルトを示す)}
   \item	テストディレクトリ\TT{core/test}に移動する。
 	\medskip
 
-  \item	\tt{TestResult}クラスを生成して、テスト結果累積データを準備する。\\
+  \item	\tt{TestResult}クラスを生成してテスト結果累積データを準備する
+	(\REF{subsubsec}{TestResult})。\\
 	\CMND{-8pt}{res = TestResult(res_file, scratch, verbose=1)}{-20pt}\\
 	\begin{narrow}[10pt]
 		Springheadライブラリ作成時には起動引数\TT{-S}が指定され、
@@ -83,7 +84,7 @@ options \small{( $^\dagger$はデフォルトを示す)}
 
   \item	\tt{ClosedSrcControl}クラスを生成して、Closed sourceの使用/不使用の
 	準備をする。
-	ここでは関連するファイルを指定しておくだけで、ヘッダファイル\IT{csc_head}を
+	ここでは関連するファイルを指定しておくだけで、ヘッダファイル\IT{<csc_head\,>}を
 	変更する訳ではない。\\
 	\CMND{-8pt}
 	     {csc = ClosedSrcControl(csc_head, use_tmpl, unuse_tmpl, dry_run, verbose)}
@@ -112,16 +113,16 @@ options \small{( $^\dagger$はデフォルトを示す)}
 	\begin{narrow}[10pt]
 		\tt{testid}には引数\TT{test-dir}に従い次の\TT{TESTID}クラス定数を
 		設定する。\\
-		\small{\begin{tabular}{@{\hspace{20pt}}ll}
-			Springheadライブラリ作成のとき & \tt{TESTID.STUB}\\
-			\tT{src/tests}のテストのとき   & \tt{TESTID.TESTS}\\
-			\tT{src/Samples}のテストのとき & \tt{TESTID.SAMPLES}
+		\small{\begin{tabular}{@{\hspace{20pt}}l@{\Rarrow}l}
+			Springheadライブラリ作成のとき	& \tt{TESTID.STUB}\\
+			\tT{tests}のテストのとき	& \tt{TESTID.TESTS}\\
+			\tT{Samples}のテストのとき	& \tt{TESTID.SAMPLES}
 		\end{tabular}}\\
 		\Tt{res}, \tT{csc}は前のステップで生成したクラスオブジェクトである。
 		他のパラメータは、起動時引数及びオプションを参照して設定する。
 		ただし\TT{csusage}にはオプション\TT{-C}の値に従い次の\TT{TESTID}クラス
 		定数を設定する(\REF{subsubsec}{ConstDefs})。\\
-		\small{\begin{tabular}{@{\hspace{20pt}}ll}
+		\small{\begin{tabular}{@{\hspace{20pt}}l@{\Rarrow}l}
 			\tt{-C auto}	& \tt{TESTID.AUTO}\\
 			\tt{-C use}	& \tt{TESTID.USE}\\
 			\tt{-C unuse}	& \tt{TESTID.UNUSE}
@@ -133,7 +134,7 @@ options \small{( $^\dagger$はデフォルトを示す)}
 	\CMND{-8pt}{stat = trv.traverse(top)}{-20pt}\\
 	\begin{narrow}[10pt]
 		\tT{top}はテスト対象ディレクトリで、次のものを指定する。\\
-		\small{\begin{tabular}{@{\hspace{20pt}}ll}
+		\small{\begin{tabular}{@{\hspace{20pt}}l@{\Rarrow}l}
 			Springheadライブラリ作成のとき & \FILE{src}\\
 			\tT{src/tests}のテストのとき   & \FILE{src/tests}\\
 			\tT{src/Samples}のテストのとき & \FILE{src/Samples}

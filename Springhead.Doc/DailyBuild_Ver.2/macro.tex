@@ -1,5 +1,5 @@
 % macro.tex
-%	Last update: 2018/05/24 F.Kanehori
+%	Last update: 2018/05/29 F.Kanehori
 
 \makeatletter
 
@@ -59,12 +59,13 @@
 \def\LDOTS{$\ldots$}
 \def\VDOTS{$\vdots$}
 \def\YEN{Y\llap=}		% yen sign
+\def\Rarrow{\hspace{5pt}\RARROW\hspace{5pt}}
 
 \def\TAG#1{\tt{\orgLA#1\orgRA}}
 \def\CONT{\ \ {\scriptsize{(次の行に続く)}}}
-\def\CMND#1#2#3{\vspace{#1}\\
+\def\CMND#1#2#3{\vspace{#1}\relax\\
 	    \hspace{10pt}\tt{\framebox[\linewidth][l]{\hspace{5pt}#2}}
-	    \vspace{#3}}
+	    \relax\vspace{#3}}
 
 \def\BUILDANDTEST{ビルド\&テスト}
 \def\WID{20pt}			% indent width

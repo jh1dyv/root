@@ -1,5 +1,5 @@
 % 5.4.5.GenResultLog.tex
-%	Last update: 2018/05/24 F.Kanehori
+%	Last update: 2018/05/29 F.Kanehori
 %\newpage
 \subsubsection{GenResultLog}
 \label{subsubsec:GenResultLog}
@@ -7,12 +7,12 @@
 \medskip
 テスト結果をファイルに書き出すプログラム。
 入力となるテスト結果は引数\TT{res-file}で指定し、
-\TT{TestResult}クラスのメソッド\TT{edit_result_log()}を用いて編集する。
+\TT{TestResult}クラスのメソッド\TT{edit_result_log()}または\tt{dump()}を用いて編集する。
 
 \bigskip
 \noindent
 起動方法
-\CMND{4pt}{python GenResultLog.py [options] type res-file [plat] [conf]}{-2pt}
+\CMND{4pt}{python GenResultLog.py [options] type res-file [plat conf]}{-2pt}
 
 \noindent
 options
@@ -35,15 +35,31 @@ options
 				\tt{d} & ダンプ形式 (ファイル内容の確認用)\\
 				\tt{r} & \tT{result.log}形式
 			  \end{tabular}\\
-	\tt{res-file}	& テスト結果ファイル
+	\tt{res-file}	& テスト結果累積ファイル名\\
+	&\\
+	\multicolumn{2}{l}{以下\tt{type}が\tt{r}のときのみ指定}\\
+	\tt{plat}	& プラットフォーム (\tt{x86, x64})\\
+	\tt{conf}	& ビルド構成 (\tt{Debug, Release, Trace})
     \end{tabular}
 \end{narrow}
 
+\medskip
+\noindent
+処理の説明
 
+\begin{enumerate}
+  \item	\tt{TestResult}クラスを生成してテスト結果累積データを読み込む
+	(\REF{subsubsec}{TestResult})。
 
+  \item	\tt{type}が\tt{r}ならば、
+	\begin{enumerate}
+	  \item	\TT{edit_result_log()}でテスト結果を編集する。
+	  \item	編集結果を標準出力に出力する。
+	  \item	出力ファイル指定があれば、そこにも出力する。
+	\end{enumerate}
 
-
-
-
+  \item	\tt{type}が\tt{d}ならば、
+	\tt{dump()}を呼び出してテスト結果をダンプする。
+\end{enumerate}
 
 % end: 5.4.5.GenResultLog.tex

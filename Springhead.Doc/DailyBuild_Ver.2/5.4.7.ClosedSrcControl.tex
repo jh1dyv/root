@@ -1,18 +1,106 @@
-% 5.4.9.CloseSrcControl.tex
-%	Last update: 2018/05/17 F.Kanehori
+% 5.4.7.ClosedSrcControl.tex
+%	Last update: 2018/05/29 F.Kanehori
 %\newpage
-\subsubsection{CloseSrcControl}
-\label{subsubsec:CloseSrcControl}
+\subsubsection{クラス ClosedSrcControl}
+\label{subsubsec:ClosedSrcControl}
 
+\medskip
+\noindent
+\bf{概要}
 
+\begin{narrow}[20pt]
+Springheadを非公開ソースを使用してビルドするか否かは、
+マクロ\TT{USE_CLOSED_SRC}が定義されるか否かで制御される。
+このマクロはファイル\FILE{core/include/UseClosedSrcOrNot.h}に記述されている。
 
+\noindent
+このクラスでは、
+上記のマクロを切り替える(\tt{\#define} $\Leftrightarrow$ \tt{\#undef})ための
+メソッドを提供する。
+\end{narrow}
 
+\bigskip
+\noindent
+\bf{Initializer (\tt{__init__})}
 
+\vspace{5pt}
+\begin{narrow}[20pt]
+    \framebox[\linewidth][l]{%
+	\begin{tabular}{l}
+	    \tt{obj = ClosedSrcControl(path, use_path, unuse_path,\CONT}\\
+	    \tt{\hspace{150pt}dry_run=False, verbose=0)}
+	\end{tabular}}
 
+    \medskip
+    引数
+    \vspace{-5pt}
+    \begin{narrow}[20pt]
+	\begin{longtable}{ll}
+	    \tt{path}	    & 当該マクロを定義しているファイル名\\
+			    & \FILE{core/include/UseclosedSrcOrNot.h}を指定する\\
+	    \tt{use_path}   & closed sourceを使用する場合のテンプレートファイル名\\
+			    & \FILE{core/test/bin/UseClosedSrc.h.template}を指定する\\
+	    \tt{unuse_path} & closed sourceを使用しない場合のテンプレートファイル名\\
+			    & \FILE{core/test/bin/UnuseClosedSrc.h.template}を指定する\\
+	    \tt{dry_run}    & コマンドを表示するだけで実行はしない
+    	\end{longtable}
+    \end{narrow}
+\end{narrow}
 
+\vspace{-10pt}
+\noindent
+\bf{公開メソッド}
 
+\vspace{5pt}
+\begin{enumerate}
+  \item	\tt{set_usage(usage)}\\
+	引数
+	\begin{narrow}[20pt]
+	    \begin{tabular}{ll}
+		\tt{usage} & \begin{minipage}[t]{280pt}
+				closed sourceを使用してビルドするか否か。
+				\tt{CSU_USE}または\tt{CSU_UNUSE}を指定する
+				(\REF{subsubsec}{ConstDefs})。
+			     \end{minipage}
+	    \end{tabular}
+	\end{narrow}
 
+	概要
+	\begin{narrow}[20pt]
+		指定されたusageが現在のマクロ定義と異なる場合は、
+		適切なテンプレートを定義ファイルにコピーすることで要求に応じる。
+	\end{narrow}
+	\medskip
 
+  \item	\tt{revive()}\\
+	引数　なし
 
+	概要
+	\begin{narrow}[20pt]
+		マクロ定義ファイルの内容を元の状態に戻す。
+	\end{narrow}
+\end{enumerate}
 
-% end: 5.4.9.CloseSrcControl.tex
+\vspace{10pt}
+\noindent
+\bf{内部メソッド}
+
+\vspace{5pt}
+\begin{enumerate}
+  \item	\tt{__read_uage(path)} \small{private method}\\
+	引数
+	\begin{narrow}[20pt]
+	    \begin{tabular}{ll}
+		\tt{path} & マクロ定義ファイル名
+	    \end{tabular}
+	\end{narrow}
+
+	概要
+	\begin{narrow}[20pt]
+		指定されたマクロファイルを読み、記述されているマクロ定義に
+		従って\TT{CSU_USE}または\TT{CSU_UNUSE}を返す。
+	\end{narrow}
+
+\end{enumerate}
+
+% end: 5.4.7.ClosedSrcControl.tex

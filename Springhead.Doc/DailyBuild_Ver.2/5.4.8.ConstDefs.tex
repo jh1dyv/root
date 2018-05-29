@@ -1,9 +1,70 @@
-% 5.4.5.ConstDefs.tex
-%	Last update: 2018/05/17 F.Kanehori
+% 5.4.8.ConstDefs.tex
+%	Last update: 2018/05/29 F.Kanehori
 %\newpage
-\subsubsection{ConstDefs}
+\subsubsection{定数定義クラス ConstDefs}
 \label{subsubsec:ConstDefs}
 
+\medskip
+\noindent
+\bf{概要}
+
+\begin{narrow}[20pt]
+このファイルでは、DailyBuildシステムで共通に使用する定数を提供するクラスを
+定義する。
+\end{narrow}
+
+\bigskip
+\noindent
+\bf{クラス CFK}
+\begin{narrow}[20pt]
+	テスト制御ファイルのキーワードを定義する。次のものがある。
+
+	\vspace{-5pt}
+	\def\COLWID{160pt}
+	\def\Hline{\cline{2-4}}
+	\begin{longtable}{c|l|l|l|}\Hline
+		& \hfil 定 数\hfil
+		& \hfil キーワード\hfil
+		& \begin{minipage}[t]{\COLWID}
+			\center{説 明}
+		  \end{minipage}\\\Hline\Hline
+	    &\tt{SPRTOP}
+		& \tt{"SprTop"}
+		& トップディレクトリ(自動的に設定される)\\\Hline
+	    &\tt{SPRTEST}
+		& \tt{"SprTest"}
+		& テストディレクトリ(自動的に設定される)\\\Hline
+	    &\tt{EXCLUDE}
+		& \tt{"Exclude"}
+		& このディレクトリをテストから除外する\\\Hline
+	    &\tt{DESCEND}
+		& \tt{"Descend"}
+		& サブディレクトリをテスト対象に組み込む\\\Hline
+	    &\tt{SOLUTION_ALIAS}
+		& \tt{"SolutionAlias"}
+		& \begin{minipage}[t]{\COLWID}
+			ソリューションファイル名
+			(ディレクトリ名と同じならば省略可)
+		  \end{minipage}\\\Hline\Hline
+	    &BUILD	    & "Build"		&\\
+	    &USE_CLOSED_SRC  & "UseClosedSrc"	&\\
+	    &MAKE_TARGET	    & "MakeTarget"	&\\
+	    &CPP_MACRO	    & "CppMacro"	&\\
+	    &BUILD_LOG	    & "BuildLog"	&\\
+	    &BUILD_ERR_LOG   & "BuildErrLog"	&\\
+	    &RUN		    & "Run"		&\\
+	    &OUTPUT_DIR	    & "OutputDir"	&\\
+	    &BINARY_OUT	    & "BinaryOut"	&\\
+	    &TIMEOUT	    & "Timeout"		&\\
+	    &EXPECTED	    & "Expected"	&\\
+	    &ADD_PATH	    & "AddPath"		&\\
+	    &PIPE_PROCESS    & "PipeProcess"	&\\
+	    &KILL_PROCESS    & "KillProcess"	&\\
+	    &RUN_LOG	    & "RunLog"		&\\
+	    &RUN_ERR_LOG	    & "RunErrLog"	&\\
+	    &INTERVENTION    & "Intervention"	&\\
+	\end{longtable} 
+\end{narrow}
 
 
 
@@ -12,7 +73,4 @@
 
 
 
-
-
-
-% end: 5.4.5.ConstDefs.tex
+% end: 5.4.8.ConstDefs.tex

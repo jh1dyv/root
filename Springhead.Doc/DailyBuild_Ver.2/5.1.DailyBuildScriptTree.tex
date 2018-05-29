@@ -1,5 +1,5 @@
 % 5.1.DailyBuildScriptTree.tex
-%	Last update: 2018/05/22 F.Kanehori
+%	Last update: 2018/05/29 F.Kanehori
 
 \subsection{Script構成}
 \label{subsec:DailyBuildScriptTree}
@@ -24,8 +24,8 @@
 			\dtnote{テスト実行制御}{subsubsec:SpringheadTest}.
 		.7 \tt{bin/}\it{GenResultLog.py}
 			\dtnote{テスト結果ファイル作成}{subsubsec:GenResultLog}.
-		.6 \tt{bin/}\it{VersionControlSystem.py}
-			\dtnote{日付・履歴ファイル作成}{subsubsec:VersionControlsystem}.
+		.6 \tt{bin/}\it{VersionInfo.py}\small{$^\dagger$}
+			\dtnote{日付・履歴ファイル作成}{subsubsec:VersionInfo}.
 		.2 {include/}.
 		.3 {SpringheadDoc.py}\dtnoteOne{Springheadリファレンスマニュアル作成}.
 		.2 {src/}.
@@ -33,6 +33,9 @@
 		.2 {doc/}.
 		.3 {MakeDoc.py}\dtnoteOne{Springhead Users Manual作成}.
 	}
+	\medskip
+	\small{$^\dagger$ 現在この内容は\FILE{VersioncontrolSystem.py}の
+		\,\verb|"__main__"|\,節に記述されている。}
   \end{minipage}\end{narrow}
 \end{narrow}
 
@@ -70,6 +73,11 @@
 		.1 \hspace{-10mm}\it{TestResult}
 			\dtnote{テスト結果維持}{subsubsec:TestResult}.
 		.2 \it{ConstDefs}\rm{*}.
+    	}
+	\dirtree{%
+		.1 \hspace{-10mm}\it{VersionInfo}
+			\dtnote{レビジョン情報取得}{subsubsec:VersionInfo}.
+		.2 \it{VersionControlSystem}.
     	}
   \end{minipage}\end{narrow}
   \medskip
