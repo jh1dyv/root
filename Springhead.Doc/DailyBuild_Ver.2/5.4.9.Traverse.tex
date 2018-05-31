@@ -1,9 +1,190 @@
-% 5.4.7.Traverse.tex
-%	Last update: 2018/05/17 F.Kanehori
+% 5.4.9.Traverse.tex
+%	Last update: 2018/05/31 F.Kanehori
 %\newpage
-\subsubsection{Traverse}
+\subsubsection{クラス Traverse}
 \label{subsubsec:Traverse}
 
+\medskip
+\noindent
+\bf{概要}
+
+\begin{narrow}[20pt]
+指定されたディレクトリを起点としてディレクトリを走査し、
+テスト制御ファイルの内容に従ってビルド＆実行を制御する。
+\end{narrow}
+
+\bigskip
+\noindent
+\bf{Initializer (\tt{__init__})}
+
+\vspace{5pt}
+\begin{narrow}[20pt]
+    \framebox[\linewidth][l]{%
+	\begin{tabular}{l}
+	    \tt{obj = Traverse(testid, result, csc, control, section,}\\
+	    \tt{\hspace{70pt}toolset, platforms, configs, csusage, rebuild,}\\
+	    \tt{\hspace{70pt}timeout, report=True, audit=False,}\\
+	    \tt{\hspace{70pt}dry_run=False, verbose=0)}
+	\end{tabular}}
+
+    \medskip
+    引数
+    \vspace{-5pt}
+    \begin{narrow}[20pt]
+	\def\COLWID{300pt}
+	\begin{longtable}{ll}
+	    \tt{testid}	& \begin{parcol}{\COLWID}{%
+		テスト種別(テスト結果ファイルの識別情報として使用する)。\\
+		\tt{TESTID.STUB, TESTID.TESTS, TESTID.SAMPLES}のいずれか$^\dagger$
+	    }\end{parcol}\\
+	    \tt{result}	& \begin{parcol}{\COLWID}{%
+		\tt{TestResult}クラスのオブジェクト。テスト結果をここに返す。
+	    }\end{parcol}\\
+	    \tt{csc}	& \begin{parcol}{\COLWID}{%
+	    	\tt{CloseSrcControl}クラスのオブジェクト。
+		非公開ソースを使用するか否かを指定する。
+	    }\end{parcol}\\
+	    \tt{control}& \begin{parcol}{\COLWID}{%
+		テスト制御ファイル名。
+		DailyBuildでは\FILE{dailybuild.control}
+	    }\end{parcol}\\
+	    \tt{section}& \begin{parcol}{\COLWID}{%
+		テスト制御ファイルのセクション名。
+		Windowsのときは\tt{Windows}、unixのときは\tt{unix}を指定する。
+	    }\end{parcol}\\
+	    \tt{toolset}& \begin{parcol}{\COLWID}{%
+		使用するCコンパイラのバージョン。
+		WindowsのときはVisual Studioのバージョン、unixのときはダミー。
+	    }\end{parcol}\\
+	    \tt{platform} & \begin{parcol}{\COLWID}{%
+		テストで使用するプラットフォーム。定数\TT{PLATS}のいずれか$^\dagger$
+	    }\end{parcol}\\
+	    \tt{configs}& \begin{parcol}{\COLWID}{%
+		テストで使用するビルド構成。定数\TT{CONFS}のいずれか$^\dagger$
+	    }\end{parcol}\\
+	    \tt{cuusage}& \begin{parcol}{\COLWID}{%
+		非公開ソースを使用するか否か。定数\TT{CSU}のいずれか$^\dagger$
+	    }\end{parcol}\\
+	    \tt{rebuild}& \begin{parcol}{\COLWID}{%
+		強制的に再コンパイルするか否か(論理値で指定)。
+	    }\end{parcol}\\
+	    \tt{timeout}& \begin{parcol}{\COLWID}{%
+		テスト実行時のタイムアウト値(秒で指定)。
+		タイムアウトさせないときは値\TT{0}を指定する。
+	    }\end{parcol}\\
+	    \tt{report}	& \begin{parcol}{\COLWID}{%
+		テスト実行状況レポート指定(論理値で指定)。
+	    }\end{parcol}\\
+	    \tt{dry_run} & \begin{parcol}{\COLWID}{%
+		コマンドを表示するだけで実行はしない(論理値で指定)。
+	    }\end{parcol}\\\hline
+	\end{longtable}
+    \end{narrow}
+
+    \vspace{-25pt}
+    \small{\begin{tabular}{rl}
+	$^\dagger$ & \REF{subsubsec}{ConstDefs}
+    \end{tabular}}
+\end{narrow}
+
+\bigskip
+\noindent
+\bf{公開メソッド}
+
+\vspace{5pt}
+\def\COLWID{280pt}
+\begin{enumerate}
+  \item	\tt{traverse(top)}\\
+	引数
+	\begin{narrow}[20pt]
+	    \begin{tabular}{ll}
+		\tt{top}
+		& \begin{parcol}{\COLWID}{走査開始ディレクトリ}\end{parcol}\\
+		戻り値 & リターンコード\\
+	    \end{tabular}
+	\end{narrow}
+	\medskip
+
+	概要
+	\begin{narrow}[20pt]
+		ディレクトリ走査を開始する。
+		これにより、走査開始点以下のすべてのテストが完了する。
+		テスト結果は引数で与えられた\TT{result}に設定される。
+	\end{narrow}
+	\medskip
+
+	処理の説明
+	\begin{narrow}[20pt]
+		\begin{enumerate}
+	          \item	テスト制御ファイルを読む。
+			次の条件がすべて成立したら\TT{process()}を呼び出して
+			このディレクトリ自身の処理を行なう。
+			\begin{itemize}
+			  \item	このディレクトリが``対象外ディレクトリ''ではない。
+				すなわち、
+				\begin{itemize}
+				  \item	ディレクトリ名が\TT{'.'}で始まらない。
+				  \item	ディレクトリ名が\TT{Template}でも
+				  	\TT{log}でもない。
+				\end{itemize}
+				(\TT{__is_candidate_dir()}で判定する)。
+			  \item	テスト制御ファイルでExclude指定されていない。
+			  \item	このディレクトリにsolution/makeファイルがある
+				(\TT{__has_solution_file()}で判定する)。
+			\end{itemize}
+
+		  \item	テスト制御ファイルでDescendが指定されていたら、
+			すべての``対象サブディレクトリ''に対して、
+			\TT{traverse()}を再帰的に呼び出して処理を行なう。
+			ただし途中で\verb|^C|割込があったら処理を中止する。
+		\end{enumerate}
+	\end{narrow}
+
+  \item	\tt{process(cwd, ctl)}\\
+	引数
+	\begin{narrow}[20pt]
+	    \begin{tabular}{ll}
+		\tt{cwd}
+		& \begin{parcol}{\COLWID}{現在ディレクトリ}\end{parcol}\\
+		戻り値 & リターンコード\\
+	    \end{tabular}
+	\end{narrow}
+	\medskip
+
+	概要
+	\begin{narrow}[20pt]
+		一つのディレクトリに対するテストを実行する。
+	\end{narrow}
+	\medskip
+
+	処理の説明
+	\begin{narrow}[20pt]
+		\begin{enumerate}
+	          \item	solution/makeファイル名を決定する。
+			デフォルトのファイル名は
+			\Tt{"}<\iT{dierctory-name}><\it{compiler-version}>\tT{.sln}
+			であるが、テスト制御ファイルのAlias指定により
+			変更することができる
+			(\TT{__solution_file_name()}で判定する)。
+
+		  \item	Initializerの引数\TT{csc}およびテスト制御ファイルの
+			UseClosedSrc指定に従って、非公開ソースの使用/未使用を設定する。
+			(\TT{set_usage()}を呼ぶ。\REF{subsubsec}{ClosedSrcControl})。
+
+		  \item	\tT{BuildAndRun}クラスのオブジェクト\TT{bar}を準備する。
+
+		  \item	指定されたプラットフォームとビルド構成のすべての組合せに
+			対して、
+			\begin{itemize}
+			  \item	\TT{bar.build()}を呼び出してコンパイルを実行する。
+		  	  \item	コンパイルが正常でかつ\,\verb|^C|\,割込が
+				なかった場合に限り、
+				\TT{bar.run()}を呼び出して生成されたバイナリを実行する。
+			  \item	コンパイル結果および実行結果は\TT{result}に設定する
+				(\TT{set_result()}を呼ぶ。\REF{subsubsec}{TestResult})。
+			\end{itemize}
+		\end{enumerate}
+	\end{narrow}
 
 
 
@@ -11,8 +192,6 @@
 
 
 
+\end{enumerate}
 
-
-
-
-% end: 5.4.7.Traverse.tex
+% end: 5.4.9.Traverse.tex
