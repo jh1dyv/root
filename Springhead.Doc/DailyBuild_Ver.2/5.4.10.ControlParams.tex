@@ -11,9 +11,9 @@
 \begin{narrow}[20pt]
 テスト制御パラメータを取り扱うクラス。
 パラメータはテスト制御ファイルから読み込まれる。
-テスト制御ファイルは継承機能をもち、
-上位階層(ディレクトリ)で定義されたパラメータは下位階層に継承される。
-複数の階層で同じパラメータが定義されたなら、下位階層の定義が優先される。
+テスト制御ファイルはディレクトリの包含関係に関する継承機能をもち、
+上位階層で定義されたパラメータは下位階層に継承される。
+複数の階層で同じパラメータが定義された場合は下位階層の定義が優先する。
 \end{narrow}
 
 \bigskip
@@ -23,24 +23,27 @@
 \vspace{5pt}
 \begin{narrow}[20pt]
 	テスト制御パラメータファイルは、テスト制御キーとその値とをwhite spaceで
-	区切って並べたファイルであり(\TT{Kvfile}クラスで取り扱えるファイル形式)、
+	区切って並べたファイルであり(\TT{Kvfile}クラスで取り扱う)、
 	次のような特徴をもつ。
 	\begin{itemize}
-	  \item	空行は無視する。
-	  \item	ハッシュ文字(\TT{'\#'})以降はすべてコメントとして無視する。
-	  \item	値として\TT{True}または\TT{False}が指定されたら論理値として扱う。
-	  \item	キーのみが指定されたら値として\TT{True}が指定されたものとして扱う。
-	  \item	キーとして\TT{[\IT{section-name}]}が指定されたら、
-		それは新たな``セクション''の開始として扱う。値はあっても無視する。
+	  \item	空行は無視される。
+	  \item	ハッシュ文字(\TT{\#})以降は、すべてコメントとして無視される。
+	  \item	値として\TT{"True"}または\TT{"False"}が指定された場合は、
+	  	論理値として扱われる。
+	  \item	キーのみが指定された場合は、
+	  	値として\TT{"True"}が指定されたものとして扱われる。
+	  \item	キーとして\TT{"[\IT{section-name}]"}が指定された場合は、
+		新たな``セクション''の開始として扱う。値はあっても無視される。
 		なお、陽にセクションを終了させる方法はない。
-	  \item	値として\TT{"** DO NOT INHERIT **"}を指定すると、このキーに対して
-		今までに設定された値を破棄する(継承の中断)。
+	  \item	値として\TT{"** DO NOT INHERIT **"}が指定された場合は、
+	  	このキーに対して今までに設定された値は破棄される(継承の中断)。
 	\end{itemize}
 
 	\bigskip
 	テスト制御パラメータファイルの例\\
 	\vspace{-10pt}
-	\scriptsize{\tt{\begin{longtable}{p{10pt}|ll|}\cline{2-3}
+	\scriptsize{\tt{\begin{longtable}{p{10pt}|lp{280pt}|}\cline{2-3}
+&		& \\
 &\multicolumn{2}{|l|}{%
 \# dailybuild.control}\\
 &\multicolumn{2}{|l|}{%
@@ -76,7 +79,8 @@
 &[unix]		& \\
 &SolutionAlias	& Makefile\\
 &OutputDir	& .\\
-&BinaryOutName	& a.out\\\cline{2-3}
+&BinaryOutName	& a.out\\
+&		& \\\cline{2-3}
 	    \end{longtable}}}
 \end{narrow}
 
@@ -139,8 +143,8 @@
 	\vspace{-10pt}
 	概要
 	\begin{narrow}[20pt]
-		指定されたキーに対応するテスト制御パラメータの値
-		(辞書\VAR{self.control[key]}の値)を返す。
+		指定されたキー(クラス\TT{ConstDefs}の定数で指定する)に対応する
+		テスト制御パラメータの値(辞書\VAR{self.control[key]}の値)を返す。
 		テスト制御ファイルの継承関係はイニシャライザから呼び出される
 		\METHOD{__read_control()}にて処理済みである。\\
 		引数\ARG{override}が指定されたら、テスト制御ファイルの定義に係わりなく
