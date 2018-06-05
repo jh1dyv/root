@@ -1,5 +1,5 @@
 % 5.4.9.Traverse.tex
-%	Last update: 2018/05/31 F.Kanehori
+%	Last update: 2018/06/05 F.Kanehori
 %\newpage
 \subsubsection{クラス Traverse}
 \label{subsubsec:Traverse}
@@ -11,11 +11,12 @@
 \begin{narrow}[20pt]
 指定されたディレクトリを起点としてディレクトリを走査し、
 テスト制御ファイルの内容に従ってビルド＆実行を制御する。
+テスト結果はイニシャライザに与えられた\ARG{result}に設定される。
 \end{narrow}
 
 \bigskip
 \noindent
-\bf{Initializer (\tt{__init__})}
+\bf{イニシャライザ (\tt{__init__})}
 
 \vspace{5pt}
 \begin{narrow}[20pt]
@@ -97,7 +98,7 @@
   \item	\tt{traverse(top)}\\
 	引数
 	\begin{narrow}[20pt]
-	    \begin{tabular}{ll}
+	    \begin{tabular}{p{30pt}l}
 		\tt{top}
 		& \begin{parcol}{\COLWID}{走査開始ディレクトリ}\end{parcol}\\
 		戻り値 & リターンコード\\
@@ -107,17 +108,20 @@
 
 	概要
 	\begin{narrow}[20pt]
-		ディレクトリ走査を開始する。
-		これにより、走査開始点以下のすべてのテストが完了する。
-		テスト結果は引数で与えられた\TT{result}に設定される。
+		引数で与えられたディレクトリを起点としてディレクトリツリーを走査し、
+		対象となるすべてのディレクトリに対するテストを完了させる。
+		個々のディレクトリの処理は\METHOD{process()}で行なう。
+		テスト結果は引数で与えられた\ARG{result}に設定される。
 	\end{narrow}
 	\medskip
 
 	処理の説明
 	\begin{narrow}[20pt]
 		\begin{enumerate}
+		  \item	引数\ARG{top}で指定されたディレクトリに移動する。
+
 	          \item	テスト制御ファイルを読む。
-			次の条件がすべて成立したら\TT{process()}を呼び出して
+			次の条件がすべて成立したら\METHOD{process()}を呼び出して
 			このディレクトリ自身の処理を行なう。
 			\begin{itemize}
 			  \item	このディレクトリが``対象外ディレクトリ''ではない。
@@ -126,16 +130,18 @@
 				  \item	ディレクトリ名が\TT{'.'}で始まらない。
 				  \item	ディレクトリ名が\TT{Template}でも
 				  	\TT{log}でもない。
+				  \item	ディレクトリ名が\ARG{toolset}で与えられた
+					名前と等しくない。
 				\end{itemize}
-				(\TT{__is_candidate_dir()}で判定する)。
+				(\METHOD{__is_candidate_dir()}で判定する)。
 			  \item	テスト制御ファイルでExclude指定されていない。
 			  \item	このディレクトリにsolution/makeファイルがある
-				(\TT{__has_solution_file()}で判定する)。
+				(\METHOD{__has_solution_file()}で判定する)。
 			\end{itemize}
 
 		  \item	テスト制御ファイルでDescendが指定されていたら、
 			すべての``対象サブディレクトリ''に対して、
-			\TT{traverse()}を再帰的に呼び出して処理を行なう。
+			\METHOD{traverse()}を再帰的に呼び出して処理を行なう。
 			ただし途中で\verb|^C|割込があったら処理を中止する。
 		\end{enumerate}
 	\end{narrow}
@@ -143,7 +149,7 @@
   \item	\tt{process(cwd, ctl)}\\
 	引数
 	\begin{narrow}[20pt]
-	    \begin{tabular}{ll}
+	    \begin{tabular}{p{30pt}l}
 		\tt{cwd}
 		& \begin{parcol}{\COLWID}{現在ディレクトリ}\end{parcol}\\
 		戻り値 & リターンコード\\
@@ -153,7 +159,7 @@
 
 	概要
 	\begin{narrow}[20pt]
-		一つのディレクトリに対するテストを実行する。
+		カレントディレクトリ(のみ)に対するテストを実行する。
 	\end{narrow}
 	\medskip
 
@@ -162,35 +168,155 @@
 		\begin{enumerate}
 	          \item	solution/makeファイル名を決定する。
 			デフォルトのファイル名は
-			\Tt{"}<\iT{dierctory-name}><\it{compiler-version}>\tT{.sln}
+			\Tt{"}<\iT{dierctory-name}><\it{compiler-version}>\tT{.sln}"%
 			であるが、テスト制御ファイルのAlias指定により
 			変更することができる
-			(\TT{__solution_file_name()}で判定する)。
+			(\METHOD{__solution_file_name()}で判定する)。
 
-		  \item	Initializerの引数\TT{csc}およびテスト制御ファイルの
+		  \item	イニシャライザの引数\ARG{csc}およびテスト制御ファイルの
 			UseClosedSrc指定に従って、非公開ソースの使用/未使用を設定する。
-			(\TT{set_usage()}を呼ぶ。\REF{subsubsec}{ClosedSrcControl})。
+			(\METHOD{set_usage()}を呼ぶ。\REF{subsubsec}{ClosedSrcControl})。
 
-		  \item	\tT{BuildAndRun}クラスのオブジェクト\TT{bar}を準備する。
+		  \item	\tT{BuildAndRun}クラスのオブジェクト\VAR{bar}を準備する。
 
 		  \item	指定されたプラットフォームとビルド構成のすべての組合せに
 			対して、
 			\begin{itemize}
-			  \item	\TT{bar.build()}を呼び出してコンパイルを実行する。
+			  \item	\METHOD{bar.build()}を呼び出してコンパイルを実行する。
 		  	  \item	コンパイルが正常でかつ\,\verb|^C|\,割込が
-				なかった場合に限り、
-				\TT{bar.run()}を呼び出して生成されたバイナリを実行する。
+				なかった場合に限り、\METHOD{bar.run()}を呼び出して
+				生成されたバイナリを実行する。
 			  \item	コンパイル結果および実行結果は\TT{result}に設定する
-				(\TT{set_result()}を呼ぶ。\REF{subsubsec}{TestResult})。
+				(\METHOD{set_result()}を呼ぶ。
+				\REF{subsubsec}{TestResult})。
 			\end{itemize}
 		\end{enumerate}
 	\end{narrow}
+\end{enumerate}
 
+\bigskip
+\noindent
+\bf{内部メソッド \rm{(抜粋)}}
 
+\vspace{5pt}
+\def\COLWID{280pt}
+\begin{enumerate}
+  \item	\tt{__init_log(path, step, errlog)}\\
+	概要
+	\begin{narrow}[20pt]
+		ログファイルをオープンしてヘッダ行を書き込む。
+		ヘッダ行は次の3行からなる。
+		\begin{itemize}
+		  \item	日付行
+		  \item	ログの識別行 --- 引数\ARG{step}および\ARG{erlog}を元に作成する
+		  \item	空行
+		\end{itemize}
+	\end{narrow}
+	\medskip
 
+  \item	\tt{__chdir(path)}\\
+	概要
+	\begin{narrow}[20pt]
+		\METHOD{os.chdir}のラッパ。指定されたディレクトリに移動する。
+		移動先としてカレントディレクトリが指定されたときは何もしない。
+	\end{narrow}
+	\medskip
 
+  \item	\tt{__is_candidate_dir(dir)}\\
+	概要
+	\begin{narrow}[20pt]
+		指定されたディレクトリがテスト対象ディレクトリかどうか検査する。
+		ディレクトリ名が次の何れかに該当するならば
+		テスト対象外のディレクトリである
+		(これらのディレクトリに\METHOD{traverse()}することを防ぐ)。
+		\begin{itemize}
+		  \item	ディレクトリ名が\TT{'.'}で始まる。
+		  \item	ディレクトリ名が\TT{Template}または\TT{log}である。
+		  \item	ディレクトリ名が\ARG{toolset}で与えられた名前と一致する。
+		\end{itemize}
+	\end{narrow}
+	\medskip
 
+  \item	\tt{__solution_file_name(ctl, dir, ccver)}\\
+	概要
+	\begin{narrow}[20pt]
+		与えられた引数を元に、solution/makeファイル名を決定する。
+		ファイル名はディレクトリ名(\tt{dir})と同じとするが、
+		テスト制御パラメータ\VAR{CFK.SOLUTION_ALIAS}
+		(\REF{subsubsec}{ConstDefs})で変更することができる。
+		Windowsの場合には、末尾にVisual Studioバージョン(\ARG{ccver})および
+		拡張子\TT{.sln}を付加する。
+	\end{narrow}
+	\medskip
 
+  \item	\tt{__has_solution_file(ctl, dir, ccver)}\\
+	概要
+	\begin{narrow}[20pt]
+		カレントディレクトリにソリューションファイルが存在するか否かを
+		判定する。ファイルが存在しなければテストの対象外となる。
+	\end{narrow}
+	\medskip
+
+  \item	\tt{__make_outpath(ctl, slnfile)}\\
+	概要
+	\begin{narrow}[20pt]
+		出力バイナリのパス名を決定する。\\
+		出力ディレクトリは、テスト制御パラメー\VAR{CFK.OUTPUT_DIR}が
+		指定されていればそこに、指定がなければカレントディレクトリとする。\\
+		ファイル名は、テスト制御パラメータ\VAR{CFK.BINARY_OUT}が
+		指定されていればそれに、指定がなければソリューションファイル名と
+		同じ(拡張子\TT{.sln}は除く)とする。
+
+		\vspace{5pt}
+		\footnotesize{%
+		※ テスト制御パラメータ\VAR{CFK.OUTPUT_DIR}に指定されたマクロは、
+		ここで次の値に変換される。\\
+		\begin{tabular}{ll}
+		    \MACRO{TOOLSET}
+			& イニシャライザの引数\ARG{toolset}の値\\
+		    \MACRO{PLATFORM}
+			& \METHOD{process()}で設定された変数\VAR{self.platform}の値\\
+		    \MACRO{CONFIGURATION}
+			& \METHOD{process()}で設定された変数\VAR{self.config}の値
+		\end{tabular}}
+	\end{narrow}
+	\medskip
+
+  \item	\tt{__runtime_addpath(ctl, platform)}\\
+	概要
+	\begin{narrow}[20pt]
+		次のパスリストを返す。これらは、 バイナリ実行時に加えるべきパスである。
+		\begin{itemize}
+		  \item	テスト制御パラメータ\VAR{CFK.ADD_PATH}に指定されている値。
+		  \item	Windowsの場合、
+			\PATH{.../dependency/bin/Win64;.../dependency/bin/Win32}
+			または
+			\PATH{.../dependency/bin/Win32}
+			(プラットフォーム\ARG{platform}に従う）。
+		\end{itemize}
+	\end{narrow}
+	\medskip
+
+  \item	\tt{__report(msg_l, msg_s, header, newline)}\\
+	\tt{__report_1(msg, header, newline)}\\
+	概要
+	\begin{narrow}[20pt]
+		テストの経過報告を標準出力にレポートする。
+		レポート出力の本体は\METHOD{__report()}であり、
+		その形式は次のとおり。
+		\begin{narrow}\relax
+			[\IT{dir-name}\tt{:} ]<\IT{msg}>[\IT{nl}]
+		\end{narrow}
+		\IT{dir-name}と\IT{nl}の出力は、それぞれ引数\ARG{header}、
+		\ARG{newline}にTrueが指定された場合のみ出力される。
+	\end{narrow}
+	\medskip
+
+  \item	\tt{__status_str(step, status)}\\
+	概要
+	\begin{narrow}[20pt]
+		引数\ARG{status}(数値)に対応した適切な文字列を返す。
+	\end{narrow}
 
 \end{enumerate}
 

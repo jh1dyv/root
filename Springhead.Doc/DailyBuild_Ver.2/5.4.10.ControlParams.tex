@@ -1,18 +1,216 @@
-% 5.4.6.ControlParams.tex
-%	Last update: 2018/05/17 F.Kanehori
+% 5.4.10.ControlParams.tex
+%	Last update: 2018/06/05 F.Kanehori
 %\newpage
 \subsubsection{ControlParams}
 \label{subsubsec:ControlParams}
 
+\medskip
+\noindent
+\bf{概要}
 
+\begin{narrow}[20pt]
+テスト制御パラメータを取り扱うクラス。
+パラメータはテスト制御ファイルから読み込まれる。
+テスト制御ファイルは継承機能をもち、
+上位階層(ディレクトリ)で定義されたパラメータは下位階層に継承される。
+複数の階層で同じパラメータが定義されたなら、下位階層の定義が優先される。
+\end{narrow}
 
+\bigskip
+\noindent
+テスト制御パラメータファイル構造
 
+\vspace{5pt}
+\begin{narrow}[20pt]
+	テスト制御パラメータファイルは、テスト制御キーとその値とをwhite spaceで
+	区切って並べたファイルであり(\TT{Kvfile}クラスで取り扱えるファイル形式)、
+	次のような特徴をもつ。
+	\begin{itemize}
+	  \item	空行は無視する。
+	  \item	ハッシュ文字(\TT{'\#'})以降はすべてコメントとして無視する。
+	  \item	値として\TT{True}または\TT{False}が指定されたら論理値として扱う。
+	  \item	キーのみが指定されたら値として\TT{True}が指定されたものとして扱う。
+	  \item	キーとして\TT{[\IT{section-name}]}が指定されたら、
+		それは新たな``セクション''の開始として扱う。値はあっても無視する。
+		なお、陽にセクションを終了させる方法はない。
+	  \item	値として\TT{"** DO NOT INHERIT **"}を指定すると、このキーに対して
+		今までに設定された値を破棄する(継承の中断)。
+	\end{itemize}
 
+	\bigskip
+	テスト制御パラメータファイルの例\\
+	\vspace{-10pt}
+	\scriptsize{\tt{\begin{longtable}{p{10pt}|ll|}\cline{2-3}
+&\multicolumn{2}{|l|}{%
+\# dailybuild.control}\\
+&\multicolumn{2}{|l|}{%
+\# \hspace{20pt}Set "** DO NOT INHERIT **" to prevent upper inheritance}\\
+&		& \\
+&SprTop		& \# Set automatically.\\
+&SprTest	& \# Set automatically [\$(SptTop)/core/test].\\
+&		& \\
+&Exclude	& False\\
+&Descend	& True\\
+&\#SolutionAlias	& \# Ailas name for solution file\\
+&		& \\
+&Build		& True\\
+&UseClosedSrc	& True\\
+&CppMacro	& DAILYBUILD\\
+&\#BuildLog	& \# Build log file path\\
+&\#BuildErrLog	& \# Build error log file path\\
+&		& \\
+&Run		& True\\
+&\#OutputDir	& \# \$TOOLSET/\$PLATFORM/\$CONFIGURATION\\
+&\#BinaryOut	& \# output binary name if diffrent from "<solution-name>.exe"\\
+&\#Timeout	& \# time out value in sec\\
+&Expected	& 0\\
+&\#AddPath	& \\
+&\#PipeProcess	& \# GenKbEvent seq [sleep=.] [space=s] [escape=e] [htab=t] [enter=n]\\
+&\#KillProcess	& \# Use to kill process invoked as pipe process (if needed).\\
+&\#RunLog	& \# Run log file path\\
+&\#RunErrLog	& \# Run error log file path\\
+&Intervention	& False\\
+&		& \\
+&[Windows]	& \\
+&		& \\
+&[unix]		& \\
+&SolutionAlias	& Makefile\\
+&OutputDir	& .\\
+&BinaryOutName	& a.out\\\cline{2-3}
+	    \end{longtable}}}
+\end{narrow}
 
+\bigskip
+\noindent
+\bf{イニシャライザ \tt{__init__()}}
 
+\vspace{5pt}
+\begin{narrow}[20pt]
+    \framebox[\linewidth][l]{%
+	\begin{tabular}{l}
+	    \tt{obj = ControlParams(fname, section, verbose)}
+	\end{tabular}}
 
+    \medskip
+    引数
+    \begin{narrow}[20pt]
+	\vspace{5pt}
+	\def\COLWID{275pt}
+	\begin{longtable}{p{35pt}l}
+	    \tt{fname  } & \begin{parcol}{\COLWID}{%
+		テスト制御ファイル名
+	    }\end{parcol}\\
+	    \tt{section} & \begin{parcol}{\COLWID}{%
+		テスト制御ファイルセクション名\\
+		Windowsの場合は``Windows''を、unixの場合は``unix''を指定する。
+	    }\end{parcol}
+	\end{longtable}
+    \end{narrow}
+\end{narrow}
 
+%\bigskip
+\noindent
+\bf{公開メソッド}
 
+\vspace{5pt}
+\def\COLWID{275pt}
+\begin{enumerate}
+  \item	\tt{get(key, override, default)}\\
+	引数
+	\begin{narrow}[20pt]
+	    \begin{longtable}{p{35pt}l}
+		\tt{key}
+		    & \begin{parcol}{\COLWID}{%
+			テスト制御パラメータのキー。
+			\TT{CFK}クラスの定数(\CONST{CFK.BUILD}, etc.)で指定する
+			(\REF{subsubsec}{ConstDefs})。
+		      }\end{parcol}\\
+		\tt{override}
+		    & \begin{parcol}{\COLWID}{%
+			上書き値
+		      }\end{parcol}\\
+		\tt{default}
+		    & \begin{parcol}{\COLWID}{%
+			デフォルト値
+		      }\end{parcol}
+	    \end{longtable}
+	\end{narrow}
 
+	\vspace{-10pt}
+	概要
+	\begin{narrow}[20pt]
+		指定されたキーに対応するテスト制御パラメータの値
+		(辞書\VAR{self.control[key]}の値)を返す。
+		テスト制御ファイルの継承関係はイニシャライザから呼び出される
+		\METHOD{__read_control()}にて処理済みである。\\
+		引数\ARG{override}が指定されたら、テスト制御ファイルの定義に係わりなく
+		この値をテストパラメタとして返す。\\
+		引数\ARG{key}で指定されたキーがテスト制御ファイルで定義されていなければ、
+		引数\ARG{default}の値をテストパラメタとして返す。
+	\end{narrow}
+	\medskip
 
-% end: 5.4.6.ControlParams.tex
+  \item	\tt{error()}\\
+	概要
+	\begin{narrow}[20pt]
+		既にエラーが登録されていたら、メッセージを返す。
+	\end{narrow}
+	\medskip
+
+  \item	\tt{info()}\\
+	概要
+	\begin{narrow}[20pt]
+		定義済みのパラメータの一覧を標準出力に出力する。
+	\end{narrow}
+	\medskip
+\end{enumerate}
+
+\bigskip
+\noindent
+\bf{内部メソッド \rm{(抜粋)}}
+
+\vspace{5pt}
+\def\COLWID{280pt}
+\begin{enumerate}
+  \item	\tt{__read_control_file(fname, section)}\\
+	概要
+	\begin{narrow}[20pt]
+		\PATH{core}の直下からカレントディレクトリまでの各ディレクトリまで
+		順に次の処理を実施する。
+		\begin{enumerate}
+		  \item	そのディレクトリにテスト制御ファイルがあれば、それを読む。
+			ファイルの読み込みには\TT{KvFile}クラスを使用する。
+		  \item	\ARG{section}で指定されたセクション(および無名セクション)に
+			属するテスト制御パラメータを辞書\VAR{self.control[key]}に
+			格納する(\METHOD{__set_control_values()})。
+		\end{enumerate}
+		ディレクトリを上位から下位に向かって処理をすることで、継承および
+		下位優先が自然と処理される。
+	\end{narrow}
+	\medskip
+
+  \item	\tt{__set_control_values(kvf, section)}\\
+	概要
+	\begin{narrow}[20pt]
+		\ARG{kvf}のセクション\ARG{section}に読み込まれているすべてのデータを、
+		辞書\VAR{self.control}に登録する。
+
+		\vspace{5pt}
+		もし対応する値が\TT{"** DO NOT INHERIT **"}であったなら、
+		この値を登録する代わりに、辞書\VAR{self.control[key]}をクリアする。
+		これにより、このキーに対する値の継承を取り消すことになる。
+	\end{narrow}
+	\medskip
+
+  \item	\tt{__set_default_path(dic)}\\
+	概要
+	\begin{narrow}[20pt]
+		指定された辞書\ARG{dic}に初期値として、
+		\begin{enumerate}
+		  \item	Springheadのトップディレクトリ (\RARROW \ \TT{dic['SprTop']})
+		  \item	Springheadのテストディレクトリ (\RARROW \ \TT{dic['SprTest']})
+		\end{enumerate}
+	\end{narrow}
+\end{enumerate}
+
+% end: 5.4.10.ControlParams.tex

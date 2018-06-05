@@ -1,5 +1,5 @@
 % macro.tex
-%	Last update: 2018/05/31 F.Kanehori
+%	Last update: 2018/06/05 F.Kanehori
 
 \makeatletter
 
@@ -72,8 +72,13 @@
 \def\VUP{\vspace{-12pt}\\}	% adjustment for virtical spacing
 
 % typewriter font
-\def\VAR#1{\tt{\,\$#1\,}}	% for variable name (preceded by '$')
-\def\FUNC#1{\tt{\,#1\,}}	% for functio name
+\def\ENVVAR#1{\tt{\,\$#1\,}}	% for environment variable name (preceded by '$')
+\def\MACRO#1{\tt{\,\$#1\,}}	% for manro name (preceded by '$')
+\def\FUNC#1{\tt{\,#1\,}}	% for function name
+\def\METHOD#1{\tt{\,#1\,}}	% for method name
+\def\VAR#1{\tt{\,#1\,}}		% for variable name
+\def\ARG#1{\tt{\,#1\,}}		% for argument name
+\def\CONST#1{\tt{\,#1\,}}	% for constant name
 \def\FILE#1{\tt{\,"#1"\,}}	% for file name (double quoted)
 \def\PATH#1{\tt{\,"#1"\,}}	% for path name (double quoted)
 \def\ENV#1{\tt{#1}}		% for Windows environment variable name

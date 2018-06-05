@@ -1,5 +1,5 @@
 % 5.4.7.ClosedSrcControl.tex
-%	Last update: 2018/05/29 F.Kanehori
+%	Last update: 2018/06/05 F.Kanehori
 %\newpage
 \subsubsection{クラス ClosedSrcControl}
 \label{subsubsec:ClosedSrcControl}
@@ -21,7 +21,7 @@ Springheadを非公開ソースを使用してビルドするか否かは、
 
 \bigskip
 \noindent
-\bf{Initializer (\tt{__init__})}
+\bf{イニシャライザ (\tt{__init__})}
 
 \vspace{5pt}
 \begin{narrow}[20pt]
@@ -59,7 +59,7 @@ Springheadを非公開ソースを使用してビルドするか否かは、
 	    \begin{tabular}{ll}
 		\tt{usage} & \begin{minipage}[t]{280pt}
 				closed sourceを使用してビルドするか否か。
-				\tt{CSU_USE}または\tt{CSU_UNUSE}を指定する
+				\CONST{CSU_USE}または\CONST{CSU_UNUSE}を指定する
 				(\REF{subsubsec}{ConstDefs})。
 			     \end{minipage}
 	    \end{tabular}
@@ -87,7 +87,7 @@ Springheadを非公開ソースを使用してビルドするか否かは、
 
 \vspace{5pt}
 \begin{enumerate}
-  \item	\tt{__read_uage(path)} \small{private method}\\
+  \item	\tt{__read_uage(path)}
 	引数
 	\begin{narrow}[20pt]
 	    \begin{tabular}{ll}
@@ -98,7 +98,7 @@ Springheadを非公開ソースを使用してビルドするか否かは、
 	概要
 	\begin{narrow}[20pt]
 		指定されたマクロファイルを読み、記述されているマクロ定義に
-		従って\TT{CSU_USE}または\TT{CSU_UNUSE}を返す。
+		従って\CONST{CSU_USE}または\CONST{CSU_UNUSE}を返す。
 	\end{narrow}
 
 \end{enumerate}
