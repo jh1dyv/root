@@ -1,5 +1,5 @@
 % macro.tex
-%	Last update: 2018/06/07 F.Kanehori
+%	Last update: 2018/06/10 F.Kanehori
 
 \makeatletter
 
@@ -83,6 +83,10 @@
 \def\PATH#1{\tt{\,"#1"\,}}	% for path name (double quoted)
 \def\ENV#1{\tt{#1}}		% for Windows environment variable name
 \def\ENVREF#1{\tt{\%#1\%}}	% for Windows environment variable reference
+
+\def\Path#1{\tt{\,"#1"\,}}	% for path string
+\def\Func#1#2{\tt{\,#1(#2)\,}}	% for function name and args
+
 \def\Ref#1#2{\ref{#1:#2} #2}
 \def\REF#1#2{``\ref{#1:#2} #2''参照}
 
@@ -111,21 +115,68 @@
 \def\dtnote#1#2{\mc{\footnotesize{ \CDOTS\  #1 (\ref{subsubsec:#2} 参照)}}}
 \def\dtnl#1{\hspace{20pt}\hspace*{#1}}
 
-% styles for function description
+% styles for class description
 %
-\def\FuncDesc{\medskip\begingroup\begin{narrow}[10pt]}
-\def\endFuncDesc{\end{narrow}\endgroup}
+\def\ClassDesc{\medskip\noindent\bf{概要}\begingroup\begin{narrow}[20pt]}
+\def\endClassDesc{\end{narrow}\endgroup}
 
-\def\FuncArgs{\medskip\begingroup\begin{narrow}[10pt]
-	\bf{引数}\\
-	\begin{tabular}{@{\hspace{15pt}}ll}}
-\def\endFuncArgs{\end{tabular}\end{narrow}\endgroup}
+\def\Initializer#1{%	in-line '\\' is ok
+	\bigskip\noindent\bf{イニシャライザ} (\tt{__init__)}
+	\begin{narrow}[20pt]\vspace{5pt}\tt{\framebox[\linewidth][l]{%
+	\begin{tabular}{@{\hspace{5pt}}l}#1\end{tabular}}}
+	\vspace{-.7\baselineskip}}
+\def\endInitializer{\end{narrow}}
 
-\def\FuncProc{\medskip\begingroup\begin{narrow}[10pt]
-	\bf{処理}
-	\begin{narrow}[8pt]\begin{enumerate}
-	\setlength\itemsep{.5em}}
-\def\endFuncProc{\end{enumerate}\end{narrow}\end{narrow}\endgroup}
+\def\Methods#1{\bigskip\noindent\bf{#1}\begin{narrow}[5pt]\begin{enumerate}}
+\def\endMethods{\end{enumerate}\end{narrow}}
+\def\Method#1#2{\item\tt{#1(#2)}\begin{narrow}[0pt]}
+\def\endMethod{\end{narrow}}
+
+\def\General{\bf{概要}\begin{narrow}[20pt]}
+\def\endGeneral{\end{narrow}}
+
+\def\Process{\bf{処理}\begin{narrow}[20pt]}
+\def\endProcess{\end{narrow}}
+
+\def\Params{\@ifnextchar[{\Params@}{\Params@[6em]}}
+\def\Params@[#1]{\medskip\begin{narrow}[0pt]
+	\def\Args@name@wid{#1}
+	\def\Args@desc@wid{\linewidth}
+	\addtolength{\Args@desc@wid}{-\Args@name@wid}
+	\addtolength{\Args@desc@wid}{-25pt}
+	\bf{引数}
+
+	\vspace{.2\baselineskip}
+	\begin{tabular}{p{\Args@name@wid}l}}
+\def\endParams{\end{tabular}\end{narrow}\vspace{.5\baselineskip}}
+\def\Param#1#2{%
+	\tt{#1}&\begin{minipage}[t]{\Args@desc@wid}#2
+
+	\vspace{.2\baselineskip}\end{minipage}\\}
+\def\ParamLong#1#2{%
+	\multicolumn{2}{l}{\tt{#1}}\\
+	&\begin{minipage}[t]{\Args@desc@wid}#2
+
+	\vspace{.2\baselineskip}\end{minipage}\\}
+
+
+%\def\endparcol{\\\vspace{-.65\baselineskip}\end{minipage}}
+
+%% styles for function description
+%%
+%\def\FuncDesc{\medskip\begingroup\begin{narrow}[10pt]}
+%\def\endFuncDesc{\end{narrow}\endgroup}
+%
+%\def\FuncArgs{\medskip\begingroup\begin{narrow}[10pt]
+%	\bf{引数}\\
+%	\begin{tabular}{@{\hspace{15pt}}ll}}
+%\def\endFuncArgs{\end{tabular}\end{narrow}\endgroup}
+%
+%\def\FuncProc{\medskip\begingroup\begin{narrow}[10pt]
+%	\bf{処理}
+%	\begin{narrow}[8pt]\begin{enumerate}
+%	\setlength\itemsep{.5em}}
+%\def\endFuncProc{\end{enumerate}\end{narrow}\end{narrow}\endgroup}
 
 %% narrower
 % \narrow[size][margin]{body}
