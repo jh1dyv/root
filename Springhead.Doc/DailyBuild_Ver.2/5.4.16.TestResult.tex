@@ -4,10 +4,6 @@
 \subsubsection{TestResult}
 \label{subsubsec:TestResult}
 
-%\makeatletter
-%\def\ClassDesc{\medskip\noindent\bf{概要}\begingroup\begin{narrow}[20pt]}
-%\def\endClassDesc{\end{narrow}\endgroup}
-
 \begin{ClassDesc}
 テストテストテストテストテストテストテストテストテストテスト
 テストテストテストテストテストテストテストテストテストテスト
@@ -48,14 +44,33 @@
 	AAAAAAAAA
 \end{narrow}
 \Method{test_func3(args)}{%
+    \begin{Params}
+    	\Param{args}{引数の説明}
+    	\Param{args}{引数の説明}
+    	\Param{args}{引数の説明}
+    \end{Params}
     \begin{General}
     	GENERL
     }
     \end{General}
 \end{Methods}
 
+\hrule width \linewidth
+
+\begin{Table}[r][4em]{|l|l|}
+  \Item{abc}{短い行}
+  \Item{xyz}{長い行 長い行 長い行 長い行 長い行 長い行 長い行 長い行 長い行 長い行 長い行 長い行 長い行 長い行 長い行 長い行 長い行 長い行 長い行 長い行 長い行 長い行 長い行 長い行}
+\end{Table}
+\begin{narrow}
+	\begin{Table}[r][4em]{|l|l|}
+  	\Item{abc}{短い行}
+  	\Item{xyz}{長い行 長い行 長い行 長い行 長い行 長い行 長い行 長い行 長い行 長い行 長い行 長い行 長い行 長い行 長い行 長い行 長い行 長い行 長い行 長い行 長い行 長い行 長い行 長い行}
+	\end{Table}
+\end{narrow}
 
 
-\makeatother
+
+
+
 
 % end: 5.4.16.TestResult.tex

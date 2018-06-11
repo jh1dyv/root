@@ -32,29 +32,22 @@ Visual Studio 2015以降に対応。
 \Method{set(func,arg1,arg2)}{%
     \begin{General}
 	与えられた引数に従ってビルド条件の設定を行なう。
-	\LineSkip{3pt}
-	\def\COLWIDx{250pt}
-	\begin{tabular}{|l|l|}\hline
-	    \multicolumn{1}{|c}{\it{func}}
-		& \multicolumn{1}{|c|}{設 定 内 容 (\it{arg1,arg2})}\\\hline
-	    \tt{OUTDIR}
-		& \begin{parcol}{\COLWIDx}{%
-			出力ディレクトリを\TT{arg1}に、
-			クリーンフラグを\TT{arg2}に設定する。
-			クリーンフラグがTrueならば、コンパイル前に
-			出力ディレクトリをクリアする(強制リコンパイル)。
-		  }\end{parcol}\\\hline
-	    \tt{LOGFILE}
-		& \begin{parcol}{\COLWIDx}{%
-			ログファイルパスを\ARG{arg1}とする。
-		  }\end{parcol}\\\hline
-	    \tt{DRY_RUN}
-		& \begin{parcol}{\COLWIDx}{%
-			Dry_runフラグを\ARG{arg1}とする。
-			このフラグがTrueならば、
-			コマンドを表示するだけで実行はしない。
-		  }\end{parcol}\\\hline
-	\end{tabular}\\
+	\vspace{-.5\baselineskip}
+	\begin{Table}[r][4em]{|l|l|}\hline
+	  \MItem{1}{|c}{\it{func}}
+	  	& \MItem{1}{|c|}{設 定 内 容 (\it{arg1,arg2})}\\\hline
+	  \Item{OUTDIR}{%
+		出力ディレクトリを\TT{arg1}に、
+		クリーンフラグを\TT{arg2}に設定する。
+		クリーンフラグがTrueならば、コンパイル前に
+		出力ディレクトリをクリアする(強制リコンパイル)。}\hline
+	  \Item{LOGFILE}{ログファイルパスを\TT{arg1}とする。}\hline
+	  \Item{DRY_RUN}{%
+		Dry_runフラグを\TT{arg1}とする。
+		このフラグがTrueならば、
+		コマンドを表示するだけで実行はしない。}\hline
+	\end{Table}
+	\vspace{-.8\baselineskip}
     \end{General}
 }
 \Method{build(platform, config)}{%
@@ -67,25 +60,16 @@ Visual Studio 2015以降に対応。
 \Method{get(kind)}{%
     \begin{General}
 	与えられた引数に対応する値を返す。
-	\LineSkip{3pt}
-	\def\COLWIDx{250pt}
-	\begin{tabular}{|l|l|}\hline
-	    \multicolumn{1}{|c}{\it{kind}}
-		& \multicolumn{1}{|c|}{返 す 値}\\\hline
-	    \tt{VERSION}
-		& \begin{parcol}{\COLWIDx}{%
-			Visual Studioのバージョン (e.g. 14.0)
-		  }\end{parcol}\\\hline
-	    \tt{TOOLSET}
-		& \begin{parcol}{\COLWIDx}{%
-			Visual Studio toolset ID (e.g. "v140")
-		  }\end{parcol}\\\hline
-	    \tt{TOOLSET}
-		& \begin{parcol}{\COLWIDx}{%
-			Visual Studioのtoolset IDと名称\ 
-			(e.g. "v140" と "Visual Studio 2015")
-		  }\end{parcol}\\\hline
-	\end{tabular}\\
+	\vspace{-.5\baselineskip}
+	\begin{Table}[r][4em]{|l|l|}\hline
+	  \MItem{1}{|c}{\it{kind}} & \MItem{1}{|c|}{返 す 値}\\\hline
+	  \Item{VERSION}{Visual Studioのバージョン (e.g. 14.0)}\hline
+	  \Item{TOOLSET}{Visual Studio toolset ID (e.g. "v140")}\hline
+	  \Item{COMMAND}{
+		Visual Studioのtoolset IDと名称\ 
+		(e.g. "v140" と "Visual Studio 2015")}\hline
+	\end{Table}
+	\vspace{-.8\baselineskip}
     \end{General}
 }
 \Method{info()}{%
