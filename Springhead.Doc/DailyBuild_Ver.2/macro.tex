@@ -1,5 +1,5 @@
 % macro.tex
-%	Last update: 2018/06/10 F.Kanehori
+%	Last update: 2018/06/11 F.Kanehori
 
 \makeatletter
 
@@ -84,8 +84,8 @@
 \def\ENV#1{\tt{#1}}		% for Windows environment variable name
 \def\ENVREF#1{\tt{\%#1\%}}	% for Windows environment variable reference
 
-\def\Path#1{\tt{\,"#1"\,}}	% for path string
-\def\Func#1#2{\tt{\,#1(#2)\,}}	% for function name and args
+%\def\Path#1{\tt{\,"#1"\,}}	% for path string
+\def\Path#1{\DQuote{#1}}
 
 \def\Ref#1#2{\ref{#1:#2} #2}
 \def\REF#1#2{``\ref{#1:#2} #2''参照}
@@ -99,8 +99,8 @@
 	\rule{0pt}{1.9em}}
 
 %% quoted word
-%\def\SQuote#1{\hbox{\,\raise.4ex\hbox{{\tt `}}#1\tt{\raise.4ex\hbox{{\tt '}}}\,}}
-%\def\DQuote#1{\hbox{\,\raise.4ex\hbox{{\tt "}}#1\tt{\raise.4ex\hbox{{\tt "}}}\,}}
+\def\SQuote#1{\hbox{\,\raise.4ex\hbox{{\tt `}}#1\tt{\raise.4ex\hbox{{\tt '}}}\,}}
+\def\DQuote#1{\hbox{\,\raise.4ex\hbox{{\tt "}}#1\tt{\raise.4ex\hbox{{\tt "}}}\,}}
 
 %% rule
 %\def\rrule#1{\vbox{%
@@ -121,43 +121,54 @@
 \def\endClassDesc{\end{narrow}\endgroup}
 
 \def\Initializer#1{%	in-line '\\' is ok
-	\bigskip\noindent\bf{イニシャライザ} (\tt{__init__)}
+	\vspace{.3\baselineskip}\noindent\bf{イニシャライザ} (\tt{__init__)}
 	\begin{narrow}[20pt]\vspace{5pt}\tt{\framebox[\linewidth][l]{%
 	\begin{tabular}{@{\hspace{5pt}}l}#1\end{tabular}}}
 	\vspace{-.7\baselineskip}}
 \def\endInitializer{\end{narrow}}
 
-\def\Methods#1{\bigskip\noindent\bf{#1}\begin{narrow}[5pt]\begin{enumerate}}
+\def\Methods#1{\vspace{.3\baselineskip}%
+	\noindent\bf{#1}\begin{narrow}[5pt]\begin{enumerate}}
 \def\endMethods{\end{enumerate}\end{narrow}}
-\def\Method#1#2{\item\tt{#1(#2)}\begin{narrow}[0pt]}
-\def\endMethod{\end{narrow}}
+\def\Method#1#2{\item\tt{#1}\\#2\vspace{.3\baselineskip}}
 
 \def\General{\bf{概要}\begin{narrow}[20pt]}
 \def\endGeneral{\end{narrow}}
+\def\LineSkip#1{\end{narrow}\vspace{#1}\begin{narrow}[20pt]}
 
-\def\Process{\bf{処理}\begin{narrow}[20pt]}
+\def\Process{\bf{処理}\begin{narrow}[20pt]\relax}
 \def\endProcess{\end{narrow}}
 
 \def\Params{\@ifnextchar[{\Params@}{\Params@[6em]}}
 \def\Params@[#1]{\medskip\begin{narrow}[0pt]
-	\def\Args@name@wid{#1}
-	\def\Args@desc@wid{\linewidth}
-	\addtolength{\Args@desc@wid}{-\Args@name@wid}
-	\addtolength{\Args@desc@wid}{-25pt}
+	\def\Params@name@wid{#1}
+	\def\Params@desc@wid{\linewidth}
+	\addtolength{\Params@desc@wid}{-\Params@name@wid}
+	\addtolength{\Params@desc@wid}{-25pt}
 	\bf{引数}
 
-	\vspace{.2\baselineskip}
-	\begin{tabular}{p{\Args@name@wid}l}}
-\def\endParams{\end{tabular}\end{narrow}\vspace{.5\baselineskip}}
+	\vspace{-.6\baselineskip}
+	\begin{longtable}[r]{p{\Params@name@wid}l}}
+\def\endParams{\end{longtable}\end{narrow}\vspace{-.6\baselineskip}}
 \def\Param#1#2{%
-	\tt{#1}&\begin{minipage}[t]{\Args@desc@wid}#2
+	\tt{#1}&\begin{minipage}[t]{\Params@desc@wid}#2
 
 	\vspace{.2\baselineskip}\end{minipage}\\}
 \def\ParamLong#1#2{%
 	\multicolumn{2}{l}{\tt{#1}}\\
-	&\begin{minipage}[t]{\Args@desc@wid}#2
+	&\begin{minipage}[t]{\Params@desc@wid}#2
 
 	\vspace{.2\baselineskip}\end{minipage}\\}
+
+\def\ParTable{\@ifnextchar[{\ParTable@}{\ParTable@[6em]}}
+\def\ParTable@[#1]{%
+	\def\ParTable@name@wid{#1}
+	\def\ParTable@desc@wid{\linewidth}
+	\addtolength{\ParTable@desc@wid}{-\ParTable@name@wid}
+	\addtolength{\ParTable@desc@wid}{-25pt}
+	\begin{longtable}[r]{p{\ParTable@name@wid}l}}
+\def\endParTable{\end{longtable}\vspace{-.6\baselineskip}}
+
 
 
 %\def\endparcol{\\\vspace{-.65\baselineskip}\end{minipage}}
