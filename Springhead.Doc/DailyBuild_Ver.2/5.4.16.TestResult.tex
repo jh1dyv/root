@@ -1,13 +1,25 @@
 % 5.4.16.TestResult.tex
-%	Last update: 2018/05/17 F.Kanehori
+%	Last update: 2018/06/12 F.Kanehori
 %\newpage
-\subsubsection{TestResult}
+\subsubsection{クラス TestResult}
 \label{subsubsec:TestResult}
 
 \begin{ClassDesc}
-テストテストテストテストテストテストテストテストテストテスト
-テストテストテストテストテストテストテストテストテストテスト
-テストテストテストテストテストテストテストテストテストテスト
+テスト結果を管理するクラス。
+2つの配列\tt{results}及び\tt{visited}を用いて管理する。
+\def\HS{\hbox to 1em{}}
+\begin{Table}[r][17em]{|l|l|}\hline
+    \Item{results}{テスト結果情報を格納する配列。}
+    \Item{\HS results[name][RST.ERR]}{　コンパイル・実行以外でのエラーコード}
+    \Item{\HS results[name][RST.SKP]}{　このテストがスキップされたことを示す}
+    \Item{\HS results[name][RST.BLD][p][c]}{　コンパイルの結果コード}
+    \Item{\HS results[name][RST.RUN][p][c]}{　テスト実行の結果コード}
+    \Item{\HS results[name][RST.RUN][RST.EXP]}{　テスト実行の結果コードの予測値}\hline
+    \Item{visited}{上記の\tt{name}の一覧}\hline
+\end{Table}
+ここで\tt{name}はテストが終了したディレクトリの名称、
+\tt{p}と\tt{c}はそれぞれplatformとconfigurationの名前。
+\tt{RST.xxx}については\Ref{subsubsec}{ConstDefs}を参照。
 \end{ClassDesc}
 
 \begin{Initializer}{obj = VisualStudio(toolset, verbose)}

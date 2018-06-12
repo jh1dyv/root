@@ -1,11 +1,11 @@
 % 5.4.12.VisualStudio.tex
-%	Last update: 2018/06/07 F.Kanehori
+%	Last update: 2018/06/12 F.Kanehori
 %\newpage
 \subsubsection{クラス VisualStudio}
 \label{subsubsec:VisualStudio}
 
 \begin{ClassDesc}
-visual studioをコマンドラインから使用するためのラッパクラス。
+Visual studioをコマンドラインから使用するためのラッパクラス。
 Visual Studio 2015以降に対応。
 ただし、Visual Stduio 2017以降については未確認である
 (tool setの表記法、\TT{devenv}の格納ディレクトリ等が変更されているかもしれない）。
@@ -87,7 +87,37 @@ Visual Studio 2015以降に対応。
 \begin{Methods}{内部メソッド \rm{(抜粋)}}
 \Method{__get_vsinfo(toolset)}{%
     \begin{General}
-	未作成
+	引数で指定されたツールセットに対応する3つ組(pts, vsv, vsn)を返す。
+	ここで、ptsはtool set ID (e.g. v140)、vsvはVisual Studioバージョン
+	(e.g. 14.0)、vsnはVisual Studio名称 (e.g. Visual Studio 2015) を
+	それぞれ表す。\\
+	引数で指定されたツールセットが不正なときは(None, None, None)を返す。
+    \end{General}
+}
+\Method{__get_vs_path(version)}{%
+    \begin{General}
+	引数で指定されたVisual Studioバージョンに対応するdevenvのパスを返す。
+	このメソッドはInitializerから呼ばれる。
+	\vspace{-.5\baselineskip}
+	\footnotesize{\begin{Table}[r][1em]{ll}
+	    \Item{\rm{(注)}}{%
+		ここで返すパスは、Visual Studio 2015までについては正しいが、
+		それ以降のバージョンについては確認していない。
+		必要ならば追加修正する必要がある。}
+	\end{Table}}
+	\vspace{-\baselineskip}
+    \end{General}
+}
+\Method{__build()}{%
+    \begin{General}
+	devenvに適切なパラメータを与えて実行する。
+	クリーンフラグが設定されている場合は、devenvの実行に先立ち、
+	出力ディレクトリとこのパラメータに対応するログファイルを削除する。
+    \end{General}
+}
+\Method{__show_error(file)}{%
+    \begin{General}
+	指定されたファイルからエラー行だけを標準出力に表示する。
     \end{General}
 }
 \end{Methods}
