@@ -86,8 +86,7 @@
 \def\ENV#1{\tt{#1}}		% for Windows environment variable name
 \def\ENVREF#1{\tt{\%#1\%}}	% for Windows environment variable reference
 
-%\def\Path#1{\tt{\,"#1"\,}}	% for path string
-\def\Path#1{\DQuote{#1}}
+\def\Path#1{\tt{\DQuote{#1}}}
 
 \def\Ref#1#2{\ref{#1:#2} #2}
 \def\REF#1#2{``\ref{#1:#2} #2''参照}
@@ -125,13 +124,13 @@
 \def\Initializer#1{%	in-line '\\' is ok
 	\vspace{.3\baselineskip}\noindent\bf{イニシャライザ} (\tt{__init__)}
 	\begin{narrow}[20pt]\hspace{-.6em}%
-	\tt{\begin{tabular}{l}#1\end{tabular}}\vspace{-.2\baselineskip}}
+	\tt{\begin{tabular}{l}#1\end{tabular}}\vspace{.3\baselineskip}\\}
 \def\endInitializer{\end{narrow}}
 
 \def\Methods#1{\vspace{.3\baselineskip}%
 	\noindent\bf{#1}\begin{narrow}[5pt]\begin{enumerate}}
 \def\endMethods{\end{enumerate}\end{narrow}}
-\def\Method#1#2{\item\tt{#1}\\#2\vspace{.3\baselineskip}}
+\def\Method#1#2{\item\tt{#1}\\#2}
 
 \def\General{\bf{概要}\begin{narrow}[20pt]}
 \def\endGeneral{\end{narrow}}
@@ -141,15 +140,13 @@
 \def\endProcess{\end{narrow}}
 
 \def\Params{\@ifnextchar[{\Params@}{\Params@[6em]}}
-\def\Params@[#1]{\medskip\begin{narrow}[0pt]
-	\bf{引数}\\
-	\vspace{-1.6\baselineskip}
+\def\Params@[#1]{\noindent\bf{引数}\vspace{-1.6\baselineskip}\\
 	\def\Params@name@wid{#1}
 	\def\Params@desc@wid{\linewidth}
 	\addtolength{\Params@desc@wid}{-\Params@name@wid}
 	\addtolength{\Params@desc@wid}{-25pt}
 	\begin{longtable}[r]{p{\Params@name@wid}l}}
-\def\endParams{\end{longtable}\end{narrow}\vspace{-.6\baselineskip}}
+\def\endParams{\end{longtable}\vspace{-1.1\baselineskip}}
 \def\Param#1#2{%
 	\tt{#1}&\begin{minipage}[t]{\Params@desc@wid}#2
 
