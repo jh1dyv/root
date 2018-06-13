@@ -1,5 +1,5 @@
 % macro.tex
-%	Last update: 2018/06/11 F.Kanehori
+%	Last update: 2018/06/13 F.Kanehori
 
 \makeatletter
 
@@ -124,9 +124,8 @@
 
 \def\Initializer#1{%	in-line '\\' is ok
 	\vspace{.3\baselineskip}\noindent\bf{イニシャライザ} (\tt{__init__)}
-	\begin{narrow}[20pt]\vspace{5pt}\tt{\framebox[\linewidth][l]{%
-	\begin{tabular}{@{\hspace{5pt}}l}#1\end{tabular}}}
-	\vspace{-.7\baselineskip}}
+	\begin{narrow}[20pt]\hspace{-.6em}%
+	\tt{\begin{tabular}{l}#1\end{tabular}}\vspace{-.2\baselineskip}}
 \def\endInitializer{\end{narrow}}
 
 \def\Methods#1{\vspace{.3\baselineskip}%
@@ -226,7 +225,7 @@
 %% table with rightmost foldable column
 % \begin{Table}[pos][fix part width]{table spec}
 %   \Item{column width(*)}{last column}		(*) without last column
-%   \MItem{num-columns}{column spec}{data}
+%   \MC is alias to \multicolumn
 % \end{Table}
 \def\Table{\@ifnextchar[{\Table@@}{\Table@[c]}}
 \def\Table@{\@ifnexechar[{\Table@@}{\Table@@[c][6em]}}
@@ -248,7 +247,8 @@
 	&\begin{minipage}[t]{\Table@desc@wid}#2
 
 	\vspace{.2\baselineskip}\end{minipage}\\}
-\def\MItem#1#2#3{\multicolumn{#1}{#2}{#3}}
+%\def\MItem#1#2#3{\multicolumn{#1}{#2}{#3}}
+\let\MC\multicolumn
 
 %
 %% table columnn with paragraph
