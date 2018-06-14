@@ -1,5 +1,5 @@
 % macro.tex
-%	Last update: 2018/06/13 F.Kanehori
+%	Last update: 2018/06/14 F.Kanehori
 
 \makeatletter
 
@@ -112,9 +112,6 @@
 %    \vspace{-0.5\baselineskip}}
 
 % helper macro for dirtree
-\def\dtnoteOne#1{\mc{\footnotesize{ \CDOTS\  #1}}}
-\def\dtnote#1#2{\mc{\footnotesize{ \CDOTS\  #1 (\ref{subsubsec:#2} 参照)}}}
-\def\dtnl#1{\hspace{20pt}\hspace*{#1}}
 
 % styles for class description
 %
@@ -122,15 +119,15 @@
 \def\endClassDesc{\end{narrow}\endgroup}
 
 \def\Initializer#1{%	in-line '\\' is ok
-	\vspace{.3\baselineskip}\noindent\bf{イニシャライザ} (\tt{__init__)}
+	\vspace{.35\baselineskip}\noindent\bf{イニシャライザ} (\tt{__init__)}
 	\begin{narrow}[20pt]\hspace{-.6em}%
 	\tt{\begin{tabular}{l}#1\end{tabular}}\vspace{.3\baselineskip}\\}
 \def\endInitializer{\end{narrow}}
 
-\def\Methods#1{\vspace{.3\baselineskip}%
+\def\Methods#1{\vspace{.35\baselineskip}%
 	\noindent\bf{#1}\begin{narrow}[5pt]\begin{enumerate}}
 \def\endMethods{\end{enumerate}\end{narrow}}
-\def\Method#1#2{\item\tt{#1}\\#2}
+\def\Method#1#2{\vspace{.35\baselineskip}\item\tt{#1}\\#2}
 
 \def\General{\bf{概要}\begin{narrow}[20pt]}
 \def\endGeneral{\end{narrow}}
