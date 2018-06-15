@@ -47,8 +47,8 @@ DailyBuildは毎日Windows上でタスクとして実行される。
 
 unixの場合：
 \begin{narrow}
-    Scriptは \Path{.../Springhad/core/test/DailyBuild.sh}。
-    起動引数およびlogの出力先はWindowsと同様である。
+	Scriptは \Path{.../springhad/core/test/DailyBuild.sh}。
+	起動引数およびlogの出力先はWindowsと同様である。
 \end{narrow}
 
 % -----------------------------------------------------------------------
@@ -57,32 +57,43 @@ unixの場合：
 % -----------------------------------------------------------------------
 \noindent
 過去のレビジョンでの実行結果との差分情報を作成するタスク
-\begin{narrow}[\WID]\begin{tabular}{ll}
-    Script & \FILE{I:/DailyBuild/Springhead/core/test/MakeReport.bat}\\
-    概要 & 指定された過去コミットの実行結果と最新コミットの実行結果とを比較して\\
-	 & 差分情報を作成し、レポートファイルにまとめる。\\
-	 & 過去コミットの指定はファイル\\
-	 & \tt{"I:/DailyBuild/Springhead/"} \CONT\\
-	 & \hspace{40pt}\tt{core/test/Monitoring/etc/revision.old"}\\
-	 & で行なう。\\
-    詳細 & \REF{sec:}{MakeReportScript}
-\end{tabular}\end{narrow}
-\medskip
+\vspace{-.5\baselineskip}
+\begin{narrow}[\WID]
+    \begin{Table}[r][4.5em]{ll}
+	\Item{Script}{\Path{I:/DailyBuild/Springhead/core/test/MakeReport.bat}}
+	\Item{概要}{%
+		指定された過去コミットの実行結果と最新コミットの実行結果とを
+		比較して差分情報を作成し、レポートファイルにまとめる。
+		過去コミットの指定はファイル\\
+		\tt{"I:/DailyBuild/Springhead/} \CONT\\
+		\hspace{40pt}\tt{core/test/Monitoring/etc/revision.old"}\\
+		で行なう。}
+	\Item{詳細}{\REF{sec}{MakeReportScript}}
+    \end{Table}
+\end{narrow}
+\vspace{-1.5\baselineskip}
 
-unixには未対応である(MakeReportの主たるスクリプトはperlで書かれている)。
+unixには未対応である。
+\begin{narrow}
+	MakeReportの主たるスクリプトはperlで書かれているが、
+	WindowsバッチファイルのPythonへの移植は行なっていない。
+	perlスクリプトのunix上での動作確認も行なっていない。
+\end{narrow}
 
 % -----------------------------------------------------------------------
 \subsection{タスク実行結果の参照}
 \label{subsec:ResultReference}
 % -----------------------------------------------------------------------
 \noindent
-Wiki \tt{springhead.info/wiki}の``開発者向け情報''から参照できる。
-\begin{narrow}[\WID]\begin{tabular}{l@{\hspace{5pt}\RARROW\hspace{5pt}}l}
-    DailyBuild & `今朝のビルドの状況',\\
-	       & `Samples のビルドの状況',\\
-	       & `今朝のビルドのログ'\\
-    MakeReport & `今朝のビルドについてまとめた報告',\\
-	       & `レビジョン nnnn (yyyy/mm/dd) との比較'\\
-\end{tabular}\end{narrow}
+Wiki (\tt{http://Springhead.info/wiki})の``開発者向け情報''から参照できる。
+\begin{narrow}[\WID]
+    \begin{tabular}{l@{\hspace{8pt}\RARROW\hspace{8pt}}l}
+	DailyBuild & `今朝のビルドの状況',\\
+		   & `Samples のビルドの状況',\\
+		   & `今朝のビルドのログ'\\
+	MakeReport & `今朝のビルドについてまとめた報告',\\
+		   & `レビジョン nnnn (yyyy/mm/dd) との比較'\\
+    \end{tabular}
+\end{narrow}
 
 % end: 4.0.Task.tex

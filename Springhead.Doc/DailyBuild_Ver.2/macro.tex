@@ -1,5 +1,5 @@
 % macro.tex
-%	Last update: 2018/06/14 F.Kanehori
+%	Last update: 2018/06/15 F.Kanehori
 
 \makeatletter
 
@@ -237,12 +237,11 @@
 	\endgroup}
 \let\endTable\end@Table
 
-\def\Item#1#2{%
-	\hbox to \Table@name@wid{\tt{#1}}
+\def\Item#1#2{\hbox to \Table@name@wid{\hbox{#1}\hfill}
 	&\begin{minipage}[t]{\Table@desc@wid}#2
 
 	\vspace{.2\baselineskip}\end{minipage}\\}
-%\def\MItem#1#2#3{\multicolumn{#1}{#2}{#3}}
+\def\ttItem#1#2{\Item{\tt{#1}}{#2}}
 \let\MC\multicolumn
 
 %
