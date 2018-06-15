@@ -1,40 +1,53 @@
-% DailyBuild.tex
-%	Last update: 2018/05/14 F.Kanehori
+% 4.0.Task.tex
+%	Last update: 2018/06/15 F.Kanehori
 \newpage
 \section{タスク}
 \label{sec:Task}
 
 \noindent
-DailyBuildは毎日windows上でタスクとして実行される。
-\begin{narrow}[\WID]\begin{tabular}{lll}
-    実行マシン & \multicolumn{2}{l}{\tt{DESKTOP-KD3C7HS
-		 (192.168.91.194)} $\leftarrow$ 固定アドレスではない}\\
-    タスク名   & Task1: \tt{DailyBuild}    & 毎日 02:02 に起動\\
-	       & Task2: \tt{MakeReportGit} & 毎日 04:02 に起動\\
-\end{tabular}\end{narrow}
-\medskip
+DailyBuildは毎日Windows上でタスクとして実行される。
+\vspace{-.5\baselineskip}
+\begin{narrow}[\WID]
+    \begin{Table}[r][4.5em]{ll}
+	\Item{実行マシン}{%
+    		\tt{DESKTOP-KD3C7HS} (192.168.91.194)
+		$\leftarrow$ 固定アドレスではない}
+	\Item{タスク名}{%
+		\tabcolsep=0pt\begin{tabular}[t]{l@{\hspace{1em}}l}
+		    Task1: \tt{DailyBuild}    & 毎日 02:02 に起動\\
+		    Task2: \tt{MakeReportGit} & 毎日 04:02 に起動
+		\end{tabular}}
+    \end{Table}
+\end{narrow}
+\vspace{-2\baselineskip}
 
 % -----------------------------------------------------------------------
 \subsection{タスク DailyBuild}
 \label{subsec:TaskDailyBuild}
 % -----------------------------------------------------------------------
 \noindent
-\BUILDANDTEST を実行するタスク
-\begin{narrow}[\WID]\begin{tabular}{ll}
-    Script   & \FILE{I:/DailyBuild/Springhead/core/test/DailyBuild.bat}\\
-    起動引数 & \tt{[-t 14.0 -c Release -p x64]} \CONT\\
-	     & \hspace{40pt}\tt{SpringheadTest DailyBuildResult/Result}\\
-	     & (\tt{[\,]}内はデフォルトなので指定しなくてもよい。)\\
-    概要 & 作業領域(\FILE{I:/DailyBuild/SprintheadTest})に最新バージョンを\\
-	 & pullし、そこでライブラリ作成および\BUILDANDTEST を実行する。\\
-    詳細 & \REF{sec:}{DailyBuildScript}\\
-    結果 & \FILE{I:/DailyBuild/SpringheadTest/core/test/log}以下に作成される。\\
-\end{tabular}\end{narrow}
-\medskip
+ビルド＆テストを実行するタスク
+\vspace{-.5\baselineskip}
+\begin{narrow}[\WID]
+    \begin{Table}[r][4.5em]{ll}
+	\Item{Script}{\Path{I:/DailyBuild/Springhead/core/test/DailyBuild.bat}}
+	\Item{起動引数}{%
+		\tt{[-t 14.0 -c Release -p x64]} \CONT\\
+		\hspace{40pt}\tt{SpringheadTest DailyBuildResult/Result}\\
+		(\tt{[\,]}内はデフォルトなので指定しなくてもよい。)}
+	\Item{概要}{%
+		作業領域(\Path{I:/DailyBuild/SprintheadTest})に最新バージョンを
+		pullし、そこでライブラリ作成およびビルド＆テストを実行する。}
+	\Item{詳細}{\REF{sec:}{DailyBuildScript}}
+	\Item{結果}{\Path{I:/DailyBuild/SpringheadTest/core/test/log}以下に
+		作成される。}
+    \end{Table}
+\end{narrow}
+\vspace{-1.5\baselineskip}
 
 unixの場合：
 \begin{narrow}
-    Scriptは \FILE{.../Springhad/core/test/DailyBuild.sh}。
+    Scriptは \Path{.../Springhad/core/test/DailyBuild.sh}。
     起動引数およびlogの出力先はWindowsと同様である。
 \end{narrow}
 
@@ -72,4 +85,4 @@ Wiki \tt{springhead.info/wiki}の``開発者向け情報''から参照できる。
 	       & `レビジョン nnnn (yyyy/mm/dd) との比較'\\
 \end{tabular}\end{narrow}
 
-% end: DailyBuild.tex
+% end: 4.0.Task.tex

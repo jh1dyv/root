@@ -86,7 +86,7 @@
 \def\ENV#1{\tt{#1}}		% for Windows environment variable name
 \def\ENVREF#1{\tt{\%#1\%}}	% for Windows environment variable reference
 
-\def\Path#1{\tt{\DQuote{#1}}}
+\def\Path#1{\DQuote{\tt{#1}}}
 
 \def\Ref#1#2{\ref{#1:#2} #2}
 \def\REF#1#2{``\ref{#1:#2} #2''éQè∆}
@@ -184,9 +184,10 @@
 %\def\endFuncProc{\end{enumerate}\end{narrow}\end{narrow}\endgroup}
 
 %% narrower
-% \narrow[size][margin]{body}
+% \narrow[size][margin]
 %	charsize:	t, f, s, [n]
 %	margin:		[\the\leftmargin]
+% \end{narrow}
 %
 \def\narrow{\@ifnextchar[{\narrow@}{\narrow@def[Z][\the\leftmargin]}}
 \def\narrow@[#1]{%
