@@ -1,43 +1,41 @@
 % 5.1.DailyBuildScriptTree.tex
-%	Last update: 2018/06/14 F.Kanehori
+%	Last update: 2018/06/16 F.Kanehori
 
 \subsection{Script構成}
 \label{subsec:DailyBuildScriptTree}
 
-\def\dtnoteOne#1{\mc{\footnotesize{ \CDOTS\  #1}}}
-\def\dtnote#1#2{\mc{\footnotesize{ \CDOTS\  #1 (\ref{subsubsec:#2} 参照)}}}
-\def\dtnl#1{\hspace{20pt}\hspace*{#1}}
+\def\Anno#1{\mc{\footnotesize{ \CDOTS\  #1}}}
+\def\AnnoRef#1#2{\Anno{#1} \footnotesize{(\ref{#2} 参照)}}
 
-プログラム構造
-
-\vspace{-15pt}
 \noindent
+プログラム構造
+\vspace{.2\baselineskip}
 \begin{narrow}[\WID]
     \begin{narrow}[20pt]\begin{minipage}{\textwidth}
 	\dirtree{%
-		.1 {\hspace{-10mm}I:/DailyBuild/Springhead/core/}.
-		.2 {test/}.
+		.1 \hspace{-10mm}I:/DailyBuild/Springhead/core/.
+		.2 test/.
 		.3 \it{DailyBuild.bat or DailyBuild.sh}
-			\dtnoteOne{DailyBuild起動用スクリプト}.
+			\Anno{DailyBuild起動用スクリプト}.
 		.4 \it{DailyBuild.py}
-			\dtnote{レポジトリ管理}{subsubsec:DailyBuild}.
+			\AnnoRef{レポジトリ管理}{subsubsec:DailyBuild}.
 		.5 \it{TestMainGit.py}
-			\dtnote{テスト実行及び成果物登録}{subsubsec:TestMainGit}.
+			\AnnoRef{テスト実行及び成果物登録}{subsubsec:TestMainGit}.
 		.6 \tt{bin/}\it{SpringheadTest.py}
-			\dtnote{テスト実行制御}{subsubsec:SpringheadTest}.
+			\AnnoRef{テスト実行制御}{subsubsec:SpringheadTest}.
 		.7 \tt{bin/}\it{GenResultLog.py}
-			\dtnote{テスト結果ファイル作成}{subsubsec:GenResultLog}.
-		.6 \tt{bin/}\it{VersionInfo.py}\small{$^\dagger$}
-			\dtnote{日付・履歴ファイル作成}{subsubsec:VersionInfo}.
-		.2 {include/}.
-		.3 {SpringheadDoc.py}\dtnoteOne{Springheadリファレンスマニュアル作成}.
-		.2 {src/}.
-		.3 {SpringheadImpDoc.py}\dtnoteOne{Springhead SDK開発者マニュアル作成}.
-		.2 {doc/}.
-		.3 {MakeDoc.py}\dtnoteOne{Springhead Users Manual作成}.
+			\AnnoRef{テスト結果ファイル作成}{subsubsec:GenResultLog}.
+		.6 \tt{bin/}\it{VersionInfo.py}\NOTE
+			\AnnoRef{日付・履歴ファイル作成}{subsubsec:VersionInfo}.
+		.2 include/.
+		.3 SpringheadDoc.py \Anno{Springheadリファレンスマニュアル作成}.
+		.2 src/.
+		.3 SpringheadImpDoc.py \Anno{Springhead SDK開発者マニュアル作成}.
+		.2 doc/.
+		.3 MakeDoc.py \Anno{Springhead Users Manual作成}.
 	}
 	\medskip
-	\small{$^\dagger$ 現在この内容は\FILE{VersioncontrolSystem.py}の
+	\NOTE \small{現在この内容は\Path{VersioncontrolSystem.py}の
 		\,\verb|"__main__"|\,節に記述されている。}
   \end{minipage}\end{narrow}
 \end{narrow}
@@ -51,46 +49,45 @@
 \begin{narrow}[\WID]
     \begin{narrow}[20pt]\begin{minipage}{.8\textwidth}
 	\dirtree{%
-		.1 {\hspace{-10mm}\it{ClosedSrcControl}}
-			\dtnote{非公開ファイル制御}{subsubsec:ClosedSrcControl}.
+		.1 \hspace{-10mm}\it{ClosedSrcControl}
+			\AnnoRef{非公開ファイル制御}{subsubsec:ClosedSrcControl}.
 		.2 \it{ConstDefs}
-			\dtnote{共通定数定義}{subsubsec:ConstDefs}.
+			\AnnoRef{共通定数定義}{subsubsec:ConstDefs}.
 	}
     \end{minipage}\end{narrow}
     \begin{narrow}[20pt]\begin{minipage}{.8\textwidth}
 	\dirtree{%
 		.1 \hspace{-10mm}\it{Traverse}
-			\dtnote{ディレクトリ毎の処理}{subsubsec:Traverse}.
+			\AnnoRef{ディレクトリ毎の処理}{subsubsec:Traverse}.
 		.2 \it{ControlParams}
-			\dtnote{テスト制御ファイル管理}{subsubsec:ControlParams}.
+			\AnnoRef{テスト制御ファイル管理}{subsubsec:ControlParams}.
 		.3 \it{ConstDefs}\rm{*}.
 		.2 \it{BuildAndRun}
-			\dtnote{ビルド＆実行}{subsubsec:BuildAndRun}.
+			\AnnoRef{ビルド＆実行}{subsubsec:BuildAndRun}.
 		.3 \it{VisualStudio}
-			\dtnote{Visual Studioラッパ}{subsubsec:VisualStudio}.
+			\AnnoRef{Visual Studioラッパ}{subsubsec:VisualStudio}.
 		.3 \it{ConstDefs}\rm{*}.
 		.2 \it{KeyInterruption}
-			\dtnote{キーボード割込処理}{subsubsec:KeyInterruption}.
+			\AnnoRef{キーボード割込処理}{subsubsec:KeyInterruption}.
 		.2 \it{StructuredException}
-			\dtnote{例外ハンドラ}{subsubsec:StructuredException}.
+			\AnnoRef{例外ハンドラ}{subsubsec:StructuredException}.
 	}
     \end{minipage}\end{narrow}
     \begin{narrow}[20pt]\begin{minipage}{.8\textwidth}
 	\dirtree{%
 		.1 \hspace{-10mm}\it{TestResult}
-			\dtnote{テスト結果維持}{subsubsec:TestResult}.
+			\AnnoRef{テスト結果維持}{subsubsec:TestResult}.
 		.2 \it{ConstDefs}\rm{*}.
     	}
     \end{minipage}\end{narrow}
     \begin{narrow}[20pt]\begin{minipage}{.8\textwidth}
 	\dirtree{%
 		.1 \hspace{-10mm}\it{VersionInfo}
-			\dtnote{レビジョン情報取得}{subsubsec:VersionInfo}.
+			\AnnoRef{レビジョン情報取得}{subsubsec:VersionInfo}.
 		.2 \it{VersionControlSystem}.
     	}
     \end{minipage}\end{narrow}
     \medskip
 \end{narrow}
-\medskip
 
 % end: 5.1.DailyBuildScriptTree.tex

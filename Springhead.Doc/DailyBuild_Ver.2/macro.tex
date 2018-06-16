@@ -1,5 +1,5 @@
 % macro.tex
-%	Last update: 2018/06/15 F.Kanehori
+%	Last update: 2018/06/16 F.Kanehori
 
 \makeatletter
 
@@ -63,15 +63,18 @@
 \def\YEN{Y\llap=}		% yen sign
 \def\Rarrow{\hspace{5pt}\RARROW\hspace{5pt}}
 
-\def\TAG#1{\tt{\orgLA#1\orgRA}}
 \def\CONT{\ \ {\rm{\scriptsize{(次の行に続く)}}}}
 \def\CMND#1#2#3{\vspace{#1}\relax\\
 	    \hspace{10pt}\tt{\framebox[\linewidth][l]{\hspace{5pt}#2}}
 	    \relax\vspace{#3}}
 
+\def\TAG#1{\tt{\orgLA#1\orgRA}}
 \def\BUILDANDTEST{ビルド\&テスト}
-\def\WID{20pt}			% indent width
 \def\VUP{\vspace{-12pt}\\}	% adjustment for virtical spacing
+
+\def\WID{20pt}			% indent width
+\def\NOTE{\small{$^\dagger$}}
+\def\NOTEd{\small{$^\ddagger$}}
 
 % typewriter font
 \def\ENVVAR#1{\tt{\,\$#1\,}}	% for environment variable name (preceded by '$')
@@ -219,7 +222,8 @@
 
 %% table with rightmost foldable column
 % \begin{Table}[pos][fix part width]{table spec}
-%   \Item{column width(*)}{last column}		(*) without last column
+%   \Item[*]{column width(**)}{last column}	(*) t(\tt), i(\it), r(\rm)
+%						(**) without last column
 %   \MC is alias to \multicolumn
 % \end{Table}
 \def\Table{\@ifnextchar[{\Table@@}{\Table@[c]}}
@@ -237,11 +241,16 @@
 	\endgroup}
 \let\endTable\end@Table
 
-\def\Item#1#2{\hbox to \Table@name@wid{\hbox{#1}\hfill}
-	&\begin{minipage}[t]{\Table@desc@wid}#2
+\def\Item{\@ifnextchar[{\Item@}{\Item@[n]}}
+\def\Item@[#1]#2#3{%
+	\if#1t \def\type@face{\tt}	\else
+	\if#1i \def\type@face{\it}	\else
+	\if#1b \def\type@face{\bf}	\else
+	       \def\type@face{\relax}	\fi\fi\fi
+	\hbox to \Table@name@wid{\hbox{\type@face{#2}\hfill}}
+	&\begin{minipage}[t]{\Table@desc@wid}#3
 
 	\vspace{.2\baselineskip}\end{minipage}\\}
-\def\ttItem#1#2{\Item{\tt{#1}}{#2}}
 \let\MC\multicolumn
 
 %
