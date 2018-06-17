@@ -1,5 +1,5 @@
 % macro.tex
-%	Last update: 2018/06/16 F.Kanehori
+%	Last update: 2018/06/17 F.Kanehori
 
 \makeatletter
 
@@ -103,8 +103,8 @@
 	\rule{0pt}{1.9em}}
 
 %% quoted word
-\def\SQuote#1{\hbox{\,\raise.4ex\hbox{{\tt `}}#1\tt{\raise.4ex\hbox{{\tt '}}}\,}}
-\def\DQuote#1{\hbox{\,\raise.4ex\hbox{{\tt "}}#1\tt{\raise.4ex\hbox{{\tt "}}}\,}}
+\def\SQuote#1{\hbox{\,\raise.4ex\hbox{{\tt `}}#1\raise.4ex\hbox{{\tt '}}\,}}
+\def\DQuote#1{\hbox{\,\raise.4ex\hbox{{\tt "}}#1\raise.4ex\hbox{{\tt "}}\,}}
 
 %% rule
 %\def\rrule#1{\vbox{%
@@ -226,7 +226,8 @@
 %						(**) without last column
 %   \MC is alias to \multicolumn
 % \end{Table}
-\def\Table{\@ifnextchar[{\Table@@}{\Table@[c]}}
+\def\Table{\@ifnextchar[{\Table@pos}{\Table@@[r][6em]}}
+\def\Table@pos[#1]{\@ifnextchar[{\Table@@[#1]}{\Table@@[#1][6em]}}
 \def\Table@{\@ifnexechar[{\Table@@}{\Table@@[c][6em]}}
 \def\Table@@[#1][#2]#3{\begingroup
 	%\let\org@Table@arraystretch\arraystretch
