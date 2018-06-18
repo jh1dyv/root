@@ -1,154 +1,90 @@
 % 5.4.8.ConstDefs.tex
-%	Last update: 2018/05/31 F.Kanehori
+%	Last update: 2018/06/18 F.Kanehori
 %\newpage
 \subsubsection{定数定義クラス ConstDefs}
 \label{subsubsec:ConstDefs}
 
-\medskip
-\noindent
-\bf{概要}
-
-\begin{narrow}[20pt]
-このファイルでは、DailyBuildシステムで共通に使用する定数を提供するクラスを
-定義する。
-\end{narrow}
+\begin{ClassDesc}
+DailyBuildシステムで共通に使用する定数を提供するクラスである。
+\end{ClassDesc}
 
 \bigskip
 \noindent
 \bf{クラス CFK}
-\begin{narrow}[20pt]
+\begin{narrow}[\WID]
 	テスト制御ファイルで定義された値を参照するための定数。
 	次のものがある。
 
-	\vspace{-5pt}
-	\def\COLWID{170pt}
-	\def\Hline{\cline{2-4}}
-	\begin{longtable}{c|l|l|l|}\Hline
-		& \hfil 定 数\hfil
-		& \hfil キーワード\hfil
-		& \hfil 説 明\hfil\\\Hline
-	    & \tt{SPRTOP}
-		& \tt{"SprTop"}
-		& \begin{parcol}{\COLWID}{%
-			\addtolength{\baselineskip}{-.2\baselineskip}
+	\begin{Table}[r][17em]{|l|l|l|}\hline
+	    \ItemT{\hfil 定 数\hfil}{\hfil キーワード\hfil}{\hfil 説 明\hfil}\hline
+	    \ItemT{SRCTOP}{"SprTop"}{%
 			トップディレクトリ\\
-			自動的に次のディレクトリに設定される\\
-			\PATH{.../Springhead}
-		  }\end{parcol}\\\Hline
-	    & \tt{SPRTEST}
-		& \tt{"SprTest"}
-		& \begin{parcol}{\COLWID}{%
+			自動的に次の値に設定される\\
+			\Path{.../Springhead}}\hline
+	    \ItemT{SPRTEST}{"SprTest"}{%
 			テストディレクトリ\\
-			自動的に次のディレクトリに設定される\\
-			\PATH{.../Springhead/core/test}
-		  }\end{parcol}\\\Hline
-	    & \tt{EXCLUDE}
-		& \tt{"Exclude"}
-		& \begin{parcol}{\COLWID}{%
-			このディレクトリをテストから除外するか否か$^\dagger$
-		  }\end{parcol}\\\Hline
-	    & \tt{DESCEND}
-		& \tt{"Descend"}
-		& \begin{parcol}{\COLWID}{%
-			サブディレクトリをテスト対象に組み込むか否か$^\dagger$
-		  }\end{parcol}\\\Hline
-	    & \tt{SOLUTION_ALIAS}
-		& \tt{"SolutionAlias"}
-		& \begin{parcol}{\COLWID}{%
+			自動的に次の値に設定される\\
+			\Path{.../Springhead/core/test}}\hline
+	    \ItemT{EXCLUDE}{"Exclude"}{%
+			このディレクトリをテストから除外するか否か\NOTE}\hline
+	    \ItemT{DESCEND}{"Descend"}{%
+			サブディレクトリをテスト対象に組み込むか否か\NOTE}\hline
+	    \ItemT{SOLUTION_ALIAS}{"SolutionAlias"}{%
 			solution/makeファイル名\\
-			ディレクトリ名と同じならば省略可
-		  }\end{parcol}\\\Hline
-	    & \tt{BUILD}
-		& \tt{"Build"}
-		& コンパイルを実行するか否か$^\dagger$\\\Hline
-	    & \tt{USE_CLOSED_SRC}
-		& \tt{"UseClosedSrc"}
-		& Closed sourceを使用するか否か$^\dagger$\\\Hline
-	    & \tt{MAKE_TARGET}
-		& \tt{"MakeTarget"}
-		& 未使用\\\Hline
-	    & \tt{CPP_MACRO}
-		& \tt{"CppMacro"}
-		& コンパイル時マクロ <<未実装>>\\\Hline
-	    & \tt{BUILD_LOG}
-		& \tt{"BuildLog"}
-		& \begin{parcol}{\COLWID}{%
+			ディレクトリ名と同じならば省略可}\hline
+	    \ItemT{BUILD}{"Build"}{%
+			コンパイルを実行するか否か\NOTE}\hline
+	    \ItemT{USE_CLOSED_SRC}{"UseClosedSrc"}{%
+			Closed sourceを使用するか否か\NOTE}\hline
+	    \ItemT{MAKE_TARGET}{"MakeTarget"}{未使用}\hline
+	    \ItemT{CPP_MACRO}{"CppMacro"}{%
+			コンパイル時マクロ <<未実装>>}\hline
+	    \ItemT{BUILD_LOG}{"BuildLog"}{%
 			コンパイルログファイル名\\
-			\PATH{\$(SprTest)/log/StubBuild.log}
-		  }\end{parcol}\\\Hline
-	    & \tt{BUILD_ERR_LOG}
-		& "BuildErrLog"
-		& \begin{parcol}{\COLWID}{%
+			\Path{\$(SprTest)/log/StubBuild.log}}\hline
+	    \ItemT{BUILD_ERR_LOG}{"BuildErrLog"}{%
 			コンパイルエラーログファイル名\\
-			\PATH{\$(SprTest)/log/StubBuildError.log}
-		  }\end{parcol}\\\Hline
-	    & \tt{RUN}
-		& \tt{"Run"}
-		& テストプログラムを実行するか否か$^\dagger$\\\Hline
-	    & \tt{OUTPUT_DIR}
-		& \tt{"OutputDir"}
-		& \begin{parcol}{\COLWID}{%
+			\PathB{\$(SprTest)/log/}\CONT\\
+			\hspace{3em}\PathE{StubBuildError.log}}\hline
+	    \ItemT{RUN}{"Run"}{%
+			テストプログラムを実行するか否か\NOTE}\hline
+	    \ItemT{OUTPUT_DIR}{"OutputDir"}{%
 			バイナリ出力ディレクトリ名\\
-			指定がなければsolution/makeファイルに従う
-		  }\end{parcol}\\\Hline
-	    & \tt{BINARY_OUT}
-		& \tt{"BinaryOut"}
-		& \begin{parcol}{\COLWID}{%
+			指定がなければsolution/makeファイルに従う}\hline
+	    \ItemT{BINARY_OUT}{"BinaryOut"}{%
 			出力バイナリファイル名\\
-			指定がなければsolution/makeファイルに従う
-		  }\end{parcol}\\\Hline
-	    & \tt{TIMEOUT}
-		& \tt{"Timeout"}
-		& \begin{parcol}{\COLWID}{%
+			指定がなければsolution/makeファイルに従う}\hline
+	    \ItemT{TIMEOUT}{"Timeout"}{%
 			テストプログラム実行時強制タイムアウト指定。
-			タイムアウトさせる秒数を指定する。
-		  }\end{parcol}\\\Hline
-	    & \tt{EXPECTED}
-		& \tt{"Expected"}
-		& \begin{parcol}{\COLWID}{%
+			タイムアウトさせる秒数を指定する。}\hline
+	    \ItemT{EXPECTED}{"Expected"}{%
 			テストプログラム終了コードの予想値\\
-			テストの合否判定に使用する
-		  }\end{parcol}\\\Hline
-	    & \tt{ADD_PATH}
-		& \tt{"AddPath"}
-		& テストプログラム実行時に追加するパス\\\Hline
-	    & \tt{PIPE_PROCESS}
-		& \tt{"PipeProcess"}
-		& \begin{parcol}{\COLWID}{%
+			テストの合否判定に使用する}\hline
+	    \ItemT{ADD_PATH}{"AddPath"}{%
+			テストプログラム実行時に追加するパス}\hline
+	    \ItemT{PIPE_PROCESS}{"PipeProcess"}{%
 			パイププロセス指定(実行するコマンドを記述する)。
 			このプロセスの出力とテストプログラムの標準入力とが
 			パイプで結ばれる。\\
 			\bf{(注)} テストプログラムの出力を渡すパイププロセスも
 			指定できると便利だが(出力のフィルタリング等)
-			実装していない。
-		  }\end{parcol}\\\Hline
-	    & \tt{KILL_PROCESS}
-		& \tt{"KillProcess"}
-		& \begin{parcol}{\COLWID}{%
+			実装できていない。}\hline
+	    \ItemT{KILL_PROCESS}{"KillProcess"}{%
 			テストプログラム終了後にkillすべきプログラム。
-			プロセスイメージ名を指定する。
-		  }\end{parcol}\\\Hline
-	    & \tt{RUN_LOG}
-		& \tt{"RunLog"}
-		& \begin{parcol}{\COLWID}{%
+			プロセスイメージ名を指定する。}\hline
+	    \ItemT{RUN_LOG}{"RunLog"}{%
 			テスト実行ログファイル名\\
-			\PATH{\$(SprTest)/log/Run.log}
-		  }\end{parcol}\\\Hline
-	    & \tt{RUN_ERR_LOG}
-		& \tt{"RunErrLog"}
-		& \begin{parcol}{\COLWID}{%
+			\Path{\$(SprTest)/log/Run.log}}\hline
+	    \ItemT{RUN_ERR_LOG}{"RunErrLog"}{%
 			テスト実行エラーログファイル名\\
-			\PATH{\$(SprTest)/log/RunError.log}
-		  }\end{parcol}\\\Hline
-	    & \tt{INTERVENTION}
-		& \tt{"Intervention"}
-		& \begin{parcol}{\COLWID}{%
-			テストプログラム実行時にオペレータ介入が必要である$^\dagger$。
-			この値がTrueなら、このテストプログラムは実行されない。
-		  }\end{parcol}\\\Hline
-	\end{longtable}
-
-	\vspace{-10pt}
+			\Path{\$(SprTest)/log/RunError.log}}\hline
+	    \ItemT{INTERVENTION}{"Intervention"}{%
+			テストプログラム実行時にオペレータ介入が
+			必要\NOTE\\
+			この値がTrueなら、
+			このテストプログラムは実行されない。}\hline
+	\end{Table}
+	\vspace{-.5\baselineskip}
 	\footnotesize{\begin{tabular}{r@{\hspace{-0pt}}l}
 		$^\dagger$ 
 		& \begin{parcol}{330pt}{%
@@ -158,76 +94,66 @@
 		}\end{parcol}
 	\end{tabular}}
 \end{narrow}
+\vspace{.9\baselineskip}
 
 \noindent
 \bf{クラス RST}
-\begin{narrow}[20pt]
+\begin{narrow}[\WID]
 	テスト結果累積データのカテゴリを表す定数(enumeration型)。
 
-	\vspace{-5pt}
-	%\def\COLWID{170pt}
-	\def\Hline{\cline{2-3}}
-	\begin{longtable}{c|l|l|}\Hline
-		& \begin{parcol}{.10\linewidth}\center{定 数}\end{parcol}
-		& \begin{parcol}{.77\linewidth}\center{説 明}\end{parcol}\\\Hline
-	    & \tt{ERR}	& エラー情報	\\\Hline
-	    & \tt{SKP}	& スキップ情報	\\\Hline
-	    & \tt{BLD}	& コンパイル結果情報	\\\Hline
-	    & \tt{RUN}	& テスト実行結果情報	\\\Hline
-	    & \tt{EXP}	& 実行結果想定値情報	\\\Hline
-	\end{longtable}
+	\vspace{-.1\baselineskip}
+	\begin{narrow}[12pt]\begin{Table}[r][40pt]{|l|l|}\hline
+	    \MC{1}{|c}{定 数} & \MC{1}{|c|}{説 明}\\\hline
+	    \Item[t]{ERR}{エラー情報}\hline
+	    \Item[t]{SKP}{スキップ情報}\hline
+	    \Item[t]{BLD}{コンパイル結果情報}\hline
+	    \Item[t]{RUN}{テスト実行結果情報}\hline
+	    \Item[t]{EXP}{実行結果想定値情報}\hline
+	\end{Table}\end{narrow}
 \end{narrow}
+\vspace{-\baselineskip}
 
 \noindent
 \bf{クラス CSU}
-\begin{narrow}[20pt]
+\begin{narrow}[\WID]
 	非公開ソースを使用するか否かを表す定数(enumeration型)。
 
-	\vspace{-5pt}
-	%\def\COLWID{170pt}
-	\def\Hline{\cline{2-3}}
-	\begin{longtable}{c|l|l|}\Hline
-		& \begin{parcol}{.10\linewidth}\center{定 数}\end{parcol}
-		& \begin{parcol}{.77\linewidth}\center{説 明}\end{parcol}\\\Hline
-	    & \tt{AUTO}		& 個別にテスト制御ファイルに従う\\\Hline
-	    & \tt{USE}		& すべてで使用する		\\\Hline
-	    & \tt{UNUSE}	& すべてで使用しない		\\\Hline
-	\end{longtable}
+	\vspace{-.1\baselineskip}
+	\begin{narrow}[12pt]\begin{Table}[r][40pt]{|l|l|}\hline
+	    \MC{1}{|c}{定 数} & \MC{1}{|c|}{説 明}\\\hline
+	    \Item[t]{AUTO}{個別にテスト制御ファイルに従う}\hline
+	    \Item[t]{USE}{すべてで使用する}\hline
+	    \Item[t]{UNUSE}{すべてで使用しない}\hline
+	\end{Table}\end{narrow}
 \end{narrow}
+\vspace{-\baselineskip}
 
 \noindent
 \bf{クラス TESTID}
-\begin{narrow}[20pt]
+\begin{narrow}[\WID]
 	テスト種別を表す定数(enumeration型)。
 
-	\vspace{-5pt}
-	%\def\COLWID{170pt}
-	\def\Hline{\cline{2-3}}
-	\begin{longtable}{c|l|l|}\Hline
-		& \begin{parcol}{.10\linewidth}\center{定 数}\end{parcol}
-		& \begin{parcol}{.77\linewidth}\center{説 明}\end{parcol}\\\Hline
-	    & \tt{STUB}	    & Springheadライブラリ作成	\\\Hline
-	    & \tt{TESTS}    & \tt{src/tests}のテスト	\\\Hline
-	    & \tt{SAMPLES}  & \tt{src/Samples}のテスト	\\\Hline
-	    & \tt{OTHER}    & 上記以外			\\\Hline
-	\end{longtable}
+	\vspace{-.1\baselineskip}
+	\begin{narrow}[12pt]\begin{Table}[r][40pt]{|l|l|}\hline
+	    \MC{1}{|c}{定 数} & \MC{1}{|c|}{説 明}\\\hline
+	    \Item[t]{STUB}{Springheadライブラリ作成}\hline
+	    \Item[t]{TESTS}{\Path{src/tests}のテスト}\hline
+	    \Item[t]{SAMPLES}{\Path{src/Samples}のテスト}\hline
+	    \Item[t]{OTHER}{上記以外}\hline
+	\end{Table}\end{narrow}
 \end{narrow}
+\vspace{-\baselineskip}
 
 \noindent
 \bf{その他の定数}
-\begin{narrow}[20pt]
-	%\def\COLWID{170pt}
-	\def\Hline{\cline{2-3}}
-	\begin{longtable}{c|l|l|}\Hline
-	    & \begin{parcol}{.10\linewidth}{\tt{PLATS}}\end{parcol}
-	    & \begin{parcol}{.77\linewidth}{%
-		プラットフォームの一覧リスト(\tt{x86, x64})
-	      }\end{parcol}\\\Hline
-	    & \begin{parcol}{.10\linewidth}{\tt{CONFS}}\end{parcol}
-	    & \begin{parcol}{.77\linewidth}{%
-		ビルド構成の一覧リスト(\tt{Debug, Release, Trace})
-	      }\end{parcol}\\\Hline
-	\end{longtable}
+\begin{narrow}[\WID]
+	\begin{narrow}[12pt]\begin{Table}[r][40pt]{|l|l|}\hline
+	    \MC{1}{|c}{定 数} & \MC{1}{|c|}{説 明}\\\hline
+	    \Item[t]{PLATS}{プラットフォームの一覧リスト(\tt{x86, x64})}\hline
+	    \Item[t]{CONFS}{%
+	    	ビルド構成の一覧リスト(\tt{Debug, Release, Trace})}\hline
+	\end{Table}\end{narrow}
 \end{narrow}
+\vspace{-\baselineskip}
 
 % end: 5.4.8.ConstDefs.tex

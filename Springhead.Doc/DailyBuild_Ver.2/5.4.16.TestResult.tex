@@ -1,5 +1,5 @@
 % 5.4.16.TestResult.tex
-%	Last update: 2018/06/14 F.Kanehori
+%	Last update: 2018/06/18 F.Kanehori
 %\newpage
 \subsubsection{クラス TestResult}
 \label{subsubsec:TestResult}
@@ -10,7 +10,7 @@
 \vspace{-.5\baselineskip}
 \def\HS{\hbox to 1.5em{}}
 \begin{Table}[r][18em]{|l|l|}\hline
-    \Item{results}{テスト結果情報を格納する配列。}
+    \Item{results}{テスト結果情報を累積する配列。}
     \Item{\HS results[name][RST.ERR]}{　コンパイル・実行以外でのエラーコード}
     \Item{\HS results[name][RST.SKP]}{　このテストがスキップされたことを示す}
     \Item{\HS results[name][RST.BLD][p][c]}{　コンパイルの結果コード}
@@ -28,15 +28,15 @@
 \def\HS{\hbox to 1.5em{}}
 \begin{Params}
     \Param{fname}{%
-	テスト結果格納ファイルのベースとなる名前\\
+	テスト結果累積ファイルのベースとなる名前\\
 	\HS\tt{results} \RARROW \ \Path{\it{fname}.r}\\
 	\HS\tt{visited} \RARROW \ \Path{\it{fname}.v}}
     \Param{scratch}{%
 	テスト結果の登録をスクラッチ状態から始めるか否か。
 	Trueが指定されたら、
-	指定された名前のテスト結果格納ファイルを消去してスクラッチ状態から始める。
+	指定された名前のテスト結果累積ファイルを消去してスクラッチ状態から始める。
 	Falseが指定されたら、
-	指定された名前のテスト結果格納ファイルから以前のデータを読み出して
+	指定された名前のテスト結果累積ファイルから以前のデータを読み出して
 	テスト結果データの初期データとする。}
 \end{Params}
 \end{Initializer}
@@ -69,14 +69,14 @@
 }
 \Method{finish()}{%
     \begin{General}
-	テスト結果データをテスト結果格納ファイルにシリアライズする。
+	テスト結果データをテスト結果累積ファイルにシリアライズする。
 	テスト結果はメモリ上にしかないので、
 	テスト終了時に必ずこのメソッドを呼ぶこと。
     \end{General}
 }
 \Method{erase()}{%
     \begin{General}
-	テスト結果格納ファイルを消去する。
+	テスト結果累積ファイルを消去する。
 	インスタンス生成時に\tt{scratch}が指定されたならば、
 	イニシャライザから呼び出される。
     \end{General}

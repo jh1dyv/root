@@ -1,41 +1,37 @@
 % 5.4.10.ControlParams.tex
-%	Last update: 2018/06/07 F.Kanehori
+%	Last update: 2018/06/18 F.Kanehori
 %\newpage
 \subsubsection{クラス ControlParams}
 \label{subsubsec:ControlParams}
 
-\medskip
-\noindent
-\bf{概要}
-
-\begin{narrow}[20pt]
+\begin{ClassDesc}
 テスト制御パラメータを取り扱うクラス。
 パラメータはテスト制御ファイルから読み込まれる。
 テスト制御ファイルはディレクトリの包含関係に関する継承機能をもち、
 上位階層で定義されたパラメータは下位階層に継承される。
 複数の階層で同じパラメータが定義された場合は下位階層の定義が優先する。
-\end{narrow}
+\end{ClassDesc}
 
 \bigskip
 \noindent
-テスト制御パラメータファイル構造
+\bf{テスト制御パラメータファイル構造}
 
 \vspace{5pt}
 \begin{narrow}[20pt]
 	テスト制御パラメータファイルは、テスト制御キーとその値とをwhite spaceで
-	区切って並べたファイルであり(\TT{Kvfile}クラスで取り扱う)、
+	区切って並べたファイルであり(\tt{Kvfile}クラスで取り扱う)、
 	次のような特徴をもつ。
 	\begin{itemize}
 	  \item	空行は無視される。
-	  \item	ハッシュ文字(\TT{\#})以降は、すべてコメントとして無視される。
-	  \item	値として\TT{"True"}または\TT{"False"}が指定された場合は、
+	  \item	ハッシュ文字(\tt{\#})以降は、すべてコメントとして無視される。
+	  \item	値として\DQuote{True}または\DQuote{False}が指定された場合は、
 	  	論理値として扱われる。
 	  \item	キーのみが指定された場合は、
-	  	値として\TT{"True"}が指定されたものとして扱われる。
-	  \item	キーとして\TT{"[\IT{section-name}]"}が指定された場合は、
+	  	値として\tt{"True"}が指定されたものとして扱われる。
+	  \item	キーとして\tt{"[\it{section-name}]"}が指定された場合は、
 		新たな``セクション''の開始として扱う。値はあっても無視される。
 		なお、陽にセクションを終了させる方法はない。
-	  \item	値として\TT{"** DO NOT INHERIT **"}が指定された場合は、
+	  \item	値として\tt{"** DO NOT INHERIT **"}が指定された場合は、
 	  	このキーに対して今までに設定された値は破棄される(継承の中断)。
 	\end{itemize}
 
@@ -85,136 +81,83 @@
 \end{narrow}
 
 \bigskip
-\noindent
-\bf{イニシャライザ} (\tt{__init__})
+\begin{Initializer}{obj = ControlParams(fname, section, verbose)}
+\begin{Params}
+    \Param{fname}{テスト制御ファイル名}
+    \Param{section}{%
+	テスト制御ファイルセクション名\\
+	Windowsの場合は``Windows''を、unixの場合は``unix''を指定する。}
+\end{Params}
+\end{Initializer}
 
-\vspace{5pt}
-\begin{narrow}[20pt]
-    \framebox[\linewidth][l]{%
-	\begin{tabular}{l}
-	    \tt{obj = ControlParams(fname, section, verbose)}
-	\end{tabular}}
+\begin{Methods}{公開メソッド}
+\Method{get(key, override, default)}{%
+    \begin{Params}
+	\Param{key}{%
+		テスト制御パラメータのキー。
+		\tt{CFK}クラスの定数(\tt{CFK.BUILD}, etc.)で指定する
+		(\REF{subsubsec}{ConstDefs})。}
+	\Param{override}{上書き値}
+	\Param{default}{デフォルト値}
+    \end{Params}
+    \begin{General}
+	指定されたキー(クラス\tt{ConstDefs}の定数で指定する)に対応する
+	テスト制御パラメータの値(辞書\tt{self.control[key]}の値)を返す。
+	テスト制御ファイルの継承関係はイニシャライザから呼び出される
+	\tt{__read_control()}にて処理済みである。\\
+	引数\tt{override}が指定されたら、テスト制御ファイルの定義に係わりなく
+	この値をテストパラメタとして返す。\\
+	引数\tt{key}で指定されたキーがテスト制御ファイルで定義されていなければ、
+	引数\tt{default}の値をテストパラメタとして返す。
+    \end{General}
+}
+\Method{error()}{%
+    \begin{General}
+	既にエラーが登録されていたら、メッセージを返す。
+    \end{General}
+}
+\Method{info()}{%
+    \begin{General}
+	定義済みのパラメータの一覧を標準出力に出力する。
+    \end{General}
+}
+\end{Methods}
 
-    \medskip
-    引数
-    \begin{narrow}[20pt]
+\begin{Methods}{内部メソッド \rm{(抜粋)}}
+\Method{__read_control_file(fname, section)}{%
+    \begin{General}
+	\Path{core}の直下からカレントディレクトリまでの各ディレクトリまで
+	順に次の処理を実施する。
+	\begin{enumerate}
+	  \item	そのディレクトリにテスト制御ファイルがあれば、それを読む。
+		ファイルの読み込みには\tt{KvFile}クラスを使用する。
+	  \item	\tt{section}で指定されたセクション(および無名セクション)に
+		属するテスト制御パラメータを辞書\tt{self.control[key]}に
+		格納する(\tt{__set_control_values()})。
+	\end{enumerate}
+	ディレクトリを上位から下位に向かって処理をすることで、
+	継承および下位優先が自然と処理される。
+    \end{General}
+}
+\Method{__set_control_values(kvf, section)}{%
+    \begin{General}
+	\tt{kvf}のセクション\tt{section}に読み込まれているすべてのデータを、
+	辞書\tt{self.control}に登録する。
 	\vspace{5pt}
-	\def\COLWID{275pt}
-	\begin{longtable}{p{35pt}l}
-	    \tt{fname} & \begin{parcol}{\COLWID}{%
-		テスト制御ファイル名
-	    }\end{parcol}\\
-	    \tt{section} & \begin{parcol}{\COLWID}{%
-		テスト制御ファイルセクション名\\
-		Windowsの場合は``Windows''を、unixの場合は``unix''を指定する。
-	    }\end{parcol}
-	\end{longtable}
-    \end{narrow}
-\end{narrow}
-
-%\bigskip
-\noindent
-\bf{公開メソッド}
-
-\vspace{5pt}
-\def\COLWID{275pt}
-\begin{enumerate}
-  \item	\tt{get(key, override, default)}\\
-	引数
-	\begin{narrow}[20pt]
-	    \begin{longtable}{p{35pt}l}
-		\tt{key}
-		    & \begin{parcol}{\COLWID}{%
-			テスト制御パラメータのキー。
-			\TT{CFK}クラスの定数(\CONST{CFK.BUILD}, etc.)で指定する
-			(\REF{subsubsec}{ConstDefs})。
-		      }\end{parcol}\\
-		\tt{override}
-		    & \begin{parcol}{\COLWID}{%
-			上書き値
-		      }\end{parcol}\\
-		\tt{default}
-		    & \begin{parcol}{\COLWID}{%
-			デフォルト値
-		      }\end{parcol}
-	    \end{longtable}
-	\end{narrow}
-
-	\vspace{-10pt}
-	概要
-	\begin{narrow}[20pt]
-		指定されたキー(クラス\TT{ConstDefs}の定数で指定する)に対応する
-		テスト制御パラメータの値(辞書\VAR{self.control[key]}の値)を返す。
-		テスト制御ファイルの継承関係はイニシャライザから呼び出される
-		\METHOD{__read_control()}にて処理済みである。\\
-		引数\ARG{override}が指定されたら、テスト制御ファイルの定義に係わりなく
-		この値をテストパラメタとして返す。\\
-		引数\ARG{key}で指定されたキーがテスト制御ファイルで定義されていなければ、
-		引数\ARG{default}の値をテストパラメタとして返す。
-	\end{narrow}
-	\medskip
-
-  \item	\tt{error()}\\
-	概要
-	\begin{narrow}[20pt]
-		既にエラーが登録されていたら、メッセージを返す。
-	\end{narrow}
-	\medskip
-
-  \item	\tt{info()}\\
-	概要
-	\begin{narrow}[20pt]
-		定義済みのパラメータの一覧を標準出力に出力する。
-	\end{narrow}
-	\medskip
-\end{enumerate}
-
-\bigskip
-\noindent
-\bf{内部メソッド \rm{(抜粋)}}
-
-\vspace{5pt}
-\def\COLWID{280pt}
-\begin{enumerate}
-  \item	\tt{__read_control_file(fname, section)}\\
-	概要
-	\begin{narrow}[20pt]
-		\PATH{core}の直下からカレントディレクトリまでの各ディレクトリまで
-		順に次の処理を実施する。
-		\begin{enumerate}
-		  \item	そのディレクトリにテスト制御ファイルがあれば、それを読む。
-			ファイルの読み込みには\TT{KvFile}クラスを使用する。
-		  \item	\ARG{section}で指定されたセクション(および無名セクション)に
-			属するテスト制御パラメータを辞書\VAR{self.control[key]}に
-			格納する(\METHOD{__set_control_values()})。
-		\end{enumerate}
-		ディレクトリを上位から下位に向かって処理をすることで、継承および
-		下位優先が自然と処理される。
-	\end{narrow}
-	\medskip
-
-  \item	\tt{__set_control_values(kvf, section)}\\
-	概要
-	\begin{narrow}[20pt]
-		\ARG{kvf}のセクション\ARG{section}に読み込まれているすべてのデータを、
-		辞書\VAR{self.control}に登録する。
-
-		\vspace{5pt}
-		もし対応する値が\TT{"** DO NOT INHERIT **"}であったなら、
-		この値を登録する代わりに、辞書\VAR{self.control[key]}をクリアする。
-		これにより、このキーに対する値の継承を取り消すことになる。
-	\end{narrow}
-	\medskip
-
-  \item	\tt{__set_default_path(dic)}\\
-	概要
-	\begin{narrow}[20pt]
-		指定された辞書\ARG{dic}に初期値として、
-		\begin{enumerate}
-		  \item	Springheadのトップディレクトリ (\RARROW \ \TT{dic['SprTop']})
-		  \item	Springheadのテストディレクトリ (\RARROW \ \TT{dic['SprTest']})
-		\end{enumerate}
-	\end{narrow}
-\end{enumerate}
+	もし対応する値が\tt{"** DO NOT INHERIT **"}であったなら、
+	この値を登録する代わりに、辞書\tt{self.control[key]}をクリアする。
+	これにより、このキーに対する値の継承を取り消すことになる。
+    \end{General}
+}
+\Method{__set_default_path(dic)}{%
+    \begin{General}
+	指定された辞書\tt{dic}に初期値として、
+	\begin{enumerate}
+	  \item	Springheadのトップディレクトリ (\RARROW \ \tt{dic['SprTop']})
+	  \item	Springheadのテストディレクトリ (\RARROW \ \tt{dic['SprTest']})
+	\end{enumerate}
+    \end{General}
+}
+\end{Methods}
 
 % end: 5.4.10.ControlParams.tex

@@ -1,5 +1,5 @@
 % 5.4.7.ClosedSrcControl.tex
-%	Last update: 2018/06/13 F.Kanehori
+%	Last update: 2018/06/18 F.Kanehori
 %\newpage
 \subsubsection{クラス ClosedSrcControl}
 \label{subsubsec:ClosedSrcControl}
@@ -7,7 +7,7 @@
 \begin{ClassDesc}
 Springheadを非公開ソースを使用してビルドするか否かは、
 マクロ\tt{USE_CLOSED_SRC}が定義されるか否かで制御される
-(このマクロはファイル\Path{core/include/UseClosedSrcOrNot.h}に記述されている)。
+(ファイル\Path{core/include/UseClosedSrcOrNot.h}参照)。
 このクラスでは、
 上記のマクロを切り替える(\,\tt{\#define} $\Leftrightarrow$ \tt{\#undef}\,)ための
 メソッドを提供する。
@@ -16,7 +16,6 @@ Springheadを非公開ソースを使用してビルドするか否かは、
 \begin{Initializer}{%
 	obj = ClosedSrcControl(path, use_path, unuse_path,
 	dry_run=False, verbose=0)}
-	%\hspace{150pt}dry_run=False, verbose=0)}
 \begin{Params}
     \Param{path}{%
 	当該マクロを定義しているファイル名\\

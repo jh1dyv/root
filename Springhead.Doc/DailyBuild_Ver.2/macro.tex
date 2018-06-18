@@ -1,5 +1,5 @@
 % macro.tex
-%	Last update: 2018/06/17 F.Kanehori
+%	Last update: 2018/06/18 F.Kanehori
 
 \makeatletter
 
@@ -67,6 +67,9 @@
 \def\CMND#1#2#3{\vspace{#1}\relax\\
 	    \hspace{10pt}\tt{\framebox[\linewidth][l]{\hspace{5pt}#2}}
 	    \relax\vspace{#3}}
+\def\Cmnd#1#2#3{\vspace{#1}\relax\\
+	    \hspace{10pt}\tt{\framebox[\linewidth][l]{\hspace{5pt}#2}}
+	    \relax\vspace{#3}}
 
 \def\TAG#1{\tt{\orgLA#1\orgRA}}
 \def\BUILDANDTEST{ビルド\&テスト}
@@ -90,6 +93,8 @@
 \def\ENVREF#1{\tt{\%#1\%}}	% for Windows environment variable reference
 
 \def\Path#1{\DQuote{\tt{#1}}}
+\def\PathB#1{\hbox{\,\raise.4ex\hbox{{\tt "}}\tt{#1}}}
+\def\PathE#1{\hbox{\tt{#1}\raise.4ex\hbox{{\tt "}}\,}}
 
 \def\Ref#1#2{\ref{#1:#2} #2}
 \def\REF#1#2{``\ref{#1:#2} #2''参照}
@@ -130,17 +135,19 @@
 \def\Methods#1{\vspace{.35\baselineskip}%
 	\noindent\bf{#1}\begin{narrow}[5pt]\begin{enumerate}}
 \def\endMethods{\end{enumerate}\end{narrow}}
-\def\Method#1#2{\vspace{.35\baselineskip}\item\tt{#1}\\#2}
+%\def\Method#1#2{\vspace{.35\baselineskip}\item\tt{#1}\\
+\def\Method#1#2{\vspace{.35\baselineskip}\item\tt{#1}\\
+	\begin{minipage}[r]{\linewidth}#2\end{minipage}}
 
-\def\General{\bf{概要}\begin{narrow}[20pt]}
+\def\General{\noindent 概要\begin{narrow}[20pt]}
 \def\endGeneral{\end{narrow}}
 \def\LineSkip#1{\end{narrow}\vspace{#1}\begin{narrow}[20pt]}
 
-\def\Process{\bf{処理}\begin{narrow}[20pt]\relax}
+\def\Process{\noindent 処理\begin{narrow}[20pt]}
 \def\endProcess{\end{narrow}}
 
 \def\Params{\@ifnextchar[{\Params@}{\Params@[6em]}}
-\def\Params@[#1]{\noindent\bf{引数}\vspace{-1.6\baselineskip}\\
+\def\Params@[#1]{\noindent 引数\vspace{-1.6\baselineskip}\\
 	\def\Params@name@wid{#1}
 	\def\Params@desc@wid{\linewidth}
 	\addtolength{\Params@desc@wid}{-\Params@name@wid}
@@ -151,24 +158,48 @@
 	\tt{#1}&\begin{minipage}[t]{\Params@desc@wid}#2
 
 	\vspace{.2\baselineskip}\end{minipage}\\}
-\def\ParamLong#1#2{%
-	\multicolumn{2}{l}{\tt{#1}}\\
-	&\begin{minipage}[t]{\Params@desc@wid}#2
+%\def\ParamLong#1#2{%
+%	\multicolumn{2}{l}{\tt{#1}}\\
+%	&\begin{minipage}[t]{\Params@desc@wid}#2
+%
+%	\vspace{.2\baselineskip}\end{minipage}\\}
+
+\def\CmndOpts{\@ifnextchar[{\CmndOpts@}{\CmndOpts@[6em]}}
+\def\CmndOpts@[#1]{%
+	\noindent options \small{(\,\NOTE はデフォルトを示す)}\\
+	\vspace{-1.6\baselineskip}
+	\def\CmndOpts@name@wid{#1}
+	\def\CmndOpts@desc@wid{\linewidth}
+	\addtolength{\CmndOpts@desc@wid}{-\CmndOpts@name@wid}
+	\addtolength{\CmndOpts@desc@wid}{-25pt}
+	\begin{narrow}[\WID]\begin{longtable}[r]{p{\CmndOpts@name@wid}l}}
+\def\endCmndOpts{\end{longtable}\end{narrow}\vspace{-2.2\baselineskip}}
+\def\CmndOpt#1#2{%
+	\tt{#1}&\begin{minipage}[t]{\CmndOpts@desc@wid}#2
 
 	\vspace{.2\baselineskip}\end{minipage}\\}
 
-\def\ParTable{\@ifnextchar[{\ParTable@}{\ParTable@[6em]}}
-\def\ParTable@[#1]{%
-	\def\ParTable@name@wid{#1}
-	\def\ParTable@desc@wid{\linewidth}
-	\addtolength{\ParTable@desc@wid}{-\ParTable@name@wid}
-	\addtolength{\ParTable@desc@wid}{-25pt}
-	\begin{longtable}[r]{p{\ParTable@name@wid}l}}
-\def\endParTable{\end{longtable}\vspace{-.6\baselineskip}}
+\def\CmndArgs{\@ifnextchar[{\CmndArgs@}{\CmndArgs@[6em]}}
+\def\CmndArgs@[#1]{\noindent 引数\vspace{-1.6\baselineskip}\\
+	\def\CmndArgs@name@wid{#1}
+	\def\CmndArgs@desc@wid{\linewidth}
+	\addtolength{\CmndArgs@desc@wid}{-\CmndArgs@name@wid}
+	\addtolength{\CmndArgs@desc@wid}{-25pt}
+	\begin{narrow}[\WID]\begin{longtable}[r]{p{\CmndArgs@name@wid}l}}
+\def\endCmndArgs{\end{longtable}\end{narrow}\vspace{-1.7\baselineskip}}
+\def\CmndArg#1#2{%
+	\tt{#1}&\begin{minipage}[t]{\CmndArgs@desc@wid}#2
 
+	\vspace{.2\baselineskip}\end{minipage}\\}
 
-
-%\def\endparcol{\\\vspace{-.65\baselineskip}\end{minipage}}
+%\def\ParTable{\@ifnextchar[{\ParTable@}{\ParTable@[6em]}}
+%\def\ParTable@[#1]{%
+%	\def\ParTable@name@wid{#1}
+%	\def\ParTable@desc@wid{\linewidth}
+%	\addtolength{\ParTable@desc@wid}{-\ParTable@name@wid}
+%	\addtolength{\ParTable@desc@wid}{-25pt}
+%	\begin{longtable}[r]{p{\ParTable@name@wid}l}}
+%\def\endParTable{\end{longtable}\vspace{-.6\baselineskip}}
 
 %% styles for function description
 %%
@@ -249,6 +280,10 @@
 	\if#1b \def\type@face{\bf}	\else
 	       \def\type@face{\relax}	\fi\fi\fi
 	\hbox to \Table@name@wid{\hbox{\type@face{#2}\hfill}}
+	&\begin{minipage}[t]{\Table@desc@wid}#3
+
+	\vspace{.2\baselineskip}\end{minipage}\\}
+\def\ItemT#1#2#3{\tt{#1}&\tt{#2}
 	&\begin{minipage}[t]{\Table@desc@wid}#3
 
 	\vspace{.2\baselineskip}\end{minipage}\\}
