@@ -1,7 +1,264 @@
 % 6.3.2.buildmonitorGit.tex
-%	Last update: 2018/06/14 F.Kanehori
+%	Last update: 2018/06/19 F.Kanehori
 %\newpage
 \subsubsection{bulild\_monitor\_Git.bat}
 \label{subsubsec:buildmonitorGit}
 
+\medskip
+\noindent
+引数で指定した2つのレビジョンについて、
+GitHubからビルド結果と実行結果を取り出してレポートを作成する。
+
+\bigskip
+\noindent
+起動方法
+\Cmnd{4pt}{build_monitor_Git.bat [options] [xxxx:yyyy]}{-8pt}
+
+\begin{CmndOpts}[5em]
+    \CmndOpt{-k}{作業ファイルを残す}
+    \CmndOpt{-m}{メールを送信する(未実装)}
+    \CmndOpt{-s}{サイレントモード}
+    \CmndOpt{-D n}{デバッグレベル設定}
+\end{CmndOpts}
+
+\begin{CmndArgs}[4em]
+    \CmndArg{xxxx}{比較対象レビジョン(ファイル\Path{revision.old}の内容)\,\NOTE}
+    \CmndArg{yyyy}{レポート対象レビジョン(ファイル\Path{revision.new}の内容)\,\NOTE}
+\end{CmndArgs}
+
+\medskip
+\noindent
+出力ファイル
+\begin{narrow}[\WID]
+	\vspace{-.7\baselineskip}
+	\begin{longtable}{@{\hspace{20pt}}l}
+		\verb|I:\DailyBuild\Springhead\core\test\report\Test.report|\\
+		\verb|I:\DailyBuild\Springhead\core\test\report\YYYY-MMDD.stblog.diff|\\
+		\verb|I:\DailyBuild\Springhead\core\test\report\YYYY-MMDD.bldlog.diff|\\
+		\verb|I:\DailyBuild\Springhead\core\test\report\YYYY-MMDD.runlog.diff|\\
+		\verb|I:\DailyBuild\Springhead\core\test\report\YYYY-MMDD.spllog.diff|
+	\end{longtable}
+	\vspace{-1.5\baselineskip}
+\end{narrow}
+
+\medskip
+\noindent
+デフォルトレビジョン設定ファイル
+\begin{narrow}[\WID]
+	\vspace{-75\baselineskip}
+	\begin{longtable}{@{\hspace{20pt}}l}
+		\verb|I:\DailyBuild\Springhead\core\test\Monitoring\etc\revision.old|\\
+		\verb|I:\DailyBuild\Springhead\core\test\Monitoring\etc\revision.new|
+	\end{longtable}
+	\vspace{-1.5\baselineskip}
+\end{narrow}
+
+\begin{Process}
+\begin{enumerate}
+  \item	下位処理プログラムのオプションの定義\\
+        ビルド結果の差分をとるための下位プログラムへ渡す引数を設定する。
+	\begin{narrow}
+		\def\tmpRef{\ref{subsubsec:MakeReport:DirUsed}. 参照}
+		\begin{tabular}{lll}
+		    \EnvVar{MYDIFFOPT} & \tt{mydiff.pl}へ渡す引数 & (\tmpRef)\\
+		    \EnvVar{FILTEROPT} & \tt{filter.pl}へ渡す引数 & (\tmpRef)\\
+		\end{tabular}
+	\end{narrow}
+	\medskip
+	
+  \item	現在の日付と時刻
+	\begin{narrow}\begin{tabular}{l}
+		\EnvVar{DATESTR}の形式は\DQuote{\tt{YYYY-MMDD hh:mm:ss}}
+	\end{tabular}\end{narrow}
+	\medskip
+
+  \item	結果を報告するメールに関して\\
+	今のところメール機能は実装していない。
+	\small{\begin{description}
+	  \item[※]
+		メール機能はWindowsでは動かない(\tt{/usr/sbin/sendmail}を使うから)
+	\end{description}}
+	\medskip
+
+  \item	\label{subsubsec:MakeReport:DirUsed}
+	使用するディレクトリの定義(丸括弧内は設定変数名)
+	\begin{narrow}[30pt]\begin{minipage}{.8\textwidth}
+	\dirtree{%
+		.1 {\hspace{-10mm}Springhead/}.
+		.2 core/.
+		.3 test/.
+		.4 Monitoring/.
+		.5 bin/
+			\mc{\footnotesize{ \CDOTS 関連するプログラムとスクリプト
+			を配置(\EnvVar{BINDIR})}}.
+		.5 etc/
+			\mc{\footnotesize{ \CDOTS 関連するデータファイル
+			を配置(\EnvVar{ETCDIR})}}.
+		.4 report/
+			\mc{\footnotesize{ \CDOTS 作成するレポートファイル
+			を配置(\EnvVar{REPDIR})}}.
+		.3 tmp/
+			\mc{\footnotesize{ \CDOTS 作業領域(\EnvVar{TMPDIR})}}.
+	}
+	\end{minipage}\end{narrow}
+	\medskip
+
+  \item	使用するプログラムの定義(丸括弧内は設定変数名、角括弧内は使用言語)
+	\vspace{-.5\baselineskip}
+	\begin{Table}[r][6em]{ll}
+	    \Item[t]{order.pl}{%
+		Visual Studioが出力したビルドログの内容を、モジュール毎、
+		スレッド毎、出現順に並び替える。(\EnvVar{ORDER}) [perl]
+		ライブラリ\tt{base_lib.pm, dailybuild_lib.pm}を使用する。}
+	    \Item[t]{mydiff.pl}{%
+		\tt{order.pl}で並べ替えたログファイル2つについて差分をとる。
+		差分処理はモジュール単位で行なう。(\EnvVar{MYDIFF}) [perl]}
+	    \Item[t]{filter.pl}{%
+		\tt{mydiff.pl}でとった差分情報について、
+		\tt{diff -c}形式に倣った出力情報を作成する。(\EnvVar{FILTER}) [perl]}
+	    \Item[t]{nkf.exe}{漢字コードを変換する。(\EnvVar{NKF})}
+	    \Item[t]{gawk.exe}{スクリプト言語awk(\EnvVar{AWK})}
+	    \Item[t]{field.awk}{sepで行を分解し、filed番目の欄を返す。[gawk]}
+	    \Item[t]{grep.awk}{%
+		pat=revなら\DQuote{\tt{r[0-9]+}}で始まる行を、
+		pat=headなら\DQuote{\tt{HEAD}}で始まる行を返す。[gawk]}
+	    \Item[t]{line.awk}{line番目の行を返す。[gawk]}
+	    \Item[t]{exclude.awk}{レポートに不要な行を削除する。[gawk]}
+	\end{Table}
+	\vspace{-.5\baselineskip}
+	\medskip
+
+  \item	レビジョン範囲の決定
+	この時点で変数\tt{ARGC}が1ならば(それは\tt{xxxx:yyyy}のはずなので)、
+	\tt{xxxx}と\tt{yyyy}をそれぞれ\EnvVar{OLDREV}と\EnvVar{NEWREV}に取り出す。
+	\medskip
+
+  \item	使用するURL
+	(GitHubの管理下のトップディレクトリからの相対パス)\\
+	\vspace{-.8\baselineskip}
+	\begin{narrow}\begin{tabular}{ll}
+		\EnvVar{STBLOGURL} & \Path{StubBuild.log}のURL\\
+		\EnvVar{BLDLOGURL} & \Path{Build.log}のURL\\
+		\EnvVar{RUNLOGURL} & \Path{Run.log}のURL\\
+		\MC{2}{l}{\small{(以下同様)}}\\
+	\end{tabular}\end{narrow}
+	\medskip
+
+  \item	使用するファイル名(入力側)\\
+	\vspace{-.8\baselineskip}
+	\begin{narrow}\begin{tabular}{ll}
+		\EnvVar{OLDREVFILE} & 比較基準レビジョンを指定するファイル\\
+		\EnvVar{NEWREVFILE} & 最新のレビジョンを指定するファイル\\
+	\end{tabular}\end{narrow}
+	\medskip
+
+  \item	シグナルトラップの設定\\
+	未実装
+	\medskip
+
+  \item	比較の基となるレビジョン(old-revision)の決定\\
+	引数で\EnvVar{OLDREV}が指定されなかったなら\EnvVar{OLDREVFILE}から読み出す。
+	\medskip
+
+  \item	比較するレビジョン(new--revision)の決定\\
+	引数で\EnvVar{NEWREV}が指定されなかったなら\EnvVar{NEWREVFILE}から読み出す。\\
+	\vspace{.3\baselineskip}
+	\begin{minipage}[t]{\linewidth}
+	\small{\noindent ※\hspace{1em}レビジョン指定がHEADの場合は
+		GitHubから最新のレビジョンを取得する}\\
+	\small{\phantom{※}\hspace{1em}(\REF{subsubsec}{VersionInfo})。}
+	% Kludge: Which has current line width inside this environment?
+	% \linewidth has the width of outside this environment!
+	\addtolength{\linewidth}{-20pt}
+	\Cmnd{.5\baselineskip}
+	     {python ../bin/VersionControlSystem.py -G HEAD}
+	     {-.8\baselineskip}
+	\end{minipage}
+	\addtolength{\linewidth}{20pt}
+	\medskip
+
+  \item	GitHubから\EnvVar{OLDREV}の日付と時刻を取得\\
+	\EnvVar{OLDDATE}と\EnvVar{OLDTIME}に設定する。
+	\medskip
+
+  \item	GitHubから\EnvVar{NEWREV}の日付と時刻を取得\\
+	\EnvVar{NEWDATE}と\EnvVar{NEWTIME}に設定する。
+	\medskip
+
+  \item	出力するファイル名の決定(\EnvVar{NEWDATE}を用いる)\\
+	レポートファイルは\EnvVar{REPDIR}に、
+	作業ファイルは\EnvVar{TMPDIR}に作成する。\\
+	\small{ファイル名 = }\verb+{"stb|bld|run|spl}[err]log.{old|new|diff}"+
+	\vspace{-.6\baselineskip}
+	\small{\begin{longtable}[l]{@{\hspace{60pt}}ll}
+	    \tt{stb}  & ライブラのリビルド\\
+	    \tt{bld}  & \tt{src/tests}のビルド\\
+	    \tt{run}  & \tt{src/tests}の実行\\
+	    \tt{spl}  & \tt{src/Samples}のビルド\\
+	    \tt{err}  & 上記の中でのエラー情報\\
+	    \tt{old}  & \EnvVar{OLDREV}関連\\
+	    \tt{new}  & \EnvVar{NEWREV}関連\\
+	    \tt{diff} & \EnvVar{OLDREV}と\EnvVar{NEWREV}との差分関連\\
+	\end{longtable}
+	\vspace{-.9\baselineskip}
+	\begin{description}
+	  \item[※] \tt{stb,bld,run,spl}以外のテストを組み込むときは
+		    適宜名前を追加すること。
+	\end{description}}
+	\medskip
+
+  \item	\EnvVar{OLDREV}と\EnvVar{NEWREV}のログファイルの取得\\
+	GitHubからログ情報を取り出し、モジュール単位かつスレッド順に並べ替える。\\
+	\Cmnd{-.3\baselineskip}
+	     {git show \it{revision:url} | perl \EnvVar{ORDER} > \it{tmpfle}}
+	     {-.3\baselineskip}
+	\medskip
+
+  \item	\label{subsubsec:MakeReport:Diff}
+	差分の作成\\
+	\EnvVar{OLDREV}と\EnvVar{NEWREV}との差分をとる。\\
+	\Cmnd{-.3\baselineskip}
+	     {perl \EnvVar{MYDIFF} \it{tmpfile1} \it{tmpfile2}
+			| perl \EnvVar{FILTER} > \it{tmpfile3}}
+	     {-.3\baselineskip}
+	\medskip
+
+  \item	参考情報の作成(utf8)\\
+	\ref{subsubsec:MakeReport:Diff}. のうち、
+	エラー情報以外を参考情報ファイルにコピーする。
+        漢字コードをutf8に変換する。
+	\medskip
+
+  \item	レポートファイルの作成\\
+	レポートファイルには次の項目を記載する。
+	\begin{narrow}[\WID]
+		\begin{enumerate}
+		  \item	作成日付
+		  \item	新旧レビジョン番号
+		  \item	ライブラリのビルドエラーログ
+		  \item	\tt{"src/tests"}のビルドエラーログ
+		  \item	\tt{"src/tests"}の実行ログの新旧差分
+		  \item	\tt{"src/Samples"}のビルドエラーログ
+		\end{enumerate}
+	\end{narrow}
+	\medskip
+
+  \item	レポートファイルのエンコーディングをutf8に変換
+	\medskip
+
+  \item	結果をメールする(コメントアウト)
+	\begin{description}
+	  \item[※] メール機能を活かすなら、ここのコメントを外すだけでなく、
+		    \EnvVar{REPORTBYMAIL}の設定を見直すこと
+		    (現在\EnvVar{REPORTBYMAIL}は強制的に0に設定されている)。
+	\end{description}
+	\medskip
+
+  \item	後始末をして終了\\
+	作業ファイルを削除して終了する。
+	ただし\tt{-k}オプションが指定されていたら、作業ファイルはそのまま残す。
+	\medskip
+
+\end{enumerate}
+\end{Process}
 % end: 6.3.2.buildmonitorGit.tex

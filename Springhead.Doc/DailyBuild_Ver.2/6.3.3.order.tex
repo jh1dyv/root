@@ -1,0 +1,39 @@
+% 6.3.3.order.tex
+%	Last update: 2018/06/19 F.Kanehori
+%\newpage
+\subsubsection{order.pl}
+\label{subsubsec:order}
+
+\medskip
+\noindent
+Visual Studio (devenv) が出力したログを, モジュール単位かつスレッド順に並べ替える。
+実際の処理はライブラリ(\tt{dailybuild\_lib.pm})にある
+\tt{read_log()}が行なう(\REF{subsubsec}{dailybuildlib})。
+
+\bigskip
+\noindent
+起動方法
+\Cmnd{4pt}{perl order.pl [options] [infile]}{-8pt}
+
+\begin{CmndOpts}[6em]
+    \CmndOpt{-o outfile}{出力ファイル名 (stdout\NOTE)}
+    \CmndOpt{-p patt_id}{モジュール識別パターン番号}
+    \CmndOpt{-D n}{デバッグレベル設定}
+\end{CmndOpts}
+
+\begin{CmndArgs}[6em]
+    \CmndArg{infile}{入力ファイル名 (stdin\NOTE)}
+\end{CmndArgs}
+
+\begin{Process}
+\begin{enumerate}
+  \item	\tt{dailybuild\_lib.pm}のライブラリ関数\tt{read\_log()}を用いて
+	入力ファイルの読み込み処理を行なう。
+	返されるのは(\tt{\%modules, @modules, @lines})の3つ組である。
+
+
+
+\end{enumerate}
+\end{Process}
+
+% end: 6.3.3.order.tex
