@@ -1,37 +1,48 @@
 % 6.3.3.order.tex
-%	Last update: 2018/06/19 F.Kanehori
+%	Last update: 2018/06/21 F.Kanehori
 %\newpage
 \subsubsection{order.pl}
 \label{subsubsec:order}
 
 \medskip
 \noindent
-Visual Studio (devenv) ‚ªo—Í‚µ‚½ƒƒO‚ğ, ƒ‚ƒWƒ…[ƒ‹’PˆÊ‚©‚ÂƒXƒŒƒbƒh‡‚É•À‚×‘Ö‚¦‚éB
-ÀÛ‚Ìˆ—‚Íƒ‰ƒCƒuƒ‰ƒŠ(\tt{dailybuild\_lib.pm})‚É‚ ‚é
-\tt{read_log()}‚ªs‚È‚¤(\REF{subsubsec}{dailybuildlib})B
+Visual Studio (devenv) ãŒå‡ºåŠ›ã—ãŸãƒ­ã‚°ã‚’ã€ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«å˜ä½ã‹ã¤ã‚¹ãƒ¬ãƒƒãƒ‰é †ã«ä¸¦ã¹æ›¿ãˆã‚‹ã€‚
+å®Ÿéš›ã®å‡¦ç†ã¯ãƒ©ã‚¤ãƒ–ãƒ©ãƒª(\tt{dailybuild\_lib.pm})ã«ã‚ã‚‹
+\tt{read_log()}ãŒè¡Œãªã†(\REF{subsubsec}{dailybuildlib})ã€‚
 
 \bigskip
 \noindent
-‹N“®•û–@
+èµ·å‹•æ–¹æ³•
 \Cmnd{4pt}{perl order.pl [options] [infile]}{-8pt}
 
 \begin{CmndOpts}[6em]
-    \CmndOpt{-o outfile}{o—Íƒtƒ@ƒCƒ‹–¼ (stdout\NOTE)}
-    \CmndOpt{-p patt_id}{ƒ‚ƒWƒ…[ƒ‹¯•Êƒpƒ^[ƒ“”Ô†}
-    \CmndOpt{-D n}{ƒfƒoƒbƒOƒŒƒxƒ‹İ’è}
+    \CmndOpt{-o outfile}{å‡ºåŠ›ãƒ•ã‚¡ã‚¤ãƒ«å (stdout\NOTE)}
+    \CmndOpt{-p patt_id}{ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«è­˜åˆ¥ãƒ‘ã‚¿ãƒ¼ãƒ³ç•ªå·}
+    \CmndOpt{-D n}{ãƒ‡ãƒãƒƒã‚°ãƒ¬ãƒ™ãƒ«è¨­å®š}
 \end{CmndOpts}
 
 \begin{CmndArgs}[6em]
-    \CmndArg{infile}{“ü—Íƒtƒ@ƒCƒ‹–¼ (stdin\NOTE)}
+    \CmndArg{infile}{å…¥åŠ›ãƒ•ã‚¡ã‚¤ãƒ«å (stdin\NOTE)}
 \end{CmndArgs}
 
 \begin{Process}
 \begin{enumerate}
-  \item	\tt{dailybuild\_lib.pm}‚Ìƒ‰ƒCƒuƒ‰ƒŠŠÖ”\tt{read\_log()}‚ğ—p‚¢‚Ä
-	“ü—Íƒtƒ@ƒCƒ‹‚Ì“Ç‚İ‚İˆ—‚ğs‚È‚¤B
-	•Ô‚³‚ê‚é‚Ì‚Í(\tt{\%modules, @modules, @lines})‚Ì3‚Â‘g‚Å‚ ‚éB
+  \item	\tt{dailybuild\_lib.pm}ã®ãƒ©ã‚¤ãƒ–ãƒ©ãƒªé–¢æ•°\tt{read\_log()}ã‚’ç”¨ã„ã¦
+	å…¥åŠ›ãƒ•ã‚¡ã‚¤ãƒ«ã®èª­ã¿è¾¼ã¿å‡¦ç†ã‚’è¡Œãªã†ã€‚
+	è¿”ã•ã‚Œã‚‹ã®ã¯(\tt{\%modules, @modules, @lines})ã®3ã¤çµ„ã§ã‚ã‚‹ã€‚\\
+	\vspace{-.7\baselineskip}
+	\begin{narrow}[10pt]\small{\begin{tabular}{ll}
+	    \tt{\%modules}
+		& ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«åã‚’ã‚­ãƒ¼ã¨ã—ãŸé€£æƒ³é…åˆ—(è¦ç´ ã¯\tt{\%threads})\\
+	    \tt{\%threads}
+		& ã‚¹ãƒ¬ãƒƒãƒ‰ç•ªå·ã‚’ã‚­ãƒ¼ã¨ã—ãŸé€£æƒ³é…åˆ—(è¦ç´ ã¯å…¥åŠ›ãƒ‡ãƒ¼ã‚¿è¡Œã®é…åˆ—)\\
+	    \tt{@modules}
+		& ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«åã®é…åˆ—(å‡ºç¾é †)
+	\end{tabular}}\end{narrow}
+	\medskip
 
-
+  \item	å…¥åŠ›ãƒ‡ãƒ¼ã‚¿è¡Œã‚’\tt{\%threads}ã‹ã‚‰ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«é †ã€ã‚¹ãƒ¬ãƒƒãƒ‰é †ã«å–ã‚Šå‡ºã—ã¦ã€
+	\tt{outfile}(æŒ‡å®šãŒãªã‘ã‚Œã°æ¨™æº–å‡ºåŠ›)ã«æ›¸ãå‡ºã™ã€‚
 
 \end{enumerate}
 \end{Process}
