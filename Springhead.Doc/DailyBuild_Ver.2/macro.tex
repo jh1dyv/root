@@ -1,5 +1,5 @@
 % macro.tex
-%	Last update: 2018/06/18 F.Kanehori
+%	Last update: 2018/06/25 F.Kanehori
 
 \makeatletter
 
@@ -193,14 +193,40 @@
 
 	\vspace{.2\baselineskip}\end{minipage}\\}
 
-%\def\ParTable{\@ifnextchar[{\ParTable@}{\ParTable@[6em]}}
-%\def\ParTable@[#1]{%
-%	\def\ParTable@name@wid{#1}
-%	\def\ParTable@desc@wid{\linewidth}
-%	\addtolength{\ParTable@desc@wid}{-\ParTable@name@wid}
-%	\addtolength{\ParTable@desc@wid}{-25pt}
-%	\begin{longtable}[r]{p{\ParTable@name@wid}l}}
-%\def\endParTable{\end{longtable}\vspace{-.6\baselineskip}}
+%% \begin{GeneralBox}[typeface][indent]{title}
+%	typeface	t(t), i(t), b(f), r(m), g(t), m(c)
+%	indent		indent width (default: \WID)
+%  \end{GeneralBox}
+%
+\def\GeneralBox{\@ifnextchar[{\GeneralBox@check}{\GeneralBox@@[b][\WID]}}
+\def\GeneralBox@check[#1]%
+	{\@ifnextchar[{\GeneralBox@@[#1]}{\GeneralBox@@[#1][\WID]}}
+\def\GeneralBox@@[#1][#2]#3{%
+	\if#1t \let\GeneralBox@typeface\tt \else
+	\if#1i \let\GeneralBox@typeface\it \else
+	\if#1b \let\GeneralBox@typeface\bf \else
+	\if#1r \let\GeneralBox@typeface\rm \else
+	\if#1g \let\GeneralBox@typeface\gt \else
+	\if#1m \let\GeneralBox@typeface\mc \else
+	       \let\GeneralBox@typeface\relax \fi\fi\fi\fi\fi\fi
+	\noindent\GeneralBox@typeface{#3}\begin{narrow}[#2]}
+\def\endGeneralBox{\end{narrow}}
+%
+%% aliases for program/class
+\def\Args{\GeneralBox[b]{à¯êî}}
+\let\endArgs\endGeneralBox
+\def\Desc{\GeneralBox[b]{äTóv}}
+\let\endDesc\endGeneralBox
+\def\Proc{\GeneralBox[b]{èàóù}}
+\let\endProc\endGeneralBox
+% aliases for method/function
+\def\MArgs{\GeneralBox[m]{à¯êî}}
+\let\endMArgs\endGeneralBox
+\def\MDesc{\GeneralBox[m]{äTóv}}
+\let\endMDesc\endGeneralBox
+\def\MProc{\GeneralBox[m]{èàóù}}
+\let\endMProc\endGeneralBox
+
 
 %% styles for function description
 %%

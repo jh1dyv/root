@@ -1,5 +1,5 @@
 % 6.3.4.mydiff.tex
-%	Last update: 2018/06/21 F.Kanehori
+%	Last update: 2018/06/25 F.Kanehori
 %\newpage
 \subsubsection{mydiff.pl}
 \label{subsubsec:mydiff}
@@ -73,46 +73,43 @@ Visual Studio (devenv) が出力したログを比較して、共通する行を取り除く。
 \Method{diff(\$fh, \%modules1, \$module1, \$base1,
 		   \%modules2, \$module2, \$base2)}{%
     \label{mydiff:diff}
+    \vspace{.5\baselineskip}
     \begin{General}
 	モジュール1とモジュール2とを比較して差分情報を作成する。
 	比較の対象となるデータ行は、
-	\tt{gather\_lines}を用いて\Buff1 と\Buff2 に取り出す
-	(\tt{\%modules\it{N}\$module\it{N}]の全体をスレッド順にソートしたもの)。
-	\Buff1 と\Buff2 の各行を先頭から順に比較していく。
-	\tt{\$count\it{N}}は\tt{buff\it{N}}内で処理が済んだ行数をカウントするのに
-	用いる変数である。
+	\tt{gather_lines()}を用いて\BuffA と\BuffB に取り出す
+	(\tt{\%modules\it{N}[\$module\it{N}]}の全体をスレッド順にソートしたもの)。\\
+	\BuffA と\BuffB の各行を先頭から順に比較していって次の処理を行なう
+	(\tt{\$count\it{N}}は\tt{@buff\it{N}}内で処理が済んだ行数をカウントするのに
+	用いる変数である)。
 	\begin{itemize}
 	  \item	\BuffB だけに行が残っているならば、それらは末尾に挿入された行である。
 		\BuffB に残った行を出力する(\ref{mydiff:eatup} eat_up参照)。
-
 	  \item	\BuffA だけに行が残っているならば、それらは末尾から削除された行である。
 		\BuffA に残った行を破棄する(\ref{mydiff:eatup} eat_up参照)。
-
-	  \item	\BuffA の先頭行を\Line1 、\BuffB の先頭行を\LineB とする。
+	  \item	\BuffA の先頭行を\LineA 、\BuffB の先頭行を\LineB とする。
 	  	\LineA と\LineB とが同じならば、
 		未出力行をフラッシュする(\Ref{mydiff:flush}{flush})。
 		なければカウントを進めるだけ。
-
 	  \item	\LineA と\LineB とが異なっている場合で、
 	  	\LineA が\BuffB になく、かつ\LineB が\BuffA にあるならば、
 		それは削除された行である。
 	  	\BuffA のうち\LineB の前までの部分を削除バッファ(\tt{@del_buff})に
 		追加する。
-
 	  \item	同じく\LineA と\LineB とが異なっている場合で、
 	  	逆に\LineA が\BuffB にあり。かつ\LineB が\BuffA にないならば、
 		それは挿入された行である。
 	  	\BuffB のうち\LineA の前までの部分を挿入バッファ(\tt{@ins_buff})に
 		追加する。
-
 	  \item	それ以外で\LineA と\LineB とが異なっている場合は、
-		\LineA を削除バッファ(\tt{del_buff})に、
-		\LineB を挿入バッファ(\tt{ins_buff})に追加する。
+		\LineA を削除バッファ(\tt{@del_buff})に、
+		\LineB を挿入バッファ(\tt{@ins_buff})に追加する。
 	\end{itemize}
 	最後に未出力行をフラッシュする。
-
-
     \end{General}
+}
+\Method{xxx}{%
+	yyy
 }
 \end{Methods}
 
