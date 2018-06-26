@@ -69,11 +69,27 @@ Visual Studio (devenv) が出力したログを比較して、共通する行を取り除く。
 \def\BuffB{\tt{@buff2}}
 \def\LineA{\tt{line1}}
 \def\LineB{\tt{line2}}
+\def\ABRA#1{{\footnotesize <\rm{#1}>}}
 
-\Method{diff(\$fh, \%modules1, \$module1, \$base1,
-		   \%modules2, \$module2, \$base2)}{%
+\Method{\ABRA{戻り値} = diff(\$fh, \ABRA{基準データ1}, \ABRA{比較データ2})}{%
     \label{mydiff:diff}
-    \vspace{.5\baselineskip}
+    %\vspace{.5\baselineskip}
+    \begin{Params}
+	\Param{\$fh}{出力ファイル}
+	\Param{\ABRA{比較データ1}}{比較の基準となるデータ。次の三つ組。
+		\begin{narrow}[20pt]\begin{tabular}{ll}
+		    \tt{\BS\%modules} & モジュール名と入力行を対応付けた連想配列\\
+		    \tt{\$module}     & 処理対象モジュール名\\
+		    \tt{\$base}       & 当該モジュール先頭行の行番号
+		\end{tabular}\end{narrow}
+	}
+	\Param{\ABRA{比較データ2}}{比較するデータ。上と同じ三つ組。}
+    \end{Params}
+    \noindent 戻り値
+    \begin{narrow}[\WID]
+	\tt{\%module1}と\tt{\%module2}について
+	処理が済んだ行数のペア
+    \end{narrow}
     \begin{General}
 	モジュール1とモジュール2とを比較して差分情報を作成する。
 	比較の対象となるデータ行は、
@@ -108,7 +124,7 @@ Visual Studio (devenv) が出力したログを比較して、共通する行を取り除く。
 	最後に未出力行をフラッシュする。
     \end{General}
 }
-\Method{xxx}{%
+\Method{eat_up}{%
 	yyy
 }
 \end{Methods}
