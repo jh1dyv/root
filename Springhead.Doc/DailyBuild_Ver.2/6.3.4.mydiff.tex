@@ -1,5 +1,5 @@
 % 6.3.4.mydiff.tex
-%	Last update: 2018/06/25 F.Kanehori
+%	Last update: 2018/06/29 F.Kanehori
 %\newpage
 \subsubsection{mydiff.pl}
 \label{subsubsec:mydiff}
@@ -56,34 +56,31 @@ Visual Studio (devenv) が出力したログを比較して、共通する行を取り除く。
 	\begin{enumerate}
 	  \item	どちらか一方のファイルにしかないモジュールの場合は、
 		行頭に``\textless''か``\textgreater''を付けて出力ファイルに書き出す
-		(\Ref{mydiff:gatherlines})。
+		(\Ref{dailybuildlib:gatherlines})。
 	  \item	両方にファイルにあるモジュールの場合は、
-		差分情報を出力ファイルに書き出す(\Ref{mydiff:diff})
+		差分情報を出力ファイルに書き出す(\REF{mydiff}{diff})
 	\end{enumerate}
 \end{enumerate}
 \end{Process}
 
-\begin{Methods}{サブルーチン}
 \def\BS{\textbackslash}
 \def\BuffA{\tt{@buff1}}
 \def\BuffB{\tt{@buff2}}
 \def\LineA{\tt{line1}}
 \def\LineB{\tt{line2}}
-\def\ABRA#1{{\footnotesize <\rm{#1}>}}
 
-\Method{\ABRA{戻り値} = diff(\$fh, \ABRA{基準データ1}, \ABRA{比較データ2})}{%
+\begin{Methods}{サブルーチン}
+\Method{\begin{tabular}[t]{l}
+	(\$count1, \$count2) = diff(\$fh, \BS\%modules1, \$module1, \$base1,\\
+ 	\hspace{140pt}\BS\%modules2, \$module2, \$base2)
+    \end{tabular}}{%
     \label{mydiff:diff}
-    %\vspace{.5\baselineskip}
     \begin{Params}
 	\Param{\$fh}{出力ファイル}
-	\Param{\ABRA{比較データ1}}{比較の基準となるデータ。次の三つ組。
-		\begin{narrow}[20pt]\begin{tabular}{ll}
-		    \tt{\BS\%modules} & モジュール名と入力行を対応付けた連想配列\\
-		    \tt{\$module}     & 処理対象モジュール名\\
-		    \tt{\$base}       & 当該モジュール先頭行の行番号
-		\end{tabular}\end{narrow}
-	}
-	\Param{\ABRA{比較データ2}}{比較するデータ。上と同じ三つ組。}
+	\Param{\%modules \NOTE}{モジュール名と入力行を対応付けた連想配列}
+	\Param{\$module \NOTE}{処理対象モジュール名}
+	\Param{\$base \NOTE}{当該モジュール先頭行の行番号}
+	\MC{2}{l}{\hspace{20pt}\NOTE\small{添字1は比較元を、添字2は比較側を示す。}}
     \end{Params}
     \noindent 戻り値
     \begin{narrow}[\WID]
@@ -92,12 +89,13 @@ Visual Studio (devenv) が出力したログを比較して、共通する行を取り除く。
     \end{narrow}
     \begin{General}
 	モジュール1とモジュール2とを比較して差分情報を作成する。
+	比較元がモジュール1、比較する側がモジュール2である。\\
 	比較の対象となるデータ行は、
 	\tt{gather_lines()}を用いて\BuffA と\BuffB に取り出す
 	(\tt{\%modules\it{N}[\$module\it{N}]}の全体をスレッド順にソートしたもの)。\\
 	\BuffA と\BuffB の各行を先頭から順に比較していって次の処理を行なう
-	(\tt{\$count\it{N}}は\tt{@buff\it{N}}内で処理が済んだ行数をカウントするのに
-	用いる変数である)。
+	(処理の済んだ行数をカウントするのに
+	\tt{\$count\it{N}}と\tt{@buff\it{N}}を使用する。)
 	\begin{itemize}
 	  \item	\BuffB だけに行が残っているならば、それらは末尾に挿入された行である。
 		\BuffB に残った行を出力する(\ref{mydiff:eatup} eat_up参照)。
@@ -105,7 +103,7 @@ Visual Studio (devenv) が出力したログを比較して、共通する行を取り除く。
 		\BuffA に残った行を破棄する(\ref{mydiff:eatup} eat_up参照)。
 	  \item	\BuffA の先頭行を\LineA 、\BuffB の先頭行を\LineB とする。
 	  	\LineA と\LineB とが同じならば、
-		未出力行をフラッシュする(\Ref{mydiff:flush}{flush})。
+		未出力行をフラッシュする(\REF{mydiff}{flush})。
 		なければカウントを進めるだけ。
 	  \item	\LineA と\LineB とが異なっている場合で、
 	  	\LineA が\BuffB になく、かつ\LineB が\BuffA にあるならば、
@@ -124,8 +122,93 @@ Visual Studio (devenv) が出力したログを比較して、共通する行を取り除く。
 	最後に未出力行をフラッシュする。
     \end{General}
 }
-\Method{eat_up}{%
-	yyy
+\Method{\BS @outbuff = eat_up(\BS@inbuff, \$mark, \$base1, \$base2)}{%
+    \label{mydiff:eatup}
+    \begin{Params}
+	\Param{@inbuff}{入力データの配列}
+	\Param{\$mark}{削除マーク(\$mark_del)か挿入マーク(\$mark_ins)のいずれか}
+	\Param{\$base1}{ファイル1側の先頭行番号}
+	\Param{\$base2}{ファイル2側の先頭行番号}
+    \end{Params}
+    \noindent 戻り値
+    \begin{narrow}[\WID]
+	(ファイル1側行番号, ファイル2側行番号, 行データ)の配列。
+    \end{narrow}
+    \begin{General}
+	\tt{\$mark}が削除マーク\tt{(\$mark_del})ならばファイル1側の行番号を進めながら、
+	\tt{\$mark}が挿入マーク(\tt{\$mark_ins})ならばファイル2側の行番号を進めながら、
+	入力データがなくなるまで
+	(ファイル1側行番号, ファイル2側行番号, 行データ)の三組を
+	配列に格納して返す(\REF{mydiff}{triplet})。
+    \end{General}
+}
+\Method{\BS @array3 = triplet(\$lineno1, \$lineno2, \$line)}{%
+    \label{mydiff:triplet}
+    \begin{General}
+	与えられた3つの引数を1つの配列にまとめて返す。
+    \end{General}
+}
+\Method{flush(\$fh, \$mark, \$size1, \$size2, \BS @buff1, \BS @buff2)}{%
+    \label{mydiff:flush}
+    \begin{Params}
+	\Param{\$fh}{出力ファイルハンドル}
+	\Param{\$mark}{\$mark_ins, \$mark_del, \$mark_chg のいずれか。
+		行編集コマンド連想配列\tt{\%cmnd_tab}のキーに使用}
+	\Param{\$size\it{N}}{\tt{@line\it{N}}の要素数}
+	\Param{@buff\it{N}}{出力行データ3つ組の配列}
+    \end{Params}
+    \begin{General}
+	\$size1と\$size2が共に0ならば、何もしない。\\
+	\$size1が0でなければ、削除マークを指定して\$buff1の内容を出力する。\\
+	\$size2が0でなければ、挿入マークを指定して\$buff2の内容を出力する。\\
+	さもなければ、
+	\begin{enumerate}
+	  \item	\tt{@buff1}から行番号の最小値、最大値を求める(\tt{min_max()})。
+	  \item	\tt{@buff2}から行番号の最小値、最大値を求める(\tt{min_max()})。
+	  \item	これらを基に編集コマンドを出力する。
+	  \item	\tt{@buff1}の内容を行データを削除マーク付きで出力する。
+	  \item	セパレータ(\tt{--})を出力する。
+	  \item	\tt{@buff2}の内容を行データを挿入マーク付きで出力する。
+	\end{enumerate}
+    \end{General}
+}
+\Method{flush1(\$fh, \$mark, \BS @buff)}{%
+    \label{mydiff:flush1}
+    \begin{General}
+	\begin{enumerate}
+	  \item	\tt{\$buff}から、最大行番号、最小行番号、行データを
+	  	取得する(\ref{mydiff:minmax}\tt{min_max()}参照)。
+	  \item	これらを元に編集コマンドを編集して
+	  	(\ref{mydiff:editcommand}\tt{edit_command()}参照)出力する。
+	  \item	\tt{@buff}の内容を出力する(\REF{mydiff}{output})。
+	\end{enumerate}
+    \end{General}
+}
+\Method{(\$min1, \$max1, \$min2, \$max2, \BS @lines) = minx_max(\BS @buff)}{%
+    \label{mydiff:minmax}
+    \begin{General}
+	引数であら得られるのは、(行番号1, 行番号2, 行データ)の3つ組の配列である。
+	これから、行番号1の最大値・最小値、行番号2の最大値・最小値、
+	行データの配列を取り出して返す。
+    \end{General}
+}
+\Method{\$str = edit_command(\$min1, \$max1, \$min2, \$max2, \$cmnd)}{%
+    \label{mydiff:editcommand}
+    \begin{General}
+	与えられた情報から、\tt{ed}ライクな編集コマンドを作成して返す。
+    \end{General}
+}
+\Method{output_module_name(\$fh, \$module)}{%
+    \label{mydiff:outputmodulename}
+    \begin{General}
+	モジュール名が\tt{_top_level_}でなければそれをファイルに出力する。
+    \end{General}
+}
+\Method{output(\$fh, @buff, \$mark)}{%
+    \label{mydiff:output}
+    \begin{General}
+	\tt{@buff}の内容を、挿入・削除・置換表示文字とともにファイルに出力する。
+    \end{General}
 }
 \end{Methods}
 
