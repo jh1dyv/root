@@ -198,19 +198,20 @@
 %	indent		indent width (default: \WID)
 %  \end{GeneralBox}
 %
-\def\GeneralBox{\@ifnextchar[{\GeneralBox@check}{\GeneralBox@@[b][\WID]}}
-\def\GeneralBox@check[#1]%
-	{\@ifnextchar[{\GeneralBox@@[#1]}{\GeneralBox@@[#1][\WID]}}
-\def\GeneralBox@@[#1][#2]#3{%
-	\if#1t \let\GeneralBox@typeface\tt \else
-	\if#1i \let\GeneralBox@typeface\it \else
-	\if#1b \let\GeneralBox@typeface\bf \else
-	\if#1r \let\GeneralBox@typeface\rm \else
-	\if#1g \let\GeneralBox@typeface\gt \else
-	\if#1m \let\GeneralBox@typeface\mc \else
-	       \let\GeneralBox@typeface\relax \fi\fi\fi\fi\fi\fi
-	\noindent\GeneralBox@typeface{#3}\begin{narrow}[#2]}
-\def\endGeneralBox{\end{narrow}}
+%\def\GeneralBox{\@ifnextchar[{\GeneralBox@check}{\GeneralBox@@[b][\WID]}}
+%\def\GeneralBox@check[#1]%
+%	{\@ifnextchar[{\GeneralBox@@[#1]}{\GeneralBox@@[#1][\WID]}}
+%\def\GeneralBox@@[#1][#2]#3{%
+%	\if#1t \let\GeneralBox@typeface\tt \else
+%	\if#1i \let\GeneralBox@typeface\it \else
+%	\if#1b \let\GeneralBox@typeface\bf \else
+%	\if#1r \let\GeneralBox@typeface\rm \else
+%	\if#1g \let\GeneralBox@typeface\gt \else
+%	\if#1m \let\GeneralBox@typeface\mc \else
+%	       \let\GeneralBox@typeface\relax \fi\fi\fi\fi\fi\fi
+%	\noindent\GeneralBox@typeface{#3}\begin{narrow}[#2]}
+%\def\endGeneralBox{\end{narrow}}
+
 %
 %% aliases for program/class
 \def\Args{\GeneralBox[b]{à¯êî}}
