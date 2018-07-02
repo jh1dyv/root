@@ -43,9 +43,9 @@
 \def\Cmnd{\begin{GeneralBase}{起動方法}}
 \def\endCmnd{\end{GeneralBase}}
 \def\Opts{\begin{GeneralBase}{オプション \isDefault}}
-\def\endOpts{\end{GeneralBase}}
+\def\endOpts{\end{GeneralBase}\Vskip{-.7\baselineskip}}
 \def\Args{\begin{GeneralBase}{引数 \isDefault}}
-\def\endArgs{\end{GeneralBase}}
+\def\endArgs{\end{GeneralBase}\Vskip{-.7\baselineskip}}
 \def\Brief{\begin{GeneralBase}{概要}}
 \def\endBrief{\end{GeneralBase}}
 \def\Proc{\begin{GeneralBase}{処理の説明}}
@@ -53,9 +53,8 @@
 
 %% table with rightmost foldable column
 % \begin{Table}[pos][fix part width]{table spec}
-%   \Item[typeface]{width}{lastcolumn}	(*) t(\tt), i(\it), r(\rm)
-%	typeface	
-%						(**) without last column
+%   \Item[typeface]{colmns-but-last-one}{lastcolumn}
+%	typeface	t(t), i(t), r(m)
 %   \MC is alias to \multicolumn
 % \end{Table}
 \def\TableX{\@ifnextchar[{\TableX@pos}{\TableX@@[r][6em]}}
@@ -68,7 +67,7 @@
 	\addtolength{\Table@desc@wid}{-25pt}
 	\Vskip{-.7\baselineskip}
 	\begin{longtable}[#1]{#3}}
-\def\endTableX{\end{longtable}\Vskip{-1.5\baselineskip}\relax}
+\def\endTableX{\end{longtable}\Vskip{-1.0\baselineskip}\relax}
 
 \def\Item{\@ifnextchar[{\Item@}{\Item@[n]}}
 \def\Item@[#1]#2#3{%
@@ -82,21 +81,72 @@
 	\hbox to \Table@name@wid{\hbox{\Item@type@face{#2}\hfill}}
 	&\begin{minipage}[t]{\Table@desc@wid}#3
 
-	\vspace{.2\baselineskip}\end{minipage}\\}
+	\Vskip{.2\baselineskip}\end{minipage}\\}
+	%\vspace{.2\baselineskip}\end{minipage}\\}
 \def\ItemT#1#2#3{\tt{#1}&\tt{#2}
 	&\begin{minipage}[t]{\Table@desc@wid}#3
 
-	\vspace{.2\baselineskip}\end{minipage}\\}
+	\Vskip{.2\baselineskip}\end{minipage}\\}
+	%\vspace{.2\baselineskip}\end{minipage}\\}
 \let\MC\multicolumn
 
 %% \Vskip{amount}
 %
-\def\Vskip#1{\ifvmode\vspace{#1}\else\leavehmode\vspace{#1}\vbox{}\fi}
+%\def\Vskip#1{\ifvmode\vspace{#1}\else\leavehmode\vbox{\vspace{#1}}\fi}
+\def\Vskip#1{\relax\ifvmode\vspace{#1}\else\relax\vspace{#1}\fi}
+
+%% \begin{FrameBoxBase}{topmargin}{botmargin}{leftmargin}{rightmargin}{fontsize}
+%  \end{FrameBoxBase}
+%
+\if0
+\def\FrameBoxBase#1#2#3#4#5{%
+	\if#5t \let\FBB@font@size\tiny		\else
+	\if#5f \let\FBB@font@size\footnotesize	\else
+	\if#5s \let\FBB@font@size\small		\else
+	\if#5n \let\FBB@font@size\normalsize	\else
+	\if#5l \let\FBB@font@size\large		\else
+	\if#5Z \let\FBB@font@size\relax		\else
+	       \let\FBB@font@size\relax		\fi\fi\fi\fi\fi\fi
+	\def\FBB@wid{\linewidth}
+	\def\FBB@off{#3}
+	\addtolength{\FBB@wid}{\FBB@off}
+	\def\FBB@bot@margin{#2}
+	\fbox\begingroup
+	\begin{narrow}[#3]
+		\vspace{#1}}
+
+\def\endFrameBoxBase{%
+		\vspace{\FBB@bot@margin}
+		\end{narrow}
+	\end{narrow}
+	\endgroup}
+	
+\fi
+
+
+
 
 \makeatother
 
 %% test code
 
+\newpage
+%\fbox{\begin{Table}[t][2pt]{ll}
+%	\Item {}{narrow narrow}
+%\end{Table}}
+
+\if0
+\begin{FrameBoxBase}{0pt}{0pt}{0pt}{0pt}{n}
+	\item FrmeBoxBaseの中身
+\end{FrameBoxBase}
+\begin{narrow}[\WID]
+\begin{FrameBoxBase}{0pt}{0pt}{0pt}{0pt}{n}
+	\item FrmeBoxBaseの中身
+\end{FrameBoxBase}
+\end{narrow}
+\fi
+
+\if0
 \newpage
 \noindent 最初の行
 \begin{Cmnd}[b]
@@ -119,10 +169,11 @@
 \end{Brief}
 最後の行
 
-%\noindent テーブルのテスト
-%\begin{TableX}[r][\WID]{ll}
-%	\Item{123}{abc}
-%	\Item{456}{xyz}
-%\end{TableX}
-%\noindent テーブルのテスト
+\noindent テーブルのテスト
+\begin{TableX}[r][\WID]{ll}
+	\Item{123}{abc}
+	\Item{456}{xyz}
+\end{TableX}
+\noindent テーブルのテスト
+\fi
 
