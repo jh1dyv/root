@@ -1,25 +1,93 @@
 % 6.3.5.filter.tex
-%	Last update: 2018/06/19 F.Kanehori
+%	Last update: 2018/07/03 F.Kanehori
 %\newpage
 \subsubsection{filter.pl}
 \label{subsubsec:filter}
 
 \medskip
 \noindent
-\tt{mydiff.pl} \REF{subsubsec}{mydiff} で並べ替えた2つのログファイルについて、
+\tt{mydiff.pl} \Ref{subsubsec}{mydiff} で並べ替えた2つのログファイルについて、
 diff -c 形式に倣った出力情報を作成する。
 
+\bigskip
+\noindent
+起動方法
+\Cmnd{4pt}{perl filter.pl [options] file}{-8pt}
 
+\begin{CmndOpts}[6em]
+    \CmndOpt{-o outfile}{出力ファイル名 (stdout\NOTE)}
+    \CmndOpt{-D n}{デバッグレベル設定}
+\end{CmndOpts}
 
+\begin{CmndArgs}[6em]
+    \CmndArg{file}{入力ファイル名}
+\end{CmndArgs}
 
+\begin{Process}
+\begin{enumerate}
+  \item	指定されたファイルを読み込む(\tt{read_log()}, \REF{subsubsec}{baselib})。
+	戻り値は(\tt{\%modules, @modules, @lines})の三つ組である。
+	ここで、\tt{\%modules}はモジュール名をキーとしたスレッド情報
+	(スレッド番号をキーとした入力データ行の連想配列）、
+	\tt{@modules}はモジュール名の配列(出現順)、
+	\tt{@lines}は入力データ行の配列である。
 
+  \item	以下、モジュール単位で処理する。
+	\begin{enumerate}
+	  \item	\tt{\%modules}から当該モジュールに含まれるデータ行を抜き出す
+		(\tt{gather_lins()}, \REF{subsubsec}{baselib})。
 
+	  \item	抜き出したデータ行からdiffマークとスレッド番号を取り除いた
+		ものを作る(\tt{drop_thread_number()})。
+		返されるのは、
+		\begin{itemize}
+		  \item	差分情報(``挿入''か``削除''か``変更''か``それ以外''か)、
+			配列要素番号、diffマーク以降の文字列、の三つ組の配列
+		  \item	差分情報(``挿入''か``削除''か``変更''か``それ以外''か)、
+			配列要素番号、スレッド番号以降の文字列、の三つ組の配列
+		\end{itemize}
+		の2つである。
 
+	  \item	行の出力フラグを初期化する。
 
+	  \item	行の出現順序だけが異なるものを削除する。
+		\begin{itemize}
+		  \item	既に出力フラグが下りている行はスキップする。
+		  \item	差分情報が``それ以外''の行は出力フラグを下ろす。
+		  \item	さもなければ\tt{find()}で同じ内容の行を探す。
+			見つかったら、その行及びこの行の出力フラグを下ろす。
+		\end{itemize}
 
+	  \item	スレッド番号を無視したときに、行の出力順序だけが異なるものを削除する。
+		前項と同様。
 
+	  \item	最後に、出力フラグが立っている行だけをファイルに書き出す。
+	\end{enumerate}
+\end{enumerate}
+\end{Process}
 
-
+\def\BS{\textbackslash}
+\begin{Methods}{サブルーチン}
+\Method{(\BS @buff1, \BS @buff2) = drop_thread_number(@buff)}{%
+    \label{filter:dropthreadnumber}
+    \begin{Params}
+	\Param{@buff}{\tt{mydiff()}が出力した差分情報}
+    \end{Params}
+    \noindent 戻り値
+    \begin{narrow}[\WID]
+	\begin{Table}[r][4em]{ll}
+	  \Item{@buff1}{diffマークを取り除いた三つ組情報\\
+		(差分情報\NOTE , 配列要素番号, diffマーク以降の文字列)}
+	  \Item{@buff2}{スレッド番号までを取り除いた三つ組情報\\
+		(差分情報\NOTE , 配列要素番号, スレッド番号以降の文字列)}
+	\end{Table}
+	\begin{narrow}[10pt]\small{%
+		\NOTE 差分情報は、\tt{'L', 'R', 'C', '-'}のいずれかで、 
+		それぞれ``削除'', ``挿入'', ``変更'', ``それ以外''を表す。
+	}\end{narrow}
+    \end{narrow}
+}
+\end{Methods}
 
 
 
