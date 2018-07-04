@@ -31,7 +31,7 @@
 \def\GeneralBase@@[#1][#2]{\begin{GeneralBox}[#1][#2]{\GeneralBase@title}}
 \def\endGeneralBase{\end{GeneralBox}}
 
-%% \begin{Cmnd}[t][w]  ... \end{Cmnd}	% 起動方法
+%% \begin{Cmnd}        ... \end{Cmnd}	% 起動方法
 %  \begin{Opts}[t][w]  ... \end{Opts}	% オプション
 %  \begin{Args}[t][w]  ... \end{Args}	% 引数
 %  \begin{Brief}[t][w] ... \end{Brief}	% 概要
@@ -40,8 +40,8 @@
 %	[w]	indent width (dimen)
 %
 \def\isDefault{\rm{(\small{\,\NOTE はデフォルトを示す})}}
-\def\Cmnd{\begin{GeneralBase}{起動方法}}
-\def\endCmnd{\end{GeneralBase}}
+\def\Cmnd{\begin{GeneralBase}{起動方法}\Vskip{.3\baselineskip}\CmndBox{0pt}}
+\def\endCmnd{\\\end{GeneralBase}}
 \def\Opts{\begin{GeneralBase}{オプション \isDefault}}
 \def\endOpts{\end{GeneralBase}\Vskip{-.7\baselineskip}}
 \def\Args{\begin{GeneralBase}{引数 \isDefault}}
@@ -82,75 +82,45 @@
 	&\begin{minipage}[t]{\Table@desc@wid}#3
 
 	\Vskip{.2\baselineskip}\end{minipage}\\}
-	%\vspace{.2\baselineskip}\end{minipage}\\}
 \def\ItemT#1#2#3{\tt{#1}&\tt{#2}
 	&\begin{minipage}[t]{\Table@desc@wid}#3
 
 	\Vskip{.2\baselineskip}\end{minipage}\\}
-	%\vspace{.2\baselineskip}\end{minipage}\\}
 \let\MC\multicolumn
 
 %% \Vskip{amount}
+%	amount		amount of vertical skip (dimen)
 %
-%\def\Vskip#1{\ifvmode\vspace{#1}\else\leavehmode\vbox{\vspace{#1}}\fi}
 \def\Vskip#1{\relax\ifvmode\vspace{#1}\else\relax\vspace{#1}\fi}
 
-%% \begin{FrameBoxBase}{topmargin}{botmargin}{leftmargin}{rightmargin}{fontsize}
-%  \end{FrameBoxBase}
+%% \begin{CmndBox}[w]
+%	w	indent width (dimen)
+%  \end{CmndBox}
 %
-\if0
-\def\FrameBoxBase#1#2#3#4#5{%
-	\if#5t \let\FBB@font@size\tiny		\else
-	\if#5f \let\FBB@font@size\footnotesize	\else
-	\if#5s \let\FBB@font@size\small		\else
-	\if#5n \let\FBB@font@size\normalsize	\else
-	\if#5l \let\FBB@font@size\large		\else
-	\if#5Z \let\FBB@font@size\relax		\else
-	       \let\FBB@font@size\relax		\fi\fi\fi\fi\fi\fi
-	\def\FBB@wid{\linewidth}
-	\def\FBB@off{#3}
-	\addtolength{\FBB@wid}{\FBB@off}
-	\def\FBB@bot@margin{#2}
-	\fbox\begingroup
-	\begin{narrow}[#3]
-		\vspace{#1}}
-
-\def\endFrameBoxBase{%
-		\vspace{\FBB@bot@margin}
-		\end{narrow}
-	\end{narrow}
-	\endgroup}
-	
-\fi
-
-
-
+\def\CmndBox#1#2{%
+	\def\CmndBox@indent{#1}%
+	\def\CmndBox@width{\linewidth}%
+	\addtolength{\CmndBox@width}{-\CmndBox@indent}%
+	\noindent\hbox{%
+		\hspace{\CmndBox@indent}%
+		\framebox[\CmndBox@width][t]{%
+			\def\arraystretch{.8}%
+			\tt{\begin{tabular}{l}#2\end{tabular}}}}}
 
 \makeatother
 
 %% test code
 
 \newpage
-%\fbox{\begin{Table}[t][2pt]{ll}
-%	\Item {}{narrow narrow}
-%\end{Table}}
+\hrule width \linewidth height 1pt
+\hrule width 20pt height 3pt
+\hrule width 0pt height 10pt
 
-\if0
-\begin{FrameBoxBase}{0pt}{0pt}{0pt}{0pt}{n}
-	\item FrmeBoxBaseの中身
-\end{FrameBoxBase}
-\begin{narrow}[\WID]
-\begin{FrameBoxBase}{0pt}{0pt}{0pt}{0pt}{n}
-	\item FrmeBoxBaseの中身
-\end{FrameBoxBase}
-\end{narrow}
-\fi
-
-\if0
-\newpage
 \noindent 最初の行
-\begin{Cmnd}[b]
-	Command invocation method
+\begin{Cmnd}{%
+	rc = function(arg1, arg2,\\
+	\hspace{50pt}arg3, arg4)
+}
 \end{Cmnd}
 \begin{Opts}
 	\begin{TableX}[r][\WID]{ll}
@@ -175,5 +145,4 @@
 	\Item{456}{xyz}
 \end{TableX}
 \noindent テーブルのテスト
-\fi
 
