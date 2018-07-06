@@ -7,25 +7,30 @@
 \medskip
 \noindent
 DailyBuildに関連するリポジトリSpringhead及びDailyBuild/Resultを
-最新の状態にする処理(\ref{subsec:DailyBuildEnvironmentVariable}
+最新の状態にする処理(\Ref{subsec}{DailyBuildEnvironmentVariable}
 DailyBuildEnvironmentVariableで示したstep 1.からstep 3.に相当)を実行する
 プログラム。
 step 4.以降の処理は、ここから\tt{TestMainGit}を呼出して実行させる。
 
 \bigskip
-\noindent
-起動方法
-\Cmnd{4pt}{python DailyBuild.py [options] test-repository result-repository}{-8pt}
+%\noindent
+%起動方法
+%\Cmnd{4pt}{python DailyBuild.py [options] test-repository result-repository}{-8pt}
+\begin{Cmnd}{%
+	python DailyBuild.py [options] test-repository result-repository
+}
+\end{Cmnd}
 
-\begin{CmndOpts}[5em]
-    \CmndOpt{-c CONF}{ビルド構成 (\tt{Debug, Release\NOTE, Trace})}
-    \CmndOpt{-p PLAT}{プラットフォーム (\tt{x86, x64\NOTE})}
-    \CmndOpt{-t TOOL}{ツールセット (\tt{14.0\NOTE})}
-    \CmndOpt{-u}{step 1.のみ実行して終了する}
-    \CmndOpt{-U}{step 2.以降のみ実行する}
-    \CmndOpt{-A}{step 3.以降のみ実行する}
-    \CmndOpt{-D}{コマンドを表示するだけで実行はしない(dry run)}
-\end{CmndOpts}
+%\begin{CmndOpts}[5em]
+\begin{Opts}[5em]
+    \Item{-c CONF}{ビルド構成 (\tt{Debug, Release\Note, Trace})}
+    \Item{-p PLAT}{プラットフォーム (\tt{x86, x64\Note})}
+    \Item{-t TOOL}{ツールセット (\tt{14.0\Note})}
+    \Item{-u}{step 1.のみ実行して終了する}
+    \Item{-U}{step 2.以降のみ実行する}
+    \Item{-A}{step 3.以降のみ実行する}
+    \Item{-D}{コマンドを表示するだけで実行はしない(dry run)}
+\end{Opts}
 
 \begin{CmndArgs}[4em]
     \MC{2}{l}{\tt{test-repository}}\\
@@ -80,7 +85,7 @@ step 4.以降の処理は、ここから\tt{TestMainGit}を呼出して実行させる。
 	テスト用レポジトリをcloneする。使用するコマンドは\\
 	\Cmnd{-10pt}{%
 	    \begin{tabular}{l}
-		git clone --recurse-submodules \CONT\\
+		git clone --recurse-submodules \Cont\\
 		    \hspace{30pt}
 		    https://github.com/sprphys/Springhead SpringheadTest\\
 		git submodule update --init\\
@@ -94,7 +99,7 @@ step 4.以降の処理は、ここから\tt{TestMainGit}を呼出して実行させる。
 	そこで\TT{TestMainGit}を実行する。\\
 	\Cmnd{-10pt}{%
 	    \begin{tabular}{l}
-		python TestMainGit.py -p x64 -c Release -t 14.0 \CONT\\
+		python TestMainGit.py -p x64 -c Release -t 14.0 \Cont\\
 		    \hspace{30pt}
 		    SpringheadTest DailyBuildResult/Result\\
 	    \end{tabular}}
