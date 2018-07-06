@@ -1,0 +1,65 @@
+% 5.4.7.ClosedSrcControl.tex
+%	Last update: 2018/06/18 F.Kanehori
+%\newpage
+\subsubsection{クラス ClosedSrcControl}
+\label{subsubsec:ClosedSrcControl}
+
+\begin{ClassDesc}
+Springheadを非公開ソースを使用してビルドするか否かは、
+マクロ\tt{USE_CLOSED_SRC}が定義されるか否かで制御される
+(ファイル\Path{core/include/UseClosedSrcOrNot.h}参照)。
+このクラスでは、
+上記のマクロを切り替える(\,\tt{\#define} $\Leftrightarrow$ \tt{\#undef}\,)ための
+メソッドを提供する。
+\end{ClassDesc}
+
+\begin{Initializer}{%
+	obj = ClosedSrcControl(path, use_path, unuse_path,
+	dry_run=False, verbose=0)}
+\begin{Params}
+    \Param{path}{%
+	当該マクロを定義しているファイル名\\
+	\Path{core/include/UseclosedSrcOrNot.h}を指定する}
+    \Param{use_path}{%
+    	closed sourceを使用する場合のテンプレートファイル名\\
+	\Path{core/test/bin/UseClosedSrc.h.template}を指定する}
+    \Param{unuse_path}{%
+    	closed sourceを使用しない場合のテンプレートファイル名\\
+	\Path{core/test/bin/UnuseClosedSrc.h.template}を指定する}
+    \Param{dry_run}{コマンドを表示するだけで実行はしない}
+\end{Params}
+\end{Initializer}
+
+\begin{Methods}{公開メソッド}
+\Method{set_usage(usage)}{%
+    \begin{Params}
+    	\Param{usage}{%
+	    closed sourceを使用してビルドするか否か。
+	    \tt{CSU_USE}又は\tt{CSU_UNUSE}を指定する
+	    (\REF{subsubsec}{ConstDefs})。}
+    \end{Params}
+    \begin{General}
+	指定されたusageが現在のマクロ定義と異なる場合は、
+	適切なテンプレートを定義ファイルにコピーすることで要求に応じる。
+    \end{General}
+}
+\Method{revive()}{%
+    \begin{General}
+	マクロ定義ファイルの内容を元の状態に戻す。
+    \end{General}
+}
+\end{Methods}
+
+\begin{Methods}{内部メソッド}
+\Method{__read_uage(path)}{%
+    \begin{Params}
+    	\Param{path}{マクロ定義ファイル名}
+    \end{Params}
+    \begin{General}
+	指定されたマクロファイルを読み、
+	記述されているマクロ定義に従って\tt{CSU_USE}又は\tt{CSU_UNUSE}を返す。
+    \end{General}
+}
+\end{Methods}
+
+% end: 5.4.7.ClosedSrcControl.tex

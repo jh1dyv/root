@@ -1,0 +1,45 @@
+% 5.4.13.KeyInterruption.tex
+%	Last update: 2018/06/12 F.Kanehori
+%\newpage
+\subsubsection{クラス KEYINTR (KeyInterruption)}
+\label{subsubsec:KeyInterruption}
+
+\begin{ClassDesc}
+キーボード割込(\verb|^C|)を取り扱うための簡易クラス。
+このクラスのメソッドはすべてstaticである。
+\end{ClassDesc}
+
+\begin{Methods}{公開メソッド}
+\Method{set_interrupted(flag)}{%
+    \begin{General}
+	interruptedフラグを引数で指定された値に設定する。
+	\tt{handler()}から呼ばれる。
+    \end{General}
+}
+\Method{is_interrupted()}{%
+    \begin{General}
+	interruptedフラグが設定されているか否か
+	(割込があったかどうか)を返す。
+    \end{General}
+}
+\Method{what()}{%
+    \begin{General}
+	割込が起きた理由を返す。
+	ここでは固定文字列\tt{"KEYINTR"}を返す。
+    \end{General}
+}
+\Method{handler(signum, frame)}{%
+    \begin{Params}
+	\Param{signum}{シグナル番号}
+	\Param{frame}{現在のスタックフレーム}
+    \end{Params}
+    \begin{General}
+	ここではシグナルの番号を標準出力に表示するとともに、
+	シグナルが発生したことを記録するだけ(\tt{set_interrupted()})。
+	このハンドラは、\tt{SpringheadTest}において、
+	\tt{traverse()}を呼び出す直前に設定される。
+    \end{General}
+}
+\end{Methods}
+
+% end: 5.4.13.KeyInterruption.tex

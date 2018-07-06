@@ -1,0 +1,241 @@
+% macro.tex
+%	Last update: 2018/07/06 F.Kanehori
+
+\makeatletter
+
+% need original symbol
+\def\orgLAB{<}
+\def\orgRAB{>}
+
+% some character usage
+\catcode`\_=\active
+\catcode`\^=\active
+\catcode`\<=\active
+\catcode`\>=\active
+\def_{\ifmmode\sb\else\_\fi}
+\def^{\ifmmode\sp\else\^\fi}
+\def<{\ifmmode\langle\else\tt{\orgLAB}\fi}
+\def>{\ifmmode\rangle\else\tt{\orgRAB}\fi}
+\def\LSB{\ifmmode$[$\else\tt{[}\fi}
+\def\RSB{\ifmmode$[$\else\tt{]}\fi}
+
+% alias for reducing braces
+\let\it@\it
+\let\tt@\tt
+\let\bf@\bf
+\let\rm@\rm
+\def\it#1{{\it@{#1\,}}}
+\def\tt#1{{\tt@{#1}}}
+\def\bf#1{{\bf@{#1}}}
+\def\rm#1{{\rm@{#1}}}
+
+%% dimensions
+\def\WID{20pt}			% indent width
+
+%% \Vskip{amount}
+%% \Hskip{amount}
+%	amount		amount of skip (dimen)
+%
+\def\Vskip#1{\relax\ifvmode\vspace{#1}\else\relax\vspace{#1}\fi}
+\let\Hskip\hspace
+
+%% quotation
+%
+\def\FromHere{%
+	\\\rule{0pt}{1.8em}
+	{\scriptsize{\DARROW \DARROW ここから \DARROW \DARROW}}\\}
+\def\TillHere{%
+	{\scriptsize{\UARROW \UARROW ここまで \UARROW \UARROW}}\\
+	\rule{0pt}{1.9em}}
+
+%% ruler
+%
+\def\RuleToEol#1{\hrule width \linewidth height #1}
+
+%% quoted word
+%
+\def\SQuote#1{\hbox{\,\raise.4ex\hbox{{\tt `}}#1\raise.4ex\hbox{{\tt '}}\,}}
+\def\DQuote#1{\hbox{\,\raise.4ex\hbox{{\tt "}}#1\raise.4ex\hbox{{\tt "}}\,}}
+
+%% abbreviations
+%
+\def\RArrow{$\rightarrow$}
+\def\LArrow{$\leftarrow$}
+\def\UArrow{$\uparrow$}
+\def\DArrow{$\downarrow$}
+\def\Dagger{$\dagger$}
+\def\DDagger{$\ddagger$}
+\def\UDagger#1{$^{\dagger #1}$}
+\def\UDDagger#1{$^{\ddagger #1}$}
+\def\CDots{$\cdots$}
+\def\LDots{$\ldots$}
+\def\VDots{$\vdots$}
+\def\Yen{Y\llap=}		% yen sign
+
+\def\Note{\small{$^\dagger$}}
+\def\DNote{\small{$^\ddagger$}}
+
+% specific
+\def\RarrowSp#1{\hspace{#1}\RARROW\hspace{#1}}	% sp → sp
+\def\Cont{\ \ {\rm{\scriptsize{(次の行に続く)}}}}
+\def\Path#1{\DQuote{\tt{#1}}}
+\def\PathBgn#1{\hbox{\,\raise.4ex\hbox{{\tt "}}\tt{#1}}}
+\def\PathEnd#1{\hbox{\tt{#1}\raise.4ex\hbox{{\tt "}}\,}}
+\def\EnvVar#1{\tt{\$#1}}	% for environment variable name (preceded by '$')
+
+\def\Ref#1#2{\ref{#1:#2} #2}
+\def\RefRef#1#2{``\ref{#1:#2} #2''参照}
+
+%% \begin{CmndBox}[w]
+%	w	indent width (dimen)
+%  \end{CmndBox}
+%
+\def\CmndBox#1#2{%
+	\def\CmndBox@indent{#1}%
+	\def\CmndBox@width{\linewidth}%
+	\addtolength{\CmndBox@width}{-\CmndBox@indent}%
+	\noindent\hbox{%
+		\hspace{\CmndBox@indent}%
+		\framebox[\CmndBox@width][t]{%
+			\def\arraystretch{.8}%
+			\tt{\begin{tabular}{l}#2\end{tabular}}}}}
+
+%% \Initializer
+%  \begin{Methods}{title}
+%  \end{Methods}
+%  \Method{name}{description}
+%	title		title of this section
+%	name		method name
+%	description	description of method
+%
+\def\Initializer#1{%
+	\vspace{.35\baselineskip}\noindent\bf{イニシャライザ} (\tt{__init__)}
+	\begin{narrow}[20pt]\hspace{-.6em}%
+	\tt{\begin{tabular}{l}#1\end{tabular}}\vspace{.3\baselineskip}\\}
+\def\endInitializer{\end{narrow}}
+\def\Methods#1{\begin{GeneralBase}{#1}\begin{enumerate}}
+\def\endMethods{\end{enumerate}end{GeneralBase}}
+\def\Method#1#2{\vspace{.35\baselineskip}\item\tt{#1}\\
+	\begin{minipage}[r]{\linewidth}#2\end{minipage}}
+
+%% \begin{Cmnd}        ... \end{Cmnd}	% 起動方法
+%  \begin{Opts}[t][w]  ... \end{Opts}	% オプション
+%  \begin{Args}[t][w]  ... \end{Args}	% 引数
+%  \begin{Brief}[t][w] ... \end{Brief}	% 概要
+%  \begin{Proc}[t][w]  ... \end{Proc}	% 処理の説明
+%	[t]	typeface (t,i,b,r,g,m)
+%	[w]	indent width (dimen)
+%
+\def\isDefault{\rm{(\small{\,\NOTE はデフォルトを示す})}}
+\def\Cmnd{\begin{GeneralBase}{起動方法}\Vskip{.3\baselineskip}\CmndBox{0pt}}
+\def\endCmnd{\\\end{GeneralBase}}
+\def\Opts{\begin{GeneralBase}{オプション \isDefault}}
+\def\endOpts{\end{GeneralBase}\Vskip{-.7\baselineskip}}
+\def\Args{\begin{GeneralBase}{引数 \isDefault}}
+\def\endArgs{\end{GeneralBase}\Vskip{-.7\baselineskip}}
+\def\Brief{\begin{GeneralBase}{概要}}
+\def\endBrief{\end{GeneralBase}}
+\def\Proc{\begin{GeneralBase}{処理の説明}}
+\def\endProc{\end{GeneralBase}}
+
+%% \begin{GeneralBase}{title}
+%  \end{GeneralBase}
+%
+\def\GeneralBase#1{\def\GeneralBase@title{#1}%
+	\@ifnextchar[{\GeneralBase@check}{\begin{GeneralBox}{\GeneralBase@title}}}
+\def\GeneralBase@check[#1]{\@ifnextchar[{\GeneralBase@@[#1]}
+	{\begin{GeneralBox}[#1][\WID]{\GeneralBase@title}}}
+\def\GeneralBase@@[#1][#2]{\begin{GeneralBox}[#1][#2]{\GeneralBase@title}}
+\def\endGeneralBase{\end{GeneralBox}}
+
+%% \begin{GeneralBox}[typeface][indent]{title}
+%	typeface	t(t), i(t), b(f), r(m), g(t), m(c)
+%	indent		indent width (default: \WID)
+%  \end{GeneralBox}
+%
+\def\GeneralBox{\@ifnextchar[{\GeneralBox@check}{\GeneralBox@@[b][\WID]}}
+\def\GeneralBox@check[#1]%
+	{\@ifnextchar[{\GeneralBox@@[#1]}{\GeneralBox@@[#1][\WID]}}
+\def\GeneralBox@@[#1][#2]#3{%
+	\if#1t \let\GeneralBox@typeface\tt \else
+	\if#1i \let\GeneralBox@typeface\it \else
+	\if#1b \let\GeneralBox@typeface\bf \else
+	\if#1r \let\GeneralBox@typeface\rm \else
+	\if#1g \let\GeneralBox@typeface\gt \else
+	\if#1m \let\GeneralBox@typeface\mc \else
+	       \let\GeneralBox@typeface\relax \fi\fi\fi\fi\fi\fi
+	\vskip -.3ex\relax\noindent
+	\GeneralBox@typeface{#3}\begin{narrow}[#2]}
+\def\endGeneralBox{\end{narrow}\relax}
+
+%% narrower
+% \narrow[size][margin]
+%	charsize:	t, f, s, [n]
+%	margin:		[\the\leftmargin]
+% \end{narrow}
+%
+\def\narrow{\@ifnextchar[{\narrow@}{\narrow@def[Z][\the\leftmargin]}}
+\def\narrow@[#1]{%
+	\@ifnextchar[{\narrow@def[#1]}{\narrow@@[#1]}}
+\def\narrow@@[#1]{%
+	\ifx#1t \def\@size{t} \def\@mgn{\the\leftmargin} \else
+	\ifx#1f \def\@size{f} \def\@mgn{\the\leftmargin} \else
+	\ifx#1s \def\@size{s} \def\@mgn{\the\leftmargin} \else
+	\ifx#1n \def\@size{n} \def\@mgn{\the\leftmargin} \else
+	\ifx#1l \def\@size{l} \def\@mgn{\the\leftmargin} \else
+		\def\@size{Z} \def\@mgn{#1}	\fi\fi\fi\fi\fi
+	\narrow@def[\@size][\@mgn]}
+\def\narrow@repl#1{\def\@lmgn{\the\leftmargin} \def\@text{[#1]}}
+\def\narrow@same#1{\def\@lmgn{#1} \def\@text{}}
+\def\narrow@def[#1][#2]{%
+	\if#1t \def\font@def{Y} \let\font@size\tiny	    \else
+	\if#1f \def\font@def{Y} \let\font@size\footnotesize \else
+	\if#1s \def\font@def{Y} \let\font@size\small	    \else
+	\if#1n \def\font@def{Y} \let\font@size\normalsize   \else
+	\if#1l \def\font@def{Y} \let\font@size\large	    \else
+	\if#1Z \def\font@def{Y} \let\font@size\relax	    \else
+	       \def\font@def{N} \let\font@size\relax	    \fi\fi\fi\fi\fi\fi
+	\if\font@def Y \narrow@same{#2} \else \narrow@repl{#2} \fi
+	\list{}{\topsep 0pt \partopsep 0pt \parsep 0pt \itemsep 0pt
+		\rightmargin 0pt \leftmargin \@lmgn \relax}\item[]
+	\begingroup\font@size\@text}
+\def\end@narrow{\endgroup\endlist}
+\let\endnarrow\end@narrow
+
+%% table with rightmost foldable column
+% \begin{Table}[pos][fix part width]{table spec}
+%   \Item[typeface]{colmns-but-last-one}{lastcolumn}
+%	typeface	t(t), i(t), r(m)
+%   \MC is alias to \multicolumn
+% \end{Table}
+\def\Table{\@ifnextchar[{\Table@pos}{\Table@@[r][6em]}}
+\def\Table@pos[#1]{\@ifnextchar[{\Table@@[#1]}{\Table@@[#1][6em]}}
+\def\Table@{\@ifnexechar[{\Table@@}{\Table@@[c][6em]}}
+\def\Table@@[#1][#2]#3{
+	\def\Table@name@wid{#2}
+	\def\Table@desc@wid{\linewidth}
+	\addtolength{\Table@desc@wid}{-\Table@name@wid}
+	\addtolength{\Table@desc@wid}{-25pt}
+	\Vskip{-.7\baselineskip}
+	\begin{longtable}[#1]{#3}}
+\def\endTable{\end{longtable}\relax}
+
+\def\Item{\@ifnextchar[{\Item@}{\Item@[n]}}
+\def\Item@[#1]#2#3{%
+	\if#1t \let\Item@type@face\tt	\else
+	\if#1i \let\Item@type@face\it	\else
+	\if#1b \let\Item@type@face\bf	\else
+	\if#1r \let\Item@type@face\rm	\else
+	\if#1g \let\Item@type@face\gt	\else
+	\if#1m \let\Item@type@face\mc	\else
+	       \let\Item@type@face\relax	\fi\fi\fi\fi\fi\fi
+	\hbox to \Table@name@wid{\hbox{\Item@type@face{#2}\hfill}}
+	&\begin{minipage}[t]{\Table@desc@wid}#3\end{minipage}\\}
+\def\ItemT#1#2#3{\tt{#1}&\tt{#2}
+	&\begin{minipage}[t]{\Table@desc@wid}#3
+
+	\Vskip{.2\baselineskip}\end{minipage}\\}
+\let\MC\multicolumn
+
+\makeatother
+% end: marco.tex

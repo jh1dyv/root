@@ -1,0 +1,125 @@
+% 5.4.12.VisualStudio.tex
+%	Last update: 2018/06/13 F.Kanehori
+%\newpage
+\subsubsection{クラス VisualStudio}
+\label{subsubsec:VisualStudio}
+
+\begin{ClassDesc}
+Visual studioをコマンドラインから使用するためのラッパクラス。
+Visual Studio 2015以降に対応。
+ただし、Visual Stduio 2017以降については未確認である
+(tool setの表記法、\TT{devenv}の格納ディレクトリ等が変更されているかもしれない）。
+\end{ClassDesc}
+
+\begin{Initializer}{obj = VisualStudio(toolset, verbose)}
+\begin{Params}
+    \Param{toolset}{%
+	Visual Studio toolset ID\\
+	(例) Visual Studio 2015ならば、'14.0', '14', 'v140', '2015'の何れでも可。}
+\end{Params}
+\end{Initializer}
+
+\begin{Methods}{公開メソッド}
+\Method{solution(name)}{%
+    \begin{Params}
+	\Param{name}{ソリューション名}
+    \end{Params}
+    \begin{General}
+	引数\ARG{name}とVisual Studioのバージョンから
+	ソリューションファイル名を決定する。
+    \end{General}
+}
+\Method{set(func,arg1,arg2)}{%
+    \begin{General}
+	与えられた引数に従ってビルド条件の設定を行なう。
+	\vspace{-.5\baselineskip}
+	\begin{Table}[r][4em]{|l|l|}\hline
+	  \MC{1}{|c}{\it{func}}
+	  	& \MC{1}{|c|}{設 定 内 容 (\it{arg1,arg2})}\\\hline
+	  \Item{OUTDIR}{%
+		出力ディレクトリを\TT{arg1}に、
+		クリーンフラグを\TT{arg2}に設定する。
+		クリーンフラグがTrueならば、コンパイル前に
+		出力ディレクトリをクリアする(強制リコンパイル)。}\hline
+	  \Item{LOGFILE}{ログファイルパスを\TT{arg1}とする。}\hline
+	  \Item{DRY_RUN}{%
+		Dry_runフラグを\TT{arg1}とする。
+		このフラグがTrueならば、
+		コマンドを表示するだけで実行はしない。}\hline
+	\end{Table}
+	\vspace{-.8\baselineskip}
+    \end{General}
+}
+\Method{build(platform, config)}{%
+    \begin{General}
+	ログディレクトリを準備したら、
+	プラットフォームを\TT{platform}、ビルド構成を\ARG{config}として
+	ビルドを実行する(\tt{__build()}を呼ぶ)。
+    \end{General}
+}
+\Method{get(kind)}{%
+    \begin{General}
+	与えられた引数に対応する値を返す。
+	\vspace{-.5\baselineskip}
+	\begin{Table}[r][4em]{|l|l|}\hline
+	  \MC{1}{|c}{\it{kind}} & \MC{1}{|c|}{返 す 値}\\\hline
+	  \Item{VERSION}{Visual Studioのバージョン (e.g. 14.0)}\hline
+	  \Item{TOOLSET}{Visual Studio toolset ID (e.g. "v140")}\hline
+	  \Item{COMMAND}{
+		Visual Studioのtoolset IDと名称\ 
+		(e.g. "v140" と "Visual Studio 2015")}\hline
+	\end{Table}
+	\vspace{-.8\baselineskip}
+    \end{General}
+}
+\Method{info()}{%
+    \begin{General}
+	現在設定されているパラメータを標準出力に出力する。
+    \end{General}
+}
+\Method{error()}{%
+    \begin{General}
+	既にエラーが記録されていたらその情報(文字列)を返す。
+    \end{General}
+}
+\end{Methods}
+
+\begin{Methods}{内部メソッド \rm{(抜粋)}}
+\Method{__get_vsinfo(toolset)}{%
+    \begin{General}
+	引数で指定されたツールセットに対応する3つ組(pts, vsv, vsn)を返す。
+	ここで、ptsはtool set ID (e.g. v140)、vsvはVisual Studioバージョン
+	(e.g. 14.0)、vsnはVisual Studio名称 (e.g. Visual Studio 2015) を
+	それぞれ表す。\\
+	引数で指定されたツールセットが不正なときは(None, None, None)を返す。
+    \end{General}
+}
+\Method{__get_vs_path(version)}{%
+    \begin{General}
+	引数で指定されたVisual Studioバージョンに対応するdevenvのパスを返す。
+	このメソッドはInitializerから呼ばれる。
+	\vspace{-.5\baselineskip}
+	\footnotesize{\begin{Table}[r][1em]{ll}
+	    \Item{\rm{(注)}}{%
+		ここで返すパスは、Visual Studio 2015までについては正しいが、
+		それ以降のバージョンについては確認していない。
+		必要ならば追加修正する必要がある。}
+	\end{Table}}
+	\vspace{-\baselineskip}
+    \end{General}
+}
+\Method{__build()}{%
+    \begin{General}
+	devenvに適切なパラメータを与えて実行する。
+	クリーンフラグが設定されている場合は、devenvの実行に先立ち、
+	出力ディレクトリとこのパラメータに対応するログファイルを削除する。
+    \end{General}
+}
+\Method{__show_error(file)}{%
+    \begin{General}
+	指定されたファイルからエラー行だけを標準出力に表示する。
+    \end{General}
+}
+\end{Methods}
+
+% end: 5.4.12.VisualStudio.tex
