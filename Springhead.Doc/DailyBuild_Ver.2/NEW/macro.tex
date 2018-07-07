@@ -1,5 +1,5 @@
 % macro.tex
-%	Last update: 2018/07/06 F.Kanehori
+%	Last update: 2018/07/07 F.Kanehori
 
 \makeatletter
 
@@ -86,9 +86,8 @@
 \def\Ref#1#2{\ref{#1:#2} #2}
 \def\RefRef#1#2{``\ref{#1:#2} #2''参照}
 
-%% \begin{CmndBox}[w]
-%	w	indent width (dimen)
-%  \end{CmndBox}
+%% \CmndBox{indent}{command-body}
+%  \CmndInline{indent}{command-body}
 %
 \def\CmndBox#1#2{%
 	\def\CmndBox@indent{#1}%
@@ -99,6 +98,9 @@
 		\framebox[\CmndBox@width][t]{%
 			\def\arraystretch{.8}%
 			\tt{\begin{tabular}{l}#2\end{tabular}}}}}
+
+\def\CmndInline#1#2{\vbox{%
+	\Vskip{.4\baselineskip}\CmndBox{#1}{#2}\Vskip{.1\baselineskip}}}
 
 %% \Initializer
 %  \begin{Methods}{title}
@@ -118,34 +120,50 @@
 \def\Method#1#2{\vspace{.35\baselineskip}\item\tt{#1}\\
 	\begin{minipage}[r]{\linewidth}#2\end{minipage}}
 
-%% \begin{Cmnd}        ... \end{Cmnd}	% 起動方法
-%  \begin{Opts}[t][w]  ... \end{Opts}	% オプション
-%  \begin{Args}[t][w]  ... \end{Args}	% 引数
-%  \begin{Brief}[t][w] ... \end{Brief}	% 概要
-%  \begin{Proc}[t][w]  ... \end{Proc}	% 処理の説明
+%% \Cmnd[t]{body}			% 起動方法   (default: [r])
+%  \begin{Opts}[t][w]  ... \end{Opts}	% オプション (default: [r][6em])
+%  \begin{Args}[t][w]  ... \end{Args}	% 引数       (default: [r][6em])
+%  \begin{Brief}[t][i] ... \end{Brief}	% 概要
+%  \begin{Proc}[t][i]  ... \end{Proc}	% 処理の説明
 %	[t]	typeface (t,i,b,r,g,m)
-%	[w]	indent width (dimen)
+%	[w]	column width except the last one (dimen)
+%	[i]	indent width (dimen)
 %
-\def\isDefault{\rm{(\small{\,\NOTE はデフォルトを示す})}}
-\def\Cmnd{\begin{GeneralBase}{起動方法}\Vskip{.3\baselineskip}\CmndBox{0pt}}
-\def\endCmnd{\\\end{GeneralBase}}
-\def\Opts{\begin{GeneralBase}{オプション \isDefault}}
-\def\endOpts{\end{GeneralBase}\Vskip{-.7\baselineskip}}
-\def\Args{\begin{GeneralBase}{引数 \isDefault}}
-\def\endArgs{\end{GeneralBase}\Vskip{-.7\baselineskip}}
-\def\Brief{\begin{GeneralBase}{概要}}
-\def\endBrief{\end{GeneralBase}}
-\def\Proc{\begin{GeneralBase}{処理の説明}}
-\def\endProc{\end{GeneralBase}}
+\def\isDefault{\rm{({\small \,\Note はデフォルトを示す})}}
+
+\def\Cmnd{\@ifnextchar[{\Cmnd@}{\Cmnd@[r]}}
+\def\Cmnd@[#1]#2{\begin{GeneralBox}[#1]{起動方法}%
+	\Vskip{.3\baselineskip}\CmndBox{1em}{#2}\\\end{GeneralBox}}
+\def\Opts{\@ifnextchar[{\Opts@check}{\Opts@@[r][6em]}}
+\def\Opts@check[#1]{\@ifnextchar[{\Opts@@[#1]}{\Opts@@[#1][6em]}}
+\def\Opts@@[#1][#2]{\begin{GeneralBox}[#1]{オプション \isDefault}%
+	\begin{narrow}[20pt]\begin{Table}[t][#2]{ll}}
+\def\endOpts{\end{Table}\end{narrow}\end{GeneralBox}\Vskip{-.7\baselineskip}}
+
+\def\Args{\@ifnextchar[{\Args@check}{\Args@@[r][6em]}}
+\def\Args@check[#1]{\@ifnextchar[{\Args@@[#1]}{\Args@@[#1][6em]}}
+\def\Args@@[#1][#2]{\begin{GeneralBox}[#1]{引数 \isDefault}%
+	\begin{narrow}[20pt]\begin{Table}[t][#2]{ll}}
+\def\endArgs{\end{Table}\end{narrow}\end{GeneralBox}\Vskip{-.7\baselineskip}}
+\def\Brief{\begin{GeneralBox}[t]{概要}}
+\def\endBrief{\end{GeneralBox}}
+\def\Proc{\begin{GeneralBox}[t]{処理の説明}}
+\def\endProc{\end{GeneralBox}}
 
 %% \begin{GeneralBase}{title}
 %  \end{GeneralBase}
 %
-\def\GeneralBase#1{\def\GeneralBase@title{#1}%
-	\@ifnextchar[{\GeneralBase@check}{\begin{GeneralBox}{\GeneralBase@title}}}
+%\def\GeneralBase#1{\def\GeneralBase@title{#1}%
+%	\@ifnextchar[{\GeneralBase@check}{\begin{GeneralBox}{\GeneralBase@title}}}
+%\def\GeneralBase@check[#1]{\@ifnextchar[{\GeneralBase@@[#1]}
+%	{\begin{GeneralBox}[#1][\WID]{\GeneralBase@title}}}
+%\def\GeneralBase@@[#1][#2]{\begin{GeneralBox}[#1][#2]{\GeneralBase@title}}
+%\def\endGeneralBase{\end{GeneralBox}}
+\def\GeneralBase{%
+	\@ifnextchar[{\GeneralBase@check}{\begin{GeneralBox}{\@title@}}}
 \def\GeneralBase@check[#1]{\@ifnextchar[{\GeneralBase@@[#1]}
-	{\begin{GeneralBox}[#1][\WID]{\GeneralBase@title}}}
-\def\GeneralBase@@[#1][#2]{\begin{GeneralBox}[#1][#2]{\GeneralBase@title}}
+	{\begin{GeneralBox}[#1][\WID]{\@title@}}}
+\def\GeneralBase@@[#1][#2]{\begin{GeneralBox}[#1][#2]{\@title@}}
 \def\endGeneralBase{\end{GeneralBox}}
 
 %% \begin{GeneralBox}[typeface][indent]{title}
@@ -153,7 +171,7 @@
 %	indent		indent width (default: \WID)
 %  \end{GeneralBox}
 %
-\def\GeneralBox{\@ifnextchar[{\GeneralBox@check}{\GeneralBox@@[b][\WID]}}
+\def\GeneralBox{\@ifnextchar[{\GeneralBox@check}{\GeneralBox@@[r][\WID]}}
 \def\GeneralBox@check[#1]%
 	{\@ifnextchar[{\GeneralBox@@[#1]}{\GeneralBox@@[#1][\WID]}}
 \def\GeneralBox@@[#1][#2]#3{%
