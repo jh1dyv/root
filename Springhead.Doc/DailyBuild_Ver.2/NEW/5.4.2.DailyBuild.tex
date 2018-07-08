@@ -13,7 +13,7 @@ DailyBuildEnvironmentVariableで示したstep 1.からstep 3.に相当)を実行する
 step 4.以降の処理は、ここから\tt{TestMainGit}を呼出して実行させる。
 
 \bigskip
-\Cmnd[b]{%
+\Invoke[b]{%
 	> python DailyBuild.py [options]\Cont\\
 	\Hskip{100pt}test-repository result-repository
 }
@@ -26,7 +26,6 @@ step 4.以降の処理は、ここから\tt{TestMainGit}を呼出して実行させる。
 	\Item[t]{-A}{step 3.以降のみ実行する}
 	\Item[t]{-D}{コマンドを表示するだけで実行はしない(dry run)}
 \end{Opts}
-\def\NOTE{$^{\small (注)}$}
 \begin{Args}[b][2em]
 	\MC{2}{l}{\tt{test-repository}}\\
 	\Item[t]{}{テストレポジトリ$^{\small (注)}$\\
@@ -69,7 +68,9 @@ step 4.以降の処理は、ここから\tt{TestMainGit}を呼出して実行させる。
 	  \item [step 1.]
 		レポジトリSpringhead及びDailyBuildResult/Resultを
 		最新の状態にする。\\
-    		\CmndInline{0pt}{> git pull --all}
+    		\Cmnd{0pt}{%
+			> git pull --all
+		}
 		(このコマンドは、それぞれのレポジトリ内(gitの配下)で
 		実行する必要がある。)
 		オプション\tt{-U}が指定されたならば、このstepは実行しない。
@@ -81,18 +82,20 @@ step 4.以降の処理は、ここから\tt{TestMainGit}を呼出して実行させる。
 
 	  \item	[step 3.]
 		テスト用レポジトリをcloneする。使用するコマンドは\\
-		\CmndInline{0pt}{%
+		\Cmnd{0pt}{%
 			> git clone --recurse-submodules\Cont\\
 			\Hskip{30pt}
 			https://github.com/sprphys/Springhead SpringheadTest\\
-			> git submodule update --init}
+			> git submodule update --init
+		}
 
 	  \item	[step 4.以降]
 		テストレポジトリ(\Path{SpringheadTest/core/test})へ移動し、
 		そこで\tt{TestMainGit}を実行する。\\
-		\CmndInline{0pt}{%
+		\Cmnd{0pt}{%
 			> python TestMainGit.py -p x64 -c Release -t 14.0\Cont\\
-			\Hskip{30pt} SpringheadTest DailyBuildResult/Result}
+			\Hskip{30pt} SpringheadTest DailyBuildResult/Result
+		}
 	\end{description}
 \end{GeneralBox}
 

@@ -1,5 +1,5 @@
 % macro.tex
-%	Last update: 2018/07/07 F.Kanehori
+%	Last update: 2018/07/08 F.Kanehori
 
 \makeatletter
 
@@ -76,7 +76,7 @@
 \def\DNote{\small{$^\ddagger$}}
 
 % specific
-\def\RarrowSp#1{\hspace{#1}\RARROW\hspace{#1}}	% sp → sp
+\def\RArrowSp#1{\hspace{#1}\RArrow\hspace{#1}}	% sp → sp
 \def\Cont{\ \ {\rm{\scriptsize{(次の行に続く)}}}}
 \def\Path#1{\DQuote{\tt{#1}}}
 \def\PathBgn#1{\hbox{\,\raise.4ex\hbox{{\tt "}}\tt{#1}}}
@@ -87,7 +87,7 @@
 \def\RefRef#1#2{``\ref{#1:#2} #2''参照}
 
 %% \CmndBox{indent}{command-body}
-%  \CmndInline{indent}{command-body}
+%  \Cmnd{indent}{command-body}
 %
 \def\CmndBox#1#2{%
 	\def\CmndBox@indent{#1}%
@@ -99,7 +99,7 @@
 			\def\arraystretch{.8}%
 			\tt{\begin{tabular}{l}#2\end{tabular}}}}}
 
-\def\CmndInline#1#2{\vbox{%
+\def\Cmnd#1#2{\vbox{%
 	\Vskip{.4\baselineskip}\CmndBox{#1}{#2}\Vskip{.1\baselineskip}}}
 
 %% \Initializer
@@ -131,8 +131,8 @@
 %
 \def\isDefault{\rm{({\small \,\Note はデフォルトを示す})}}
 
-\def\Cmnd{\@ifnextchar[{\Cmnd@}{\Cmnd@[r]}}
-\def\Cmnd@[#1]#2{\begin{GeneralBox}[#1]{起動方法}%
+\def\Invoke{\@ifnextchar[{\Invoke@}{\Invoke@[r]}}
+\def\Invoke@[#1]#2{\begin{GeneralBox}[#1]{起動方法}%
 	\Vskip{.3\baselineskip}\CmndBox{1em}{#2}\\\end{GeneralBox}}
 \def\Opts{\@ifnextchar[{\Opts@check}{\Opts@@[r][6em]}}
 \def\Opts@check[#1]{\@ifnextchar[{\Opts@@[#1]}{\Opts@@[#1][6em]}}
@@ -222,7 +222,7 @@
 
 %% table with rightmost foldable column
 % \begin{Table}[pos][fix part width]{table spec}
-%   \Item[typeface]{colmns-but-last-one}{lastcolumn}
+%   \Item[typeface]{leading-columns}{lastcolumn}
 %	typeface	t(t), i(t), r(m)
 %   \MC is alias to \multicolumn
 % \end{Table}

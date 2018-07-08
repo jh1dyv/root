@@ -6,7 +6,7 @@
 
 \medskip
 \noindent
-\REF{subsec}{DailyBuildEnvironmentVariable}で示したstep 4.以降の処理
+\Ref{subsec}{DailyBuildEnvironmentVariable}で示したstep 4.以降の処理
 を実行するプログラム。
 ディレクトリ\tt{src, src/tests, src/Samples}を対象とした
 ``ビルド＆テスト''は下位プログラム\tt{SpringheadTest}で制御するが、
@@ -14,140 +14,137 @@
 ログファイルのWebサーバへのコピー等)は、このプログラムで直接制御する。
 
 \medskip
-\noindent
-起動方法
-\Cmnd{4pt}
-     {python TestMainGit.py [options] test-repository result-repository}
-     {-8pt}
-
-\begin{CmndOpts}[5em]
-    \CmndOpt{-c CONF}{ビルド構成 (\tt{Debug, Release\NOTE, Trace})}
-    \CmndOpt{-p PLAT}{プラットフォーム (\tt{x86, x64\NOTE})}
-    \CmndOpt{-t TOOL}{ツールセット (\tt{14.0\NOTE})}
-    \CmndOpt{-D}{コマンドを表示するだけで実行はしない(dry run)}
-\end{CmndOpts}
-
-\begin{CmndArgs}[4em]
+\Invoke[b]{%
+     > python TestMainGit.py [options]\Cont\\
+     \Hskip{100pt}test-repository result-repository
+}
+\begin{Opts}[b][5em]
+    \Item[t]{-c CONF}{ビルド構成 (\tt{Debug, Release\Note, Trace})}
+    \Item[t]{-p PLAT}{プラットフォーム (\tt{x86, x64\Note})}
+    \Item[t]{-t TOOL}{ツールセット (\tt{14.0\Note})}
+    \Item[t]{-D}{コマンドを表示するだけで実行はしない(dry run)}
+\end{Opts}
+\begin{Args}[b][2em]
     \MC{2}{l}{\tt{test-repository}}\\
-    \CmndArg{}{%
+    \Item[t]{}{%
 	テストレポジトリ\\
 	任意のディレクトリでよいが、既存のディレクトリの場合には、
 	その内容はすべて破棄される。}
     \MC{2}{l}{\tt{result-repository}}\\
-    \CmndArg{}{%
+    \Item[t]{}{%
     	テスト結果記録用レポジトリ\\
 	通常\Path{DailyBuildResult/Result}を指定する。}
-\end{CmndArgs}
-\begin{narrow}[s][\WID]\begin{Table}[r][1em]{ll}
-    \Item{※}{%
-	これらのディレクトリは、
-	テストを起動するディレクトリから3階層上のディレクトリ
-	(例えば\Path{top/Springhead/core/test}ならば\Path{top})からの
-	相対パスで指定すること。}
-\end{Table}\end{narrow}
-\vspace{-1.8\baselineskip}
+\end{Args}
+\Vskip{-.7\baselineskip}
+\begin{narrow}[s][10pt]
+    \tabcolsep=0pt
+    \begin{Table}[r][2em]{ll}
+	\Item{(注)}{これらのディレクトリは、
+		テストを起動するディレクトリから3階層上のディレクトリ
+		(例えば\Path{top/Springhead/core/test}ならば\Path{top})からの
+		相対パスで指定すること。}
+    \end{Table}
+\end{narrow}
 
-\begin{Process}
-\begin{enumerate}
-  \item ディレクトリ\Path{core/test/bin}に移動する。
-	\medskip
+\vspace{-1.5\baselineskip}
+\begin{Proc}
+	\begin{enumerate}
+	  \item ディレクトリ\Path{core/test/bin}に移動する。
 
-  \item	次のディレクトリに対して
-	\tt{SpringheadTest}(\REF{subsubsec}{SpringheadTest})を呼び出して
-	テストを実行する。
-	\begin{narrow}\begin{tabular}{ll}
-	    \tt{<\it{top}>/core/src} & Springheadライブラリを作成する\\
-	    \tt{<\it{top}>/core/src/tests} & ビルドして実行する\\
-	    \tt{<\it{top}>/core/src/Samples} & ビルドのみ行なう\\
-	\end{tabular}\end{narrow}
+	  \item	次のディレクトリに対して
+		\tt{SpringheadTest}(\Ref{subsubsec}{SpringheadTest})を呼び出して
+		テストを実行する。
+		\begin{narrow}\begin{tabular}{ll}
+		    \tt{<\it{top}>/core/src} & Springheadライブラリを作成する\\
+		    \tt{<\it{top}>/core/src/tests} & ビルドして実行する\\
+		    \tt{<\it{top}>/core/src/Samples} & ビルドのみ行なう\\
+		\end{tabular}\end{narrow}
 
-	呼出しコマンドは、\\
-	\Cmnd{0pt}{%
-	    \begin{tabular}{l}
-		python SpringheadTest.py \CONT\\
-		\hspace{30pt}-p \it{plat} -c \it{conf} -t \it{tool}
-			     -C unuse -S\CONT\\
-		\hspace{30pt}\it{dir} result/dailybuild.result
-			     dailybuild.control \it{section}\\
-	    \end{tabular}}
-	    {.2\baselineskip}\\
-	\medskip
-	\begin{CmndOpts}[5em]
-	    \CmndOpt{-p \it{plat}}{\it{plat}は起動引数で指定された値}
-	    \CmndOpt{-c \it{conf}}{\it{conf}は起動引数で指定された値}
-	    \CmndOpt{-t \it{tool}}{\it{tool}は起動引数で指定された値}
-	    \CmndOpt{-C unuse}{Closed soruceを使用しないことを指定}
-	    \CmndOpt{-S}{Springheadライブラリ作成時のみ指定
-			(テスト結果ファイルを初期化する)}
-	\end{CmndOpts}
+		呼出しコマンドは、\\
+		\Cmnd{0pt}{%
+			> python SpringheadTest.py \Cont\\
+			\hspace{30pt}-p \it{plat} -c \it{conf} -t \it{tool}
+				     -C unuse -S\Cont\\
+			\hspace{30pt}\it{dir} result/dailybuild.result
+				     dailybuild.control \it{section}
+		}
+		\begin{Opts}[5em]
+		    \Item[t]{-p \it{plat}}{\it{plat}は起動引数で指定された値}
+		    \Item[t]{-c \it{conf}}{\it{conf}は起動引数で指定された値}
+		    \Item[t]{-t \it{tool}}{\it{tool}は起動引数で指定された値}
+		    \Item[t]{-C unuse}{Closed soruceを使用しないことを指定}
+		    \Item[t]{-S}{Springheadライブラリ作成時のみ指定
+				(テスト結果ファイルを初期化する)}
+		\end{Opts}
+		\begin{Args}[t][4em]
+		    \Item[i]{dir}{%
+			テスト対象ディレクトリ
+			(\Path{.}, \Path{tests}, \Path{Samples}を順に指定)}
+		    \Item[t]{section}{%
+			テスト制御ファイルセクション名
+			(\tt{Windows}または\tt{unix})\\
+			テスト制御ファイルのどのセクションを対象とするかを指定}
+		\end{Args}
 
-	\begin{CmndArgs}[4em]
-	    \CmndArg{\it{dir}}{%
-		テスト対象ディレクトリ
-		(\Path{.}, \Path{tests}, \Path{Samples}を順に指定)}
-	    \CmndArg{\it{section}}{%
-		テスト制御ファイルセクション名
-		(\tt{Windows}または\tt{unix})\\
-		テスト制御ファイルのどのセクションを対象とするかを指定}
-	\end{CmndArgs}
-	\medskip
+	  \item	ディレクトリ\Path{core/test/log}に移動する。
 
-  \item	ディレクトリ\Path{core/test/log}に移動する。
-	\medskip
+	  \item	Springheadの最新コミットIDを調べて、
+		ファイル\Path{Springhead.commit.id}に出力する。\\
+		\Cmnd{0pt}{%
+			> python ../bin/VersionControlSystem.py -G HEAD
+		}
 
-  \item	Springheadの最新コミットIDを調べて、
-	ファイル\Path{Springhead.commit.id}に出力する。\\
-	\Cmnd{-8pt}{python ../bin/VersionControlSystem.py -G HEAD}{-8pt}
-	\medskip
+	  \item 前項で作成したコミットIDファイル\Path{Springhead.commit.id}及び
+		テスト結果ファイル\Path{result.log}を
+		レポジトリ\Path{DailyBuildResult/Result}にコピーして
+		commit and pushする。
 
-  \item 前項で作成したコミットIDファイル\Path{Springhead.commit.id}及び
-	テスト結果ファイル\Path{result.log}を
-	レポジトリ\Path{DailyBuildResult/Result}にコピーしてcommit and pushする。
-	\medskip
+	  \item	結果履歴ファイル\Path{result.log}を作成する。\\
+		\Cmnd{0pt}{%
+		     > python ../bin/VersionControlSystem.py -H -f result.log all
+		}
 
-  \item	結果履歴ファイル\Path{result.log}を作成する。\\
-	\Cmnd{-8pt}
-	     {python ../bin/VersionControlSystem.py -H -f result.log all}
-	     {-8pt}
-	\medskip
+	  \item	テスト日付ファイル \Path{test.date} を作成する。
+	  	ファイルの内容は、\\
 
-  \item	テスト日付ファイル \Path{test.date} を作成する。ファイルの内容は、\\
+		\vspace{-.5\baselineskip}
+		\def\arraystretch{.8}%
+		\hspace{40pt}\tt{\begin{tabular}{|l|}\hline
+			** DO NOT EDIT THIS FILE **\\
+			generated by "TestMainGit"\\
+			- - - \it{YYYY-mmdd HH:MM:SS}\\\hline
+		\end{tabular}}\\
+	
+		である。
+		このファイルは、Webページ``ビルドの状況テーブル''の
+		日付表示に使用される。
 
-	\vspace{-.5\baselineskip}
-	\hspace{40pt}\tt{\begin{tabular}{|l|}\hline
-		** DO NOT EDIT THIS FILE **\\
-		generated by "TestMainGit"\\
-		- - - \it{YYYY-mmdd HH:MM:SS}\\\hline
-	    \end{tabular}}\\
+	  \item	ログファイルをWebサーバにコピーする。\\
+		\begin{tabular}{ll}
+		    コピー元 & \tt{test/log/*}\\
+		    コピー先 & \\
+		    \MC{2}{l}{\hspace{15pt}
+			\Path{//haselab/HomeDirs/WWW/docroots/springhead/dailybuild/log}}
+		\end{tabular}
 
-	である。
-	このファイルは、Webページ``ビルドの状況テーブル''の日付表示に使用される。
-	\medskip
+	  \item	ディレクトリ\Path{core/include}に移動して
+  		Springheadリファレンスマニュアルを作成する。\\
+		\Cmnd{0pt}{%
+			> python SpringheadDoc.py
+		}
+	
+	  \item	ディレクトリ\Path{core/src}に移動して
+  		Springhead SDK開発者マニュアルを作成する。\\
+		\Cmnd{0pt}{%
+			> python SpringheadImpDoc.py
+		}
 
-  \item	ログファイルをWebサーバにコピーする。\\
-	\begin{tabular}{ll}
-	    コピー元 & \FILE{test/log/*}\\
-	    コピー先 & \\
-	    \MC{2}{l}{\hspace{15pt}
-		\Path{//haselab/HomeDirs/WWW/docroots/springhead/dailybuild/log}}
-	\end{tabular}
-	%\medskip
-
-  \item	ディレクトリ\Path{core/include}に移動して
-  	Springheadリファレンスマニュアルを作成する。\\
-	\Cmnd{-8pt}{python SpringheadDoc.py}{-8pt}
-	\medskip
-
-  \item	ディレクトリ\Path{core/src}に移動して
-  	Springhead SDK開発者マニュアルを作成する。\\
-	\Cmnd{-8pt}{python SpringheadImpDoc.py}{-8pt}
-	\medskip
-
-  \item	ディレクトリ\Path{core/doc/SprManual}に移動して
-  	Springhead Users Manualを作成する。\\
-	\Cmnd{-8pt}{python MakeDoc.py}{-8pt}
-
-\end{enumerate}
-\end{Process}
+	  \item	ディレクトリ\Path{core/doc/SprManual}に移動して
+  		Springhead Users Manualを作成する。\\
+		\Cmnd{0pt}{%
+			> python MakeDoc.py
+		}
+	\end{enumerate}
+\end{Proc}
 
 % end: 5.4.3.TestMainGit.tex
