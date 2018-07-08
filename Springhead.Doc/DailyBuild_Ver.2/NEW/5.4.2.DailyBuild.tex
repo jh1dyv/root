@@ -64,39 +64,39 @@ step 4.以降の処理は、ここから\tt{TestMainGit}を呼出して実行させる。
 
 \Vskip{\baselineskip}
 \begin{GeneralBox}[b]{ステップ毎の処理}
-	\begin{description}
-	  \item [step 1.]
-		レポジトリSpringhead及びDailyBuildResult/Resultを
-		最新の状態にする。\\
-    		\Cmnd{0pt}{%
-			> git pull --all
-		}
-		(このコマンドは、それぞれのレポジトリ内(gitの配下)で
-		実行する必要がある。)
-		オプション\tt{-U}が指定されたならば、このstepは実行しない。
-		オプション\tt{-u}が指定されたならば、ここでプログラムを終了する。
+\begin{description}
+  \item [step 1.]
+	レポジトリSpringhead及びDailyBuildResult/Resultを
+	最新の状態にする。\\
+    	\Cmnd{0pt}{%
+		> git pull --all
+	}
+	(このコマンドは、それぞれのレポジトリ内(gitの配下)で
+	実行する必要がある。)
+	オプション\tt{-U}が指定されたならば、このstepは実行しない。
+	オプション\tt{-u}が指定されたならば、ここでプログラムを終了する。
 
-	  \item	[step 2.]
-		テストレポジトリを削除する。
-		これは毎回スクラッチからテストを実行するためである。
+  \item	[step 2.]
+	テストレポジトリを削除する。
+	これは毎回スクラッチからテストを実行するためである。
 
-	  \item	[step 3.]
-		テスト用レポジトリをcloneする。使用するコマンドは\\
-		\Cmnd{0pt}{%
-			> git clone --recurse-submodules\Cont\\
-			\Hskip{30pt}
-			https://github.com/sprphys/Springhead SpringheadTest\\
-			> git submodule update --init
-		}
+  \item	[step 3.]
+	テスト用レポジトリをcloneする。使用するコマンドは\\
+	\Cmnd{0pt}{%
+		> git clone --recurse-submodules\Cont\\
+		\Hskip{30pt}
+		https://github.com/sprphys/Springhead SpringheadTest\\
+		> git submodule update --init
+	}
 
-	  \item	[step 4.以降]
-		テストレポジトリ(\Path{SpringheadTest/core/test})へ移動し、
-		そこで\tt{TestMainGit}を実行する。\\
-		\Cmnd{0pt}{%
-			> python TestMainGit.py -p x64 -c Release -t 14.0\Cont\\
-			\Hskip{30pt} SpringheadTest DailyBuildResult/Result
-		}
-	\end{description}
+  \item	[step 4.以降]
+	テストレポジトリ(\Path{SpringheadTest/core/test})へ移動し、
+	そこで\tt{TestMainGit}を実行する。\\
+	\Cmnd{0pt}{%
+		> python TestMainGit.py -p x64 -c Release -t 14.0\Cont\\
+		\Hskip{30pt} SpringheadTest DailyBuildResult/Result
+	}
+\end{description}
 \end{GeneralBox}
 
 % end: 5.4.2.DailyBuild.tex

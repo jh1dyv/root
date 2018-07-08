@@ -12,50 +12,42 @@
 \tt{dump()}を用いて編集する。
 
 \medskip
-\noindent
-起動方法
-\Cmnd{4pt}
-     {python GenResultLog.py [options] type res-file [plat conf]}
-     {-2pt}
-
-\begin{CmndOpts}[5em]
-    \CmndOpt{-o FILE}{%
-    	出力ファイル名\\
+\Invoke[b]{%
+     > python GenResultLog.py [options] type res-file [plat conf]
+}
+\begin{Opts}[b][5em]
+    \Item[t]{-o FILE}{%
+	出力ファイル名\\
 	\small{※ テストを起動するディレクトリからの相対パスで指定}}
-\end{CmndOpts}
-
-\begin{CmndArgs}[5em]
-    \CmndArg{type}{%
+\end{Opts}
+\begin{Args}[b][3em]
+    \Item[t]{type}{%
 	ログ編集タイプ(次のいずれか)\\
-	\begin{tabular}{@{\hspace{20pt}}ll}
+	\begin{tabular}{@{\Hskip{10pt}}ll}
 		\tt{d} & ダンプ形式 (ファイル内容の確認用)\\
 		\tt{r} & \tt{result.log}形式
 	\end{tabular}}
-    \CmndArg{res-file}{テスト結果累積ファイル名}
-    &\\
-    \MC{2}{l}{以下\tt{type}が\tt{r}のときのみ指定}\\
-    \CmndArg{plat}{プラットフォーム (\tt{x86, x64})}
-    \CmndArg{conf}{ビルド構成 (\tt{Debug, Release, Trace})}
-\end{CmndArgs}
+    \Item[t]{res-file}{テスト結果累積ファイル名}
+    \MC{2}{l}{--- 以下\tt{type}が\tt{r}のときのみ指定 ---}\\
+    \Item[t]{plat}{プラットフォーム (\tt{x86, x64})}
+    \Item[t]{conf}{ビルド構成 (\tt{Debug, Release, Trace})}
+\end{Args}
 
-\begin{Process}
-\begin{enumerate}
-  \item	\tt{TestResult}クラスのインスタンスを生成して
-  	テスト結果累積データを読み込む(\REF{subsubsec}{TestResult})。
-	\medskip
-
-  \item	\tt{type}が\tt{r}ならば、
+\begin{Proc}
 	\begin{enumerate}
-	  \item	\tt{edit_result_log()}でテスト結果を編集する。
-	  \item	編集結果を標準出力に出力する。
-	  \item	出力ファイル指定があれば、そこにも出力する。
-	\end{enumerate}
-	\medskip
+	  \item	\tt{TestResult}クラスのインスタンスを生成して
+  		テスト結果累積データを読み込む(\Ref{subsubsec}{TestResult})。
 
-  \item	\tt{type}が\tt{d}ならば、
-	\tt{dump()}を呼び出してテスト結果をダンプする。
-	\medskip
-\end{enumerate}
-\end{Process}
+	  \item	\tt{type}が\tt{r}ならば、
+		\begin{enumerate}
+		  \item	\tt{edit_result_log()}でテスト結果を編集する。
+		  \item	編集結果を標準出力に出力する。
+		  \item	出力ファイル指定があれば、そこにも出力する。
+		\end{enumerate}
+
+	  \item	\tt{type}が\tt{d}ならば、
+		\tt{dump()}を呼び出してテスト結果をダンプする。
+	\end{enumerate}
+\end{Proc}
 
 % end: 5.4.5.GenResultLog.tex

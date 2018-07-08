@@ -36,7 +36,9 @@
 %% \Hskip{amount}
 %	amount		amount of skip (dimen)
 %
-\def\Vskip#1{\relax\ifvmode\vspace{#1}\else\relax\vspace{#1}\fi}
+%\def\Vskip#1{\relax\ifvmode\vspace{#1}\else\relax\vspace{#1}\fi}
+\def\Vskip#1{\relax\ifvmode\vspace{#1}%
+	\else\hbox{\\}\vbox{\vspace{-\baselineskip}{\vspace{#1}}}\fi}
 \let\Hskip\hspace
 
 %% quotation
@@ -99,8 +101,8 @@
 			\def\arraystretch{.8}%
 			\tt{\begin{tabular}{l}#2\end{tabular}}}}}
 
-\def\Cmnd#1#2{\vbox{%
-	\Vskip{.4\baselineskip}\CmndBox{#1}{#2}\Vskip{.1\baselineskip}}}
+\def\Cmnd#1#2{%
+	\vbox{\vspace{.4\baselineskip}\CmndBox{#1}{#2}\vspace{0\baselineskip}}}
 
 %% \Initializer
 %  \begin{Methods}{title}
@@ -115,10 +117,10 @@
 	\begin{narrow}[20pt]\hspace{-.6em}%
 	\tt{\begin{tabular}{l}#1\end{tabular}}\vspace{.3\baselineskip}\\}
 \def\endInitializer{\end{narrow}}
-\def\Methods#1{\begin{GeneralBase}{#1}\begin{enumerate}}
-\def\endMethods{\end{enumerate}end{GeneralBase}}
-\def\Method#1#2{\vspace{.35\baselineskip}\item\tt{#1}\\
-	\begin{minipage}[r]{\linewidth}#2\end{minipage}}
+\def\Methods#1{\begin{GeneralBox}{\bf{#1}}\begin{enumerate}}
+\def\endMethods{\end{enumerate}\end{GeneralBox}}
+\def\Method#1#2{\item\tt{#1}\\\vbox{\vspace{\baselineskip}%
+	\begin{minipage}[r]{\linewidth}#2\end{minipage}}}
 
 %% \Cmnd[t]{body}			% 起動方法   (default: [r])
 %  \begin{Opts}[t][w]  ... \end{Opts}	% オプション (default: [r][6em])
@@ -133,13 +135,12 @@
 
 \def\Invoke{\@ifnextchar[{\Invoke@}{\Invoke@[r]}}
 \def\Invoke@[#1]#2{\begin{GeneralBox}[#1]{起動方法}%
-	\Vskip{.3\baselineskip}\CmndBox{1em}{#2}\\\end{GeneralBox}}
+	\vbox{\vspace{.3\baselineskip}\CmndBox{1em}{#2}\\}\end{GeneralBox}}
 \def\Opts{\@ifnextchar[{\Opts@check}{\Opts@@[r][6em]}}
 \def\Opts@check[#1]{\@ifnextchar[{\Opts@@[#1]}{\Opts@@[#1][6em]}}
 \def\Opts@@[#1][#2]{\begin{GeneralBox}[#1]{オプション \isDefault}%
 	\begin{narrow}[20pt]\begin{Table}[t][#2]{ll}}
 \def\endOpts{\end{Table}\end{narrow}\end{GeneralBox}\Vskip{-.7\baselineskip}}
-
 \def\Args{\@ifnextchar[{\Args@check}{\Args@@[r][6em]}}
 \def\Args@check[#1]{\@ifnextchar[{\Args@@[#1]}{\Args@@[#1][6em]}}
 \def\Args@@[#1][#2]{\begin{GeneralBox}[#1]{引数 \isDefault}%
@@ -150,21 +151,17 @@
 \def\Proc{\begin{GeneralBox}[t]{処理の説明}}
 \def\endProc{\end{GeneralBox}}
 
-%% \begin{GeneralBase}{title}
+\if0
+%% \begin{GeneralBase}{title}		%%%% obsoleted %%%%
 %  \end{GeneralBase}
 %
-%\def\GeneralBase#1{\def\GeneralBase@title{#1}%
-%	\@ifnextchar[{\GeneralBase@check}{\begin{GeneralBox}{\GeneralBase@title}}}
-%\def\GeneralBase@check[#1]{\@ifnextchar[{\GeneralBase@@[#1]}
-%	{\begin{GeneralBox}[#1][\WID]{\GeneralBase@title}}}
-%\def\GeneralBase@@[#1][#2]{\begin{GeneralBox}[#1][#2]{\GeneralBase@title}}
-%\def\endGeneralBase{\end{GeneralBox}}
-\def\GeneralBase{%
-	\@ifnextchar[{\GeneralBase@check}{\begin{GeneralBox}{\@title@}}}
+\def\GeneralBase#1{%
+	\@ifnextchar[{\GeneralBase@check}{\begin{GeneralBox}{#1}}}
 \def\GeneralBase@check[#1]{\@ifnextchar[{\GeneralBase@@[#1]}
-	{\begin{GeneralBox}[#1][\WID]{\@title@}}}
-\def\GeneralBase@@[#1][#2]{\begin{GeneralBox}[#1][#2]{\@title@}}
+	{\begin{GeneralBox}[#1][\WID]{#1}}}
+\def\GeneralBase@@[#1][#2]{\begin{GeneralBox}[#1][#2]{#1}}
 \def\endGeneralBase{\end{GeneralBox}}
+\fi
 
 %% \begin{GeneralBox}[typeface][indent]{title}
 %	typeface	t(t), i(t), b(f), r(m), g(t), m(c)
