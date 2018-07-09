@@ -36,16 +36,15 @@ step 4.以降の処理は、ここから\tt{TestMainGit}を呼出して実行させる。
 	\Item{}{テスト結果記録用レポジトリ$^{\small (注)}$\\
 		通常\Path{DailyBuildResult/Result}を指定する。}
 \end{Args}
-\Vskip{-.7\baselineskip}
-\begin{narrow}[s][10pt]
-    \tabcolsep=0pt
-    \begin{Table}[r][2em]{ll}
-	\Item{(注)}{これらのディレクトリは、
-		テストを起動するディレクトリから3階層上のディレクトリ
-		(例えば\Path{top/Springhead/core/test}ならば\Path{top})からの
-		相対パスで指定すること。}
-    \end{Table}
-\end{narrow}
+\Vskip{.5\baselineskip}
+\let\OrgTabcolsep\tabcolsep \tabcolsep=0pt
+\begin{Table}[r][2em]{ll}
+  \Item{(注)}{これらのディレクトリは、
+	テストを起動するディレクトリから3階層上のディレクトリ
+	(例えば\Path{top/Springhead/core/test}ならば\Path{top})からの
+	相対パスで指定すること。}
+\end{Table}
+\let\tabcolsep\OrgTabcolsep
 
 \Vskip{-\baselineskip}
 \begin{narrow}[\WID]
@@ -68,7 +67,7 @@ step 4.以降の処理は、ここから\tt{TestMainGit}を呼出して実行させる。
   \item [step 1.]
 	レポジトリSpringhead及びDailyBuildResult/Resultを
 	最新の状態にする。\\
-    	\Cmnd{0pt}{%
+    	\Cmnd{%
 		> git pull --all
 	}
 	(このコマンドは、それぞれのレポジトリ内(gitの配下)で
@@ -82,7 +81,7 @@ step 4.以降の処理は、ここから\tt{TestMainGit}を呼出して実行させる。
 
   \item	[step 3.]
 	テスト用レポジトリをcloneする。使用するコマンドは\\
-	\Cmnd{0pt}{%
+	\Cmnd{%
 		> git clone --recurse-submodules\Cont\\
 		\Hskip{30pt}
 		https://github.com/sprphys/Springhead SpringheadTest\\
@@ -92,7 +91,7 @@ step 4.以降の処理は、ここから\tt{TestMainGit}を呼出して実行させる。
   \item	[step 4.以降]
 	テストレポジトリ(\Path{SpringheadTest/core/test})へ移動し、
 	そこで\tt{TestMainGit}を実行する。\\
-	\Cmnd{0pt}{%
+	\Cmnd{%
 		> python TestMainGit.py -p x64 -c Release -t 14.0\Cont\\
 		\Hskip{30pt} SpringheadTest DailyBuildResult/Result
 	}

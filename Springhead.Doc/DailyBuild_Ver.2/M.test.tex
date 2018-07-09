@@ -107,9 +107,53 @@
 			\def\arraystretch{.8}%
 			\tt{\begin{tabular}{l}#2\end{tabular}}}}}
 
+
+\def\Vmode{\ifvmode\relax\else\par\hrule width 0pt height .5\baselineskip\fi}
+\def\endVmode{\relax\par}
+
+
+\def\PushCs#1#2{%
+	\def\PushCs@name{\csname\string#1\endcsname}
+	\def\PushCs@org{\csname\string Org@#1\endcsname}
+	%\let\PushCs@org\PushCs@name
+	%\def\PushCs@name{#2}}
+	%\def\expandafter\csname Org\string#1\endcsname{\csname#1\endcsname}}
+	%\def\csname#1\endcsname{#2}}
+	++ \tt{\string \PushCs@name} ++
+	++ \tt{\string \PushCs@org} ++}
+\def\PopCs#1{%
+	\def\PushCs@name{\csname#1\endcsname}
+	\def\PushCs@org{\csname Org@#1\endcsname}
+	\let\PushCs@name\PushCs@org}
+
 \makeatother
 
 %% test code
+
+\begin{tabular}{|l|}\hline abcde\\\hline\end{tabular}\par
+
+\PushCs{\tabcolsep}{40pt}
+%\begin{tabular}{|l|}\hline abcde\\\hline\end{tabular}\par
+%\PopCs{tabcolsep}
+
+%\begin{tabular}{|l|}\hline abcde\\\hline\end{tabular}\par
+
+\if0
+\newpage
+ああああああああああああああああ
+
+いいいいいいいいいいいいいいいい
+\begin{Vmode}
+	おおおおおおおおおおおおおおおお
+\end{Vmode}
+いいいいいいいいいいいいいいいい
+
+うううううううううううううううう
+A\begin{Vmode}
+	おおおおおおおおおおおおおおおお
+\end{Vmode}Z
+
+うううううううううううううううう
 
 \newpage
 \hrule width \linewidth height 1pt
@@ -145,4 +189,4 @@
 	\Item{456}{xyz}
 \end{TableX}
 \noindent テーブルのテスト
-
+\fi

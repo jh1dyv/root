@@ -3,11 +3,11 @@
 
 \makeatletter
 
-% need original symbol
+%% need original symbol
 \def\orgLAB{<}
 \def\orgRAB{>}
 
-% some character usage
+%% some character usage
 \catcode`\_=\active
 \catcode`\^=\active
 \catcode`\<=\active
@@ -19,7 +19,7 @@
 \def\LSB{\ifmmode$[$\else\tt{[}\fi}
 \def\RSB{\ifmmode$[$\else\tt{]}\fi}
 
-% alias for reducing braces
+%% alias for typefaces
 \let\it@\it
 \let\tt@\tt
 \let\bf@\bf
@@ -30,18 +30,26 @@
 \def\rm#1{{\rm@{#1}}}
 
 %% dimensions
-\def\WID{20pt}			% indent width
+\def\WID{20pt}		% standard indent width
 
-%% \Vskip{amount}
-%% \Hskip{amount}
+%% spaces
+%  \Vskip{amount}
+%  \Hskip{amount}
 %	amount		amount of skip (dimen)
 %
-%\def\Vskip#1{\relax\ifvmode\vspace{#1}\else\relax\vspace{#1}\fi}
-\def\Vskip#1{\relax\ifvmode\vspace{#1}%
-	\else\hbox{\\}\vbox{\vspace{-\baselineskip}{\vspace{#1}}}\fi}
+\def\Vskip#1{\begin{Vmode}\vspace{#1}\end{Vmode}}
 \let\Hskip\hspace
 
-%% quotation
+%% force vertical mode
+%  \begin{Vmode} ... \end{Vmode}
+%
+\def\Vmode{\ifvmode\relax\else\par\hrule width 0pt height .5\baselineskip\fi}
+\def\endVmode{\relax\par}
+
+%% citation
+%  \FromHere
+%	...
+%  \TillHere
 %
 \def\FromHere{%
 	\\\rule{0pt}{1.8em}
@@ -77,7 +85,8 @@
 \def\Note{\small{$^\dagger$}}
 \def\DNote{\small{$^\ddagger$}}
 
-% specific
+%% some specific ones
+%
 \def\RArrowSp#1{\hspace{#1}\RArrow\hspace{#1}}	% sp → sp
 \def\Cont{\ \ {\rm{\scriptsize{(次の行に続く)}}}}
 \def\Path#1{\DQuote{\tt{#1}}}
@@ -88,8 +97,10 @@
 \def\Ref#1#2{\ref{#1:#2} #2}
 \def\RefRef#1#2{``\ref{#1:#2} #2''参照}
 
-%% \CmndBox{indent}{command-body}
-%  \Cmnd{indent}{command-body}
+%% make framed box to denote some command
+%  \CmndBox{indent}{body}
+%  \Cmnd{indent}{body}
+%	indent		amount of indentation from left margin
 %
 \def\CmndBox#1#2{%
 	\def\CmndBox@indent{#1}%
@@ -98,19 +109,20 @@
 	\noindent\hbox{%
 		\hspace{\CmndBox@indent}%
 		\framebox[\CmndBox@width][t]{%
-			\def\arraystretch{.8}%
+			\def\arraystretch{.8}\tabcolsep=5pt%
 			\tt{\begin{tabular}{l}#2\end{tabular}}}}}
 
-\def\Cmnd#1#2{%
-	\vbox{\vspace{.4\baselineskip}\CmndBox{#1}{#2}\vspace{0\baselineskip}}}
+\def\Cmnd#1{%
+	\vbox{\vspace{.4\baselineskip}\CmndBox{0pt}{#1}\vspace{0\baselineskip}}}
 
-%% \Initializer
+%% initializer and method
+%  \Initializer{body}
 %  \begin{Methods}{title}
-%  \end{Methods}
-%  \Method{name}{description}
+%    \Method{name}{body}
 %	title		title of this section
 %	name		method name
-%	description	description of method
+%	body		description of method
+%  \end{Methods}
 %
 \def\Initializer#1{%
 	\vspace{.35\baselineskip}\noindent\bf{イニシャライザ} (\tt{__init__)}
@@ -122,7 +134,8 @@
 \def\Method#1#2{\item\tt{#1}\\\vbox{\vspace{\baselineskip}%
 	\begin{minipage}[r]{\linewidth}#2\end{minipage}}}
 
-%% \Cmnd[t]{body}			% 起動方法   (default: [r])
+%% command synopsis, options and arguments
+%  \Cmnd[t]{body}			% 起動方法   (default: [r])
 %  \begin{Opts}[t][w]  ... \end{Opts}	% オプション (default: [r][6em])
 %  \begin{Args}[t][w]  ... \end{Args}	% 引数       (default: [r][6em])
 %  \begin{Brief}[t][i] ... \end{Brief}	% 概要
@@ -139,31 +152,22 @@
 \def\Opts{\@ifnextchar[{\Opts@check}{\Opts@@[r][6em]}}
 \def\Opts@check[#1]{\@ifnextchar[{\Opts@@[#1]}{\Opts@@[#1][6em]}}
 \def\Opts@@[#1][#2]{\begin{GeneralBox}[#1]{オプション \isDefault}%
+	\Vskip{-.4\baselineskip}
 	\begin{narrow}[20pt]\begin{Table}[t][#2]{ll}}
-\def\endOpts{\end{Table}\end{narrow}\end{GeneralBox}\Vskip{-.7\baselineskip}}
+\def\endOpts{\end{Table}\end{narrow}\end{GeneralBox}\vspace{-.7\baselineskip}}
 \def\Args{\@ifnextchar[{\Args@check}{\Args@@[r][6em]}}
 \def\Args@check[#1]{\@ifnextchar[{\Args@@[#1]}{\Args@@[#1][6em]}}
 \def\Args@@[#1][#2]{\begin{GeneralBox}[#1]{引数 \isDefault}%
+	\Vskip{-.4\baselineskip}
 	\begin{narrow}[20pt]\begin{Table}[t][#2]{ll}}
-\def\endArgs{\end{Table}\end{narrow}\end{GeneralBox}\Vskip{-.7\baselineskip}}
+\def\endArgs{\end{Table}\end{narrow}\end{GeneralBox}\vspace{-.7\baselineskip}}
 \def\Brief{\begin{GeneralBox}[t]{概要}}
 \def\endBrief{\end{GeneralBox}}
 \def\Proc{\begin{GeneralBox}[t]{処理の説明}}
 \def\endProc{\end{GeneralBox}}
 
-\if0
-%% \begin{GeneralBase}{title}		%%%% obsoleted %%%%
-%  \end{GeneralBase}
-%
-\def\GeneralBase#1{%
-	\@ifnextchar[{\GeneralBase@check}{\begin{GeneralBox}{#1}}}
-\def\GeneralBase@check[#1]{\@ifnextchar[{\GeneralBase@@[#1]}
-	{\begin{GeneralBox}[#1][\WID]{#1}}}
-\def\GeneralBase@@[#1][#2]{\begin{GeneralBox}[#1][#2]{#1}}
-\def\endGeneralBase{\end{GeneralBox}}
-\fi
-
-%% \begin{GeneralBox}[typeface][indent]{title}
+%% general purpose vertical box
+%  \begin{GeneralBox}[typeface][indent]{title}
 %	typeface	t(t), i(t), b(f), r(m), g(t), m(c)
 %	indent		indent width (default: \WID)
 %  \end{GeneralBox}
@@ -211,10 +215,11 @@
 	\if#1Z \def\font@def{Y} \let\font@size\relax	    \else
 	       \def\font@def{N} \let\font@size\relax	    \fi\fi\fi\fi\fi\fi
 	\if\font@def Y \narrow@same{#2} \else \narrow@repl{#2} \fi
+	\begin{Vmode}%
 	\list{}{\topsep 0pt \partopsep 0pt \parsep 0pt \itemsep 0pt
 		\rightmargin 0pt \leftmargin \@lmgn \relax}\item[]
 	\begingroup\font@size\@text}
-\def\end@narrow{\endgroup\endlist}
+\def\end@narrow{\endgroup\endlist\end{Vmode}}
 \let\endnarrow\end@narrow
 
 %% table with rightmost foldable column
@@ -231,9 +236,9 @@
 	\def\Table@desc@wid{\linewidth}
 	\addtolength{\Table@desc@wid}{-\Table@name@wid}
 	\addtolength{\Table@desc@wid}{-25pt}
-	\Vskip{-.7\baselineskip}
+	\vspace{-.7\baselineskip}
 	\begin{longtable}[#1]{#3}}
-\def\endTable{\end{longtable}\relax}
+\def\endTable{\end{longtable}}
 
 \def\Item{\@ifnextchar[{\Item@}{\Item@[n]}}
 \def\Item@[#1]#2#3{%
@@ -247,9 +252,8 @@
 	\hbox to \Table@name@wid{\hbox{\Item@type@face{#2}\hfill}}
 	&\begin{minipage}[t]{\Table@desc@wid}#3\end{minipage}\\}
 \def\ItemT#1#2#3{\tt{#1}&\tt{#2}
-	&\begin{minipage}[t]{\Table@desc@wid}#3
-
-	\Vskip{.2\baselineskip}\end{minipage}\\}
+	&\begin{minipage}[t]{\Table@desc@wid}#3\hfill\par
+	\vspace{.2\baselineskip}\end{minipage}\\}
 \let\MC\multicolumn
 
 \makeatother

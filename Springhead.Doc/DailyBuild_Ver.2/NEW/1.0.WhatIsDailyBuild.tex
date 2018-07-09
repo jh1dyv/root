@@ -17,11 +17,12 @@ Springheadに加えられた修正、新規に組み込まれたソースと既存ソースとの整合性の確認
   \item	\label{BuildEnvironment}
 	GitHubから最新バージョンを取り出し、
 	stubおよびspringhead libraryを作成する。
-	\vspace{-.5\baselineskip}
-	\small{\begin{Table}[r][4em]{|l|l|}\hline
+	\vspace{-.5\baselineskip}\def\arraystretch{1.3}%
+	{\small \begin{Table}[r][4em]{|l|l|}\hline
 		\Item{Windows}{Visual Studio 2015, x64/Release構成}\hline
 		\Item{unix}{\tt{g++, -O2}}\hline
 	\end{Table}}
+	\Vskip{-.7\baselineskip}
 
   \item	\tt{src/tests}以下にあるテストソリューションに対して
   	ビルド＆テストを行なう。\\

@@ -5,7 +5,9 @@
 \label{subsubsec:VersionInfo}
 
 \bigskip
-\framebox{\begin{tabular}{l}\begin{minipage}[t]{\linewidth}
+\def\TmpWidth{\linewidth}
+\addtolength{\TmpWidth}{-\WID}
+\framebox{\begin{tabular}{l}\begin{minipage}[t]{\TmpWidth}
 	現在、ここに記述する内容の実装(コード)は、
 	ファイル\Path{VersionControlSystem.py}の
 	\Path{__main__}節に記述されている。
@@ -17,24 +19,22 @@
 \Invoke[b]{
      > python VersionControlSystem.py [options] \{HEAD|all|commit-id\}
 }
-\begin{Opts}[5em]
+\begin{Opts}[b][5em]
     \Item[t]{-S $^{(1)}$}{Subversionを対象とする(DailyBuildでは使用しない)}
     \Item[t]{-G $^{(2)}$}{Github (GitHub.com)を対象とする}
     \Item[t]{-H $^{(3)}$}{Gitlab (git.haselab.net)を対象とする}
     \Item[t]{-f fname}{旧バージョンから取得するファイル名}
 \end{Opts}
-\vspace{-.5\baselineskip}
-\begin{narrow}[s][40pt]
-    \begin{Table}[r][1em]{ll}
-	\Item{$^{(1)}$}{%
-		GitHubに移行する前に使用していたもの。
-		メンテナンスしないとおそらく動作しない。
-		Webページの表示にも影響が出るので注意。}
-	\Item{$^{(2)}$}{Springheadのレポジトリである}
-	\Item{$^{(3)}$}{DailyBuild/Resultのレポジトリである}
-    \end{Table}
-\end{narrow}
-\vspace{-1.8\baselineskip}
+\Vskip{.5\baselineskip}
+\begin{Table}[r][1.5em]{ll}
+  \Item{$^{(1)}$}{%
+	GitHubに移行する前に使用していたもの。
+	メンテナンスしないとおそらく動作しない。
+	Webページの表示にも影響が出るので注意。}
+  \Item{$^{(2)}$}{Springheadのレポジトリである}
+  \Item{$^{(3)}$}{DailyBuild/Resultのレポジトリである}
+\end{Table}
+\vspace{.5\baselineskip}
 \begin{Args}[5em]
     \Item[t]{HEAD}{HEADバージョンを対象とする}
     \Item[t]{all}{すべてのバージョンを対象とする}
@@ -47,8 +47,9 @@
 
   \item	gitには、その管理下にあるディレクトリからアクセスしないといけない。
 	以下に、指定されたオプションと管理下ディレクトリの対応を示す。
-	\Vskip{.5\baselineskip}
+	%\Vskip{.5\baselineskip}
 	\begin{narrow}[\WID]
+	    \let\OrgTabcolsep\tabcolsep \tabcolsep=10pt
 	    \begin{tabular}{|ll@{ $\Leftrightarrow$ }l|}\hline
 		\tt{-S}	& \tt{url}
 			& \tt{http://springhead.info/spr2/Springhead/trunk/}\\
@@ -63,6 +64,7 @@
 			& \tt{dir}
 			& \Path{../../../../DailyBuildResult/Result}\\\hline
 	    \end{tabular}
+	    \let\tabcolsep\OrgTabcolsep
 	\end{narrow}
 	\Vskip{.5\baselineskip}
 
@@ -72,7 +74,7 @@
 
   \item	オプション\tt{-G}が指定された場合
 	\begin{enumerate}
-	  \item	オプション\tt{-f FNAME}が指定された場合\\
+	  \item	オプション\tt{-f fname}が指定された場合\\
 		引数で指定されたバージョン
 		(\tt{all}の場合は全バージョン)から
 		\tt{FNAME}で指定されたファイルを取得し、
@@ -92,7 +94,7 @@
 		引数\tt{all}が指定された場合は、
 		上記の形式を全バージョンに対して繰り返す。
 
-	  \item	オプション\tt{-f FNAME}が指定されない場合\\
+	  \item	オプション\tt{-f fname}が指定されない場合\\
 		引数で指定されたバージョン
 		(\tt{all}の場合は全バージョン)について、
 		次の情報を標準出力に出力する。
