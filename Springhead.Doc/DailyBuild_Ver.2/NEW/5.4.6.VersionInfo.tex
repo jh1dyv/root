@@ -49,7 +49,7 @@
 	以下に、指定されたオプションと管理下ディレクトリの対応を示す。
 	%\Vskip{.5\baselineskip}
 	\begin{narrow}[\WID]
-	    \let\OrgTabcolsep\tabcolsep \tabcolsep=10pt
+	    \begin{LocalScope}\tabcolsep=10pt
 	    \begin{tabular}{|ll@{ $\Leftrightarrow$ }l|}\hline
 		\tt{-S}	& \tt{url}
 			& \tt{http://springhead.info/spr2/Springhead/trunk/}\\
@@ -64,7 +64,7 @@
 			& \tt{dir}
 			& \Path{../../../../DailyBuildResult/Result}\\\hline
 	    \end{tabular}
-	    \let\tabcolsep\OrgTabcolsep
+	    \end{LocalScope}
 	\end{narrow}
 	\Vskip{.5\baselineskip}
 

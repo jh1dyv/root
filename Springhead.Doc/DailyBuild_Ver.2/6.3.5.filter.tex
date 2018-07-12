@@ -1,5 +1,5 @@
 % 6.3.5.filter.tex
-%	Last update: 2018/07/03 F.Kanehori
+%	Last update: 2018/07/12 F.Kanehori
 %\newpage
 \subsubsection{filter.pl}
 \label{subsubsec:filter}
@@ -77,19 +77,56 @@ diff -c 形式に倣った出力情報を作成する。
     \begin{narrow}[\WID]
 	\begin{Table}[r][4em]{ll}
 	  \Item{@buff1}{diffマークを取り除いた三つ組情報\\
-		(差分情報\NOTE , 配列要素番号, diffマーク以降の文字列)}
+		(差分記号\NOTE , 配列要素番号, diffマーク以降の文字列)}
 	  \Item{@buff2}{スレッド番号までを取り除いた三つ組情報\\
-		(差分情報\NOTE , 配列要素番号, スレッド番号以降の文字列)}
+		(差分記号\NOTE , 配列要素番号, スレッド番号以降の文字列)}
 	\end{Table}
 	\begin{narrow}[10pt]\small{%
-		\NOTE 差分情報は、\tt{'L', 'R', 'C', '-'}のいずれかで、 
+		\NOTE 差分記号は、\tt{'L', 'R', 'C', '-'}のいずれかで、 
 		それぞれ``削除'', ``挿入'', ``変更'', ``それ以外''を表す。
 	}\end{narrow}
     \end{narrow}
+    \begin{General}
+	引数で与えられるのは\Ref{subsubsec}{mydiff}が出力した差分情報の配列である。
+	差分情報の1文字目(diffマーク)を見て、次のように差分記号を作成する。
+	\begin{narrow}[s][\WID]
+		\begin{Table}[t][6em]{ll}
+		  \Item{1文字目}{差分記号 (意味)}
+		  \Item{\tt{'<'} 又は \tt{'-'}}{\tt{'L'}\hspace{5pt}(削除された行)}
+		  \Item{\tt{'>'} 又は \tt{'+'}}{\tt{'R'}\hspace{5pt}(入された行)}
+		  \Item{\tt{'!'}}{\tt{'C'}\hspace{5pt}(更された行)}
+		  \Item{それ以外}{\tt{'-'}\hspace{5pt}(更のない行)}
+		\end{Table}
+	\end{narrow}
+	このサブルーチンが返すのは、
+	\begin{narrow}[s][\WID]
+		1. (差分記号, 配列要素番号, diffマーク以降の文字列)の配列\\
+		2. (差分記号, 配列要素番号, スレッド番号以降の文字列)の配列
+	\end{narrow}
+	の2つの配列である。
+	``スレッド番号''は、行の先頭から見て最初に出現する\tt{'>'}までと判断する。
+    \end{General}
+}
+\Method{\$found = find(\$mark, \$linse, \$indx, \BS @buff)}{%
+    \label{filter:find}
+    \begin{Params}
+	\Param{\$mark}{処理の対象とするdiffマーク}
+	\Param{\$line}{検索する文字列(行データ)}
+	\Param{\$indx}{検索する文字列の\tt{@buff}での要素番号}
+	\Param{@buff}{\tt{drop_thread_number()}が返した三つ組情報の配列}
+    \end{Params}
+    \noindent 戻り値
+    \begin{narrow}[\WID]
+	\begin{Table}[r][4em]{ll}
+	  \Item{\$found}{$\geq 0$: 要素番号(見つかったとき)、$-1$: 見つからなかったとき}
+	\end{Table}
+    \end{narrow}
+    \begin{General}
+	\tt{\$line}で指定された文字列(行)を\tt{@buff}の中で探す。
+	ただし、diffマークが異なる行及び\tt{\$line}と同じ行(要素番号が同じ)行は除く。
+	見つかったらその要素番号を、見つからなかったら$-1$を返す。
+    \end{General}
 }
 \end{Methods}
-
-
-
 
 % end: 6.3.5.filter.tex

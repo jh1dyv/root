@@ -37,14 +37,14 @@ step 4.以降の処理は、ここから\tt{TestMainGit}を呼出して実行させる。
 		通常\Path{DailyBuildResult/Result}を指定する。}
 \end{Args}
 \Vskip{.5\baselineskip}
-\let\OrgTabcolsep\tabcolsep \tabcolsep=0pt
+\begin{LocalScope}\tabcolsep=0pt
 \begin{Table}[r][2em]{ll}
   \Item{(注)}{これらのディレクトリは、
 	テストを起動するディレクトリから3階層上のディレクトリ
 	(例えば\Path{top/Springhead/core/test}ならば\Path{top})からの
 	相対パスで指定すること。}
 \end{Table}
-\let\tabcolsep\OrgTabcolsep
+\end{LocalScope}
 
 \Vskip{-\baselineskip}
 \begin{narrow}[\WID]

@@ -12,10 +12,12 @@ DailyBuildは毎日Windows上でタスクとして実行される。
     		\tt{DESKTOP-KD3C7HS} (192.168.91.194)
 		\LArrow 固定アドレスではない}
 	\Item{タスク名}{%
-		\tabcolsep=0pt\begin{tabular}[t]{l@{\Hskip{1em}}l}
+		\begin{LocalScope}\tabcolsep=0pt
+		\begin{tabular}[t]{l@{\Hskip{1em}}l}
 		    Task1: \tt{DailyBuild}    & 毎日 02:02 に起動\\
 		    Task2: \tt{MakeReportGit} & 毎日 04:02 に起動
-		\end{tabular}}
+		\end{tabular}
+		\end{LocalScope}}
     \end{Table}
 \end{narrow}
 \Vskip{-\baselineskip}

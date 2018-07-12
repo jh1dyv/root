@@ -1,7 +1,93 @@
 % 6.3.6.baselib.tex
-%	Last update: 2018/06/14 F.Kanehori
+%	Last update: 2018/07/12 F.Kanehori
 %\newpage
 \subsubsection{base\_lib.pm}
 \label{subsubsec:baselib}
+
+\medskip
+\noindent
+perlスクリプトで共通に使用するユーティリティサブルーチンのライブラリ
+(\DDAGGER を付したものは外部非公開である)。
+
+\bigskip
+\begin{Methods}{サブルーチンの説明}
+\Method{assert(\$expr)}{%
+	アサーションルーチン。
+	条件が満たされなければスタックをトレースして終了する。
+}
+\Method{verbose(\$text [,\$stream])\\
+	verbose_set(\$value)}{%
+    \begin{Params}
+	\Param{\$text}{表示文字列}
+	\Param{\$stream}{出力ストリーム}
+	\Param{\$value}{$1$でon, $0$でoff}
+    \end{Params}
+    \begin{General}
+	バーバス表示ルーチン。
+	\tt{verbose_set()}でon/offを切り替えできる。
+    \end{General}
+}
+\Method{show_usage(\$cmnd [,\BS @args [,\BS @opts]])\\
+	add_padding(\$text, \$width) \DDAGGER }{%
+    \begin{Params}
+	\Param{\$cmnd}{コマンドライン}
+	\Param{\BS @args}{コマンド引数}
+	\Param{\BS @opts}{オプション引数}
+    \end{Params}
+    \begin{General}
+	使用方法の表示ルーチン。
+	\tt{add_padding()}は表示位置を合わせるための簡易ルーチン。
+    \end{General}
+}
+\Method{warning(\$prog, @text)\\
+	error(\$prog, @text)\\
+	fatal(\$prog, @text)\\
+	panic(\$prog, @text)}{%
+    \begin{Params}
+	\Param{\$prog}{プログラム名}
+	\Param{@text}{表示文字列(配列)}
+    \end{Params}
+    \begin{General}
+	エラーメッセージ表示ルーチン。
+	\tt{fatal()}と\tt{panic()}はプログラムを終了させる。
+    \end{General}
+}
+\Method{\$name = dirname(\$path)}{%
+    \begin{General}
+	引数のパス名\tt{\$path}からディレクトリ部分を取り出して返す。
+    \end{General}
+}
+\Method{\$name = leafname(\$path)}{%
+    \begin{General}
+	引数のパス名\tt{\$path}からリーフ名部分を取り出して返す。
+    \end{General}
+}
+\Method{debug(\$level, @text)\\
+	debug_push(\$value)\\
+	debug_pop()}{%
+    \begin{Params}
+	\Param{\$level}{表示レベル}
+	\Param{@text}{出力フォーマットとテキスト}
+	\Param{\$value}{デバッグレベル}
+    \end{Params}
+    \begin{General}
+	デバッグ表示を行なう
+	(現在のデバッグレベルより大きいレベルが指定された時のみ)。
+	デバッグレベルを変更するには\tt{debug_push()}を使用する。
+	\tt{debug_pop()}で一つ前のデバッグレベルに戻せる。
+    \end{General}
+}
+\Method{object_dump(\$level, \$object [,\$text])}{%
+    \begin{Params}
+	\Param{\$level}{表示レベル}
+	\Param{\$object}{ダンプするオブジェクト}
+	\Param{@text}{出力フォーマットとテキスト}
+    \end{Params}
+    \begin{General}
+	引数で指定したオブジェクトをダンプする。
+	表示には\tt{debug()}を使用するので、デバッグレベルの指定が可能(というか必須)。
+    \end{General}
+}
+\end{Methods}
 
 % end: 6.3.6.baselib.tex

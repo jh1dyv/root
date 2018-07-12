@@ -143,10 +143,11 @@
 		オプションの仕様上は複数指定が可能であるが、
 		タスクDailyBuildでは必ず単一指定にする
 		(\Path{result.log}はそのように仮定されている)
-		{\small \let\OrgTabcolsep\tabcolsep \tabcolsep=0pt
+		\begin{LocalScope}{\small \tabcolsep=0pt
 		\begin{tabular}{p{12pt}l}
 			※ & テストを起動するディレクトリからの相対パスで指定。
 		\end{tabular}}
+		\end{LocalScope}
 	\end{enumerate}
 \end{Proc}
 
