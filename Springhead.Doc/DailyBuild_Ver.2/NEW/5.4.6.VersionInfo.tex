@@ -5,6 +5,7 @@
 \label{subsubsec:VersionInfo}
 
 \bigskip
+\begin{LocalScope}
 \def\TmpWidth{\linewidth}
 \addtolength{\TmpWidth}{-\WID}
 \framebox{\begin{tabular}{l}\begin{minipage}[t]{\TmpWidth}
@@ -14,6 +15,7 @@
 	将来的には、この部分をファイル\Path{VersionInfo.py}として
 	独立させた方がよいであろう \CDots\ (TODO)。
 \end{minipage}\end{tabular}}
+\end{LocalScope}
 
 \bigskip
 \Invoke[b]{
@@ -35,7 +37,7 @@
   \Item{$^{(3)}$}{DailyBuild/Resultのレポジトリである}
 \end{Table}
 \vspace{.5\baselineskip}
-\begin{Args}[5em]
+\begin{Args}[b][5em]
     \Item[t]{HEAD}{HEADバージョンを対象とする}
     \Item[t]{all}{すべてのバージョンを対象とする}
     \Item[t]{commit-id}{指定したバージョンを対象とする}

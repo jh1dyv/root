@@ -4,7 +4,8 @@
 \subsubsection{クラス ClosedSrcControl}
 \label{subsubsec:ClosedSrcControl}
 
-\begin{Brief}
+\bigskip
+\begin{Brief}[b]
 	Springheadを非公開ソースを使用してビルドするか否かは、
 	マクロ\tt{USE_CLOSED_SRC}が定義されるか否かで制御される
 	(ファイル\Path{core/include/UseClosedSrcOrNot.h}参照)。
@@ -15,9 +16,9 @@
 
 \begin{Initializer}{%
 	obj = ClosedSrcControl(path, use_path, unuse_path,\Cont\\
-	\Hskip{100pt}dry_run=False, verbose=0)}
+	\Hskip{140pt}dry_run=False, verbose=0)}
 	\Vskip{-.4\baselineskip}
-	\begin{Opts}[b][5em]
+	\begin{Args}[5em]
 	    \Item[t]{path}{%
 		当該マクロを定義しているファイル名\\
 		\Path{core/include/UseclosedSrcOrNot.h}を指定する}
@@ -28,23 +29,22 @@
    		closed sourceを使用しない場合のテンプレートファイル名\\
 		\Path{core/test/bin/UnuseClosedSrc.h.template}を指定する}
 	    \Item[t]{dry_run}{コマンドを表示するだけで実行はしない}
-	\end{Opts}
+	\end{Args}
 \end{Initializer}
 
 \begin{Methods}{公開メソッド}
 \Method{set_usage(usage)}{%
-    \begin{Opts}[b][5em]
+    \begin{Args}[r][5em]
     	\Item[t]{usage}{%
 	    closed sourceを使用してビルドするか否か。
 	    \tt{CSU_USE}又は\tt{CSU_UNUSE}を指定する
 	    (\Ref{subsubsec}{ConstDefs})。}
-    \end{Opts}
-    \begin{Brief}
+    \end{Args}
+    \begin{Brief}[r]
 	指定されたusageが現在のマクロ定義と異なる場合は、
 	適切なテンプレートを定義ファイルにコピーすることで要求に応じる。
     \end{Brief}
 }
-
 \Method{revive()}{%
     \begin{Brief}
 	マクロ定義ファイルの内容を元の状態に戻す。
@@ -54,9 +54,9 @@
 
 \begin{Methods}{内部メソッド}
 \Method{__read_uage(path)}{%
-    \begin{Opts}[b][5em]
+    \begin{Args}[r][5em]
     	\Item[t]{path}{マクロ定義ファイル名}
-    \end{Opts}
+    \end{Args}
     \begin{Brief}
 	指定されたマクロファイルを読み、
 	記述されているマクロ定義に従って\tt{CSU_USE}又は\tt{CSU_UNUSE}を返す。
