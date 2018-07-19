@@ -1,5 +1,5 @@
 % macro.tex
-%	Last update: 2018/07/17 F.Kanehori
+%	Last update: 2018/07/19 F.Kanehori
 
 \makeatletter
 
@@ -109,6 +109,7 @@
 %	indent		amount of indentation from left margin
 %
 \def\CmndBox#1#2{%
+	\begin{LocalScope}%
 	\def\CmndBox@indent{#1}%
 	\def\CmndBox@width{\linewidth}%
 	\addtolength{\CmndBox@width}{-\CmndBox@indent}%
@@ -116,7 +117,8 @@
 		\hspace{\CmndBox@indent}%
 		\framebox[\CmndBox@width][t]{%
 			\def\arraystretch{.8}\tabcolsep=5pt%
-			\tt{\begin{tabular}{l}#2\end{tabular}}}}}
+			\tt{\begin{tabular}{l}#2\end{tabular}}}}
+	\end{LocalScope}}
 
 \def\Cmnd#1{%
 	\vbox{\vspace{.4\baselineskip}\CmndBox{0pt}{#1}\vspace{0\baselineskip}}}
@@ -132,13 +134,17 @@
 %
 \def\Initializer#1{%
 	\vspace{.35\baselineskip}\noindent\bf{イニシャライザ} (\tt{__init__)}
-	\begin{narrow}[20pt]\hspace{-.6em}%
+	\begin{narrow}[\WID]\hspace{-.6em}%
 	\tt{\begin{tabular}{l}#1\end{tabular}}\vspace{.3\baselineskip}\\}
 \def\endInitializer{\end{narrow}}
-\def\Methods#1{\begin{GeneralBox}{\bf{#1}}\begin{enumerate}}
-\def\endMethods{\end{enumerate}\end{GeneralBox}}
-\def\Method#1#2{\item\tt{#1}\\\vbox{\vspace{\baselineskip}%
-	\begin{minipage}[r]{\linewidth}#2\end{minipage}\vspace{\baselineskip}}}
+%
+\def\Methods#1{\noindent\bf{#1}\global\count255=0\\%
+	\Vskip{-\baselineskip}\begin{narrow}[\WID]}
+\def\endMethods{\end{narrow}\relax}
+%
+\def\Method#1{\global\advance\count255 by 1\Vskip{.5\baselineskip}%
+	\noindent\the\count255 . \tt{#1}\begin{narrow}[\WID]}
+\def\endMethod{\end{narrow}}
 
 %% command synopsis, options and arguments
 %  \Cmnd[t]{body}			% 起動方法   (default: [r])
@@ -151,37 +157,42 @@
 %	[i]	indent width (dimen)
 %
 \def\isDefault{\rm{({\small \,\Note はデフォルトを示す})}}
-
+%
 \def\Invoke{\@ifnextchar[{\Invoke@}{\Invoke@[r]}}
 \def\Invoke@[#1]#2{\begin{GeneralBox}[#1]{起動方法}%
 	\vbox{\vspace{.3\baselineskip}\CmndBox{1em}{#2}\\}\end{GeneralBox}}
+%
 \def\Opts{\@ifnextchar[{\Opts@check}{\Opts@@[r][6em]}}
 \def\Opts@check[#1]{\@ifnextchar[{\Opts@@[#1]}{\Opts@@[#1][6em]}}
 \def\Opts@@[#1][#2]{\begin{GeneralBox}[#1]{オプション \isDefault}%
 	\Vskip{-.7\baselineskip}
-	\begin{narrow}[20pt]\begin{Table}[t][#2]{ll}}
+	\begin{narrow}[\WID]\begin{Table}[t][#2]{ll}}
 \def\endOpts{\end{Table}\end{narrow}\end{GeneralBox}\vspace{-.7\baselineskip}}
+%
 \def\Args{\@ifnextchar[{\Args@check}{\Args@@[r][6em]}}
 \def\Args@check[#1]{\@ifnextchar[{\Args@@[#1]}{\Args@@[#1][6em]}}
 \def\Args@@[#1][#2]{\begin{GeneralBox}[#1]{引数 \isDefault}%
 	\Vskip{-.7\baselineskip}
-	\begin{narrow}[20pt]\begin{Table}[t][#2]{ll}}
+	\begin{narrow}[\WID]\begin{Table}[t][#2]{ll}}
 \def\endArgs{\end{Table}\end{narrow}\end{GeneralBox}\vspace{-.7\baselineskip}}
+%
 \def\Brief{\@ifnextchar[{\Brief@check}{\Brief@@[r][\WID]}}
 \def\Brief@check[#1]{\@ifnextchar[{\Brief@@[#1]}{\Brief@@[#1][\WID]}}
 \def\Brief@@[#1][#2]{\begin{GeneralBox}[#1][#2]{概要}}
 \def\endBrief{\end{GeneralBox}}
+%
 \def\Proc{\@ifnextchar[{\Proc@check}{\Proc@@[r][\WID]}}
 \def\Proc@check[#1]{\@ifnextchar[{\Proc@@[#1]}{\Proc@@[#1][\WID]}}
 \def\Proc@@[#1][#2]{\begin{GeneralBox}[#1][#2]{処理の説明}}
 \def\endProc{\end{GeneralBox}}
-
+%
 \def\Return{\@ifnextchar[{\Return@check}{\Return@@[r][6em]}}
 \def\Return@check[#1]{\@ifnextchar[{\Return@@[#1]}{\Return@@[#1][6em]}}
-\def\Return@@[#1][#2]{\begin{GeneralBox}[#1]{戻り値 \isDefault}%
+\def\Return@@[#1][#2]{\begin{GeneralBox}[#1]{戻り値}%
 	\Vskip{-.7\baselineskip}
-	\begin{narrow}[20pt]\begin{Table}[t][#2]{ll}}
+	\begin{narrow}[\WID]\begin{Table}[t][#2]{ll}}
 \def\endReturn{\end{Table}\end{narrow}\end{GeneralBox}\vspace{-.7\baselineskip}}
+
 %% general purpose vertical box
 %  \begin{GeneralBox}[typeface][indent]{title}
 %	typeface	t(t), i(t), b(f), r(m), g(t), m(c)
@@ -248,13 +259,14 @@
 \def\Table@pos[#1]{\@ifnextchar[{\Table@@[#1]}{\Table@@[#1][6em]}}
 \def\Table@{\@ifnexechar[{\Table@@}{\Table@@[c][6em]}}
 \def\Table@@[#1][#2]#3{
+	\begin{LocalScope}%
 	\def\Table@name@wid{#2}
 	\def\Table@desc@wid{\linewidth}
 	\addtolength{\Table@desc@wid}{-\Table@name@wid}
 	\addtolength{\Table@desc@wid}{-25pt}
 	\vspace{-.7\baselineskip}
 	\begin{longtable}[#1]{#3}}
-\def\endTable{\end{longtable}}
+\def\endTable{\end{longtable}\end{LocalScope}}
 
 \def\Item{\@ifnextchar[{\Item@}{\Item@[n]}}
 \def\Item@[#1]#2#3{%

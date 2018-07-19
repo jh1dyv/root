@@ -4,22 +4,23 @@
 \subsubsection{クラス ControlParams}
 \label{subsubsec:ControlParams}
 
-\begin{ClassDesc}
-テスト制御パラメータを取り扱うクラス。
-パラメータはテスト制御ファイルから読み込まれる。
-テスト制御ファイルはディレクトリの包含関係に関する継承機能をもち、
-上位階層で定義されたパラメータは下位階層に継承される。
-複数の階層で同じパラメータが定義された場合は下位階層の定義が優先する。
-\end{ClassDesc}
+\bigskip
+\begin{Brief}[b]
+	テスト制御パラメータを取り扱うクラス。
+	パラメータはテスト制御ファイルから読み込まれる。
+	テスト制御ファイルはディレクトリの包含関係に関する継承機能をもち、
+	上位階層で定義されたパラメータは下位階層に継承される。
+	複数の階層で同じパラメータが定義された場合は下位階層の定義が優先する。
+\end{Brief}
 
 \bigskip
 \noindent
 \bf{テスト制御パラメータファイル構造}
 
-\vspace{5pt}
+%\Vskip{5pt}
 \begin{narrow}[20pt]
-	テスト制御パラメータファイルは、テスト制御キーとその値とをwhite spaceで
-	区切って並べたファイルであり(\tt{Kvfile}クラスで取り扱う)、
+	テスト制御パラメータファイルは、テスト制御キーとその値とを
+	white spaceで区切って並べたファイルであり(\tt{Kvfile}クラスで取り扱う)、
 	次のような特徴をもつ。
 	\begin{itemize}
 	  \item	空行は無視される。
@@ -81,26 +82,27 @@
 \end{narrow}
 
 \bigskip
-\begin{Initializer}{obj = ControlParams(fname, section, verbose)}
-\begin{Params}
-    \Param{fname}{テスト制御ファイル名}
-    \Param{section}{%
-	テスト制御ファイルセクション名\\
-	Windowsの場合は``Windows''を、unixの場合は``unix''を指定する。}
-\end{Params}
+\begin{Initializer}{%
+	obj = ControlParams(fname, section, verbose)}
+    \begin{Args}[5em]
+    	\Item[t]{fname}{テスト制御ファイル名}
+    	\Item[t]{section}{%
+		テスト制御ファイルセクション名\\
+		Windowsの場合は``Windows''を、unixの場合は``unix''を指定する。}
+    \end{Args}
 \end{Initializer}
 
 \begin{Methods}{公開メソッド}
-\Method{get(key, override, default)}{%
-    \begin{Params}
-	\Param{key}{%
+\begin{Method}{value = get(key, override, default)}
+    \begin{Args}[r][5em]
+	\Item[t]{key}{%
 		テスト制御パラメータのキー。
 		\tt{CFK}クラスの定数(\tt{CFK.BUILD}, etc.)で指定する
-		(\REF{subsubsec}{ConstDefs})。}
-	\Param{override}{上書き値}
-	\Param{default}{デフォルト値}
-    \end{Params}
-    \begin{General}
+		(\RefRef{subsubsec}{ConstDefs})。}
+	\Item[t]{override}{上書き値}
+	\Item[t]{default}{デフォルト値}
+    \end{Args}
+    \begin{Brief}[r]
 	指定されたキー(クラス\tt{ConstDefs}の定数で指定する)に対応する
 	テスト制御パラメータの値(辞書\tt{self.control[key]}の値)を返す。
 	テスト制御ファイルの継承関係はイニシャライザから呼び出される
@@ -109,25 +111,26 @@
 	この値をテストパラメタとして返す。\\
 	引数\tt{key}で指定されたキーがテスト制御ファイルで定義されていなければ、
 	引数\tt{default}の値をテストパラメタとして返す。
-    \end{General}
-}
-\Method{error()}{%
-    \begin{General}
+    \end{Brief}
+\end{Method}
+\begin{Method}{msg = error()}
+    \begin{Brief}[r]
 	既にエラーが登録されていたら、メッセージを返す。
-    \end{General}
-}
-\Method{info()}{%
-    \begin{General}
+    \end{Brief}
+\end{Method}
+\begin{Method}{info()}
+    \begin{Brief}
 	定義済みのパラメータの一覧を標準出力に出力する。
-    \end{General}
-}
+    \end{Brief}
+\end{Method}
 \end{Methods}
 
+\bigskip
 \begin{Methods}{内部メソッド \rm{(抜粋)}}
-\Method{__read_control_file(fname, section)}{%
-    \begin{General}
-	\Path{core}の直下からカレントディレクトリまでの各ディレクトリまで
-	順に次の処理を実施する。
+\begin{Method}{__read_control_file(fname, section)}
+    \begin{Brief}[r]
+	ディレクトリ\Path{core}の直下からカレントディレクトリまでの
+	各ディレクトリまで順に次の処理を実施する。
 	\begin{enumerate}
 	  \item	そのディレクトリにテスト制御ファイルがあれば、それを読む。
 		ファイルの読み込みには\tt{KvFile}クラスを使用する。
@@ -137,27 +140,27 @@
 	\end{enumerate}
 	ディレクトリを上位から下位に向かって処理をすることで、
 	継承および下位優先が自然と処理される。
-    \end{General}
-}
-\Method{__set_control_values(kvf, section)}{%
-    \begin{General}
+    \end{Brief}
+\end{Method}
+\begin{Method}{__set_control_values(kvf, section)}
+    \begin{Brief}[r]
 	\tt{kvf}のセクション\tt{section}に読み込まれているすべてのデータを、
 	辞書\tt{self.control}に登録する。
-	\vspace{5pt}
-	もし対応する値が\tt{"** DO NOT INHERIT **"}であったなら、
+	\Vskip{5pt}
+	もし対応する値が \tt{"** DO NOT INHERIT **"} であったなら、
 	この値を登録する代わりに、辞書\tt{self.control[key]}をクリアする。
 	これにより、このキーに対する値の継承を取り消すことになる。
-    \end{General}
-}
-\Method{__set_default_path(dic)}{%
-    \begin{General}
+    \end{Brief}
+\end{Method}
+\begin{Method}{__set_default_path(dic)}
+    \begin{Brief}[r]
 	指定された辞書\tt{dic}に初期値として、
 	\begin{enumerate}
-	  \item	Springheadのトップディレクトリ (\RARROW \ \tt{dic['SprTop']})
-	  \item	Springheadのテストディレクトリ (\RARROW \ \tt{dic['SprTest']})
+	  \item	Springheadのトップディレクトリ ( \RArrow\Hskip{5pt}\tt{dic['SprTop']})
+	  \item	Springheadのテストディレクトリ ( \RArrow\Hskip{5pt}\tt{dic['SprTest']})
 	\end{enumerate}
-    \end{General}
-}
+    \end{Brief}
+\end{Method}
 \end{Methods}
 
 % end: 5.4.10.ControlParams.tex

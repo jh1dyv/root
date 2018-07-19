@@ -33,7 +33,7 @@
 \end{Initializer}
 
 \begin{Methods}{公開メソッド}
-\Method{set_usage(usage)}{%
+\begin{Method}{set_usage(usage)}
     \begin{Args}[r][5em]
     	\Item[t]{usage}{%
 	    closed sourceを使用してビルドするか否か。
@@ -44,16 +44,16 @@
 	指定されたusageが現在のマクロ定義と異なる場合は、
 	適切なテンプレートを定義ファイルにコピーすることで要求に応じる。
     \end{Brief}
-}
-\Method{revive()}{%
+\end{Method}
+\begin{Method}{revive()}
     \begin{Brief}
 	マクロ定義ファイルの内容を元の状態に戻す。
     \end{Brief}
-}
+\end{Method}
 \end{Methods}
 
 \begin{Methods}{内部メソッド}
-\Method{__read_uage(path)}{%
+\begin{Method}{__read_uage(path)}
     \begin{Args}[r][5em]
     	\Item[t]{path}{マクロ定義ファイル名}
     \end{Args}
@@ -61,7 +61,7 @@
 	指定されたマクロファイルを読み、
 	記述されているマクロ定義に従って\tt{CSU_USE}又は\tt{CSU_UNUSE}を返す。
     \end{Brief}
-}
+\end{Method}
 \end{Methods}
 
 % end: 5.4.7.ClosedSrcControl.tex
