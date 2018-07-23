@@ -1,0 +1,97 @@
+% 6.3.6.baselib.tex
+%	Last update: 2018/07/12 F.Kanehori
+%\newpage
+\subsubsection{base\_lib.pm}
+\label{subsubsec:baselib}
+
+\medskip
+\noindent
+perlスクリプトで共通に使用するユーティリティサブルーチンのライブラリ
+(\DDagger を付したものは外部非公開である)。
+
+\medskip
+\begin{Methods}{サブルーチンの説明}
+\begin{Method}{assert(\$expr)}
+	アサーションルーチン。
+	条件が満たされなければスタックをトレースして終了する。
+\end{Method}
+\begin{Method}{\Cell{%
+	verbose(\$text [,\$stream])\\
+	verbose_set(\$value)}}
+    \begin{Args}[r]
+	\Item[t]{\$text}{表示文字列}
+	\Item[t]{\$stream}{出力ストリーム}
+	\Item[t]{\$value}{$1$でon, $0$でoff}
+    \end{Args}
+    \begin{Brief}[r]
+	バーバス表示ルーチン。
+	\tt{verbose_set()}でon/offを切り替えできる。
+    \end{Brief}
+\end{Method}
+\begin{Method}{\Cell{%
+	show_usage(\$cmnd [,\BS @args [,\BS @opts]])\\
+	add_padding(\$text, \$width) \DDagger}}
+    \begin{Args}[r]
+	\Item[t]{\$cmnd}{コマンドライン}
+	\Item[t]{\BS @args}{コマンド引数}
+	\Item[t]{\BS @opts}{オプション引数}
+    \end{Args}
+    \begin{Brief}[r]
+	使用方法の表示ルーチン。
+	\tt{add_padding()}は表示位置を合わせるための簡易ルーチン。
+    \end{Brief}
+\end{Method}
+\begin{Method}{\Cell{%
+	warning(\$prog, @text)\\
+	error(\$prog, @text)\\
+	fatal(\$prog, @text)\\
+	panic(\$prog, @text)}}
+    \begin{Args}[r]
+	\Item[t]{\$prog}{プログラム名}
+	\Item[t]{@text}{表示文字列(配列)}
+    \end{Args}
+    \begin{Brief}[r]
+	エラーメッセージ表示ルーチン。
+	\tt{fatal()}と\tt{panic()}はプログラムを終了させる。
+    \end{Brief}
+\end{Method}
+\begin{Method}{\$name = dirname(\$path)}
+    \begin{Brief}[r]
+	引数のパス名\tt{\$path}からディレクトリ部分を取り出して返す。
+    \end{Brief}
+\end{Method}
+\begin{Method}{\$name = leafname(\$path)}
+    \begin{Brief}[r]
+	引数のパス名\tt{\$path}からリーフ名部分を取り出して返す。
+    \end{Brief}
+\end{Method}
+\begin{Method}{\Cell{%
+	debug(\$level, @text)\\
+	debug_push(\$value)\\
+	debug_pop()}}
+    \begin{Args}[r]
+	\Item[t]{\$level}{表示レベル}
+	\Item[t]{@text}{出力フォーマットとテキスト}
+	\Item[t]{\$value}{デバッグレベル}
+    \end{Args}
+    \begin{Brief}[r]
+	デバッグ表示を行なう
+	(現在のデバッグレベルより大きいレベルが指定された時のみ)。
+	デバッグレベルを変更するには\tt{debug_push()}を使用する。
+	\tt{debug_pop()}で一つ前のデバッグレベルに戻せる。
+    \end{Brief}
+\end{Method}
+\begin{Method}{object_dump(\$level, \$object [,\$text])}
+    \begin{Args}[r]
+	\Item[t]{\$level}{表示レベル}
+	\Item[t]{\$object}{ダンプするオブジェクト}
+	\Item[t]{@text}{出力フォーマットとテキスト}
+    \end{Args}
+    \begin{Brief}[r]
+	引数で指定したオブジェクトをダンプする。
+	表示には\tt{debug()}を使用するので、デバッグレベルの指定が可能(というか必須)。
+    \end{Brief}
+\end{Method}
+\end{Methods}
+
+% end: 6.3.6.baselib.tex

@@ -1,5 +1,6 @@
 % macro.tex
-%	Last update: 2018/07/19 F.Kanehori
+    \end{narrow}
+%	Last update: 2018/07/23 F.Kanehori
 
 \makeatletter
 
@@ -94,6 +95,7 @@
 %% some specific ones
 %
 \def\RArrowSp#1{\hspace{#1}\RArrow\hspace{#1}}	% sp Å® sp
+\def\LArrowSp#1{\hspace{#1}\LArrow\hspace{#1}}	% sp Å© sp
 \def\Cont{\ \ {\rm{\scriptsize{(éüÇÃçsÇ…ë±Ç≠)}}}}
 \def\Path#1{\DQuote{\tt{#1}}}
 \def\PathBgn#1{\hbox{\,\raise.4ex\hbox{{\tt "}}\tt{#1}}}
@@ -283,6 +285,7 @@
 	&\begin{minipage}[t]{\Table@desc@wid}#3\hfill\par
 	\vspace{.2\baselineskip}\end{minipage}\\}
 \let\MC\multicolumn
+\def\Cell#1{\begingroup\tabcolsep=0pt \begin{tabular}[t]{l}#1\end{tabular}\endgroup}
 
 \makeatother
 % end: marco.tex
