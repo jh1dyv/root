@@ -21,10 +21,18 @@
 \begin{document}
 \input{macro}
 
-\def\S{‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ 
-‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ }
+\def\S{x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x}
+\def\VR{\vbox{\hrule height \baselineskip width 1pt}}
+\def\Vr{\vbox{\hrule height \baselineskip width 4pt}}
+\def\Tstr{\hbox{ \Vr x x x x x x x x x x x x x x}}
 
-\S
+\noindent\Tstr
+
+\begin{Table}[l][\WID]{ll}
+	\Item{test}{\Tstr}
+\end{Table}
+
+\noindent\Tstr
 
 \end{document}
 

@@ -1,6 +1,6 @@
 @echo off
-del M.pdf
-cmd /c nmake -f M.makefile tex
-del main_2018*.pdf
-cmd /c main.pdf
+del M.pdf > NUL 2>&1
+cmd /c platex M.tex
+cmd /c dvipdfmx M.dvi
+cmd /c M.pdf
 exit /b
