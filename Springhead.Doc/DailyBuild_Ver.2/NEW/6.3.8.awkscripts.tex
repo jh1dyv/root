@@ -13,7 +13,7 @@
 \begin{Method}{exclude.awk}
     \noindent 起動方法
     \Vskip{.1\baselineskip}%
-    \CmndBox{1em}{> awk -f exclude.awk \it{infile}}
+    \CmndBox{> awk -f exclude.awk \it{infile}}
     \begin{Brief}[r]
 	レポート作成に不要な行を削除するためのスクリプト。
 	ただし現在は削除を行なっていない(すべての行を出力している)。
@@ -22,7 +22,7 @@
 \begin{Method}{field.awk}
     \noindent 起動方法
     \Vskip{.1\baselineskip}%
-    \CmndBox{1em}{> awk -f field.awk -v {\small \rm{変数}=\rm{値}} < \it{infile}}
+    \CmndBox{> awk -f field.awk -v {\small \rm{変数}=\rm{値}} < \it{infile}}
     \begin{Opts}[r][6em]
 	\Item[t]{-v 変数=値}{変数に値を割り当てて実行する。\\
 		変数には、位置を示す変数(\tt{block, field, start})と
@@ -44,7 +44,7 @@
 \begin{Method}{grep.awk}
     \noindent 起動方法
     \Vskip{.1\baselineskip}%
-    \CmndBox{1em}{> awk -f field.awk -v {\small \rm{変数}=\rm{値}} < \it{infile}}
+    \CmndBox{> awk -f field.awk -v {\small \rm{変数}=\rm{値}} < \it{infile}}
     \begin{Opts}[r][6em]
 	\Item[t]{-v 変数=値}{変数に値を割り当てて実行する。\\
 		変数は\tt{pat}のみである。}

@@ -45,7 +45,7 @@
 \end{Table}
 \end{LocalScope}
 
-\begin{Proc}
+\begin{Proc}[b]
 \begin{enumerate}
   \item ディレクトリ\Path{core/test/bin}に移動する。
 
@@ -53,9 +53,9 @@
 	\tt{SpringheadTest}(\Ref{subsubsec}{SpringheadTest})を呼び出して
 	テストを実行する。
 	\begin{narrow}\begin{tabular}{ll}
-	    \tt{<\it{top}>/core/src} & Springheadライブラリを作成する\\
-	    \tt{<\it{top}>/core/src/tests} & ビルドして実行する\\
-	    \tt{<\it{top}>/core/src/Samples} & ビルドのみ行なう\\
+	    \tt{core/src} & Springheadライブラリを作成する\\
+	    \tt{core/src/tests} & ビルドして実行する\\
+	    \tt{core/src/Samples} & ビルドのみ行なう\\
 	\end{tabular}\end{narrow}
 
 	呼出しコマンドは、\\
@@ -80,7 +80,7 @@
 		(\Path{.}, \Path{tests}, \Path{Samples}を順に指定)}
 	    \Item[t]{section}{%
 		テスト制御ファイルセクション名
-		(\tt{Windows}または\tt{unix})\\
+		(\tt{Windows}または\tt{unix})。
 		テスト制御ファイルのどのセクションを対象とするかを指定}
 	\end{Args}
 
@@ -114,6 +114,7 @@
 	\end{tabular}}
 	\end{LocalScope}
 
+	\Vskip{.5\baselineskip}
 	である。
 	このファイルは、Webページ``ビルドの状況テーブル''の
 	日付表示に使用される。
@@ -121,9 +122,8 @@
   \item	ログファイルをWebサーバにコピーする。\\
 	\begin{tabular}{ll}
 	    コピー元 & \tt{test/log/*}\\
-	    コピー先 & \\
-	    \MC{2}{l}{\hspace{15pt}
-		\Path{//haselab/HomeDirs/WWW/docroots/springhead/dailybuild/log}}
+	    コピー先 & \PathBgn{\BS\BS haselab\BS HomeDirs\BS WWW\BS docroot\BS\Cont}\\
+	    	     & \Hskip{140pt}\PathEnd{springhead\BS dailybuild\BS log}
 	\end{tabular}
 
   \item	ディレクトリ\Path{core/include}に移動して

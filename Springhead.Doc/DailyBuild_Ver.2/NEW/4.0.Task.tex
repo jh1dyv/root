@@ -1,5 +1,5 @@
 % 4.0.Task.tex
-%	Last update: 2018/06/16 F.Kanehori
+%	Last update: 2018/07/26 F.Kanehori
 \newpage
 \section{タスク}
 \label{sec:Task}
@@ -8,9 +8,7 @@
 DailyBuildは毎日Windows上でタスクとして実行される。
 \begin{narrow}[\WID]
     \begin{Table}[r][4.5em]{ll}
-	\Item{実行マシン}{%
-    		\tt{DESKTOP-KD3C7HS} (192.168.91.194)
-		\LArrow 固定アドレスではない}
+	\Item{実行マシン}{\tt{DESKTOP-KD3C7HS}}
 	\Item{タスク名}{%
 		\begin{LocalScope}\tabcolsep=0pt
 		\begin{tabular}[t]{l@{\Hskip{1em}}l}
@@ -62,17 +60,18 @@ unixの場合：
     \begin{Table}[r][4.5em]{ll}
 	\Item{Script}{\Path{I:/DailyBuild/Springhead/core/test/MakeReport.bat}}
 	\Item{概要}{%
-		指定された過去コミットの実行結果と最新コミットの実行結果とを
+		指定された特定コミットの実行結果と最新コミットの実行結果とを
 		比較して差分情報を作成し、レポートファイルにまとめる。
-		過去コミットの指定はファイル\\
-		\tt{"I:/DailyBuild/Springhead/} \Cont\\
-		\Hskip{40pt}\tt{core/test/Monitoring/etc/revision.old"}\\
-		で行なう。}
+		特定コミットは次のファイルで指定する。
+		\begin{narrow}[\WID]
+			\tt{"I:/DailyBuild/Springhead/} \Cont\\
+			\Hskip{40pt}\tt{core/test/Monitoring/etc/revision.old"}
+		\end{narrow}}
 	\Item{詳細}{\RefRef{sec}{MakeReportScript}}
     \end{Table}
 \end{narrow}
 
-\Vskip{-.5\baselineskip}
+%\Vskip{-.5\baselineskip}
 \noindent
 unixには未対応である。
 \begin{narrow}
@@ -86,14 +85,14 @@ unixには未対応である。
 \label{subsec:ResultReference}
 % -----------------------------------------------------------------------
 \noindent
-Wiki (\tt{http://Springhead.info/wiki})の``開発者向け情報''から参照できる。
+Wiki (\tt{http://Springhead.info/wiki})の「開発者向け情報」から参照できる。
 \begin{narrow}[\WID]
     \begin{tabular}{l@{\RArrowSp{8pt}}l}
-	DailyBuild & `今朝のビルドの状況',\\
-		   & `Samples のビルドの状況',\\
-		   & `今朝のビルドのログ'\\
-	MakeReport & `今朝のビルドについてまとめた報告',\\
-		   & `レビジョン nnnn (yyyy/mm/dd) との比較'\\
+	DailyBuild & ``今朝のビルドの状況'',\\
+		   & ``Samples のビルドの状況'',\\
+		   & ``今朝のビルドのログ''\\
+	MakeReport & ``今朝のビルドについてまとめた報告'',\\
+		   & ``レビジョン nnnn (yyyy/mm/dd) との比較''\\
     \end{tabular}
 \end{narrow}
 

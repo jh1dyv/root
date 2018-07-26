@@ -1,5 +1,5 @@
 % 5.4.6.VersionInfo.tex
-%	Last update: 2018/06/18 F.Kanehori
+%	Last update: 2018/07/26 F.Kanehori
 %\newpage
 \subsubsection{VersionInfo}
 \label{subsubsec:VersionInfo}
@@ -43,7 +43,7 @@
     \Item[t]{commit-id}{指定したバージョンを対象とする}
 \end{Args}
 
-\begin{Proc}
+\begin{Proc}[b]
 \begin{enumerate}
   \item	このプログラムは\Path{core/test}から起動されることを前提としている。
 
@@ -70,16 +70,16 @@
 	\end{narrow}
 	\Vskip{.5\baselineskip}
 
-  \item	オプション\tt{-S}が指定された場合
+  \item	オプション\SQuote{\tt{-S}}が指定された場合
 	この場合はクラス\tt{VersionControlSystem}のテストプログラム
 	そのものである。DailyBuildからは使用されない。
 
-  \item	オプション\tt{-G}が指定された場合
+  \item	オプション\SQuote{\tt{-G}}が指定された場合
 	\begin{enumerate}
-	  \item	オプション\tt{-f fname}が指定された場合\\
+	  \item	オプション\SQuote{\tt{-f fname}}が指定された場合\\
 		引数で指定されたバージョン
-		(\tt{all}の場合は全バージョン)から
-		\tt{FNAME}で指定されたファイルを取得し、
+		(\SQuote{\tt{all}}の場合は全バージョン)から
+		\tt{fname}で指定されたファイルを取得し、
 		次の形式で標準出力に出力する。
 
 		\medskip
@@ -93,12 +93,12 @@
 		\medskip
 		\it{short-id}はコミットIDの短縮形式、
 		\it{long-id}はコミットIDを表す。\\
-		引数\tt{all}が指定された場合は、
+		引数\SQuote{\tt{all}}が指定された場合は、
 		上記の形式を全バージョンに対して繰り返す。
 
-	  \item	オプション\tt{-f fname}が指定されない場合\\
+	  \item	オプション\SQuote{\tt{-f fname}}が指定されない場合\\
 		引数で指定されたバージョン
-		(\tt{all}の場合は全バージョン)について、
+		(\SQuote{\tt{all}}の場合は全バージョン)について、
 		次の情報を標準出力に出力する。
 
 		\medskip
@@ -111,7 +111,7 @@
 		\medskip
 		\it{short-id}はコミットIDの短縮形式、
 		\it{long-id}はコミットIDを表す。\\
-		引数\tt{all}が指定された場合は、上記の形式を全バージョンに
+		引数\SQuote{\tt{all}}が指定された場合は、上記の形式を全バージョンに
 		対して繰り返す。
 	\end{enumerate}
 \end{enumerate}

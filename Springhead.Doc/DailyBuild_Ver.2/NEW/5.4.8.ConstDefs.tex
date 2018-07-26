@@ -1,5 +1,5 @@
 % 5.4.8.ConstDefs.tex
-%	Last update: 2018/06/18 F.Kanehori
+%	Last update: 2018/07/26 F.Kanehori
 %\newpage
 \subsubsection{定数定義クラス ConstDefs}
 \label{subsubsec:ConstDefs}
@@ -32,14 +32,14 @@
 			サブディレクトリをテスト対象に組み込むか否か\Note}\hline
 	    \ItemT{SOLUTION_ALIAS}{"SolutionAlias"}{%
 			solution/makeファイル名\\
-			ディレクトリ名と同じならば省略可}\hline
+			ファイル名がディレクトリ名と異なる場合に使用する}\hline
 	    \ItemT{BUILD}{"Build"}{%
 			コンパイルを実行するか否か\Note}\hline
 	    \ItemT{USE_CLOSED_SRC}{"UseClosedSrc"}{%
 			Closed sourceを使用するか否か\Note}\hline
 	    \ItemT{MAKE_TARGET}{"MakeTarget"}{未使用}\hline
 	    \ItemT{CPP_MACRO}{"CppMacro"}{%
-			コンパイル時マクロ <<未実装>>}\hline
+			コンパイル時マクロ ※未実装※}\hline
 	    \ItemT{BUILD_LOG}{"BuildLog"}{%
 			コンパイルログファイル名\\
 			\Path{\$(SprTest)/log/StubBuild.log}}\hline
@@ -86,10 +86,10 @@
 			このテストプログラムは実行されない。}\hline
 	\end{Table}
 	\Vskip{-.5\baselineskip}
-	\footnotesize{\begin{Table}[t][15pt]{ll}
+	{\small \begin{Table}[t][15pt]{ll}
 		\Item{\Hskip{15pt}\Dagger}{%
 			論理値(TrueまたはFalse)を指定する。
-			キーワードを指定しなければFalseを、
+			このキーワードを指定しなければFalseを、
 			キーワードのみを指定すればTrueを指定したものとみなす。}
 	\end{Table}}
 \end{narrow}
@@ -102,7 +102,8 @@
 	\begin{narrow}[12pt]\begin{Table}[r][40pt]{|l|l|}\hline
 	    \MC{1}{|c}{定 数} & \MC{1}{|c|}{説 明}\\\hline
 	    \Item[t]{ERR}{エラー情報}\hline
-	    \Item[t]{SKP}{スキップ情報}\hline
+	    \Item[t]{SKP}{スキップ情報\Hskip{5pt}
+			(\KQuote{このテストは実行されなかった}という情報)}\hline
 	    \Item[t]{BLD}{コンパイル結果情報}\hline
 	    \Item[t]{RUN}{テスト実行結果情報}\hline
 	    \Item[t]{EXP}{実行結果想定値情報}\hline

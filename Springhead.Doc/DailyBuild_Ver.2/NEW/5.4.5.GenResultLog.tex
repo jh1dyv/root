@@ -1,5 +1,5 @@
 % 5.4.5.GenResultLog.tex
-%	Last update: 2018/06/18 F.Kanehori
+%	Last update: 2018/07/26 F.Kanehori
 %\newpage
 \subsubsection{GenResultLog}
 \label{subsubsec:GenResultLog}
@@ -9,7 +9,7 @@
 テスト結果をファイルに書き出すプログラム。
 入力となるテスト結果は引数\tt{res-file}で指定し、
 \tt{TestResult}クラスのメソッド\tt{edit_result_log()}または
-\tt{dump()}を用いて編集する。
+\tt{dump()}を用いて編集する(\RefRef{subsubsec}{TestResult})。
 
 \medskip
 \Invoke[b]{%
@@ -18,7 +18,7 @@
 \begin{Opts}[b][5em]
     \Item[t]{-o FILE}{%
 	出力ファイル名\\
-	\small{※ テストを起動するディレクトリからの相対パスで指定}}
+	テストを起動するディレクトリからの相対パスで指定する。}
 \end{Opts}
 \begin{Args}[b][3em]
     \Item[t]{type}{%
@@ -33,10 +33,10 @@
     \Item[t]{conf}{ビルド構成 (\tt{Debug, Release, Trace})}
 \end{Args}
 
-\begin{Proc}
+\begin{Proc}[b]
 	\begin{enumerate}
 	  \item	\tt{TestResult}クラスのインスタンスを生成して
-  		テスト結果累積データを読み込む(\Ref{subsubsec}{TestResult})。
+  		テスト結果累積データを読み込む(\RefRef{subsubsec}{TestResult})。
 
 	  \item	\tt{type}が\tt{r}ならば、
 		\begin{enumerate}

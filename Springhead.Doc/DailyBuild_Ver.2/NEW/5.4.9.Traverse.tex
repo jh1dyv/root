@@ -1,5 +1,5 @@
 % 5.4.9.Traverse.tex
-%	Last update: 2018/06/05 F.Kanehori
+%	Last update: 2018/07/26 F.Kanehori
 %\newpage
 \subsubsection{クラス Traverse}
 \label{subsubsec:Traverse}
@@ -8,7 +8,7 @@
 \begin{Brief}[b]
 	指定されたディレクトリを起点としてディレクトリを走査し、
 	テスト制御ファイルの内容に従ってビルド＆実行を制御する。
-	テスト結果はイニシャライザに与えられた\tt{result}に設定される。
+	テスト結果はイニシャライザに与えられたオブジェクト\tt{result}に設定される。
 \end{Brief}
 
 \begin{Initializer}{%
@@ -20,7 +20,7 @@
 	\begin{Args}[5em]
 	    \Item[t]{testid}{%
 		テスト種別(テスト結果ファイルの識別情報として使用する)。\\
-		\tt{TESTID.STUB, TESTID.TESTS, TESTID.SAMPLES}のいずれか\Dagger}
+		\tt{TESTID.STUB, TESTID.TESTS, TESTID.SAMPLES}のいずれか\Note}
 	    \Item[t]{result}{%
 		\tt{TestResult}クラスのオブジェクト。テスト結果をここに返す。}
 	    \Item[t]{csc}{%
@@ -31,16 +31,20 @@
 		タスクDailyBuildでは\Path{dailybuild.control}}
 	    \Item[t]{section}{%
 		テスト制御ファイルのセクション名。\\
-		Windowsのときは\tt{Windows}、unixのときは\tt{unix}を指定する。}
+		Windowsのときは\SQuote{\tt{Windows}}、
+		unixのときは\SQuote{\tt{unix}}を指定する。}
 	    \Item[t]{toolset}{%
 		使用するCコンパイラのバージョン。
 		WindowsのときはVisual Studioのバージョン、unixのときはダミー。}
 	    \Item[t]{platform}{%
-		テストで使用するプラットフォーム。定数\tt{PLATS}のいずれか\Dagger}
+		テストで使用するプラットフォーム。
+		定数リスト\tt{PLATS}のいずれか\Note}
 	    \Item[t]{configs}{%
-		テストで使用するビルド構成。定数\tt{CONFS}のいずれか\Dagger}
+		テストで使用するビルド構成。
+		定数リスト\tt{CONFS}のいずれか\Note}
 	    \Item[t]{cuusage}{%
-		非公開ソースを使用するか否か。定数\tt{CSU}のいずれか\Dagger}
+		非公開ソースを使用するか否か。
+		定数リスト\tt{CSU}のいずれか\Note}
 	    \Item[t]{rebuild}{%
 		強制的に再コンパイルするか否か(論理値で指定)。}
 	    \Item[t]{timeout}{%
@@ -53,16 +57,16 @@
 	    \hline
 	\end{Args}
 	\small{\begin{Table}[t][25pt]{ll}
-		\Item{\Hskip{25pt}\Dagger}{\RefRef{subsubsec}{ConstDefs}}
+		\Item{\Hskip{25pt}\Note}{\RefRef{subsubsec}{ConstDefs}}
 	\end{Table}}
 \end{Initializer}
 
 \begin{Methods}{公開メソッド}
 \begin{Method}{stat = traverse(top)}
-    \begin{Args}[r][5em]
+    \begin{Args}[r]
 	\Item[t]{top}{走査開始ディレクトリ}
     \end{Args}
-    \begin{Return}[r][5em]
+    \begin{Return}[r]
 	\Item[t]{stat}{リターンステータス}
     \end{Return}
     \begin{Brief}[r]
@@ -78,33 +82,33 @@
 		次の条件がすべて成立したら\tt{process()}を呼び出して
 		このディレクトリ自身の処理を行なう。
 		\begin{itemize}
-		  \item	このディレクトリが``対象外ディレクトリ''ではない。
+		  \item	このディレクトリが\KQuote{対象外ディレクトリ}ではない。
 			すなわち、
 			\begin{itemize}
-			  \item	ディレクトリ名が\tt{'.'}で始まらない。
-			  \item	ディレクトリ名が\tt{Template}でも
-			  	\tt{log}でもない。
+			  \item	ディレクトリ名が\SQuote{\tt{.}}で始まらない。
+			  \item	ディレクトリ名が\Path{Template}でも
+			  	\Path{log}でもない。
 			  \item	ディレクトリ名が\tt{toolset}で与えられた
 				名前と等しくない。
 			\end{itemize}
 			(\tt{__is_candidate_dir()}で判定する)。
-		  \item	テスト制御ファイルでExclude指定されていない。
+		  \item	テスト制御ファイルで\DQuote{Exclude}指定されていない。
 		  \item	このディレクトリにsolution/makeファイルがある
 			(\tt{__has_solution_file()}で判定する)。
 		\end{itemize}
 	  \item	テスト制御ファイルでDescendが指定されていたら、
-		すべての``対象サブディレクトリ''に対して、
+		すべての\KQuote{対象サブディレクトリ}に対して、
 		\tt{traverse()}を再帰的に呼び出して処理を行なう。
 		ただし途中で\Ctrl{C}割込があったら処理を中止する。
 	\end{enumerate}
     \end{Proc}
 \end{Method}
 \begin{Method}{stat = process(cwd, ctl)}
-    \begin{Args}[r][5em]
+    \begin{Args}[r]
 	\Item[t]{cwd}{現在ディレクトリ}
 	\Item[t]{ctl}{\tt{ControlParams}クラスオブジェクト}
     \end{Args}
-    \begin{Return}[r][5em]
+    \begin{Return}[r]
 	\Item[t]{stat}{リターンステータス}
     \end{Return}
     \begin{Brief}[r]
@@ -115,11 +119,12 @@
           \item	solution/makeファイル名を決定する。
 		デフォルトのファイル名は
 		\Path{<\it{dierctory-name}><\it{compiler-version}>\tt{.sln}}%
-		であるが、テスト制御ファイルのAlias指定により
+		であるが、テスト制御ファイルの\DQuote{SolutionAlias}指定により
 		変更することができる
 		(\tt{__solution_file_name()}で判定する)。
 	  \item	イニシャライザの引数\tt{csc}およびテスト制御ファイルの
-		UseClosedSrc指定に従って、非公開ソースの使用/未使用を設定する。
+		\DQuote{UseClosedSrc}指定に従って、
+		非公開ソースの使用/未使用を設定する。
 		(\tt{set_usage()}を呼ぶ。\RefRef{subsubsec}{ClosedSrcControl})。
 	  \item	\tt{BuildAndRun}クラスのオブジェクト\tt{bar}を準備する。
 	  \item	指定されたプラットフォームとビルド構成のすべての組合せに
@@ -142,11 +147,12 @@
     \begin{Brief}[r]
 	ログファイルをオープンしてヘッダ行を書き込む。
 	ヘッダ行は次の3行からなる。
-	\begin{itemize}
-	  \item	日付行
-	  \item	ログの識別行 --- 引数\tt{step}および\tt{erlog}を元に作成する
-	  \item	空行
-	\end{itemize}
+	\Vskip{-.1\baselineskip}
+	\Hskip{\WID}\framebox{\Cell{%
+		{\small 日付行}\\
+		{\small ログの識別行 --- 引数\tt{step}および\tt{errlog}を元に作成する}\\
+		{\small 空行}}}
+	\Vskip{.1\baselineskip}
     \end{Brief}
 \end{Method}
 \begin{Method}{\it{sting} __chdir(path)}
@@ -162,8 +168,8 @@
 	テスト対象外のディレクトリである
 	(これらのディレクトリに\tt{traverse()}することを防ぐ)。
 	\begin{itemize}
-	  \item	ディレクトリ名が\tt{'.'}で始まる。
-	  \item	ディレクトリ名が\tt{Template}または\tt{log}である。
+	  \item	ディレクトリ名が\SQuote{\tt{.}}で始まる。
+	  \item	ディレクトリ名が\Path{Template}または\Path{log}である。
 	  \item	ディレクトリ名が\tt{toolset}で与えられた名前と一致する。
 	\end{itemize}
     \end{Brief}
@@ -194,15 +200,16 @@
 	同じ(拡張子\tt{.sln}は除く)とする。
 
 	\Vskip{5pt}
-	\small{%
 	※ テスト制御パラメータ\tt{CFK.OUTPUT_DIR}に指定されたマクロは、
 	ここで次の値に変換される。\\
-	\begin{tabular}{@{\Hskip{5pt}}ll}
-	    \tt{TOOLSET}
+	\Vskip{.5\baselineskip}
+	{\small\begin{tabular}{@{\Hskip{10pt}}ll}
+	    マクロ名 & 変換される値\\\hline
+	    \tt{\$TOOLSET}
 		& イニシャライザの引数\tt{toolset}の値\\
-	    \tt{PLATFORM}
+	    \tt{\$PLATFORM}
 		& \tt{process()}で設定された変数\tt{self.platform}の値\\
-	    \tt{CONFIGURATION}
+	    \tt{\$CONFIGURATION}
 		& \tt{process()}で設定された変数\tt{self.config}の値
 	\end{tabular}}
     \end{Brief}
@@ -212,16 +219,17 @@
 	次のパスリストを返す。これらは、 バイナリ実行時に加えるべきパスである。
 	\begin{itemize}
 	  \item	テスト制御パラメータ\tt{CFK.ADD_PATH}に指定されている値。
-	  \item	Windowsの場合、
-		\Path{.../dependency/bin/Win64;.../dependency/bin/Win32}
-		または
-		\Path{.../dependency/bin/Win32}
+	  \item	Windowsの場合、\\
+		\Hskip{10pt}\Path{.../dependency/bin/Win64;.../dependency/bin/Win32}\\
+		または\\
+		\Hskip{10pt}\Path{.../dependency/bin/Win32}\\
 		(プラットフォーム\tt{platform}に従う）。
 	\end{itemize}
     \end{Brief}
 \end{Method}
-\begin{Method}{__report(msg_l, msg_s, header, newline)\\
-	       __report_1(msg, header, newline)}
+\begin{Method}{\Cell{%
+		__report(msg_l, msg_s, header, newline)\\
+		__report_1(msg, header, newline)}}
     \begin{Brief}[r]
 	テストの経過報告を標準出力にレポートする。
 	レポート出力の本体は\tt{__report()}であり、

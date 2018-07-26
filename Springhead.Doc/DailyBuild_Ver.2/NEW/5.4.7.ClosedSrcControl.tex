@@ -1,5 +1,5 @@
 % 5.4.7.ClosedSrcControl.tex
-%	Last update: 2018/06/18 F.Kanehori
+%	Last update: 2018/07/26 F.Kanehori
 %\newpage
 \subsubsection{クラス ClosedSrcControl}
 \label{subsubsec:ClosedSrcControl}
@@ -18,7 +18,7 @@
 	obj = ClosedSrcControl(path, use_path, unuse_path,\Cont\\
 	\Hskip{140pt}dry_run=False, verbose=0)}
 	\Vskip{-.4\baselineskip}
-	\begin{Args}[5em]
+	\begin{Args}
 	    \Item[t]{path}{%
 		当該マクロを定義しているファイル名\\
 		\Path{core/include/UseclosedSrcOrNot.h}を指定する}
@@ -34,10 +34,10 @@
 
 \begin{Methods}{公開メソッド}
 \begin{Method}{set_usage(usage)}
-    \begin{Args}[r][5em]
+    \begin{Args}[r]
     	\Item[t]{usage}{%
 	    closed sourceを使用してビルドするか否か。
-	    \tt{CSU_USE}又は\tt{CSU_UNUSE}を指定する
+	    \SQuote{\tt{CSU_USE}}又は\SQuote{\tt{CSU_UNUSE}}を指定する
 	    (\Ref{subsubsec}{ConstDefs})。}
     \end{Args}
     \begin{Brief}[r]
@@ -54,12 +54,10 @@
 
 \begin{Methods}{内部メソッド}
 \begin{Method}{__read_uage(path)}
-    \begin{Args}[r][5em]
-    	\Item[t]{path}{マクロ定義ファイル名}
-    \end{Args}
     \begin{Brief}
-	指定されたマクロファイルを読み、
-	記述されているマクロ定義に従って\tt{CSU_USE}又は\tt{CSU_UNUSE}を返す。
+	引数で指定されたマクロファイルを読み、
+	記述されているマクロ定義に従って
+	\SQuote{\tt{CSU_USE}}又は\SQuote{\tt{CSU_UNUSE}}を返す。
     \end{Brief}
 \end{Method}
 \end{Methods}
