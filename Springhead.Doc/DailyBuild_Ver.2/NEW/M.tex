@@ -22,17 +22,38 @@
 \input{macro}
 
 \def\S{x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x}
-\def\VR{\vbox{\hrule height \baselineskip width 1pt}}
-\def\Vr{\vbox{\hrule height \baselineskip width 4pt}}
-\def\Tstr{\hbox{ \Vr x x x x x x x x x x x x x x}}
+\def\Tstr{\S}
+
+%\hrule height 1pt width \linewidth
 
 \noindent\Tstr
+\noindent\Tstr
+\noindent\Tstr
 
-\begin{Table}[l][\WID]{ll}
+\noindent\Tstr
+\begin{Table}[l][20pt]{ll}
+	\Item{test}{\Tstr\Tstr\Tstr}
 	\Item{test}{\Tstr}
 \end{Table}
-
 \noindent\Tstr
+\begin{Table}[l][70pt]{lll}
+	\ItemT{test}{three}{\Tstr\Tstr\Tstr}
+	\ItemT{test}{three}{\Tstr}
+\end{Table}
+\noindent\Tstr
+\begin{narrow}
+	\noindent\Tstr
+	\noindent\Tstr
+	\noindent\Tstr
+	\begin{narrow}
+		\noindent\Tstr
+		\noindent\Tstr
+		\noindent\Tstr
+	\end{narrow}
+	\noindent\Tstr
+\end{narrow}
+\noindent\Tstr
+	
 
 \end{document}
 

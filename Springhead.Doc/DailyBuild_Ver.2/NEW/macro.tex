@@ -1,5 +1,5 @@
 % macro.tex
-%	Last update: 2018/07/26 F.Kanehori
+%	Last update: 2018/07/29 F.Kanehori
 
 \makeatletter
 
@@ -246,6 +246,7 @@
 	       \def\font@def{N} \let\font@size\relax	    \fi\fi\fi\fi\fi\fi
 	\if\font@def Y \narrow@same{#2} \else \narrow@repl{#2} \fi
 	\begin{Vmode}%
+	\vspace{.25\baselineskip}%
 	\list{}{\topsep 0pt \partopsep 0pt \parsep 0pt \itemsep 0pt
 		\rightmargin 0pt \leftmargin \@lmgn \relax}\item[]
 	\begingroup\font@size\@text}
@@ -266,10 +267,12 @@
 	\def\Table@name@wid{#2}
 	\def\Table@desc@wid{\linewidth}
 	\addtolength{\Table@desc@wid}{-\Table@name@wid}
-	\addtolength{\Table@desc@wid}{-25pt}
-	\vspace{-.7\baselineskip}
+	%\addtolength{\Table@desc@wid}{-25pt}
+	\addtolength{\Table@desc@wid}{-18pt}
+	\vspace{-.8\baselineskip}
+	\def\arraystretch{1.4}
 	\begin{longtable}[#1]{#3}}
-\def\endTable{\end{longtable}\end{LocalScope}}
+\def\endTable{\end{longtable}\end{LocalScope}\vspace{-1.1\baselineskip}}
 
 \def\Item{\@ifnextchar[{\Item@}{\Item@[n]}}
 \def\Item@[#1]#2#3{%
