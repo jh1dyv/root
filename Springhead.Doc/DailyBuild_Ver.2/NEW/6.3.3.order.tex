@@ -27,20 +27,18 @@ Visual Studio (devenv) が出力したログを、モジュール単位かつス
 \begin{enumerate}
   \item	\tt{dailybuild\_lib.pm}のライブラリ関数\tt{read\_log()}を用いて
 	入力ファイルの読み込み処理を行なう。
-	返されるのは(\tt{\%modules, @modules, @lines})の3つ組である。\\
+	返されるのは(\plHshR{modules}, \plAryR{modules}, \plAryR{lines})の3つ組である。\\
 	%\vspace{-.7\baselineskip}
-	{\small
 	\begin{narrow}[10pt]\begin{tabular}{ll}
-	    \tt{\%modules}
-		& モジュール名をキーとした連想配列(要素は\tt{\%threads})\\
-	    \tt{\%threads}
+	    \plHsh{modules}
+		& モジュール名をキーとした連想配列(要素は\plHsh{threads})\\
+	    \plHsh{threads}
 		& スレッド番号をキーとした連想配列(要素は入力データ行の配列)\\
-	    \tt{@modules}
+	    \plAry{modules}
 		& モジュール名の配列(出現順)
 	\end{tabular}\end{narrow}
-	}
 
-  \item	入力データ行を\tt{\%threads}からモジュール順、スレッド順に取り出して、
+  \item	入力データ行を\plHsh{threads}からモジュール順、スレッド順に取り出して、
 	\tt{outfile}(指定がなければ標準出力)に書き出す。
 
 \end{enumerate}

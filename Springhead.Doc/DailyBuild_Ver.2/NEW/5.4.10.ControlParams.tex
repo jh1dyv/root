@@ -1,5 +1,5 @@
 % 5.4.10.ControlParams.tex
-%	Last update: 2018/06/18 F.Kanehori
+%	Last update: 2018/07/31 F.Kanehori
 %\newpage
 \subsubsection{クラス ControlParams}
 \label{subsubsec:ControlParams}
@@ -20,7 +20,7 @@
 %\Vskip{5pt}
 \begin{narrow}[20pt]
 	テスト制御パラメータファイルは、テスト制御キーとその値とを
-	white spaceで区切って並べたファイルであり(\tt{Kvfile}クラスで取り扱う)、
+	white spaceで区切って並べたファイル(\tt{Kvfile}クラスで取り扱う)であり、
 	次のような特徴をもつ。
 	\begin{itemize}
 	  \item	空行は無視される。
@@ -28,11 +28,11 @@
 	  \item	値として\DQuote{True}または\DQuote{False}が指定された場合は、
 	  	論理値として扱われる。
 	  \item	キーのみが指定された場合は、
-	  	値として\tt{"True"}が指定されたものとして扱われる。
+	  	値として\DQuote{True}が指定されたものとして扱われる。
 	  \item	キーとして\tt{"[\it{section-name}]"}が指定された場合は、
 		新たな``セクション''の開始として扱う。値はあっても無視される。
 		なお、陽にセクションを終了させる方法はない。
-	  \item	値として\tt{"** DO NOT INHERIT **"}が指定された場合は、
+	  \item	値として\DQuote{** DO NOT INHERIT **}が指定された場合は、
 	  	このキーに対して今までに設定された値は破棄される(継承の中断)。
 	\end{itemize}
 
@@ -87,7 +87,8 @@
     	\Item[t]{fname}{テスト制御ファイル名}
     	\Item[t]{section}{%
 		テスト制御ファイルセクション名\\
-		Windowsの場合は``Windows''を、unixの場合は``unix''を指定する。}
+		Windowsの場合は\DQuote{Windows}を、
+		unixの場合は\DQuote{unix}を指定する。}
     \end{Args}
 \end{Initializer}
 
@@ -103,13 +104,13 @@
     \end{Args}
     \begin{Brief}[r]
 	指定されたキー(クラス\tt{ConstDefs}の定数で指定する)に対応する
-	テスト制御パラメータの値(辞書\tt{self.control[key]}の値)を返す。
+	テスト制御パラメータの値(辞書\tt{self.control[\it{key}]}の値)を返す。
 	テスト制御ファイルの継承関係はイニシャライザから呼び出される
 	\tt{__read_control()}にて処理済みである。\\
 	引数\tt{override}が指定されたら、テスト制御ファイルの定義に係わりなく
-	この値をテストパラメタとして返す。\\
+	この値をテストパラメータとして返す。
 	引数\tt{key}で指定されたキーがテスト制御ファイルで定義されていなければ、
-	引数\tt{default}の値をテストパラメタとして返す。
+	引数\tt{default}の値をテストパラメータとして返す。
     \end{Brief}
 \end{Method}
 \begin{Method}{msg = error()}
@@ -134,8 +135,9 @@
 	  \item	そのディレクトリにテスト制御ファイルがあれば、それを読む。
 		ファイルの読み込みには\tt{KvFile}クラスを使用する。
 	  \item	\tt{section}で指定されたセクション(および無名セクション)に
-		属するテスト制御パラメータを辞書\tt{self.control[key]}に
-		格納する(\tt{__set_control_values()})。
+		属するテスト制御パラメータを辞書\tt{self.control[\it{key}]}に
+		格納する(\tt{__set_control_values()})。\\
+		※ 無名セクションには便宜上\DQuote{__default__}というキーが付与される。
 	\end{enumerate}
 	ディレクトリを上位から下位に向かって処理をすることで、
 	継承および下位優先が自然と処理される。
@@ -145,9 +147,8 @@
     \begin{Brief}[r]
 	\tt{kvf}のセクション\tt{section}に読み込まれているすべてのデータを、
 	辞書\tt{self.control}に登録する。
-	\Vskip{5pt}
 	もし対応する値が \tt{"** DO NOT INHERIT **"} であったなら、
-	この値を登録する代わりに、辞書\tt{self.control[key]}をクリアする。
+	この値を登録する代わりに、辞書\tt{self.control[\it{key}]}をクリアする。
 	これにより、このキーに対する値の継承を取り消すことになる。
     \end{Brief}
 \end{Method}
@@ -158,6 +159,7 @@
 	  \item	Springheadのトップディレクトリ ( \RArrow\Hskip{5pt}\tt{dic['SprTop']})
 	  \item	Springheadのテストディレクトリ ( \RArrow\Hskip{5pt}\tt{dic['SprTest']})
 	\end{enumerate}
+	を登録する。
     \end{Brief}
 \end{Method}
 \end{Methods}

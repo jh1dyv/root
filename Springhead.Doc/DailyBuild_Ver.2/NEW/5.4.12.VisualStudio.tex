@@ -1,5 +1,5 @@
 % 5.4.12.VisualStudio.tex
-%	Last update: 2018/06/13 F.Kanehori
+%	Last update: 2018/07/31 F.Kanehori
 %\newpage
 \subsubsection{クラス VisualStudio}
 \label{subsubsec:VisualStudio}
@@ -7,8 +7,8 @@
 \bigskip
 \begin{Brief}[b]
 	Visual studioをコマンドラインから使用するためのラッパクラス。
-	Visual Studio 2015以降に対応。
-	ただし、Visual Stduio 2017以降については未確認である
+	Visual Studio 2015に対応。
+	Visual Stduio 2017以降については未確認である
 	(tool setの表記法、\tt{devenv}の格納ディレクトリ等が変更されているかもしれない）。
 \end{Brief}
 
@@ -17,8 +17,7 @@
     \begin{Args}[5em]
     	\Item[t]{toolset}{%
 		Visual Studio toolset ID\\
-		(例) Visual Studio 2015ならば、
-		'14.0', '14', 'v140', '2015'の何れでも可。}
+		Visual Studio 2015ならば、'14.0', '14', 'v140', '2015'の何れでも可。}
     \end{Args}
 \end{Initializer}
 
@@ -28,8 +27,10 @@
 	\Item[t]{name}{ソリューション名}
     \end{Args}
     \begin{Brief}[r]
-	引数\tt{name}とVisual Studioのバージョンから
-	ソリューションファイル名を決定する。
+	引数\tt{name}からソリューションファイルパスを決定する。
+	ソリューションファイル名は
+	\Path{<\it{solution-name}><\it{Visual-Studio-version}>.sln}
+	という形式である。
     \end{Brief}
 \end{Method}
 \begin{Method}{set(func, arg1, arg2)}
@@ -49,14 +50,15 @@
 		Dry_runフラグを\tt{arg1}とする。
 		このフラグがTrueならば、
 		コマンドを表示するだけで実行はしない。}\hline
+	  \MC{2}{l}{※ \it{func}に与えるのは、このクラスで定義している定数である。}
 	\end{Table}
 	\Vskip{-.8\baselineskip}
     \end{Brief}
 \end{Method}
 \begin{Method}{stat = build(platform, config)}
     \begin{Args}[r][5em]
-	\Item[t]{platform}{\tt{x86} or \tt{x64}}
-	\Item[t]{config}{\tt{Debug}, \tt{Release} or \tt{Trace}}
+	\Item[t]{platform}{\DQuote{x86} or \DQuote{x64}}
+	\Item[t]{config}{\DQuote{Debug}, \DQuote{Release} or \DQuote{Trace}}
     \end{Args}
     \begin{Brief}[r]
 	ログディレクトリを準備したら、
@@ -75,6 +77,7 @@
 	  \Item[t]{COMMAND}{
 		Visual Studioのtoolset IDと名称\ 
 		(e.g. "v140" と "Visual Studio 2015")}\hline
+	  \MC{2}{l}{※ \it{kind}に与えるのは、このクラスで定義している定数である。}
 	\end{Table}
 	\Vskip{-.8\baselineskip}
     \end{Brief}
@@ -93,7 +96,7 @@
 
 \bigskip
 \begin{Methods}{内部メソッド \rm{(抜粋)}}
-\begin{Method}{\it{list} __get_vsinfo(toolset)}
+\begin{Method}{\it{list of string} __get_vsinfo(toolset)}
     \begin{Brief}[r]
 	引数で指定されたツールセットに対応する3つ組(pts, vsv, vsn)を返す。
 	ここで、ptsはtool set ID (e.g. v140)、vsvはVisual Studioバージョン
@@ -109,7 +112,7 @@
 	\Vskip{-.5\baselineskip}
 	\small{\begin{Table}[r][1em]{ll}
 	    \Item{\rm{(注)}}{%
-		ここで返すパスは、Visual Studio 2015までについては正しいが、
+		ここで返すパスは、Visual Studio 2015については正しいが、
 		それ以降のバージョンについては確認していない。
 		必要ならば追加修正する必要がある。}
 	\end{Table}}

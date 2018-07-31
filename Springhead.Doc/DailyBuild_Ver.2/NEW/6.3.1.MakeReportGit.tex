@@ -9,10 +9,10 @@
 タスクMakeReportを実行するためのスクリプト(Windowsバッチファイル)。
 DailyBuildの結果(ログファイル)から、
 基準とするレビジョンの実行結果との差分情報をレポートファイルとして作成する。
-この情報はWikiの``開発者向け情報''のページから参照できる。
+この情報はWikiの\KQuote{開発者向け情報}のページから参照できる。
 \begin{narrow}[s]
 	URL:\Hskip{5pt}\tt{http://springhead.info/wiki/index.php?devel}\\
-	\relax[開発版] － [今朝のビルド] － [レビジョン \CDots との比較]
+	\relax[開発版] － [今朝のビルド] － [レビジョン xxxx (yyyy/mm/dd) との比較]
 \end{narrow}
 
 \medskip
@@ -30,7 +30,7 @@ DailyBuildの結果(ログファイル)から、
     \Item[t]{yyyy}{レポート対象レビジョン(ファイル\Path{revision.new}の内容)\,\Note}
 \end{Args}
 
-\begin{Proc}
+\begin{Proc}[b]
 \begin{enumerate}
   \item	ローカルホスト上でコマンドを実行\\
         ディレクトリ\Path{Monitoring}に移動して\Path{build_monitor_Git.bat}を実行し、

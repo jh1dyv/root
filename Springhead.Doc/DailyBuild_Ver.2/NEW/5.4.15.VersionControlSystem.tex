@@ -1,5 +1,5 @@
 % 5.4.15.TestResult.tex
-%	Last update: 2018/07/23 F.Kanehori
+%	Last update: 2018/07/31 F.Kanehori
 %\newpage
 \subsubsection{クラス VersionControlSystem}
 \label{subsubsec:VersionControlSystem}
@@ -18,18 +18,19 @@
 \begin{Initializer}{obj = VersionControlSystem(system, url, wrkdir, verbose)}
     \begin{Args}[5em]
 	\Item[t]{system}{%
-		バージョン管理システムの識別(\tt{Subversion, GitHub, haselab})。}
+		バージョン管理システムの識別(\DQuote{Subversion},
+		\DQuote{GitHub} or \DQuote{haselab})。}
 	\Item[t]{url}{バージョン管理システムのURL}
 	\Item[t]{wrkdir}{%
 		指定したバージョン管理システムの管理下にあるディレクトリ。
-		\tt{GitHub}の場合に必要となる。}
+		\DQuote{GitHub}の場合に必要となる。}
     \end{Args}
     \small{\begin{Table}[r][1em]{ll}
 	\Item{\rm{(注)}}{%
-		引数\tt{system}のうち\tt{haselab}は、
+		引数\tt{system}のうち\DQuote{haselab}は、
 		このクラスのテストプログラムを外部プログラム(\tt{VersionInfo})として
 		流用しているために必要となる名称である。
-		内部処理は\tt{GitHub}と同一であり、将来\tt{VersionInfo}を
+		内部処理は\DQuote{GitHub}と同一であり、将来\tt{VersionInfo}を
 		独立プログラムとして作成したならば削除すべきである。}
     \end{Table}}
 \end{Initializer}
@@ -40,24 +41,24 @@
 	\MC{2}{l}{\tt{(code, rev, err)}}\\
 	\Item{}{レビジョン番号/commit--IDが取得できたならば、
 		\tt{code}に0、\tt{rev}にレビジョン番号
-		(GitHubのときはcommit--IDのshort形式)を返す。
+		(\DQuote{GitHub}のときはcommit--IDのshort形式)を返す。
 		さもなければ\tt{err}にエラー情報を返す。}
     \end{Return}
     \begin{Brief}[r]
-	現在のレビジョン番号(GitHubのときはcommit--ID)を取得する。
+	現在のレビジョン番号(\DQuote{GitHub}のときはcommit--ID)を取得する。
 	内部クラス\tt{Subversion, GitHub}に対するラッパメソッド。
     \end{Brief}
 \end{Method}
 \begin{Method}{info = revison_info(revision)}
     \begin{Args}[r][5em]
 	\Item[t]{revision}{%
-		取得するレビジョンの番号(GitHubのときはcommit--ID)。
-		\tt{HEAD}又は\tt{all}も可。}
+		取得するレビジョンの番号(\DQuote{GitHub}のときはcommit--ID)。
+		\DQuote{HEAD}又は\DQuote{all}も可。}
     \end{Args}
     \begin{Return}[r][5em]
 	\Item[t]{info}{%
 		(\tt{short_id, long_id, date})の3つ組。
-		引数が\tt{all}のときはそれらのリスト。}
+		引数が\DQuote{all}のときはそれらのリスト。}
     \end{Return}
     \begin{Brief}[r]
 	引数で指定されたレビジョンの情報を取得する。
@@ -84,7 +85,7 @@
 \end{Method}
 \end{Methods}
 
-\begin{Methods}{内部クラス Subversion}
+\begin{Methods}{内部クラス \tt{Subversion}}
 \begin{Method}{(code, rev, err) = revision()}
     \begin{Brief}[r]
 	指定されたURLに次のコマンドを送って情報を得る。\\
@@ -95,7 +96,7 @@
 \end{Method}
 \end{Methods}
 
-\begin{Methods}{内部クラス GitHub}
+\begin{Methods}{内部クラス \tt{GitHub}}
 \begin{Method}{(code, rev, err) = revision()}
     \begin{Brief}[r]
 	指定されたURLに次のコマンドを送って情報を得る。\\
@@ -107,7 +108,7 @@
     \begin{Brief}[r]
 	指定されたURLに次のコマンドを送って情報を得る。\\
 	\Cmnd{> git log --abbrev-commit --oneline --max-count=1}\\
-	このうち、\DQuote{commit \it{nnnn}\CDots\it{nnnn}}を含む行が
+	このうち、\DQuote{commit \it{nnnn} \CDots\ \it{nnnn}}を含む行が
 	commit--ID (long形式)を含む行、\DQuote{Date: }を含む行が日付を含む行である。
     \end{Brief}
 \end{Method}

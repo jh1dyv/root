@@ -1,5 +1,5 @@
 % macro.tex
-%	Last update: 2018/07/29 F.Kanehori
+%	Last update: 2018/07/31 F.Kanehori
 
 \makeatletter
 
@@ -77,6 +77,11 @@
 \def\KQuote#1{\hspace{0pt}\Quote@knj{\,#1}}
 \def\Quote@#1#2#3{\hbox{\,\raise.4ex\hbox{{\tt #1}}#2\raise.4ex\hbox{{\tt #3}}\,}}
 \def\Quote@knj#1{\hbox{\,\raise.4ex\hbox{``}#1\,\raise.4ex\hbox{''}}}
+\def\UpSQs{\hbox{\raise.4ex\hbox{{\tt `}}}}
+\def\UpSQe{\hbox{\raise.4ex\hbox{{\tt '}}}}
+\def\UpDQs{\hbox{\raise.4ex\hbox{{\tt "}}}}
+\def\UpDQe{\hbox{\raise.4ex\hbox{{\tt "}}}}
+\let\UpDQ\UpDQs
 
 %% abbreviations
 %
@@ -108,6 +113,14 @@
 
 \def\Ref#1#2{\ref{#1:#2} #2}
 \def\RefRef#1#2{\KQuote{\ref{#1:#2} #2}éQè∆}
+
+% for perl module
+\def\plVar#1{\tt{\$#1}}
+\def\plAry#1{\tt{@#1}}
+\def\plHsh#1{\tt{\%#1}}
+\def\plVarR#1{\BS\plVar{#1}}
+\def\plAryR#1{\BS\plAry{#1}}
+\def\plHshR#1{\BS\plHsh{#1}}
 
 %% make framed box to denote some command
 %  \CmndBox{indent}{body}
@@ -289,7 +302,8 @@
 	&\begin{minipage}[t]{\Table@desc@wid}#3\hfill\par
 	\vspace{.2\baselineskip}\end{minipage}\\}
 \let\MC\multicolumn
-\def\Cell#1{\begingroup\tabcolsep=0pt \begin{tabular}[t]{l}#1\end{tabular}\endgroup}
+\def\Cell#1{\begingroup\def\arraystretch{.8}\tabcolsep=0pt%
+	\begin{tabular}[t]{l}#1\end{tabular}\endgroup}
 
 \makeatother
 % end: marco.tex

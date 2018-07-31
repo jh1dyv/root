@@ -1,5 +1,5 @@
 % 5.4.16.TestResult.tex
-%	Last update: 2018/06/18 F.Kanehori
+%	Last update: 2018/07/31 F.Kanehori
 %\newpage
 \subsubsection{クラス TestResult}
 \label{subsubsec:TestResult}
@@ -12,21 +12,21 @@
 	\vspace{-.5\baselineskip}
 	\small{\begin{Table}[r][18em]{|l|l|}\hline
     		\Item[t]{results}{テスト結果情報を累積する配列。}
-    		\Item[t]{\HS results[name][RST.ERR]}{　%
+    		\Item[t]{\HS results[\it{name}][RST.ERR]}{　%
 			コンパイル・実行以外でのエラーコード}
-    		\Item[t]{\HS results[name][RST.SKP]}{　%
+    		\Item[t]{\HS results[\it{name}][RST.SKP]}{　%
 			このテストがスキップされたことを示す}
-    		\Item[t]{\HS results[name][RST.BLD][p][c]}{　%
+    		\Item[t]{\HS results[\it{name}][RST.BLD][\it{p}][\it{c}]}{　%
 			コンパイルの結果コード}
-    		\Item[t]{\HS results[name][RST.RUN][p][c]}{　%
+    		\Item[t]{\HS results[\it{name}][RST.RUN][\it{p}][\it{c}]}{　%
 			テスト実行の結果コード}
-    		\Item[t]{\HS results[name][RST.RUN][RST.EXP]}{　%
+    		\Item[t]{\HS results[\it{name}][RST.RUN][RST.EXP]}{　%
 			テスト実行の結果コードの予測値}\hline
-    		\Item[t]{visited}{上記の\tt{name}の一覧}\hline
+    		\Item[t]{visited}{上記の\tt{\it{name}}の一覧}\hline
 	\end{Table}}
 	\vspace{-.5\baselineskip}
-	ここで\tt{name}はテストが終了したディレクトリの名称(テスト名称)、
-	\tt{p}と\tt{c}はそれぞれplatformとconfigurationの名前。
+	ここで\it{name}はテストが終了したディレクトリの名称(テスト名称)、
+	\it{p}と\it{c}\,はそれぞれplatformとconfigurationの名前。
 	\tt{RST.xxx}については\Ref{subsubsec}{ConstDefs}を参照。
 \end{Brief}
 
@@ -52,25 +52,25 @@
 \begin{Method}{set_info(name, category, info)}
     \begin{Args}[r][5em]
 	\Item[t]{name}{テスト名(ディレクトリ名)}
-	\Item[t]{category}{情報のカテゴリー(\tt{enum RST})}
+	\Item[t]{category}{情報のカテゴリー(enum \tt{RST})}
 	\Item[t]{info}{設定する情報(\it{string} or \it{int})}
     \end{Args}
     \begin{Brief}[r]
-	引数\it{name}で指定されたテストに対して、
+	引数\tt{name}で指定されたテストに対して、
 	テスト結果以外の情報(\tt{RST.ERR, RST.SKP, RST.EXP})を登録する。\\
 	\HS\tt{results[\it{name}][RST.ERR] = \it{info}}\\
 	\HS\tt{results[\it{name}][RST.SKP] = \it{info}}\\
 	\HS\tt{results[\it{name}][RST.RUN][RST.EXP] = \it{info}}\\
-	\it{name}が初出の場合には、テスト結果の登録(\tt{set_result()})に先立ち、
+	\tt{name}が初出の場合には、テスト結果の登録(\tt{set_result()})に先立ち、
 	このメソッドを呼んで\tt{results[\it{name}]}を初期化する必要がある。
     \end{Brief}
 \end{Method}
 \begin{Method}{set_result(name, category, platform, config, result)}
     \begin{Args}[r][5em]
 	\Item[t]{name}{テスト名(ディレクトリ名)}
-	\Item[t]{category}{情報のカテゴリー(\tt{enum RST})}
-	\Item[t]{platform}{プラットフォーム(\tt{enum PLATS})}
-	\Item[t]{conf}{テスト構成(\tt{enum CONFS})}
+	\Item[t]{category}{情報のカテゴリー(enum \tt{RST})}
+	\Item[t]{platform}{プラットフォーム(enum \tt{PLATS})}
+	\Item[t]{conf}{テスト構成(enum \tt{CONFS})}
 	\Item[t]{result}{テスト結果(\it{int})}
     \end{Args}
     \begin{Brief}[r]

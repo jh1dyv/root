@@ -6,22 +6,22 @@
 
 \medskip
 \noindent
-perlスクリプトで共通に使用するユーティリティサブルーチンのライブラリ
-(\DDagger を付したものは外部非公開である)。
+perlスクリプトで共通に使用するユーティリティサブルーチンのライブラリである
+(\DDagger を付したものは外部非公開)。
 
 \medskip
 \begin{Methods}{サブルーチンの説明}
-\begin{Method}{assert(\$expr)}
+\begin{Method}{assert(\plVar{expr})}
 	アサーションルーチン。
 	条件が満たされなければスタックをトレースして終了する。
 \end{Method}
 \begin{Method}{\Cell{%
-	verbose(\$text [,\$stream])\\
-	verbose_set(\$value)}}
+	verbose(\plVar{text} [,\plVar{stream}])\\
+	verbose_set(\plVar{value})}}
     \begin{Args}[r]
-	\Item[t]{\$text}{表示文字列}
-	\Item[t]{\$stream}{出力ストリーム}
-	\Item[t]{\$value}{$1$でon, $0$でoff}
+	\Item[t]{\plVar{text}}{表示文字列}
+	\Item[t]{\plVar{stream}}{出力ストリーム}
+	\Item[t]{\plVar{value}}{$1$でon, $0$でoff}
     \end{Args}
     \begin{Brief}[r]
 	バーバス表示ルーチン。
@@ -29,12 +29,12 @@ perlスクリプトで共通に使用するユーティリティサブルーチンのライブラリ
     \end{Brief}
 \end{Method}
 \begin{Method}{\Cell{%
-	show_usage(\$cmnd [,\BS @args [,\BS @opts]])\\
-	add_padding(\$text, \$width) \DDagger}}
+	show_usage(\plVar{cmnd} [,\plAryR{args} [,\plAryR{opts}]])\\
+	add_padding(\plVar{text}, \plVar{width}) \DDagger}}
     \begin{Args}[r]
-	\Item[t]{\$cmnd}{コマンドライン}
-	\Item[t]{\BS @args}{コマンド引数}
-	\Item[t]{\BS @opts}{オプション引数}
+	\Item[t]{\plVar{cmnd}}{コマンドライン}
+	\Item[t]{\plAry{args}}{コマンド引数}
+	\Item[t]{\plAry{opts}}{オプション引数}
     \end{Args}
     \begin{Brief}[r]
 	使用方法の表示ルーチン。
@@ -42,37 +42,37 @@ perlスクリプトで共通に使用するユーティリティサブルーチンのライブラリ
     \end{Brief}
 \end{Method}
 \begin{Method}{\Cell{%
-	warning(\$prog, @text)\\
-	error(\$prog, @text)\\
-	fatal(\$prog, @text)\\
-	panic(\$prog, @text)}}
+	warning(\plVar{prog}, \plAry{text})\\
+	error(\plVar{prog}, \plAry{text})\\
+	fatal(\plVar{prog}, \plAry{text})\\
+	panic(\plVar{prog}, \plAry{text})}}
     \begin{Args}[r]
-	\Item[t]{\$prog}{プログラム名}
-	\Item[t]{@text}{表示文字列(配列)}
+	\Item[t]{\plVar{prog}}{プログラム名}
+	\Item[t]{\plAry{text}}{表示文字列(配列)}
     \end{Args}
     \begin{Brief}[r]
 	エラーメッセージ表示ルーチン。
 	\tt{fatal()}と\tt{panic()}はプログラムを終了させる。
     \end{Brief}
 \end{Method}
-\begin{Method}{\$name = dirname(\$path)}
+\begin{Method}{\plVar{name} = dirname(\plVar{path})}
     \begin{Brief}[r]
-	引数のパス名\tt{\$path}からディレクトリ部分を取り出して返す。
+	引数のパス名\plVar{path}からディレクトリ部分を取り出して返す。
     \end{Brief}
 \end{Method}
-\begin{Method}{\$name = leafname(\$path)}
+\begin{Method}{\plVar{name} = leafname(\plVar{path})}
     \begin{Brief}[r]
-	引数のパス名\tt{\$path}からリーフ名部分を取り出して返す。
+	引数のパス名\plVar{path}からリーフ名部分を取り出して返す。
     \end{Brief}
 \end{Method}
 \begin{Method}{\Cell{%
-	debug(\$level, @text)\\
-	debug_push(\$value)\\
+	debug(\plVar{level}, \plAry{text})\\
+	debug_push(\plVar{value})\\
 	debug_pop()}}
     \begin{Args}[r]
-	\Item[t]{\$level}{表示レベル}
-	\Item[t]{@text}{出力フォーマットとテキスト}
-	\Item[t]{\$value}{デバッグレベル}
+	\Item[t]{\plVar{level}}{表示レベル}
+	\Item[t]{\plAry{tex}t}{出力フォーマットとテキスト}
+	\Item[t]{\plVar{value}}{デバッグレベル}
     \end{Args}
     \begin{Brief}[r]
 	デバッグ表示を行なう
@@ -81,11 +81,11 @@ perlスクリプトで共通に使用するユーティリティサブルーチンのライブラリ
 	\tt{debug_pop()}で一つ前のデバッグレベルに戻せる。
     \end{Brief}
 \end{Method}
-\begin{Method}{object_dump(\$level, \$object [,\$text])}
+\begin{Method}{object_dump(\plVar{level}, \plVar{object} [,\plVar{text}])}
     \begin{Args}[r]
-	\Item[t]{\$level}{表示レベル}
-	\Item[t]{\$object}{ダンプするオブジェクト}
-	\Item[t]{@text}{出力フォーマットとテキスト}
+	\Item[t]{\plVar{level}}{表示レベル}
+	\Item[t]{\plVar{object}}{ダンプするオブジェクト}
+	\Item[t]{\plAry{text}}{出力フォーマットとテキスト}
     \end{Args}
     \begin{Brief}[r]
 	引数で指定したオブジェクトをダンプする。

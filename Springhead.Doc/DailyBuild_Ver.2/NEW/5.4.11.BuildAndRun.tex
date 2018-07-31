@@ -1,5 +1,5 @@
 % 5.4.11.BuildAndRun.tex
-%	Last update: 2018/06/07 F.Kanehori
+%	Last update: 2018/07/31 F.Kanehori
 %\newpage
 \subsubsection{クラス BuildAndRun}
 \label{subsubsec:BuildAndRun}
@@ -9,8 +9,8 @@
 	Solution/makeファイルで指定された1つのソリューションについて、
 	コンパイル及びテスト実行を実施するクラス。
 	この時点で、コンパイル及びテスト実行に係るパラメータはすべて確定していること。\\
-	コンパイルには、Visual Studio(Windowsの場合)
-	又は\tt{/bin/make}(unixの場合)を使用する。
+	コンパイルには、Visual Studio (Windowsの場合)又は
+	\tt{/bin/make} (unixの場合)を使用する。
 	テスト実行は、生成されたバイナリを直接起動することで実施する。
 	それぞれ、リターンコードを返すことで結果を通知する。
 \end{Brief}
@@ -20,25 +20,29 @@
     \begin{Args}[5em]
 	\Item[t]{ccver}{%
 		コンパイラのバージョン (unixの場合はダミー)\\
-		Visual Studioのtool set versionを指定
-		(\RefRef{subsubsec}{VisualStudio})。}
+		Visual Studioのtool set versionを指定する。\\
+		(\RefRef{subsubsec}{VisualStudio})}
 	\Item[t]{dry_run}{%
-		コマンドを表示するだけで実行はしない}
+		コマンドを表示するだけで実行はしない。}
     \end{Args}
 \end{Initializer}
 
 \begin{Methods}{公開メソッド}
 \begin{Method}{stat = build(build(dirpath, slnfile, platform, opts, \Cont\\
 		\hspace{100pt}outfile, logfile, errlogfile, force)}
-    \begin{Args}[r][5em]
+    \begin{Args}[r][6em]
 	\Item[t]{dirpath}{ソリューションファイルがあるディレクトリのパス名}
 	\Item[t]{slnfile}{Solution/makeファイル名}
-	\Item[t]{platform}{プラットフォーム(\tt{x86, x64})}
+	\Item[t]{platform}{プラットフォーム(\DQuote{x86} or \DQuote{x64})}
 	\Item[t]{opts}{コンパイラオプション\\
+			unixの場合には、\\
+			\begin{LocalScope}\def\arraystretch{.8}
 			\begin{tabular}{l@{\RArrowSp{5pt}}l}
-				Windows & (\tt{Debug, Release, Trace})\\
-				unix    & (\tt{-g, -O2})
-			\end{tabular}}
+				\DQuote{Debug}   & \DQuote{-g}\\
+				\DQuote{Release} & \DQuote{-O2}\\
+				\DQuote{Trace}   & \DQuote{-O2}
+			\end{tabular}\end{LocalScope}\\
+			に置き換えて使用する。}
 	\Item[t]{outfile}{出力バイナリのパス
 			(Windowsの場合leaf名はダミー --- solution fileで決まる)\\
 			絶対パス又は\tt{dirpath}からの相対パスで指定する。}
@@ -63,7 +67,7 @@
 		(後でマージする)。
 	  \item	Windowsの場合は\tt{__build_w()}を、
 		unixの場合は\tt{__build_u()}を呼び出してコンパイルする。
-		引数は煩雑になるのでリストにまとめてある。
+		引数は煩雑になるのでリストにまとめて渡す。
 	  \item	コンパイルログからエラー行を抜き出す。
 	  \item	コンパイルログをログファイルに、
 		前項で抜き出したエラー行をエラーログファイルにマージする。
@@ -74,7 +78,7 @@
 \begin{Method}{stat = run(build(dirpath, exefile, args,\Cont\\
 		\hspace{100pt}logfile, errlogfile,\Cont\\
 		\hspace{100pt}addpath, timeout, pipeprocess)}
-    \begin{Args}[r][5em]
+    \begin{Args}[r][6em]
 	\Item[t]{dirpath}{生成したバイナリファイルがあるディレクトリのパス名。}
 	\Item[t]{exefile}{Windows \RArrow\ 実行バイナリのパス\\
 			unix \RArrow\ makefileのパス}
@@ -95,19 +99,20 @@
 	一時的に指定されたディレクトリ(\tt{dirpath})に移動して
 	プログラムを実行する。
 	パイププロセスを指定することも可能で(ただし入力側のみ)。
-	これは、メニュー駆動のプログラムを想定したものである。
-	(出力側のパイププロセスは指定できない)
+	これは、メニュー駆動のプログラムを想定したものである
+	(出力側のパイププロセスには未対応である)。
 	\small{\begin{Table}[r][1em]{ll}
 	    \Item{※}{%
  		Webのレポートでは単純にdiffをとっているものがあるが、
-		出力をフィルタリングしてからdiffをとった方が見易くなると
-		思われるので拡張を考慮する価値はある -- (TODO)。}
+		出力をフィルタリング(行数制限、編集等)してから
+		diffをとった方が見易くなると思われるので
+		拡張を考慮する価値はある -- (TODO)。}
 	\end{Table}}
     \end{Brief}
     \begin{Proc}[r]
 	\begin{enumerate}
 	  \item	引数\tt{dirpath}で指定されたディレクトリに移動する。
-	  \item	実行ログを書き出す一時ファイル名を決める。
+	  \item	実行ログを書き出すための一時ファイル名を決める。
 	  \item	ログファイル、エラーログファイルをappend openする。
 		実行ログをこれらのファイルに直接書き出せる訳ではない
 		(後でマージする)。
@@ -140,7 +145,7 @@
 	\begin{enumerate}
 	  \item	引数\tt{args}(リスト)を、
 		\tt{slnfile, platform, opts, outfile, force}に分解する。
-	  \item	コンパイルログを書き出す一時ファイル名を決める。
+	  \item	コンパイルログを書き出すための一時ファイル名を決める。
 	  \item	\tt{Proc}クラスを用いてコンパイルを実行する
 		(パイププロセスの処理も行なう)。
 		プロセスの出力はログ一時ファイルに割り当てる
@@ -159,7 +164,7 @@
 	\begin{enumerate}
 	  \item	引数\tt{args}(リスト)を、
 		\tt{slnfile, platform, opts, outfile, force}に分解する。
-	  \item	実行ログを書き出す一時ファイル名を決める。
+	  \item	実行ログを書き出すための一時ファイル名を決める。
 	  \item	クラス\tt{VisualStudio}のインスタンスを生成し(\tt{vs})、
 		必要なパラメータを設定する(\tt{vs.set()})。
 	  \item	\tt{Proc}クラスを用いてコンパイルを実行する。\\
@@ -172,7 +177,8 @@
 \end{Method}
 \begin{Method}{\it{string--list} __select_errors(fname, step)}
     \begin{Brief}[r]
-	指定されたファイルを読み、\tt{" error "}を含む行を集めてリストとして返す。
+	指定されたファイルを読み、\UpDQ\verb*| error |\UpDQ\,を含む行を集めて
+	リストとして返す。
     \end{Brief}
 \end{Method}
 \begin{Method}{__merge_log(self, kind, data, logf, cmnd, step)}
