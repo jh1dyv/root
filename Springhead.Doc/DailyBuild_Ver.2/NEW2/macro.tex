@@ -1,5 +1,5 @@
 % macro.tex
-%	Last update: 2018/07/29 F.Kanehori
+%	Last update: 2018/07/31 F.Kanehori
 
 \makeatletter
 
@@ -26,10 +26,14 @@
 \let\tt@\tt
 \let\bf@\bf
 \let\rm@\rm
+\let\gt@\gt
+\let\mc@\mc
 \def\it#1{{\it@{#1\,}}}
 \def\tt#1{{\tt@{#1}}}
 \def\bf#1{{\bf@{#1}}}
 \def\rm#1{{\rm@{#1}}}
+\def\gt#1{{\gt@{#1}}}
+\def\mc#1{{\mc@{#1}}}
 
 %% make local scope
 %
@@ -123,20 +127,22 @@
 \def\plHshR#1{\BS\plHsh{#1}}
 
 %% make framed box to denote some command
-%  \CmndBox{indent}{body}
+%  \CmndBox{body}
 %  \Cmnd{indent}{body}
 %	indent		amount of indentation from left margin
 %
 \def\CmndBox#1{%
-	\begin{LocalScope}%
+	\begin{LocalScope}\vskip .3\baselineskip
 	\noindent\hbox{%
 		\framebox[\linewidth][t]{%
 			\def\arraystretch{.8}\tabcolsep=5pt%
-			\tt{\begin{tabular}{l}#1\end{tabular}}}}
+			\tt{\begin{tabular}{l}#1\end{tabular}}}}%
+	\vskip .3\baselineskip
 	\end{LocalScope}}
 
 \def\Cmnd#1{%
-	\vbox{\vspace{.4\baselineskip}\CmndBox{#1}\vspace{0\baselineskip}}}
+	%\vbox{\vskip .4\baselineskip\CmndBox{#1}\vspace{0\baselineskip}}}
+	\vbox{\vskip .4\baselineskip\CmndBox{#1}\vskip 0\baselineskip}}
 
 %% initializer and method
 %  \Initializer{body}
@@ -180,10 +186,16 @@
 %
 \def\Opts{\@ifnextchar[{\Opts@check}{\Opts@@[r][6em]}}
 \def\Opts@check[#1]{\@ifnextchar[{\Opts@@[#1]}{\Opts@@[#1][6em]}}
+%\def\Opts@@[#1][#2]{\begin{GeneralBox}[#1]{オプション \isDefault}%
+%	\Vskip{-.7\baselineskip}
+%	\begin{narrow}[\WID]\begin{Table}[t][#2]{ll}}
+%\def\endOpts{\end{Table}\end{narrow}\end{GeneralBox}\vspace{-.7\baselineskip}}
 \def\Opts@@[#1][#2]{\begin{GeneralBox}[#1]{オプション \isDefault}%
-	\Vskip{-.7\baselineskip}
+	\Vskip{-1.3\baselineskip}
+	\begin{LocalScope}
 	\begin{narrow}[\WID]\begin{Table}[t][#2]{ll}}
-\def\endOpts{\end{Table}\end{narrow}\end{GeneralBox}\vspace{-.7\baselineskip}}
+\def\endOpts{\end{Table}\end{narrow}\end{LocalScope}\end{GeneralBox}%
+	\vskip .1\baselineskip}
 %
 \def\Args{\@ifnextchar[{\Args@check}{\Args@@[r][6em]}}
 \def\Args@check[#1]{\@ifnextchar[{\Args@@[#1]}{\Args@@[#1][6em]}}
@@ -226,7 +238,7 @@
 	\if#1g \let\GeneralBox@typeface\gt \else
 	\if#1m \let\GeneralBox@typeface\mc \else
 	       \let\GeneralBox@typeface\relax \fi\fi\fi\fi\fi\fi
-	\vskip -.3ex\relax\noindent
+	\vskip 0.2\baselineskip\relax\noindent
 	\GeneralBox@typeface{#3}\begin{narrow}[#2]}
 \def\endGeneralBox{\end{narrow}\relax}
 
@@ -259,6 +271,7 @@
 	       \def\font@def{N} \let\font@size\relax	    \fi\fi\fi\fi\fi\fi
 	\if\font@def Y \narrow@same{#2} \else \narrow@repl{#2} \fi
 	\begin{Vmode}%
+	\vspace{.25\baselineskip}%
 	\list{}{\topsep 0pt \partopsep 0pt \parsep 0pt \itemsep 0pt
 		\rightmargin 0pt \leftmargin \@lmgn \relax}\item[]
 	\begingroup\font@size\@text}
@@ -275,13 +288,19 @@
 \def\Table@pos[#1]{\@ifnextchar[{\Table@@[#1]}{\Table@@[#1][6em]}}
 \def\Table@{\@ifnexechar[{\Table@@}{\Table@@[c][6em]}}
 \def\Table@@[#1][#2]#3{
-	\begin{LocalScope}%
+	\begin{LocalScope}
 	\def\Table@name@wid{#2}
 	\def\Table@desc@wid{\linewidth}
 	\addtolength{\Table@desc@wid}{-\Table@name@wid}
-	\addtolength{\Table@desc@wid}{-25pt}
+	\addtolength{\Table@desc@wid}{-10pt}
+	%\vspace{-.6\baselineskip}
+	\vskip -.3\baselineskip
+	\tabcolsep=0pt
+	%\def\arraystretch{1.2}
+	\parskip=-5pt
 	\begin{longtable}[#1]{#3}}
-\def\endTable{\end{longtable}\end{LocalScope}}
+%\def\endTable{\end{longtable}\end{LocalScope}\vspace{-1.1\baselineskip}}
+\def\endTable{\end{longtable}\end{LocalScope}\vskip -1.5\baselineskip}
 
 \def\Item{\@ifnextchar[{\Item@}{\Item@[n]}}
 \def\Item@[#1]#2#3{%
@@ -292,9 +311,17 @@
 	\if#1g \let\Item@type@face\gt	\else
 	\if#1m \let\Item@type@face\mc	\else
 	       \let\Item@type@face\relax	\fi\fi\fi\fi\fi\fi
-	\hbox to \Table@name@wid{\hbox{\Item@type@face{#2}\hfill}}
-	&\begin{minipage}[t]{\Table@desc@wid}#3\end{minipage}\\}
-\def\ItemT#1#2#3{\tt{#1}&\tt{#2}
+	\hbox to 10pt{}%	% indentation to first column
+	\hbox to \Table@name@wid{\Item@type@face{#2}\hfill}
+	%&\begin{minipage}[t]{\Table@desc@wid}#3\hfil\end{minipage}\\}
+	&{\begin{minipage}[t]{\Table@desc@wid}%
+		%\begin{spacing}{.8}#3\hfil\end{spacing}\end{minipage}}\\}
+		\begin{spacing}{.8}#3\hfil\end{spacing}\end{minipage}}\\}
+\def\ItemT#1#2#3{%
+	%\hbox to -6pt{}%	% magic number!
+	\hbox to 10pt{}%	% indentation to first column
+	\tt{#1}&\tt{#2}
+	%&\begin{minipage}[t]{\Table@desc@wid}#3\hfill\par\end{minipage}\\}
 	&\begin{minipage}[t]{\Table@desc@wid}#3\hfill\par
 	\vspace{.2\baselineskip}\end{minipage}\\}
 \let\MC\multicolumn

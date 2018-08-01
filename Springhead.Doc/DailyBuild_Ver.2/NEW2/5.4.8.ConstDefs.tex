@@ -1,0 +1,151 @@
+% 5.4.8.ConstDefs.tex
+%	Last update: 2018/07/26 F.Kanehori
+%\newpage
+\subsubsection{定数定義クラス ConstDefs}
+\label{subsubsec:ConstDefs}
+
+\bigskip
+\begin{Brief}[b]
+	DailyBuildシステムで共通に使用する定数を提供するクラスである。
+\end{Brief}
+
+\bigskip
+\noindent
+\bf{クラス CFK}
+\begin{narrow}[\WID]
+	テスト制御ファイルで定義された値を参照するための定数。
+	次のものがある。
+	\Vskip{0\baselineskip}
+	\begin{Table}[r][17em]{|l|l|l|}\hline
+	    \ItemT{\hfil 定 数\hfil}{\hfil キーワード\hfil}{\hfil 説 明\hfil}\hline
+	    \ItemT{SRCTOP}{"SprTop"}{%
+			トップディレクトリ\\
+			自動的に次の値に設定される\\
+			\Path{.../Springhead}}\hline
+	    \ItemT{SPRTEST}{"SprTest"}{%
+			テストディレクトリ\\
+			自動的に次の値に設定される\\
+			\Path{.../Springhead/core/test}}\hline
+	    \ItemT{EXCLUDE}{"Exclude"}{%
+			このディレクトリをテストから除外するか否か\Note}\hline
+	    \ItemT{DESCEND}{"Descend"}{%
+			サブディレクトリをテスト対象に組み込むか否か\Note}\hline
+	    \ItemT{SOLUTION_ALIAS}{"SolutionAlias"}{%
+			solution/makeファイル名\\
+			ファイル名がディレクトリ名と異なる場合に使用する}\hline
+	    \ItemT{BUILD}{"Build"}{%
+			コンパイルを実行するか否か\Note}\hline
+	    \ItemT{USE_CLOSED_SRC}{"UseClosedSrc"}{%
+			Closed sourceを使用するか否か\Note}\hline
+	    \ItemT{MAKE_TARGET}{"MakeTarget"}{未使用}\hline
+	    \ItemT{CPP_MACRO}{"CppMacro"}{%
+			コンパイル時マクロ ※未実装※}\hline
+	    \ItemT{BUILD_LOG}{"BuildLog"}{%
+			コンパイルログファイル名\\
+			\Path{\$(SprTest)/log/StubBuild.log}}\hline
+	    \ItemT{BUILD_ERR_LOG}{"BuildErrLog"}{%
+			コンパイルエラーログファイル名\\
+			\PathBgn{\$(SprTest)/log/}\Cont\\
+			\hspace{3em}\PathEnd{StubBuildError.log}}\hline
+	    \ItemT{RUN}{"Run"}{%
+			テストプログラムを実行するか否か\Note}\hline
+	    \ItemT{OUTPUT_DIR}{"OutputDir"}{%
+			バイナリ出力ディレクトリ名\\
+			指定がなければsolution/makeファイルに従う}\hline
+	    \ItemT{BINARY_OUT}{"BinaryOut"}{%
+			出力バイナリファイル名\\
+			指定がなければsolution/makeファイルに従う}\hline
+	    \ItemT{TIMEOUT}{"Timeout"}{%
+			テストプログラム実行時強制タイムアウト指定。
+			タイムアウトさせる秒数を指定する。}\hline
+	    \ItemT{EXPECTED}{"Expected"}{%
+			テストプログラム終了コードの予想値\\
+			テストの合否判定に使用する}\hline
+	    \ItemT{ADD_PATH}{"AddPath"}{%
+			テストプログラム実行時に追加するパス}\hline
+	    \ItemT{PIPE_PROCESS}{"PipeProcess"}{%
+			パイププロセス指定(実行するコマンドを記述する)。
+			このプロセスの出力とテストプログラムの標準入力とが
+			パイプで結ばれる。\\
+			\bf{※} テストプログラムの出力を渡すパイププロセスも
+			指定できると便利だが(出力のフィルタリング等)
+			実装できていない。}\hline
+	    \ItemT{KILL_PROCESS}{"KillProcess"}{%
+			テストプログラム終了後にkillすべきプログラム。
+			プロセスイメージ名を指定する。}\hline
+	    \ItemT{RUN_LOG}{"RunLog"}{%
+			テスト実行ログファイル名\\
+			\Path{\$(SprTest)/log/Run.log}}\hline
+	    \ItemT{RUN_ERR_LOG}{"RunErrLog"}{%
+			テスト実行エラーログファイル名\\
+			\Path{\$(SprTest)/log/RunError.log}}\hline
+	    \ItemT{INTERVENTION}{"Intervention"}{%
+			テストプログラム実行時にオペレータ介入が
+			必要\Note\\
+			この値がTrueなら、
+			このテストプログラムは実行されない。}\hline
+	\end{Table}
+	\Vskip{-.5\baselineskip}
+	{\small \begin{Table}[t][15pt]{ll}
+		\Item{\Hskip{15pt}\Dagger}{%
+			論理値(TrueまたはFalse)を指定する。
+			このキーワードを指定しなければFalseを、
+			キーワードのみを指定すればTrueを指定したものとみなす。}
+	\end{Table}}
+\end{narrow}
+
+\noindent
+\bf{クラス RST}
+\begin{narrow}[\WID]
+	テスト結果累積データのカテゴリを表す定数(enumeration型)。
+	\Vskip{0\baselineskip}
+	\begin{narrow}[12pt]\begin{Table}[r][40pt]{|l|l|}\hline
+	    \MC{1}{|c}{定 数} & \MC{1}{|c|}{説 明}\\\hline
+	    \Item[t]{ERR}{エラー情報}\hline
+	    \Item[t]{SKP}{スキップ情報\Hskip{5pt}
+			(\KQuote{このテストは実行されなかった}という情報)}\hline
+	    \Item[t]{BLD}{コンパイル結果情報}\hline
+	    \Item[t]{RUN}{テスト実行結果情報}\hline
+	    \Item[t]{EXP}{実行結果想定値情報}\hline
+	\end{Table}\end{narrow}
+\end{narrow}
+
+\noindent
+\bf{クラス CSU}
+\begin{narrow}[\WID]
+	非公開ソースを使用するか否かを表す定数(enumeration型)。
+	\Vskip{0\baselineskip}
+	\begin{narrow}[12pt]\begin{Table}[r][40pt]{|l|l|}\hline
+	    \MC{1}{|c}{定 数} & \MC{1}{|c|}{説 明}\\\hline
+	    \Item[t]{AUTO}{個別にテスト制御ファイルに従う}\hline
+	    \Item[t]{USE}{すべてで使用する}\hline
+	    \Item[t]{UNUSE}{すべてで使用しない}\hline
+	\end{Table}\end{narrow}
+\end{narrow}
+
+\noindent
+\bf{クラス TESTID}
+\begin{narrow}[\WID]
+	テスト種別を表す定数(enumeration型)。
+	\Vskip{0\baselineskip}
+	\begin{narrow}[12pt]\begin{Table}[r][40pt]{|l|l|}\hline
+	    \MC{1}{|c}{定 数} & \MC{1}{|c|}{説 明}\\\hline
+	    \Item[t]{STUB}{Springheadライブラリ作成}\hline
+	    \Item[t]{TESTS}{\Path{src/tests}のテスト}\hline
+	    \Item[t]{SAMPLES}{\Path{src/Samples}のテスト}\hline
+	    \Item[t]{OTHER}{上記以外}\hline
+	\end{Table}\end{narrow}
+\end{narrow}
+
+\noindent
+\bf{その他の定数}
+\begin{narrow}[\WID]
+	\begin{narrow}[12pt]\begin{Table}[r][40pt]{|l|l|}\hline
+	    \MC{1}{|c}{定 数} & \MC{1}{|c|}{説 明}\\\hline
+	    \Item[t]{PLATS}{プラットフォームの一覧リスト(\tt{x86, x64})}\hline
+	    \Item[t]{CONFS}{%
+	    	ビルド構成の一覧リスト(\tt{Debug, Release, Trace})}\hline
+	\end{Table}\end{narrow}
+\end{narrow}
+
+% end: 5.4.8.ConstDefs.tex
