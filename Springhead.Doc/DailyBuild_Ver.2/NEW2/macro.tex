@@ -1,5 +1,5 @@
 % macro.tex
-%	Last update: 2018/07/31 F.Kanehori
+%	Last update: 2018/08/05 F.Kanehori
 
 \makeatletter
 
@@ -21,7 +21,7 @@
 \def\Ctrl#1{\tt{\,\textasciicircum#1}}
 \def\BS{\tt{\symbol{'134}}}
 
-%% alias for typefaces
+%% alias for fonts
 \let\it@\it
 \let\tt@\tt
 \let\bf@\bf
@@ -34,6 +34,13 @@
 \def\rm#1{{\rm@{#1}}}
 \def\gt#1{{\gt@{#1}}}
 \def\mc#1{{\mc@{#1}}}
+\def\Use@font#1#2{%
+	\if#1t\tt{#2}\else
+	\if#1i\it{#2}\else
+	\if#1b\bf{#2}\else
+	\if#1r\rm{#2}\else
+	\if#1g\gt{#2}\else
+	\if#1m\mc{#2}\else\rm{#2}\fi\fi\fi\fi\fi\fi}
 
 %% make local scope
 %
@@ -41,7 +48,7 @@
 \def\endLocalScope{\endgroup}
 
 %% dimensions
-\def\WID{20pt}		% standard indent width
+\newdimen\WID \WID=20pt		% standard indent width
 
 %% spaces
 %  \Vskip{amount}
@@ -169,11 +176,11 @@
 
 %% command synopsis, options and arguments
 %  \Cmnd[t]{body}			% 起動方法   (default: [r])
-%  \begin{Opts}[t][w]  ... \end{Opts}	% オプション (default: [r][6em])
-%  \begin{Args}[t][w]  ... \end{Args}	% 引数       (default: [r][6em])
-%  \begin{Brief}[t][i] ... \end{Brief}	% 概要
-%  \begin{Proc}[t][i]  ... \end{Proc}	% 処理の説明
-%	[t]	typeface (t,i,b,r,g,m)
+%  \begin{Opts}[f][w]  ... \end{Opts}	% オプション (default: [r][6em])
+%  \begin{Args}[f][w]  ... \end{Args}	% 引数       (default: [r][6em])
+%  \begin{Brief}[f][i] ... \end{Brief}	% 概要
+%  \begin{Proc}[f][i]  ... \end{Proc}	% 処理の説明
+%	[f]	font	t(t), i(t), b(f), r(m), g(t), m(c)
 %	[w]	column width except the last one (dimen)
 %	[i]	indent width (dimen)
 %
@@ -193,7 +200,7 @@
 \def\Opts@@[#1][#2]{\begin{GeneralBox}[#1]{オプション \isDefault}%
 	\Vskip{-1.3\baselineskip}
 	\begin{LocalScope}
-	\begin{narrow}[\WID]\begin{Table}[t][#2]{ll}}
+	\begin{narrow}[\WID]\begin{Table}[l][#2]{ll}}
 \def\endOpts{\end{Table}\end{narrow}\end{LocalScope}\end{GeneralBox}%
 	\vskip .1\baselineskip}
 %
@@ -222,24 +229,16 @@
 \def\endReturn{\end{Table}\end{narrow}\end{GeneralBox}\vspace{-.7\baselineskip}}
 
 %% general purpose vertical box
-%  \begin{GeneralBox}[typeface][indent]{title}
-%	typeface	t(t), i(t), b(f), r(m), g(t), m(c)
+%  \begin{GeneralBox}[font][indent]{title}
+%	font		t(t), i(t), b(f), r(m), g(t), m(c)
 %	indent		indent width (default: \WID)
 %  \end{GeneralBox}
 %
 \def\GeneralBox{\@ifnextchar[{\GeneralBox@check}{\GeneralBox@@[r][\WID]}}
-\def\GeneralBox@check[#1]%
-	{\@ifnextchar[{\GeneralBox@@[#1]}{\GeneralBox@@[#1][\WID]}}
+\def\GeneralBox@check[#1]{%
+	\@ifnextchar[{\GeneralBox@@[#1]}{\GeneralBox@@[#1][\WID]}}
 \def\GeneralBox@@[#1][#2]#3{%
-	\if#1t \let\GeneralBox@typeface\tt \else
-	\if#1i \let\GeneralBox@typeface\it \else
-	\if#1b \let\GeneralBox@typeface\bf \else
-	\if#1r \let\GeneralBox@typeface\rm \else
-	\if#1g \let\GeneralBox@typeface\gt \else
-	\if#1m \let\GeneralBox@typeface\mc \else
-	       \let\GeneralBox@typeface\relax \fi\fi\fi\fi\fi\fi
-	\vskip 0.2\baselineskip\relax\noindent
-	\GeneralBox@typeface{#3}\begin{narrow}[#2]}
+	\vskip 0.2\baselineskip\noindent \Use@font{#1}{#3}\begin{narrow}[#2]}
 \def\endGeneralBox{\end{narrow}\relax}
 
 %% narrower
@@ -252,23 +251,23 @@
 \def\narrow@[#1]{%
 	\@ifnextchar[{\narrow@def[#1]}{\narrow@@[#1]}}
 \def\narrow@@[#1]{%
-	\ifx#1t \def\@size{t} \def\@mgn{\the\leftmargin} \else
-	\ifx#1f \def\@size{f} \def\@mgn{\the\leftmargin} \else
-	\ifx#1s \def\@size{s} \def\@mgn{\the\leftmargin} \else
-	\ifx#1n \def\@size{n} \def\@mgn{\the\leftmargin} \else
-	\ifx#1l \def\@size{l} \def\@mgn{\the\leftmargin} \else
-		\def\@size{Z} \def\@mgn{#1}	\fi\fi\fi\fi\fi
+	\ifx#1t \def\@size{t}\def\@mgn{\the\leftmargin}\else
+	\ifx#1f \def\@size{f}\def\@mgn{\the\leftmargin}\else
+	\ifx#1s \def\@size{s}\def\@mgn{\the\leftmargin}\else
+	\ifx#1n \def\@size{n}\def\@mgn{\the\leftmargin}\else
+	\ifx#1l \def\@size{l}\def\@mgn{\the\leftmargin}\else
+		\def\@size{Z}\def\@mgn{#1}\fi\fi\fi\fi\fi
 	\narrow@def[\@size][\@mgn]}
 \def\narrow@repl#1{\def\@lmgn{\the\leftmargin} \def\@text{[#1]}}
 \def\narrow@same#1{\def\@lmgn{#1} \def\@text{}}
 \def\narrow@def[#1][#2]{%
-	\if#1t \def\font@def{Y} \let\font@size\tiny	    \else
-	\if#1f \def\font@def{Y} \let\font@size\footnotesize \else
-	\if#1s \def\font@def{Y} \let\font@size\small	    \else
-	\if#1n \def\font@def{Y} \let\font@size\normalsize   \else
-	\if#1l \def\font@def{Y} \let\font@size\large	    \else
-	\if#1Z \def\font@def{Y} \let\font@size\relax	    \else
-	       \def\font@def{N} \let\font@size\relax	    \fi\fi\fi\fi\fi\fi
+	\if#1t \def\font@def{Y}\let\font@size\tiny	   \else
+	\if#1f \def\font@def{Y}\let\font@size\footnotesize \else
+	\if#1s \def\font@def{Y}\let\font@size\small	   \else
+	\if#1n \def\font@def{Y}\let\font@size\normalsize   \else
+	\if#1l \def\font@def{Y}\let\font@size\large	   \else
+	\if#1Z \def\font@def{Y}\let\font@size\relax	   \else
+	       \def\font@def{N}\let\font@size\relax	   \fi\fi\fi\fi\fi\fi
 	\if\font@def Y \narrow@same{#2} \else \narrow@repl{#2} \fi
 	\begin{Vmode}%
 	\vspace{.25\baselineskip}%
@@ -278,55 +277,64 @@
 \def\end@narrow{\endgroup\endlist\end{Vmode}}
 \let\endnarrow\end@narrow
 
+%% constants related to Table environment
+% \def\TableItemIndent{indent}
+%	indent		indentation of first column (default: 10pt)
+% \def\TableColumnWidthA{widthA}
+% \def\TableColumnWidthB{width}
+%	widthA		column width of first column (default: 6em)
+%	widthB		column width of second column (default: 0em)
+%			need to set explicitly if more than two columns
+%
+\newdimen\TableItemIndent \TableItemIndent=10pt
+\newdimen\TableColumnWidthA \TableColumnWidthA=6em
+\newdimen\TableColumnWidthB \TableColumnWidthB=0em
+
 %% table with rightmost foldable column
-% \begin{Table}[pos][fix part width]{table spec}
-%   \Item[typeface]{leading-columns}{lastcolumn}
-%	typeface	t(t), i(t), r(m)
+% \begin{Table}[pos][width1][width2]{table spec}
+%	width1		width of 1st column (default: 6em)
+%	width2		width of 2nd column (default: 0em)
+%   \Item[font]{1st column}{last column}
+%   \ItemT[font]{1st column}{2nd column}{last column}
+%	font		t(t), i(t), b(f), r(m), g(t), m(c)
 %   \MC is alias to \multicolumn
 % \end{Table}
-\def\Table{\@ifnextchar[{\Table@pos}{\Table@@[r][6em]}}
-\def\Table@pos[#1]{\@ifnextchar[{\Table@@[#1]}{\Table@@[#1][6em]}}
-\def\Table@{\@ifnexechar[{\Table@@}{\Table@@[c][6em]}}
-\def\Table@@[#1][#2]#3{
-	\begin{LocalScope}
-	\def\Table@name@wid{#2}
-	\def\Table@desc@wid{\linewidth}
-	\addtolength{\Table@desc@wid}{-\Table@name@wid}
-	\addtolength{\Table@desc@wid}{-10pt}
-	%\vspace{-.6\baselineskip}
-	\vskip -.3\baselineskip
+%
+\def\Table{\@ifnextchar[{\Table@}{\Table@body[r][6em][0em]}}
+\def\Table@[#1]{\@ifnextchar[{\Table@@[#1]}{\Table@body[#1][6em][0em]}}
+\def\Table@@[#1][#2]{\@ifnextchar[{\Table@body[#1][#2]}{\Table@body[#1][#2][0em]}}
+\def\Table@body[#1][#2][#3]#4{%
+	\begin{LocalScope}%
+	\newdimen\Table@colA@wid \Table@colA@wid=#2
+	\newdimen\Table@colB@wid \Table@colB@wid=#3
+	\newdimen\Table@last@wid \Table@last@wid=\linewidth
+	\newdimen\Table@cols@wid \Table@cols@wid=\Table@colA@wid
+	\addtolength{\Table@cols@wid}{\Table@colB@wid}%
+	\addtolength{\Table@last@wid}{-\Table@cols@wid}%
+	\addtolength{\Table@last@wid}{-\TableItemIndent}%
 	\tabcolsep=0pt
-	%\def\arraystretch{1.2}
-	\parskip=-5pt
-	\begin{longtable}[#1]{#3}}
-%\def\endTable{\end{longtable}\end{LocalScope}\vspace{-1.1\baselineskip}}
-\def\endTable{\end{longtable}\end{LocalScope}\vskip -1.5\baselineskip}
+	\def\arraystretch{-1}%
+	\begin{longtable}[#1]{#4}}
+\def\endTable{\end{longtable}\end{LocalScope}\vskip -1.18\baselineskip}
 
-\def\Item{\@ifnextchar[{\Item@}{\Item@[n]}}
+\def\Item{\@ifnextchar[{\Item@}{\Item@[r]}}
 \def\Item@[#1]#2#3{%
-	\if#1t \let\Item@type@face\tt	\else
-	\if#1i \let\Item@type@face\it	\else
-	\if#1b \let\Item@type@face\bf	\else
-	\if#1r \let\Item@type@face\rm	\else
-	\if#1g \let\Item@type@face\gt	\else
-	\if#1m \let\Item@type@face\mc	\else
-	       \let\Item@type@face\relax	\fi\fi\fi\fi\fi\fi
-	\hbox to 10pt{}%	% indentation to first column
-	\hbox to \Table@name@wid{\Item@type@face{#2}\hfill}
-	%&\begin{minipage}[t]{\Table@desc@wid}#3\hfil\end{minipage}\\}
-	&{\begin{minipage}[t]{\Table@desc@wid}%
-		%\begin{spacing}{.8}#3\hfil\end{spacing}\end{minipage}}\\}
-		\begin{spacing}{.8}#3\hfil\end{spacing}\end{minipage}}\\}
-\def\ItemT#1#2#3{%
-	%\hbox to -6pt{}%	% magic number!
-	\hbox to 10pt{}%	% indentation to first column
-	\tt{#1}&\tt{#2}
-	%&\begin{minipage}[t]{\Table@desc@wid}#3\hfill\par\end{minipage}\\}
-	&\begin{minipage}[t]{\Table@desc@wid}#3\hfill\par
-	\vspace{.2\baselineskip}\end{minipage}\\}
+	\hbox to \TableItemIndent{}%	% indentation to first column
+	\hbox to \Table@colA@wid{\Use@font{#1}{#2}\hfill}
+	&\begin{minipage}[t]{\Table@last@wid}{%
+		\begin{spacing}{.8}#3\hfil\end{spacing}}\end{minipage}\\[-3pt]}
+%
+\def\ItemT{\@ifnextchar[{\ItemT@}{\ItemT@[r]}}
+\def\ItemT@[#1]#2#3#4{%
+	\hbox to \TableItemIndent{}%	% indentation to first column
+ 	\hbox to \Table@colA@wid{\Use@font{#1}{#2}\hfill}
+	&\hbox to \Table@colB@wid{\Use@font{#1}{#3}\hfill}
+	&\begin{minipage}[t]{\Table@last@wid}{%
+		\begin{spacing}{.8}#4\hfil\end{spacing}}\end{minipage}\\[-3pt]}
+
 \let\MC\multicolumn
-\def\Cell#1{\begingroup\def\arraystretch{.8}\tabcolsep=0pt%
-	\begin{tabular}[t]{l}#1\end{tabular}\endgroup}
+\def\Cell#1{\begin{LocalScope}\def\arraystretch{.8}\tabcolsep=0pt%
+	\begin{tabular}[t]{l}#1\end{tabular}\end{LocalScope}}
 
 \makeatother
 % end: marco.tex

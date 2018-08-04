@@ -54,18 +54,19 @@
 	\noindent\Tstr
 \end{GeneralBox}
 \noindent\Tstr
-\begin{Table}[l][40pt]{ll}
-	\Item{test}{\Tstr\Tstr\Tstr}
-	\Item{test}{\Tstr}
-	\Item{test}{\Tstr}
+\def\TableItemIndent{20pt}%
+\begin{Table}[l][6em]{ll}
+	\Item[t]{test}{\Tstr\Tstr\Tstr}
+	\Item[t]{test}{\Tstr}
+	\Item[t]{test}{\Tstr}
 \end{Table}
 \noindent\Tstr
 
-\noindent\Tstr
-\begin{Table}[l][70pt]{lll}
-	\ItemT{test}{three}{\Tstr\Tstr\Tstr}
-	\ItemT{test}{three}{\Tstr}
-	\ItemT{test}{three}{\Tstr}
+\noindent\Tstr\Tstr\Tstr
+\begin{Table}[l][3em][5em]{lll}
+	\ItemT[t]{test}{three}{\Tstr\Tstr\Tstr}
+	\ItemT[r]{test}{three}{\Tstr}
+	\ItemT[i]{test}{three}{\Tstr}
 \end{Table}
 \noindent\Tstr
 \begin{narrow}
@@ -80,7 +81,6 @@
 	\noindent\Tstr
 \end{narrow}
 \noindent\Tstr
-	
 
 \end{document}
 
