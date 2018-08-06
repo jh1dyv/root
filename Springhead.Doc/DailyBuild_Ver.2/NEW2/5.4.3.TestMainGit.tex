@@ -18,21 +18,19 @@
      > python TestMainGit.py [options]\Cont\\
      \Hskip{100pt}test-repository result-repository
 }
-\begin{Opts}[b][5em]
+\begin{Opts}[b]
     \Item[t]{-c CONF}{ビルド構成 (\tt{Debug, Release\Note, Trace})}
     \Item[t]{-p PLAT}{プラットフォーム (\tt{x86, x64\Note})}
     \Item[t]{-t TOOL}{ツールセット (\tt{14.0\Note})}
     \Item[t]{-D}{コマンドを表示するだけで実行はしない(dry run)}
 \end{Opts}
-\begin{Args}[b][2em]
-    \MC{2}{l}{\tt{test-repository}}\\
-    \Item[t]{}{%
-	テストレポジトリ\\
+\begin{Args}[b][10em]
+    \Item[t]{test-repository}{%
+	テストレポジトリ$^{\small (注)}$\\
 	任意のディレクトリでよいが、既存のディレクトリの場合には、
 	その内容はすべて破棄される。}
-    \MC{2}{l}{\tt{result-repository}}\\
-    \Item[t]{}{%
-    	テスト結果記録用レポジトリ\\
+    \Item[t]{result-repository}{%
+    	テスト結果記録用レポジトリ$^{\small (注)}$\\
 	通常\Path{DailyBuildResult/Result}を指定する。}
 \end{Args}
 \Vskip{.5\baselineskip}
@@ -52,11 +50,13 @@
   \item	次のディレクトリに対して
 	\tt{SpringheadTest}(\Ref{subsubsec}{SpringheadTest})を呼び出して
 	テストを実行する。
+	\Vskip{-.3\baselineskip}
 	\begin{narrow}\begin{tabular}{ll}
 	    \tt{core/src} & Springheadライブラリを作成する\\
 	    \tt{core/src/tests} & ビルドして実行する\\
 	    \tt{core/src/Samples} & ビルドのみ行なう\\
 	\end{tabular}\end{narrow}
+	\Vskip{.3\baselineskip}
 
 	呼出しコマンドは、\\
 	\Cmnd{%
@@ -66,7 +66,7 @@
 		\hspace{30pt}\it{dir} result/dailybuild.result
 			     dailybuild.control \it{section}
 	}
-	\begin{Opts}[5em]
+	\begin{Opts}
 	    \Item[t]{-p \it{plat}}{\it{plat}は起動引数で指定された値}
 	    \Item[t]{-c \it{conf}}{\it{conf}は起動引数で指定された値}
 	    \Item[t]{-t \it{tool}}{\it{tool}は起動引数で指定された値}
@@ -74,7 +74,7 @@
 	    \Item[t]{-S}{Springheadライブラリ作成時のみ指定
 			(テスト結果ファイルを初期化する)}
 	\end{Opts}
-	\begin{Args}[t][4em]
+	\begin{Args}[t]
 	    \Item[i]{dir}{%
 		テスト対象ディレクトリ
 		(\Path{.}, \Path{tests}, \Path{Samples}を順に指定)}

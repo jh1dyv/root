@@ -12,12 +12,12 @@ DailyBuildに関連するリポジトリSpringhead及びDailyBuild/Resultを
 を実行するプログラム。
 step 4.以降の処理は、ここから\tt{TestMainGit}を呼出して実行させる。
 
-\bigskip
+\medskip
 \Invoke[b]{%
 	> python DailyBuild.py [options]\Cont\\
 	\Hskip{100pt}test-repository result-repository
 }
-\begin{Opts}[b][5em]
+\begin{Opts}[b]
 	\Item[t]{-c CONF}{ビルド構成 (\tt{Debug, Release\Note, Trace})}
 	\Item[t]{-p PLAT}{プラットフォーム (\tt{x86, x64\Note})}
 	\Item[t]{-t TOOL}{ツールセット (\tt{14.0\Note})}
@@ -26,14 +26,14 @@ step 4.以降の処理は、ここから\tt{TestMainGit}を呼出して実行させる。
 	\Item[t]{-A}{step 3.以降のみ実行する}
 	\Item[t]{-D}{コマンドを表示するだけで実行はしない(dry run)}
 \end{Opts}
-\begin{Args}[b][2em]
-	\MC{2}{l}{\tt{test-repository}}\\
-	\Item[t]{}{テストレポジトリ$^{\small (注)}$\\
+\begin{Args}[b][10em]
+	\Item[t]{test-repository}{%
+		テストレポジトリ$^{\small (注)}$\\
 		任意のディレクトリでよいが、既存のディレクトリの場合には、
-		その内容はすべて破棄される。
+		その内容はすべて破棄される。\\
 		通常\Path{SpringheadTest}を指定する。}
-	\MC{2}{l}{\tt{result-repository}}\\
-	\Item{}{テスト結果記録用レポジトリ$^{\small (注)}$\\
+	\Item[t]{result-repository}{%
+		テスト結果記録用レポジトリ$^{\small (注)}$\\
 		通常\Path{DailyBuildResult/Result}を指定する。}
 \end{Args}
 \Vskip{.5\baselineskip}
@@ -46,7 +46,8 @@ step 4.以降の処理は、ここから\tt{TestMainGit}を呼出して実行させる。
 \end{Table}
 \end{LocalScope}
 
-\begin{narrow}[\WID]
+\Vskip{0.1\baselineskip}
+\begin{narrow}
 	\def\BoxWidth{\linewidth}
 	\addtolength{\BoxWidth}{-\WID}
 	\framebox{\begin{tabular}{l}\begin{minipage}[t]{\BoxWidth}

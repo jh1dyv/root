@@ -15,20 +15,21 @@
 \Invoke[b]{%
      > python GenResultLog.py [options] type res-file [plat conf]
 }
-\begin{Opts}[b][5em]
+\begin{Opts}[b]
     \Item[t]{-o FILE}{%
 	出力ファイル名\\
 	テストを起動するディレクトリからの相対パスで指定する。}
 \end{Opts}
-\begin{Args}[b][3em]
+\begin{Args}[b]
     \Item[t]{type}{%
 	ログ編集タイプ(次のいずれか)\\
-	\begin{tabular}{@{\Hskip{10pt}}ll}
+	\begin{tabular}{@{\Hskip{10pt}}l@{\Hskip{10pt}}l}
 		\tt{d} & ダンプ形式 (ファイル内容の確認用)\\
 		\tt{r} & \tt{result.log}形式
 	\end{tabular}}
     \Item[t]{res-file}{テスト結果累積ファイル名}
-    \MC{2}{l}{--- 以下\tt{type}が\tt{r}のときのみ指定 ---}\\
+    %\multicolumn{3}{l}{--- 以下\tt{type}が\tt{r}のときのみ指定 ---}\\[10pt]
+    \MC{2}{l}{--- 以下\tt{type}が\tt{r}のときのみ指定 ---}\\[10pt]
     \Item[t]{plat}{プラットフォーム (\tt{x86, x64})}
     \Item[t]{conf}{ビルド構成 (\tt{Debug, Release, Trace})}
 \end{Args}

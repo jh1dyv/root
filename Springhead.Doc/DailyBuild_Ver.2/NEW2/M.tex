@@ -1,5 +1,5 @@
 % main.tex
-%	Last update: 2018/07/09 F.Kanehori
+%	Last update: 2018/08/06 F.Kanehori
 %
 \documentclass[a4j,12pt]{jsarticle}
 \usepackage{dirtree}
@@ -21,23 +21,68 @@
 \begin{document}
 \input{macro}
 
-\def\S{x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x }
+%\def\S{x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x }
+\def\S{A B C D E F G H I J K L M N O P Q R S T U V W X Y Z }
 \def\Tstr{\S}
 
 %\hrule height 1pt width \linewidth
 
-\noindent\Tstr
-\noindent\Tstr
-\noindent\Tstr
+\noindent\Tstr\Tstr\Tstr
 
+\noindent\Tstr
+\Invoke[t]{%
+	> commnd arg1 arg2
+}
 \noindent\Tstr
 \CmndBox{> command}
 \noindent\Tstr
-\begin{Opts}
+\begin{Opts}[b]
 	\Item[t]{opt1}{\Tstr\Tstr\Tstr}
 	\Item[t]{opt2}{\Tstr}
 	\Item[t]{opt3}{\Tstr}
 \end{Opts}
+\begin{Args}[t]
+	\Item[i]{arg1}{\Tstr\Tstr\Tstr}
+	\Item[i]{arg2}{\Tstr}
+	\Item[i]{arg3}{\Tstr}
+\end{Args}
+\begin{Brief}[b]
+	\Tstr\Tstr\Tstr
+\end{Brief}
+\begin{Proc}[b]
+	\Tstr\Tstr\Tstr
+\end{Proc}
+\noindent\Tstr
+
+\begin{Methods}{公開メソッド}
+\begin{Method}{retval = method(args)}
+	\begin{Opts}
+		\Item[t]{opt1}{\Tstr}
+	\end{Opts}
+	\begin{Args}[t]
+		\Item[i]{arg1}{\Tstr}
+	\end{Args}
+	\begin{Return}
+		\Item[t]{retval}{\Tstr\Tstr\Tstr}
+	\end{Return}
+	\begin{Proc}
+		\noindent\Tstr
+	\end{Proc}
+\end{Method}
+\begin{Method}{retval = method(args)}
+	\begin{Proc}
+		\noindent\Tstr
+	\end{Proc}
+\end{Method}
+\end{Methods}
+\noindent\Tstr
+\begin{GeneralBox}[t][20pt]{narrow box}
+	\noindent\Tstr
+	\noindent\Tstr
+	\noindent\Tstr
+	
+	\noindent\Tstr
+\end{GeneralBox}
 \begin{narrow}
 	\noindent\Tstr%\Cmnd{コマンド}
 	\CmndBox{> command}
@@ -45,14 +90,6 @@
 \end{narrow}
 \noindent\Tstr
 
-\noindent\Tstr
-\begin{GeneralBox}[t][20pt]{GeneralBox概要}
-	\noindent\Tstr
-	\noindent\Tstr
-	\noindent\Tstr
-	
-	\noindent\Tstr
-\end{GeneralBox}
 \noindent\Tstr
 \def\TableItemIndent{20pt}%
 \begin{Table}[l][6em]{ll}
@@ -69,6 +106,9 @@
 	\ItemT[i]{test}{three}{\Tstr}
 \end{Table}
 \noindent\Tstr
+
+\noindent
+ABC XYZ
 \begin{narrow}
 	\noindent\Tstr
 	\noindent\Tstr
@@ -81,6 +121,13 @@
 	\noindent\Tstr
 \end{narrow}
 \noindent\Tstr
+
+\noindent
+(1)では、「ユーザーズガイド」にある
+\begin{narrow}[\WID]
+	\tt{http://springhead.info/dailybuild/generated/doc/Springhead.pdf}
+\end{narrow}
+及び「APIリファレンス」にある
 
 \end{document}
 

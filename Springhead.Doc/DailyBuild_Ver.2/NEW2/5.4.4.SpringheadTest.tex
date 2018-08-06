@@ -18,7 +18,7 @@
      > python SpringheadTest.py [options]\Cont\\
      \Hskip{100pt}test-dir res-file ctl-file section
 }
-\begin{Opts}[b][6em]
+\begin{Opts}[b]
     \Item[t]{-c CONF}{ビルド構成 (\tt{Debug, Release, Trace})}
     \Item[t]{-p PLAT}{プラットフォーム (\tt{x86, x64})}
     \Item[t]{-r}{強制的にビルドする}
@@ -26,16 +26,19 @@
     \Item[t]{-t TOOL}{ツールセット (\tt{14.0\Note})}
     \Item[t]{-C usage}{%
     		Closed sourceの扱い方\\
+		\begin{LocalScope}
+		\def\arraystretch{1.0}
 		\begin{tabular}{@{\Hskip{15pt}}ll}
 		    \tt{auto}	& テスト制御ファイルに従う\\
 		    \tt{use}	& すべてで使用する\\
 		    \tt{unuse}	& すべてで使用しない
-		\end{tabular}}
+		\end{tabular}
+		\end{LocalScope}}
     \Item[t]{-D}{コマンドを表示するだけで実行はしない(dry run)}
     \Item[t]{-S}{テスト結果累積ファイルを初期化する}
     \Item[t]{-T value}{実行タイムアウト指定 (単位は秒)}
 \end{Opts}
-\begin{Args}[b][6em]
+\begin{Args}[b]
     \Item[t]{test-dir}{%
     	テスト対象ディレクトリ\\
 	Path{core/src}からの相対パスで指定する。}
@@ -76,7 +79,7 @@
 		closed source使用時のためのテンプレートファイル名、
 		closed source不使用時のためのテンプレートファイル名である。
 		実際のファイル名は、
-		\begin{narrow}[\WID]
+		\begin{narrow}
 			\Path{core/include/UseClosedSrcOrNot.h} \\
 			\Path{core/test/bin/UseClosedSrc.h.template} \\
 			\Path{core/test/bin/UnuseClosedSrc.h.template}
@@ -95,34 +98,40 @@
 		}
 		\tt{testid}には引数\tt{test-dir}に従い
 		次の\tt{TESTID}クラス定数を設定する。
-		\begin{narrow}[n][\WID]\begin{tabular}{l@{\RArrowSp{5pt}}l}
+		\Vskip{-.2\baselineskip}
+		\begin{narrow}\begin{tabular}{l@{\RArrowSp{5pt}}l}
 			Springheadライブラリ作成のとき & \tt{TESTID.STUB}\\
 			{src/tests}のテストのとき      & \tt{TESTID.TESTS}\\
 			{src/Samples}のテストのとき    & \tt{TESTID.SAMPLES}
 		\end{tabular}\end{narrow}
+		\Vskip{.2\baselineskip}
 		\tt{res, csc}は前のステップで生成したクラスオブジェクトである。
 		他のパラメータは、起動時引数及びオプションを参照して設定する。
 		ただし\tt{csusage}にはオプション\tt{-C}の値に従い
 		次の\tt{TESTID}クラス定数を設定する
 		(\RefRef{subsubsec}{ConstDefs})。
-		\begin{narrow}[n][\WID]\begin{tabular}{l@{\RArrowSp{5pt}}l}
+		\Vskip{-.2\baselineskip}
+		\begin{narrow}\begin{tabular}{l@{\RArrowSp{5pt}}l}
 		    	\tt{-C auto}	& \tt{TESTID.AUTO}\\
 		    	\tt{-C use}	& \tt{TESTID.USE}\\
 		    	\tt{-C unuse}	& \tt{TESTID.UNUSE}
 		\end{tabular}\end{narrow}
-		\medskip
+		\Vskip{.2\baselineskip}
+		%\medskip
 
 	  \item	指定されたディレクトリに対して ビルド＆テストを実行する。\\
 		\Cmnd{%
 		     > stat = trv.traverse(top)
 		}
 		\tt{top}はテスト対象ディレクトリで、次のものを指定する。
-		\begin{narrow}[s][\WID]\begin{tabular}{l@{\RArrowSp{5pt}}l}
+		\Vskip{-.2\baselineskip}
+		\begin{narrow}\begin{tabular}{l@{\RArrowSp{5pt}}l}
 			Springheadライブラリ作成のとき & \Path{src}\\
 			\tt{src/tests}のテストのとき   & \Path{src/tests}\\
 		    	\tt{src/Samples}のテストのとき & \Path{src/Samples}
 		\end{tabular}\end{narrow}
-		\medskip
+		\Vskip{.2\baselineskip}
+		%\medskip
 
 	  \item	テスト結果をテスト結果累積ファイル\tt{res_file}に書き出す。\\
 		\Cmnd{%

@@ -11,7 +11,7 @@
 次の2段階でDailyBuildを起動する。
 
 \bigskip
-\begin{narrow}[20pt]
+\begin{narrow}
     \framebox[.75\linewidth][l]{\tt{%
 	\tt{\begin{tabular}{l}
 		> python DailyBuild.py -u \%*\\
@@ -20,7 +20,7 @@
     }}\hspace{10pt}\small{(Windows)}
 \end{narrow}
 \smallskip 又は\smallskip
-\begin{narrow}[20pt]
+\begin{narrow}
     \framebox[.75\linewidth][l]{\tt{%
 	\tt{\begin{tabular}{l}
 		> python DailyBuild.py -u \$*\\
@@ -39,8 +39,10 @@
 (以下Windowsの場合)。
 登録情報は次のとおり。
 
-\begin{narrow}[s][20pt]
-    \begin{Table}{ll}
+\begin{narrow}
+    \begin{LocalScope}
+    \TableItemIndent=0pt
+    \begin{Table}[r][7.5em]{ll}
 	\Item{トリガー}{毎日2:02に起動}
 	\Item{操作}{プログラムの開始}
 	\Item{スクリプト(P)}{%
@@ -49,6 +51,7 @@
 		\tt{-t 14.0 -c Release -p x64}\Cont\\
 		\hspace{40pt}\tt{SpringheadTest DailyBuildResult/Result}}
     \end{Table}
+    \end{LocalScope}
 \end{narrow}
 
 % end: 5.4.1.DailyBuildWrapper.tex
