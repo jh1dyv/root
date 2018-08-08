@@ -288,6 +288,7 @@
 %   \Item[font]{1st column}{last column}
 %   \ItemT[font]{1st column}{2nd column}{last column}
 %	font		t(t), i(t), b(f), r(m), g(t), m(c)
+%   \ItemMC		similar to \multicolumn except first indent column
 %   \MC is alias to \multicolumn
 % \end{Table}
 %
@@ -323,10 +324,10 @@
 	&\begin{minipage}[t]{\Table@last@wid}{%
 		\begin{spacing}{.8}#4\hfil\end{spacing}}\end{minipage}\\[-3pt]}
 
-%\let\MC\multicolumn
-\def\MC#1#2#3{%
-	\newcount\MC@ncols \MC@ncols=#1\advance\MC@ncols by 1
-	\multicolumn{\the\MC@ncols}{#2}{#3}}
+\let\MC\multicolumn
+\def\ItemMC#1#2#3{%
+	\hbox to \TableItemIndent{}%	% indentation to first column
+	&\multicolumn{#1}{#2}{#3}}
 
 \def\Cell#1{\begin{LocalScope}\def\arraystretch{.8}\tabcolsep=0pt%
 	\begin{tabular}[t]{l}#1\end{tabular}\end{LocalScope}}

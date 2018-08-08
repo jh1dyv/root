@@ -16,8 +16,8 @@
 
 \begin{Initializer}{%
 	obj = ClosedSrcControl(path, use_path, unuse_path,\Cont\\
-	\Hskip{140pt}dry_run=False, verbose=0)}
-	\Vskip{-.4\baselineskip}
+	\Hskip{140pt}dry_run, verbose)}
+	\Vskip{-.5\baselineskip}
 	\begin{Args}
 	    \Item[t]{path}{%
 		当該マクロを定義しているファイル名\\
@@ -34,13 +34,13 @@
 
 \begin{Methods}{公開メソッド}
 \begin{Method}{set_usage(usage)}
-    \begin{Args}[r]
+    \begin{Args}
     	\Item[t]{usage}{%
 	    closed sourceを使用してビルドするか否か。
 	    \SQuote{\tt{CSU_USE}}又は\SQuote{\tt{CSU_UNUSE}}を指定する
 	    (\Ref{subsubsec}{ConstDefs})。}
     \end{Args}
-    \begin{Brief}[r]
+    \begin{Brief}
 	指定されたusageが現在のマクロ定義と異なる場合は、
 	適切なテンプレートを定義ファイルにコピーすることで要求に応じる。
     \end{Brief}

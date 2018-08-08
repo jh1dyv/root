@@ -1,5 +1,5 @@
 % 5.4.6.VersionInfo.tex
-%	Last update: 2018/07/26 F.Kanehori
+%	Last update: 2018/08/08 F.Kanehori
 %\newpage
 \subsubsection{VersionInfo}
 \label{subsubsec:VersionInfo}
@@ -7,27 +7,26 @@
 \bigskip
 \begin{LocalScope}
 \def\TmpWidth{\linewidth}
-\addtolength{\TmpWidth}{-\WID}
-\framebox{\begin{tabular}{l}\begin{minipage}[t]{\TmpWidth}
+\addtolength{\TmpWidth}{-20pt}
+\framebox{\begin{minipage}[t]{\TmpWidth}
 	現在、ここに記述する内容の実装(コード)は、
 	ファイル\Path{VersionControlSystem.py}の
 	\Path{__main__}節に記述されている。
 	将来的には、この部分をファイル\Path{VersionInfo.py}として
-	独立させた方がよいであろう \CDots\ (TODO)。
-\end{minipage}\end{tabular}}
+	独立させた方がよい \CDots\ (TODO)。
+\end{minipage}}
 \end{LocalScope}
 
 \bigskip
 \Invoke[b]{
      > python VersionControlSystem.py [options] \{HEAD|all|commit-id\}
 }
-\begin{Opts}[b][5em]
+\begin{Opts}[b]
     \Item[t]{-S $^{(1)}$}{Subversionを対象とする(DailyBuildでは使用しない)}
     \Item[t]{-G $^{(2)}$}{Github (GitHub.com)を対象とする}
     \Item[t]{-H $^{(3)}$}{Gitlab (git.haselab.net)を対象とする}
     \Item[t]{-f fname}{旧バージョンから取得するファイル名}
 \end{Opts}
-\Vskip{.5\baselineskip}
 \begin{Table}[r][1.5em]{ll}
   \Item{$^{(1)}$}{%
 	GitHubに移行する前に使用していたもの。
@@ -36,8 +35,7 @@
   \Item{$^{(2)}$}{Springheadのレポジトリである}
   \Item{$^{(3)}$}{DailyBuild/Resultのレポジトリである}
 \end{Table}
-\vspace{.5\baselineskip}
-\begin{Args}[b][5em]
+\begin{Args}[b]
     \Item[t]{HEAD}{HEADバージョンを対象とする}
     \Item[t]{all}{すべてのバージョンを対象とする}
     \Item[t]{commit-id}{指定したバージョンを対象とする}
@@ -49,7 +47,6 @@
 
   \item	gitには、その管理下にあるディレクトリからアクセスしないといけない。
 	以下に、指定されたオプションと管理下ディレクトリの対応を示す。
-	%\Vskip{.5\baselineskip}
 	\begin{narrow}[\WID]
 	    \begin{LocalScope}\tabcolsep=10pt
 	    \begin{tabular}{|ll@{ $\Leftrightarrow$ }l|}\hline
