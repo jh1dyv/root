@@ -1,5 +1,5 @@
 % 5.4.10.ControlParams.tex
-%	Last update: 2018/07/31 F.Kanehori
+%	Last update: 2018/08/09 F.Kanehori
 %\newpage
 \subsubsection{クラス ControlParams}
 \label{subsubsec:ControlParams}
@@ -17,7 +17,6 @@
 \noindent
 \bf{テスト制御パラメータファイル構造}
 
-%\Vskip{5pt}
 \begin{narrow}[20pt]
 	テスト制御パラメータファイルは、テスト制御キーとその値とを
 	white spaceで区切って並べたファイル(\tt{Kvfile}クラスで取り扱う)であり、
@@ -30,9 +29,20 @@
 	  \item	キーのみが指定された場合は、
 	  	値として\DQuote{True}が指定されたものとして扱われる。
 	  \item	キーとして\tt{"[\it{section-name}]"}が指定された場合は、
-		新たな``セクション''の開始として扱う。値はあっても無視される。
+		新たな``セクション''の開始として扱う。
+		このキーに対する値は、あっても無視される。
 		なお、陽にセクションを終了させる方法はない。
-	  \item	値として\DQuote{** DO NOT INHERIT **}が指定された場合は、
+	  \item 指定されたキーは、
+	  	直近で定義されたセクションがあればそのセクションに、
+	  	なければ\KQuote{無名セクション}に属するものとする。\\
+		値の検索は \tt{[}指定されたセクション\tt{]}
+		\RArrow\ \tt{[}無名セクション\tt{]}の順
+		(セクション指定がなければ\tt{[}無名セクション\tt{]}だけ)
+		で行われる。
+	  \item	重複するキーは、
+	  	異なるセクションに属するものであれば異なるものとされるが、
+	  	同一セクションに属するものであればその値は上書きされる。
+	  \item	値として\DQuote{\tt{** DO NOT INHERIT **}}が指定された場合は、
 	  	このキーに対して今までに設定された値は破棄される(継承の中断)。
 	\end{itemize}
 
@@ -81,9 +91,9 @@
 	\end{longtable}}}
 \end{narrow}
 
-\bigskip
+\medskip
 \begin{Initializer}{obj = ControlParams(fname, section, verbose)}
-    \begin{Args}[5em]
+    \begin{Args}
     	\Item[t]{fname}{テスト制御ファイル名}
     	\Item[t]{section}{%
 		テスト制御ファイルセクション名\\
@@ -94,7 +104,7 @@
 
 \begin{Methods}{公開メソッド}
 \begin{Method}{value = get(key, override, default)}
-    \begin{Args}[r][5em]
+    \begin{Args}
 	\Item[t]{key}{%
 		テスト制御パラメータのキー。
 		\tt{CFK}クラスの定数(\tt{CFK.BUILD}, etc.)で指定する
@@ -102,11 +112,11 @@
 	\Item[t]{override}{上書き値}
 	\Item[t]{default}{デフォルト値}
     \end{Args}
-    \begin{Brief}[r]
+    \begin{Brief}
 	指定されたキー(クラス\tt{ConstDefs}の定数で指定する)に対応する
 	テスト制御パラメータの値(辞書\tt{self.control[\it{key}]}の値)を返す。
 	テスト制御ファイルの継承関係はイニシャライザから呼び出される
-	\tt{__read_control()}にて処理済みである。\\
+	\tt{__read_control()}にて処理済みである。
 	引数\tt{override}が指定されたら、テスト制御ファイルの定義に係わりなく
 	この値をテストパラメータとして返す。
 	引数\tt{key}で指定されたキーがテスト制御ファイルで定義されていなければ、
@@ -114,7 +124,7 @@
     \end{Brief}
 \end{Method}
 \begin{Method}{msg = error()}
-    \begin{Brief}[r]
+    \begin{Brief}
 	既にエラーが登録されていたら、メッセージを返す。
     \end{Brief}
 \end{Method}
@@ -128,7 +138,7 @@
 \bigskip
 \begin{Methods}{内部メソッド \rm{(抜粋)}}
 \begin{Method}{__read_control_file(fname, section)}
-    \begin{Brief}[r]
+    \begin{Brief}
 	ディレクトリ\Path{core}の直下からカレントディレクトリまでの
 	各ディレクトリまで順に次の処理を実施する。
 	\begin{enumerate}
@@ -137,14 +147,15 @@
 	  \item	\tt{section}で指定されたセクション(および無名セクション)に
 		属するテスト制御パラメータを辞書\tt{self.control[\it{key}]}に
 		格納する(\tt{__set_control_values()})。\\
-		※ 無名セクションには便宜上\DQuote{__default__}というキーが付与される。
+		※ 無名セクションには便宜上\DQuote{__default__}という
+		キーが付与される。
 	\end{enumerate}
 	ディレクトリを上位から下位に向かって処理をすることで、
 	継承および下位優先が自然と処理される。
     \end{Brief}
 \end{Method}
 \begin{Method}{__set_control_values(kvf, section)}
-    \begin{Brief}[r]
+    \begin{Brief}
 	\tt{kvf}のセクション\tt{section}に読み込まれているすべてのデータを、
 	辞書\tt{self.control}に登録する。
 	もし対応する値が \tt{"** DO NOT INHERIT **"} であったなら、
@@ -153,11 +164,13 @@
     \end{Brief}
 \end{Method}
 \begin{Method}{__set_default_path(dic)}
-    \begin{Brief}[r]
+    \begin{Brief}
 	指定された辞書\tt{dic}に初期値として、
 	\begin{enumerate}
-	  \item	Springheadのトップディレクトリ ( \RArrow\Hskip{5pt}\tt{dic['SprTop']})
-	  \item	Springheadのテストディレクトリ ( \RArrow\Hskip{5pt}\tt{dic['SprTest']})
+	  \item	Springheadのトップディレクトリ\ 
+	  	( \RArrow\Hskip{5pt}\tt{dic['SprTop']})
+	  \item	Springheadのテストディレクトリ\ 
+	  	( \RArrow\Hskip{5pt}\tt{dic['SprTest']})
 	\end{enumerate}
 	を登録する。
     \end{Brief}

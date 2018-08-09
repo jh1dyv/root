@@ -14,7 +14,7 @@
 
 \bigskip
 \begin{Initializer}{obj = VisualStudio(toolset, verbose)}
-    \begin{Args}[5em]
+    \begin{Args}
     	\Item[t]{toolset}{%
 		Visual Studio toolset ID\\
 		Visual Studio 2015ならば、'14.0', '14', 'v140', '2015'の何れでも可。}
@@ -23,10 +23,10 @@
 
 \begin{Methods}{公開メソッド}
 \begin{Method}{solution(name)}
-    \begin{Args}[r][5em]
+    \begin{Args}
 	\Item[t]{name}{ソリューション名}
     \end{Args}
-    \begin{Brief}[r]
+    \begin{Brief}
 	引数\tt{name}からソリューションファイルパスを決定する。
 	ソリューションファイル名は
 	\Path{<\it{solution-name}><\it{Visual-Studio-version}>.sln}
@@ -34,52 +34,54 @@
     \end{Brief}
 \end{Method}
 \begin{Method}{set(func, arg1, arg2)}
-    \begin{Brief}[r]
+    \begin{Brief}
 	与えられた引数に従ってビルド条件の設定を行なう。
-	\Vskip{-.5\baselineskip}
-	\begin{Table}[r][4em]{|l|l|}\hline
-	  \MC{1}{|c}{\it{func}}
-	  	& \MC{1}{|c|}{設 定 内 容 (\it{arg1,arg2})}\\\hline
-	  \Item[t]{OUTDIR}{%
+	\def\TabRow#1#2{\tt{#1\hfil} & \Cell{#2\hfil}\\\hline}
+	\Vskip{-.8\baselineskip}
+	\begin{longtable}[r]{|p{4em}|p{275pt}|}\hline
+	    \MC{1}{|c}{\it{func}}
+	    & \MC{1}{|c|}{設 定 内 容 (\it{arg1,arg2})}\\\hline
+	  \TabRow{OUTDIR}{%
 		出力ディレクトリを\tt{arg1}に、
-		クリーンフラグを\tt{arg2}に設定する。
+		クリーンフラグを\tt{arg2}に設定する。\\
 		クリーンフラグがTrueならば、コンパイル前に
-		出力ディレクトリをクリアする(強制リコンパイル)。}\hline
-	  \Item[t]{LOGFILE}{ログファイルパスを\tt{arg1}とする。}\hline
-	  \Item[t]{DRY_RUN}{%
+		出力ディレクトリ\\をクリアする(強制リコンパイル)。}
+	  \TabRow{LOGFILE}{ログファイルパスを\tt{arg1}とする。}
+	  \TabRow{DRY_RUN}{%
 		Dry_runフラグを\tt{arg1}とする。
 		このフラグがTrueならば、
-		コマンドを表示するだけで実行はしない。}\hline
+		コマ\\ンドを表示するだけで実行はしない。}
 	  \MC{2}{l}{※ \it{func}に与えるのは、このクラスで定義している定数である。}
-	\end{Table}
-	\Vskip{-.8\baselineskip}
+	\end{longtable}
+	\Vskip{-.2\baselineskip}
     \end{Brief}
 \end{Method}
 \begin{Method}{stat = build(platform, config)}
-    \begin{Args}[r][5em]
+    \begin{Args}
 	\Item[t]{platform}{\DQuote{x86} or \DQuote{x64}}
 	\Item[t]{config}{\DQuote{Debug}, \DQuote{Release} or \DQuote{Trace}}
     \end{Args}
-    \begin{Brief}[r]
+    \begin{Brief}
 	ログディレクトリを準備したら、
 	プラットフォームを\tt{platform}、ビルド構成を\tt{config}として
 	ビルドを実行する(\tt{__build()}を呼ぶ)。
     \end{Brief}
 \end{Method}
 \begin{Method}{get(kind)}
-    \begin{Brief}[r]
+    \begin{Brief}
 	与えられた引数に対応する値を返す。
-	\Vskip{-.5\baselineskip}
-	\begin{Table}[r][4em]{|l|l|}\hline
-	  \MC{1}{|c}{\it{kind}} & \MC{1}{|c|}{返 す 値}\\\hline
-	  \Item[t]{VERSION}{Visual Studioのバージョン (e.g. 14.0)}\hline
-	  \Item[t]{TOOLSET}{Visual Studio toolset ID (e.g. "v140")}\hline
-	  \Item[t]{COMMAND}{
-		Visual Studioのtoolset IDと名称\ 
-		(e.g. "v140" と "Visual Studio 2015")}\hline
-	  \MC{2}{l}{※ \it{kind}に与えるのは、このクラスで定義している定数である。}
-	\end{Table}
+	\def\TabRow#1#2{\tt{#1\hfil} & \Cell{#2\hfil}\\\hline}
 	\Vskip{-.8\baselineskip}
+	\begin{longtable}[r]{|p{4em}|p{275pt}|}\hline
+	    \MC{1}{|c}{\it{kind}} & \MC{1}{|c|}{返 す 値}\\\hline
+	  \TabRow{VERSION}{Visual Studioのバージョン (e.g. 14.0)}
+	  \TabRow{TOOLSET}{Visual Studio toolset ID (e.g. "v140")}
+	  \TabRow{COMMAND}{%
+		Visual Studioのtoolset IDと名称\\
+		(e.g. "v140" と "Visual Studio 2015")}
+	  \MC{2}{l}{※ \it{kind}に与えるのは、このクラスで定義している定数である。}
+	\end{longtable}
+	\Vskip{-.2\baselineskip}
     \end{Brief}
 \end{Method}
 \begin{Method}{info()}
@@ -88,7 +90,7 @@
     \end{Brief}
 \end{Method}
 \begin{Method}{\it{string} error()}
-    \begin{Brief}[r]
+    \begin{Brief}
 	既にエラーが記録されていたらその情報(文字列)を返す。
     \end{Brief}
 \end{Method}
@@ -97,7 +99,7 @@
 \bigskip
 \begin{Methods}{内部メソッド \rm{(抜粋)}}
 \begin{Method}{\it{list of string} __get_vsinfo(toolset)}
-    \begin{Brief}[r]
+    \begin{Brief}
 	引数で指定されたツールセットに対応する3つ組(pts, vsv, vsn)を返す。
 	ここで、ptsはtool set ID (e.g. v140)、vsvはVisual Studioバージョン
 	(e.g. 14.0)、vsnはVisual Studio名称 (e.g. Visual Studio 2015) を
@@ -106,21 +108,21 @@
     \end{Brief}
 \end{Method}
 \begin{Method}{\it{string} __get_vs_path(version)}
-    \begin{Brief}[r]
+    \begin{Brief}
 	引数で指定されたVisual Studioバージョンに対応するdevenvのパスを返す。
 	このメソッドはInitializerから呼ばれる。
 	\Vskip{-.5\baselineskip}
-	\small{\begin{Table}[r][1em]{ll}
+	\begin{Table}[r][2em]{ll}
 	    \Item{\rm{(注)}}{%
 		ここで返すパスは、Visual Studio 2015については正しいが、
 		それ以降のバージョンについては確認していない。
 		必要ならば追加修正する必要がある。}
-	\end{Table}}
-	\Vskip{-\baselineskip}
+	\end{Table}
+	\Vskip{.3\baselineskip}
     \end{Brief}
 \end{Method}
 \begin{Method}{\it{int} __build()}
-    \begin{Brief}[r]
+    \begin{Brief}
 	devenvに適切なパラメータを与えて実行する。
 	クリーンフラグが設定されている場合は、devenvの実行に先立ち、
 	出力ディレクトリとこのパラメータに対応するログファイルを削除する。

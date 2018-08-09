@@ -1,5 +1,5 @@
 % macro.tex
-%	Last update: 2018/08/06 F.Kanehori
+%	Last update: 2018/08/09 F.Kanehori
 
 \makeatletter
 
@@ -173,7 +173,7 @@
 \def\Method#1{\global\advance\count255 by 1
 	\noindent\hbox to 5pt{}\the\count255 . \tt{#1}
 	\vskip -.3\baselineskip\begin{narrow}[\WID]}
-\def\endMethod{\end{narrow}}
+\def\endMethod{\vskip .25\baselineskip \end{narrow}}
 
 %% command synopsis, options and arguments
 %  \Invoke[t]{body}			% ‹N“®•û–@   (default: [r])

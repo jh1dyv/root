@@ -27,7 +27,7 @@
 
 \begin{Methods}{公開メソッド}
 \begin{Method}{\it{bool} is_seh(code)}
-    \begin{Brief}[r]
+    \begin{Brief}
 	引数で与えられたコード(内部コード)が、構造例外コードか否かを返す。
 	ここでは\tt{-9000}より小さいコードを構造例外コードとして扱う。
 	すなわち、これより大きいコードは
@@ -35,12 +35,12 @@
     \end{Brief}
 \end{Method}
 \begin{Method}{\it{string} seh_str(code)}
-    \begin{Brief}[r]
+    \begin{Brief}
 	引数で与えられたコード(内部コード)に対応する表示文字列を返す。
     \end{Brief}
 \end{Method}
 \begin{Method}{\it{string} seh_code(code)}
-    \begin{Brief}[r]
+    \begin{Brief}
 	引数で与えられたコード(内部コード)に対応するシステムコードを返す。
     \end{Brief}
 \end{Method}
@@ -48,7 +48,7 @@
 
 \begin{Methods}{内部メソッド}
 \begin{Method}{\it{string} __seh_str_sub(code)}
-    \begin{Brief}[r]
+    \begin{Brief}
 	引数で与えられたコード(内部コード)に対応するシステムコード
 	及び表示文字列を返す。
 	\tt{seh_str()}及び\tt{seh_code()}から呼ばれる。

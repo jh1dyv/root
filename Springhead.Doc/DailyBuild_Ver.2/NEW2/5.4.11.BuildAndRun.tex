@@ -8,7 +8,8 @@
 \begin{Brief}[b]
 	Solution/makeファイルで指定された1つのソリューションについて、
 	コンパイル及びテスト実行を実施するクラス。
-	この時点で、コンパイル及びテスト実行に係るパラメータはすべて確定していること。\\
+	この時点で、コンパイル及びテスト実行に係るパラメータは
+	すべて確定していること。\\
 	コンパイルには、Visual Studio (Windowsの場合)又は
 	\tt{/bin/make} (unixの場合)を使用する。
 	テスト実行は、生成されたバイナリを直接起動することで実施する。
@@ -17,7 +18,7 @@
 
 \bigskip
 \begin{Initializer}{obj = BuildAndRun(ccver, verbose, dry_run)}
-    \begin{Args}[5em]
+    \begin{Args}
 	\Item[t]{ccver}{%
 		コンパイラのバージョン (unixの場合はダミー)\\
 		Visual Studioのtool set versionを指定する。\\
@@ -30,18 +31,20 @@
 \begin{Methods}{公開メソッド}
 \begin{Method}{stat = build(build(dirpath, slnfile, platform, opts, \Cont\\
 		\hspace{100pt}outfile, logfile, errlogfile, force)}
-    \begin{Args}[r][6em]
+    \begin{Args}
 	\Item[t]{dirpath}{ソリューションファイルがあるディレクトリのパス名}
 	\Item[t]{slnfile}{Solution/makeファイル名}
 	\Item[t]{platform}{プラットフォーム(\DQuote{x86} or \DQuote{x64})}
 	\Item[t]{opts}{コンパイラオプション\\
-			unixの場合には、\\
-			\begin{LocalScope}\def\arraystretch{.8}
+			unixの場合には、
+			\begin{LocalScope}\def\arraystretch{.9}
+			\begin{narrow}[10pt]
 			\begin{tabular}{l@{\RArrowSp{5pt}}l}
-				\DQuote{Debug}   & \DQuote{-g}\\
-				\DQuote{Release} & \DQuote{-O2}\\
-				\DQuote{Trace}   & \DQuote{-O2}
-			\end{tabular}\end{LocalScope}\\
+				\DQuote{Debug}   & \DQuote{--g}\\
+				\DQuote{Release} & \DQuote{--O2}\\
+				\DQuote{Trace}   & \DQuote{--O2}
+			\end{tabular}\end{narrow}\end{LocalScope}
+			\Vskip{5pt}
 			に置き換えて使用する。}
 	\Item[t]{outfile}{出力バイナリのパス
 			(Windowsの場合leaf名はダミー --- solution fileで決まる)\\
@@ -52,14 +55,14 @@
 			絶対パス又は\tt{dirpath}からの相対パスで指定する。}
 	\Item[t]{force}{強制的に再コンパイルする(True or False\Note)}
     \end{Args}
-    \begin{Return}[r]
-	\Item[r]{stat}{リターンステータス}
+    \begin{Return}
+	\Item[t]{stat}{リターンステータス}
     \end{Return}
-    \begin{Brief}[r]
+    \begin{Brief}
 	一時的に指定されたディレクトリ(\tt{dirpath})に移動して
 	ソリューションをコンパイルする。
     \end{Brief}
-    \begin{Proc}[r]
+    \begin{Proc}
 	\begin{enumerate}
 	  \item	引数\tt{dirpath}で指定されたディレクトリに移動する。
 	  \item	ログファイル、エラーログファイルをappend openする。
@@ -78,7 +81,7 @@
 \begin{Method}{stat = run(build(dirpath, exefile, args,\Cont\\
 		\hspace{100pt}logfile, errlogfile,\Cont\\
 		\hspace{100pt}addpath, timeout, pipeprocess)}
-    \begin{Args}[r][6em]
+    \begin{Args}[r][7em]
 	\Item[t]{dirpath}{生成したバイナリファイルがあるディレクトリのパス名。}
 	\Item[t]{exefile}{Windows \RArrow\ 実行バイナリのパス\\
 			unix \RArrow\ makefileのパス}
@@ -92,24 +95,24 @@
 	\Item[t]{pipeprocess}{実行バイナリの標準入力に何か与える必要がある場合、
 			それを与えるプログラム。}
     \end{Args}
-    \begin{Return}[r]
+    \begin{Return}
 	\Item[t]{stat}{リターンステータス}
     \end{Return}
-    \begin{Brief}[r]
+    \begin{Brief}
 	一時的に指定されたディレクトリ(\tt{dirpath})に移動して
 	プログラムを実行する。
 	パイププロセスを指定することも可能で(ただし入力側のみ)。
 	これは、メニュー駆動のプログラムを想定したものである
 	(出力側のパイププロセスには未対応である)。
-	\small{\begin{Table}[r][1em]{ll}
+	\begin{Table}[r][1.5em]{ll}
 	    \Item{※}{%
  		Webのレポートでは単純にdiffをとっているものがあるが、
 		出力をフィルタリング(行数制限、編集等)してから
 		diffをとった方が見易くなると思われるので
 		拡張を考慮する価値はある -- (TODO)。}
-	\end{Table}}
+	\end{Table}
     \end{Brief}
-    \begin{Proc}[r]
+    \begin{Proc}
 	\begin{enumerate}
 	  \item	引数\tt{dirpath}で指定されたディレクトリに移動する。
 	  \item	実行ログを書き出すための一時ファイル名を決める。
@@ -134,14 +137,14 @@
 \bigskip
 \begin{Methods}{内部メソッド \rm{(抜粋)}}
 \begin{Method}{\it{obj} __open_log(self, fname, fmode, step)}
-    \begin{Brief}[r]
+    \begin{Brief}
 	指定されたファイルを指定されたモードでオープンする。
     \end{Brief}
 \end{Method}
 \begin{Method}{(stat, loginfo) = __build_u(args)}
-    \begin{Brief}[r]
+    \begin{Brief}
 	Unix用のコンパイルメソッド。
-	コンパイルの方法はmakefileで指定する。\\
+	コンパイルの方法はmakefileで指定する。
 	\begin{enumerate}
 	  \item	引数\tt{args}(リスト)を、
 		\tt{slnfile, platform, opts, outfile, force}に分解する。
@@ -158,7 +161,7 @@
     \end{Brief}
 \end{Method}
 \begin{Method}{(stat, loginfo) = __build_w(args)}
-    \begin{Brief}[r]
+    \begin{Brief}
 	Windows用のコンパイルメソッド。
 	コンパイルにはVisual Studioを用いる(\RefRef{subsubsec}{VisualStudio})。
 	\begin{enumerate}
@@ -176,7 +179,7 @@
     \end{Brief}
 \end{Method}
 \begin{Method}{\it{string--list} __select_errors(fname, step)}
-    \begin{Brief}[r]
+    \begin{Brief}
 	指定されたファイルを読み、\UpDQ\verb*| error |\UpDQ\,を含む行を集めて
 	リストとして返す。
     \end{Brief}
