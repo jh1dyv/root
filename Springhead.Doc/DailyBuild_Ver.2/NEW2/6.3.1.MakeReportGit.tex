@@ -19,13 +19,13 @@ DailyBuildの結果(ログファイル)から、
 \Invoke[b]{%
 	> MakeReportGit.bat [options] [xxxx:yyyy]
 }
-\begin{Opts}[b][5em]
+\begin{Opts}[b]
     \Item[t]{-c}{レポートファイルをウェブにコピーする}
     \Item[t]{-k}{作業ファイルを残す}
     \Item[t]{-s}{サイレントモード}
     \Item[t]{-D n}{デバッグレベル設定}
 \end{Opts}
-\begin{Args}[b][4em]
+\begin{Args}[b]
     \Item[t]{xxxx}{比較対象レビジョン(ファイル\Path{revision.old}の内容)\,\Note}
     \Item[t]{yyyy}{レポート対象レビジョン(ファイル\Path{revision.new}の内容)\,\Note}
 \end{Args}
@@ -40,6 +40,7 @@ DailyBuildの結果(ログファイル)から、
 	}\\
 	\it{args}には、起動時に指定された引数を渡す(\tt{-c, -s}は除く)。
         詳細は\ref{subsubsec:buildmonitorGit} build_monitor_Gitを参照のこと。
+	\Vskip{.3\baselineskip}
 
   \item	コピー元/先のディレクトリの定義\\
 	コピー先ディレクトリ
@@ -52,8 +53,8 @@ DailyBuildの結果(ログファイル)から、
 
   \item	オプション引数\tt{-c}が指定されていたらウェブサーバにファイルをコピー\\
 	コピーするファイルのローカルでの名称とウェブ上での名称は次のとおり。
-	\vspace{-.5\baselineskip}
-	\small{\begin{longtable}{@{\hspace{40pt}}l@{\RArrowSp{5pt}}l}
+	\Vskip{-.8\baselineskip}
+	\small{\begin{longtable}{@{\Hskip{40pt}}l@{\RArrowSp{5pt}}l}
 		\Path{[\it{日付}].report}
 			& \verb|"[WEBBASE]\Test.report"|\\
 		\Path{[\it{日付}].bldlog.diff}
@@ -65,7 +66,7 @@ DailyBuildの結果(ログファイル)から、
 		\Path{[\it{日付}].spllog.diff}
 			& \verb|"[WEBBASE]\rerpot\SamplesBuild.log.diff"|\\
 	\end{longtable}}
-	\vspace{-.5\baselineskip}
+	\vspace{-.3\baselineskip}
 
   \item	ローカルのファイルを削除\\
 	オプション引数\tt{-k}が指定されていない限り、

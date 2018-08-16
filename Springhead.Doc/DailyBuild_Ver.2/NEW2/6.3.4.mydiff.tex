@@ -13,13 +13,13 @@ Visual Studio (devenv) が出力したログを比較して、共通する行を取り除く。
 \Invoke[b]{
 	> perl order.pl [options] file1 file2
 }
-\begin{Opts}[b][6em]
+\begin{Opts}[b]
     \Item[t]{-c}{context diff出力 (未実装)}
     \Item[t]{-o outfile}{出力ファイル名 (stdout\Note)}
     \Item[t]{-p patt_id}{モジュール識別パターン番号}
     \Item[t]{-D n}{デバッグレベル設定}
 \end{Opts}
-\begin{Args}[b][6em]
+\begin{Args}[b]
     \Item[t]{file1}{入力ファイル名1}
     \Item[t]{file2}{入力ファイル名2}
 \end{Args}
@@ -29,8 +29,7 @@ Visual Studio (devenv) が出力したログを比較して、共通する行を取り除く。
   \item	指定された2つのファイルそれぞれについて、
 	\tt{dailybuild\_lib.pm}のライブラリ関数\tt{read\_log()}を用いて
 	入力ファイルの読み込み処理を行なう。
-	返されるのは(\plHshR{modules}, \plAryR{modules}, \plAryR{lines})の3つ組である。\\
-	%\vspace{-.7\baselineskip}
+	返されるのは(\plHshR{modules}, \plAryR{modules}, \plAryR{lines})の3つ組である。
 	\begin{narrow}[10pt]\begin{tabular}{ll}
 	    \plHsh{modules}
 		& モジュール名をキーとした連想配列(要素は\tt{\%threads})\\
@@ -61,28 +60,26 @@ Visual Studio (devenv) が出力したログを比較して、共通する行を取り除く。
 \end{Proc}
 
 \begin{Methods}{サブルーチン}
-\begin{Method}{%
-	\begin{tabular}[t]{l}
+\begin{Method}{\Cell{%
 	    (\plVar{count1}, \plVar{count2})
 		= diff(\plVar{fh},
 			\plHshR{modules1}, \plVar{module1}, \plVar{base1},\\
  	    \Hskip{160pt}
-			\plHshR{modules2}, \plVar{module2}, \plVar{base2})
-	\end{tabular}}
+			\plHshR{modules2}, \plVar{module2}, \plVar{base2})}}
     \label{mydiff:diff}
-    \begin{Args}[r]
+    \begin{Args}
 	\Item[t]{\plVar{fh}}{出力ファイル}
 	\Item[t]{\plHsh{modules}\Note}{モジュール名と入力行を対応付けた連想配列}
 	\Item[t]{\plVar{module}\Note}{処理対象モジュール名}
 	\Item[t]{\plVar{base}\Note}{当該モジュール先頭行の行番号}
-	\MC{2}{l}{\Hskip{5pt}\Note
+	\ItemMC{2}{l}{\Hskip{5pt}\Note
 		\small{ 添字1は比較される側を、添字2は比較する側を示す。}}
     \end{Args}
-    \begin{Return}[r]
+    \begin{Return}
 	\Item[t]{\plVar{count1}}{\tt{modules1}について処理が済んだ行数}
 	\Item[t]{\plVar{count2}}{\tt{modules2}について処理が済んだ行数}
     \end{Return}
-    \begin{Brief}[r]
+    \begin{Brief}
 	モジュール1とモジュール2とを比較して差分情報を作成する。
 	比較される側がモジュール1、比較する側がモジュール2である。\\
 	比較の対象となるデータ行は、
@@ -123,21 +120,22 @@ Visual Studio (devenv) が出力したログを比較して、共通する行を取り除く。
 	最後に未出力行をフラッシュする。
     \end{Brief}
 \end{Method}
-\begin{Method}{\plAryR{outbuff}
-	= eat_up(\plAryR{inbuff}, \plVar{mark}, \plVar{base1}, \plVar{base2})}
+\begin{Method}{\Cell{%
+	\plAryR{outbuff}
+	= eat_up(\plAryR{inbuff}, \plVar{mark}, \plVar{base1}, \plVar{base2})}}
     \label{mydiff:eatup}
-    \begin{Args}[r]
+    \begin{Args}
 	\Item[t]{\plAry{inbuff}}{入力データの配列}
 	\Item[t]{\plVar{mark}}{削除マーク(\plVar{mark_del})か
 			       挿入マーク(\plVar{mark_ins})のいずれか}
 	\Item[t]{\plVar{base1}}{ファイル1側の先頭行番号}
 	\Item[t]{\plVar{base2}}{ファイル2側の先頭行番号}
     \end{Args}
-    \begin{Return}[r]
+    \begin{Return}
 	\Item[t]{\plAry{outbuff}}{%
 		処理した3つ組(ファイル1側行番号, ファイル2側行番号, 行データ)の配列。}
     \end{Return}
-    \begin{Brief}[r]
+    \begin{Brief}
 	\plVar{mark}が削除マーク(\plVar{mark_del})ならばファイル1側の行番号を進めながら、
 	\plVar{mark}が挿入マーク(\plVar{mark_ins})ならばファイル2側の行番号を進めながら、
 	入力データがなくなるまで
@@ -145,17 +143,19 @@ Visual Studio (devenv) が出力したログを比較して、共通する行を取り除く。
 	配列に格納して返す(\RefRef{mydiff}{triplet})。
     \end{Brief}
 \end{Method}
-\begin{Method}{\plAryR{array3}
-		= triplet(\plVar{lineno1}, \plVar{lineno2}, \plVar{line})}
+\begin{Method}{\Cell{%
+	\plAryR{array3}
+	= triplet(\plVar{lineno1}, \plVar{lineno2}, \plVar{line})}}
     \label{mydiff:triplet}
-    \begin{Brief}[r]
+    \begin{Brief}
 	与えられた3つの引数を1つの配列にまとめて返す。
     \end{Brief}
 \end{Method}
-\begin{Method}{flush(\plVar{fh}, \plVar{mark}, \plVar{size1}, \plVar{size2},
-		\plAryR{buff1}, \plAryR{buff2})}
+\begin{Method}{\Cell{%
+	flush(\plVar{fh}, \plVar{mark}, \plVar{size1}, \plVar{size2},
+	\plAryR{buff1}, \plAryR{buff2})}}
     \label{mydiff:flush}
-    \begin{Args}[r]
+    \begin{Args}
 	\Item[t]{\plVar{fh}}{出力ファイルハンドル}
 	\Item[t]{\plVar{mark}}{%
 		\plVar{mark_ins}, \plVar{mark_del}, \plVar{mark_chg} のいずれか。\\
@@ -163,7 +163,7 @@ Visual Studio (devenv) が出力したログを比較して、共通する行を取り除く。
 	\Item[t]{\plVar{size}\it{N}}{\plAry{line}\it{N}の要素数}
 	\Item[t]{plAry{buff}\it{N}}{出力行データ3つ組の配列}
     \end{Args}
-    \begin{Brief}[r]
+    \begin{Brief}
 	\plVar{size1}と\plVar{size2}が共に0ならば、何もしない。\\
 	\plVar{size1}が0でなければ、削除マークを指定して\plAry{buff1}の内容を出力する。\\
 	\plVar{size2}が0でなければ、挿入マークを指定して\plAry{buff2}の内容を出力する。\\
@@ -190,10 +190,11 @@ Visual Studio (devenv) が出力したログを比較して、共通する行を取り除く。
 	\end{enumerate}
     \end{Brief}
 \end{Method}
-\begin{Method}{(\plVar{min1}, \plVar{max1}, \plVar{min2}, \plVar{max2},
-		\plAryR{lines}) = minx_max(\plAryR{buff})}
+\begin{Method}{\Cell{%
+	(\plVar{min1}, \plVar{max1}, \plVar{min2}, \plVar{max2},
+	\plAryR{lines}) = minx_max(\plAryR{buff})}}
     \label{mydiff:minmax}
-    \begin{Brief}[r]
+    \begin{Brief}
 	引数で渡されるのは、(行番号1, 行番号2, 行データ)の3つ組の配列である。
 	これから、行番号1の最大値・最小値、行番号2の最大値・最小値、
 	行データの配列を取り出して返す。
@@ -203,19 +204,19 @@ Visual Studio (devenv) が出力したログを比較して、共通する行を取り除く。
 		= edit_command(\plVar{min1}, \plVar{max1},
 		\plVar{min2}, \plVar{max2}, \plVar{cmnd})}
     \label{mydiff:editcommand}
-    \begin{Brief}[r]
+    \begin{Brief}
 	与えられた情報から、\tt{ed}ライクな編集コマンドを作成して返す。
     \end{Brief}
 \end{Method}
 \begin{Method}{output_module_name(\plVar{fh}, \plVar{module})}
     \label{mydiff:outputmodulename}
-    \begin{Brief}[r]
+    \begin{Brief}
 	モジュール名が\DQuote{\tt{_top_level_}}でなければそれをファイルに出力する。
     \end{Brief}
 \end{Method}
 \begin{Method}{output(\plVar{fh}, \plAry{buff}, \plVar{mark})}
     \label{mydiff:output}
-    \begin{Brief}[r]
+    \begin{Brief}
 	\plAry{buff}の内容を、挿入・削除・置換表示文字とともにファイルに出力する。
     \end{Brief}
 \end{Method}

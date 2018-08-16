@@ -13,13 +13,13 @@ GitHubからビルド結果と実行結果を取り出してレポートを作�
 \Invoke[b]{%
 	> build_monitor_Git.bat [options] [xxxx:yyyy]
 }
-\begin{Opts}[b][5em]
+\begin{Opts}[b]
     \Item[t]{-k}{作業ファイルを残す}
     \Item[t]{-m}{メールを送信する(未実装)}
     \Item[t]{-s}{サイレントモード}
     \Item[t]{-D n}{デバッグレベル設定}
 \end{Opts}
-\begin{Args}[b][4em]
+\begin{Args}[b]
     \Item[t]{xxxx}{比較対象レビジョン(ファイル\Path{revision.old}の内容)\,\Note}
     \Item[t]{yyyy}{レポート対象レビジョン(ファイル\Path{revision.new}の内容)\,\Note}
 \end{Args}
@@ -27,7 +27,7 @@ GitHubからビルド結果と実行結果を取り出してレポートを作�
 \medskip
 \noindent
 \bf{出力ファイル}
-\begin{narrow}[\WID]
+\begin{narrow}
 	\verb|I:\DailyBuild\Springhead\core\test\report\Test.report|\\
 	\verb|I:\DailyBuild\Springhead\core\test\report\YYYY-MMDD.stblog.diff|\\
 	\verb|I:\DailyBuild\Springhead\core\test\report\YYYY-MMDD.bldlog.diff|\\
@@ -38,7 +38,7 @@ GitHubからビルド結果と実行結果を取り出してレポートを作�
 \medskip
 \noindent
 \bf{デフォルトレビジョン設定ファイル}
-\begin{narrow}[\WID]
+\begin{narrow}
 	\verb|I:\DailyBuild\Springhead\core\test\Monitoring\etc\revision.old|\\
 	\verb|I:\DailyBuild\Springhead\core\test\Monitoring\etc\revision.new|
 \end{narrow}
@@ -49,25 +49,26 @@ GitHubからビルド結果と実行結果を取り出してレポートを作�
   \item	下位処理プログラムのオプションの定義\\
         ビルド結果の差分をとるための下位プログラムへ渡す引数を設定する。
 	\def\tmpRef{\ref{subsubsec:MakeReport:DirUsed}.参照}
-	\begin{narrow}[\WID]
+	\begin{narrow}
 		\plVar{MYDIFFOPT} \LArrowSp{5pt} \tt{mydiff.pl}へ渡す引数　(\tmpRef)\\
 		\plVar{FILTEROPT} \LArrowSp{5pt} \tt{filter.pl}へ渡す引数　(\tmpRef)\\
 	\end{narrow}
+	\Vskip{-.5\baselineskip}
 	
   \item	現在の日付と時刻
-	\begin{narrow}[\WID]
+	\begin{narrow}
 		\plVar{DATESTR}の形式は\DQuote{\tt{YYYY-MMDD hh:mm:ss}}
 	\end{narrow}
+	\Vskip{.2\baselineskip}
 
   \item	結果を報告するメールに関して\\
-	今のところメール機能は実装していない。
-	{\small \begin{description}
-	  \item[※]
-		メール機能はWindowsでは動かない(\tt{/usr/sbin/sendmail}を使うから)
-	\end{description}}
+	今のところメール機能は実装していない。\\
+	{\small \bf{※}
+		メール機能はWindowsでは動かない(\tt{/usr/sbin/sendmail}を使うから)}
 
   \item	\label{subsubsec:MakeReport:DirUsed}
 	使用するディレクトリの定義(丸括弧内は設定変数名)
+	\Vskip{-.2\baselineskip}
 	\begin{narrow}[30pt]\begin{minipage}{.8\textwidth}
 	\dirtree{%
 		.1 {\Hskip{-10mm}Springhead/}.
@@ -87,12 +88,13 @@ GitHubからビルド結果と実行結果を取り出してレポートを作�
 			\mc{\footnotesize{ \CDots 作業領域(\plVar{TMPDIR})}}.
 	}
 	\end{minipage}\end{narrow}
+	\Vskip{.5\baselineskip}
 
   \item	使用するプログラムの定義(丸括弧内は設定変数名、角括弧内は使用言語)
-	%\vspace{-.5\baselineskip}
+	\vspace{-.2\baselineskip}
 	\def\Perl{\tt{[}perl\tt{]}}
 	\def\Gawk{\tt{[}gawk\tt{]}}
-	\begin{Table}[r][6em]{ll}
+	\begin{Table}[r][7em]{ll}
 	    \Item[t]{order.pl}{%
 		Visual Studioが出力したビルドログの内容を、モジュール毎、
 		スレッド毎、出現順に並び替える。(\plVar{ORDER}) \Perl\\
@@ -112,14 +114,13 @@ GitHubからビルド結果と実行結果を取り出してレポートを作�
 	    \Item[t]{line.awk}{line番目の行を返す。\Gawk}
 	    \Item[t]{exclude.awk}{レポートに不要な行を削除する。\Gawk}
 	\end{Table}
-	%\vspace{-.5\baselineskip}
 
   \item	レビジョン範囲の決定
 	この時点で変数\plVar{ARGC}が1ならば(それは\tt{xxxx:yyyy}のはずなので)、
 	\tt{xxxx}と\tt{yyyy}をそれぞれ\plVar{OLDREV}と\plVar{NEWREV}に取り出す。
 
   \item	使用するURL
-	(GitHubの管理下のトップディレクトリからの相対パス)\\
+	(GitHubの管理下のトップディレクトリからの相対パス)
 	\begin{narrow}[\WID]
 		\plVar{STBLOGURL}　\Path{StubBuild.log}のURL\\
 		\plVar{BLDLOGURL}　\Path{Build.log}のURL\\
@@ -127,7 +128,7 @@ GitHubからビルド結果と実行結果を取り出してレポートを作�
 		{\small (以下同様)}
 	\end{narrow}
 
-  \item	使用するファイル名(入力側)\\
+  \item	使用するファイル名(入力側)
 	\begin{narrow}[\WID]
 		\plVar{OLDREVFILE}　比較基準レビジョンを指定するファイル\\
 		\plVar{NEWREVFILE}　最新のレビジョンを指定するファイル
@@ -143,9 +144,9 @@ GitHubからビルド結果と実行結果を取り出してレポートを作�
 	引数で\plVar{NEWREV}が指定されなかったなら\plVar{NEWREVFILE}から読み出す。\\
 	\vspace{.3\baselineskip}
 	\begin{minipage}[t]{\linewidth}
-		\small{\noindent ※\Hskip{1em}レビジョン指定がHEADの場合は
+		\noindent \small{※\Hskip{5pt}レビジョン指定がHEADの場合は
 			GitHubから最新のレビジョンを取得する}\\
-		\small{\phantom{※}\Hskip{1em}(\Ref{subsubsec}{VersionInfo})。}\\
+		{\small \phantom{※}\Hskip{5pt}(\Ref{subsubsec}{VersionInfo})。}\\
 		% Kludge: Which has current line width inside this environment?
 		% \linewidth has the width of outside this environment!
 		\begin{LocalScope}
@@ -153,6 +154,7 @@ GitHubからビルド結果と実行結果を取り出してレポートを作�
 		\Cmnd{> python ../bin/VersionControlSystem.py -G HEAD}
 		\end{LocalScope}
 	\end{minipage}
+	\Vskip{-.5\baselineskip}
 
   \item	GitHubから\plVar{OLDREV}の日付と時刻を取得\\
 	\plVar{OLDDATE}と\plVar{OLDTIME}に設定する。
@@ -163,8 +165,6 @@ GitHubからビルド結果と実行結果を取り出してレポートを作�
   \item	出力するファイル名の決定(\plVar{NEWDATE}を用いる)\\
 	レポートファイルは\plVar{REPDIR}に、
 	作業ファイルは\plVar{TMPDIR}に作成する。\\
-	%\small{ファイル名 = }\verb+{"stb|bld|run|spl}[err]log.{old|new|diff}"+
-	{\small
 	ファイル名: \Path{\{stb|bld|run|spl\}[err]log.\{old|new|diff\}}
 	\begin{longtable}[l]{@{\Hskip{60pt}}ll}
 	    \tt{stb}  & ライブラのリビルド\\
@@ -176,8 +176,11 @@ GitHubからビルド結果と実行結果を取り出してレポートを作�
 	    \tt{new}  & \plVar{NEWREV}関連\\
 	    \tt{diff} & \plVar{OLDREV}と\plVar{NEWREV}との差分関連
 	\end{longtable}
-	※　\tt{stb,bld,run,spl}以外のテストを組み込むときは適宜名前を追加すること。
-	}
+	\begin{description}
+	  \item[※]
+		\tt{stb,bld,run,spl}以外のテストを組み込むときは
+		適宜名前を追加すること。
+	\end{description}
 
   \item	\plVar{OLDREV}と\plVar{NEWREV}のログファイルの取得\\
 	GitHubからログ情報を取り出し、モジュール単位かつスレッド順に並べ替える。\\
@@ -196,7 +199,7 @@ GitHubからビルド結果と実行結果を取り出してレポートを作�
 
   \item	レポートファイルの作成\\
 	レポートファイルには次の項目を記載する。
-	\begin{narrow}[\WID]
+	\begin{narrow}
 		\begin{enumerate}
 		  \item	作成日付
 		  \item	新旧レビジョン番号

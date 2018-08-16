@@ -1,5 +1,5 @@
 % macro.tex
-%	Last update: 2018/08/09 F.Kanehori
+%	Last update: 2018/08/16 F.Kanehori
 
 \makeatletter
 
@@ -292,15 +292,19 @@
 %   \MC is alias to \multicolumn
 % \end{Table}
 %
+\newdimen\Table@colA@wid
+\newdimen\Table@colB@wid
+\newdimen\Table@last@wid
+\newdimen\Table@cols@wid
 \def\Table{\@ifnextchar[{\Table@}{\Table@body[r][6em][0em]}}
 \def\Table@[#1]{\@ifnextchar[{\Table@@[#1]}{\Table@body[#1][6em][0em]}}
 \def\Table@@[#1][#2]{\@ifnextchar[{\Table@body[#1][#2]}{\Table@body[#1][#2][0em]}}
 \def\Table@body[#1][#2][#3]#4{%
 	\begin{LocalScope}%
-	\newdimen\Table@colA@wid \Table@colA@wid=#2
-	\newdimen\Table@colB@wid \Table@colB@wid=#3
-	\newdimen\Table@last@wid \Table@last@wid=\linewidth
-	\newdimen\Table@cols@wid \Table@cols@wid=\Table@colA@wid
+	\Table@colA@wid=#2
+	\Table@colB@wid=#3
+	\Table@last@wid=\linewidth
+	\Table@cols@wid=\Table@colA@wid
 	\addtolength{\Table@cols@wid}{\Table@colB@wid}%
 	\addtolength{\Table@last@wid}{-\Table@cols@wid}%
 	\addtolength{\Table@last@wid}{-\TableItemIndent}%

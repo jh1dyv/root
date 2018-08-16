@@ -14,12 +14,12 @@ Visual Studio (devenv) が出力したログを、モジュール単位かつス
 \Invoke[b]{%
 	> perl order.pl [options] [infile]
 }
-\begin{Opts}[b][6em]
+\begin{Opts}[b]
     \Item[t]{-o outfile}{出力ファイル名 (stdout\Note)}
     \Item[t]{-p patt_id}{モジュール識別パターン番号}
     \Item[t]{-D n}{デバッグレベル設定}
 \end{Opts}
-\begin{Args}[b][6em]
+\begin{Args}[b]
     \Item[t]{infile}{入力ファイル名 (stdin\Note)}
 \end{Args}
 
@@ -27,8 +27,7 @@ Visual Studio (devenv) が出力したログを、モジュール単位かつス
 \begin{enumerate}
   \item	\tt{dailybuild\_lib.pm}のライブラリ関数\tt{read\_log()}を用いて
 	入力ファイルの読み込み処理を行なう。
-	返されるのは(\plHshR{modules}, \plAryR{modules}, \plAryR{lines})の3つ組である。\\
-	%\vspace{-.7\baselineskip}
+	返されるのは(\plHshR{modules}, \plAryR{modules}, \plAryR{lines})の3つ組である。
 	\begin{narrow}[10pt]\begin{tabular}{ll}
 	    \plHsh{modules}
 		& モジュール名をキーとした連想配列(要素は\plHsh{threads})\\
