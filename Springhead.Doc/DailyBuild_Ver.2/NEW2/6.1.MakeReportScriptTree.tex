@@ -1,5 +1,5 @@
 % 6.1.MakeReportScriptTree.tex
-%	Last update: 2018/07/31 F.Kanehori
+%	Last update: 2018/08/20 F.Kanehori
 
 \subsection{Script構成}
 \label{subsec:MakeReportScriptTree}
@@ -98,12 +98,31 @@
 		.3 Monitoring/.
 		.4 etc/.
 		.5 \it{revision.new}
-			\AnnoRef{比較レビジョン定義ファイル}{subsubsec:revisiondeffile}.
+			\Anno{比較レビジョン定義ファイル}.
 		.5 \it{revision.old}
-			\AnnoRef{基準レビジョン定義ファイル}{subsubsec:revisiondeffile}.
+			\Anno{基準レビジョン定義ファイル}.
 	}
   \end{minipage}\end{narrow}
-  \medskip
+  \bigskip
+  \noindent
+  基準レビジョン定義ファイル
+  \begin{narrow}
+  	レポート作成の基準とするレビジョン(コミットID)を指定するファイル。
+	次の形式のテキストファイルである。
+	\begin{itemize}
+	  \item	行頭から短形式のコミットIDを記述する。
+	  	コミットIDの代わりに\SQuote{\tt{HEAD}}と記述したときは、
+		最新のコミットIDを指定したものと解釈する。
+	  \item	1つ以上の空白を置けば後ろに何を書いても無視する。
+	  \item	ハッシュ文字(\SQuote{\tt{\#}})以降及び空行は無視する。
+	\end{itemize}
+  \end{narrow}
+  \noindent
+  比較レビジョン定義ファイル
+  \begin{narrow}
+  	レポート作成の対象となるレビジョン(コミットID)を指定するファイル。
+	形式は基準レビジョン定義ファイルと同じである(上記参照)。
+  \end{narrow}
 \end{narrow}
 
 % end: 6.1.MakeReportScriptTree.tex

@@ -23,13 +23,13 @@
     \noindent 起動方法
     \Vskip{.1\baselineskip}%
     \CmndBox{> awk -f field.awk -v {\small \rm{変数}=\rm{値}} < \it{infile}}
-    \begin{Opts}[r][6em]
+    \begin{Opts}
 	\Item[t]{-v \rm{変数}=\rm{値}}{%
 		変数に値を割り当てて実行する。\\
 		変数には、位置を示す変数(\tt{block, field, start})と
 		区切り文字を示す変数(\tt{sep1, sep2})とがある。}
     \end{Opts}
-    \begin{Brief}[r]
+    \begin{Brief}
 	区切り文字\tt{sep2}が指定されない場合
 	\begin{narrow}
 		入力行を区切り文字\tt{sep1}(指定がなければ空白文字)で分割して、
@@ -48,12 +48,12 @@
     \noindent 起動方法
     \Vskip{.1\baselineskip}%
     \CmndBox{> awk -f field.awk -v {\small \rm{変数}=\rm{値}} < \it{infile}}
-    \begin{Opts}[r][6em]
+    \begin{Opts}
 	\Item[t]{-v \rm{変数}=\rm{値}}{%
 		変数に値を割り当てて実行する。\\
 		変数は\tt{pat}のみである。}
     \end{Opts}
-    \begin{Brief}[r]
+    \begin{Brief}
 	変数\tt{pat}が\DQuote{\tt{rev}}の場合
 	\begin{narrow}
 		行頭から、
