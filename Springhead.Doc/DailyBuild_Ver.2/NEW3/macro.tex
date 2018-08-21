@@ -171,7 +171,9 @@
 \def\endMethods{\relax}
 %
 \def\Method#1{\global\advance\count255 by 1
-	\noindent\hbox to 5pt{}\the\count255 . \tt{#1}
+	\noindent\hbox to 5pt{}\the\count255 .
+	{\def\arraystretch{.8}\tabcolsep=0pt%
+	\tt{\begin{tabular}[t]{l}#1\end{tabular}}}
 	\vskip -.3\baselineskip\begin{narrow}[\WID]}
 \def\endMethod{\vskip .25\baselineskip \end{narrow}}
 
@@ -335,6 +337,27 @@
 
 \def\Cell#1{\begin{LocalScope}\def\arraystretch{.8}\tabcolsep=0pt%
 	\begin{tabular}[t]{l}#1\end{tabular}\end{LocalScope}}
+
+%% table column with auto line folding (fixed column width)
+% \FCol[s]{w}{body}
+%	shrink		shrink base line skip by this value (default: -.2\baselineskip)
+%	width		column width
+\def\FCol{\@ifnextchar[{\FCol@}{\FCol@[0.8]}}
+\def\FCol@[#1]#2#3{%
+	\addtolength{\baselineskip}{#1}%
+	\begin{minipage}[t]{#2}#3\end{minipage}}
+
+
+%
+%% table columnn with paragraph
+% \parcol[shrink]{width}{body}
+%	shrink:		shrink baselineskip by this value [-.2\baselineskip]
+%
+\def\parcol{\@ifnextchar[{\parcol@}{\parcol@[-.2\baselineskip]}}
+\def\parcol@[#1]#2#3{%
+	\addtolength{\baselineskip}{#1}
+	\begin{minipage}[t]{#2}#3}
+\def\endparcol{\\\vspace{-.65\baselineskip}\end{minipage}}
 
 \makeatother
 % end: marco.tex

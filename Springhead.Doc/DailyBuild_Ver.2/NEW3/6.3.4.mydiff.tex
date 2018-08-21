@@ -60,12 +60,12 @@ Visual Studio (devenv) が出力したログを比較して、共通する行を取り除く。
 \end{Proc}
 
 \begin{Methods}{サブルーチン}
-\begin{Method}{\Cell{%
+\begin{Method}{%
 	    (\plVar{count1}, \plVar{count2})
 		= diff(\plVar{fh},
 			\plHshR{modules1}, \plVar{module1}, \plVar{base1},\\
  	    \Hskip{160pt}
-			\plHshR{modules2}, \plVar{module2}, \plVar{base2})}}
+			\plHshR{modules2}, \plVar{module2}, \plVar{base2})}
     \label{mydiff:diff}
     \begin{Args}
 	\Item[t]{\plVar{fh}}{出力ファイル}
@@ -120,9 +120,9 @@ Visual Studio (devenv) が出力したログを比較して、共通する行を取り除く。
 	最後に未出力行をフラッシュする。
     \end{Brief}
 \end{Method}
-\begin{Method}{\Cell{%
+\begin{Method}{%
 	\plAryR{outbuff}
-	= eat_up(\plAryR{inbuff}, \plVar{mark}, \plVar{base1}, \plVar{base2})}}
+	= eat_up(\plAryR{inbuff}, \plVar{mark}, \plVar{base1}, \plVar{base2})}
     \label{mydiff:eatup}
     \begin{Args}
 	\Item[t]{\plAry{inbuff}}{入力データの配列}
@@ -143,17 +143,17 @@ Visual Studio (devenv) が出力したログを比較して、共通する行を取り除く。
 	配列に格納して返す(\RefRef{mydiff}{triplet})。
     \end{Brief}
 \end{Method}
-\begin{Method}{\Cell{%
+\begin{Method}{%
 	\plAryR{array3}
-	= triplet(\plVar{lineno1}, \plVar{lineno2}, \plVar{line})}}
+	= triplet(\plVar{lineno1}, \plVar{lineno2}, \plVar{line})}
     \label{mydiff:triplet}
     \begin{Brief}
 	与えられた3つの引数を1つの配列にまとめて返す。
     \end{Brief}
 \end{Method}
-\begin{Method}{\Cell{%
+\begin{Method}{%
 	flush(\plVar{fh}, \plVar{mark}, \plVar{size1}, \plVar{size2},
-	\plAryR{buff1}, \plAryR{buff2})}}
+	\plAryR{buff1}, \plAryR{buff2})}
     \label{mydiff:flush}
     \begin{Args}
 	\Item[t]{\plVar{fh}}{出力ファイルハンドル}
@@ -190,9 +190,9 @@ Visual Studio (devenv) が出力したログを比較して、共通する行を取り除く。
 	\end{enumerate}
     \end{Brief}
 \end{Method}
-\begin{Method}{\Cell{%
+\begin{Method}{%
 	(\plVar{min1}, \plVar{max1}, \plVar{min2}, \plVar{max2},
-	\plAryR{lines}) = minx_max(\plAryR{buff})}}
+	\plAryR{lines}) = minx_max(\plAryR{buff})}
     \label{mydiff:minmax}
     \begin{Brief}
 	引数で渡されるのは、(行番号1, 行番号2, 行データ)の3つ組の配列である。

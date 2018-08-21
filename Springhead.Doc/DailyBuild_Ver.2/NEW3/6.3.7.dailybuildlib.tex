@@ -10,9 +10,9 @@ Daily Buildの結果解析で共通に使用する関数のライブラリ
 
 \medskip
 \begin{Methods}{サブルーチン}
-\begin{Method}{\Cell{%
+\begin{Method}{%
 	read_log(\plHshR{modules}, \plAryR{modules}, \plAryR{lines})\\
-	\Hskip{60pt}= read_log(\plVar{logfile}, \plVar{script} [, \plVar{patt_id}])}}
+	\Hskip{60pt}= read_log(\plVar{logfile}, \plVar{script} [, \plVar{patt_id}])}
     \begin{Args}
 	\Item[t]{\plVar{logfile}}{ログファイル名}
 	\Item[t]{\plVar{script}}{呼び出し元スクリプト名(エラー表示用)}
@@ -47,18 +47,18 @@ Daily Buildの結果解析で共通に使用する関数のライブラリ
 	スレッド番号$999$のスレッドに属するものとして扱う。
     \end{Brief}
 \end{Method}
-\begin{Method}{\Cell{%
+\begin{Method}{%
 	\plVar{number} = outside_threads_before()\\
-	\plVar{number} = outsize_threads_after()}}
+	\plVar{number} = outsize_threads_after()}
     \begin{Brief}[r]
 	それぞれ、スレッド情報より前の部分に対する仮想スレッド番号($-1$)
 	及びスレッド情報より後の部分に対する仮想スレッド番号($999$)を返す。
     \end{Brief}
 \end{Method}
-\begin{Method}{\Cell{%
+\begin{Method}{%
 	(\plAryR{modules1}, \plAryR{modules2})\\
 		\Hskip{60pt}= associate_modules(\plAryR{modules1},
-		\plAryR{modules2}, \plVar{script)}}}
+		\plAryR{modules2}, \plVar{script)}}
     \begin{Args}[r]
 	\Item[t]{\plAry{modules1}}{比較される側(\KQuote{左側})の配列}
 	\Item[t]{\plAry{modules2}}{比較する側(\KQuote{右側})の入力行の配列}
@@ -91,9 +91,9 @@ Daily Buildの結果解析で共通に使用する関数のライブラリ
 	\end{narrow}
     \end{Brief}
 \end{Method}
-\begin{Method}{\Cell{%
+\begin{Method}{%
 	mod_ins()\\
-	mod_del()}}
+	mod_del()}
     \begin{Brief}
 	それぞれ、挿入モジュールマーク(\SQuote{\tt{_INS_}})、
 	削除モジュールマーク(\SQuote{\tt{_DEL_}})を返す。

@@ -15,9 +15,9 @@ perlスクリプトで共通に使用するユーティリティサブルーチンのライブラリである
 	アサーションルーチン。
 	条件が満たされなければスタックをトレースして終了する。
 \end{Method}
-\begin{Method}{\Cell{%
+\begin{Method}{%
 	verbose(\plVar{text} [,\plVar{stream}])\\
-	verbose_set(\plVar{value})}}
+	verbose_set(\plVar{value})}
     \begin{Args}
 	\Item[t]{\plVar{text}}{表示文字列}
 	\Item[t]{\plVar{stream}}{出力ストリーム}
@@ -28,9 +28,9 @@ perlスクリプトで共通に使用するユーティリティサブルーチンのライブラリである
 	\tt{verbose_set()}でon/offを切り替えできる。
     \end{Brief}
 \end{Method}
-\begin{Method}{\Cell{%
+\begin{Method}{%
 	show_usage(\plVar{cmnd} [,\plAryR{args} [,\plAryR{opts}]])\\
-	add_padding(\plVar{text}, \plVar{width}) \DDagger}}
+	add_padding(\plVar{text}, \plVar{width}) \DDagger}
     \begin{Args}
 	\Item[t]{\plVar{cmnd}}{コマンドライン}
 	\Item[t]{\plAry{args}}{コマンド引数}
@@ -41,11 +41,11 @@ perlスクリプトで共通に使用するユーティリティサブルーチンのライブラリである
 	\tt{add_padding()}は表示位置を合わせるための簡易ルーチン。
     \end{Brief}
 \end{Method}
-\begin{Method}{\Cell{%
+\begin{Method}{%
 	warning(\plVar{prog}, \plAry{text})\\
 	error(\plVar{prog}, \plAry{text})\\
 	fatal(\plVar{prog}, \plAry{text})\\
-	panic(\plVar{prog}, \plAry{text})}}
+	panic(\plVar{prog}, \plAry{text})}
     \begin{Args}[r]
 	\Item[t]{\plVar{prog}}{プログラム名}
 	\Item[t]{\plAry{text}}{表示文字列(配列)}
@@ -65,10 +65,10 @@ perlスクリプトで共通に使用するユーティリティサブルーチンのライブラリである
 	引数のパス名\plVar{path}からリーフ名部分を取り出して返す。
     \end{Brief}
 \end{Method}
-\begin{Method}{\Cell{%
+\begin{Method}{%
 	debug(\plVar{level}, \plAry{text})\\
 	debug_push(\plVar{value})\\
-	debug_pop()}}
+	debug_pop()}
     \begin{Args}
 	\Item[t]{\plVar{level}}{表示レベル}
 	\Item[t]{\plAry{tex}t}{出力フォーマットとテキスト}
