@@ -9,23 +9,29 @@
 \begin{Brief}[b]
 	テスト結果を管理するクラス。
 	2つの配列\tt{results}及び\tt{visited}を用いて管理する。
-	\def\TabRow#1#2{\tt{#1\hfil} & \Cell{#2\hfil}\\}
+	\def\Row#1#2{\tt{#1} & \FCol{165pt}{#2}\\}
+	\def\RowSp#1#2{\tt{#1} & \FCol[.85]{165pt}{#2}\\}
 	\Vskip{-.8\baselineskip}
-	{\small\begin{longtable}[r]{|p{18em}|p{165pt}|}\hline
-    	  \TabRow{results}{テスト結果情報を累積する配列}
-    	  \TabRow{\HS results[\it{name}][RST.ERR]}{　%
-		コンパイル・実行以外でのエラーコード}
-    	  \TabRow{\HS results[\it{name}][RST.SKP]}{　%
-		このテストがスキップされたことを示す}
-    	  \TabRow{\HS results[\it{name}][RST.BLD][\it{p}][\it{c}]}{　%
-		コンパイルの結果コード}
-    	  \TabRow{\HS results[\it{name}][RST.RUN][\it{p}][\it{c}]}{　%
-		テスト実行の結果コード}
-    	  \TabRow{\HS results[\it{name}][RST.RUN][RST.EXP]}{　%
-		テスト実行の結果コードの予測値}\hline
-    	  \TabRow{visited}{上記の\tt{\it{name}}の一覧}\hline
+	{\small\begin{longtable}[r]{|p{18em}|l|}\hline
+    	    \Row{results}{テスト結果情報を累積する配列}
+	    \RowSp{%
+		{\def\arraystretch{.85}%
+		\begin{tabular}{@{\Hskip{15pt}}l}
+    	    		results[\it{name}][RST.ERR]\\
+    	    		results[\it{name}][RST.SKP]\\
+    	    		results[\it{name}][RST.BLD]\\
+    	    		results[\it{name}][RST.RUN]\\
+    	    		results[\it{name}][RST.RUN]
+		\end{tabular}}}{%
+		\begin{tabular}{@{\Hskip{10pt}}l}
+			コンパイル・実行以外でのエラーコード\\
+			このテストがスキップされたことを示す\\
+			コンパイルの結果コード\\
+			テスト実行の結果コード\\
+			テスト実行の結果コードの予測値
+		\end{tabular}}\hline
+    	    \Row{visited}{上記の\tt{\it{name}}の一覧}\hline
 	\end{longtable}}
-	%\vspace{-.5\baselineskip}
 	ここで\it{name}はテストが終了したディレクトリの名称(テスト名称)、
 	\it{p}と\it{c}\,はそれぞれplatformとconfigurationの名前。
 	\tt{RST.xxx}については\Ref{subsubsec}{ConstDefs}を参照。

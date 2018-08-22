@@ -1,4 +1,4 @@
-﻿######################################################################
+######################################################################
 #  Makefile for processing tex source and convert dvi to pdf format.
 #
 #  Usage:
@@ -35,7 +35,7 @@ SRCS	=\
 	LastUpdate.tex
 
 TIMESTAMPFILE	= timestamp.tex
-CLEANS	= *.pdf *.dvi *.log *.aux *.toc *.ilg $(TIMESTAMPFILE)
+CLEANS	= *.pdf *.dvi *.log *.aux *.toc *.ilg *.bak *~ $(TIMESTAMPFILE)
 
 PLATEX	= platex
 MENDEF	= mendex

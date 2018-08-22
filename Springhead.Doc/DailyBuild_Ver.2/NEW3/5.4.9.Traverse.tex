@@ -148,9 +148,11 @@
 	ログファイルをオープンしてヘッダ行を書き込む。
 	ヘッダ行は次の3行からなる。
 	\Vskip{-.1\baselineskip}
-	\Hskip{\WID}\framebox{\Cell{%
+	\dimen255=\linewidth \advance\dimen255 by -20pt
+	\framebox{\Hskip{10pt}\FCol{\the\dimen255}{%
 		{\small 日付行}\\
-		{\small ログの識別行 --- 引数\tt{step}および\tt{errlog}を元に
+		{\small ログの識別行
+			\Hskip{10pt}--- 引数\tt{step}および\tt{errlog}を元に
 			作成する}\\
 		{\small 空行}}}
 	\Vskip{.1\baselineskip}

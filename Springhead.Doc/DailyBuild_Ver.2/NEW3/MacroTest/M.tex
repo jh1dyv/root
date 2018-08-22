@@ -1,5 +1,5 @@
 % main.tex
-%	Last update: 2018/08/06 F.Kanehori
+%	Last update: 2018/08/22 F.Kanehori
 %
 \documentclass[a4j,12pt]{jsarticle}
 \usepackage{dirtree}
@@ -19,15 +19,20 @@
 \addtolength{\textwidth}{-50truemm}     % 右の余白も25mm（RIGHT=-LEFT）
 
 \begin{document}
-\input{macro}
+\input{../macro}
 
 %\def\S{x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x }
 \def\S{A B C D E F G H I J K L M N O P Q R S T U V W X Y Z }
 \def\Tstr{\S}
 
-\begin{tabular}{lll}
-	col1 & col2 & \FCol[0.8]{100pt}{col3\hfill}
+\noindent xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+\Vskip{-.15\baselineskip}
+\begin{tabular}{|l|l|l|}\hline
+	col1 & col2 & \FCol[.75]{200pt}{\Tstr\Tstr\Tstr}\\\hline
+	col1 & col2 & \FCol[.75]{200pt}{\Tstr\Tstr\Tstr}\\\hline
 \end{tabular}
+\Vskip{-.15\baselineskip}
+\noindent xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 %\hrule height 1pt width \linewidth
 
