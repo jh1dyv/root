@@ -17,7 +17,8 @@
 //	"<revision> (<date>)"
 //
 //  Last modified:
-//	2014/02/19 F.Kanehori
+//	2018/04/16 F.Kanehori	Correspond to new php version.
+//	2018/03/15 F.Kanehori
 //
 function plugin_dailybuild_result_convert()
 {
@@ -29,7 +30,7 @@ function plugin_dailybuild_result_convert()
 	//   $count:  Data extraction count:  4 for 'tests', 2 for 'Samples'.
 	//
 	if (func_num_args() != 5) {
-		return 'bad request - NA';
+		return 'bad request - NA ('.func_num_args().')';
 	}
 	list($base, $file1, $file2, $start, $count) = func_get_args();
 
@@ -37,22 +38,24 @@ function plugin_dailybuild_result_convert()
 	//
 	$cmnd = "/usr/bin/head -3 $base/$file1";
 	exec($cmnd, $output);
-	$fields = split(" ", $output[2]);
+	$fields = explode(" ", $output[2]);
 	$df = $fields[3];
-	$date = substr($df,1,4)."/".substr($df,6,2)."/".substr($df,8,2);
+	$date = substr($df,0,4)."/".substr($df,5,2)."/".substr($df,7,2);
 
 	// Read content of the result file.
 	//
 	$fname = "$base/$file2";
 	if (($fh = fopen($fname, "r")) != TRUE) {
-		return 'bad request - FO';
+		return 'bad request - FO ("'.$file2.'")';
+
 	}
 	$content = fread($fh, filesize($fname));
 	fclose($fh);
+	$content = mb_convert_encoding($content, 'SJIS');
 
 	// Analyze the content.
 	//
-	$lines = split('\)', $content);
+	$lines = explode(")", $content);
 		// Kludge - 2013-0912 F.Kanehori
 		if (count($lines) == 6) {
 			$lines[5] = "(";	// missing 'build failed' line!
@@ -76,10 +79,10 @@ function plugin_dailybuild_result_convert()
 			$proc = "B";					// "Build" only
 			$code = ($j == 0) ? "S" : "F";			// "Success" and "Failure"
 		}
-		$ary1 = split('\(', $line);
+		$ary1 = explode("(", $line);
 		if (($ary1 == FALSE) || count($ary1) != 2) {
-			$table = sprintf("line %d: invalid data", $i+1);
-			return 'bad data - BD';
+			$msg = sprintf("bad data - BD (line %d)", $i+1);
+			return $msg;
 		}	
 		$key = "$proc $code";
 		$result[$key] = preg_replace("/,/", ", ", $ary1[1]);
@@ -195,7 +198,7 @@ function dailybuild_result_make_table($items, $fcolor, $bcolor, $font)
 	$table = "<table border='0' cellspacing='0' cellpadding='0'>";
 
 	for ($i = 0; $i < count($items); $i++) {
-		$item = split(':', $items[$i]);
+		$item = explode(":", $items[$i]);
 		$table .= "<tr>"
 			.   "<td $style_i colspan='2'>$item[0]:</td>"
 			. "</tr>"
@@ -214,7 +217,7 @@ function dailybuild_result_make_array($data)
 {
 	// $data:	result data
 
-	$i_ary = split(",", $data);
+	$i_ary = explode(",", $data);
 	$o_ary = array();
 	$libname = "";
 	$modname = "";
@@ -224,7 +227,7 @@ function dailybuild_result_make_array($data)
 		if (! strpos($i_ary[$i], ":")) {
 			continue;
 		}
-		$t_ary = split(":", $i_ary[$i]);
+		$t_ary = explode(":", $i_ary[$i]);
 		$t_libname = trim($t_ary[0]);
 		$t_modname = trim($t_ary[1]);
 		if (strcmp($t_libname, $libname)) {
@@ -262,10 +265,10 @@ function plugin_dailybuild_result_inline()
 	$cmnd = "/usr/bin/head -3 $base/$file";
 	exec($cmnd, $output);
 	$data = htmlspecialchars($output[1], ENT_QUOTES);
-	$fields = split(" ", $data);
-       	$rf = $fields[2];
-       	$df = $fields[3];
-       	$revision = substr($rf,1);
+	$fields = explode(" ", $data);
+       	$rf = $fields[3];
+       	$df = $fields[4];
+       	$revision = $rf;
        	$date = substr($df,1,4)."/".substr($df,6,2)."/".substr($df,8,2);
 
 	return "$revision ($date)";
