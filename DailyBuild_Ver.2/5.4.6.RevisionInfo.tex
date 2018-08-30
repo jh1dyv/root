@@ -1,44 +1,26 @@
-% 5.4.6.VersionInfo.tex
-%	Last update: 2018/08/08 F.Kanehori
+% 5.4.6.RevisionInfo.tex
+%	Last update: 2018/08/30 F.Kanehori
 %\newpage
-\subsubsection{VersionInfo}
-\label{subsubsec:VersionInfo}
-
-\bigskip
-\begin{LocalScope}
-\def\TmpWidth{\linewidth}
-\addtolength{\TmpWidth}{-20pt}
-\framebox{\begin{minipage}[t]{\TmpWidth}
-	現在、ここに記述する内容の実装(コード)は、
-	ファイル\Path{VersionControlSystem.py}の
-	\Path{__main__}節に記述されている。
-	将来的には、この部分をファイル\Path{VersionInfo.py}として
-	独立させた方がよい \CDots\ (TODO)。
-\end{minipage}}
-\end{LocalScope}
+\subsubsection{RevisionInfo}
+\label{subsubsec:RevisionInfo}
 
 \bigskip
 \Invoke[b]{
-     > python VersionControlSystem.py [options] \{HEAD|all|commit-id\}
+     > python RevisionInfo.py [options] \{HEAD|all|commit-id\}
 }
 \begin{Opts}[b]
-    \Item[t]{-S $^{(1)}$}{Subversionを対象とする(DailyBuildでは使用しない)}
-    \Item[t]{-G $^{(2)}$}{Github (GitHub.com)を対象とする}
-    \Item[t]{-H $^{(3)}$}{Gitlab (git.haselab.net)を対象とする}
-    \Item[t]{-f fname}{旧バージョンから取得するファイル名}
+    \Item[t]{-G $^{(1)}$}{Github (GitHub.com)を対象とする}
+    \Item[t]{-H $^{(2)}$}{Gitlab (git.haselab.net)を対象とする}
+    \Item[t]{-f fname}{指定したレビジョンから取得するファイル名}
 \end{Opts}
 \begin{Table}[r][1.5em]{ll}
-  \Item{$^{(1)}$}{%
-	GitHubに移行する前に使用していたもの。
-	メンテナンスしないとおそらく動作しない。
-	Webページの表示にも影響が出るので注意。}
-  \Item{$^{(2)}$}{Springheadのレポジトリである}
-  \Item{$^{(3)}$}{DailyBuild/Resultのレポジトリである}
+  \Item{$^{(1)}$}{Springheadのレポジトリである}
+  \Item{$^{(2)}$}{DailyBuild/Resultのレポジトリである}
 \end{Table}
 \begin{Args}[b]
-    \Item[t]{HEAD}{HEADバージョンを対象とする}
-    \Item[t]{all}{すべてのバージョンを対象とする}
-    \Item[t]{commit-id}{指定したバージョンを対象とする}
+    \Item[t]{HEAD}{リモートHEADを対象とする}
+    \Item[t]{all}{すべてのリモートレビジョンを対象とする}
+    \Item[t]{commit-id}{指定したリモートレビジョンを対象とする}
 \end{Args}
 
 \begin{Proc}[b]
@@ -50,10 +32,6 @@
 	\begin{narrow}[\WID]
 	    \begin{LocalScope}\tabcolsep=10pt
 	    \begin{tabular}{|ll@{ $\Leftrightarrow$ }l|}\hline
-		\tt{-S}	& \tt{url}
-			& \tt{http://springhead.info/spr2/Springhead/trunk/}\\
-			& \tt{dir}
-			& \Path{../../..}\\\hline
 		\tt{-G} & \tt{url}
 			& \tt{http://github.com/sprphys/Springhead/}\\
 			& \tt{dir}
@@ -67,15 +45,11 @@
 	\end{narrow}
 	\Vskip{.5\baselineskip}
 
-  \item	オプション\SQuote{\tt{-S}}が指定された場合
-	この場合はクラス\tt{VersionControlSystem}のテストプログラム
-	そのものである。DailyBuildからは使用されない。
-
   \item	オプション\SQuote{\tt{-G}}が指定された場合
 	\begin{enumerate}
 	  \item	オプション\SQuote{\tt{-f fname}}が指定された場合\\
-		引数で指定されたバージョン
-		(\SQuote{\tt{all}}の場合は全バージョン)から
+		引数で指定されたレビジョン
+		(\SQuote{\tt{all}}の場合は全レビジョン)から
 		\tt{fname}で指定されたファイルを取得し、
 		次の形式で標準出力に出力する。
 
@@ -91,11 +65,11 @@
 		\it{short-id}はコミットIDの短縮形式、
 		\it{long-id}はコミットIDを表す。\\
 		引数\SQuote{\tt{all}}が指定された場合は、
-		上記の形式を全バージョンに対して繰り返す。
+		上記の形式を全レビジョンに対して繰り返す。
 
 	  \item	オプション\SQuote{\tt{-f fname}}が指定されない場合\\
-		引数で指定されたバージョン
-		(\SQuote{\tt{all}}の場合は全バージョン)について、
+		引数で指定されたレビジョン
+		(\SQuote{\tt{all}}の場合は全レビジョン)について、
 		次の情報を標準出力に出力する。
 
 		\medskip
@@ -108,10 +82,10 @@
 		\medskip
 		\it{short-id}はコミットIDの短縮形式、
 		\it{long-id}はコミットIDを表す。\\
-		引数\SQuote{\tt{all}}が指定された場合は、上記の形式を全バージョンに
+		引数\SQuote{\tt{all}}が指定された場合は、上記の形式を全レビジョンに
 		対して繰り返す。
 	\end{enumerate}
 \end{enumerate}
 \end{Proc}
 
-% end: 5.4.6.VersionInfo.tex
+% end: 5.4.6.RevisionInfo.tex
