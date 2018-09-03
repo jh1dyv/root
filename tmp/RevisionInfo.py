@@ -1,4 +1,4 @@
-﻿#!/usr/local/bin/python
+#!/usr/local/bin/python
 # -*- coding: utf-8 -*-
 # ======================================================================
 #  SYNOPSIS:
@@ -10,8 +10,8 @@
 #			commit-id:
 #				Extract from specified commit.
 #	options:
-#	    -G:		Use Github (GitHub.com) repository.
-#	    -H:		Use Gitlab (git.haselab.net) repository.
+#	    -S:		Get from sprphys/Springhead (GitHub.com).
+#	    -R:		Get from DailyBuild/Result (git.haselab.net).
 #	    -f fname:	File name to extract from repository.
 #
 #  DESCRIPTION:
@@ -29,7 +29,7 @@
 #
 # ----------------------------------------------------------------------
 #  VERSION:
-#	Ver 1.0  2018/08/20 F.Kanehori	Separated from class test file
+#	Ver 1.0  2018/09/03 F.Kanehori	Separated from class test file
 #					"VersionControlSystem.py".
 # ======================================================================
 version = 1.0
@@ -111,12 +111,12 @@ def print_usage():
 usage = 'Usage: %prog [options] {HEAD | all | commit-id}'
 parser = OptionParser(usage = usage)
 #
-parser.add_option('-G', '--github', dest='github',
+parser.add_option('-S', '--springhead', dest='springhead',
 			action='store_true', default=False,
-			help='use GitHub')
-parser.add_option('-H', '--haselab', dest='haselab',
+			help='get from sprphys/Springhead (GitHub.com)')
+parser.add_option('-R', '--result', dest='result',
 			action='store_true', default=False,
-			help='use git.haselab.net')
+			help='get from DailyBuild/Result (git.haselab.net')
 parser.add_option('-f', '--fname', dest='fname',
 			action='store', default=None,
 			help='get file content')
@@ -131,14 +131,14 @@ parser.add_option('-V', '--version', dest='version',
 if options.version:
 	print('%s: Version %s' % (prog, version))
 	sys.exit(0)
-if options.github and options.haselab:
-	Error(prog).error('both -G and -H specified')
+if options.springhead and options.result:
+	Error(prog).error('both -S and -R specified')
 	print_usage()
-if not options.github and not options.haselab:
+if not options.springhead and not options.result:
 	Error(prog).error('remote repository is not specified')
 	print_usage()
 #
-if options.github:
+if options.springhead:
 	system = 'GitHub'
 	url = 'http://github.com/sprphys/Springhead/'
 	wrkdir = '../../../../Springhead'

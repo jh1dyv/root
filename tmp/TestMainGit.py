@@ -1,4 +1,4 @@
-﻿#!/usr/local/bin/python
+#!/usr/local/bin/python
 # -*- coding: utf-8 -*-
 # ======================================================================
 #  SYNOPSIS:
@@ -36,8 +36,9 @@
 #	Ver 1.32 2018/08/23 F.Kanehori	Fixed for unix (scp).
 #	Ver 1.33 2018/08/28 F.Kanehori	Tentative version (remote user).
 #	Ver 1.34 2018/08/30 F.Kanehori	Generate "Test.date" on unix.
+#	Ver 1.4  2018/09/04 F.Kanehori	Implement "RevisionInfo.py".
 # ======================================================================
-version = 1.34
+version = 1.4
 
 import sys
 import os
@@ -295,7 +296,7 @@ if check_exec('DAILYBUILD_COMMIT_RESULTLOG', unix_commit_resultlog):
 	logdir = '%s/log' % testdir
 	os.chdir(logdir)
 	#
-	cmnd = 'python ../bin/VersionControlSystem.py -G HEAD'
+	cmnd = 'python ../bin/RevisionInfo.py -S HEAD'
 	proc = Proc(verbose=verbose, dry_run=dry_run)
 	rc = proc.execute(cmnd, shell=shell,
 			  stdout=commit_id, stderr=Proc.STDOUT).wait()
@@ -360,8 +361,8 @@ if check_exec('DAILYBUILD_GEN_HISTORY', unix_gen_history):
 	#
 	hist_path = '%s/%s' % (logdir, history_log)
 	extract = 'result.log'
-	cmnd = 'python ../bin/VersionControlSystem.py'
-	args = '-H -f %s all' % extract
+	cmnd = 'python ../bin/RevisionInfo.py'
+	args = '-R -f %s all' % extract
 	proc = Proc(verbose=verbose, dry_run=dry_run)
 	proc.execute([cmnd, args], shell=shell, stdout=hist_path).wait()
 	flush()
