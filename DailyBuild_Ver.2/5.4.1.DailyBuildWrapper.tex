@@ -1,5 +1,5 @@
 % 5.4.1.DailyBuildWrapper.tex
-%	Last update: 2018/06/17 F.Kanehori
+%	Last update: 2018/09/06 F.Kanehori
 %\newpage
 \subsubsection{DailyBuildWrapper}
 \label{subsubsec:DailyBuildWrapper}
@@ -35,10 +35,13 @@
 テストレポジトリを新たに作成してテストを実行する。
 
 \medskip
-このバッチファイルをタスクスケジューラに登録することでタスクDailyBuildを実行する
-(以下Windowsの場合)。
+このスクリプトをタスクスケジューラ(unixの場合はcron)に登録することで
+タスクDailyBuildを実行する。
 登録情報は次のとおり。
 
+\noindent
+Windowsの場合(タスクスケジューラの設定内容)\\
+\Vskip{-\baselineskip}
 \begin{narrow}
     \begin{LocalScope}
     \TableItemIndent=0pt
@@ -52,6 +55,21 @@
 		\hspace{40pt}\tt{SpringheadTest DailyBuildResult/Result}}
     \end{Table}
     \end{LocalScope}
+\end{narrow}
+
+\noindent
+unixの場合(\tt{\Path{crontab}}の設定内容):
+\begin{narrow}
+    \tt{\CmndBox{%
+	00 04 * * * \it{projdir}/Springhead/core/test/DailyBuild.sh\Cont\\
+	\Hskip{60pt}> \it{projdir}/Springhead/core/test/DailyBuild.log 2>\&1
+    }}
+    ここで \it{projdir} ::= \tt{\Path{/home/demo/Project}}
+
+    \medskip
+    \bf{注意}　テストの実行に関わる環境は、\tt{\Path{\it{projdir}/SprEnvDef.sh}}に
+    \tt{\Path{/bin/sh}}のコマンドとして設定しておくこと。
+    特に、\tt{python}はバージョン\tt{3.0}以上が実行されるようにパスを設定すること。
 \end{narrow}
 
 % end: 5.4.1.DailyBuildWrapper.tex
