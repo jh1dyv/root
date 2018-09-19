@@ -42,7 +42,9 @@ for f in texsrcs:
 	if rc != 0:
 		msg = 'kanji conversion failed: "%s"' % f
 		Error(prog).abort(msg)
+#
 others = glob.glob('*.cls')
+others.extend(['en', 'fig'])
 for f in others:
 	if verbose:
 		print('copying %s' % f)
