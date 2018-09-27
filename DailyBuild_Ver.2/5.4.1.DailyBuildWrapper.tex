@@ -1,5 +1,5 @@
 % 5.4.1.DailyBuildWrapper.tex
-%	Last update: 2018/09/06 F.Kanehori
+%	Last update: 2018/09/10 F.Kanehori
 %\newpage
 \subsubsection{DailyBuildWrapper}
 \label{subsubsec:DailyBuildWrapper}
@@ -60,16 +60,44 @@ Windowsの場合(タスクスケジューラの設定内容)\\
 \noindent
 unixの場合(\tt{\Path{crontab}}の設定内容):
 \begin{narrow}
-    \tt{\CmndBox{%
+    \CmndBox{%
 	00 04 * * * \it{projdir}/Springhead/core/test/DailyBuild.sh\Cont\\
 	\Hskip{60pt}> \it{projdir}/Springhead/core/test/DailyBuild.log 2>\&1
-    }}
+    }
     ここで \it{projdir} ::= \tt{\Path{/home/demo/Project}}
 
     \medskip
-    \bf{注意}　テストの実行に関わる環境は、\tt{\Path{\it{projdir}/SprEnvDef.sh}}に
+    \bf{注意1}　テストの実行に関わる環境は、\tt{\Path{\it{projdir}/SprEnvDef.sh}}に
     \tt{\Path{/bin/sh}}のコマンドとして設定しておくこと。
     特に、\tt{python}はバージョン\tt{3.0}以上が実行されるようにパスを設定すること。
+
+    \medskip
+    {\small\Path{SprEnvDef.sh}の内容(例)
+    \CmndBox{%
+	\#!/bin/sh\\
+	\\
+	\# Use python version 3.4.\\
+	\#\\
+	export PATH="/usr/local/bin:\$PATH"\\
+	export SPR_PYTHON=/usr/local/bin/python\\
+	\\
+	\# Additional include and library path.\\
+	\#\\
+	export SPR=\$HOME/Project/Springhead\\
+	export SPR_DEPENDENCY=\$SPR/dependency\\
+	export SPR_EXTLIBS=\$HOME/ExtLibs\\
+	\\
+	export SPR_BOOST_INC=\$SPR_EXTLIBS/boost-numeric-bindings-R86799\\
+	export SPR_GL_INC=\$SPR_DEPENDENCT/src
+    }}
+
+    \medskip
+    \bf{注意2}　\tt{cron}で実行するにあたっては、
+    \begin{enumerate}
+	\item \tt{crontab}の記述には絶対パスを使用すること。
+	\item Web serverに登録する鍵にはパスフレーズを設定しないこと。
+    \end{enumerate}
+    が大切である。
 \end{narrow}
 
 % end: 5.4.1.DailyBuildWrapper.tex
