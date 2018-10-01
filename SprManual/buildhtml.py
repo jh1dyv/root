@@ -33,8 +33,8 @@ web_user = 'demo'
 #
 sed = 'sed'
 nkf = 'nkf'
-python = 'c:\python35\python'
-plastex = 'c:/Python35/Scripts/plastex'
+python = 'c:\\python27\\python'
+plastex = 'c:\\Python27\\Scripts\\plastex'
 
 # ----------------------------------------------------------------------
 #  Helper methods
@@ -49,12 +49,12 @@ def execute(cmnd, stdin=None, stdout=None, stderr=None, shell=None):
 	       pipe_open(stdout, 'w', dry_run),
 	       pipe_open(stderr, 'w', dry_run) ]
 	if dry_run:
-		print('EXEC: %s' % cmnd)
+		print 'EXEC: %s' % cmnd
 		return 0
 	if shell is None:
 		shell = True if is_unix() else False
 	if verbose:
-		print('exec: %s' % cmnd)
+		print 'exec: %s' % cmnd
 	proc = subprocess.Popen(cmnd,
 				stdin=fd[0], stdout=fd[1], stderr=fd[2],
 				shell=shell)
@@ -85,7 +85,7 @@ def remove_tree(top, dry_run=False, verbose=0):
 	else:
 		cmnd = 'rd /S /Q %s' % top
 	if dry_run or verbose:
-		print('remove_tree: %s' % top)
+		print 'remove_tree: %s' % top
 		if dry_run:
 			return 0
 	rc = wait(execute(cmnd, shell=True))
@@ -100,12 +100,12 @@ def cp(src, dst, dry_run=False, verbose=0):
 		msg = 'copying plain file to directory (%s to %s)' % (src, dst)
 		abort(msg)
 	if dry_run:
-		print('cp: %s %s' % (src, dst))
+		print 'cp: %s %s' % (src, dst)
 		if dry_run:
 			return 0
 	if os.path.isdir(src):
 		if verbose:
-			print('cp: %s -> %s/%s' % (f, dst, f))
+			print 'cp: %s -> %s/%s' % (f, dst, f)
 		if is_unix():
 			## NEED IMPLEMENT
 			pass
@@ -114,19 +114,19 @@ def cp(src, dst, dry_run=False, verbose=0):
 			rc = wait(execute(cmnd, shell=True))
 	else:
 		if verbose:
-			print('cp: %s -> %s' % (f, dst))
+			print 'cp: %s -> %s' % (f, dst)
 		cmnd = '%s %s %s' % (cmndname('cp'), src, dst)
 		rc = wait(execute(cmnd, shell=True))
 	return rc
 
 def copy_all(src, dst, dry_run=False, verbose=0):
 	if verbose:
-		print('  clearing "%s"' % dst)
+		print '  clearing "%s"' % dst
 	cmnd = '%s %s/*' % (cmndname('rm'), dst)
 	wait(execute(cmnd))
 	#
 	os.chdir(src)
-	print('  copying "%s" to "%s"' % (src, dst))
+	print '  copying "%s" to "%s"' % (src, dst)
 	names = os.listdir()
 	for name in names:
 		if os.path.isfile(name):
@@ -164,7 +164,7 @@ def abort(msg, exitcode=1):
 
 #  Show usage.
 def print_usage():
-	print()
+	print
 	cmnd = 'python %s.py --help' % prog
 	wait(execute(cmnd))
 	sys.exit(1)
@@ -193,7 +193,7 @@ parser.add_option('-V', '--version', dest='version',
 #
 (options, args) = parser.parse_args()
 if options.version:
-	print('%s: Version %s' % (prog, version))
+	print '%s: Version %s' % (prog, version)
 	sys.exit(0)
 if len(args) != 1:
 	error('incorrect number of arguments')
@@ -222,7 +222,7 @@ if os.path.exists(wrkspace):
 		msg = 'clearing workspace failed'
 		abort(msg)
 if verbose:
-	print('making %s' % wrkspace)
+	print 'making %s' % wrkspace
 os.mkdir(wrkspace)
 
 #  Copy files to work space.
@@ -235,13 +235,13 @@ for f in texsrcs:
 		cmnd2 = "%s -e 's/\{sourcecode\}/\{verbatim\}/'" % sed
 	else:
 		cmnd2 = '%s -e "s/{sourcecode}/{verbatim}/"' % sed
-	cmnd3 = '%s -w80' % nkf
+	cmnd3 = '%s -w' % nkf
 	outf = '%s/%s' % (wrkspace, f)
 	if verbose:
-		print('converting %s' % f)
-	#print('cmnd1: %s' % cmnd1)
-	#print('cmnd2: %s' % cmnd2 )
-	#print('cmnd3: %s' % cmnd3 )
+		print 'converting %s' % f
+	#print 'cmnd1: %s' % cmnd1 
+	#print 'cmnd2: %s' % cmnd2 
+	#print 'cmnd3: %s' % cmnd3 
 	proc1 = execute(cmnd1, stdout=subprocess.PIPE, shell=True)
 	proc2 = execute(cmnd2, stdin=proc1.stdout,
 				stdout=subprocess.PIPE)
@@ -275,12 +275,10 @@ if rc != 0:
 #
 cwd = os.getcwd()
 os.chdir(wrkspace)
-opts = '--renderer=HTML5 --dir=main_html'
-#opts = '--dir=main_html'
 cmnd = '%s %s %s' % (python, plastex, texmain)
 if verbose:
-	print('cwd: %s' % os.getcwd())
-	print('cmnd: %s' % cmnd)
+	print 'cwd: %s' % os.getcwd()
+	print 'cmnd: %s' % cmnd
 rc = wait(execute(cmnd))
 os.chdir(cwd)
 if rc != 0:
@@ -297,12 +295,12 @@ if options.copy:
 		pkey = '%s/.ssh/id_rsa' % os.environ['HOME']
 		opts = '-i %s -o "StrictHostKeyChecking=no"' % pkey
 		cmnd = 'scp %s %s/* %s' % (opts, fmdir, remote)
-		print('## %s' % cmnd)
+		print '## %s' % cmnd
 		rc = wait(execute(cmnd))
 		if rc == 0:
-			print('cp %s -> %s:%s' % (fmdir, tohost, todir))
+			print 'cp %s -> %s:%s' % (fmdir, tohost, todir)
 		else:
-			print('cp %s failed' % fmdir)
+			print 'cp %s failed' % fmdir
 	else:
 		remote = '//%s/HomeDirs/%s' % (web_host, todir)
 		copy_all(fmdir, remote, dry_run=True)
