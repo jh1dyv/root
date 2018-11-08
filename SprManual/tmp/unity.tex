@@ -1,0 +1,224 @@
+% \KLUDGE てんぷれ：
+%
+% \texttt{SPRPYTHONPATH}
+%
+% \begin{sourcecode}
+% \end{sourcecode}
+%
+
+\begin{chapterabstract}
+\KLUDGE ゲームエンジンUnity\KLUDGE 上でSpringhead\KLUDGE を利用する方法について述べます。この機能は開発中のため、予告なく大きな仕様変更をする場合があります。
+
+\KLUDGE 専用のDLL\KLUDGE をロードすることにより、Springhead\KLUDGE の機能をC\#\KLUDGE から利用することが可能です。また、Springhead\KLUDGE にはUnity\KLUDGE のGameObject\KLUDGE とSpringhead\KLUDGE のオブジェクトを接続・同期するための一連のC\#\KLUDGE スクリプトが含まれます。
+
+\KLUDGE 以降では、Unity\KLUDGE 上でSpringhead\KLUDGE を利用するためのDLL\KLUDGE と一連のC\#\KLUDGE スクリプト群をまとめて SprUnity \KLUDGE と呼びます。
+\end{chapterabstract}
+
+\section{Springhead C\# DLL\KLUDGE のビルド}
+
+Springhead\KLUDGE の機能をC\#\KLUDGE で使うためには以下の3\KLUDGE つのDLL\KLUDGE ファイルが必要になります。
+\begin{itemize}
+\item \text{\path{Springhead2\bin\win64\SprExport.dll}}
+\item \text{\path{Springhead2\bin\win64\SprImport.dll}}
+\item \text{\path{Springhead2\bin\win64\SprCSharp.dll}}
+\end{itemize}
+
+\KLUDGE これらのDLL\KLUDGE はSprUnity\KLUDGE アセットには含まれているのでビルドする必要はありませんが、うまく動かない場合や、最新のソースを使いたい場合などは、ビルドする必要があります。これらのファイルをビルドするには、以下のソリューションファイルをVisual Studio 2013\KLUDGE で開き、Release\KLUDGE 構成・x64\KLUDGE プラットフォームでビルドします。
+\begin{align*}
+\text{\path{Springhead2\src\SprCSharp\SprCSharp12.0.sln}}
+\end{align*}
+
+
+\section{\KLUDGE 利用法}
+
+\subsection{\KLUDGE 環境変数PATH\KLUDGE の設定}
+
+Springhead\KLUDGE の動作は、\path{Springhead2\core\bin\win64}\KLUDGE フォルダ、および\path{Springhead2\dependency\bin\win64}\KLUDGE フォルダ内のdll\KLUDGE 群に依存しています。これらのフォルダの絶対パスを環境変数PATH\KLUDGE に追加してください。
+
+\KLUDGE 環境変数の設定を避けたい場合は、Unity\KLUDGE プロジェクト内のフォルダ\path{Assets\Springhead\Plugins}\KLUDGE に必要なdll\KLUDGE を全てコピーするという方法も使えるはずです。
+
+
+\subsection{\KLUDGE 動くか試してみる}
+
+Unity\KLUDGE プロジェクト \path{Springhead2\src\Unity} \KLUDGE をUnity\KLUDGE エディタで開き、Scenes\KLUDGE の中からRigidBody\KLUDGE を選んで開き、ゲームを実行してみてください。
+
+\KLUDGE うまく動けば、箱が落ちたり、ボールが転がったりするはずです。
+
+
+\subsection{\KLUDGE アセットのエクスポート}
+
+Unity\KLUDGE プロジェクト \path{Springhead2\src\Unity} \KLUDGE をUnity\KLUDGE エディタで開き、Assets\KLUDGE のSpringhead\KLUDGE フォルダを右クリックして Export Package \KLUDGE を実行します。\footnote{\KLUDGE 将来的には、最初からエクスポートしたパッケージを配布することになると思います。}
+
+\KLUDGE 出てきたダイアログでSpringhead\KLUDGE 以下の全てのフォルダにチェックを入れ、Export\KLUDGE ボタンを押し、適当な場所に適当なファイル名で保存します。拡張子は \path{.unitypackage} \KLUDGE になります。ここでは、\path{Springhead2\SprUnity.unitypackage} \KLUDGE に保存したものとして進めます。
+
+\subsection{\KLUDGE 自分のUnity\KLUDGE プロジェクトにアセットをインポート} \label{sec:importasset}
+
+SprUnity\KLUDGE を使いたいプロジェクトをUnity\KLUDGE で開き、Assets\KLUDGE を右クリックして Import Package \KLUDGE → Custom Package \KLUDGE を選びます。ファイル選択ダイアログが開くので、先ほどエクスポートした \path{SprUnity.unitypackage} \KLUDGE を選びます。インポート対象は特段の理由がなければ全てのファイルにチェックを入れます。インポートを実行すると、Assets\KLUDGE 内にSpringhead\KLUDGE フォルダができます。
+
+
+\subsection{\KLUDGE シーンの作成}
+
+PHScene\KLUDGE に対応するGameObject\KLUDGE を作成する必要があります。GameObject\KLUDGE メニュー \KLUDGE → Create Empty \KLUDGE を実行します。作ったオブジェクトには分かりやすい名前をつけるとよいです。ここではSpringheadScene\KLUDGE という名前を付けたものとします。
+
+SpringheadScene\KLUDGE オブジェクトを選択し、インスペクタで Add Component \KLUDGE → Scripts \KLUDGE → PH Scene Behaviour \KLUDGE を選びます。これで、SpringheadScene\KLUDGE オブジェクトにPHScene\KLUDGE スクリプトが対応付けられました。PHScene\KLUDGE のプロパティは、PHSceneBehaviour\KLUDGE スクリプトインスペクタで Ph Scene Descriptor \KLUDGE を展開すると表示されます。重力の向きや各種閾値などをここで変更することができます。
+
+
+\subsection{\KLUDGE 剛体の作成}
+
+GameObject \KLUDGE → 3D Object \KLUDGE → Cube \KLUDGE などを選び、オブジェクトを作成します。ここでは名前をCube\KLUDGE とします。Cube\KLUDGE オブジェクトは、SpringheadScene\KLUDGE オブジェクトの子オブジェクトとしてください。
+
+\KLUDGE 次にCube\KLUDGE オブジェクトのインスペクタから、Add Component \KLUDGE → Scripts \KLUDGE → PH Solid Behaviour \KLUDGE を選びます。
+
+PHSolidBehaviour\KLUDGE のインスペクタでは、Solid Descriptor\KLUDGE を展開することで剛体のパラメータ（質量や、静止するかどうかなど）を設定できます。例えばDynamical\KLUDGE のチェックを外すと、床のように動かないオブジェクトになります。
+
+\KLUDGE この時点でゲームを実行すると、箱が落ちていくはずです。
+
+
+\subsection{\KLUDGE コリジョンの付与}
+
+Springhead\KLUDGE で物理衝突判定を使うには、Unity\KLUDGE オブジェクトのCollider\KLUDGE とは別に、CDBoxBehaviour\KLUDGE などのスクリプトを紐付ける必要があります。
+
+Cube\KLUDGE オブジェクトを選択し、インスペクタで Add Component \KLUDGE → Scripts \KLUDGE → CD Box Behaviour \KLUDGE を選びます。衝突判定形状のサイズはBox Collider\KLUDGE の大きさが使われます。
+
+Springhead\KLUDGE 剛体オブジェクトを2\KLUDGE 個用意し、片方のDynamical\KLUDGE のチェックを外して床とし、ゲームを実行すると、衝突の様子が確認できるでしょう。
+
+
+\subsection{\KLUDGE 関節の作成}
+
+TBW
+
+\subsection{IK\KLUDGE の作成}
+
+TBW
+
+
+
+\section{\KLUDGE デバッグの方法}
+
+SprUnity\KLUDGE を利用するときに、Springhead DLL\KLUDGE 内部のデバッグを行いたい場合、DLL\KLUDGE をDebug\KLUDGE 構成でビルドしておく必要があります。
+
+Unity\KLUDGE エディタを起動した状態で、Springhead C\# DLL\KLUDGE をビルドしたソリューションファイルをVisual Studio\KLUDGE で開き、Unity.exe\KLUDGE プロセスにアタッチします。この状態でゲームを実行すると、DLL\KLUDGE 内部でエラーが発生した時にVisual Studio\KLUDGE でデバッグを行うことができます。
+
+
+
+\section{SprUnity\KLUDGE を開発する方へ}
+
+\subsection{\KLUDGE 開発用Unity\KLUDGE プロジェクト}
+
+SprUnity\KLUDGE を開発するためのUnity\KLUDGE プロジェクトが \path{Springhead2\src\Unity} \KLUDGE にあります。SprUnity\KLUDGE に必要なスクリプトはできるだけこのUnity\KLUDGE プロジェクト内で開発してください（もし異なるUnity\KLUDGE プロジェクトで開発した場合も最終的にこのプロジェクトに含めてください）。
+
+\KLUDGE プロジェクトのフォルダ構成は以下の通りです。
+\begin{sourcecode}
++- Scenes/         開発用の各種シーン
++- Springhead/     Springheadアセット一式。このフォルダをエクスポートする想定
+   +- Editor/      SpringheadのためのUnityエディタ拡張スクリプト
+   +- Plugins/     Springhead C# DLLがここに入る
+   +- PHxxxx.cs    PHxxxxを使うためのUnity Script
+   +- ...
+\end{sourcecode}
+
+Springhead C\# DLL\KLUDGE をビルドすると\path{Springhead2\bin\win64}\KLUDGE に出力されるので、開発用Unity\KLUDGE プロジェクトで利用するには\path{Springhead2\src\Unity\Assets\Springhead\Plugins}\KLUDGE にコピーする必要があります。
+
+
+\subsection{Behaviour\KLUDGE 開発の手引き}
+
+Unity\KLUDGE 上で利用したいSpringhead\KLUDGE クラスごとに\footnote{\KLUDGE 議論の余地あり}Behaviour\KLUDGE スクリプトを作り、そのスクリプトにSpringhead\KLUDGE オブジェクトの作成・Unity\KLUDGE との同期等を担当させてください。例えば\texttt{PHSolid}\KLUDGE を担当するスクリプトは\texttt{PHSolidBehaviour}\KLUDGE で、このスクリプトはゲーム開始時にSpringhead\KLUDGE シーン内に\texttt{PHSolid}\KLUDGE を作成し、1\KLUDGE ステップごとに\texttt{PHSolid}\KLUDGE の位置に応じてゲームオブジェクトの位置を変更します。
+
+Behaviour\KLUDGE スクリプトの各変数・関数の役割を、\texttt{PHSceneBehaviour}\KLUDGE を題材に解説します。
+
+\begin{sourcecode}
+using UnityEngine;
+using SprCs;
+
+public class PHSolidBehaviour : SprSceneObjBehaviour {
+\end{sourcecode}
+
+Springhead\KLUDGE の機能を利用するのに\texttt{SprCs}\KLUDGE 名前空間をusing\KLUDGE しておくと便利です。
+
+PHSdk\KLUDGE やPHScene\KLUDGE の子要素を作成するBehaviour\KLUDGE スクリプトは、\texttt{SprSceneObjBehaviour}\KLUDGE を継承してください。これによりPHSceneBehaviour\KLUDGE を探してPHScene\KLUDGE を取得する\texttt{phScene}\KLUDGE プロパティや、\texttt{phSdk}\KLUDGE プロパティが使えるようになるほか、インスペクタの値が変更された時に自動的にSpringhead\KLUDGE オブジェクトのSetDesc\KLUDGE が呼ばれる機能などが実装されます。
+
+\begin{sourcecode}
+    public PHSolidDescStruct desc = null;
+
+    public override CsObject descStruct {
+        get { return desc; }
+        set { desc = value as PHSolidDescStruct; }
+    }
+
+    public override void ApplyDesc(CsObject from, CsObject to) {
+        (from as PHSolidDescStruct).ApplyTo(to as PHSolidDesc);
+    }
+
+    public override CsObject CreateDesc() {
+        return new PHSolidDesc();
+    }
+\end{sourcecode}
+
+\texttt{XXXDescStruct}\KLUDGE 型のpublic\KLUDGE 変数を作ることで、デスクリプタの内容が設定項目としてインスペクタに表示されます。
+\KLUDGE ここでは\texttt{XXXDesc}\KLUDGE ではなく\texttt{XXXDescStruct}\KLUDGE を利用してください。また、初期値は必ず\texttt{null}\KLUDGE として下さい。
+
+SprSceneObjBehaviour\KLUDGE を継承するクラスは、\texttt{descStruct}\KLUDGE プロパティ、\texttt{ApplyDesc}\KLUDGE 関数、\texttt{CreateDesc}\KLUDGE 関数を定義しなければなりません。これらはインスペクタの値が変更されたときに自動でSpringhead\KLUDGE オブジェクトに反映されるようにするために必要です（必要が無い場合は中身のない（あるいは\texttt{null}\KLUDGE を返す）関数を定義して下さい）。
+
+\begin{sourcecode}
+    public override ObjectIf Build() {
+        PHSolidIf so = phScene.CreateSolid (desc);
+        so.SetName("so:" + gameObject.name);
+
+        Vector3 v = gameObject.transform.position;
+        Quaternion q = gameObject.transform.rotation;
+        so.SetPose (new Posed(q.w, q.x, q.y, q.z, v.x, v.y, v.z));
+
+        return so;
+    }
+\end{sourcecode}
+
+\texttt{Build()}\KLUDGE は、ゲーム開始時に、\texttt{Awake()}\KLUDGE のタイミングで実行されます\footnote{\KLUDGE スクリプトのイベント関数については \url{http://docs.unity3d.com/ja/current/Manual/ExecutionOrder.html} \KLUDGE を参照}\KLUDGE 。
+
+\KLUDGE ここでdesc\KLUDGE に従ってSpringhead\KLUDGE オブジェクトを作成し、作成したオブジェクトをreturn\KLUDGE してください。
+
+\texttt{Build()}\KLUDGE の戻り値はBehaviour\KLUDGE の \texttt{sprObject} \KLUDGE プロパティに代入され、Behaviour\KLUDGE 内部や他のBehaviour\KLUDGE からアクセス可能になります。
+
+
+\begin{sourcecode}
+    void Link () {
+        // PHSolid場合は特にやることはない
+    }
+\end{sourcecode}
+
+\texttt{Link()}\KLUDGE はあらゆるオブジェクトの\texttt{Build()}\KLUDGE より後で呼ばれます。具体的には、\texttt{Build()}\KLUDGE が\texttt{Awake()}\KLUDGE のタイミングで実行されるのに対し、\texttt{Link()}\KLUDGE は\texttt{Start()}\KLUDGE のタイミングで実行されます。
+
+\KLUDGE 全オブジェクトの構築が終了した後に、構築されたオブジェクト同士の関係を設定（``Link''\KLUDGE ）する作業をここで行います。例えば\texttt{PHIKEndEffector}\KLUDGE を\texttt{PHIKActuator}\KLUDGE に\texttt{AddChildObject}\KLUDGE するなど、全オブジェクト作成後でないと行えないような処理をここに記述します。
+
+\begin{sourcecode}
+    public void Update () {
+        if (sprObject != null) {
+            PHSolidIf so = sprObject as PHSolidIf;
+            if (so.IsDynamical()) {
+                // Dynamicalな剛体はSpringheadのシミュレーション結果をUnityに反映
+                Posed p = so.GetPose();
+                gameObject.transform.position = new Vector3((float)p.px, (float)p.py, (float)p.pz);
+                gameObject.transform.rotation = new Quaternion((float)p.x, (float)p.y, (float)p.z, (float)p.w);
+            } else {
+                // Dynamicalでない剛体はUnityの位置をSpringheadに反映（操作可能）
+                Vector3 v = gameObject.transform.position;
+                Quaternion q = gameObject.transform.rotation;
+                so.SetPose(new Posed(q.w, q.x, q.y, q.z, v.x, v.y, v.z));
+            }
+        }
+    }
+\end{sourcecode}
+
+Update\KLUDGE には、Springhead\KLUDGE のシミュレーション結果をUnity\KLUDGE のオブジェクトに反映するコードを書いて下さい。
+
+\KLUDGE ※なお、実際のPHSolidBehaviour\KLUDGE では、Update\KLUDGE ではなくUpdatePose\KLUDGE 関数が定義され、PHSceneBehaviour\KLUDGE のUpdate\KLUDGE が各Solid\KLUDGE のUpdatePose\KLUDGE を呼ぶようになっています。これは剛体オブジェクトの位置の反映をPHSolidBehaviour\KLUDGE のUpdate\KLUDGE で行った場合、スキンメッシュの描画がうまくいかないためです。
+
+
+\subsection{\KLUDGE スクリプト実行順序の設定}
+
+\KLUDGE 各Step\KLUDGE において、PHSceneBehaviour\KLUDGE は他のPhysics\KLUDGE 系スクリプトより先に実行される必要があります。新たにスクリプトを追加した場合などは、開発者が適切な実行順序を設定してください。設定したスクリプト実行順序はエクスポートされる情報に含まれるので、SprUnity\KLUDGE のユーザは特に気にせず利用できます。
+
+\KLUDGE 実行順序の設定は Edit\KLUDGE メニュー \KLUDGE → Project Settings \KLUDGE → Script Execution Order \KLUDGE から行います。
+
+
+
+

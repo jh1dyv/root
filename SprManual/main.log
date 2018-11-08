@@ -1,0 +1,1126 @@
+This is e-pTeX, Version 3.14159265-p3.5-130605-2.6 (sjis) (TeX Live 2014/W32TeX) (preloaded format=platex 2014.9.22)  8 NOV 2018 13:17
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**main
+(./main.tex
+pLaTeX2e <2006/11/10> (based on LaTeX2e <2014/05/01> patch level 0)
+Babel <3.9k> and hyphenation patterns for 79 languages loaded.
+(c:/texlive/2014/texmf-dist/tex/platex/jsclasses/jsbook.cls
+Document Class: jsbook 2014/02/07 okumura
+LaTeX Info: Redefining \rmfamily on input line 359.
+LaTeX Info: Redefining \sffamily on input line 362.
+LaTeX Info: Redefining \ttfamily on input line 365.
+\symmincho=\mathgroup4
+LaTeX Font Info:    Overwriting symbol font `mincho' in version `bold'
+(Font)                  JY1/mc/m/n --> JY1/gt/m/n on input line 430.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 9.60999pt on input line 620.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 9.60999pt on input line 620.
+\fullwidth=\dimen118
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 7.68799pt on input line 775.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 7.68799pt on input line 775.
+\c@part=\count81
+\c@chapter=\count82
+\c@section=\count83
+\c@subsection=\count84
+\c@subsubsection=\count85
+\c@paragraph=\count86
+\c@subparagraph=\count87
+\c@figure=\count88
+\c@table=\count89
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\js@tocl@width=\dimen119
+\@lnumwidth=\dimen120
+\bibindent=\dimen121
+LaTeX Info: Redefining \TeX on input line 1815.
+LaTeX Info: Redefining \LaTeX on input line 1841.
+LaTeX Info: Redefining \LaTeXe on input line 1866.
+\heisei=\count90
+) (c:/texlive/2014/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/04/25 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+(c:/texlive/2014/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/05/08 v1.15 key=value parser (DPC)
+\KV@toks@=\toks15
+)
+(c:/texlive/2014/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(c:/texlive/2014/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(c:/texlive/2014/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: dvips.def on input line 91.
+
+(c:/texlive/2014/texmf-dist/tex/latex/graphics/dvips.def
+File: dvips.def 2014/04/23 v3.0j Driver-dependant file (DPC,SPQR)
+))
+\Gin@req@height=\dimen122
+\Gin@req@width=\dimen123
+)
+(c:/texlive/2014/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2005/04/14 v1.61803 publication quality tables
+\heavyrulewidth=\dimen124
+\lightrulewidth=\dimen125
+\cmidrulewidth=\dimen126
+\belowrulesep=\dimen127
+\belowbottomsep=\dimen128
+\aboverulesep=\dimen129
+\abovetopsep=\dimen130
+\cmidrulesep=\dimen131
+\cmidrulekern=\dimen132
+\defaultaddspace=\dimen133
+\@cmidla=\count91
+\@cmidlb=\count92
+\@aboverulesep=\dimen134
+\@belowrulesep=\dimen135
+\@thisruleclass=\count93
+\@lastruleclass=\count94
+\@thisrulewidth=\dimen136
+)
+(c:/texlive/2014/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2013/01/14 v2.14 AMS math features
+\@mathmargin=\skip43
+
+For additional information on amsmath, use the `?' option.
+(c:/texlive/2014/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(c:/texlive/2014/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks16
+\ex@=\dimen137
+))
+(c:/texlive/2014/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen138
+)
+(c:/texlive/2014/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count95
+LaTeX Info: Redefining \frac on input line 210.
+\uproot@=\count96
+\leftroot@=\count97
+LaTeX Info: Redefining \overline on input line 306.
+\classnum@=\count98
+\DOTSCASE@=\count99
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
+\Mathstrutbox@=\box41
+\strutbox@=\box42
+\big@size=\dimen139
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+\macc@depth=\count100
+\c@MaxMatrixCols=\count101
+\dotsspace@=\muskip10
+\c@parentequation=\count102
+\dspbrk@lvl=\count103
+\tag@help=\toks17
+\row@=\count104
+\column@=\count105
+\maxfields@=\count106
+\andhelp@=\toks18
+\eqnshift@=\dimen140
+\alignsep@=\dimen141
+\tagshift@=\dimen142
+\tagwidth@=\dimen143
+\totwidth@=\dimen144
+\lineht@=\dimen145
+\@envbody=\toks19
+\multlinegap=\skip44
+\multlinetaggap=\skip45
+\mathdisplay@stack=\toks20
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
+)
+(c:/texlive/2014/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(c:/texlive/2014/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup5
+\symAMSb=\mathgroup6
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(c:/texlive/2014/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip11
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+(c:/texlive/2014/texmf-dist/tex/latex/base/makeidx.sty
+Package: makeidx 2000/03/29 v1.0m Standard LaTeX package
+)
+(c:/texlive/2014/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2014/04/23 v1.1a Standard LaTeX Color (DPC)
+
+(c:/texlive/2014/texmf-dist/tex/latex/latexconfig/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: dvips.def on input line 137.
+
+(c:/texlive/2014/texmf-dist/tex/latex/graphics/dvipsnam.def
+File: dvipsnam.def 2014/04/23 v3.0j Driver-dependant file (DPC,SPQR)
+)) (./sprmacros.sty) (c:/texlive/2014/texmf-dist/tex/latex/fancybox/fancybox.st
+y
+Package: fancybox 2010/05/15 1.4
+
+Style option: `fancybox' v1.4 <2010/05/15> (tvz)
+\@fancybox=\box43
+\shadowsize=\dimen146
+\@Sbox=\box44
+\do@VerbBox=\toks21
+\the@fancyput=\toks22
+\this@fancyput=\toks23
+\EndVerbatimTokens=\toks24
+\Verbatim@Outfile=\write3
+\Verbatim@Infile=\read1
+) (c:/texlive/2014/texmf-dist/tex/latex/framed/framed.sty
+Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
+\OuterFrameSep=\skip46
+\fb@frw=\dimen147
+\fb@frh=\dimen148
+\FrameRule=\dimen149
+\FrameSep=\dimen150
+)
+(c:/texlive/2014/texmf-dist/tex/latex/tools/longtable.sty
+Package: longtable 2004/02/01 v4.11 Multi-page Table package (DPC)
+\LTleft=\skip47
+\LTright=\skip48
+\LTpre=\skip49
+\LTpost=\skip50
+\LTchunksize=\count107
+\LTcapwidth=\dimen151
+\LT@head=\box45
+\LT@firsthead=\box46
+\LT@foot=\box47
+\LT@lastfoot=\box48
+\LT@cols=\count108
+\LT@rows=\count109
+\c@LT@tables=\count110
+\c@LT@chunks=\count111
+\LT@p@ftn=\toks25
+)
+(c:/texlive/2014/texmf-dist/tex/latex/tools/bm.sty
+Package: bm 2004/02/26 v1.1c Bold Symbol Support (DPC/FMi)
+\symboldoperators=\mathgroup7
+\symboldletters=\mathgroup8
+\symboldsymbols=\mathgroup9
+\symboldmincho=\mathgroup10
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 137.
+LaTeX Info: Redefining \bm on input line 203.
+)
+(c:/texlive/2014/texmf-dist/tex/latex/comment/comment.sty
+\CommentStream=\write4
+
+Excluding comment 'comment')
+(c:/texlive/2014/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
+
+(c:/texlive/2014/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+Package: hobsub-hyperref 2012/05/28 v1.13 Bundle oberdiek, subset hyperref (HO)
+
+
+(c:/texlive/2014/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+Package: hobsub-generic 2012/05/28 v1.13 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2012/05/28 v1.13 Construct package bundles (HO)
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+Package: intcalc 2007/09/27 v1.1 Expandable calculations with integers (HO)
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is not detected.
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: pdfTeX >= 1.30 not detected.
+Package pdftexcmds Info: \pdf@primitive is not available.
+Package pdftexcmds Info: \pdf@ifprimitive is not available.
+Package pdftexcmds Info: \pdfdraftmode not found.
+Package: pdfescape 2011/11/25 v1.13 Implements pdfTeX's escape features (HO)
+Package: bigintcalc 2012/04/08 v1.3 Expandable calculations on big integers (HO
+)
+Package: bitset 2011/01/30 v1.1 Handle bit-vector datatype (HO)
+Package: uniquecounter 2011/01/30 v1.2 Provide unlimited unique counter (HO)
+)
+Package hobsub Info: Skipping package `hobsub' (already loaded).
+Package: letltxmacro 2010/09/02 v1.4 Let assignment for LaTeX macros (HO)
+Package: hopatch 2012/05/28 v1.2 Wrapper for package hooks (HO)
+Package: xcolor-patch 2011/01/30 xcolor patch
+Package: atveryend 2011/06/30 v1.8 Hooks at the very end of document (HO)
+Package atveryend Info: \enddocument detected (standard20110627).
+Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
+Package: refcount 2011/10/16 v3.4 Data extraction from label references (HO)
+Package: hycolor 2011/01/30 v1.7 Color options for hyperref/bookmark (HO)
+)
+(c:/texlive/2014/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+(c:/texlive/2014/texmf-dist/tex/latex/oberdiek/auxhook.sty
+Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
+)
+(c:/texlive/2014/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+)
+\@linkdim=\dimen152
+\Hy@linkcounter=\count112
+\Hy@pagecounter=\count113
+
+(c:/texlive/2014/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
+)
+\Hy@SavedSpaceFactor=\count114
+
+(c:/texlive/2014/texmf-dist/tex/latex/latexconfig/hyperref.cfg
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+Package hyperref Info: Option `bookmarks' set `true' on input line 4319.
+Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 4319
+.
+Package hyperref Info: Option `colorlinks' set `true' on input line 4319.
+Package hyperref Info: Option `setpagesize' set `false' on input line 4319.
+Package hyperref Info: Hyper figures OFF on input line 4443.
+Package hyperref Info: Link nesting OFF on input line 4448.
+Package hyperref Info: Hyper index ON on input line 4451.
+Package hyperref Info: Plain pages OFF on input line 4458.
+Package hyperref Info: Backreferencing OFF on input line 4463.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4688.
+\c@Hy@tempcnt=\count115
+LaTeX Info: Redefining \url on input line 5041.
+\XeTeXLinkMargin=\dimen153
+\Fld@menulength=\count116
+\Field@Width=\dimen154
+\Fld@charsize=\dimen155
+Package hyperref Info: Hyper figures OFF on input line 6295.
+Package hyperref Info: Link nesting OFF on input line 6300.
+Package hyperref Info: Hyper index ON on input line 6303.
+Package hyperref Info: backreferencing OFF on input line 6310.
+Package hyperref Info: Link coloring ON on input line 6313.
+Package hyperref Info: Link coloring with OCG OFF on input line 6320.
+Package hyperref Info: PDF/A mode OFF on input line 6325.
+LaTeX Info: Redefining \ref on input line 6365.
+LaTeX Info: Redefining \pageref on input line 6369.
+\Hy@abspage=\count117
+\c@Item=\count118
+\c@Hfootnote=\count119
+)
+
+Package hyperref Message: Driver: hdvipdfm.
+
+(c:/texlive/2014/texmf-dist/tex/latex/hyperref/hdvipdfm.def
+File: hdvipdfm.def 2012/11/06 v6.83m Hyperref driver for dvipdfm
+\pdfm@box=\box49
+\c@Hy@AnnotLevel=\count120
+\HyField@AnnotCount=\count121
+\Fld@listcount=\count122
+\c@bookmark@seq@number=\count123
+
+(c:/texlive/2014/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
+Package rerunfilecheck Info: Feature \pdfmdfivesum is not available
+(rerunfilecheck)             (e.g. pdfTeX or LuaTeX with package `pdftexcmds').
+
+(rerunfilecheck)             Therefore file contents cannot be checked efficien
+tly
+(rerunfilecheck)             and the loading of the package is aborted.
+)
+\Hy@SectionHShift=\skip51
+)
+\@indexfile=\write5
+\openout5 = `main.idx'.
+
+
+Writing index file main.idx
+(./main.aux)
+\openout1 = `main.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for JY1/mc/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for JT1/mc/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+\AtBeginShipoutBox=\box50
+Package hyperref Info: Link coloring ON on input line 24.
+ (c:/texlive/2014/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
+
+(c:/texlive/2014/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
+)
+\c@section@level=\count124
+)
+LaTeX Info: Redefining \ref on input line 24.
+LaTeX Info: Redefining \pageref on input line 24.
+LaTeX Info: Redefining \nameref on input line 24.
+
+(./main.out) (./main.out)
+\@outlinefile=\write6
+\openout6 = `main.out'.
+
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 16.60605pt on input line 26.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 16.60605pt on input line 26.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 11.53198pt on input line 26.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 11.53198pt on input line 26.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 5.76599pt on input line 26.
+LaTeX Font Info:    Try loading font information for U+msa on input line 26.
+
+(c:/texlive/2014/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 26.
+
+(c:/texlive/2014/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 11.53198pt on input line 26.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 7.68799pt on input line 26.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 5.76599pt on input line 26.
+ [1
+
+
+]
+LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
+(Font)              scaled to size 9.60999pt on input line 26.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 9.60999pt on input line 26.
+ [2
+
+]
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 23.90964pt on input line 26.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 23.90964pt on input line 26.
+LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
+(Font)              scaled to size 23.90964pt on input line 26.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 23.90964pt on input line 26.
+ (./main.toc
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 6.72699pt on input line 3.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 4.805pt on input line 3.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 6.72699pt on input line 3.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 4.805pt on input line 3.
+LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <10> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 26.
+LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
+(Font)              scaled to size 9.60999pt on input line 26.
+LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <10> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 26.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 9.60999pt on input line 26.
+
+[3] [4] [5])
+\tf@toc=\write7
+\openout7 = `main.toc'.
+
+ (./chapters.tex [6]
+第1章
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 19.9311pt on input line 1.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 19.9311pt on input line 1.
+LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
+(Font)              scaled to size 19.9311pt on input line 1.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 19.9311pt on input line 1.
+(./intro.tex) [7
+
+] [8
+
+]
+第2章
+(./getstarted.tex
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 13.83836pt on input line 3.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 13.83836pt on input line 3.
+LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
+(Font)              scaled to size 13.83836pt on input line 3.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 13.83836pt on input line 3.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 6.72699pt on input line 15.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 4.805pt on input line 15.
+ [9]
+File: fig/libbuild.eps Graphic file (type eps)
+ <fig/libbuild.eps>
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 8.64899pt on input line 56.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 8.64899pt on input line 56.
+LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
+(Font)              scaled to size 7.68799pt on input line 79.
+ [10]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 97.
+
+(c:/texlive/2014/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 97.
+File: fig/newproject1.eps Graphic file (type eps)
+ <fig/newproject1.eps>
+File: fig/newproject2.eps Graphic file (type eps)
+
+<fig/newproject2.eps>
+File: fig/newproject3.eps Graphic file (type eps)
+ <fig/newproject3.eps> [11]
+LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
+(Font)              scaled to size 11.53198pt on input line 149.
+ [12]
+LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
+(Font)              scaled to size 8.64899pt on input line 198.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 8.64899pt on input line 198.
+File: fig/newproject4.eps Graphic file (type eps)
+ <fig/newproject4.eps>
+File: fig/newproject5.eps Graphic file (type eps)
+
+<fig/newproject5.eps>
+File: fig/newproject6_truncate.eps Graphic file (type eps)
+ <fig/newproject6_truncate.eps>
+File: fig/newproject7_truncate.eps Graphic file (type eps)
+
+<fig/newproject7_truncate.eps>
+File: fig/newproject8.eps Graphic file (type eps)
+ <fig/newproject8.eps> [13] [14]) [15] [16]
+第3章
+(./structure.tex
+File: fig/filetree.eps Graphic file (type eps)
+ <fig/filetree.eps> [17
+
+] [18]
+Underfull \vbox (badness 10000) detected at line 94
+ []
+
+[19]) [20]
+第4章
+(./base.tex [21
+
+]
+LaTeX Font Info:    Font shape `JT1/gt/bx/n' in size <10> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 55.
+LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
+(Font)              scaled to size 9.60999pt on input line 55.
+LaTeX Font Info:    Font shape `JY1/gt/bx/n' in size <10> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 55.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 9.60999pt on input line 55.
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 55.
+ [22] [23] [24]
+Overfull \hbox (3.67317pt too wide) in paragraph at lines 211--211
+[]\OT1/cmtt/m/n/9 q1 = Quaterniond::Rot(Rad(-90.0), 'y');  // -90deg rotationt 
+along y-axis[]  
+ []
+
+
+Underfull \vbox (badness 7740) detected at line 211
+ []
+
+[25] [26] [27]) [28]
+第5章
+(./foundation.tex
+File: fig/utclass.eps Graphic file (type eps)
+ <fig/utclass.eps>
+Overfull \hbox (12.0pt too wide) in paragraph at lines 32--54
+[] 
+ []
+
+[29
+
+]
+Overfull \hbox (12.0pt too wide) in paragraph at lines 60--70
+[]
+ []
+
+[30]
+Overfull \hbox (12.0pt too wide) in paragraph at lines 75--89
+[] 
+ []
+
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 93--101
+[] 
+ []
+
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 108--117
+[] 
+ []
+
+[31] [32] [33]) [34]
+第6章
+(./collision.tex
+File: fig/cdclass.eps Graphic file (type eps)
+ <fig/cdclass.eps>
+Underfull \vbox (badness 1082) detected at line 39
+ []
+
+[35
+
+] [36]
+File: fig/cdbox.eps Graphic file (type eps)
+ <fig/cdbox.eps> [37]
+File: fig/cdsphere.eps Graphic file (type eps)
+ <fig/cdsphere.eps>
+File: fig/cdcapsule.eps Graphic file (type eps)
+ <fig/cdcapsule.eps> [38]
+File: fig/cdroundcone.eps Graphic file (type eps)
+
+<fig/cdroundcone.eps> [39]
+File: fig/cdconvexmesh.eps Graphic file (type eps)
+ <fig/cdconvexmesh.eps> [40] [41] [42]) [43] [44
+
+]
+第7章
+(./physics.tex [45]
+Underfull \hbox (badness 10000) in paragraph at lines 50--50
+[]\OT1/cmtt/m/n/10 MergeScene(PHSceneIf* scene0,
+ []
+
+[46]
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 119.
+ [47]
+Overfull \hbox (2.27052pt too wide) in paragraph at lines 136--136
+[]\OT1/cmtt/m/n/10 PHSolidIf**| 
+ []
+
+[48] [49] [50]
+File: fig/phconstraint.eps Graphic file (type eps)
+ <fig/phconstraint.eps> [51]
+Underfull \hbox (badness 10000) in paragraph at lines 317--317
+[]\OT1/cmtt/m/n/10 CreateJoint(PHSolidIf*, PHSolidIf*, const
+ []
+
+[52]
+File: fig/socket_plug1.eps Graphic file (type eps)
+ <fig/socket_plug1.eps>
+File: fig/socket_plug2.eps Graphic file (type eps)
+ <fig/socket_plug2.eps> [53]
+File: fig/phhingejoint.eps Graphic file (type eps)
+ <fig/phhingejoint.eps>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[54]
+File: fig/phsliderjoint.eps Graphic file (type eps)
+ <fig/phsliderjoint.eps>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+File: fig/phballjoint.eps Graphic file (type eps)
+<fig/phballjoint.eps>
+File: fig/swingtwist.eps Graphic file (type eps)
+ <fig/swingtwist.eps>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[55] [56]
+File: fig/phspring.eps Graphic file (type eps)
+ <fig/phspring.eps>
+Underfull \vbox (badness 10000) detected at line 506
+ []
+
+[57] [58] [59] [60]
+Underfull \vbox (badness 10000) detected at line 706
+ []
+
+[61]
+File: fig/ikexample3link.eps Graphic file (type eps)
+ <fig/ikexample3link.eps> [62] [63]
+File: fig/ikexample3linkobjects.eps Graphic file (type eps)
+ <fig/ikexample3linkobjects.eps>
+[64] [65]
+File: fig/ikexample5link.eps Graphic file (type eps)
+ <fig/ikexample5link.eps> [66]
+Overfull \hbox (4.85103pt too wide) in paragraph at lines 939--941
+[]\JY1/mc/m/n/10 関節の運動は ， \OT1/cmr/m/n/10 IK \JY1/mc/m/n/10 機能によ っ
+て計算された目標関節角速度を関節に \OT1/cmtt/m/n/10 SetTargetVelocity
+ []
+
+[67] [68]
+Underfull \vbox (badness 10000) detected at line 1039
+ []
+
+[69]
+File: fig/phcontact.eps Graphic file (type eps)
+ <fig/phcontact.eps> [70]
+Overfull \hbox (35.99998pt too wide) in alignment at lines 1120--1128
+ [] [] [] 
+ []
+
+[71]
+Overfull \hbox (35.99998pt too wide) in alignment at lines 1132--1140
+ [] [] [] 
+ []
+
+[72]
+Underfull \hbox (badness 1360) in paragraph at lines 1184--1191
+[]\JY1/mc/m/n/10 まず ， シ ーン中の接触拘束の数を \OT1/cmtt/m/n/10 PHSceneIf::
+NConstacts \JY1/mc/m/n/10 で取得し ， \OT1/cmtt/m/n/10 for
+ []
+
+
+Overfull \hbox (23.99998pt too wide) in alignment at lines 1201--1207
+ [] [] 
+ []
+
+[73]
+Overfull \hbox (23.99998pt too wide) in alignment at lines 1217--1222
+ [] [] 
+ []
+
+[74]
+Overfull \hbox (1.55597pt too wide) in paragraph at lines 1263--1263
+[]|\OT1/cmtt/m/n/10 SetContactCorrectionRate(double)| 
+ []
+
+) [75] [76
+
+]
+第8章
+(./graphics.tex [77] [78]
+File: fig/grscene.eps Graphic file (type eps)
+ <fig/grscene.eps>
+Overfull \hbox (2.27052pt too wide) in paragraph at lines 112--112
+[]\OT1/cmtt/m/n/10 GRCameraIf*| 
+ []
+
+
+Overfull \hbox (2.27052pt too wide) in paragraph at lines 114--114
+[]\OT1/cmtt/m/n/10 GRVisualIf*| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 114--114
+[]\OT1/cmtt/m/n/10 CreateVisual(const
+ []
+
+[79]
+Underfull \hbox (badness 1231) in paragraph at lines 137--140
+[]\JY1/mc/m/n/10 描画処理はプログラムの描画ハンドラで行います ． \OT1/cmr/m/n/1
+0 GLUT \JY1/mc/m/n/10 を使う場合は
+ []
+
+[80]
+File: fig/grvisual.eps Graphic file (type eps)
+ <fig/grvisual.eps> [81] [82]
+File: fig/grcamera.eps Graphic file (type eps)
+ <fig/grcamera.eps>
+File: fig/grcamera_front.eps Graphic file (type eps)
+ <fig/grcamera_front.eps>
+File: fig/grcamera_top.eps Graphic file (type eps)
+
+<fig/grcamera_top.eps> [83] [84]
+Overfull \hbox (15.50981pt too wide) in paragraph at lines 369--369
+[]\OT1/cmtt/m/n/10 GRRenderIf| 
+ []
+
+[85] Excluding 'comment' comment. [86] [87] [88]
+Overfull \hbox (15.50981pt too wide) in paragraph at lines 767--767
+[]\OT1/cmtt/m/n/10 GRRenderIf| 
+ []
+
+
+Underfull \hbox (badness 1558) in paragraph at lines 768--769
+[]\JY1/mc/m/n/10 デプスバ ッフ ァへの書き込み
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 772--772
+[]\OT1/cmtt/m/n/10 SetAlphaMode(TBlendFunc,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 783--783
+[]\OT1/cmtt/m/n/10 SetTextureImage(UTString, int,
+ []
+
+[89]
+Underfull \hbox (badness 10000) in paragraph at lines 794--794
+[]\OT1/cmtt/m/n/10 CreateShader(UTString,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 796--796
+[]\OT1/cmtt/m/n/10 ReadShaderSource(GRHandler,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 797--797
+[]\OT1/cmtt/m/n/10 GetShaderLocation(GRHandler,
+ []
+
+
+Overfull \hbox (15.50981pt too wide) in paragraph at lines 805--805
+[]\OT1/cmtt/m/n/10 GRRenderIf| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 806--806
+[]\OT1/cmtt/m/n/10 SetVertexFormat(const
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 808--808
+[]\OT1/cmtt/m/n/10 DrawDirect(TPrimitiveType,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 809--809
+[]\OT1/cmtt/m/n/10 DrawIndexed(TPrimitiveType,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 810--810
+[]\OT1/cmtt/m/n/10 DrawArrays(TPrimitiveType,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 811--811
+[]\OT1/cmtt/m/n/10 DrawArrays(TPrimitiveType,
+ []
+
+[90]
+Overfull \hbox (15.50981pt too wide) in paragraph at lines 819--819
+[]\OT1/cmtt/m/n/10 GRRenderIf| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 821--821
+[]\OT1/cmtt/m/n/10 DrawArrow(Vec3f, Vec3f, float,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 825--825
+[]\OT1/cmtt/m/n/10 DrawCylinder(float, float, int,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 826--826
+[]\OT1/cmtt/m/n/10 DrawCapsule(float, float, int,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 827--827
+[]\OT1/cmtt/m/n/10 DrawRoundCone(float, float, float,
+ []
+
+
+Overfull \hbox (15.50981pt too wide) in paragraph at lines 850--850
+[]\OT1/cmtt/m/n/10 GRRenderIf| 
+ []
+
+
+Overfull \hbox (15.50981pt too wide) in paragraph at lines 862--862
+[]\OT1/cmtt/m/n/10 GRRenderIf| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 868--868
+[]\OT1/cmtt/m/n/10 ScreenToCamera(int, int, float,
+ []
+
+[91]
+Overfull \hbox (15.50981pt too wide) in paragraph at lines 876--876
+[]\OT1/cmtt/m/n/10 GRRenderIf| 
+ []
+
+) [92] [93] [94
+
+]
+第9章
+(./fileio.tex
+File: fig/fifile.eps Graphic file (type eps)
+ <fig/fifile.eps> [95] [96] [97] [98]
+Overfull \hbox (211.57076pt too wide) in paragraph at lines 157--157
+[]\OT1/cmtt/m/n/9 PHScene scene1{                                              
+                       0.01;     #PHSceneState::timeStep[]  
+ []
+
+File: fig/fileOperation.eps Graphic file (type eps)
+<fig/fileOperation.eps> [99]
+Overfull \hbox (37.01094pt too wide) in paragraph at lines 207--209
+[]\JY1/mc/m/n/10 フ ァイルをすべてロ ードし終わると 、 \OT1/cmtt/m/n/10 LoadImp
+() \JY1/mc/m/n/10 から抜けて 、 \OT1/cmtt/m/n/10 FIFile::Load(FILoadContext*)
+ []
+
+[100]
+Underfull \vbox (badness 1803) detected at line 254
+ []
+
+[101] [102]) [103] [104
+
+]
+第10章
+(./humaninterface.tex
+File: fig/hiclass.eps Graphic file (type eps)
+ <fig/hiclass.eps> [105]
+File: fig/humaninterface.eps Graphic file (type eps)
+ <fig/humaninterface.eps> [106]
+Underfull \hbox (badness 10000) in paragraph at lines 64--65
+[]\OT1/cmtt/m/n/10 AddRealDevice(const IfInfo* ii, const void*
+ []
+
+
+Overfull \hbox (2.03046pt too wide) in paragraph at lines 81--81
+[]\OT1/cmtt/m/n/10 HIVirtualDeviceIf*| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 81--82
+[]\OT1/cmtt/m/n/10 RentVirtualDevice(const IfInfo* ii, const
+ []
+
+[107]
+Overfull \hbox (2.03046pt too wide) in paragraph at lines 96--96
+[]\OT1/cmtt/m/n/10 HIVirtualDeviceIf*| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 96--97
+[]\OT1/cmtt/m/n/10 Rent(const IfInfo* ii, const char* name, int
+ []
+
+[108]
+Overfull \hbox (20.52533pt too wide) in paragraph at lines 149--149
+[]\OT1/cmtt/m/n/10 DVKeyMouseCallback| 
+ []
+
+[109] [110]
+Overfull \hbox (26.00972pt too wide) in paragraph at lines 225--225
+[]\OT1/cmtt/m/n/10 DVKeyMouseIf| 
+ []
+
+[111]
+File: fig/hitrackball.eps Graphic file (type eps)
+ <fig/hitrackball.eps> [112] [113] [114] [115]) [116]
+第11章
+(./creature.tex [117
+
+] [118]
+Overfull \vbox (0.12279pt too high) detected at line 127
+ []
+
+[119]) [120]
+第12章
+(./framework.tex
+File: fig/framework.eps Graphic file (type eps)
+ <fig/framework.eps> [121
+
+]
+Overfull \hbox (12.0pt too wide) in paragraph at lines 50--67
+[] 
+ []
+
+[122]
+File: fig/fwscene.eps Graphic file (type eps)
+ <fig/fwscene.eps> [123]
+Overfull \hbox (12.0pt too wide) in paragraph at lines 92--109
+[] 
+ []
+
+[124] [125]
+Underfull \hbox (badness 10000) in paragraph at lines 194--195
+[]\OT1/cmtt/m/n/10 bool LoadScene(UTString path, ImportIf* imp, const IfInfo* i
+i,
+ []
+
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 190--198
+[] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 215--216
+[]\OT1/cmtt/m/n/10 bool SaveScene(UTString path, ImportIf* imp, const IfInfo* i
+i,
+ []
+
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 211--219
+[] 
+ []
+
+[126] [127]
+Underfull \vbox (badness 10000) detected at line 312
+ []
+
+[128] [129]
+Underfull \vbox (badness 10000) detected at line 395
+ []
+
+[130]
+Overfull \hbox (12.0pt too wide) in paragraph at lines 428--438
+[] 
+ []
+
+[131]
+Overfull \hbox (15.28856pt too wide) in paragraph at lines 461--466
+[]\OT1/cmtt/m/n/10 FWSdk \JY1/mc/m/n/10 の \OT1/cmtt/m/n/10 Step \JY1/mc/m/n/10
+ はアクテ ィブシ ーンの \OT1/cmtt/m/n/10 Step \JY1/mc/m/n/10 を呼びます ． した
+が って \OT1/cmtt/m/n/10 GetScene()->Step()
+ []
+
+[132] [133]
+Underfull \hbox (badness 10000) in paragraph at lines 585--585
+[]\OT1/cmtt/m/n/10 void SetGridOption(char axis, float offset, float size,
+ []
+
+[134] [135] [136]
+Overfull \hbox (29.59615pt too wide) in paragraph at lines 680--680
+[]\OT1/cmtt/m/n/10 void SetHapticRenderMode(PHHapticPointerDesc::HapticRenderMo
+de
+ []
+
+[137
+
+]) [138]
+第13章
+(./embpython.tex
+File: fig/epoverview.eps Graphic file (type eps)
+ <fig/epoverview.eps>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 6792) in paragraph at lines 49--50
+[]\OT1/cmr/m/n/10 Springhead \JY1/mc/m/n/10 の動作は 、 $\OT1/cmtt/m/n/10 Sprin
+ghead2 \ core \ bin \ win64$ \JY1/mc/m/n/10 フ ォルダ 、 および
+ []
+
+[139
+
+] [140] [141] [142] [143]
+Overfull \vbox (0.31505pt too high) detected at line 226
+ []
+
+[144]
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 5.76599pt on input line 227.
+ [145]
+Underfull \vbox (badness 10000) detected at line 303
+ []
+
+[146] [147]
+File: fig/epsprblender.eps Graphic file (type eps)
+ <fig/epsprblender.eps> [148] [149] [150]) [151] [152]
+第14章
+(./unity.tex
+Underfull \hbox (badness 6792) in paragraph at lines 36--37
+[]\OT1/cmr/m/n/10 Springhead \JY1/mc/m/n/10 の動作は 、 $\OT1/cmtt/m/n/10 Sprin
+ghead2 \ core \ bin \ win64$ \JY1/mc/m/n/10 フ ォルダ 、 および
+ []
+
+[153
+
+] [154] [155] [156]
+Overfull \hbox (18.92892pt too wide) in paragraph at lines 138--139
+[]\OT1/cmr/m/n/10 PHSdk \JY1/mc/m/n/10 や \OT1/cmr/m/n/10 PH-Scene \JY1/mc/m/n/
+10 の子要素を作成する \OT1/cmr/m/n/10 Be-haviour \JY1/mc/m/n/10 スクリプトは 、
+ \OT1/cmtt/m/n/10 SprSceneObjBehaviour
+ []
+
+[157]
+Underfull \hbox (badness 2865) in paragraph at lines 175--175
+ [][][]\JY1/mc/m/n/8 スクリプトのイベント関数については [][]$\OT1/cmtt/m/n/8 ht
+tp : / / docs . unity3d . com / ja / current / Manual /
+ []
+
+[158]
+Overfull \hbox (126.52174pt too wide) in paragraph at lines 209--209
+[]                \OT1/cmtt/m/n/9 gameObject.transform.position = new Vector3((
+float)p.px, (float)p.py, (float)p.pz);[]  
+ []
+
+
+Overfull \hbox (183.22108pt too wide) in paragraph at lines 209--209
+[]                \OT1/cmtt/m/n/9 gameObject.transform.rotation = new Quaternio
+n((float)p.x, (float)p.y, (float)p.z, (float)p.w);[]  
+ []
+
+
+Overfull \hbox (3.67317pt too wide) in paragraph at lines 209--209
+[]                \OT1/cmtt/m/n/9 so.SetPose(new Posed(q.w, q.x, q.y, q.z, v.x,
+ v.y, v.z));[]  
+ []
+
+) [159] [160
+
+]
+第15章
+(./trouble.tex
+Overfull \hbox (9.78455pt too wide) in paragraph at lines 32--40
+[]
+ []
+
+[161])) (./main.ind [162] [163
+
+
+] [164
+
+])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 32.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 32.
+ (./main.aux)
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 32.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 32.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 32.
+ ) 
+Here is how much of TeX's memory you used:
+ 6630 strings out of 493800
+ 92690 string characters out of 6154449
+ 221055 words of memory out of 5000000
+ 9909 multiletter control sequences out of 15000+600000
+ 28798 words of font info for 130 fonts, out of 8000000 for 9000
+ 934 hyphenation exceptions out of 8191
+ 30i,15n,28p,614b,589s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+Output written on main.dvi (164 pages, 513060 bytes).

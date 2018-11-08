@@ -1,0 +1,193 @@
+\index{Foundation}
+Foundation\KLUDGE モジュールはすべてのSpringhead\KLUDGE クラスの基本クラスを定義します．
+\KLUDGE 普通に使っている限り，ユーザがFoundation\KLUDGE の機能を直接利用することは少ないでしょう．
+
+\section{\KLUDGE 実行時型情報}
+
+\index{IfInfo}
+\KLUDGE （ほとんど）すべてのSpringhead\KLUDGE オブジェクトは実行時型情報（RTTI\KLUDGE ）を持っています．
+C++\KLUDGE にも\texttt{dynamic\_cast}\KLUDGE などのRTTI\KLUDGE 機能がありますが，これよりも大幅にリッチな型情報が提供されます．
+
+\KLUDGE 実行時型情報のクラスは\texttt{IfInfo}\KLUDGE です．
+\texttt{IfInfo}\KLUDGE は次節で紹介する\texttt{Object}\KLUDGE クラスから取得できます．
+
+\section{\KLUDGE オブジェクト}
+
+\begin{figure}[t]
+\begin{center}
+\includegraphics[width=.5\hsize]{fig/utclass.eps}
+\end{center}
+\caption{Object class hierarchy}
+\label{fig_utclass}
+\end{figure}
+
+\index{Object}
+\KLUDGE ほとんどすべてのSpringhead\KLUDGE オブジェクトは\texttt{Object}\KLUDGE クラスから派生します．
+\KLUDGE オブジェクトは複数の子オブジェクトを持つことができます．
+Springhead\KLUDGE のデータ構造はオブジェクトが成すツリー構造によって出来上がっています．
+Foundation\KLUDGE モジュールにおける\texttt{Object}\KLUDGE からのクラス階層をFig.\,\ref{fig_utclass}\KLUDGE に示します．
+
+\KLUDGE まず\texttt{Object}\KLUDGE クラスの子オブジェクトの作成・管理に関係する関数を紹介します．
+
+\noindent
+\begin{tabular}{p{1.0\hsize}}
+\\
+\texttt{ObjectIf}										\\ \midrule
+\texttt{size\_t NChildObject()}							\\
+\KLUDGE 子オブジェクトの数を取得する．							\\
+														\\
+\texttt{ObjectIf* GetChildObject(size\_t pos)}			\\
+\texttt{pos}\KLUDGE 番目の子オブジェクトを取得する．			\\
+														\\
+\texttt{bool AddChildObject(ObjectIf* o)}				\\
+\KLUDGE オブジェクト\texttt{o}\KLUDGE を子オブジェクトとして追加する．
+\KLUDGE 正しく追加されたら\texttt{true}\KLUDGE ，それ以外は\texttt{false}\KLUDGE を返す．\\
+														\\
+\texttt{bool DelChildObject(ObjectIf* o)}				\\
+\KLUDGE オブジェクト\texttt{o}\KLUDGE を子オブジェクトから削除する．
+\KLUDGE 正しく削除されたら\texttt{true}\KLUDGE ，それ以外は\texttt{false}\KLUDGE を返す．\\
+														\\
+\texttt{void Clear();}									\\
+\KLUDGE クリアする．												\\
+\\
+\end{tabular}
+
+\KLUDGE これらの関数は派生クラスによって実装されますので，追加できる子オブジェクトの種類や数などはクラスごとに異なります．
+\KLUDGE また，Springhead\KLUDGE を普通に使用する範囲内ではユーザがこれらの関数を直接呼び出す場面はないでしょう．
+
+\KLUDGE ストリーム出力のために以下の機能があります．
+
+\noindent
+\begin{tabular}{p{1.0\hsize}}
+\\
+\texttt{ObjectIf}										\\ \midrule
+\texttt{void Print(std::ostream\& os) const}			\\
+\KLUDGE オブジェクトの内容をストリーム\texttt{os}\KLUDGE に出力する．	\\
+\\
+\end{tabular}
+\texttt{Print}\KLUDGE は，基本的にはそのオブジェクトの名前を出力し，子オブジェクトの\texttt{Print}\KLUDGE を再帰的に呼び出します．
+\KLUDGE ただし派生クラスによって\texttt{Print}\KLUDGE で出力される内容がカスタマイズされている場合はその限りではありません．
+
+\texttt{NamedObject}\KLUDGE は名前付きオブジェクトです．
+\texttt{NamedObject}\KLUDGE の派生クラスには名前を文字列で与えることができ，名前からオブジェクトを検索することができます．
+\KLUDGE 名前付きオブジェクトには，直接の親オブジェクト以外に，名前を管理するためのネームマネジャが対応します．
+
+\noindent
+\begin{tabular}{p{1.0\hsize}}
+\\
+\texttt{NamedObjectIf}									\\ \midrule
+\texttt{const char* GetName()}			\\
+\KLUDGE 名前を取得する．						\\
+\\
+\texttt{void SetName(const char* n)}	\\
+\KLUDGE 名前を設定する．						\\
+\\
+\texttt{NameManagerIf* GetNameManager()}	\\
+\KLUDGE ネームマネジャを取得する．					\\
+\\
+\end{tabular}
+
+\KLUDGE 名前付きオブジェクトからはさらにシーンオブジェクトが派生します．
+\KLUDGE シーンオブジェクトからは周辺モジュールのオブジェクト(\texttt{PHSolid}, \texttt{GRVisual}\KLUDGE など)\KLUDGE が派生します．
+
+\noindent
+\begin{tabular}{p{1.0\hsize}}
+\\
+\texttt{SceneObjectIf}					\\ \midrule
+\texttt{SceneIf* GetScene()}			\\
+\KLUDGE 自身が所属するシーンを取得する．		\\
+\\
+\end{tabular}
+
+\section{\KLUDGE ネームマネジャとシーン}
+
+\index{NameManager}
+\KLUDGE ネームマネジャは名前付きオブジェクトのコンテナとして働き，それらの名前を管理します．
+\KLUDGE また，ネームマネジャはそれ自身名前付きオブジェクトです．
+
+\noindent
+\begin{tabular}{p{1.0\hsize}}
+\\
+\texttt{NameManagerIf}									\\ \midrule
+\texttt{NamedObjectIf* FindObject(UTString name)}		\\
+\KLUDGE 名前が\texttt{name}\KLUDGE のオブジェクトを検索し，見つかればそのオブジェクトを返す．
+\KLUDGE 見つからなければ\texttt{NULL}\KLUDGE を返す．					\\
+\\
+\end{tabular}
+
+
+\index{Scene}
+\KLUDGE シーンはシーンオブジェクトのコンテナです．
+\KLUDGE シーンの基本クラスは\texttt{Scene}\KLUDGE で，ここから各モジュールのシーン(\texttt{PHScene}, \texttt{GRScene}, \texttt{FWScene}\KLUDGE など)\KLUDGE が派生します．
+\texttt{Scene}\KLUDGE クラスは特に機能を提供しません．
+
+
+\section{\KLUDGE タイマ}
+\label{sec_uttimer}
+
+\index{UTTimer}
+\index{\KLUDGE たいま@\KLUDGE タイマ}
+\KLUDGE タイマ機能もFoundation\KLUDGE で提供されます．
+\KLUDGE タイマクラスは\texttt{UTTimer}\KLUDGE です．
+\KLUDGE タイマを作成するには
+\begin{sourcecode}
+UTTimerIf* timer = UTTimerIf::Create();
+\end{sourcecode}
+\KLUDGE とします．\texttt{UTTimer}\KLUDGE には以下のAPI\KLUDGE があります．
+\begin{center}
+\begin{tabular}{ll}
+\texttt{[Get|Set]Resolution}		& \KLUDGE 分解能の取得と設定	\\
+\texttt{[Get|Set]Interval}			& \KLUDGE 周期の取得と設定		\\
+\texttt{[Get|Set]Mode}				& \KLUDGE モードの取得と設定	\\
+\texttt{[Get|Set]Callback}			& \KLUDGE コールバック関数の取得と設定 \\
+\texttt{IsStarted}					& \KLUDGE 動いているかどうか	\\
+\texttt{IsRunning}					& \KLUDGE コールバック呼び出し中 \\
+\texttt{Start}						& \KLUDGE 始動	\\
+\texttt{Stop}						& \KLUDGE 停止	\\
+\texttt{Call}						& \KLUDGE コールバック呼び出し
+\end{tabular}
+\end{center}
+\texttt{SetMode}\KLUDGE で指定できるモードには以下があります．
+\begin{center}
+\begin{tabular}{ll}
+\texttt{MULTIEDIA}		& \KLUDGE マルチメディアタイマ			\\
+\texttt{THREAD}		& \KLUDGE 独立スレッド					\\
+\texttt{FRAMEWORK}		& Framework\KLUDGE が提供するタイマ		\\
+\texttt{IDLE}			& Framework\KLUDGE が提供するアイドルコールバック
+\end{tabular}
+\end{center}
+\KLUDGE マルチメディアタイマはWindows\KLUDGE が提供する高機能タイマです．
+\KLUDGE 独立スレッドモードでは，タイマ用のスレッドが実行され\texttt{Sleep}\KLUDGE 関数により周期が制御されます．
+\texttt{FRAMEWORK}\KLUDGE と\texttt{IDLE}\KLUDGE モードを利用するには\texttt{FWApp}\KLUDGE の\texttt{CreateTimer}\KLUDGE 関数を用いる必要があります．
+\KLUDGE 基本的に\texttt{FRAMEWORK}\KLUDGE モードではGLUT\KLUDGE のタイマコールバックが使われ，
+\texttt{IDLE}\KLUDGE モードではGLUT\KLUDGE のアイドルコールバックが使われます．
+
+Framework\KLUDGE モジュールの\texttt{FWApp}\KLUDGE を利用する場合は，\texttt{FWApp}\KLUDGE の\texttt{CreateTimer}\KLUDGE 関数を利用する方が便利でしょう．
+
+
+\section{\KLUDGE 状態の保存・再現}
+\KLUDGE シミュレーションを行うと、シーンを構成するオブジェクトの状態が変化する。
+\KLUDGE ある時刻での状態を保存しておき、再現することができると、数ステップ前に戻ったり、あるステップのシミュレーションを、力を加えた場合と加えない場合で比べたりといった作業ができる。
+Springhead\KLUDGE では、\texttt{ObjectStatesIf}\KLUDGE を用いることで、以下のようにシーン全体の状態をまとめてメモリ上に保存、再現することができる。
+
+\begin{sourcecode}
+	PHSceneIf* phScene;
+	省略：phScene（物理シミュレーションのシーン）の構築
+	UTRef<ObjectStatesIf> states;
+	states = ObjectStatesIf::Create();	// ObjectStatesオブジェクトの作成
+	states->AllocateState(phScene);		// 保存用のメモリ確保
+	states->SaveState(phScene);			// 状態の保存
+	phScene->Step();					// 仮のシミュレーションを進める
+	省略：加速度の取得など
+	states->LoadState(phScene);			// 状態の再現
+	states->ReleaseState();				// メモリの開放
+	省略：力を加えるなどの処理
+	phScene->Step();					// 本番のシミュレーションを進める
+\end{sourcecode}
+
+\subsection{\KLUDGE 保存・再現のタイミング}
+Springhead\KLUDGE のシーン(PHScene\KLUDGE やCRScene)\KLUDGE は、複数のエンジン(PHEngine\KLUDGE やCREngine\KLUDGE の派生クラス)\KLUDGE を呼び出すことで、シミュレーションを進める。
+\KLUDGE シーンは、エンジンの呼び出し中以外のタイミングであればいつでも状態を保存・再現することができる。
+
+\subsection{\KLUDGE シーン構成変更の制約}
+\KLUDGE 状態保存用のメモリは、シーンの構成に依存している。\texttt{AllocateState(), SaveState(), LoadState()}\KLUDGE だけでなく、\texttt{ObjectStatesIf::ReleaseState()}\KLUDGE も依存するので、\texttt{ObjectIf::AddChildObject()}\KLUDGE などのAPI\KLUDGE によってシーンの構成を変化させてしまうと、保存・再現だけでなくメモリの開放もできなくなる。変更前に開放するか、シーン構成を戻してから開放する必要がある。

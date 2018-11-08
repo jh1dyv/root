@@ -1,0 +1,152 @@
+\begin{chapterabstract}
+Creature\KLUDGE モジュールは，物理シミュレータを用いてバーチャルクリーチャ（自律動作するキャラクタ）を作成する機能を提供します．
+
+Springhead\KLUDGE の物理シミュレーション機能は，人間・動物・キャラクタ・ロボット等の身体動作をシミュレーションすることにおいても利用価値があります．
+\KLUDGE 剛体・関節系で身体モデルを作成し，関節に組み込まれた制御機能や関節系のIK\KLUDGE 機能を用いて身体動作を生成することができます．
+\KLUDGE 物理シミュレータ内の情報（物体の運動・形状・接触力等）を利用してバーチャルな感覚（センサ）情報の生成もできます．感覚・制御のループを回すことで自律動作するキャラクタやロボットが実現できます．
+
+\KLUDGE こうしたバーチャルなキャラクタ・ロボット等を総称して，バーチャルクリーチャ（Creature : \KLUDGE 生き物）と呼びます．
+\end{chapterabstract}
+
+% ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+%
+% \KLUDGE ＜ドキュメントの書き方＞
+
+% \KLUDGE 機能 ::= "\KLUDGE 概説" \KLUDGE 例 \KLUDGE 詳細 \KLUDGE リファレンス*
+% \KLUDGE 例   ::= ["\KLUDGE コード例" "\KLUDGE コード例の説明"]*
+% \KLUDGE 詳細 ::= [\KLUDGE 機能]*
+
+% \KLUDGE リファレンス ::= [\KLUDGE ディスクリプタ | \KLUDGE インタフェース]
+
+% - \KLUDGE 原則としてリファレンスは機能のまとめと補遺にとどめる．
+% - Getter/Setter\KLUDGE は対応するディスクリプタのリファレンスに書き，インタフェースのリファレンスには載せない．
+% - \KLUDGE 図は "\KLUDGE 概説" "\KLUDGE コード例" "\KLUDGE コード例の説明" \KLUDGE で適宜用いる．ただし "\KLUDGE コード例" \KLUDGE の図は原則としてそのコードの実行結果とする．
+
+%
+% ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+
+
+% ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+%
+% \KLUDGE 概説
+% 
+
+\section{Creature\KLUDGE モジュールの構成}
+
+\KLUDGE 下図にCreature\KLUDGE モジュールのシーンツリー構造を示します。
+
+\begin{sourcecode}
+CRSdk
++-- CRCreature
+|   +-- CRBody
+|   |   +-- CRBone
+|   +-- CREngine (CRSensor, CRController)
+\end{sourcecode}
+
+\texttt{CRSdk}\KLUDGE はCreature\KLUDGE の機能を使用する根本となるオブジェクトです。
+\begin{sourcecode}
+CRSdkIf* crSdk = CRSdkIf::CreateSdk();
+\end{sourcecode}
+
+\texttt{CRCreature}\KLUDGE は，バーチャルクリーチャ$1$\KLUDGE 体分の機能を統括するオブジェクトです．身体、感覚器、制御器を有しています．CRCreatureDesc\KLUDGE には特に設定すべき項目はありません。
+\begin{sourcecode}
+CRCreatureIf* crCreature = crSdk->CreateCreature(
+  CDCreatureIf::GetIfInfoStatic(), CRCreatureDesc());
+\end{sourcecode}
+CRCreature\KLUDGE を作成したら、物理シミュレーションのシーンと関連づけるために、PHScene\KLUDGE を子オブジェクトとしてセットしてください。
+\begin{sourcecode}
+// PHSceneIf* phScene;   // should be taken from somewhere
+crCreature->AddChildObject(phScene);
+\end{sourcecode}
+
+\KLUDGE シミュレーション実行時は、1\KLUDGE ステップに1\KLUDGE 回、CRCreature\KLUDGE のStep\KLUDGE を呼んでください。これを呼ぶとCreature\KLUDGE が持つ各Engine\KLUDGE のStep\KLUDGE が実行されます。
+\begin{sourcecode}
+// Every time after simulation step
+crCreature.Step();
+\end{sourcecode}
+
+
+
+\subsection{\KLUDGE 身体}
+
+\texttt{CRBody}\KLUDGE は，バーチャルクリーチャの身体モデルを統括します．身体モデルは身体構成部品の集合体です．
+\begin{sourcecode}
+CDBodyIf* crBody = crCreature->CreateBody(
+  CRBodyIf::GetIfInfoStatic(), CRBodyDesc());
+\end{sourcecode}
+
+\texttt{CRBone}\KLUDGE は，身体構成部品ひとつひとつに対応するオブジェクトです．剛体と関節、IK\KLUDGE のためのアクチュエータ（場合によってはエンドエフェクタ）をセットにしたものです。
+\begin{sourcecode}
+CRBoneIf* crBone = crBody->CreateObject(
+  CDBoneIf::GetIfInfoStatic(), CRBoneDesc());
+\end{sourcecode}
+CRBone\KLUDGE に関連づけるべきオブジェクトはすべて子オブジェクトとしてください。
+\begin{sourcecode}
+// このBoneに対応する剛体
+// PHSolidIf* phSolid; 
+crBone->AddChildObject(phSolid);
+
+// このBoneを親Boneに接続する関節。Root Boneの場合は存在しないので追加不要。
+// PHJointIf* phJoint;
+crBone->AddChildObject(phJoint);
+
+// IKのエンドエフェクタ（手先など）である場合は対応するPHIKEndEffector
+// PHIKEndEffectorIf* phIKEEff;
+crBone->AddChildObject(phIKEEff);
+
+// phJointに対応するIKアクチュエータ
+// PHIKActuatorIf* phIKAct;
+crBone->AddChildObject(phIKAct);
+\end{sourcecode}
+
+
+\subsection{\KLUDGE 感覚器}
+
+\KLUDGE 感覚器(CRSensor)\KLUDGE はCREngine\KLUDGE の一種です。\texttt{CREngine}\KLUDGE は，バーチャルクリーチャのステップ処理の実行主体です．\texttt{CRCreature}\KLUDGE の\texttt{Step}\KLUDGE 関数が1\KLUDGE 回呼ばれるたびに，\texttt{CRCreature}\KLUDGE が保持する全ての\texttt{CREngine}\KLUDGE の\texttt{Step}\KLUDGE 関数が順に実行されます．
+
+CRSensor\KLUDGE には視覚（CRVisualSensor\KLUDGE ）、触覚（CRTouchSensor\KLUDGE ）があります。
+
+\paragraph{\KLUDGE 視覚}
+
+\KLUDGE 視野内にある剛体を1Step\KLUDGE ごとにリストアップする機能です。
+\begin{sourcecode}
+// 設定
+CRVisualSensorDesc descVisualSensor;
+/// 視野の大きさ： 水平角度，垂直角度
+descVisualSensor.range = Vec2d(Rad(90), Rad(60));
+// 中心視野の大きさ： 水平角度，垂直角度
+descVisualSensor.centerRange = Vec2d(Rad(10), Rad(10));
+// 視覚センサを対象剛体に貼り付ける位置・姿勢
+descVisualSensor.pose = Posed();
+// この距離を越えたものは視野外        
+descVisualSensor.limitDistance = 60;	
+
+// 作成
+CRVisualSensorIf* crVisualSensor = crCreature->CreateEngine(
+  CRVisualSensorIf::GetIfInfoStatic(), descVisualSensor);
+\end{sourcecode}
+
+\KLUDGE 視覚情報を読み出すには NVisibles() \KLUDGE と GetVisible(int n) \KLUDGE を用います。視覚情報を利用する前には必ずUpdate\KLUDGE を実行してください。Update\KLUDGE を実行すると視覚情報が最新のStep\KLUDGE に基づく情報に更新されます。
+\begin{sourcecode}
+crVisualSensor->Update();
+for (int i=0; i<crVisualSensor->NVisibles(); ++i) {
+	CRVisualInfo info = crVisualSensor->GetVisible(i);
+	// 可視剛体一個分の視覚情報
+	info.posWorld;    // 可視剛体のワールド座標
+	info.posLocal;    // 頭を基準とした可視剛体のローカル座標
+	info.velWorld;    // 速度
+	info.velLocal;    // ローカル座標での速度
+	info.angle;       // 視野中心から剛体までの視角（たぶん）
+	info.solid;       // 可視剛体
+	info.solidSensor; // 視覚センサ剛体（頭とか目とか）
+	info.sensorPose;  // 視覚センサ剛体の位置・姿勢（たぶん）
+	info.bMyBody;     // 自分の身体を構成する剛体であればtrue
+	info.bCenter;     // 中心視野に入っていればtrue
+}
+\end{sourcecode}
+
+
+\subsection{\KLUDGE 制御器}
+
+\texttt{CRController}\KLUDGE は\texttt{CREngine}\KLUDGE の一種で，バーチャルクリーチャの身体制御を担当します．実際の制御機能は\texttt{CRController}\KLUDGE を継承した各クラスが担当します．到達運動制御、眼球運動制御などがあります。
+

@@ -1,0 +1,55 @@
+\section{\KLUDGE 概要}
+
+\KLUDGE 本章ではよくあるトラブルとその対処方法を紹介します．
+
+\section{\KLUDGE プログラムのビルド}
+
+\KLUDGE 主にVisual Studio\KLUDGE 上でSpringhead\KLUDGE をビルド際によく遭遇するトラブルと対処法について述べます．
+\vspace{2mm}\\
+
+\noindent
+\begin{tabular}{p{10mm}p{110mm}}
+\textbf{\KLUDGE 現象} & \KLUDGE 「include \KLUDGE ファイルを開けません」というコンパイルエラーが出る \\
+\textbf{\KLUDGE 解決策} & \KLUDGE プロジェクト設定でSpringhead\KLUDGE のインクルードパスが設定されているか確認してください．
+\end{tabular}
+\vspace{2mm}\\
+\begin{tabular}{p{10mm}p{110mm}}
+\textbf{\KLUDGE 現象} & \KLUDGE 「未解決の外部シンボル〜が〜で参照されました」というリンカエラーが出る \\
+\textbf{\KLUDGE 解決策} & \KLUDGE プロジェクト設定でSpringhead\KLUDGE のライブラリパスが設定されているか確認してください．
+\end{tabular}
+\vspace{2mm}\\
+\begin{tabular}{p{10mm}p{110mm}}
+\textbf{\KLUDGE 現象} & \KLUDGE 「〜は既に〜で定義されています」というリンカエラーが出る\\
+\textbf{\KLUDGE 解決策} & \KLUDGE プロジェクト設定で，ランタイムライブラリがユーザプログラムとSpringhead\KLUDGE ライブラリとで同一か確認してください．
+\end{tabular}
+\vspace{2mm}\\
+
+\section{\KLUDGE 物理シミュレーション関連}
+
+
+\section{\KLUDGE ファイル関連}
+
+\noindent
+\begin{tabular}{p{15mm}p{110mm}}
+\textbf{\KLUDGE 現象} & \KLUDGE ファイルがロードできない\\
+\textbf{\KLUDGE 解決策1} & \KLUDGE プログラムの実行ディレクトリを確認し，ファイルのパスが適切か確認してください．\\
+\textbf{\KLUDGE 解決策2} & \KLUDGE バイナリ形式のX\KLUDGE ファイルは読めません．テキスト形式で保存してください．\\
+\textbf{\KLUDGE 解決策3} & \KLUDGE 特殊な方言が使われていて読めないこともあります．開発者に問い合わせてください．
+\end{tabular}
+\vspace{2mm}\\
+
+\section{\KLUDGE その他のトラブル}
+
+\noindent
+\begin{tabular}{p{10mm}p{110mm}}
+\textbf{\KLUDGE 現象} &  \KLUDGE なぜか動かない\\
+\textbf{\KLUDGE 解決策} & \KLUDGE バージョンが古い可能性があります．まずsvn update\KLUDGE を実行してコードを最新にし，次にSpringhead\KLUDGE ライブラリのリビルドを行ってください．
+\end{tabular}
+\vspace{2mm}\\
+\begin{tabular}{p{10mm}p{110mm}}
+\textbf{\KLUDGE 現象} &  \KLUDGE それでも動かない\\
+\textbf{\KLUDGE 解決策} & \KLUDGE たまに(?)Springhead\KLUDGE のバグであることがあります．開発者に問い合わせてください．
+\end{tabular}
+\vspace{2mm}\\
+
+
