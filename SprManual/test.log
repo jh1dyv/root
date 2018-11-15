@@ -1,0 +1,2341 @@
+test start at "F:\Project\Springhead\core\doc\SprManual"
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./main_html.tex
+LaTeX2e <2018-04-01> patch level 5
+(c:/texlive/2018/texmf-dist/tex/latex/base/book.cls
+Document Class: book 2014/09/29 v1.4h Standard LaTeX document class
+(c:/texlive/2018/texmf-dist/tex/latex/base/bk10.clo))
+(./lwarp_preamble_first.tex
+(c:/texlive/2018/texmf-dist/tex/generic/iftex/iftex.sty)
+(c:/texlive/2018/texmf-dist/tex/latex/bxcjkjatype/bxcjkjatype.sty
+(c:/texlive/2018/texmf-dist/tex/latex/graphics/keyval.sty)
+(c:/texlive/2018/texmf-dist/tex/latex/cjk/texinput/CJK.sty
+(c:/texlive/2018/texmf-dist/tex/latex/cjk/texinput/mule/MULEenc.sty)
+(c:/texlive/2018/texmf-dist/tex/latex/cjk/texinput/CJK.enc))
+(c:/texlive/2018/texmf-dist/tex/latex/cjk/texinput/CJKutf8.sty
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/ifpdf.sty)
+(c:/texlive/2018/texmf-dist/tex/latex/base/inputenc.sty)
+(c:/texlive/2018/texmf-dist/tex/latex/base/fontenc.sty))
+(c:/texlive/2018/texmf-dist/tex/latex/cjk/texinput/CJKspace.sty)
+(c:/texlive/2018/texmf-dist/tex/latex/cjkpunct/CJKpunct.sty
+(c:/texlive/2018/texmf-dist/tex/latex/cjkpunct/CJKpunct.spa))
+(c:/texlive/2018/texmf-dist/tex/latex/etoolbox/etoolbox.sty)
+(c:/texlive/2018/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.bdg))
+(c:/texlive/2018/texmf-dist/tex/latex/lm/lmodern.sty)
+(c:/texlive/2018/texmf-dist/tex/latex/base/fontenc.sty
+(c:/texlive/2018/texmf-dist/tex/latex/base/t1enc.def))
+(c:/texlive/2018/texmf-dist/tex/latex/lwarp/lwarp.sty
+(c:/texlive/2018/texmf-dist/tex/latex/base/fontenc.sty
+(c:/texlive/2018/texmf-dist/tex/latex/base/t1enc.def))
+(c:/texlive/2018/texmf-dist/tex/latex/newunicodechar/newunicodechar.sty)
+
+Package newunicodechar Warning: Redefining Unicode character on input line 83.
+
+
+Package newunicodechar Warning: Redefining Unicode character on input line 84.
+
+(c:/texlive/2018/texmf-dist/tex/latex/upquote/upquote.sty
+(c:/texlive/2018/texmf-dist/tex/latex/base/textcomp.sty
+(c:/texlive/2018/texmf-dist/tex/latex/base/ts1enc.def
+(c:/texlive/2018/texmf-dist/tex/latex/base/ts1enc.dfu))))
+(c:/texlive/2018/texmf-dist/tex/latex/xpatch/xpatch.sty
+(c:/texlive/2018/texmf-dist/tex/latex/l3kernel/expl3.sty
+(c:/texlive/2018/texmf-dist/tex/latex/l3kernel/expl3-code.tex)
+(c:/texlive/2018/texmf-dist/tex/latex/l3kernel/l3pdfmode.def))
+(c:/texlive/2018/texmf-dist/tex/latex/l3packages/xparse/xparse.sty))
+(c:/texlive/2018/texmf-dist/tex/latex/ifplatform/ifplatform.sty
+(c:/texlive/2018/texmf-dist/tex/latex/tools/shellesc.sty)
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/infwarerr.sty)
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/ifluatex.sty)
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/ltxcmds.sty))
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/catchfile.sty
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/etexcmds.sty))
+
+Package ifplatform Warning: 
+    shell escape is disabled, so I can only detect \ifwindows.
+
+) (c:/texlive/2018/texmf-dist/tex/latex/oberdiek/letltxmacro.sty)
+(c:/texlive/2018/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty))
+(c:/texlive/2018/texmf-dist/tex/latex/comment/comment.sty
+Excluding comment 'comment') Excluding comment 'testing'
+Include comment 'warpall' Excluding comment 'warpHTML'
+Include comment 'warpprint' Excluding comment 'LWR@createlwarpmk'
+Excluding 'warpHTML' comment. Excluding 'warpHTML' comment.
+Including 'warpall' comment. Straight input of comment_print.cut.
+(./comment_print.cut) Excluding 'warpHTML' comment.
+Including 'warpall' comment. Straight input of comment_print.cut.
+(./comment_print.cut
+(c:/texlive/2018/texmf-dist/tex/latex/filecontents/filecontents.sty))
+Excluding 'warpHTML' comment. Including 'warpall' comment.
+Straight input of comment_print.cut. (./comment_print.cut
+(c:/texlive/2018/texmf-dist/tex/latex/environ/environ.sty
+(c:/texlive/2018/texmf-dist/tex/latex/trimspaces/trimspaces.sty)))
+Excluding 'warpHTML' comment. Including 'warpprint' comment.
+Straight input of comment_print.cut. (./comment_print.cut
+(c:/texlive/2018/texmf-dist/tex/latex/varwidth/varwidth.sty))
+Excluding 'warpHTML' comment. Excluding 'warpHTML' comment.
+Including 'warpall' comment. Straight input of comment_print.cut.
+(./comment_print.cut) Excluding 'warpHTML' comment.
+Excluding 'warpHTML' comment. Excluding 'warpHTML' comment.
+Including 'warpall' comment. Straight input of comment_print.cut.
+(./comment_print.cut) Excluding 'warpHTML' comment.
+Including 'warpall' comment. Straight input of comment_print.cut.
+(./comment_print.cut) Excluding 'warpHTML' comment.
+Excluding 'warpHTML' comment. Excluding 'warpHTML' comment.
+Including 'warpprint' comment. Straight input of comment_print.cut.
+(./comment_print.cut
+lwarp: generating configuration files
+) Including 'warpprint' comment. Straight input of comment_print.cut.
+(./comment_print.cut) Including 'warpprint' comment.
+Straight input of comment_print.cut. (./comment_print.cut)
+Including 'warpprint' comment. Straight input of comment_print.cut.
+(./comment_print.cut) Including 'warpprint' comment.
+Straight input of comment_print.cut. (./comment_print.cut)
+Including 'warpprint' comment. Straight input of comment_print.cut.
+(./comment_print.cut
+
+LaTeX Warning: Overwriting file `./lwarp.css'.
+
+
+) Including 'warpprint' comment. Straight input of comment_print.cut.
+(./comment_print.cut
+
+LaTeX Warning: Overwriting file `./lwarp_sagebrush.css'.
+
+
+) Including 'warpprint' comment. Straight input of comment_print.cut.
+(./comment_print.cut
+
+LaTeX Warning: Overwriting file `./lwarp_formal.css'.
+
+
+) Including 'warpprint' comment. Straight input of comment_print.cut.
+(./comment_print.cut
+
+LaTeX Warning: Overwriting file `./sample_project.css'.
+
+
+) Including 'warpprint' comment. Straight input of comment_print.cut.
+(./comment_print.cut
+
+LaTeX Warning: Writing file `./lwarp.ist'.
+
+
+) Including 'warpprint' comment. Straight input of comment_print.cut.
+(./comment_print.cut
+
+LaTeX Warning: Writing file `./lwarp.xdy'.
+
+
+) Including 'warpprint' comment. Straight input of comment_print.cut.
+(./comment_print.cut
+
+LaTeX Warning: Writing file `./lwarp_one_limage.txt'.
+
+
+) Including 'warpprint' comment. Straight input of comment_print.cut.
+(./comment_print.cut
+
+LaTeX Warning: Writing file `./lwarp_mathjax.txt'.
+
+
+) Excluding 'LWR@createlwarpmk' comment. Excluding 'warpHTML' comment.
+Excluding 'warpHTML' comment. Including 'warpall' comment.
+Straight input of comment_print.cut. (./comment_print.cut)
+Including 'warpall' comment. Straight input of comment_print.cut.
+(./comment_print.cut) Excluding 'warpHTML' comment.
+Excluding 'warpHTML' comment. Including 'warpall' comment.
+Straight input of comment_print.cut. (./comment_print.cut)
+Excluding 'warpHTML' comment. Excluding 'warpHTML' comment.
+Excluding 'warpHTML' comment. Including 'warpprint' comment.
+Straight input of comment_print.cut. (./comment_print.cut)
+Excluding 'warpHTML' comment. Excluding 'warpHTML' comment.
+Excluding 'warpHTML' comment. Including 'warpprint' comment.
+Straight input of comment_print.cut. (./comment_print.cut)
+Excluding 'warpHTML' comment. Including 'warpall' comment.
+Straight input of comment_print.cut. (./comment_print.cut)
+Excluding 'warpHTML' comment. Including 'warpprint' comment.
+Straight input of comment_print.cut. (./comment_print.cut)
+Excluding 'warpHTML' comment. Including 'warpprint' comment.
+Straight input of comment_print.cut. (./comment_print.cut)
+Excluding 'warpHTML' comment. Excluding 'warpHTML' comment.
+Excluding 'warpHTML' comment. Excluding 'warpHTML' comment.
+Including 'warpall' comment. Straight input of comment_print.cut.
+(./comment_print.cut) Excluding 'warpHTML' comment.
+Including 'warpprint' comment. Straight input of comment_print.cut.
+(./comment_print.cut) Excluding 'warpHTML' comment.
+Including 'warpall' comment. Straight input of comment_print.cut.
+(./comment_print.cut) Including 'warpall' comment.
+Straight input of comment_print.cut. (./comment_print.cut)
+Excluding 'warpHTML' comment. Excluding 'warpHTML' comment.
+Including 'warpprint' comment. Straight input of comment_print.cut.
+(./comment_print.cut) Including 'warpall' comment.
+Straight input of comment_print.cut. (./comment_print.cut)
+Excluding 'warpHTML' comment. Including 'warpprint' comment.
+Straight input of comment_print.cut. (./comment_print.cut)
+Excluding 'warpHTML' comment. Excluding 'warpHTML' comment.
+Including 'warpprint' comment. Straight input of comment_print.cut.
+(./comment_print.cut) Excluding 'warpHTML' comment.
+Including 'warpall' comment. Straight input of comment_print.cut.
+(./comment_print.cut) Excluding 'warpHTML' comment.
+Excluding 'warpHTML' comment. Excluding 'warpHTML' comment.
+Including 'warpall' comment. Straight input of comment_print.cut.
+(./comment_print.cut) Including 'warpall' comment.
+Straight input of comment_print.cut. (./comment_print.cut)
+Including 'warpprint' comment. Straight input of comment_print.cut.
+(./comment_print.cut) Excluding 'warpHTML' comment.
+Including 'warpall' comment. Straight input of comment_print.cut.
+(./comment_print.cut) Excluding 'warpHTML' comment.
+Including 'warpprint' comment. Straight input of comment_print.cut.
+(./comment_print.cut) Excluding 'warpHTML' comment.
+Including 'warpall' comment. Straight input of comment_print.cut.
+(./comment_print.cut) Excluding 'warpHTML' comment.
+Excluding 'warpHTML' comment. Including 'warpprint' comment.
+Straight input of comment_print.cut. (./comment_print.cut)
+Excluding 'warpHTML' comment. Excluding 'warpHTML' comment.
+Including 'warpall' comment. Straight input of comment_print.cut.
+(./comment_print.cut) Including 'warpall' comment.
+Straight input of comment_print.cut. (./comment_print.cut)
+Excluding 'warpHTML' comment. Excluding 'warpHTML' comment.
+Excluding 'warpHTML' comment. Excluding 'warpHTML' comment.
+Excluding 'warpHTML' comment. Excluding 'warpHTML' comment.
+Including 'warpall' comment. Straight input of comment_print.cut.
+(./comment_print.cut) Excluding 'warpHTML' comment.
+Including 'warpall' comment. Straight input of comment_print.cut.
+(./comment_print.cut) Excluding 'warpHTML' comment.
+Including 'warpprint' comment. Straight input of comment_print.cut.
+(./comment_print.cut) Excluding 'warpHTML' comment.
+Including 'warpall' comment. Straight input of comment_print.cut.
+(./comment_print.cut) Including 'warpall' comment.
+Straight input of comment_print.cut. (./comment_print.cut)
+Excluding 'warpHTML' comment. Excluding 'warpHTML' comment.
+Excluding 'warpHTML' comment. Excluding 'warpHTML' comment.
+Including 'warpall' comment. Straight input of comment_print.cut.
+(./comment_print.cut) Excluding 'warpHTML' comment.
+Excluding 'warpHTML' comment. Including 'warpprint' comment.
+Straight input of comment_print.cut. (./comment_print.cut)
+Including 'warpall' comment. Straight input of comment_print.cut.
+(./comment_print.cut) Excluding 'warpHTML' comment.
+Excluding 'warpHTML' comment. Including 'warpall' comment.
+Straight input of comment_print.cut. (./comment_print.cut)
+Excluding 'warpHTML' comment. Including 'warpprint' comment.
+Straight input of comment_print.cut. (./comment_print.cut)
+Excluding 'warpHTML' comment. Excluding 'warpHTML' comment.
+Including 'warpall' comment. Straight input of comment_print.cut.
+(./comment_print.cut) Excluding 'warpHTML' comment.
+Including 'warpprint' comment. Straight input of comment_print.cut.
+(./comment_print.cut) Excluding 'warpHTML' comment.
+Excluding 'warpHTML' comment. Excluding 'warpHTML' comment.
+Including 'warpprint' comment. Straight input of comment_print.cut.
+(./comment_print.cut) Including 'warpall' comment.
+Straight input of comment_print.cut. (./comment_print.cut)
+Including 'warpprint' comment. Straight input of comment_print.cut.
+(./comment_print.cut) Excluding 'warpHTML' comment.
+Excluding 'warpHTML' comment. Excluding 'warpHTML' comment.
+Including 'warpprint' comment. Straight input of comment_print.cut.
+(./comment_print.cut) Excluding 'warpHTML' comment.
+Including 'warpall' comment. Straight input of comment_print.cut.
+(./comment_print.cut) Excluding 'warpHTML' comment.
+Including 'warpall' comment. Straight input of comment_print.cut.
+(./comment_print.cut) Excluding 'warpHTML' comment.
+Excluding 'warpHTML' comment. Excluding 'warpHTML' comment.
+Excluding 'warpHTML' comment. Excluding 'warpHTML' comment.
+Excluding 'warpHTML' comment. Including 'warpprint' comment.
+Straight input of comment_print.cut. (./comment_print.cut)
+Excluding 'warpHTML' comment. Excluding 'warpHTML' comment.
+Excluding 'warpHTML' comment.)
+(c:/texlive/2018/texmf-dist/tex/latex/base/makeidx.sty)
+Writing index file main_html.idx
+) (c:/texlive/2018/texmf-dist/tex/latex/graphics/graphicx.sty
+(c:/texlive/2018/texmf-dist/tex/latex/graphics/graphics.sty
+(c:/texlive/2018/texmf-dist/tex/latex/graphics/trig.sty)
+(c:/texlive/2018/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)
+(c:/texlive/2018/texmf-dist/tex/latex/graphics-def/pdftex.def)))
+(c:/texlive/2018/texmf-dist/tex/latex/booktabs/booktabs.sty)
+(c:/texlive/2018/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(c:/texlive/2018/texmf-dist/tex/latex/amsmath/amstext.sty
+(c:/texlive/2018/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(c:/texlive/2018/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(c:/texlive/2018/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(c:/texlive/2018/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(c:/texlive/2018/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
+(c:/texlive/2018/texmf-dist/tex/latex/url/url.sty)
+(c:/texlive/2018/texmf-dist/tex/latex/graphics/color.sty
+(c:/texlive/2018/texmf-dist/tex/latex/graphics-cfg/color.cfg)) (./sprmacros.sty
+) (c:/texlive/2018/texmf-dist/tex/latex/fancybox/fancybox.sty
+Style option: `fancybox' v1.4 <2010/05/15> (tvz)
+) (c:/texlive/2018/texmf-dist/tex/latex/framed/framed.sty)
+(c:/texlive/2018/texmf-dist/tex/latex/tools/longtable.sty)
+(c:/texlive/2018/texmf-dist/tex/latex/tools/bm.sty)
+(c:/texlive/2018/texmf-dist/tex/latex/base/ifthen.sty)
+(c:/texlive/2018/texmf-dist/tex/latex/setspace/setspace.sty)
+(./lwarp_preamble_last.tex
+(c:/texlive/2018/texmf-dist/tex/latex/hyperref/hyperref.sty
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty))
+(c:/texlive/2018/texmf-dist/tex/generic/ifxetex/ifxetex.sty)
+(c:/texlive/2018/texmf-dist/tex/latex/oberdiek/auxhook.sty)
+(c:/texlive/2018/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(c:/texlive/2018/texmf-dist/tex/latex/latexconfig/hyperref.cfg))
+(c:/texlive/2018/texmf-dist/tex/latex/hyperref/hpdftex.def
+(c:/texlive/2018/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty))
+(c:/texlive/2018/texmf-dist/tex/latex/cleveref/cleveref.sty))
+No file main_html.aux.
+(c:/texlive/2018/texmf-dist/tex/latex/base/ts1cmr.fd)
+(c:/texlive/2018/texmf-dist/tex/latex/lm/t1lmr.fd)
+(c:/texlive/2018/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.enc)
+(c:/texlive/2018/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.chr)
+(c:/texlive/2018/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (c:/texlive/2018/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+(c:/texlive/2018/texmf-dist/tex/latex/oberdiek/grfext.sty)
+(c:/texlive/2018/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+(c:/texlive/2018/texmf-dist/tex/latex/hyperref/nameref.sty
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/gettitlestring.sty))
+(c:/texlive/2018/texmf-dist/tex/latex/lm/ot1lmr.fd)
+(c:/texlive/2018/texmf-dist/tex/latex/lm/omllmm.fd)
+(c:/texlive/2018/texmf-dist/tex/latex/lm/omslmsy.fd)
+(c:/texlive/2018/texmf-dist/tex/latex/lm/omxlmex.fd)
+(c:/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd)
+(c:/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd) [1{c:/texlive/2018/texm
+f-var/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] [4] (./chapters.tex [5]
+[6]
+Chapter 1.
+(./intro.tex) [7] [8]
+Chapter 2.
+(./getstarted.tex (c:/texlive/2018/texmf-dist/tex/latex/lm/t1lmtt.fd) [9]
+
+LaTeX Warning: Reference `fig_libbuild' on page 10 undefined on input line 59.
+
+
+LaTeX Warning: Reference `table_solution_config' on page 10 undefined on input 
+line 62.
+
+(c:/texlive/2018/texmf-dist/tex/latex/lm/ts1lmr.fd) [10 <./fig/libbuild-eps-con
+verted-to.pdf>] [11]
+
+LaTeX Warning: Reference `table_simplest_code' on page 12 undefined on input li
+ne 202.
+
+
+Overfull \hbox (41.61064pt too wide) in paragraph at lines 202--203
+\C70/mc/m/n/10/4f \ \C70/mc/m/n/10/62 ^^P \C70/mc/m/n/10 W _[]$\T1/lmtt/m/n/10 
+main . cpp$[]\C70/mc/m/n/10 k\T1/lmr/m/n/10 Table[]\C70/mc/m/n/10 k \C70/mc/m/n
+/10/79 : \C70/mc/m/n/10 Y ≥ ¸ … í \C70/mc/m/n/10/66 ¯ \C70/mc/m/n/10 M \C70/mc/
+m/n/10/8f º \C70/mc/m/n/10 ì g O ` U D|\C70/mc/m/n/10/ff ^^N| \C70/mc/m/n/10 S 
+å L\T1/lmr/m/n/10 Springhead\C70/mc/m/n/10 í
+
+Underfull \vbox (badness 10000) has occurred while \output is active [12 <./fig
+/newproject1-eps-converted-to.pdf> <./fig/newproject2-eps-converted-to.pdf>]
+
+LaTeX Warning: Reference `libbuild' on page 13 undefined on input line 243.
+
+
+LaTeX Warning: Reference `fig_newproject4' on page 13 undefined on input line 2
+46.
+
+
+LaTeX Warning: Reference `fig_newproject5' on page 13 undefined on input line 2
+47.
+
+[13 <./fig/newproject3-eps-converted-to.pdf> <./fig/newproject4-eps-converted-t
+o.pdf>]
+
+LaTeX Warning: Reference `fig_newproject8' on page 14 undefined on input line 2
+59.
+
+)
+Overfull \hbox (2.44568pt too wide) in paragraph at lines 258--8
+\C70/mc/m/n/10/4e Â 
+ \C70/mc/m/n/10 g \C70/mc/m/n/10/6e ñ \C70/mc/m/n/10/50 ô \C70/mc/m/n/10/5b å \
+C70/mc/m/n/10/4e Ü \C70/mc/m/n/10 g Y|\C70/mc/m/n/10/ff ^^N| \C70/mc/m/n/10 ” Î
+ …\T1/lmr/m/n/10 (F7)\C70/mc/m/n/10 W f|\C70/mc/m/n/10/ff ^^L| \C70/mc/m/n/10/5
+b ü \C70/mc/m/n/10/88 L\T1/lmr/m/n/10 (F5)\C70/mc/m/n/10 W f ^^? f O ` U D|\C70
+/mc/m/n/10/ff ^^N|  \T1/lmr/m/n/10 Fig.[]\C70/mc/m/n/10 n
+
+Underfull \vbox (badness 10000) has occurred while \output is active [14 <./fig
+/newproject5-eps-converted-to.pdf> <./fig/newproject6_truncate-eps-converted-to
+.pdf> <./fig/newproject7_truncate-eps-converted-to.pdf>] [15 <./fig/newproject8
+-eps-converted-to.pdf>] [16]
+Chapter 3.
+(./structure.tex
+
+LaTeX Warning: Reference `fig_filetree' on page 17 undefined on input line 11.
+
+
+Overfull \hbox (32.34682pt too wide) in paragraph at lines 18--34
+[][] 
+
+LaTeX Warning: Reference `table_modules' on page 17 undefined on input line 57.
+
+
+
+LaTeX Warning: Reference `table_dependency' on page 17 undefined on input line 
+58.
+
+
+LaTeX Warning: Reference `table_modules' on page 17 undefined on input line 66.
+
+
+
+Underfull \vbox (badness 2261) has occurred while \output is active [17]
+[18 <./fig/filetree-eps-converted-to.pdf>] [19]) [20]
+Chapter 4.
+(./base.tex
+
+LaTeX Warning: Reference `table_matrix' on page 21 undefined on input line 23.
+
+[21] [22] [23]
+Overfull \hbox (6.4327pt too wide) in paragraph at lines 156--156
+[]                                  \T1/lmtt/m/n/9 // one can specify 'y' and '
+z' too[]  
+
+Overfull \hbox (6.4327pt too wide) in paragraph at lines 156--156
+[]\T1/lmtt/m/n/9 M = Matrix3d::Rot(theta, axis);   // rotation along arbitrary 
+vector[]  
+[24]
+Overfull \hbox (20.60767pt too wide) in paragraph at lines 211--211
+[]\T1/lmtt/m/n/9 q0 = Quaterniond::Rot(Rad(30.0), 'x');   // 30deg rotation alo
+ng x-axis[]  
+
+Overfull \hbox (30.05765pt too wide) in paragraph at lines 211--211
+[]\T1/lmtt/m/n/9 q1 = Quaterniond::Rot(Rad(-90.0), 'y');  // -90deg rotationt a
+long y-axis[]  
+[25] [26]
+Overfull \hbox (9.49962pt too wide) in paragraph at lines 286--289
+\C70/mc/m/n/10 J à s\T1/lmtt/m/n/10 Affine[f|d]\C70/mc/m/n/10/57 ã \C70/mc/m/n/
+10 o \C70/mc/m/n/10/53 X \C70/mc/m/n/10 M \C70/mc/m/n/10 L \C70/mc/m/n/10 ^^W \
+C70/mc/m/n/10 k \C70/mc/m/n/10 ^^] \C70/mc/m/n/10/67 ^^_ \C70/mc/m/n/10/53 ^^V 
+\C70/mc/m/n/10 U å ~ Y|\C70/mc/m/n/10/ff ^^N| \C70/mc/m/n/10 ~ _|\C70/mc/m/n/10
+/ff ^^L| \T1/lmtt/m/n/10 Quaternion[f|d]\C70/mc/m/n/10 o
+) [27] [28]
+Chapter 5.
+(./foundation.tex
+
+LaTeX Warning: Reference `fig_utclass' on page 29 undefined on input line 28.
+
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 32--54
+[] 
+
+Underfull \vbox (badness 10000) has occurred while \output is active [29]
+Overfull \hbox (12.0pt too wide) in paragraph at lines 60--70
+[]
+[30 <./fig/utclass-eps-converted-to.pdf>]
+Overfull \hbox (12.0pt too wide) in paragraph at lines 75--89
+[] 
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 93--101
+[] 
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 108--117
+[] 
+[31]
+Overfull \hbox (10.70769pt too wide) in paragraph at lines 186--186
+[]        \T1/lmtt/m/n/9 phScene->Step();                                      
+  // \C70/gt/m/n/9/4e Ó 
+
+Overfull \hbox (5.9827pt too wide) in paragraph at lines 186--186
+[]        \T1/lmtt/m/n/9 states->ReleaseState();                               
+ // \C70/gt/m/n/9/30 · 
+
+Overfull \hbox (10.70769pt too wide) in paragraph at lines 186--186
+[]        \T1/lmtt/m/n/9 phScene->Step();                                      
+  // \C70/gt/m/n/9/67 , 
+[32]
+Overfull \hbox (41.52669pt too wide) in paragraph at lines 189--191
+\T1/lmr/m/n/10 Springhead\C70/mc/m/n/10 n ∑ ¸ Û\T1/lmr/m/n/10 (PHScene\C70/mc/m
+/n/10 Ñ\T1/lmr/m/n/10 CRScene)\C70/mc/m/n/10 o|^^A| \C70/mc/m/n/10/89 ^^G \C70/
+mc/m/n/10/65 p \C70/mc/m/n/10 n ® Û ∏ Û\T1/lmr/m/n/10 (PHEngine\C70/mc/m/n/10 Ñ
+\T1/lmr/m/n/10 CREngine\C70/mc/m/n/10 n
+)
+Overfull \hbox (7.49895pt too wide) in paragraph at lines 193--20
+\T1/lmtt/m/n/10 SaveState(), LoadState()\C70/mc/m/n/10 ` Q g j O|^^A| \T1/lmtt/
+m/n/10 ObjectStatesIf::ReleaseState()\C70/mc/m/n/10 Ç
+[33] [34]
+Chapter 6.
+(./collision.tex
+
+LaTeX Warning: Reference `fig_cdclass' on page 35 undefined on input line 17.
+
+
+LaTeX Warning: Reference `chap_physics' on page 35 undefined on input line 42.
+
+[35]
+
+LaTeX Warning: Reference `chap_physics' on page 36 undefined on input line 56.
+
+[36 <./fig/cdclass-eps-converted-to.pdf>]
+
+LaTeX Warning: Reference `fig_cdbox' on page 37 undefined on input line 91.
+
+
+LaTeX Warning: Reference `fig_cdsphere' on page 37 undefined on input line 117.
+
+
+
+LaTeX Warning: Reference `fig_cdcapsule' on page 37 undefined on input line 143
+.
+
+[37 <./fig/cdbox-eps-converted-to.pdf>]
+
+LaTeX Warning: Reference `fig_cdroundcone' on page 38 undefined on input line 1
+73.
+
+
+Underfull \vbox (badness 6252) has occurred while \output is active [38 <./fig/
+cdsphere-eps-converted-to.pdf> <./fig/cdcapsule-eps-converted-to.pdf>]
+
+LaTeX Warning: Reference `fig_cdconvexmesh' on page 39 undefined on input line 
+206.
+
+[39 <./fig/cdroundcone-eps-converted-to.pdf>]
+Overfull \hbox (1.99956pt too wide) in paragraph at lines 250--252
+\C70/mc/m/n/10 ∂ \C70/mc/m/n/10 n \C70/mc/m/n/10/57 ˙ \C70/mc/m/n/10/67 , \C70/
+mc/m/n/10 Ø È π g B ã\T1/lmtt/m/n/10 CDShape\C70/mc/m/n/10 n « £ π Ø Í ◊ ø\T1/l
+mtt/m/n/10 CDShapeDesc\C70/mc/m/n/10 o\T1/lmtt/m/n/10 PHMaterial\C70/mc/m/n/10/
+57 ã
+
+Underfull \vbox (badness 2221) has occurred while \output is active [40 <./fig/
+cdconvexmesh-eps-converted-to.pdf>]
+
+LaTeX Warning: Reference `sec_physics_contact' on page 41 undefined on input li
+ne 291.
+
+[41]) [42]
+Chapter 7.
+(./physics.tex
+Overfull \hbox (0.75195pt too wide) in paragraph at lines 27--27
+[]\T1/lmtt/m/n/10 CDShapeIf*| 
+
+Overfull \hbox (0.75195pt too wide) in paragraph at lines 28--28
+[]\T1/lmtt/m/n/10 CDShapeIf*| 
+
+Overfull \hbox (1.4979pt too wide) in paragraph at lines 25--31
+ [] 
+
+LaTeX Warning: Reference `chap_collision' on page 43 undefined on input line 34
+.
+
+[43]
+Overfull \hbox (0.75195pt too wide) in paragraph at lines 47--47
+[]\T1/lmtt/m/n/10 PHSceneIf*| 
+
+Overfull \hbox (0.75195pt too wide) in paragraph at lines 49--49
+[]\T1/lmtt/m/n/10 PHSceneIf*| 
+
+Underfull \hbox (badness 10000) in paragraph at lines 50--50
+[]\T1/lmtt/m/n/10 MergeScene(PHSceneIf* scene0,
+
+Overfull \hbox (1.4979pt too wide) in paragraph at lines 45--52
+ [] 
+
+Overfull \hbox (14.22198pt too wide) in paragraph at lines 58--60
+[]\C70/mc/m/n/10 ^^U \C70/mc/m/n/10/65 p \C70/mc/m/n/10 k « £ π Ø Í ◊ ø í \C70/
+mc/m/n/10/63 ^^G \C70/mc/m/n/10 ö \C70/mc/m/n/10 Y ã S h Ç g M ~ Y|\C70/mc/m/n/
+10/ff ^^N|  \T1/lmtt/m/n/10 MergeScene\C70/mc/m/n/10 o|\C70/mc/m/n/10/ff ^^L| \
+T1/lmtt/m/n/10 scene1\C70/mc/m/n/10 L
+
+Overfull \hbox (1.4979pt too wide) in paragraph at lines 65--73
+ [] 
+
+Overfull \hbox (1.4979pt too wide) in paragraph at lines 76--89
+ [] 
+
+Underfull \vbox (badness 6477) has occurred while \output is active [44]
+Overfull \hbox (21.02745pt too wide) in paragraph at lines 99--102
+\C70/mc/m/n/10 ∆ √ ◊ k \C70/mc/m/n/10/54 ^^D \C70/mc/m/n/10 [ \C70/mc/m/n/10 S 
+\C70/mc/m/n/10 n \C70/mc/m/n/10/90 ^^_ \C70/mc/m/n/10 ¶ \C70/mc/m/n/10 k \C70/m
+c/m/n/10/63 õ \C70/mc/m/n/10 Q â å ã \C70/mc/m/n/10 ¬ \C70/mc/m/n/10/65 p \C70/
+mc/m/n/10 g Y|\C70/mc/m/n/10/ff ^^N| \C70/mc/m/n/10 ã \C70/mc/m/n/10 H p\T1/lmt
+t/m/n/10 airRegistanceRate\C70/mc/m/n/10 L$\OT1/lmr/m/n/10 0\OML/lmm/m/it/10 :\
+OT1/lmr/m/n/10 95$\C70/mc/m/n/10 g
+
+Overfull \hbox (1.4979pt too wide) in paragraph at lines 111--115
+ [] 
+
+Overfull \hbox (0.75195pt too wide) in paragraph at lines 134--134
+[]\T1/lmtt/m/n/10 PHSolidIf*| 
+
+Underfull \hbox (badness 10000) in paragraph at lines 134--134
+[]\T1/lmtt/m/n/10 CreateSolid(const
+
+Overfull \hbox (6.00194pt too wide) in paragraph at lines 136--136
+[]\T1/lmtt/m/n/10 PHSolidIf**| 
+
+Overfull \hbox (1.4979pt too wide) in paragraph at lines 132--138
+ [] 
+[45]
+Overfull \hbox (1.4979pt too wide) in paragraph at lines 157--164
+ [] 
+
+Overfull \hbox (1.4979pt too wide) in paragraph at lines 167--181
+ [] 
+
+Overfull \hbox (22.24973pt too wide) in paragraph at lines 183--190
+\C70/mc/m/n/10 n \C70/mc/m/n/10 [ \C70/mc/m/n/10 S \C70/mc/m/n/10 L \C70/mc/m/n
+/10 i \C70/mc/m/n/10/74 ^^F \C70/mc/m/n/10/6c ’ \C70/mc/m/n/10 G \C70/mc/m/n/10
+ k \C70/mc/m/n/10 ì \C70/mc/m/n/10 F K i F K í \C70/mc/m/n/10/63 ^^G \C70/mc/m/
+n/10 ö \C70/mc/m/n/10 Y ã ’ È ∞ g Y|\C70/mc/m/n/10/ff ^^N| \C70/mc/m/n/10 Ç W\T
+1/lmtt/m/n/10 dynamical\C70/mc/m/n/10 L\T1/lmtt/m/n/10 true\C70/mc/m/n/10 n
+[46]
+Overfull \hbox (1.4979pt too wide) in paragraph at lines 195--201
+ [] 
+
+Underfull \hbox (badness 10000) in paragraph at lines 217--217
+[]\T1/lmtt/m/n/10 SetOrientation(const
+
+Overfull \hbox (1.4979pt too wide) in paragraph at lines 204--219
+ [] 
+[47]
+Overfull \hbox (1.4979pt too wide) in paragraph at lines 241--249
+ [] 
+
+LaTeX Warning: Reference `fig_phconstraint' on page 48 undefined on input line 
+288.
+
+[48]
+Overfull \hbox (73.4998pt too wide) in paragraph at lines 308--311
+[]\C70/mc/m/n/10 \ \C70/mc/m/n/10 ^^P \C70/mc/m/n/10 W _ D \C70/mc/m/n/10/95 ¢ 
+\C70/mc/m/n/10 ¿ \C70/mc/m/n/10 n \C70/mc/m/n/10/7a . \C70/mc/m/n/10/98 ^ \C70/
+mc/m/n/10 k \C70/mc/m/n/10 ‹ \C70/mc/m/n/10 X _ « £ π Ø Í ◊ ø í \C70/mc/m/n/10 
+\ \C70/mc/m/n/10 ^^P \C70/mc/m/n/10 W|\C70/mc/m/n/10/ff ^^L| \C70/mc/m/n/10 S å
+ í\T1/lmtt/m/n/10 PHScene\C70/mc/m/n/10 n\T1/lmtt/m/n/10 CreateJoint\C70/mc/m/n
+/10/95 ¢
+
+Overfull \hbox (0.75195pt too wide) in paragraph at lines 317--317
+[]\T1/lmtt/m/n/10 PHJointIf*| 
+
+Underfull \hbox (badness 10000) in paragraph at lines 317--317
+[]\T1/lmtt/m/n/10 CreateJoint(PHSolidIf*, PHSolidIf*, const
+
+Overfull \hbox (0.75195pt too wide) in paragraph at lines 319--319
+[]\T1/lmtt/m/n/10 PHJointIf*| 
+
+Overfull \hbox (1.4979pt too wide) in paragraph at lines 315--321
+ [] 
+[49 <./fig/phconstraint-eps-converted-to.pdf>]
+
+LaTeX Warning: Reference `fig_socket_plug' on page 50 undefined on input line 3
+50.
+
+
+LaTeX Warning: Reference `fig_socket_plug' on page 50 undefined on input line 3
+51.
+
+
+Overfull \hbox (1.4979pt too wide) in paragraph at lines 358--363
+ [] 
+
+Overfull \hbox (0.75195pt too wide) in paragraph at lines 368--368
+[]\T1/lmtt/m/n/10 PHSolidIf*| 
+
+Overfull \hbox (0.75195pt too wide) in paragraph at lines 369--369
+[]\T1/lmtt/m/n/10 PHSolidIf*| 
+
+Underfull \hbox (badness 10000) in paragraph at lines 375--375
+[]\T1/lmtt/m/n/10 GetRelativeVelocity(Vec3d&,
+
+Underfull \hbox (badness 10000) in paragraph at lines 376--376
+[]\T1/lmtt/m/n/10 GetConstraintForce(Vec3d&,
+
+Overfull \hbox (1.4979pt too wide) in paragraph at lines 366--378
+ [] 
+[50 <./fig/socket_plug1-eps-converted-to.pdf> <./fig/socket_plug2-eps-converted
+-to.pdf>]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: Reference `fig_phhingejoint' on page 51 undefined on input line 
+419.
+
+[51] (c:/texlive/2018/texmf-dist/tex/latex/lm/t1lmss.fd)
+
+LaTeX Warning: Reference `fig_phsliderjoint' on page 52 undefined on input line
+ 439.
+
+[52 <./fig/phhingejoint-eps-converted-to.pdf> <./fig/phsliderjoint-eps-converte
+d-to.pdf>]
+
+LaTeX Warning: Reference `fig_phballjoint' on page 53 undefined on input line 4
+69.
+
+
+Overfull \hbox (13.6117pt too wide) in paragraph at lines 468--471
+[]\C70/mc/m/n/10 ‹ ¸ Î ∏ Á § Û » o$\OT1/lmr/m/n/10 3$\C70/mc/m/n/10/81 Í \C70/m
+c/m/n/10/75 1 \C70/mc/m/n/10 ¶ \C70/mc/m/n/10 n \C70/mc/m/n/10/56 ﬁ \C70/mc/m/n
+/10/8e ‚ \C70/mc/m/n/10 ¢ \C70/mc/m/n/10 ¿ \C70/mc/m/n/10 g Y|\C70/mc/m/n/10/ff
+ ^^N| \C70/mc/m/n/10 ‹ ¸ Î ∏ Á § Û » o\T1/lmr/m/n/10 Fig[](a)\C70/mc/m/n/10 k
+
+LaTeX Warning: Reference `fig_phballjoint' on page 53 undefined on input line 4
+72.
+
+
+Overfull \hbox (2.66606pt too wide) in paragraph at lines 472--474
+[]\C70/mc/m/n/10/4e ^^@ \C70/mc/m/n/10/65 π \C70/mc/m/n/10 g|\C70/mc/m/n/10/ff 
+^^L| \C70/mc/m/n/10 ‹ ¸ Î ∏ Á § Û » n \C70/mc/m/n/10/59 	 \C70/mc/m/n/10 M \C70
+/mc/m/n/10 o ™ § È ¸ \C70/mc/m/n/10/89 “ \C70/mc/m/n/10 n \C70/mc/m/n/10/4e ^^@
+ \C70/mc/m/n/10/7a . \C70/mc/m/n/10 g B ã\T1/lmr/m/n/10 Swing-Twist\C70/mc/m/n/
+10 ß
+[53 <./fig/phballjoint-eps-converted-to.pdf> <./fig/swingtwist-eps-converted-to
+.pdf>]
+Overfull \hbox (1.4979pt too wide) in paragraph at lines 512--516
+ [] 
+
+Overfull \hbox (1.4979pt too wide) in paragraph at lines 519--524
+ [] 
+
+Overfull \hbox (1.4979pt too wide) in paragraph at lines 539--548
+ [] 
+[54 <./fig/phspring-eps-converted-to.pdf>]
+Overfull \hbox (1.4979pt too wide) in alignment at lines 551--567
+ [] [] [] 
+[55] [56]
+
+LaTeX Warning: Reference `fig_phballjoint' on page 57 undefined on input line 6
+70.
+
+[57] [58 <./fig/ikexample3link-eps-converted-to.pdf>] [59]
+Overfull \hbox (4.38869pt too wide) in paragraph at lines 837--838
+[]\C70/mc/m/n/10 í \C70/mc/m/n/10 ü \C70/mc/m/n/10 L \C70/mc/m/n/10 Y ã S h g \
+C70/mc/m/n/10/67 	 \C70/mc/m/n/10 π \C70/mc/m/n/10 h j ä ~ Y|\C70/mc/m/n/10/ff 
+^^N| \T1/lmtt/m/n/10 GetIKEngine()\C70/mc/m/n/10 o|\C70/mc/m/n/10/ff ^^L| \T1/l
+mtt/m/n/10 PHScene\C70/mc/m/n/10 L \C70/mc/m/n/10/63 ^^A \C70/mc/m/n/10 d\T1/lm
+r/m/n/10 IK\C70/mc/m/n/10 ®
+[60 <./fig/ikexample3linkobjects-eps-converted-to.pdf>] [61]
+Overfull \hbox (33.24954pt too wide) in paragraph at lines 903--904
+\C70/mc/m/n/10/75 ( \C70/mc/m/n/10 D ~ Y|\C70/mc/m/n/10/ff ^^N| \C70/mc/m/n/10 
+^^U \C70/mc/m/n/10/65 p \C70/mc/m/n/10 o ¢ Ø ¡ Â ® ¸ ø n « £ π Ø Í ◊ ø g Y|\C70
+/mc/m/n/10/ff ^^N| \T1/lmtt/m/n/10 PHIKHingeActuatorDesc\C70/mc/m/n/10/57 ã
+
+Overfull \hbox (68.99977pt too wide) in paragraph at lines 903--904
+\C70/mc/m/n/10 n « £ π Ø Í ◊ ø í \C70/mc/m/n/10/6e ! \C70/mc/m/n/10 Y h “ Û ∏ \
+C70/mc/m/n/10/75 ( \C70/mc/m/n/10 n ¢ Ø ¡ Â ® ¸ ø L \C70/mc/m/n/10 \ \C70/mc/m/
+n/10 ^^P \C70/mc/m/n/10 U å|\C70/mc/m/n/10/ff ^^L| \T1/lmtt/m/n/10 PHIKBallActu
+atorDesc\C70/mc/m/n/10/57 ã
+
+Overfull \hbox (54.6388pt too wide) in paragraph at lines 939--941
+\C70/mc/m/n/10 ¢ \C70/mc/m/n/10 ¿ \C70/mc/m/n/10 n \C70/mc/m/n/10 K \C70/mc/m/n
+/10 ’ \C70/mc/m/n/10 o|\C70/mc/m/n/10/ff ^^L| \T1/lmr/m/n/10 IK\C70/mc/m/n/10/6
+a _ \C70/mc/m/n/10/80 ˝ \C70/mc/m/n/10 k à c f \C70/mc/m/n/10 ^^H \C70/mc/m/n/1
+0 ó \C70/mc/m/n/10 U å _ \C70/mc/m/n/10/76 Ó \C70/mc/m/n/10/6a ^^Y \C70/mc/m/n/
+10 ¢ \C70/mc/m/n/10 ¿ \C70/mc/m/n/10/89 “ \C70/mc/m/n/10 ^^_ \C70/mc/m/n/10 ¶ \
+C70/mc/m/n/10 í \C70/mc/m/n/10 ¢ \C70/mc/m/n/10 ¿ \C70/mc/m/n/10 k\T1/lmtt/m/n/
+10 SetTargetVelocity\C70/mc/m/n/10 Y
+[62 <./fig/ikexample5link-eps-converted-to.pdf>] [63]
+Overfull \hbox (15.88268pt too wide) in paragraph at lines 1019--1019
+[]\T1/lmtt/m/n/9 ikEndEffector->SetTargetOrientation( Quaterniond::Rot('x', rad
+(30)) );[]  
+
+Overfull \hbox (5.24939pt too wide) in paragraph at lines 1022--1023
+[]\T1/lmtt/m/n/10 EnablePositionControl\C70/mc/m/n/10 J à s\T1/lmtt/m/n/10 Enab
+leOrientationControl\C70/mc/m/n/10 í \C70/mc/m/n/10/75 ( \C70/mc/m/n/10 D ã h|\
+C70/mc/m/n/10/ff ^^L| \C70/mc/m/n/10 M
+[64]
+
+LaTeX Warning: Reference `sec_physics_scene' on page 65 undefined on input line
+ 1063.
+
+
+LaTeX Warning: Reference `fig_physics_contact' on page 65 undefined on input li
+ne 1065.
+
+[65 <./fig/phcontact-eps-converted-to.pdf>]
+Overfull \hbox (36.0pt too wide) in alignment at lines 1120--1128
+ [] [] [] 
+[66]
+Overfull \hbox (36.0pt too wide) in alignment at lines 1132--1140
+ [] [] [] 
+[67]
+Overfull \hbox (3.99944pt too wide) in paragraph at lines 1184--1191
+\C70/mc/m/n/10 k\T1/lmtt/m/n/10 PHConstraintIf::GetConstraintForce\C70/mc/m/n/1
+0 g \C70/mc/m/n/10 • \C70/mc/m/n/10 Ê \C70/mc/m/n/10 õ \C70/mc/m/n/10 n \C70/mc
+/m/n/10/4e & \C70/mc/m/n/10 2 \C70/mc/m/n/10 õ\T1/lmtt/m/n/10 f\C70/mc/m/n/10 h
+ ‚ ¸ · Û »\T1/lmtt/m/n/10 t\C70/mc/m/n/10 í
+
+Overfull \hbox (24.0pt too wide) in alignment at lines 1201--1207
+ [] [] 
+
+Overfull \hbox (24.0pt too wide) in alignment at lines 1217--1222
+ [] [] 
+[68]
+Overfull \hbox (12.75056pt too wide) in paragraph at lines 1263--1263
+[]|\T1/lmtt/m/n/10 SetContactCorrectionRate(double)| 
+
+Overfull \hbox (1.4979pt too wide) in alignment at lines 1259--1265
+ [] [] [] 
+[69]
+
+LaTeX Warning: Reference `sec_physics_scene' on page 70 undefined on input line
+ 1273.
+
+
+LaTeX Warning: Reference `sec_physics_engine' on page 70 undefined on input lin
+e 1279.
+
+)
+Overfull \hbox (21.36021pt too wide) in paragraph at lines 1278--28
+[]\T1/lmtt/m/n/10 PHConstraintEngineIf::SetContactCorrectionRate\C70/mc/m/n/10 
+g \C70/mc/m/n/10 - \C70/mc/m/n/10 ö \C70/mc/m/n/10/53 Ô \C70/mc/m/n/10/80 ˝ \C7
+0/mc/m/n/10 g Y |\C70/mc/m/n/10/ff ^^H|\C70/mc/m/n/10 ,[]¿
+[70]
+Chapter 8.
+(./graphics.tex
+Overfull \hbox (21.5277pt too wide) in paragraph at lines 15--17
+\C70/mc/m/n/10 ^^Z \C70/mc/m/n/10 8 \C70/mc/m/n/10 S n \C70/mc/m/n/10/64 Õ \C70
+/mc/m/n/10 \ \C70/mc/m/n/10 o ◊ Ì ∞ È ‡ n \C70/mc/m/n/10 ^^] \C70/mc/m/n/10/67 
+^^_ \C70/mc/m/n/10/53 ^^V \C70/mc/m/n/10/66 B \C70/mc/m/n/10 k \C70/mc/m/n/10/4
+e ^^@ \C70/mc/m/n/10 ¶ \C70/mc/m/n/10 ` Q \C70/mc/m/n/10 ü \C70/mc/m/n/10 L \C7
+0/mc/m/n/10 W ~ Y|\C70/mc/m/n/10/ff ^^N| \C70/mc/m/n/10 ~ _|\C70/mc/m/n/10/ff ^
+^L| \T1/lmr/m/n/10 Framework\C70/mc/m/n/10 ‚
+
+Overfull \hbox (10.55508pt too wide) in paragraph at lines 32--35
+\C70/mc/m/n/10 n\T1/lmr/m/n/10 Springhead\C70/mc/m/n/10 g o\T1/lmr/m/n/10 OpenG
+L\C70/mc/m/n/10 k à ã \C70/mc/m/n/10 œ \C70/mc/m/n/10/75 ; \C70/mc/m/n/10 n ^^?
+ L µ › ¸ » U å f D ~ Y|\C70/mc/m/n/10/ff ^^N|  \T1/lmr/m/n/10 OpenGL\C70/mc/m/n
+/10/75 (
+
+Overfull \hbox (1.4979pt too wide) in paragraph at lines 39--44
+ [] 
+[71]
+Overfull \hbox (1.4979pt too wide) in paragraph at lines 47--52
+ [] 
+
+LaTeX Warning: Reference `fig_grscene' on page 72 undefined on input line 80.
+
+
+Overfull \hbox (0.75195pt too wide) in paragraph at lines 87--87
+[]\T1/lmtt/m/n/10 GRSceneIf*| 
+
+Overfull \hbox (0.75195pt too wide) in paragraph at lines 88--88
+[]\T1/lmtt/m/n/10 GRSceneIf*| 
+
+Underfull \hbox (badness 10000) in paragraph at lines 90--90
+[]\T1/lmtt/m/n/10 MergeScene(GRSceneIf*,
+
+Overfull \hbox (1.4979pt too wide) in paragraph at lines 85--92
+ [] 
+[72]
+Overfull \hbox (0.75195pt too wide) in paragraph at lines 111--111
+[]\T1/lmtt/m/n/10 GRFrameIf*| 
+
+Overfull \hbox (6.00194pt too wide) in paragraph at lines 112--112
+[]\T1/lmtt/m/n/10 GRCameraIf*| 
+
+Underfull \hbox (badness 10000) in paragraph at lines 113--113
+[]\T1/lmtt/m/n/10 SetCamera(const
+
+Overfull \hbox (6.00194pt too wide) in paragraph at lines 114--114
+[]\T1/lmtt/m/n/10 GRVisualIf*| 
+
+Underfull \hbox (badness 10000) in paragraph at lines 114--114
+[]\T1/lmtt/m/n/10 CreateVisual(const
+
+Overfull \hbox (1.4979pt too wide) in paragraph at lines 109--117
+ [] 
+
+LaTeX Warning: Reference `fig_grscene' on page 73 undefined on input line 122.
+
+
+LaTeX Warning: Reference `fig_grscene' on page 73 undefined on input line 127.
+
+[73 <./fig/grscene-eps-converted-to.pdf>]
+Overfull \hbox (61.5687pt too wide) in paragraph at lines 137--140
+\C70/mc/m/n/10 œ \C70/mc/m/n/10/75 ; \C70/mc/m/n/10 Ê \C70/mc/m/n/10/74 ^^F \C7
+0/mc/m/n/10 o ◊ Ì ∞ È ‡ n \C70/mc/m/n/10 œ \C70/mc/m/n/10/75 ; \C70/mc/m/n/10 œ
+ Û … È g \C70/mc/m/n/10 L \C70/mc/m/n/10 D ~ Y|\C70/mc/m/n/10/ff ^^N| \T1/lmr/m
+/n/10 GLUT\C70/mc/m/n/10 í \C70/mc/m/n/10 ^^? \C70/mc/m/n/10 F \C70/mc/m/n/10 4
+ \C70/mc/m/n/10/54 ^^H \C70/mc/m/n/10 o\T1/lmtt/m/n/10 glutDisplayFunc\C70/mc/m
+/n/10 g
+
+Overfull \hbox (43.4717pt too wide) in paragraph at lines 157--159
+[]\T1/lmtt/m/n/10 BeginScene\C70/mc/m/n/10 h\T1/lmtt/m/n/10 EndScene\C70/mc/m/n
+/10 o ∑ ¸ Û n \C70/mc/m/n/10 œ \C70/mc/m/n/10/75 ; \C70/mc/m/n/10 n \C70/mc/m/n
+/10 M \C70/mc/m/n/10 å \C70/mc/m/n/10 g \C70/mc/m/n/10 ≈ \C70/mc/m/n/10 Z \C70/
+mc/m/n/10/54 | \C70/mc/m/n/10 s \C70/mc/m/n/10 ˙ \C70/mc/m/n/10 W ~ Y|\C70/mc/m
+/n/10/ff ^^N|  \T1/lmtt/m/n/10 SwapBuffers\C70/mc/m/n/10 o
+
+LaTeX Warning: Reference `fig_grvisual' on page 74 undefined on input line 176.
+
+
+
+Overfull \hbox (20.2219pt too wide) in paragraph at lines 175--178
+\C70/mc/m/n/10 ∑ ¸ Û ∞ È ’ í \C70/mc/m/n/10 À \C70/mc/m/n/10 ^^P \C70/mc/m/n/10
+ Y ã \C70/mc/m/n/10 œ \C70/mc/m/n/10/75 ; \C70/mc/m/n/10 ¢ § ∆ ‡ n \C70/mc/m/n/
+10/57 ˙ \C70/mc/m/n/10/67 , \C70/mc/m/n/10 Ø È π o\T1/lmtt/m/n/10 GRVisual\C70/
+mc/m/n/10 g Y|\C70/mc/m/n/10/ff ^^N|  \T1/lmtt/m/n/10 GRVisual\C70/mc/m/n/10 K
+
+Overfull \hbox (1.4979pt too wide) in paragraph at lines 180--187
+ [] 
+[74]
+Overfull \hbox (22.49893pt too wide) in paragraph at lines 211--211
+[]        \T1/lmtt/m/n/10 grScene->CreateVisual(desc, grScene->GetWorldFrame())
+->Cast();[] 
+
+Overfull \hbox (1.4979pt too wide) in paragraph at lines 224--231
+ [] 
+[75 <./fig/grvisual-eps-converted-to.pdf>]
+Overfull \hbox (1.4979pt too wide) in paragraph at lines 245--251
+ [] 
+
+Overfull \hbox (1.4979pt too wide) in paragraph at lines 284--291
+ [] 
+
+LaTeX Warning: Reference `fig_grcamera' on page 76 undefined on input line 293.
+
+
+[76]
+Overfull \hbox (0.75195pt too wide) in paragraph at lines 309--309
+[]\T1/lmtt/m/n/10 GRFrameIf*| 
+
+Overfull \hbox (1.4979pt too wide) in paragraph at lines 307--312
+ [] 
+
+LaTeX Warning: Reference `fig_grcamera' on page 77 undefined on input line 315.
+
+
+
+Overfull \hbox (11.61151pt too wide) in paragraph at lines 314--316
+[]\T1/lmtt/m/n/10 GetFrame|\C70/mc/m/n/10/ff ^^L| \T1/lmtt/m/n/10 SetFrame\C70/
+mc/m/n/10 ¢ \C70/mc/m/n/10/65 p \C70/mc/m/n/10 o ´ · È ’ Ï ¸ ‡ í \C70/mc/m/n/10
+/53 ÷ \C70/mc/m/n/10 ó\T1/lmr/m/n/10 /\C70/mc/m/n/10 - \C70/mc/m/n/10 ö \C70/mc
+/m/n/10 W ~ Y|\C70/mc/m/n/10/ff ^^N|  \T1/lmr/m/n/10 Fig.[](a)\C70/mc/m/n/10 n
+
+Overfull \hbox (1.4979pt too wide) in paragraph at lines 325--332
+ [] 
+[77 <./fig/grcamera-eps-converted-to.pdf> <./fig/grcamera_front-eps-converted-t
+o.pdf> <./fig/grcamera_top-eps-converted-to.pdf>]
+Overfull \hbox (1.4979pt too wide) in paragraph at lines 351--360
+ [] 
+
+Overfull \hbox (17.99774pt too wide) in paragraph at lines 369--369
+[]\T1/lmtt/m/n/10 GRRenderIf| 
+
+Underfull \hbox (badness 10000) in paragraph at lines 370--370
+[]\T1/lmtt/m/n/10 SetMaterial(const
+
+Overfull \hbox (1.50316pt too wide) in paragraph at lines 368--374
+ [] 
+[78]
+Overfull \hbox (22.2773pt too wide) in paragraph at lines 395--397
+\C70/mc/m/n/10 ^^? \C70/mc/m/n/10/75 ( \C70/mc/m/n/10/53 Ô \C70/mc/m/n/10/80 ˝ 
+\C70/mc/m/n/10 j \C70/mc/m/n/10/4e à \C70/mc/m/n/10/7d ^^D \C70/mc/m/n/10/82 r 
+\C70/mc/m/n/10 o\T1/lmr/m/n/10 X11 web color\C70/mc/m/n/10 k Ç h e D f D ~ Y|\C
+70/mc/m/n/10/ff ^^N| \C70/mc/m/n/10 s \C70/mc/m/n/10 W O o\T1/lmtt/m/n/10 SprGR
+Render.h\C70/mc/m/n/10 ÿ
+Excluding 'comment' comment.
+Overfull \hbox (6.76485pt too wide) in paragraph at lines 445--613
+ [] 
+
+LaTeX Warning: Reference `table_material_sample' on page 79 undefined on input 
+line 617.
+
+
+LaTeX Warning: Reference `chap_fileio' on page 79 undefined on input line 632.
+
+
+Overfull \hbox (29.25056pt too wide) in paragraph at lines 630--634
+\C70/mc/m/n/10 n \C70/mc/m/n/10/4e å \C70/mc/m/n/10 ^^Z \C70/mc/m/n/10 ä L B ä 
+~ Y|\C70/mc/m/n/10/ff ^^N| \C70/mc/m/n/10 å \C70/mc/m/n/10/80 ^^E \C70/mc/m/n/1
+0 n \C70/mc/m/n/10/65 π \C70/mc/m/n/10/6c ’ \C70/mc/m/n/10 g o|\C70/mc/m/n/10/f
+f ^^L| \C70/mc/m/n/10 ‚ « Í Û ∞ Ω ’ » g \C70/mc/m/n/10 \ \C70/mc/m/n/10 ^^P \C7
+0/mc/m/n/10 W|\C70/mc/m/n/10/ff ^^L| \T1/lmr/m/n/10 Direct3D\C70/mc/m/n/10 n\T1
+/lmr/m/n/10 X\C70/mc/m/n/10 b
+
+Overfull \hbox (1.50316pt too wide) in paragraph at lines 638--648
+ [] 
+[79]
+Overfull \hbox (1.50316pt too wide) in paragraph at lines 655--660
+ [] 
+
+Overfull \hbox (1.499pt too wide) in paragraph at lines 715--715
+[]    \T1/lmtt/m/n/10 GRMeshIf* mesh = scene->CreateVisual(meshDesc, frame)->Ca
+st();[] 
+[80]
+Overfull \hbox (22.49893pt too wide) in paragraph at lines 715--715
+[]    \T1/lmtt/m/n/10 GRMaterialIf* mat0 = scene->CreateVisual(matDesc0, frame)
+->Cast();[] 
+
+Overfull \hbox (22.49893pt too wide) in paragraph at lines 715--715
+[]    \T1/lmtt/m/n/10 GRMaterialIf* mat1 = scene->CreateVisual(matDesc1, frame)
+->Cast();[] 
+
+LaTeX Warning: Reference `sec_grscene' on page 81 undefined on input line 732.
+
+
+Overfull \hbox (1.50316pt too wide) in paragraph at lines 735--744
+ [] 
+
+Overfull \hbox (1.50316pt too wide) in paragraph at lines 752--759
+ [] 
+[81]
+Overfull \hbox (17.99774pt too wide) in paragraph at lines 767--767
+[]\T1/lmtt/m/n/10 GRRenderIf| 
+
+Underfull \hbox (badness 2478) in paragraph at lines 771--772
+[]\C70/mc/m/n/10 ¢ Î ’ ° ÷ Ï Û « £ Û ∞
+
+Underfull \hbox (badness 10000) in paragraph at lines 772--772
+[]\T1/lmtt/m/n/10 SetAlphaMode(TBlendFunc,
+
+Overfull \hbox (1.4979pt too wide) in paragraph at lines 766--775
+ [] 
+
+Overfull \hbox (0.75195pt too wide) in paragraph at lines 781--781
+[]\T1/lmtt/m/n/10 GRRenderIf| 
+
+Underfull \hbox (badness 10000) in paragraph at lines 783--783
+[]\T1/lmtt/m/n/10 SetTextureImage(UTString,
+
+Overfull \hbox (1.4979pt too wide) in paragraph at lines 780--785
+ [] 
+
+Overfull \hbox (0.75195pt too wide) in paragraph at lines 791--791
+[]\T1/lmtt/m/n/10 GRRenderIf| 
+
+Overfull \hbox (3.7517pt too wide) in paragraph at lines 793--793
+[]\T1/lmtt/m/n/10 SetShaderFormat(ShaderType)| 
+
+Underfull \hbox (badness 10000) in paragraph at lines 794--794
+[]\T1/lmtt/m/n/10 CreateShader(UTString,
+
+Overfull \hbox (3.7517pt too wide) in paragraph at lines 796--796
+[]\T1/lmtt/m/n/10 ReadShaderSource(GRHandler,
+
+Overfull \hbox (9.00168pt too wide) in paragraph at lines 797--797
+[]\T1/lmtt/m/n/10 GetShaderLocation(GRHandler,
+
+Overfull \hbox (1.4979pt too wide) in paragraph at lines 790--799
+ [] 
+
+Underfull \vbox (badness 10000) has occurred while \output is active [82]
+Overfull \hbox (17.99774pt too wide) in paragraph at lines 805--805
+[]\T1/lmtt/m/n/10 GRRenderIf| 
+
+Underfull \hbox (badness 10000) in paragraph at lines 806--806
+[]\T1/lmtt/m/n/10 SetVertexFormat(const
+
+Underfull \hbox (badness 10000) in paragraph at lines 808--808
+[]\T1/lmtt/m/n/10 DrawDirect(TPrimitiveType,
+
+Underfull \hbox (badness 10000) in paragraph at lines 809--809
+[]\T1/lmtt/m/n/10 DrawIndexed(TPrimitiveType,
+
+Underfull \hbox (badness 10000) in paragraph at lines 809--809
+\T1/lmtt/m/n/10 size_t*, void*, size_t,
+
+Underfull \hbox (badness 10000) in paragraph at lines 810--810
+[]\T1/lmtt/m/n/10 DrawArrays(TPrimitiveType,
+
+Underfull \hbox (badness 10000) in paragraph at lines 811--811
+[]\T1/lmtt/m/n/10 DrawArrays(TPrimitiveType,
+
+Underfull \hbox (badness 10000) in paragraph at lines 811--811
+\T1/lmtt/m/n/10 size_t*, GRVertexArray*,
+
+Overfull \hbox (1.50316pt too wide) in paragraph at lines 804--813
+ [] 
+
+Overfull \hbox (17.99774pt too wide) in paragraph at lines 819--819
+[]\T1/lmtt/m/n/10 GRRenderIf| 
+
+Underfull \hbox (badness 10000) in paragraph at lines 821--821
+[]\T1/lmtt/m/n/10 DrawArrow(Vec3f, Vec3f, float,
+
+Underfull \hbox (badness 10000) in paragraph at lines 822--822
+[]\T1/lmtt/m/n/10 DrawBox(float, float, float,
+
+Underfull \hbox (badness 10000) in paragraph at lines 823--823
+[]\T1/lmtt/m/n/10 DrawSphere(float, int, int,
+
+Underfull \hbox (badness 10000) in paragraph at lines 824--824
+[]\T1/lmtt/m/n/10 DrawCone(float, float, int,
+
+Underfull \hbox (badness 10000) in paragraph at lines 825--825
+[]\T1/lmtt/m/n/10 DrawCylinder(float, float, int,
+
+Underfull \hbox (badness 10000) in paragraph at lines 826--826
+[]\T1/lmtt/m/n/10 DrawCapsule(float, float, int,
+
+Underfull \hbox (badness 10000) in paragraph at lines 827--827
+[]\T1/lmtt/m/n/10 DrawRoundCone(float, float,
+
+Overfull \hbox (1.50316pt too wide) in paragraph at lines 818--834
+ [] 
+
+Underfull \vbox (badness 10000) has occurred while \output is active [83]
+Underfull \hbox (badness 10000) in paragraph at lines 841--841
+[]\T1/lmtt/m/n/10 SetCamera(const
+
+Underfull \hbox (badness 10000) in paragraph at lines 842--842
+[]\T1/lmtt/m/n/10 const
+
+Overfull \hbox (1.4979pt too wide) in paragraph at lines 839--844
+ [] 
+
+Overfull \hbox (17.99774pt too wide) in paragraph at lines 850--850
+[]\T1/lmtt/m/n/10 GRRenderIf| 
+
+Overfull \hbox (1.50316pt too wide) in paragraph at lines 849--856
+ [] 
+
+Overfull \hbox (17.99774pt too wide) in paragraph at lines 862--862
+[]\T1/lmtt/m/n/10 GRRenderIf| 
+
+Underfull \hbox (badness 10000) in paragraph at lines 868--868
+[]\T1/lmtt/m/n/10 ScreenToCamera(int, int,
+
+Overfull \hbox (1.50316pt too wide) in paragraph at lines 861--872
+ [] 
+[84]
+Overfull \hbox (17.99774pt too wide) in paragraph at lines 876--876
+[]\T1/lmtt/m/n/10 GRRenderIf| 
+
+Underfull \hbox (badness 10000) in paragraph at lines 879--879
+[]\T1/lmtt/m/n/10 SetProjectionMatrix(const
+
+Underfull \hbox (badness 10000) in paragraph at lines 887--887
+[]\T1/lmtt/m/n/10 SetBlendMatrix(const Affinef&,
+
+Overfull \hbox (1.50316pt too wide) in paragraph at lines 875--889
+ [] 
+) [85] [86]
+Chapter 9.
+(./fileio.tex
+
+LaTeX Warning: Reference `fig_fifile' on page 87 undefined on input line 42.
+
+[87] (c:/texlive/2018/texmf-dist/tex/latex/lm/ts1lmtt.fd)
+
+LaTeX Warning: Reference `sec_if_desc' on page 88 undefined on input line 83.
+
+[88 <./fig/fifile-eps-converted-to.pdf>]
+
+LaTeX Warning: Reference `sec_if_desc' on page 89 undefined on input line 131.
+
+[89]
+Overfull \hbox (17.97208pt too wide) in paragraph at lines 150--151
+[]\C70/mc/m/n/10 n à F k|\C70/mc/m/n/10/ff ^^L| \C70/mc/m/n/10 π ∆ ¸ » h « £ π 
+Ø Í ◊ ø L \C70/mc/m/n/10 £ \C70/mc/m/n/10 ^^@ \C70/mc/m/n/10 U å f D ~ Y|\C70/m
+c/m/n/10/ff ^^N| \C70/mc/m/n/10 S n \T1/lmtt/m/n/10 PHSceneDesc
+
+Overfull \hbox (237.95724pt too wide) in paragraph at lines 157--157
+[]\T1/lmtt/m/n/9 PHScene scene1{                                               
+                      0.01;     #PHSceneState::timeStep[]  
+
+Overfull \hbox (35.49959pt too wide) in paragraph at lines 172--177
+\C70/mc/m/n/10 £ π Ø Í ◊ ø Ñ ™ ÷ ∏ ß Ø » L B ä ~ [ ì|\C70/mc/m/n/10/ff ^^N| \C7
+0/mc/m/n/10 ] S g|\C70/mc/m/n/10/ff ^^L| \C70/mc/m/n/10 S å â o|^^A| \T1/lmtt/m
+/n/10 GRFrame\C70/mc/m/n/10 Ñ\T1/lmtt/m/n/10 PHFrame\C70/mc/m/n/10 k
+[90]%%[ ProductName: GPL Ghostscript ]%%
+%%[Page: 1]%%
+%%[LastPage]%%
+
+
+LaTeX Warning: Reference `fig_fileOperation' on page 91 undefined on input line
+ 188.
+
+
+Overfull \hbox (38.99962pt too wide) in paragraph at lines 201--206
+\C70/mc/m/n/10/76 { \C70/mc/m/n/10/93 2 \C70/mc/m/n/10 W _ Ç n í \C70/mc/m/n/10
+/75 ( \C70/mc/m/n/10 D f D ~ Y|^^B| \C70/mc/m/n/10/65 ∞ \C70/mc/m/n/10 W D Œ ¸ 
+… L \C70/mc/m/n/10 ˙ \C70/mc/m/n/10 f O ã \C70/mc/m/n/10 ¶ \C70/mc/m/n/10 k\T1/
+lmtt/m/n/10 FILoadContext::datas\C70/mc/m/n/10 k
+[91 <./fig/fileOperation-eps-converted-to.pdf>]
+Overfull \hbox (87.249pt too wide) in paragraph at lines 207--209
+\C70/mc/m/n/10 ’ ° § Î í Y y f Ì ¸ … W \C70/mc/m/n/10/7d B \C70/mc/m/n/10 è ã h
+|^^A| \T1/lmtt/m/n/10 LoadImp()\C70/mc/m/n/10 K â \C70/mc/m/n/10 ú \C70/mc/m/n/
+10 Q f|^^A| \T1/lmtt/m/n/10 FIFile::Load(FILoadContext*)\C70/mc/m/n/10 k
+[92] [93]) [94]
+Chapter 10.
+(./humaninterface.tex
+
+LaTeX Warning: Reference `fig_hiclass' on page 95 undefined on input line 31.
+
+[95]
+
+LaTeX Warning: Reference `fig_humaninterface' on page 96 undefined on input lin
+e 50.
+
+
+Overfull \hbox (7.11095pt too wide) in paragraph at lines 50--53
+[]\C70/mc/m/n/10/6b ! \C70/mc/m/n/10 k\T1/lmr/m/n/10 HumanInterface\C70/mc/m/n/
+10 ‚ ∏ Â ¸ Î n « ¸ ø \C70/mc/m/n/10 À \C70/mc/m/n/10   \C70/mc/m/n/10 í\T1/lmr/
+m/n/10 Fig.[]\C70/mc/m/n/10 k \C70/mc/m/n/10/79 : \C70/mc/m/n/10 W ~ Y|\C70/mc/
+m/n/10/ff ^^N|  \T1/lmtt/m/n/10 HISdk\C70/mc/m/n/10 ™
+
+Underfull \hbox (badness 10000) in paragraph at lines 64--65
+[]\T1/lmtt/m/n/10 AddRealDevice(const IfInfo* ii, const
+[96 <./fig/hiclass-eps-converted-to.pdf>]
+Overfull \hbox (39.24973pt too wide) in paragraph at lines 77--78
+[]\C70/mc/m/n/10/4e Ó \C70/mc/m/n/10 Û \C70/mc/m/n/10 « – § π í \C70/mc/m/n/10/
+53 ÷ \C70/mc/m/n/10 ó \C70/mc/m/n/10 J à s \C70/mc/m/n/10/8f ‘ \C70/mc/m/n/10/5
+3 t \C70/mc/m/n/10 Y ã \C70/mc/m/n/10/65 π \C70/mc/m/n/10/6c ’ \C70/mc/m/n/10 k
+ o\T1/lmtt/m/n/10 HISdk\C70/mc/m/n/10 í \C70/mc/m/n/10/4e À \C70/mc/m/n/10 Y ã 
+\C70/mc/m/n/10/65 π \C70/mc/m/n/10/6c ’ \C70/mc/m/n/10 h\T1/lmtt/m/n/10 HIRealD
+evice\C70/mc/m/n/10 í
+
+Overfull \hbox (8.24973pt too wide) in paragraph at lines 81--81
+[]\T1/lmtt/m/n/10 HIVirtualDeviceIf*| 
+
+Underfull \hbox (badness 10000) in paragraph at lines 81--82
+[]\T1/lmtt/m/n/10 RentVirtualDevice(const IfInfo* ii, const
+
+Underfull \hbox (badness 10000) in paragraph at lines 82--83
+[]\T1/lmtt/m/n/10 ReturnVirtualDevice(HIVirtualDeviceIf*
+
+Overfull \hbox (8.24973pt too wide) in paragraph at lines 96--96
+[]\T1/lmtt/m/n/10 HIVirtualDeviceIf*| 
+
+Underfull \hbox (badness 10000) in paragraph at lines 96--97
+[]\T1/lmtt/m/n/10 Rent(const IfInfo* ii, const char* name,
+[97 <./fig/humaninterface-eps-converted-to.pdf>]
+Overfull \hbox (4.81848pt too wide) in paragraph at lines 112--116
+\C70/mc/m/n/10 f o\T1/lmr/m/n/10 Win32 API\C70/mc/m/n/10 í \C70/mc/m/n/10/75 ( 
+\C70/mc/m/n/10 D ã\T1/lmtt/m/n/10 DRKeyMouseWin32\C70/mc/m/n/10 h\T1/lmr/m/n/10
+ GLUT\C70/mc/m/n/10 í \C70/mc/m/n/10/75 ( \C70/mc/m/n/10 D ã\T1/lmtt/m/n/10 DRK
+eyMouseGLUT\C70/mc/m/n/10 L
+
+Overfull \hbox (25.50078pt too wide) in paragraph at lines 149--149
+[]\T1/lmtt/m/n/10 DVKeyMouseCallback| 
+
+Underfull \hbox (badness 10000) in paragraph at lines 156--157
+[]\T1/lmtt/m/n/10 OnMouseMove(int button, int x, int y, int
+[98]
+Overfull \hbox (6.4327pt too wide) in paragraph at lines 177--177
+[]    \T1/lmtt/m/n/9 if(button & DVButtonMask::LBUTTON && state == DVButtonSt::
+DOWN){[]  
+[99]
+Overfull \hbox (28.49771pt too wide) in paragraph at lines 225--225
+[]\T1/lmtt/m/n/10 DVKeyMouseIf| 
+
+Underfull \hbox (badness 10000) in paragraph at lines 229--230
+[]\T1/lmtt/m/n/10 GetMousePosition(int& x, int& y, int& time, int
+
+Overfull \hbox (54.99968pt too wide) in paragraph at lines 250--252
+[]\T1/lmtt/m/n/10 OnKey\C70/mc/m/n/10 k J D f ≠ ¸ n » ∞ Î \C70/mc/m/n/10 ∂ \C70
+/mc/m/n/10 K \C70/mc/m/n/10 í \C70/mc/m/n/10/53 ÷ \C70/mc/m/n/10 ó \C70/mc/m/n/
+10 Y ã k o \C70/mc/m/n/10 ü \C70/mc/m/n/10 « – § π h W f\T1/lmtt/m/n/10 DRKeyMo
+useWin32\C70/mc/m/n/10 í
+
+Overfull \hbox (31.7496pt too wide) in paragraph at lines 255--256
+[]\T1/lmtt/m/n/10 GetMousePosition\C70/mc/m/n/10 k J D f|\C70/mc/m/n/10/ff ^^L|
+ \C70/mc/m/n/10 ø § ‡ π ø Û ◊ í \C70/mc/m/n/10/53 ÷ \C70/mc/m/n/10 ó \C70/mc/m/
+n/10 Y ã k o\T1/lmtt/m/n/10 DRKeyMouseWin32\C70/mc/m/n/10 í
+[100]
+
+LaTeX Warning: Reference `fig_trackball' on page 101 undefined on input line 27
+9.
+
+
+Overfull \hbox (1.4979pt too wide) in paragraph at lines 287--294
+ [] 
+
+Underfull \vbox (badness 2443) has occurred while \output is active [101 <./fig
+/hitrackball-eps-converted-to.pdf>]
+Overfull \hbox (1.4979pt too wide) in paragraph at lines 313--319
+ [] 
+[102]
+Overfull \hbox (1.4979pt too wide) in paragraph at lines 368--374
+ [] 
+
+Overfull \hbox (1.50316pt too wide) in paragraph at lines 390--400
+ [] 
+
+Overfull \hbox (1.4979pt too wide) in paragraph at lines 419--425
+ [] 
+[103]) [104]
+Chapter 11.
+(./creature.tex [105] [106] [107]) [108]
+Chapter 12.
+(./framework.tex
+
+LaTeX Warning: Reference `fig_framework' on page 109 undefined on input line 16
+.
+
+[109]
+Overfull \hbox (12.0pt too wide) in paragraph at lines 50--67
+[] 
+
+LaTeX Warning: Reference `fig_fwscene' on page 110 undefined on input line 81.
+
+
+LaTeX Warning: Reference `fig_fwscene' on page 110 undefined on input line 84.
+
+[110 <./fig/framework-eps-converted-to.pdf>]
+Overfull \hbox (12.0pt too wide) in paragraph at lines 92--109
+[] 
+[111 <./fig/fwscene-eps-converted-to.pdf>]
+Overfull \hbox (13.74945pt too wide) in paragraph at lines 158--159
+[]\T1/lmtt/m/n/10 [Set|Get][PH|GR]Scene\C70/mc/m/n/10 ¢ \C70/mc/m/n/10/65 p \C7
+0/mc/m/n/10 o ∑ ¸ Û k \C70/mc/m/n/10 r \C70/mc/m/n/10 ä \C70/mc/m/n/10 S \C70/m
+c/m/n/10 f â å _\T1/lmtt/m/n/10 PHScene\C70/mc/m/n/10 Ñ\T1/lmtt/m/n/10 GRScene\
+C70/mc/m/n/10 í
+[112]
+Underfull \hbox (badness 10000) in paragraph at lines 194--195
+[]\T1/lmtt/m/n/10 bool LoadScene(UTString path, ImportIf* imp, const IfInfo* ii
+,
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 190--198
+[] 
+
+Underfull \hbox (badness 10000) in paragraph at lines 215--216
+[]\T1/lmtt/m/n/10 bool SaveScene(UTString path, ImportIf* imp, const IfInfo* ii
+,
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 211--219
+[] 
+[113]
+
+LaTeX Warning: Reference `sec_create_application' on page 114 undefined on inpu
+t line 236.
+
+[114] [115]
+
+LaTeX Warning: Reference `sec_uttimer' on page 116 undefined on input line 354.
+
+
+
+Overfull \hbox (1.7201pt too wide) in paragraph at lines 371--379
+[] \C70/mc/m/n/10 ø
+[116]
+Overfull \hbox (53.99962pt too wide) in paragraph at lines 410--412
+[]\T1/lmtt/m/n/10 Display\C70/mc/m/n/10 o \C70/mc/m/n/10 œ \C70/mc/m/n/10/75 ; 
+\C70/mc/m/n/10 Å \C70/mc/m/n/10/6c B \C70/mc/m/n/10 L \C70/mc/m/n/10/76 z \C70/
+mc/m/n/10 L \C70/mc/m/n/10 U å _ h M k \C70/mc/m/n/10/54 | \C70/mc/m/n/10 s \C7
+0/mc/m/n/10 ˙ \C70/mc/m/n/10 U å ~ Y|\C70/mc/m/n/10/ff ^^N| \C70/mc/m/n/10 œ \C
+70/mc/m/n/10/75 ; \C70/mc/m/n/10 Å \C70/mc/m/n/10/6c B \C70/mc/m/n/10 o\T1/lmtt
+/m/n/10 PostRedisplay\C70/mc/m/n/10 ¢
+
+Overfull \hbox (3.49977pt too wide) in paragraph at lines 421--422
+[]\T1/lmtt/m/n/10 Display\C70/mc/m/n/10 ¢ \C70/mc/m/n/10/65 p \C70/mc/m/n/10 n 
+« ’ © Î » n \C70/mc/m/n/10 / \C70/mc/m/n/10 ã \C70/mc/m/n/10/82 ^^^ \C70/mc/m/n
+/10 D g o ´ Ï Û » ¶ £ Û … ¶ n\T1/lmtt/m/n/10 Display\C70/mc/m/n/10 ¢
+[117]
+Overfull \hbox (12.0pt too wide) in paragraph at lines 428--438
+[] 
+
+LaTeX Warning: Reference `sec_hi_keymouse' on page 118 undefined on input line 
+439.
+
+
+Overfull \hbox (61.74945pt too wide) in paragraph at lines 461--466
+[]\T1/lmtt/m/n/10 FWSdk\C70/mc/m/n/10 n\T1/lmtt/m/n/10 Step\C70/mc/m/n/10 o ¢ Ø
+ ∆ £ ÷ ∑ ¸ Û n\T1/lmtt/m/n/10 Step\C70/mc/m/n/10 í \C70/mc/m/n/10/54 | \C70/mc/
+m/n/10 s ~ Y|\C70/mc/m/n/10/ff ^^N| \C70/mc/m/n/10 W _ L c f\T1/lmtt/m/n/10 Get
+Scene()->Step()\C70/mc/m/n/10 h
+[118]
+Overfull \hbox (17.49971pt too wide) in paragraph at lines 514--517
+\C70/mc/m/n/10 « – √ ∞ \C70/mc/m/n/10 œ \C70/mc/m/n/10/75 ; \C70/mc/m/n/10 k J 
+D f Ç ´ · È n \C70/mc/m/n/10 ≈ \C70/mc/m/n/10 1 \C70/mc/m/n/10 o\T1/lmtt/m/n/10
+ GRScene\C70/mc/m/n/10 L \C70/mc/m/n/10/53 ¬ \C70/mc/m/n/10/71 g \C70/mc/m/n/10
+ U å ~ Y|\C70/mc/m/n/10/ff ^^N| \C70/mc/m/n/10 Ç W\T1/lmtt/m/n/10 GRScene\C70/m
+c/m/n/10 L
+
+Underfull \hbox (badness 10000) in paragraph at lines 531--531
+[]\T1/lmtt/m/n/10 void DrawConstraint(GRRenderIf*,
+
+Underfull \hbox (badness 10000) in paragraph at lines 532--532
+[]\T1/lmtt/m/n/10 void DrawContact(GRRenderIf*,
+
+Underfull \vbox (badness 7362) has occurred while \output is active [119]
+Underfull \hbox (badness 10000) in paragraph at lines 547--547
+[]\T1/lmtt/m/n/10 void EnableRenderAxis(bool world, bool solid, bool
+
+Underfull \hbox (badness 10000) in paragraph at lines 580--580
+[]\T1/lmtt/m/n/10 void SetAxisScale(float world, float solid, float
+
+Underfull \hbox (badness 10000) in paragraph at lines 583--583
+[]\T1/lmtt/m/n/10 void SetForceScale(float scaleForce, float
+
+Underfull \hbox (badness 10000) in paragraph at lines 585--585
+[]\T1/lmtt/m/n/10 void SetGridOption(char axis, float offset, float
+
+Underfull \vbox (badness 10000) has occurred while \output is active [120]
+
+LaTeX Warning: Reference `sec_grmaterial' on page 121 undefined on input line 5
+93.
+
+
+Overfull \hbox (0.97185pt too wide) in paragraph at lines 592--596
+[]\T1/lmtt/m/n/10 SetSolidMaterial\C70/mc/m/n/10 o \C70/mc/m/n/10 ^^G \C70/mc/m
+/n/10 ö \C70/mc/m/n/10 W _ \C70/mc/m/n/10 [ \C70/mc/m/n/10 S \C70/mc/m/n/10 n Ω
+ Í √ … \C70/mc/m/n/10 œ \C70/mc/m/n/10 ; \C70/mc/m/n/10/82 r \C70/mc/m/n/10 í \
+C70/mc/m/n/10 ^^G \C70/mc/m/n/10 ö \C70/mc/m/n/10 W ~ Y|\C70/mc/m/n/10/ff ^^N| 
+ \T1/lmtt/m/n/10 mat\C70/mc/m/n/10 k
+
+Overfull \hbox (7.58325pt too wide) in paragraph at lines 597--600
+[]\T1/lmtt/m/n/10 SetAxisMaterial\C70/mc/m/n/10 o \C70/mc/m/n/10 ß \C70/mc/m/n/
+10 ^^Y \C70/mc/m/n/10/8e ¯ \C70/mc/m/n/10 n \C70/mc/m/n/10/82 r \C70/mc/m/n/10 
+í\T1/lmr/m/n/10 x, y, z\C70/mc/m/n/10/50  \C70/mc/m/n/10 % \C70/mc/m/n/10 k \C
+70/mc/m/n/10 ^^G \C70/mc/m/n/10 ö \C70/mc/m/n/10 W ~ Y|\C70/mc/m/n/10/ff ^^N|  
+\T1/lmtt/m/n/10 SetAxisScale\C70/mc/m/n/10 o
+
+Overfull \hbox (8.22171pt too wide) in paragraph at lines 605--607
+[]\T1/lmtt/m/n/10 SetGridOption\C70/mc/m/n/10 o ∞ Í √ … n ™ ◊ ∑ Á Û í \C70/mc/m
+/n/10 ^^G \C70/mc/m/n/10 ö \C70/mc/m/n/10 W ~ Y|\C70/mc/m/n/10/ff ^^N|  \T1/lmt
+t/m/n/10 SetGridMaterial\C70/mc/m/n/10 o
+
+Overfull \hbox (42.41618pt too wide) in paragraph at lines 612--617
+\T1/lmr/m/n/10 Springhead2\C70/mc/m/n/10 k o ∑ ¸ Û h n \C70/mc/m/n/10 õ \C70/mc
+/m/n/10 ö \C70/mc/m/n/10 § Û ø È Ø ∑ Á Û n _ Å n ® Û ∏ Û\T1/lmtt/m/n/10 PHHapti
+cEngine\C70/mc/m/n/10 L
+[121] [122]
+Overfull \hbox (25.33266pt too wide) in paragraph at lines 646--646
+[]            \T1/lmtt/m/n/9 phScene->GetHapticEngine()->StepPhysicsSimulation(
+);        []  
+
+Overfull \hbox (49.498pt too wide) in paragraph at lines 680--680
+[]\T1/lmtt/m/n/10 void SetHapticRenderMode(PHHapticPointerDesc::HapticRenderMod
+e
+[123]) [124]
+Chapter 13.
+(./embpython.tex
+Overfull \hbox (2.91632pt too wide) in paragraph at lines 24--25
+\C70/gt/m/n/10 Y|\C70/gt/m/n/10 ^^N| \T1/lmr/m/n/10 Python\C70/gt/m/n/10 § Û ø 
+◊ Í ø K â\T1/lmr/m/n/10 Springhead\C70/gt/m/n/10 n \C70/gt/m/n/10 _ \C70/gt/m/n
+/10 ˝ \C70/gt/m/n/10 í \C70/gt/m/n/10 | \C70/gt/m/n/10 s \C70/gt/m/n/10 ˙ \C70/
+gt/m/n/10 W _ ä|\C70/gt/m/n/10 ^^L| \T1/lmr/m/n/10 Springhead\C70/gt/m/n/10 ¢
+
+Overfull \hbox (2.49966pt too wide) in paragraph at lines 26--27
+[]\T1/lmr/m/n/10 EmbPython\C70/gt/m/n/10 ‚ ∏ Â ¸ Î n \C70/gt/m/n/10 ^^? \C70/gt
+/m/n/10 ( \C70/gt/m/n/10 k à ä|\C70/gt/m/n/10 ^^L| \T1/lmr/m/n/10 Python\C70/gt
+/m/n/10 § Û ø ◊ Í ø \C70/gt/m/n/10 
+ \C70/gt/m/n/10 k\T1/lmr/m/n/10 Springhead
+
+Overfull \hbox (4.99982pt too wide) in paragraph at lines 26--27
+\C70/gt/m/n/10 ø ’ ß ¸ π Ø È π í \C70/gt/m/n/10 ^^? \C70/gt/m/n/10 ( \C70/gt/m/
+n/10 W f\T1/lmr/m/n/10 Springhead\C70/gt/m/n/10 n \C70/gt/m/n/10 ^^D \C70/gt/m/
+n/10 _ \C70/gt/m/n/10 ˝ \C70/gt/m/n/10 k ¢ Ø ª π W ~ Y|\C70/gt/m/n/10 ^^N| \T1/
+lmr/m/n/10 Python\C70/gt/m/n/10 §
+
+Overfull \hbox (4.99997pt too wide) in paragraph at lines 26--27
+\C70/gt/m/n/10 Û ø ’ ß ¸ π Ø È π o \C70/gt/m/n/10 Ö \C70/gt/m/n/10/90 Ë \C70/gt
+/m/n/10 Ñ \C70/gt/m/n/10 k\T1/lmr/m/n/10 Springhead\C70/gt/m/n/10 n \C70/gt/m/n
+/10 _ \C70/gt/m/n/10 ˝ \C70/gt/m/n/10 í \C70/gt/m/n/10 | \C70/gt/m/n/10 s \C70/
+gt/m/n/10 ˙ \C70/gt/m/n/10 W|\C70/gt/m/n/10 ^^L| \C70/gt/m/n/10/7d P \C70/gt/m/
+n/10/67 ú \C70/gt/m/n/10 í\T1/lmr/m/n/10 Python\C70/gt/m/n/10 §
+
+Overfull \hbox (1.77803pt too wide) in paragraph at lines 37--38
+[]\C70/mc/m/n/10/4e ^^@ \C70/mc/m/n/10 d o|\C70/mc/m/n/10/ff ^^L| \T1/lmr/m/n/1
+0 C++\C70/mc/m/n/10 g \C70/mc/m/n/10 ü \C70/mc/m/n/10 ≈ \C70/mc/m/n/10 U å _\T1
+/lmr/m/n/10 Springhead\C70/mc/m/n/10 ¢ ◊ Í ± ¸ ∑ Á Û k \C70/mc/m/n/10 ˛ \C70/mc
+/m/n/10 W|\C70/mc/m/n/10/ff ^^L| \T1/lmr/m/n/10 Python\C70/mc/m/n/10 §
+
+LaTeX Warning: Reference `fig_epoverview' on page 125 undefined on input line 4
+1.
+
+
+Overfull \hbox (22.49965pt too wide) in paragraph at lines 41--42
+[]\C70/mc/m/n/10 i a â n \C70/mc/m/n/10 4 \C70/mc/m/n/10/54 ^^H \C70/mc/m/n/10 
+k J D f Ç|\C70/mc/m/n/10/ff ^^L| \T1/lmr/m/n/10 EmbPython\C70/mc/m/n/10 ‚ ∏ Â ¸
+ Î o\T1/lmr/m/n/10 Python\C70/mc/m/n/10/50 t \C70/mc/m/n/10 K â\T1/lmr/m/n/10 S
+pringhead\C70/mc/m/n/10 n
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Overfull \hbox (31.4154pt too wide) in paragraph at lines 49--50
+\T1/lmr/m/n/10 Springhead\C70/mc/m/n/10 n \C70/mc/m/n/10 ’ \C70/mc/m/n/10 \ \C7
+0/mc/m/n/10 o|^^A| $\T1/lmtt/m/n/10 Springhead2 \ core \ bin \ win64$\C70/mc/m/
+n/10 ’ © Î ¿|^^A| J à s$\T1/lmtt/m/n/10 Springhead2 \
+[125]
+Overfull \hbox (2.05522pt too wide) in paragraph at lines 61--63
+\T1/lmr/m/n/10 Python\C70/mc/m/n/10 § Û ø ◊ Í ø \C70/mc/m/n/10/7d D \C70/mc/m/n
+/10 ^^? \C70/mc/m/n/10/8f º \C70/mc/m/n/10 ^^? µ Û ◊ Î o $\T1/lmtt/m/n/10 src \
+ Samples \ EmbPython \ PythonSpr$
+[126 <./fig/epoverview-eps-converted-to.pdf>]
+
+LaTeX Warning: Reference `sec_pythonsprAPI' on page 127 undefined on input line
+ 88.
+
+
+Overfull \hbox (8.2497pt too wide) in paragraph at lines 102--103
+[]\C70/mc/m/n/10 b \C70/mc/m/n/10 ∂ \C70/mc/m/n/10 í \C70/mc/m/n/10/4e ^^N \C70
+/mc/m/n/10 H ã S h Ç g M ~ Y|\C70/mc/m/n/10/ff ^^N| \C70/mc/m/n/10 j J|\C70/mc/
+m/n/10/ff ^^L| \C70/mc/m/n/10/67 ^^@ \C70/mc/m/n/10 å \C70/mc/m/n/10 n \C70/mc/
+m/n/10 L \C70/mc/m/n/10 n\T1/lmtt/m/n/10 solid0.AddShape(box0)\C70/mc/m/n/10 í
+[127] [128]
+Overfull \hbox (15.88268pt too wide) in paragraph at lines 184--184
+[]\T1/lmtt/m/n/9 >>> joint = phScene.CreateJoint(solid0, solid1, hingeifinfo, d
+escJoint)[]  
+
+Overfull \hbox (2.41681pt too wide) in paragraph at lines 204--206
+[]\T1/lmr/m/n/10 PythonSpr\C70/mc/m/n/10 µ Û ◊ Î k J D f|\C70/mc/m/n/10/ff ^^L|
+ \T1/lmr/m/n/10 Python\C70/mc/m/n/10/7d D \C70/mc/m/n/10 ^^? \C70/mc/m/n/10/8f 
+º \C70/mc/m/n/10 ^^? n _ Å n ≥ ¸ … o \T1/lmtt/m/n/10 main.cpp
+[129]
+Overfull \hbox (11.15768pt too wide) in paragraph at lines 263--263
+[]      \T1/lmtt/m/n/9 "exec(compile( __mainfile__.read() , __mainfilename__, '
+exec')"[]  
+[130]
+Overfull \hbox (0.3333pt too wide) in paragraph at lines 289--290
+[]\C70/mc/m/n/10/67 ^^@ \C70/mc/m/n/10 å \C70/mc/m/n/10 k|\C70/mc/m/n/10/ff ^^L
+| \T1/lmtt/m/n/10 main\C70/mc/m/n/10 ¢ \C70/mc/m/n/10/65 p \C70/mc/m/n/10 Ö \C7
+0/mc/m/n/10 g\T1/lmr/m/n/10 Python\C70/mc/m/n/10 § Û ø ◊ Í ø Ø È π g B ã\T1/lmt
+t/m/n/10 EPInterpreter\C70/mc/m/n/10 í
+[131]
+Overfull \hbox (8.16586pt too wide) in paragraph at lines 315--316
+\T1/lmtt/m/n/10 Spr.pyd\C70/mc/m/n/10 o|\C70/mc/m/n/10/ff ^^L| $\T1/lmtt/m/n/10
+ bin \ win32 \ Spr . pyd$\C70/mc/m/n/10 ~ _ o$\T1/lmtt/m/n/10 bin \ win64 \ Spr
+ . pyd$\C70/mc/m/n/10 h W f\T1/lmr/m/n/10 Springhead\C70/mc/m/n/10 Í
+
+Overfull \hbox (15.88268pt too wide) in paragraph at lines 326--326
+[]\T1/lmtt/m/n/9 Type "help", "copyright", "credits" or "license" for more info
+rmation.[]  
+[132]
+Overfull \hbox (0.59628pt too wide) in paragraph at lines 360--362
+\C70/mc/m/n/10 n\T1/lmr/m/n/10 Python\C70/mc/m/n/10 g\T1/lmtt/m/n/10 Spr.pyd\C7
+0/mc/m/n/10 í Ì ¸ … W|\C70/mc/m/n/10/ff ^^L| \T1/lmr/m/n/10 Blender\C70/mc/m/n/
+10/4e 
+ \C70/mc/m/n/10 n\T1/lmr/m/n/10 CG\C70/mc/m/n/10 ™ ÷ ∏ ß Ø » í\T1/lmr/m/n/10 Sp
+ringhead\C70/mc/m/n/10 g
+[133 <./fig/epsprblender-eps-converted-to.pdf>]
+Overfull \hbox (35.66081pt too wide) in paragraph at lines 389--390
+\T1/lmr/m/n/10 Springhead\C70/mc/m/n/10 n § Û ø ’ ß ¸ π Ø È π o Ø È π \C70/mc/m
+/n/10/54 ^^M \C70/mc/m/n/10 K â\T1/lmr/m/n/10 If\C70/mc/m/n/10 í \C70/mc/m/n/10
+/53 ÷ \C70/mc/m/n/10 c _ Ç n\T1/lmr/m/n/10 (\T1/lmtt/m/n/10 *****If\TS1/lmr/m/n
+/10 ^^Y\T1/lmtt/m/n/10 *****\T1/lmr/m/n/10 )|\C70/mc/m/n/10/ff ^^L|
+[134]
+Overfull \hbox (15.88268pt too wide) in paragraph at lines 430--430
+[]\T1/lmtt/m/n/9 phScene.CreateJoint(so1,so2, Spr.PHHingeJoint.GetIfInfoStatic(
+), desc)[]  
+
+Overfull \hbox (15.88268pt too wide) in paragraph at lines 430--430
+[]\T1/lmtt/m/n/9 phScene.CreateJoint(so1,so2, Spr.PHBallJoint.GetIfInfoStatic()
+,  desc)[]  
+[135]) [136]
+Chapter 14.
+(./unity.tex
+Overfull \hbox (0.62427pt too wide) in paragraph at lines 12--13
+\C70/gt/m/n/10 ã S h L \C70/gt/m/n/10 Ô \C70/gt/m/n/10 ˝ \C70/gt/m/n/10 g Y|^^B
+| ~ _|^^A| \T1/lmr/m/n/10 Springhead\C70/gt/m/n/10 k o\T1/lmr/m/n/10 Unity\C70/
+gt/m/n/10 n\T1/lmr/m/n/10 GameObject\C70/gt/m/n/10 h\T1/lmr/m/n/10 Springhead\C
+70/gt/m/n/10 n
+
+Overfull \hbox (31.4154pt too wide) in paragraph at lines 36--37
+\T1/lmr/m/n/10 Springhead\C70/mc/m/n/10 n \C70/mc/m/n/10 ’ \C70/mc/m/n/10 \ \C7
+0/mc/m/n/10 o|^^A| $\T1/lmtt/m/n/10 Springhead2 \ core \ bin \ win64$\C70/mc/m/
+n/10 ’ © Î ¿|^^A| J à s$\T1/lmtt/m/n/10 Springhead2 \
+[137]
+Overfull \hbox (10.47214pt too wide) in paragraph at lines 38--39
+[]\C70/mc/m/n/10/74 ∞ \C70/mc/m/n/10 É \C70/mc/m/n/10/59 	 \C70/mc/m/n/10/65 p 
+\C70/mc/m/n/10 n \C70/mc/m/n/10 - \C70/mc/m/n/10 ö \C70/mc/m/n/10 í \C70/mc/m/n
+/10 ^^? \C70/mc/m/n/10 Q _ D \C70/mc/m/n/10 4 \C70/mc/m/n/10/54 ^^H \C70/mc/m/n
+/10 o|^^A| \T1/lmr/m/n/10 Unity\C70/mc/m/n/10 ◊ Ì ∏ ß Ø » \C70/mc/m/n/10 Ö \C70
+/mc/m/n/10 n ’ © Î ¿$\T1/lmtt/m/n/10 Assets \
+
+Overfull \hbox (6.52669pt too wide) in paragraph at lines 43--44
+\T1/lmr/m/n/10 Unity\C70/mc/m/n/10 ◊ Ì ∏ ß Ø » $\T1/lmtt/m/n/10 Springhead2 \ s
+rc \ Unity$ \C70/mc/m/n/10 í\T1/lmr/m/n/10 Unity\C70/mc/m/n/10 ® « £ ø g \C70/m
+c/m/n/10 ã \C70/mc/m/n/10 M|^^A| \T1/lmr/m/n/10 Scenes\C70/mc/m/n/10 n
+
+Overfull \hbox (64.72108pt too wide) in paragraph at lines 50--51
+\T1/lmr/m/n/10 Unity\C70/mc/m/n/10 ◊ Ì ∏ ß Ø » $\T1/lmtt/m/n/10 Springhead2 \ s
+rc \ Unity$ \C70/mc/m/n/10 í\T1/lmr/m/n/10 Unity\C70/mc/m/n/10 ® « £ ø g \C70/m
+c/m/n/10 ã \C70/mc/m/n/10 M|^^A| \T1/lmr/m/n/10 Assets\C70/mc/m/n/10 n\T1/lmr/m
+/n/10 Springhead\C70/mc/m/n/10 ’
+[138] [139]
+Overfull \hbox (0.44951pt too wide) in paragraph at lines 125--126
+\C70/mc/m/n/10 [ f O ` U D|^^B| \C70/mc/m/n/10 ã \C70/mc/m/n/10 H p\T1/lmtt/m/n
+/10 PHSolid\C70/mc/m/n/10 í \C70/mc/m/n/10 ≈ \C70/mc/m/n/10 S \C70/mc/m/n/10 Y 
+ã π Ø Í ◊ » o\T1/lmtt/m/n/10 PHSolidBehaviour\C70/mc/m/n/10 g|^^A|
+
+Overfull \hbox (67.77705pt too wide) in paragraph at lines 138--139
+[]\T1/lmr/m/n/10 PHSdk\C70/mc/m/n/10 Ñ\T1/lmr/m/n/10 PHScene\C70/mc/m/n/10 n \C
+70/mc/m/n/10 P \C70/mc/m/n/10 Å \C70/mc/m/n/10/7d   \C70/mc/m/n/10 í \C70/mc/m/
+n/10 \ \C70/mc/m/n/10 ^^P \C70/mc/m/n/10 Y ã\T1/lmr/m/n/10 Behaviour\C70/mc/m/n
+/10 π Ø Í ◊ » o|^^A| \T1/lmtt/m/n/10 SprSceneObjBehaviour\C70/mc/m/n/10 í
+[140]
+Overfull \hbox (38.99962pt too wide) in paragraph at lines 157--159
+\C70/mc/m/n/10/98 ^^E \C70/mc/m/n/10/76 Ó \C70/mc/m/n/10 h W f § Û π ⁄ Ø ø k \C
+70/mc/m/n/10 h \C70/mc/m/n/10/79 : \C70/mc/m/n/10 U å ~ Y|^^B| S S g o\T1/lmtt/
+m/n/10 XXXDesc\C70/mc/m/n/10 g o j O\T1/lmtt/m/n/10 XXXDescStruct\C70/mc/m/n/10
+ í
+
+Overfull \hbox (38.22131pt too wide) in paragraph at lines 160--161
+[]\T1/lmr/m/n/10 SprSceneObjBehaviour\C70/mc/m/n/10 í \C70/mc/m/n/10/7d ô \C70/
+mc/m/n/10 ^^? \C70/mc/m/n/10 Y ã Ø È π o|^^A| \T1/lmtt/m/n/10 descStruct\C70/mc
+/m/n/10 ◊ Ì — ∆ £|^^A| \T1/lmtt/m/n/10 ApplyDesc\C70/mc/m/n/10 ¢
+
+Overfull \hbox (26.11018pt too wide) in paragraph at lines 179--180
+[]\T1/lmtt/m/n/10 Build()\C70/mc/m/n/10 n \C70/mc/m/n/10 ; \C70/mc/m/n/10 ä \C7
+0/mc/m/n/10/50 $ \C70/mc/m/n/10 o\T1/lmr/m/n/10 Behaviour\C70/mc/m/n/10 n \T1/l
+mtt/m/n/10 sprObject \C70/mc/m/n/10 ◊ Ì — ∆ £ k \C70/mc/m/n/10 „ \C70/mc/m/n/10
+ e \C70/mc/m/n/10 U å|^^A| \T1/lmr/m/n/10 Behaviour\C70/mc/m/n/10 Ö
+[141]
+Overfull \hbox (14.74915pt too wide) in paragraph at lines 188--189
+\C70/mc/m/n/10 o|^^A| \T1/lmtt/m/n/10 Build()\C70/mc/m/n/10 L\T1/lmtt/m/n/10 Aw
+ake()\C70/mc/m/n/10 n ø § ﬂ Û ∞ g \C70/mc/m/n/10 ü \C70/mc/m/n/10 L \C70/mc/m/n
+/10 U å ã n k \C70/mc/m/n/10 ˛ \C70/mc/m/n/10 W|^^A| \T1/lmtt/m/n/10 Link()\C70
+/mc/m/n/10 o\T1/lmtt/m/n/10 Start()\C70/mc/m/n/10 n
+
+Overfull \hbox (146.55042pt too wide) in paragraph at lines 190--191
+\C70/mc/m/n/10 ¬ \C70/mc/m/n/10 í \C70/mc/m/n/10 - \C70/mc/m/n/10 ö |\C70/mc/m/
+n/10/ff ^^H|\T1/lmr/m/n/10 ``Link''|\C70/mc/m/n/10/ff 	| \C70/mc/m/n/10 Y ã \C7
+0/mc/m/n/10 \ \C70/mc/m/n/10 m \C70/mc/m/n/10 í S S g \C70/mc/m/n/10 L \C70/mc/
+m/n/10 D ~ Y|^^B| \C70/mc/m/n/10 ã \C70/mc/m/n/10 H p\T1/lmtt/m/n/10 PHIKEndEff
+ector\C70/mc/m/n/10 í\T1/lmtt/m/n/10 PHIKActuator\C70/mc/m/n/10 k\T1/lmtt/m/n/1
+0 AddChildObject\C70/mc/m/n/10 Y
+
+Overfull \hbox (152.90741pt too wide) in paragraph at lines 209--209
+[]                \T1/lmtt/m/n/9 gameObject.transform.position = new Vector3((f
+loat)p.px, (float)p.py, (float)p.pz);[]  
+
+Overfull \hbox (209.6073pt too wide) in paragraph at lines 209--209
+[]                \T1/lmtt/m/n/9 gameObject.transform.rotation = new Quaternion
+((float)p.x, (float)p.y, (float)p.z, (float)p.w);[]  
+
+Overfull \hbox (30.05765pt too wide) in paragraph at lines 209--209
+[]                \T1/lmtt/m/n/9 so.SetPose(new Posed(q.w, q.x, q.y, q.z, v.x, 
+v.y, v.z));[]  
+
+Overfull \hbox (46.52733pt too wide) in paragraph at lines 213--214
+\C70/mc/m/n/10 k j c f D ~ Y|^^B| S å o \C70/mc/m/n/10 [ \C70/mc/m/n/10 S \C70/
+mc/m/n/10 ™ ÷ ∏ ß Ø » n \C70/mc/m/n/10 M \C70/mc/m/n/10/7f n \C70/mc/m/n/10 n \
+C70/mc/m/n/10/53 Õ \C70/mc/m/n/10/66   \C70/mc/m/n/10 í\T1/lmr/m/n/10 PHSolidBe
+haviour\C70/mc/m/n/10 n\T1/lmr/m/n/10 Update\C70/mc/m/n/10 g
+) [142] [143] [144]
+Chapter 15.
+(./trouble.tex
+Underfull \hbox (badness 10000) in paragraph at lines 7--9
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 13--13
+[]\C70/gt/m/n/10 „ \C70/gt/m/n/10 z
+
+Underfull \hbox (badness 10000) in paragraph at lines 18--18
+[]\C70/gt/m/n/10 „ \C70/gt/m/n/10 z
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--23
+[]\C70/gt/m/n/10 „ \C70/gt/m/n/10 z
+
+Overfull \hbox (20.43304pt too wide) in paragraph at lines 10--26
+[]
+
+Overfull \hbox (20.43304pt too wide) in paragraph at lines 10--26
+[]
+
+Overfull \hbox (20.43304pt too wide) in paragraph at lines 10--26
+[]
+
+Underfull \hbox (badness 10000) in paragraph at lines 10--26
+
+
+Overfull \hbox (34.65942pt too wide) in paragraph at lines 32--40
+[]
+
+Underfull \hbox (badness 10000) in paragraph at lines 32--40
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active [145]
+Underfull \hbox (badness 10000) in paragraph at lines 46--46
+[]\C70/gt/m/n/10 „ \C70/gt/m/n/10 z
+
+Underfull \hbox (badness 10000) in paragraph at lines 51--51
+[]\C70/gt/m/n/10 „ \C70/gt/m/n/10 z
+
+Overfull \hbox (20.43304pt too wide) in paragraph at lines 43--54
+[]
+
+Overfull \hbox (20.43304pt too wide) in paragraph at lines 43--54
+[]
+
+Underfull \hbox (badness 10000) in paragraph at lines 43--54
+
+)) (./lwarp_afterword.tex) [146] (./main_html.aux)
+
+Package rerunfilecheck Warning: File `main_html.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ )
+(see the transcript file for additional information){c:/texlive/2018/texmf-dist
+/fonts/enc/dvips/lm/lm-ec.enc}{c:/texlive/2018/texmf-dist/fonts/enc/dvips/lm/lm
+-rm.enc}{c:/texlive/2018/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{c:/texliv
+e/2018/texmf-dist/fonts/enc/dvips/ipaex-type1/ipxt1-u84.enc}{c:/texlive/2018/te
+xmf-dist/fonts/enc/dvips/ipaex-type1/ipxt1-u5d.enc}{c:/texlive/2018/texmf-dist/
+fonts/enc/dvips/ipaex-type1/ipxt1-u85.enc}{c:/texlive/2018/texmf-dist/fonts/enc
+/dvips/ipaex-type1/ipxt1-u6e.enc}{c:/texlive/2018/texmf-dist/fonts/enc/dvips/ip
+aex-type1/ipxt1-u8d.enc}{c:/texlive/2018/texmf-dist/fonts/enc/dvips/ipaex-type1
+/ipxt1-u70.enc}{c:/texlive/2018/texmf-dist/fonts/enc/dvips/ipaex-type1/ipxt1-u8
+e.enc}{c:/texlive/2018/texmf-dist/fonts/enc/dvips/ipaex-type1/ipxt1-u5c.enc}{c:
+/texlive/2018/texmf-dist/fonts/enc/dvips/ipaex-type1/ipxt1-u79.enc}{c:/texlive/
+2018/texmf-dist/fonts/enc/dvips/ipaex-type1/ipxt1-u7e.enc}{c:/texlive/2018/texm
+f-dist/fonts/enc/dvips/ipaex-type1/ipxt1-u64.enc}{c:/texlive/2018/texmf-dist/fo
+nts/enc/dvips/ipaex-type1/ipxt1-u8f.enc}{c:/texlive/2018/texmf-dist/fonts/enc/d
+vips/lm/lm-ts1.enc}{c:/texlive/2018/texmf-dist/fonts/enc/dvips/ipaex-type1/ipxt
+1-u7f.enc}{c:/texlive/2018/texmf-dist/fonts/enc/dvips/ipaex-type1/ipxt1-u91.enc
+}{c:/texlive/2018/texmf-dist/fonts/enc/dvips/ipaex-type1/ipxt1-u93.enc}{c:/texl
+ive/2018/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{c:/texlive/2018/texmf-dis
+t/fonts/enc/dvips/ipaex-type1/ipxt1-u7c.enc}{c:/texlive/2018/texmf-dist/fonts/e
+nc/dvips/ipaex-type1/ipxt1-u8c.enc}{c:/texlive/2018/texmf-dist/fonts/enc/dvips/
+ipaex-type1/ipxt1-u97.enc}{c:/texlive/2018/texmf-dist/fonts/enc/dvips/ipaex-typ
+e1/ipxt1-u56.enc}{c:/texlive/2018/texmf-dist/fonts/enc/dvips/ipaex-type1/ipxt1-
+u99.enc}{c:/texlive/2018/texmf-dist/fonts/enc/dvips/ipaex-type1/ipxt1-u81.enc}{
+c:/texlive/2018/texmf-dist/fonts/enc/dvips/ipaex-type1/ipxt1-u71.enc}{c:/texliv
+e/2018/texmf-dist/fonts/enc/dvips/ipaex-type1/ipxt1-u98.enc}{c:/texlive/2018/te
+xmf-dist/fonts/enc/dvips/ipaex-type1/ipxt1-u7a.enc}{c:/texlive/2018/texmf-dist/
+fonts/enc/dvips/ipaex-type1/ipxt1-u22.enc}{c:/texlive/2018/texmf-dist/fonts/enc
+/dvips/ipaex-type1/ipxt1-u5f.enc}{c:/texlive/2018/texmf-dist/fonts/enc/dvips/ip
+aex-type1/ipxt1-u53.enc}{c:/texlive/2018/texmf-dist/fonts/enc/dvips/ipaex-type1
+/ipxt1-u90.enc}{c:/texlive/2018/texmf-dist/fonts/enc/dvips/ipaex-type1/ipxt1-u7
+5.enc}{c:/texlive/2018/texmf-dist/fonts/enc/dvips/ipaex-type1/ipxt1-u73.enc}{c:
+/texlive/2018/texmf-dist/fonts/enc/dvips/ipaex-type1/ipxt1-u72.enc}{c:/texlive/
+2018/texmf-dist/fonts/enc/dvips/ipaex-type1/ipxt1-u60.enc}{c:/texlive/2018/texm
+f-dist/fonts/enc/dvips/ipaex-type1/ipxt1-u57.enc}{c:/texlive/2018/texmf-dist/fo
+nts/enc/dvips/ipaex-type1/ipxt1-u80.enc}{c:/texlive/2018/texmf-dist/fonts/enc/d
+vips/ipaex-type1/ipxt1-u6a.enc}{c:/texlive/2018/texmf-dist/fonts/enc/dvips/ipae
+x-type1/ipxt1-u50.enc}{c:/texlive/2018/texmf-dist/fonts/enc/dvips/ipaex-type1/i
+pxt1-u67.enc}{c:/texlive/2018/texmf-dist/fonts/enc/dvips/ipaex-type1/ipxt1-u77.
+enc}{c:/texlive/2018/texmf-dist/fonts/enc/dvips/ipaex-type1/ipxt1-u63.enc}{c:/t
+exlive/2018/texmf-dist/fonts/enc/dvips/ipaex-type1/ipxt1-uff.enc}{c:/texlive/20
+18/texmf-dist/fonts/enc/dvips/ipaex-type1/ipxt1-u61.enc}{c:/texlive/2018/texmf-
+dist/fonts/enc/dvips/ipaex-type1/ipxt1-u6c.enc}{c:/texlive/2018/texmf-dist/font
+s/enc/dvips/ipaex-type1/ipxt1-u68.enc}{c:/texlive/2018/texmf-dist/fonts/enc/dvi
+ps/ipaex-type1/ipxt1-u78.enc}{c:/texlive/2018/texmf-dist/fonts/enc/dvips/ipaex-
+type1/ipxt1-u65.enc}{c:/texlive/2018/texmf-dist/fonts/enc/dvips/ipaex-type1/ipx
+t1-u66.enc}{c:/texlive/2018/texmf-dist/fonts/enc/dvips/ipaex-type1/ipxt1-u59.en
+c}{c:/texlive/2018/texmf-dist/fonts/enc/dvips/ipaex-type1/ipxt1-u6f.enc}{c:/tex
+live/2018/texmf-dist/fonts/enc/dvips/ipaex-type1/ipxt1-u4e.enc}{c:/texlive/2018
+/texmf-dist/fonts/enc/dvips/ipaex-type1/ipxt1-u52.enc}{c:/texlive/2018/texmf-di
+st/fonts/enc/dvips/ipaex-type1/ipxt1-u89.enc}{c:/texlive/2018/texmf-dist/fonts/
+enc/dvips/ipaex-type1/ipxt1-u54.enc}{c:/texlive/2018/texmf-dist/fonts/enc/dvips
+/ipaex-type1/ipxt1-u8b.enc}{c:/texlive/2018/texmf-dist/fonts/enc/dvips/ipaex-ty
+pe1/ipxt1-u69.enc}{c:/texlive/2018/texmf-dist/fonts/enc/dvips/ipaex-type1/ipxt1
+-u7b.enc}{c:/texlive/2018/texmf-dist/fonts/enc/dvips/ipaex-type1/ipxt1-u5e.enc}
+{c:/texlive/2018/texmf-dist/fonts/enc/dvips/ipaex-type1/ipxt1-u88.enc}{c:/texli
+ve/2018/texmf-dist/fonts/enc/dvips/ipaex-type1/ipxt1-u5b.enc}{c:/texlive/2018/t
+exmf-dist/fonts/enc/dvips/ipaex-type1/ipxt1-u8a.enc}{c:/texlive/2018/texmf-dist
+/fonts/enc/dvips/ipaex-type1/ipxt1-u96.enc}{c:/texlive/2018/texmf-dist/fonts/en
+c/dvips/ipaex-type1/ipxt1-u7d.enc}{c:/texlive/2018/texmf-dist/fonts/enc/dvips/i
+paex-type1/ipxt1-u4f.enc}{c:/texlive/2018/texmf-dist/fonts/enc/dvips/ipaex-type
+1/ipxt1-u82.enc}{c:/texlive/2018/texmf-dist/fonts/enc/dvips/ipaex-type1/ipxt1-u
+55.enc}{c:/texlive/2018/texmf-dist/fonts/enc/dvips/ipaex-type1/ipxt1-u58.enc}{c
+:/texlive/2018/texmf-dist/fonts/enc/dvips/ipaex-type1/ipxt1-u74.enc}{c:/texlive
+/2018/texmf-dist/fonts/enc/dvips/ipaex-type1/ipxt1-u76.enc}{c:/texlive/2018/tex
+mf-dist/fonts/enc/dvips/ipaex-type1/ipxt1-u95.enc}{c:/texlive/2018/texmf-dist/f
+onts/enc/dvips/ipaex-type1/ipxt1-u62.enc}{c:/texlive/2018/texmf-dist/fonts/enc/
+dvips/ipaex-type1/ipxt1-u51.enc}{c:/texlive/2018/texmf-dist/fonts/enc/dvips/ipa
+ex-type1/ipxt1-u6b.enc}{c:/texlive/2018/texmf-dist/fonts/enc/dvips/ipaex-type1/
+ipxt1-u9a.enc}{c:/texlive/2018/texmf-dist/fonts/enc/dvips/ipaex-type1/ipxt1-u6d
+.enc}{c:/texlive/2018/texmf-dist/fonts/enc/dvips/ipaex-type1/ipxt1-u30.enc}<c:/
+texlive/2018/texmf-dist/fonts/type1/public/ipaex-type1/ipxg-r-u30.pfb><c:/texli
+ve/2018/texmf-dist/fonts/type1/public/ipaex-type1/ipxg-r-u4e.pfb><c:/texlive/20
+18/texmf-dist/fonts/type1/public/ipaex-type1/ipxg-r-u4f.pfb><c:/texlive/2018/te
+xmf-dist/fonts/type1/public/ipaex-type1/ipxg-r-u50.pfb><c:/texlive/2018/texmf-d
+ist/fonts/type1/public/ipaex-type1/ipxg-r-u51.pfb><c:/texlive/2018/texmf-dist/f
+onts/type1/public/ipaex-type1/ipxg-r-u52.pfb><c:/texlive/2018/texmf-dist/fonts/
+type1/public/ipaex-type1/ipxg-r-u53.pfb><c:/texlive/2018/texmf-dist/fonts/type1
+/public/ipaex-type1/ipxg-r-u54.pfb><c:/texlive/2018/texmf-dist/fonts/type1/publ
+ic/ipaex-type1/ipxg-r-u56.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/ip
+aex-type1/ipxg-r-u57.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/ipaex-t
+ype1/ipxg-r-u58.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/ipaex-type1/
+ipxg-r-u59.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/ipaex-type1/ipxg-
+r-u5b.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/ipaex-type1/ipxg-r-u5c
+.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/ipaex-type1/ipxg-r-u5d.pfb>
+<c:/texlive/2018/texmf-dist/fonts/type1/public/ipaex-type1/ipxg-r-u5e.pfb><c:/t
+exlive/2018/texmf-dist/fonts/type1/public/ipaex-type1/ipxg-r-u5f.pfb><c:/texliv
+e/2018/texmf-dist/fonts/type1/public/ipaex-type1/ipxg-r-u60.pfb><c:/texlive/201
+8/texmf-dist/fonts/type1/public/ipaex-type1/ipxg-r-u61.pfb><c:/texlive/2018/tex
+mf-dist/fonts/type1/public/ipaex-type1/ipxg-r-u62.pfb><c:/texlive/2018/texmf-di
+st/fonts/type1/public/ipaex-type1/ipxg-r-u63.pfb><c:/texlive/2018/texmf-dist/fo
+nts/type1/public/ipaex-type1/ipxg-r-u64.pfb><c:/texlive/2018/texmf-dist/fonts/t
+ype1/public/ipaex-type1/ipxg-r-u65.pfb><c:/texlive/2018/texmf-dist/fonts/type1/
+public/ipaex-type1/ipxg-r-u66.pfb><c:/texlive/2018/texmf-dist/fonts/type1/publi
+c/ipaex-type1/ipxg-r-u67.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/ipa
+ex-type1/ipxg-r-u68.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/ipaex-ty
+pe1/ipxg-r-u69.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/ipaex-type1/i
+pxg-r-u6a.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/ipaex-type1/ipxg-r
+-u6c.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/ipaex-type1/ipxg-r-u6e.
+pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/ipaex-type1/ipxg-r-u6f.pfb><
+c:/texlive/2018/texmf-dist/fonts/type1/public/ipaex-type1/ipxg-r-u70.pfb><c:/te
+xlive/2018/texmf-dist/fonts/type1/public/ipaex-type1/ipxg-r-u71.pfb><c:/texlive
+/2018/texmf-dist/fonts/type1/public/ipaex-type1/ipxg-r-u72.pfb><c:/texlive/2018
+/texmf-dist/fonts/type1/public/ipaex-type1/ipxg-r-u73.pfb><c:/texlive/2018/texm
+f-dist/fonts/type1/public/ipaex-type1/ipxg-r-u74.pfb><c:/texlive/2018/texmf-dis
+t/fonts/type1/public/ipaex-type1/ipxg-r-u75.pfb><c:/texlive/2018/texmf-dist/fon
+ts/type1/public/ipaex-type1/ipxg-r-u76.pfb><c:/texlive/2018/texmf-dist/fonts/ty
+pe1/public/ipaex-type1/ipxg-r-u77.pfb><c:/texlive/2018/texmf-dist/fonts/type1/p
+ublic/ipaex-type1/ipxg-r-u78.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public
+/ipaex-type1/ipxg-r-u79.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/ipae
+x-type1/ipxg-r-u7a.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/ipaex-typ
+e1/ipxg-r-u7b.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/ipaex-type1/ip
+xg-r-u7c.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/ipaex-type1/ipxg-r-
+u7d.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/ipaex-type1/ipxg-r-u7e.p
+fb><c:/texlive/2018/texmf-dist/fonts/type1/public/ipaex-type1/ipxg-r-u7f.pfb><c
+:/texlive/2018/texmf-dist/fonts/type1/public/ipaex-type1/ipxg-r-u80.pfb><c:/tex
+live/2018/texmf-dist/fonts/type1/public/ipaex-type1/ipxg-r-u81.pfb><c:/texlive/
+2018/texmf-dist/fonts/type1/public/ipaex-type1/ipxg-r-u84.pfb><c:/texlive/2018/
+texmf-dist/fonts/type1/public/ipaex-type1/ipxg-r-u88.pfb><c:/texlive/2018/texmf
+-dist/fonts/type1/public/ipaex-type1/ipxg-r-u89.pfb><c:/texlive/2018/texmf-dist
+/fonts/type1/public/ipaex-type1/ipxg-r-u8a.pfb><c:/texlive/2018/texmf-dist/font
+s/type1/public/ipaex-type1/ipxg-r-u8c.pfb><c:/texlive/2018/texmf-dist/fonts/typ
+e1/public/ipaex-type1/ipxg-r-u8d.pfb><c:/texlive/2018/texmf-dist/fonts/type1/pu
+blic/ipaex-type1/ipxg-r-u8e.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/
+ipaex-type1/ipxg-r-u8f.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/ipaex
+-type1/ipxg-r-u90.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/ipaex-type
+1/ipxg-r-u91.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/ipaex-type1/ipx
+g-r-u93.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/ipaex-type1/ipxg-r-u
+95.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/ipaex-type1/ipxg-r-u96.pf
+b><c:/texlive/2018/texmf-dist/fonts/type1/public/ipaex-type1/ipxg-r-u97.pfb><c:
+/texlive/2018/texmf-dist/fonts/type1/public/ipaex-type1/ipxg-r-u98.pfb><c:/texl
+ive/2018/texmf-dist/fonts/type1/public/ipaex-type1/ipxg-r-uff.pfb><c:/texlive/2
+018/texmf-dist/fonts/type1/public/ipaex-type1/ipxm-r-u22.pfb><c:/texlive/2018/t
+exmf-dist/fonts/type1/public/ipaex-type1/ipxm-r-u30.pfb><c:/texlive/2018/texmf-
+dist/fonts/type1/public/ipaex-type1/ipxm-r-u4e.pfb><c:/texlive/2018/texmf-dist/
+fonts/type1/public/ipaex-type1/ipxm-r-u4f.pfb><c:/texlive/2018/texmf-dist/fonts
+/type1/public/ipaex-type1/ipxm-r-u50.pfb><c:/texlive/2018/texmf-dist/fonts/type
+1/public/ipaex-type1/ipxm-r-u51.pfb><c:/texlive/2018/texmf-dist/fonts/type1/pub
+lic/ipaex-type1/ipxm-r-u52.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/i
+paex-type1/ipxm-r-u53.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/ipaex-
+type1/ipxm-r-u54.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/ipaex-type1
+/ipxm-r-u55.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/ipaex-type1/ipxm
+-r-u56.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/ipaex-type1/ipxm-r-u5
+7.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/ipaex-type1/ipxm-r-u58.pfb
+><c:/texlive/2018/texmf-dist/fonts/type1/public/ipaex-type1/ipxm-r-u59.pfb><c:/
+texlive/2018/texmf-dist/fonts/type1/public/ipaex-type1/ipxm-r-u5b.pfb><c:/texli
+ve/2018/texmf-dist/fonts/type1/public/ipaex-type1/ipxm-r-u5c.pfb><c:/texlive/20
+18/texmf-dist/fonts/type1/public/ipaex-type1/ipxm-r-u5d.pfb><c:/texlive/2018/te
+xmf-dist/fonts/type1/public/ipaex-type1/ipxm-r-u5e.pfb><c:/texlive/2018/texmf-d
+ist/fonts/type1/public/ipaex-type1/ipxm-r-u5f.pfb><c:/texlive/2018/texmf-dist/f
+onts/type1/public/ipaex-type1/ipxm-r-u60.pfb><c:/texlive/2018/texmf-dist/fonts/
+type1/public/ipaex-type1/ipxm-r-u61.pfb><c:/texlive/2018/texmf-dist/fonts/type1
+/public/ipaex-type1/ipxm-r-u62.pfb><c:/texlive/2018/texmf-dist/fonts/type1/publ
+ic/ipaex-type1/ipxm-r-u63.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/ip
+aex-type1/ipxm-r-u64.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/ipaex-t
+ype1/ipxm-r-u65.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/ipaex-type1/
+ipxm-r-u66.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/ipaex-type1/ipxm-
+r-u67.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/ipaex-type1/ipxm-r-u68
+.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/ipaex-type1/ipxm-r-u69.pfb>
+<c:/texlive/2018/texmf-dist/fonts/type1/public/ipaex-type1/ipxm-r-u6a.pfb><c:/t
+exlive/2018/texmf-dist/fonts/type1/public/ipaex-type1/ipxm-r-u6b.pfb><c:/texliv
+e/2018/texmf-dist/fonts/type1/public/ipaex-type1/ipxm-r-u6c.pfb><c:/texlive/201
+8/texmf-dist/fonts/type1/public/ipaex-type1/ipxm-r-u6d.pfb><c:/texlive/2018/tex
+mf-dist/fonts/type1/public/ipaex-type1/ipxm-r-u6e.pfb><c:/texlive/2018/texmf-di
+st/fonts/type1/public/ipaex-type1/ipxm-r-u6f.pfb><c:/texlive/2018/texmf-dist/fo
+nts/type1/public/ipaex-type1/ipxm-r-u70.pfb><c:/texlive/2018/texmf-dist/fonts/t
+ype1/public/ipaex-type1/ipxm-r-u71.pfb><c:/texlive/2018/texmf-dist/fonts/type1/
+public/ipaex-type1/ipxm-r-u72.pfb><c:/texlive/2018/texmf-dist/fonts/type1/publi
+c/ipaex-type1/ipxm-r-u73.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/ipa
+ex-type1/ipxm-r-u74.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/ipaex-ty
+pe1/ipxm-r-u75.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/ipaex-type1/i
+pxm-r-u76.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/ipaex-type1/ipxm-r
+-u77.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/ipaex-type1/ipxm-r-u78.
+pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/ipaex-type1/ipxm-r-u79.pfb><
+c:/texlive/2018/texmf-dist/fonts/type1/public/ipaex-type1/ipxm-r-u7a.pfb><c:/te
+xlive/2018/texmf-dist/fonts/type1/public/ipaex-type1/ipxm-r-u7b.pfb><c:/texlive
+/2018/texmf-dist/fonts/type1/public/ipaex-type1/ipxm-r-u7c.pfb><c:/texlive/2018
+/texmf-dist/fonts/type1/public/ipaex-type1/ipxm-r-u7d.pfb><c:/texlive/2018/texm
+f-dist/fonts/type1/public/ipaex-type1/ipxm-r-u7e.pfb><c:/texlive/2018/texmf-dis
+t/fonts/type1/public/ipaex-type1/ipxm-r-u7f.pfb><c:/texlive/2018/texmf-dist/fon
+ts/type1/public/ipaex-type1/ipxm-r-u80.pfb><c:/texlive/2018/texmf-dist/fonts/ty
+pe1/public/ipaex-type1/ipxm-r-u81.pfb><c:/texlive/2018/texmf-dist/fonts/type1/p
+ublic/ipaex-type1/ipxm-r-u82.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public
+/ipaex-type1/ipxm-r-u84.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/ipae
+x-type1/ipxm-r-u85.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/ipaex-typ
+e1/ipxm-r-u88.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/ipaex-type1/ip
+xm-r-u89.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/ipaex-type1/ipxm-r-
+u8a.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/ipaex-type1/ipxm-r-u8b.p
+fb><c:/texlive/2018/texmf-dist/fonts/type1/public/ipaex-type1/ipxm-r-u8c.pfb><c
+:/texlive/2018/texmf-dist/fonts/type1/public/ipaex-type1/ipxm-r-u8d.pfb><c:/tex
+live/2018/texmf-dist/fonts/type1/public/ipaex-type1/ipxm-r-u8e.pfb><c:/texlive/
+2018/texmf-dist/fonts/type1/public/ipaex-type1/ipxm-r-u8f.pfb><c:/texlive/2018/
+texmf-dist/fonts/type1/public/ipaex-type1/ipxm-r-u90.pfb><c:/texlive/2018/texmf
+-dist/fonts/type1/public/ipaex-type1/ipxm-r-u91.pfb><c:/texlive/2018/texmf-dist
+/fonts/type1/public/ipaex-type1/ipxm-r-u93.pfb><c:/texlive/2018/texmf-dist/font
+s/type1/public/ipaex-type1/ipxm-r-u95.pfb><c:/texlive/2018/texmf-dist/fonts/typ
+e1/public/ipaex-type1/ipxm-r-u96.pfb><c:/texlive/2018/texmf-dist/fonts/type1/pu
+blic/ipaex-type1/ipxm-r-u97.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/
+ipaex-type1/ipxm-r-u98.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/ipaex
+-type1/ipxm-r-u99.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/ipaex-type
+1/ipxm-r-u9a.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/ipaex-type1/ipx
+m-r-uff.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/te
+xlive/2018/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/texlive/2018/texmf-d
+ist/fonts/type1/public/lm/lmmi10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/pu
+blic/lm/lmmib10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/lm/lmr10.pfb
+><c:/texlive/2018/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/texlive/2018/t
+exmf-dist/fonts/type1/public/lm/lmr17.pfb><c:/texlive/2018/texmf-dist/fonts/typ
+e1/public/lm/lmr5.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/lm/lmr6.pf
+b><c:/texlive/2018/texmf-dist/fonts/type1/public/lm/lmr7.pfb><c:/texlive/2018/t
+exmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/texlive/2018/texmf-dist/fonts/type
+1/public/lm/lmro10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/lm/lmsy10
+.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/lm/lmsy6.pfb><c:/texlive/20
+18/texmf-dist/fonts/type1/public/lm/lmsy7.pfb><c:/texlive/2018/texmf-dist/fonts
+/type1/public/lm/lmtk10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/lm/l
+mtt10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/lm/lmtt8.pfb><c:/texli
+ve/2018/texmf-dist/fonts/type1/public/lm/lmtt9.pfb><c:/texlive/2018/texmf-dist/
+fonts/type1/public/amsfonts/symbols/msam5.pfb>
+Output written on main_html.pdf (146 pages, 4534071 bytes).
+Transcript written on main_html.log.
+lwarpmk: v0.60  Automated make for the LaTeX lwarp package.
+lwarpmk: Reading lwarpmk.conf.
+lwarpmk: Compiling with: pdflatex main_html_html
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./main_html_html.tex
+LaTeX2e <2018-04-01> patch level 5
+(./main_html.tex (c:/texlive/2018/texmf-dist/tex/latex/base/book.cls
+Document Class: book 2014/09/29 v1.4h Standard LaTeX document class
+(c:/texlive/2018/texmf-dist/tex/latex/base/bk10.clo))
+(./lwarp_preamble_first.tex
+(c:/texlive/2018/texmf-dist/tex/generic/iftex/iftex.sty)
+(c:/texlive/2018/texmf-dist/tex/latex/bxcjkjatype/bxcjkjatype.sty
+(c:/texlive/2018/texmf-dist/tex/latex/graphics/keyval.sty)
+(c:/texlive/2018/texmf-dist/tex/latex/cjk/texinput/CJK.sty
+(c:/texlive/2018/texmf-dist/tex/latex/cjk/texinput/mule/MULEenc.sty)
+(c:/texlive/2018/texmf-dist/tex/latex/cjk/texinput/CJK.enc))
+(c:/texlive/2018/texmf-dist/tex/latex/cjk/texinput/CJKutf8.sty
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/ifpdf.sty)
+(c:/texlive/2018/texmf-dist/tex/latex/base/inputenc.sty)
+(c:/texlive/2018/texmf-dist/tex/latex/base/fontenc.sty))
+(c:/texlive/2018/texmf-dist/tex/latex/cjk/texinput/CJKspace.sty)
+(c:/texlive/2018/texmf-dist/tex/latex/cjkpunct/CJKpunct.sty
+(c:/texlive/2018/texmf-dist/tex/latex/cjkpunct/CJKpunct.spa))
+(c:/texlive/2018/texmf-dist/tex/latex/etoolbox/etoolbox.sty)
+(c:/texlive/2018/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.bdg))
+(c:/texlive/2018/texmf-dist/tex/latex/lm/lmodern.sty)
+(c:/texlive/2018/texmf-dist/tex/latex/base/fontenc.sty
+(c:/texlive/2018/texmf-dist/tex/latex/base/t1enc.def))
+(c:/texlive/2018/texmf-dist/tex/latex/lwarp/lwarp.sty
+(c:/texlive/2018/texmf-dist/tex/latex/base/fontenc.sty
+(c:/texlive/2018/texmf-dist/tex/latex/base/t1enc.def))
+(c:/texlive/2018/texmf-dist/tex/latex/newunicodechar/newunicodechar.sty)
+
+Package newunicodechar Warning: Redefining Unicode character on input line 83.
+
+
+Package newunicodechar Warning: Redefining Unicode character on input line 84.
+
+(c:/texlive/2018/texmf-dist/tex/latex/upquote/upquote.sty
+(c:/texlive/2018/texmf-dist/tex/latex/base/textcomp.sty
+(c:/texlive/2018/texmf-dist/tex/latex/base/ts1enc.def
+(c:/texlive/2018/texmf-dist/tex/latex/base/ts1enc.dfu))))
+(c:/texlive/2018/texmf-dist/tex/latex/xpatch/xpatch.sty
+(c:/texlive/2018/texmf-dist/tex/latex/l3kernel/expl3.sty
+(c:/texlive/2018/texmf-dist/tex/latex/l3kernel/expl3-code.tex)
+(c:/texlive/2018/texmf-dist/tex/latex/l3kernel/l3pdfmode.def))
+(c:/texlive/2018/texmf-dist/tex/latex/l3packages/xparse/xparse.sty))
+(c:/texlive/2018/texmf-dist/tex/latex/ifplatform/ifplatform.sty
+(c:/texlive/2018/texmf-dist/tex/latex/tools/shellesc.sty)
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/infwarerr.sty)
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/ifluatex.sty)
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/ltxcmds.sty))
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/catchfile.sty
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/etexcmds.sty))
+
+Package ifplatform Warning: 
+    shell escape is disabled, so I can only detect \ifwindows.
+
+) (c:/texlive/2018/texmf-dist/tex/latex/oberdiek/letltxmacro.sty)
+(c:/texlive/2018/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty))
+(c:/texlive/2018/texmf-dist/tex/latex/comment/comment.sty
+Excluding comment 'comment') Excluding comment 'testing'
+Include comment 'warpall' Include comment 'warpHTML'
+Excluding comment 'warpprint' Excluding comment 'LWR@createlwarpmk'
+Including 'warpHTML' comment. Straight input of comment_html.cut.
+(./comment_html.cut
+(c:/texlive/2018/texmf-dist/tex/latex/microtype/microtype.sty
+(c:/texlive/2018/texmf-dist/tex/latex/microtype/microtype-pdftex.def)
+(c:/texlive/2018/texmf-dist/tex/latex/microtype/microtype.cfg)))
+Including 'warpHTML' comment. Straight input of comment_html.cut.
+(./comment_html.cut (c:/texlive/2018/texmf-dist/tex/latex/geometry/geometry.sty
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/ifvtex.sty)
+(c:/texlive/2018/texmf-dist/tex/generic/ifxetex/ifxetex.sty)))
+Including 'warpall' comment. Straight input of comment_html.cut.
+(./comment_html.cut) Including 'warpHTML' comment.
+Straight input of comment_html.cut. (./comment_html.cut
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/gettitlestring.sty))
+(c:/texlive/2018/texmf-dist/tex/latex/everyhook/everyhook.sty
+(c:/texlive/2018/texmf-dist/tex/latex/svn-prov/svn-prov.sty))
+Including 'warpall' comment. Straight input of comment_html.cut.
+(./comment_html.cut
+(c:/texlive/2018/texmf-dist/tex/latex/filecontents/filecontents.sty))
+Including 'warpHTML' comment. Straight input of comment_html.cut.
+(./comment_html.cut (c:/texlive/2018/texmf-dist/tex/latex/xifthen/xifthen.sty
+(c:/texlive/2018/texmf-dist/tex/latex/tools/calc.sty)
+(c:/texlive/2018/texmf-dist/tex/latex/base/ifthen.sty)
+(c:/texlive/2018/texmf-dist/tex/latex/ifmtarg/ifmtarg.sty))
+(c:/texlive/2018/texmf-dist/tex/generic/xstring/xstring.sty
+(c:/texlive/2018/texmf-dist/tex/generic/xstring/xstring.tex))
+(c:/texlive/2018/texmf-dist/tex/latex/tools/verbatim.sty)
+(c:/texlive/2018/texmf-dist/tex/latex/oberdiek/refcount.sty)
+(c:/texlive/2018/texmf-dist/tex/latex/caption/newfloat.sty))
+Including 'warpall' comment. Straight input of comment_html.cut.
+(./comment_html.cut (c:/texlive/2018/texmf-dist/tex/latex/environ/environ.sty
+(c:/texlive/2018/texmf-dist/tex/latex/trimspaces/trimspaces.sty)))
+Including 'warpHTML' comment. Straight input of comment_html.cut.
+(./comment_html.cut (c:/texlive/2018/texmf-dist/tex/latex/oberdiek/zref.sty
+(c:/texlive/2018/texmf-dist/tex/latex/oberdiek/zref-base.sty
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty)
+(c:/texlive/2018/texmf-dist/tex/latex/oberdiek/auxhook.sty)))
+(c:/texlive/2018/texmf-dist/tex/latex/printlen/printlen.sty))
+Excluding 'warpprint' comment. Including 'warpHTML' comment.
+Straight input of comment_html.cut. (./comment_html.cut)
+Including 'warpHTML' comment. Straight input of comment_html.cut.
+(./comment_html.cut
+(c:/texlive/2018/texmf-dist/tex/latex/lwarp/lwarp-caption.sty
+(c:/texlive/2018/texmf-dist/tex/latex/caption/caption.sty
+(c:/texlive/2018/texmf-dist/tex/latex/caption/caption3.sty))))
+Including 'warpall' comment. Straight input of comment_html.cut.
+(./comment_html.cut) Including 'warpHTML' comment.
+Straight input of comment_html.cut. (./comment_html.cut)
+Including 'warpHTML' comment. Straight input of comment_html.cut.
+(./comment_html.cut) Including 'warpHTML' comment.
+Straight input of comment_html.cut. (./comment_html.cut)
+Including 'warpall' comment. Straight input of comment_html.cut.
+(./comment_html.cut) Including 'warpHTML' comment.
+Straight input of comment_html.cut. (./comment_html.cut)
+Including 'warpall' comment. Straight input of comment_html.cut.
+(./comment_html.cut) Including 'warpHTML' comment.
+Straight input of comment_html.cut. (./comment_html.cut)
+Including 'warpHTML' comment. Straight input of comment_html.cut.
+(./comment_html.cut) Including 'warpHTML' comment.
+Straight input of comment_html.cut. (./comment_html.cut)
+Excluding 'warpprint' comment. Excluding 'warpprint' comment.
+Excluding 'warpprint' comment. Excluding 'warpprint' comment.
+Excluding 'warpprint' comment. Excluding 'warpprint' comment.
+Excluding 'warpprint' comment. Excluding 'warpprint' comment.
+Excluding 'warpprint' comment. Excluding 'warpprint' comment.
+Excluding 'warpprint' comment. Excluding 'warpprint' comment.
+Excluding 'warpprint' comment. Excluding 'LWR@createlwarpmk' comment.
+Including 'warpHTML' comment. Straight input of comment_html.cut.
+(./comment_html.cut) Including 'warpHTML' comment.
+Straight input of comment_html.cut. (./comment_html.cut)
+Including 'warpall' comment. Straight input of comment_html.cut.
+(./comment_html.cut) Including 'warpall' comment.
+Straight input of comment_html.cut. (./comment_html.cut)
+Including 'warpHTML' comment. Straight input of comment_html.cut.
+(./comment_html.cut) Including 'warpHTML' comment.
+Straight input of comment_html.cut. (./comment_html.cut)
+Including 'warpall' comment. Straight input of comment_html.cut.
+(./comment_html.cut) Including 'warpHTML' comment.
+Straight input of comment_html.cut. (./comment_html.cut)
+Including 'warpHTML' comment. Straight input of comment_html.cut.
+(./comment_html.cut) Including 'warpHTML' comment.
+Straight input of comment_html.cut. (./comment_html.cut)
+Excluding 'warpprint' comment. Including 'warpHTML' comment.
+Straight input of comment_html.cut. (./comment_html.cut)
+Including 'warpHTML' comment. Straight input of comment_html.cut.
+(./comment_html.cut) Including 'warpHTML' comment.
+Straight input of comment_html.cut. (./comment_html.cut)
+Excluding 'warpprint' comment. Including 'warpHTML' comment.
+Straight input of comment_html.cut. (./comment_html.cut)
+Including 'warpall' comment. Straight input of comment_html.cut.
+(./comment_html.cut) Including 'warpHTML' comment.
+Straight input of comment_html.cut. (./comment_html.cut)
+Excluding 'warpprint' comment. Including 'warpHTML' comment.
+Straight input of comment_html.cut. (./comment_html.cut)
+Excluding 'warpprint' comment. Including 'warpHTML' comment.
+Straight input of comment_html.cut. (./comment_html.cut)
+Including 'warpHTML' comment. Straight input of comment_html.cut.
+(./comment_html.cut) Including 'warpHTML' comment.
+Straight input of comment_html.cut. (./comment_html.cut)
+Including 'warpHTML' comment. Straight input of comment_html.cut.
+(./comment_html.cut) Including 'warpall' comment.
+Straight input of comment_html.cut. (./comment_html.cut)
+Including 'warpHTML' comment. Straight input of comment_html.cut.
+(./comment_html.cut) Excluding 'warpprint' comment.
+Including 'warpHTML' comment. Straight input of comment_html.cut.
+(./comment_html.cut) Including 'warpall' comment.
+Straight input of comment_html.cut. (./comment_html.cut)
+Including 'warpall' comment. Straight input of comment_html.cut.
+(./comment_html.cut) Including 'warpHTML' comment.
+Straight input of comment_html.cut. (./comment_html.cut)
+Including 'warpHTML' comment. Straight input of comment_html.cut.
+(./comment_html.cut) Excluding 'warpprint' comment.
+Including 'warpall' comment. Straight input of comment_html.cut.
+(./comment_html.cut) Including 'warpHTML' comment.
+Straight input of comment_html.cut. (./comment_html.cut)
+Excluding 'warpprint' comment. Including 'warpHTML' comment.
+Straight input of comment_html.cut. (./comment_html.cut)
+Including 'warpHTML' comment. Straight input of comment_html.cut.
+(./comment_html.cut) Excluding 'warpprint' comment.
+Including 'warpHTML' comment. Straight input of comment_html.cut.
+(./comment_html.cut) Including 'warpall' comment.
+Straight input of comment_html.cut. (./comment_html.cut)
+Including 'warpHTML' comment. Straight input of comment_html.cut.
+(./comment_html.cut) Including 'warpHTML' comment.
+Straight input of comment_html.cut. (./comment_html.cut)
+Including 'warpHTML' comment. Straight input of comment_html.cut.
+(./comment_html.cut) Including 'warpall' comment.
+Straight input of comment_html.cut. (./comment_html.cut)
+Including 'warpall' comment. Straight input of comment_html.cut.
+(./comment_html.cut) Excluding 'warpprint' comment.
+Including 'warpHTML' comment. Straight input of comment_html.cut.
+(./comment_html.cut) Including 'warpall' comment.
+Straight input of comment_html.cut. (./comment_html.cut)
+Including 'warpHTML' comment. Straight input of comment_html.cut.
+(./comment_html.cut) Excluding 'warpprint' comment.
+Including 'warpHTML' comment. Straight input of comment_html.cut.
+(./comment_html.cut) Including 'warpall' comment.
+Straight input of comment_html.cut. (./comment_html.cut)
+Including 'warpHTML' comment. Straight input of comment_html.cut.
+(./comment_html.cut) Including 'warpHTML' comment.
+Straight input of comment_html.cut. (./comment_html.cut)
+Excluding 'warpprint' comment. Including 'warpHTML' comment.
+Straight input of comment_html.cut. (./comment_html.cut)
+Including 'warpHTML' comment. Straight input of comment_html.cut.
+(./comment_html.cut) Including 'warpall' comment.
+Straight input of comment_html.cut. (./comment_html.cut)
+Including 'warpall' comment. Straight input of comment_html.cut.
+(./comment_html.cut) Including 'warpHTML' comment.
+Straight input of comment_html.cut. (./comment_html.cut)
+Including 'warpHTML' comment. Straight input of comment_html.cut.
+(./comment_html.cut) Including 'warpHTML' comment.
+Straight input of comment_html.cut. (./comment_html.cut)
+Including 'warpHTML' comment. Straight input of comment_html.cut.
+(./comment_html.cut) Including 'warpHTML' comment.
+Straight input of comment_html.cut. (./comment_html.cut)
+Including 'warpHTML' comment. Straight input of comment_html.cut.
+(./comment_html.cut) Including 'warpall' comment.
+Straight input of comment_html.cut. (./comment_html.cut)
+Including 'warpHTML' comment. Straight input of comment_html.cut.
+(./comment_html.cut) Including 'warpall' comment.
+Straight input of comment_html.cut. (./comment_html.cut)
+Including 'warpHTML' comment. Straight input of comment_html.cut.
+(./comment_html.cut) Excluding 'warpprint' comment.
+Including 'warpHTML' comment. Straight input of comment_html.cut.
+(./comment_html.cut) Including 'warpall' comment.
+Straight input of comment_html.cut. (./comment_html.cut)
+Including 'warpall' comment. Straight input of comment_html.cut.
+(./comment_html.cut) Including 'warpHTML' comment.
+Straight input of comment_html.cut. (./comment_html.cut)
+Including 'warpHTML' comment. Straight input of comment_html.cut.
+(./comment_html.cut) Including 'warpHTML' comment.
+Straight input of comment_html.cut. (./comment_html.cut)
+Including 'warpHTML' comment. Straight input of comment_html.cut.
+(./comment_html.cut) Including 'warpall' comment.
+Straight input of comment_html.cut. (./comment_html.cut)
+Including 'warpHTML' comment. Straight input of comment_html.cut.
+(./comment_html.cut) Including 'warpHTML' comment.
+Straight input of comment_html.cut. (./comment_html.cut)
+Excluding 'warpprint' comment. Including 'warpall' comment.
+Straight input of comment_html.cut. (./comment_html.cut)
+Including 'warpHTML' comment. Straight input of comment_html.cut.
+(./comment_html.cut) Including 'warpHTML' comment.
+Straight input of comment_html.cut. (./comment_html.cut)
+Including 'warpall' comment. Straight input of comment_html.cut.
+(./comment_html.cut) Including 'warpHTML' comment.
+Straight input of comment_html.cut. (./comment_html.cut)
+Excluding 'warpprint' comment. Including 'warpHTML' comment.
+Straight input of comment_html.cut. (./comment_html.cut)
+Including 'warpHTML' comment. Straight input of comment_html.cut.
+(./comment_html.cut) Including 'warpall' comment.
+Straight input of comment_html.cut. (./comment_html.cut)
+Including 'warpHTML' comment. Straight input of comment_html.cut.
+(./comment_html.cut) Excluding 'warpprint' comment.
+Including 'warpHTML' comment. Straight input of comment_html.cut.
+(./comment_html.cut) Including 'warpHTML' comment.
+Straight input of comment_html.cut. (./comment_html.cut
+(c:/texlive/2018/texmf-dist/tex/latex/lwarp/lwarp-textcomp.sty))
+Including 'warpHTML' comment. Straight input of comment_html.cut.
+(./comment_html.cut) Excluding 'warpprint' comment.
+Including 'warpall' comment. Straight input of comment_html.cut.
+(./comment_html.cut) Excluding 'warpprint' comment.
+Including 'warpHTML' comment. Straight input of comment_html.cut.
+(./comment_html.cut) Including 'warpHTML' comment.
+Straight input of comment_html.cut. (./comment_html.cut)
+Including 'warpHTML' comment. Straight input of comment_html.cut.
+(./comment_html.cut) Excluding 'warpprint' comment.
+Including 'warpHTML' comment. Straight input of comment_html.cut.
+(./comment_html.cut) Including 'warpall' comment.
+Straight input of comment_html.cut. (./comment_html.cut)
+Including 'warpHTML' comment. Straight input of comment_html.cut.
+(./comment_html.cut) Including 'warpall' comment.
+Straight input of comment_html.cut. (./comment_html.cut)
+Including 'warpHTML' comment. Straight input of comment_html.cut.
+(./comment_html.cut) Including 'warpHTML' comment.
+Straight input of comment_html.cut. (./comment_html.cut)
+Including 'warpHTML' comment. Straight input of comment_html.cut.
+(./comment_html.cut) Including 'warpHTML' comment.
+Straight input of comment_html.cut. (./comment_html.cut)
+Including 'warpHTML' comment. Straight input of comment_html.cut.
+(./comment_html.cut) Including 'warpHTML' comment.
+Straight input of comment_html.cut. (./comment_html.cut)
+Excluding 'warpprint' comment. Including 'warpHTML' comment.
+Straight input of comment_html.cut. (./comment_html.cut)
+Including 'warpHTML' comment. Straight input of comment_html.cut.
+(./comment_html.cut) Including 'warpHTML' comment.
+Straight input of comment_html.cut. (./comment_html.cut))
+(c:/texlive/2018/texmf-dist/tex/latex/lwarp/lwarp-makeidx.sty
+(c:/texlive/2018/texmf-dist/tex/latex/base/makeidx.sty))
+Writing index file main_html_html.idx
+) (c:/texlive/2018/texmf-dist/tex/latex/lwarp/lwarp-graphicx.sty
+(c:/texlive/2018/texmf-dist/tex/latex/graphics/graphicx.sty
+(c:/texlive/2018/texmf-dist/tex/latex/lwarp/lwarp-graphics.sty
+(c:/texlive/2018/texmf-dist/tex/latex/graphics/graphics.sty
+(c:/texlive/2018/texmf-dist/tex/latex/graphics/trig.sty)
+(c:/texlive/2018/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)
+(c:/texlive/2018/texmf-dist/tex/latex/graphics-def/pdftex.def)))))
+(c:/texlive/2018/texmf-dist/tex/latex/lwarp/lwarp-booktabs.sty
+(c:/texlive/2018/texmf-dist/tex/latex/booktabs/booktabs.sty))
+(c:/texlive/2018/texmf-dist/tex/latex/lwarp/lwarp-amsmath.sty
+(c:/texlive/2018/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(c:/texlive/2018/texmf-dist/tex/latex/amsmath/amstext.sty
+(c:/texlive/2018/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(c:/texlive/2018/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(c:/texlive/2018/texmf-dist/tex/latex/amsmath/amsopn.sty)))
+(c:/texlive/2018/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(c:/texlive/2018/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
+(c:/texlive/2018/texmf-dist/tex/latex/lwarp/lwarp-url.sty
+(c:/texlive/2018/texmf-dist/tex/latex/url/url.sty))
+(c:/texlive/2018/texmf-dist/tex/latex/lwarp/lwarp-color.sty
+(c:/texlive/2018/texmf-dist/tex/latex/graphics/color.sty
+(c:/texlive/2018/texmf-dist/tex/latex/graphics-cfg/color.cfg))
+(c:/texlive/2018/texmf-dist/tex/latex/lwarp/lwarp-xcolor.sty
+(c:/texlive/2018/texmf-dist/tex/latex/xcolor/xcolor.sty
+(c:/texlive/2018/texmf-dist/tex/latex/graphics-cfg/color.cfg))
+Including 'warpHTML' comment. Straight input of comment_html.cut.
+(./comment_html.cut))) (./sprmacros.sty)
+(c:/texlive/2018/texmf-dist/tex/latex/lwarp/lwarp-fancybox.sty
+(c:/texlive/2018/texmf-dist/tex/latex/fancybox/fancybox.sty
+Style option: `fancybox' v1.4 <2010/05/15> (tvz)
+)) (c:/texlive/2018/texmf-dist/tex/latex/lwarp/lwarp-framed.sty
+(c:/texlive/2018/texmf-dist/tex/latex/framed/framed.sty))
+(c:/texlive/2018/texmf-dist/tex/latex/lwarp/lwarp-longtable.sty)
+(c:/texlive/2018/texmf-dist/tex/latex/tools/bm.sty)
+(c:/texlive/2018/texmf-dist/tex/latex/lwarp/lwarp-setspace.sty)
+(./lwarp_preamble_last.tex
+(c:/texlive/2018/texmf-dist/tex/latex/lwarp/lwarp-hyperref.sty
+Using the lwarp html version of package `hyperref', discarding options.
+ Are not using ProvidesPackage, so that other packages
+ do not attempt to patch lwarp's version of `hyperref'.
+) (c:/texlive/2018/texmf-dist/tex/latex/cleveref/cleveref.sty))
+No file main_html_html.aux.
+(c:/texlive/2018/texmf-dist/tex/latex/base/ts1cmr.fd)
+(c:/texlive/2018/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.enc)
+(c:/texlive/2018/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.chr)
+(c:/texlive/2018/texmf-dist/tex/latex/lm/t1lmr.fd)
+(c:/texlive/2018/texmf-dist/tex/latex/microtype/mt-cmr.cfg)
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+(c:/texlive/2018/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (c:/texlive/2018/texmf-dist/tex/latex/lwarp/lwarp-epstopdf-base.sty
+(c:/texlive/2018/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+(c:/texlive/2018/texmf-dist/tex/latex/oberdiek/grfext.sty)
+(c:/texlive/2018/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg)))
+(c:/texlive/2018/texmf-dist/tex/latex/lm/t1lmtt.fd) [1{c:/texlive/2018/texmf-va
+r/fonts/map/pdftex/updmap/pdftex.map}] [2]
+No file main_html_html.toc.
+[3]
+No file main_html_html.lof.
+(./chapters.tex [4]
+! Undefined control sequence.
+<argument> \CJK@gtemp 
+                      
+l.1 \chapter{\KLUDGE „ÅØ„Åò„ÇÅ„Å´}
+                                  
+? 
+! Emergency stop.
+<argument> \CJK@gtemp 
+                      
+l.1 \chapter{\KLUDGE „ÅØ„Åò„ÇÅ„Å´}
+                                  
+!  ==> Fatal error occurred, no output PDF file produced!
+Transcript written on main_html_html.log.
+remove_tree: tmp
+making tmp
+converting sprmacros.sty to tmp/sprmacros.sty
+converting base.tex to tmp/base.tex
+converting chapters.tex to tmp/chapters.tex
+converting collision.tex to tmp/collision.tex
+converting creature.tex to tmp/creature.tex
+converting embpython.tex to tmp/embpython.tex
+converting fileio.tex to tmp/fileio.tex
+converting foundation.tex to tmp/foundation.tex
+converting framework.tex to tmp/framework.tex
+converting getstarted.tex to tmp/getstarted.tex
+converting graphics.tex to tmp/graphics.tex
+converting humaninterface.tex to tmp/humaninterface.tex
+converting intro.tex to tmp/intro.tex
+converting lwarp_afterword.tex to tmp/lwarp_afterword.tex
+converting lwarp_preamble_first.tex to tmp/lwarp_preamble_first.tex
+converting lwarp_preamble_last.tex to tmp/lwarp_preamble_last.tex
+converting main.tex to tmp/main.tex
+converting main_html.tex to tmp/main_html.tex
+converting physics.tex to tmp/physics.tex
+converting structure.tex to tmp/structure.tex
+converting trouble.tex to tmp/trouble.tex
+converting unity.tex to tmp/unity.tex
+cp: jbook.cls -> tmp/jbook.cls
+cp: fig -> tmp/fig (dir)
+cp: insert_kludge.py -> tmp/insert_kludge.py
+cp: test.bat -> tmp/test.bat
+converting image file format
+  copying from ../../../../../../SprManual-fig/svg/cdbox.svg
+  copying from ../../../../../../SprManual-fig/svg/cdcapsule.svg
+  copying from ../../../../../../SprManual-fig/svg/cdclass.svg
+  copying from ../../../../../../SprManual-fig/svg/cdconvexmesh.svg
+  copying from ../../../../../../SprManual-fig/svg/cdroundcone.svg
+  copying from ../../../../../../SprManual-fig/svg/cdsphere.svg
+  copying from ../../../../../../SprManual-fig/svg/epoverview.svg
+  copying from ../../../../../../SprManual-fig/svg/epsprblender.svg
+  copying from ../../../../../../SprManual-fig/svg/fifile.svg
+  copying from ../../../../../../SprManual-fig/svg/fileOperation.svg
+  copying from ../../../../../../SprManual-fig/svg/filetree.svg
+  copying from ../../../../../../SprManual-fig/svg/framework.svg
+  copying from ../../../../../../SprManual-fig/svg/fwscene.svg
+  copying from ../../../../../../SprManual-fig/svg/grcamera.svg
+  copying from ../../../../../../SprManual-fig/svg/grcamera_front.svg
+  copying from ../../../../../../SprManual-fig/svg/grcamera_top.svg
+  copying from ../../../../../../SprManual-fig/svg/grscene.svg
+  copying from ../../../../../../SprManual-fig/svg/grvisual.svg
+  copying from ../../../../../../SprManual-fig/svg/hiclass.svg
+  copying from ../../../../../../SprManual-fig/svg/hitrackball.svg
+  copying from ../../../../../../SprManual-fig/svg/humaninterface.svg
+  copying from ../../../../../../SprManual-fig/svg/ikexample3link.svg
+  copying from ../../../../../../SprManual-fig/svg/ikexample3linkobjects.svg
+  copying from ../../../../../../SprManual-fig/svg/ikexample5link.svg
+  copying from ../../../../../../SprManual-fig/svg/libbuild.svg
+  copying from ../../../../../../SprManual-fig/svg/newproject1.svg
+  copying from ../../../../../../SprManual-fig/svg/newproject2.svg
+  copying from ../../../../../../SprManual-fig/svg/newproject3.svg
+  copying from ../../../../../../SprManual-fig/svg/newproject4.svg
+  copying from ../../../../../../SprManual-fig/svg/newproject5.svg
+  copying from ../../../../../../SprManual-fig/svg/newproject6.svg
+  copying from ../../../../../../SprManual-fig/svg/newproject6_truncate.svg
+  copying from ../../../../../../SprManual-fig/svg/newproject7.svg
+  copying from ../../../../../../SprManual-fig/svg/newproject7_truncate.svg
+  copying from ../../../../../../SprManual-fig/svg/newproject8.svg
+  copying from ../../../../../../SprManual-fig/svg/phballjoint.svg
+  copying from ../../../../../../SprManual-fig/svg/phconstraint.svg
+  copying from ../../../../../../SprManual-fig/svg/phcontact.svg
+  copying from ../../../../../../SprManual-fig/svg/phhingejoint.svg
+  copying from ../../../../../../SprManual-fig/svg/phsliderjoint.svg
+  copying from ../../../../../../SprManual-fig/svg/phspring.svg
+  copying from ../../../../../../SprManual-fig/svg/socket_plug1.svg
+  copying from ../../../../../../SprManual-fig/svg/socket_plug2.svg
+  copying from ../../../../../../SprManual-fig/svg/swingtwist.svg
+  copying from ../../../../../../SprManual-fig/svg/utclass.svg
+enter: F:/Project/Springhead/core/doc/SprManual/tmp
+#### pdflatex main_html.tex
+converting ..\sprmacros.sty to sprmacros.sty
+#### python insert_kludge.py
+#### lwarpmk html
+Traceback (most recent call last):
+  File "buildhtml.py", line 442, in <module>
+    rc = wait(execute(cmnd, stdout=sys.stdout, stderr=sys.stderr))
+  File "buildhtml.py", line 137, in wait
+    rc = proc.wait()
+  File "C:\Python\lib\subprocess.py", line 1008, in wait
+    timeout_millis)
+KeyboardInterrupt
+ÉoÉbÉ` ÉWÉáÉuÇèIóπÇµÇ‹Ç∑Ç© (Y/N)? 
