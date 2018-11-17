@@ -24,6 +24,7 @@ call :exec lwarpmk limages
 call :exec lwarpmk html
 
 call :exec python csname_replace.py -v dec *.html
+call :exec python csname_replace.py -v ren *.html
 
 cd ..\start
 exit /b

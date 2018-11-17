@@ -11,7 +11,7 @@
 #
 # ----------------------------------------------------------------------
 #  VERSION:
-#	Ver 1.0  2018/10/30 F.Kanehori	First version.
+#	Ver 1.0  2018/11/17 F.Kanehori	First version.
 # ======================================================================
 version = 1.0
 
@@ -420,13 +420,10 @@ ofname = 'sprmacros.sty'
 ifname = '%s/%s' % ('..', ofname)
 fileconv(ifname.replace('/', os.sep), patterns, ofname)
 
-# (2.1) \chapter{}, \section{} 等の引数に漢字があるとエラーとなるので、
-#	いったん別の文字列に置き換えておく（htmlができてからもとへ戻す）
+# (3) \chapter{}, \section{} 等の引数に漢字があるとエラーとなるので、
+#     いったん別の文字列に置き換えておく（htmlができてから元へ戻す）
 #
-func = 'enc'
-files = glob.glob('*.tex')
-csnames = 'chapter,section,subsection,subsubsection'
-cmnd = 'python csname_replace(%s %s %s %s)' % (func, files, outf, csnames)
+cmnd = 'python csname_replace.py -v enc *.tex'
 if verbose:
 	print('#### %s' % cmnd)
 rc = wait(execute(cmnd, stdout=sys.stdout, stderr=sys.stderr))
@@ -434,10 +431,10 @@ if rc != 0:
 	msg = '%s: failed' % cmnd
 	abort(msg)
 
-# (2.2) Kludge
-#	lwarpmk html を実行するとANKから漢字に変化する箇所でエラーを起こす。
+# (3.1) Kludge
+#	lwarpmk htmlを実行するとANKから漢字に変化する箇所でエラーを起こす
 #	    pdfTeX error: pdflatex,exe (file cyberb30): Font cyberb30 at 420 not found
-#	おまじないとして、ダミーのvruleを挿入しておく。
+#	おまじないとして、ダミーのvruleを挿入しておく
 #	    \def\KLUDGE{\vrule width 0pt height 1pt }	(in "sprmacros.sty")
 #
 if options.insert_kludge:
@@ -449,7 +446,7 @@ if options.insert_kludge:
 		msg = '%s: failed' % cmnd
 		abort(msg)
 
-# (3) Make htmls.
+# (4) Make htmls.
 #
 cmnds = [ '%s html' % lwarpmk,
 	  '%s again' % lwarpmk,
@@ -467,6 +464,26 @@ for cmnd in cmnds:
 	if rc != 0:
 		msg = '%s: failed' % cmnd
 		abort(msg)
+
+# (5) (2)で変更した引数情報を元に戻す
+#     生成されたセクション毎のhtmlファイル名を正しい名前に戻す
+#
+cmnd = 'python csname_replace.py -v dec *.html'
+if verbose:
+	print('#### %s' % cmnd)
+rc = wait(execute(cmnd, stdout=sys.stdout, stderr=sys.stderr))
+if rc != 0:
+	msg = '%s: failed' % cmnd
+	abort(msg)
+#
+cmnd = 'python csname_replace.py -v ren *.html'
+if verbose:
+	print('#### %s' % cmnd)
+rc = wait(execute(cmnd, stdout=sys.stdout, stderr=sys.stderr))
+if rc != 0:
+	msg = '%s: failed' % cmnd
+	abort(msg)
+
 os.chdir(cwd)
 #
 if options.copy:
