@@ -9,8 +9,9 @@
 #	    files:	Input file names.
 #
 #	options:
-#	    -o fname:	Intermediate file name to place replaced names.
-#	    -t suffix:	Suffix of temporary file.
+#	    -c fname:	Intermediate file name to place replaced names.
+#	    -s:		Save original file (cf. -t option below).
+#	    -t suffix:	Suffix of save file.
 #
 #  DESCRIPTION:
 #	Lwarpmkでセクション毎にhtmlファイルを分割しようとするとき、
@@ -24,7 +25,7 @@
 #	を記録する中間ファイルを作成する。
 #
 #  VERSION:
-#	Ver 1.0  2018/11/17 F.Kanehori	First release version.
+#	Ver 1.0  2018/11/20 F.Kanehori	First release version.
 # ======================================================================
 version = '1.0'
 
@@ -45,13 +46,16 @@ prog = sys.argv[0].split(os.sep)[-1].split('.')[0]
 # ----------------------------------------------------------------------
 #  Options
 #
-usage = 'Usage: %prog [options]'
+usage = 'Usage: %prog [options] func file ...'
 parser = OptionParser(usage = usage)
 parser.add_option('-c', '--correspondence-file', dest='correspondence_file',
-			action='store', default='csname.replace',
+			action='store', default='csarg.replace',
 			help='intermediate file name (default: %default)')
+parser.add_option('-s', '--save-orginal', dest='save_original',
+			action='store_true', default=False,
+			help='save original file')
 parser.add_option('-t', '--tmp-suffix', dest='suffix',
-			action='store', default='replace.org',
+			action='store', default='csarg.org',
 			help='temporary file\'s suffix (default: .%default)')
 parser.add_option('-v', '--verbose', dest='verbose',
 			action='count', default=0,
@@ -131,10 +135,11 @@ def encode():
 
 			#  必要ならばファイルを書き換える
 			print('  -- replacing file: %s' % f)
-			tmpfname = mktmpfname(f, suffix)
-			if rename(f, tmpfname) != 0:
-				msg = 'rename failed: %s -> %s' % (f, tmpfname)
-				sys.exit(1)
+			if options.save_original:
+				tmpfname = mktmpfname(f, suffix)
+				if rename(f, tmpfname) != 0:
+					msg = 'rename failed: %s -> %s' % (f, tmpfname)
+					sys.exit(1)
 			outf = open(f, 'w', encoding='utf-8')
 			for line in lines:
 				outf.write(line)
@@ -172,10 +177,11 @@ def decode():
 					line = line.replace(key, val)
 			lines.append(line)
 
-		tmpfname = mktmpfname(f, suffix)
-		if rename(f, tmpfname) != 0:
-			msg = 'rename failed: %s -> %s' % (f, tmpfname)
-			sys.exit(1)
+		if options.save_original:
+			tmpfname = mktmpfname(f, suffix)
+			if rename(f, tmpfname) != 0:
+				msg = 'rename failed: %s -> %s' % (f, tmpfname)
+				sys.exit(1)
 		outf = open(f, 'w', encoding='utf-8')
 		for line in lines:
 			outf.write(line)
@@ -184,6 +190,9 @@ def decode():
 #  引数をランダム文字列にしたためにセクション毎のhtmlファイルも同様に
 #  ランダムな名前で生成されてしまう。これを元の正しいファイル名に変換
 #  する（インデックスのリンクを正しく保つため）
+#    ※1 同一のchapter/section/..が存在するとセクション毎のhtmlも
+#	 同一の名称となってしまい不都合である。このような場合には
+#	 適宜番号を付与して回避するものとする。
 #
 def rename_html():
 
@@ -191,17 +200,21 @@ def rename_html():
 	#
 	correspondence = {}
 	keys = []
+	dupecheck = []
 	for line in open(correspondence_file, 'r', encoding='utf-8'):
 		if line[-1] == '\n':
 			line = line[:-1]
 		replaced, original = line.split(',')
+		while original in dupecheck:		# 同名を回避する
+			original += '_'
+		dupecheck.append(original)
 		keys.append(replaced + '.html')
 		correspondence[replaced] = original
 	if verbose:
 		for r in correspondence.keys():
 			print('  %s -> %s' % (r, correspondence[r]))
 
-	#  ランダムファイル名を本来おファイル名に変更する
+	#  ランダムファイル名を本来のファイル名に変更する
 	#
 	for f in fnames:
 		if not os.path.exists(f):
