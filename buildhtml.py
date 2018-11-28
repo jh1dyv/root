@@ -11,7 +11,7 @@
 #
 # ----------------------------------------------------------------------
 #  VERSION:
-#	Ver 1.0  2018/11/27 F.Kanehori	First version.
+#	Ver 1.0  2018/11/28 F.Kanehori	First version.
 # ======================================================================
 version = 1.0
 
@@ -155,56 +155,83 @@ def remove_tree(top, verbose=0):
 
 #  Copy file(s).
 #
-def cp(src, dst, verbose=0):
-	src_cnv = pathconv(src)
-	dst_cnv = pathconv(dst)
+def cp(src, dst, recurse=True, empty=False, verbose=0):
+	# if (src, dst) is;
+	#     file to file	src -> dst
+	#     fiel to dir	src -> dst/leaf(src)
+	#     dir to file	Error!
+	#     dir to dir	src/* -> dst/*
+	# if <empty> is set and <dst> is directory,
+	#    empty <dst> before copying file(s).
+	#
 	if os.path.isdir(src) and os.path.isfile(dst):
 		msg = 'copying directory to plain file (%s to %s)' % (src, dst)
-		abort(msg)
-	if os.path.isfile(src) and os.path.isdir(dst):
-		msg = 'copying plain file to directory (%s to %s)' % (src, dst)
-		abort(msg)
+		abort('Error: %s' % msg)
 	if dry_run:
-		print('cp: %s %s' % (src, dst))
-		if dry_run:
-			return 0
-	if os.path.isdir(src):
+		Print('cp: %s %s' % (src, dst))
+		return 0
+
+	if empty and os.path.isdir(dst):
 		if verbose:
-			print('cp: %s -> %s (dir)' % (src, dst))
+			Print('clearing directory %s' % dst)
 		if is_unix():
-			## NEED IMPLEMENT
-			pass
+			cmnd = '/bin/rm -rf %s' % pathconv(dst)
+		else:
+			cmnd = 'rmdir /S /Q %s' % pathconv(dst)
+		rc = wait(execute(cmnd, stdout=NULL, stderr=NULL, shell=True))
+		if rc != 0: return 2	# clearing failed
+
+	for s in glob.glob(src):
+		rc = __cp(s, dst, recurse)
+		if rc != 0: return 1	# copying failed
+
+	return 0
+
+def __cp(src, dst, recurse):
+	src_cnv = pathconv(src)
+	dst_cnv = pathconv(dst)
+	if os.path.isfile(src):
+		if os.path.isdir(dst):
+			dst = '%s/%s' % (dst, src.split('/')[-1])
+		if verbose:
+			Print('cp: %s -> %s' % (src, dst))
+		cmnd = '%s %s %s' % (cmndname['cp'], src_cnv, dst_cnv)
+		rc = wait(execute(cmnd, stdout=NULL, stderr=NULL, shell=True))
+
+	else:	# both src and dst are directory
+		if recurse:
+			src_r = '%s/*' % src
+			dst_r = '%s/%s' % (dst, src)
+			return __cp(src_r, dst_r, recurse=True)
+
+		if is_unix():
+			cmnd = 'cp -r %s %s' % (src_cnv, dst_cnv)
 		else:
 			cmnd = 'xcopy /I /E /S /Y /Q %s %s' % (src_cnv, dst_cnv)
-			rc = wait(execute(cmnd, stdout=NULL, stderr=NULL, shell=True))
-	else:
-		if verbose:
-			print('cp: %s -> %s' % (src, dst))
-		cmnd = '%s %s %s' % (cmndname('cp'), src_cnv, dst_cnv)
 		rc = wait(execute(cmnd, stdout=NULL, stderr=NULL, shell=True))
+
 	return rc
 
 #  Copy all files and directories.
 #
 def copy_all(src, dst, verbose=0):
-	if verbose:
-		print('  clearing "%s"' % dst)
-	cmnd = '%s %s/*' % (cmndname('rm'), dst)
-	wait(execute(cmnd))
-	#
 	os.chdir(src)
-	print('  copying "%s" to "%s"' % (src, dst))
+	Print('  copying "%s" to "%s"' % (src, dst))
 	names = os.listdir()
 	for name in names:
 		if os.path.isfile(name):
+			if verbose:
+				Print('    ISFILE %s ...' % name)
 			cmnd = '%s %s %s' % (cmndname('cp'), src, dst)
-			rc = wait(execute(cmnd))
+			rc = wait(execute(cmnd), shell=True)
 			if rc != 0:
 				break
 		elif os.path.isdir(name):
 			dst_dir = '%s/%s' % (dst, name)
+			if verbose:
+				Print('    %s -> %s' % (src, dst_dir))
 			cmnd = '%s %s %s' % (cmndname('cp'), src, dst_dir)
-			rc = wait(execute(cmnd))
+			rc = wait(execute(cmnd), shell=True)
 			if rc != 0:
 				break
 	return rc
@@ -214,12 +241,19 @@ def copy_all(src, dst, verbose=0):
 def pathconv(path):
 	return path.replace('/', os.sep)
 
+#  Print and flush
+#
+def Print(msg):
+	print(msg)
+	sys.stdout.flush()
+
 #  Command names.
 #
 def cmndname(cmnd):
 	nametab = { 'cat':	['cat', 'type'],
 		    'cp':	['cp', 'copy'],
 		    'rm':	['rm', 'del'],
+		    'rmdir':	['rmdir', 'rmdir /s /q'],
 		}
 	indx = 0 if is_unix() else 1
 	return nametab[cmnd][indx]
@@ -306,6 +340,7 @@ if options.skip_to_lwarpmk:
 	dry_run_save = dry_run
 	dry_run = True
 
+'''
 # ----------------------------------------------------------------------
 #  Prepare work space.
 #
@@ -409,7 +444,8 @@ if rc != 0:
 
 """
 #  ここでできたpdfを退避しておく（この後で書き換えられてしまうから）
-#	栞の文字が化けてしまうことへの対処 － まだうまく機能していない！
+#	栞の文字が化けてしまうことへの対処 － うまく機能しない！
+#	他の方法を考えたほうが良い
 #
 pdf_fname = texmain.replace('.tex', '.pdf')
 pdf_fsave = '%s_save.pdf' % pdf_fname
@@ -506,20 +542,7 @@ if options.replace_csarg:
 		abort(msg)
 	sys.stdout.flush()
 
-'''
-# (3.2)	(2.2)で変更した引数情報を元に戻す（ファイル名）
-#
-	cmnd = 'python ../csarg_replace.py -v ren *.html'
-	if verbose:
-		print('#### %s' % cmnd)
-	rc = wait(execute(cmnd, stdout=sys.stdout, stderr=sys.stderr))
-	if rc != 0:
-		msg = '%s: failed' % cmnd
-		abort(msg)
-	sys.stdout.flush()
-'''
-
-# (3.3)	(2.1)で変更したエスケープ文字情報を元に戻す（html本体）
+# (3.2)	(2.1)で変更したエスケープ文字情報を元に戻す（html本体）
 #
 if options.replace_tex_es:
 	cmnd = 'python ../escch_replace.py -v -d ../escch.replace dec *.html'
@@ -530,46 +553,49 @@ if options.replace_tex_es:
 		msg = '%s: failed' % cmnd
 		abort(msg)
 	sys.stdout.flush()
-
-'''
-# (3.4)	(2.1)で変更したエスケープ文字情報を元に戻す（ファイル名）
 #
-	cmnd = 'python ../escch_replace.py -v -d ../escch.replace ren *.html'
-	if verbose:
-		print('#### %s' % cmnd)
-	rc = wait(execute(cmnd, stdout=sys.stdout, stderr=sys.stderr))
-	if rc != 0:
-		msg = '%s: failed' % cmnd
-		abort(msg)
-	sys.stdout.flush()
 '''
-
-os.chdir(cwd)
-#
+os.chdir('tmp')
 if options.copy:
 	#  生成されたファイルを"generated/doc/SprManual"にコピーする
 	#
 	fmdir = wrkspace
-	todir = '../../../generated/doc/SprManual'
-	targets = ['fig/*.svg', 'lateximages', '*.html', '*.css']
+	todir = '../../../../generated/doc/SprManual'
+
+	Print('=== %s' % os.getcwd())
+	if os.path.exists(todir):
+		if verbose:
+			Print('  clearing "%s"' % todir)
+		cmnd = '%s %s' % (cmndname('rmdir'), pathconv(todir))
+		Print('#### %s' % cmnd)
+		wait(execute(cmnd, shell=True))
+	os.makedirs(todir)
+
+	#
+	targets = ['lateximages', 'fig/*.svg', '*.html', '*.css']
 	if verbose:
 		absdir = pathconv(os.path.abspath(todir))
-		print('copying htmls to "%s"' % absdir)
+		Print('copying htmls to "%s"' % absdir)
+		sys.stdout.flush()
 
 	for target in targets:
-		print('...[ %s ]...' % target)
+		Print('...[ %s ]...' % target)
 		component = target.split('/')
 		if len(component) > 1:
 			d = '/'.join(component[:-1])
 			os.makedirs('%s/%s' % (todir, d), exist_ok=True)
 
 		if os.path.isdir(target):
-			copy_all(target, todir)
+			Print('COPY_ALL: %s, %s' % (target, todir))
+			copy_all(target, todir, verbose=verbose)
 		else:
 			for f in glob.glob(target):
-				cp(f, todir)
+				tofile = '%s/%s' % (todir, f.replace(os.sep, '/'))
+				Print('COPY: %s, %s' % (f, tofile))
+				cp(f, tofile)
 
 #
+os.chdir(cwd)
 sys.exit(0)
 
 # end: buildhtml.py
