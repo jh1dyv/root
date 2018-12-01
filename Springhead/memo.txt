@@ -1,0 +1,13 @@
+dependency/src/clapack/clapack15.0.sln
+dependency/src/clapack/clapack15.0.vcxproj
+dependency/src/clapack/clapack15.0.vcxproj.user
+dependency/src/clapack/BLAS/blas15.0.sln
+dependency/src/clapack/BLAS/blas15.0.vcxproj
+dependency/src/clapack/BLAS/blas15.0.vcxproj.user
+dependency/src/clapack/F2CLIBS/libf2c15.0.sln
+dependency/src/clapack/F2CLIBS/libf2c15.0.vcxproj
+dependency/src/clapack/F2CLIBS/libf2c15.0.vcxproj.user
+
+core/src/Creature/CRBone.h
+core/src/Foundation/ClapackLibsDef.h
+core/src/Springhead15.0.sln
