@@ -5,8 +5,9 @@
 #	python SlnConv.py [options] slnfile
 #	options:
 #	    -d version	変換して作成する Visual Studio のバージョン
+#	    -f:		ファイルを上書きするとき確認をとらない
 #	    -s version	変換する元となる Visual Studio のバージョン
-#	    -D version	変換して作成する Windows SDK のバージョン
+#	    -S version	変換して作成する Windows SDK のバージョン
 #			又は 'latest' (登録されている最新のバージョン)
 #	arguments:
 #	    slnfile	ソリューション名 or ソリューションファイル名
@@ -17,14 +18,14 @@
 #
 # ----------------------------------------------------------------------
 #  VERSION:
-#	Ver 1.0  2018/12/q06 F.Kanehori	First version.
+#	Ver 1.0  2018/12/11 F.Kanehori	First version.
 # ======================================================================
 version = 1.0
 
 import sys
 import os
 import re
-import glob
+import shutil
 import subprocess
 from optparse import OptionParser
 
@@ -34,15 +35,18 @@ from optparse import OptionParser
 prog = sys.argv[0].split(os.sep)[-1].split('.')[0]
 progpath = sys.argv[0]
 PIPE = subprocess.PIPE
-NULL = subprocess.DEVNULL
+vs_version_default = '15.0.27703.0'
 
 # ----------------------------------------------------------------------
 #  External tools.
 #
+devenv = 'devenv'
 
 # ----------------------------------------------------------------------
 #  Helper methods
 # ----------------------------------------------------------------------
+
+#  ソリューションファイル名からバージョンと拡張子を取り除く
 #
 def get_slnname(fname, version, suffix):
 	s_len = len(suffix)
@@ -53,183 +57,59 @@ def get_slnname(fname, version, suffix):
 		fname = fname[:-v_len]
 	return fname
 
-
-
-
-
-
-
-
-
-#  引用符(')と(")とを相互に入れ替える
+#  ファイルの存在検査
 #
-def exchange_quote(s):
-	return s.replace("'", '|').replace('"', "'").replace('|', '"')
+def check_files(srcfile, dstfile, force):
+	if not os.path.exists(srcfile):
+		abort('No such file: "%s"' % srcfile)
+	if not force and os.path.exists(dstfile):
+		fmt = '%s: file "%s" exists. overwrite [y/n] ? '
+		ans = input(fmt % (prog, dstfile))
+		if ans.lower() != 'y':
+			print('%s: aborted' % prog)
+			sys.exit(1)
+	return 0
 
-#  入力ファイルをutf8に変換したのち、patternsで指定されたパターンすべて
-#  についてsedで書き換え処理をする。
+#  Visual Studio のバージョンを調べる
 #
-def fileconv(ifname, patterns, ofname):
-	if verbose:
-		print('converting %s to %s' % (ifname, ofname))
-	#
-	inp_cmnd = '%s %s' % (cmndname('cat'), ifname.replace('/', os.sep))
-	med_cmnd = []
-	for patt in patterns:
-		cmnd = "%s -e 's/%s/%s/g'" % (sed, patt[0], patt[1])
-		cmnd = exchange_quote(cmnd)
-		med_cmnd.append(cmnd)
-	out_cmnd = '%s -w -Lu' % nkf
-	#
-	if verbose > 1:
-		print('EXEC: %s' % inp_cmnd)
-	inp_proc = execute(inp_cmnd, stdout=PIPE, shell=True)
-	out_pipe = inp_proc.stdout
-	med_proc = []
-	for cmnd in med_cmnd:
-		if verbose > 1:
-			print('EXEC: %s' % cmnd)
-		proc = execute(cmnd, stdin=out_pipe, stdout=PIPE, shell=True)
-		out_pipe = proc.stdout
-		med_proc.append(proc)
-	if verbose > 1:
-		print('EXEC: %s' % out_cmnd)
-	outf = ofname.replace('/', os.sep)
-	out_proc = execute(out_cmnd, stdin=out_pipe, stdout=outf, shell=True)
-	#
-	inp_proc.wait()
-	for proc in med_proc:
-		proc.wait()
-	rc = out_proc.wait()
-	if rc != 0:
-		msg = 'file conversion failed: "%s"' % ifname
-		abort(msg)
+def get_vs_version():
+	cmnd = '%s /?' % devenv
+	status, out, err = command(cmnd)
+	if status != 0:
+		return -1
+	outlist = out.replace('\r', '').split('\n')
+	patt = r'([0-9]+.[0-9]+.[0-9]+.[0-9]+)'
+	version = None
+	for s in outlist:
+		if s.find('Visual Studio') >= 0:
+			m = re.search(patt, s)
+			if m:
+				version = m.group(1)
+			break
+	return version
 
-#  指定されたコマンドを実行する
+#  コマンドを実行してその出力を得る
 #
-def execute(cmnd, stdin=None, stdout=sys.stdout, stderr=sys.stderr, shell=None):
-	if stderr is NULL:
-		stderr = subprocess.STDOUT
-	fd = [ pipe_open(stdin, 'r'),
-	       pipe_open(stdout, 'w'),
-	       pipe_open(stderr, 'w') ]
-	if shell is None:
-		shell = False
-	#if verbose > 1:
-	#	print('exec: %s' % cmnd)
-	proc = subprocess.Popen(cmnd,
-				stdin=fd[0], stdout=fd[1], stderr=fd[2],
-				shell=shell)
-	return proc
-
-#  Pipeオブジェクトをオープンする
-#
-def pipe_open(file, mode):
-	if not isinstance(file, str):
-		return file
+def command(cmnd, timeout=None):
+	proc = subprocess.Popen(cmnd, stdout=PIPE, shell=True)
 	try:
-		f = open(file, mode)
-	except IOError as err:
-		f = None
-	return f
+		out, err = proc.communicate(timeout=timeout)
+		status = proc.returncode
+	except subprocess.TimeoutExpired:
+		proc.kill()
+		out, err = proc.communicate()
+		status = 1
+	encoding = os.device_encoding(1)
+	if encoding is None:
+		encoding = 'cp932'
+	out = out.decode(encoding) if out else None
+	err = err.decode(encoding) if err else None
+	return status, out, err
 
-#  プロセスの終了を待つ
-#
-def wait(proc):
-	rc = proc.wait()
-	rc = -(rc & 0b1000000000000000) | (rc & 0b0111111111111111)
-	return rc
-
-#  指定されたディレクトリ以下をすべて削除する
-#
-def remove_tree(top, verbose=0):
-	cmnd = 'rd /S /Q %s' % top
-	if verbose:
-		print('remove_tree: %s' % top)
-	rc = wait(execute(cmnd, shell=True))
-	return rc
-
-#  ファイルをコピーする
-#  ※ dstがディレクトリ名のときはcp()を、ファイル名のときはcp0()を使用する
-#
-def cp(src, dst):
-	#  srcとdstの組み合わせ
-	#     file to file	N/A
-	#     fiel to dir	src -> dst/leaf(src)
-	#     dir to file	Error!
-	#     dir to dir	src/* -> dst/*
-	#  file to file は cp0(src, dst) で扱う
-
-	if os.path.isdir(src) and os.path.isfile(dst):
-		msg = 'copying directory to plain file (%s to %s)' % (src, dst)
-		abort('Error: %s' % msg)
-
-	if os.path.isdir(src):
-		rc = __cp(src, dst)
-	else:	
-		for s in glob.glob(src):
-			rc = __cp(pathconv(s, True), dst)
-			if rc != 0: return 1	# copying failed
-	return rc
-
-def __cp(src, dst):
-	if os.path.isfile(src):
-		org_src_cnv = pathconv(src)
-		plist = src.split('/')
-		if len(plist) > 1:
-			src = plist[-1]
-			dst = '%s/%s' % (dst, '/'.join(plist[:-1]))
-		if not os.path.exists(dst):
-			Print('  creating directory %s' % dst)
-			os.makedirs(dst)
-		if verbose > 1:
-			Print('  cp: %s -> %s' % (src, dst))
-		src_cnv = pathconv(src)
-		dst_cnv = pathconv(dst)
-		cmnd = '%s %s %s' % (cmndname('cp'), org_src_cnv, dst_cnv)
-		rc = wait(execute(cmnd, stdout=NULL, stderr=NULL, shell=True))
-
-	else:	# both src and dst are directory
-		dst = '%s/%s' % (dst, src)
-		if not os.path.exists(dst):
-			abspath = os.path.abspath(dst)
-			Print('  creating directory %s' % pathconv(abspath, True))
-			os.makedirs(dst)
-		if verbose > 1:
-			Print('  cp: %s -> %s' % (src, dst))
-		src_cnv = pathconv(src)
-		dst_cnv = pathconv(dst)
-		cmnd = 'xcopy /I /E /S /Y /Q %s %s' % (src_cnv, dst_cnv)
-		rc = wait(execute(cmnd, stdout=NULL, stderr=NULL, shell=True))
-
-	return rc
-
-def cp0(src, dst):
-	#  srcとdstの組み合わせ
-	#     file to file	src -> dst
-
-	if verbose > 1:
-		Print('  cp: %s -> %s' % (src, dst))
-	src_cnv = pathconv(src)
-	dst_cnv = pathconv(dst)
-	cmnd = '%s %s %s' % (cmndname('cp'), src_cnv, dst_cnv)
-	rc = wait(execute(cmnd, stdout=NULL, stderr=NULL, shell=True))
-	return rc
-
-#  パスセパラータを変換する
+#  Change path separators.
 #
 def upath(path):
 	return path.replace(os.sep, '/')
-
-#  現在のOSの元でのコマンド名を返す
-#
-def cmndname(cmnd):
-	nametab = { 'cat':	['cat', 'type'],
-		    'cp':	['cp', 'copy'],
-		    'rm':	['rm', 'del'],
-		}
-	indx = 1
-	return nametab[cmnd][indx]
 
 #  Error process.
 #
@@ -244,7 +124,7 @@ def abort(msg, exitcode=1):
 def print_usage():
 	print()
 	cmnd = 'python %s --help' % progpath
-	wait(execute(cmnd))
+	subprocess.Popen(cmnd, shell=True).wait()
 	sys.exit(1)
 
 # ----------------------------------------------------------------------
@@ -253,12 +133,15 @@ def print_usage():
 usage = 'Usage: %prog [options] texmain'
 parser = OptionParser(usage = usage)
 #
-parser.add_option('-s', '--src-version', dest='src_version',
-			action='store', default='14.0', metavar='VER',
-			help='source VS version [default: %default]')
 parser.add_option('-d', '--dst-version', dest='dst_version',
 			action='store', default='15.0', metavar='VER',
 			help='destination VS version [default: %default]')
+parser.add_option('-f', '--force', dest='force',
+			action='store_true', default=False,
+			help='force overwrite even if file exists')
+parser.add_option('-s', '--src-version', dest='src_version',
+			action='store', default='14.0', metavar='VER',
+			help='source VS version [default: %default]')
 parser.add_option('-S', '--sdk-version', dest='sdk_version',
 			action='store', default='10.0.17763.0', metavar='VER',
 			help='SDK version [default: %default]')
@@ -277,6 +160,7 @@ if options.version:
 src_version = options.src_version
 dst_version = options.dst_version
 sdk_version = options.sdk_version
+force = options.force
 verbose = options.verbose
 #
 if len(args) != 1:
@@ -288,17 +172,17 @@ slnname = get_slnname(slnfile, src_version, '.sln')
 src_slnfile = '%s%s.sln' % (slnname, src_version)
 dst_slnfile = '%s%s.sln' % (slnname, dst_version)
 
-#  ファイルのチェック
-#
-if not os.path.exists(src_slnfile):
-	abort('No such file: "%s"' % src_slnfile)
-if os.path.exists(dst_slnfile):
-	print('%s: "%s" exists' % (prog, dst_slnfile))
-	ans = input('overwrite [y/n] ?')
-	if ans.lower() != 'y':
-		abort('aborted')
+sys.stdout.write('getting Visual Studio Version (take long, be patience) ... ')
+sys.stdout.flush()
+vs_version = get_vs_version()
+if vs_version is None:
+	print('NG, assume default version')
+	vs_version = vs_version_default
+else:
+	print('OK')
+vs_version = '.'.join(vs_version.split('.')[:-1]) + '.0'
+print('Visual Studio Version: %s' % vs_version)
 
-vs_version = '15.0.27703.0'
 if verbose:
 	print('converting')
 	print('  from: %s' % src_slnfile)
@@ -312,10 +196,13 @@ if verbose:
 #  メイン処理開始
 #
 
-# ----------------------------------------------------------------------
+#  ソリューションファイルの存在チェック
+#
+check_files(src_slnfile, dst_slnfile, force)
+
 #  指定されたソリューションファイルを読み、
 #   (1) バージョン情報、プロジェクト情報を書き換える
-#   (2) 関連するプロジェクトをリストアップする
+#   (2) 関連するプロジェクトファイルをリストアップする
 #
 patt_vsv = r'VisualStudioVersion = ([0-9.]+)'
 patt_prj = r'Project\(.*\) = ".*", "(.*)", ".*"'
@@ -344,38 +231,44 @@ ofobj = open(dst_slnfile, 'w')
 for line in out_lines:
 	ofobj.write(line)
 ofobj.close()
-#
+print('created: %s' % dst_slnfile)
+
 #  関連するプロジェクトのうち、Springhead ライブラリに関するものは除く
+#  （'-l' オプションが指定されていない場合）
 #
 excludes = [
 	'Base', 'Collision', 'Creature', 'EmbPython', 'FileIO', 'Foundation',
 	'Framework', 'Graphics', 'HumanINterface', 'PHysics', 'RunSwig']
 #
-spr_projs = []
-for proj in projects:
-	p = proj.split('\\')[-1]
-	prjname = get_slnname(proj.split('\\')[-1], dst_version, '.vcxproj')
-	if prjname in excludes:
-		spr_projs.append(proj)
-for proj in spr_projs:
-	projects.remove(proj)
+if slnname != 'Springhead':
+	spr_projs = []
+	for proj in projects:
+		p = proj.split('\\')[-1]
+		prjname = get_slnname(p, dst_version, '.vcxproj')
+		if prjname in excludes:
+			spr_projs.append(proj)
+	for proj in spr_projs:
+		projects.remove(proj)
 if verbose:
 	print()
-	print('"%s" created' % dst_slnfile)
+	print('related project files: %s' % ', '.join(projects))
 	print()
-	print('related project files are:')
-	for proj in projects:
-		print('  %s' % proj)
+
+#  関連するプロジェクトファイルを作成する（既存のものをコピーする）
 #
-#  関連するプロジェクトファイルを書き換える
+for proj in projects:
+	prjname = get_slnname(proj, dst_version, '.vcxproj')
+	src = '%s%s.vcxproj' % (prjname, src_version)
+	dst = '%s%s.vcxproj' % (prjname, dst_version)
+	check_files(src, dst, force)
+	try:
+		shutil.copyfile(src, dst)
+		print('created: %s' % upath(proj))
+	except:
+		error('can not create file: "%s"' % upath(dst))
+
+#  終了
 #
-
-
-
-
-
-
-
 sys.exit(0)
 
 # end: SlnConv.py
