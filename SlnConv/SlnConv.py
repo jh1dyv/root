@@ -7,8 +7,6 @@
 #	    -d version	変換して作成する Visual Studio のバージョン
 #	    -f:		ファイルを上書きするとき確認をとらない
 #	    -s version	変換する元となる Visual Studio のバージョン
-#	    -S version	変換して作成する Windows SDK のバージョン
-#			又は 'latest' (登録されている最新のバージョン)
 #	arguments:
 #	    slnfile	ソリューション名 or ソリューションファイル名
 #
@@ -18,14 +16,15 @@
 #
 # ----------------------------------------------------------------------
 #  VERSION:
-#	Ver 1.0  2018/12/11 F.Kanehori	First version.
+#	Ver 1.0  2018/12/12 F.Kanehori	First version.
 # ======================================================================
 version = 1.0
 
 import sys
 import os
 import re
-import shutil
+import glob
+import codecs
 import subprocess
 from optparse import OptionParser
 
@@ -35,7 +34,8 @@ from optparse import OptionParser
 prog = sys.argv[0].split(os.sep)[-1].split('.')[0]
 progpath = sys.argv[0]
 PIPE = subprocess.PIPE
-vs_version_default = '15.0.27703.0'
+default_vs_version = '15.0.27703.0'
+encoding_list = "'utf-8', 'utf-8-sig', 'cp932', etc."
 
 # ----------------------------------------------------------------------
 #  External tools.
@@ -70,10 +70,69 @@ def check_files(srcfile, dstfile, force):
 			sys.exit(1)
 	return 0
 
+#  ファイルの読み書き
+#
+def read_file(name, encoding):
+	lines = []
+	fobj = open(name, 'r', encoding=encoding)
+	try:
+		for line in fobj:
+			lines.append(line)
+	except:
+		msg = "can't decode character. "
+		msg += 'try another one (%s)' % encoding_list
+		abort(msg)
+	fobj.close()
+	return lines
+
+def write_file(name, lines, encoding):
+	ofobj = open(name, 'w', encoding=encoding)
+	for line in lines:
+		try:
+			ofobj.write(line)
+		except:
+			msg = "can't encode character. "
+			msg += 'try another one (%s)' % encoding_list
+			abort(msg)
+	ofobj.close()
+
 #  Visual Studio のバージョンを調べる
 #
 def get_vs_version():
-	cmnd = '%s /?' % devenv
+	# 最新の devenv.exe のパスを見つける
+	cwd = os.getcwd()
+	base = 'C:/Program Files (x86)/Microsoft Visual Studio/'
+	os.chdir(base)
+	year = 0
+	for d in glob.glob('[0-9]*'):
+		if int(d) > year:
+			year = int(d)
+	if year == 0:
+		error('can not find "devenv.exe"')
+		print('assume default VS version: %s' % default_vs_version)
+		return default_vs_version
+	os.chdir(str(year))
+	vs_editions = glob.glob('*')
+	if len(vs_editions) == 1:
+		vs_edition = vs_editions[0]
+	else:
+		print('found folowings')
+		while True:
+			n = 0
+			for e in vs_editions:
+				n += 1
+				print('  %d: %s' % (n, e))
+			rc = int(input('select => ')) - 1
+			if 0 <= rc and rc < len(vs_editions):
+				vs_edition = vs_editions[rc]
+				break
+			print('error: index out of range')
+	devenv_dir = '%s/%d/%s/Common7/IDE' % (base, year, vs_edition)
+	print('OK')
+	print('using %s/devenv.exe' % devenv_dir)
+	os.chdir(cwd)
+	#
+	cmnd = '"%s/%s" /?' % (devenv_dir.replace('/', '\\'), devenv)
 	status, out, err = command(cmnd)
 	if status != 0:
 		return -1
@@ -136,15 +195,15 @@ parser = OptionParser(usage = usage)
 parser.add_option('-d', '--dst-version', dest='dst_version',
 			action='store', default='15.0', metavar='VER',
 			help='destination VS version [default: %default]')
+parser.add_option('-e', '--encoding', dest='encoding',
+			action='store', default='utf-8-sig',
+			help='solution/project file encoding [default: %default]')
 parser.add_option('-f', '--force', dest='force',
 			action='store_true', default=False,
 			help='force overwrite even if file exists')
 parser.add_option('-s', '--src-version', dest='src_version',
 			action='store', default='14.0', metavar='VER',
 			help='source VS version [default: %default]')
-parser.add_option('-S', '--sdk-version', dest='sdk_version',
-			action='store', default='10.0.17763.0', metavar='VER',
-			help='SDK version [default: %default]')
 parser.add_option('-v', '--verbose', dest='verbose',
 			action='count', default=0,
 			help='set verbose mode')
@@ -159,7 +218,7 @@ if options.version:
 #
 src_version = options.src_version
 dst_version = options.dst_version
-sdk_version = options.sdk_version
+encoding = options.encoding
 force = options.force
 verbose = options.verbose
 #
@@ -175,11 +234,6 @@ dst_slnfile = '%s%s.sln' % (slnname, dst_version)
 sys.stdout.write('getting Visual Studio Version (take long, be patience) ... ')
 sys.stdout.flush()
 vs_version = get_vs_version()
-if vs_version is None:
-	print('NG, assume default version')
-	vs_version = vs_version_default
-else:
-	print('OK')
 vs_version = '.'.join(vs_version.split('.')[:-1]) + '.0'
 print('Visual Studio Version: %s' % vs_version)
 
@@ -187,9 +241,9 @@ if verbose:
 	print('converting')
 	print('  from: %s' % src_slnfile)
 	print('  to:   %s' % dst_slnfile)
+	print('encoding: %s' % encoding)
 	print('version info')
-	print('  VS:   %s' % vs_version)
-	print('  SDK:  %s' % sdk_version)
+	print('    VS:   %s' % vs_version)
 	print()
 
 # ----------------------------------------------------------------------
@@ -209,8 +263,8 @@ patt_prj = r'Project\(.*\) = ".*", "(.*)", ".*"'
 #
 projects = []		# 関連プロジェクトのリスト
 out_lines = []		# 書き出すファイルの内容
-ifobj = open(src_slnfile)
-for line in ifobj:
+lines = read_file(src_slnfile, encoding)
+for line in lines:
 	m = re.match(patt_vsv, line)
 	if m:
 		line = line.replace(m.group(1), vs_version)
@@ -225,16 +279,12 @@ for line in ifobj:
 		if verbose:
 			print(line.strip())
 	out_lines.append(line)
-ifobj.close()
 #
-ofobj = open(dst_slnfile, 'w')
-for line in out_lines:
-	ofobj.write(line)
-ofobj.close()
+write_file(dst_slnfile, out_lines, encoding)
 print('created: %s' % dst_slnfile)
 
 #  関連するプロジェクトのうち、Springhead ライブラリに関するものは除く
-#  （'-l' オプションが指定されていない場合）
+#  ただし、SpringheadXX.sln が指定された場合には除外はしない
 #
 excludes = [
 	'Base', 'Collision', 'Creature', 'EmbPython', 'FileIO', 'Foundation',
@@ -254,18 +304,27 @@ if verbose:
 	print('related project files: %s' % ', '.join(projects))
 	print()
 
-#  関連するプロジェクトファイルを作成する（既存のものをコピーする）
+#  関連するプロジェクトファイルを作成する（ToolsVersion のみ書き換える）
 #
+patt_tv = r'ToolsVersion="([0-9.]+)"'
+out_lines = []
 for proj in projects:
 	prjname = get_slnname(proj, dst_version, '.vcxproj')
 	src = '%s%s.vcxproj' % (prjname, src_version)
 	dst = '%s%s.vcxproj' % (prjname, dst_version)
 	check_files(src, dst, force)
-	try:
-		shutil.copyfile(src, dst)
-		print('created: %s' % upath(proj))
-	except:
-		error('can not create file: "%s"' % upath(dst))
+	#
+	lines = read_file(src, encoding)	
+	out_lines = []
+	for line in lines:
+		m = re.search(patt_tv, line)
+		if m:
+			line = line.replace(m.group(1), dst_version)
+			if verbose:
+				print(line.strip())
+		out_lines.append(line)
+	write_file(dst, out_lines, encoding)
+	print('created: %s' % dst)
 
 #  終了
 #
