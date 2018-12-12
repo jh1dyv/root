@@ -260,12 +260,18 @@ check_files(src_slnfile, dst_slnfile, force)
 #
 patt_vsv = r'VisualStudioVersion = ([0-9.]+)'
 patt_prj = r'Project\(.*\) = ".*", "(.*)", ".*"'
+patt_ref = r'ProjectReference Include=".*(%s).*"' % src_version
 #
 projects = []		# 関連プロジェクトのリスト
 out_lines = []		# 書き出すファイルの内容
 lines = read_file(src_slnfile, encoding)
 for line in lines:
 	m = re.match(patt_vsv, line)
+	if m:
+		line = line.replace(m.group(1), vs_version)
+		if verbose:
+			print(line.strip())
+	m = re.match(patt_ref, line)
 	if m:
 		line = line.replace(m.group(1), vs_version)
 		if verbose:
