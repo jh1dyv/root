@@ -168,8 +168,8 @@ Springheadを使って簡単なアプリケーションプログラムを作成する道筋を説明します．
 
 \subsection*{プロジェクトの作成}
 
-\newcommand{\Rarrow}{\raisebox{1pt}{ $>$ }}
-「Visual C++ Windows\Rarrow デスクトップ ウィザード」を作成します．
+\newcommand{\RABra}{\raisebox{1pt}{ $>$ }}
+「Visual C++ Windows\RABra デスクトップ ウィザード」を作成します．
 作成するディレクトリを \path{C:\Experiments} と仮定します．
 他のディレクトリに作成する場合には，
 プロジェクトに指定するインクルードファイル及びライブラリファイルのパスが，
@@ -179,7 +179,7 @@ Springheadを使って簡単なアプリケーションプログラムを作成する道筋を説明します．
 空のプロジェクトをチェックします．
 
 プロジェクトを作成したら
-「プロジェクト\Rarrow 新しい項目の追加\Rarrow C++ファイル(.cpp)」
+「プロジェクト\RABra 新しい項目の追加\RABra C++ファイル(.cpp)」
 としてソースファイルを作成します．
 ここでは仮に\url{main.cpp}とします．
 
@@ -277,17 +277,17 @@ Table\,\ref{table_simplest_code}に示すコードを書き込んでください．
 また，\ref{libbuild} で説明したライブラリのビルドは済んでいるものとします．
 
 まずプロジェクトのプロパティページを開き，構成を「すべての構成」としてください．
-次に「C/C++\Rarrow 全般\Rarrow 追加のインクルードディレクトリ」に，
+次に「C/C++\RABra 全般\RABra 追加のインクルードディレクトリ」に，
 Fig.\,\ref{fig_newproject4}のように
 Springheadのインクルードファイルへのパスを指定してください．
-さらに，「リンカー\Rarrow 全般\Rarrow 追加のライブラリディレクトリ」に
+さらに，「リンカー\RABra 全般\RABra 追加のライブラリディレクトリ」に
 Fig.\,\ref{fig_newproject5}のようにSpringheadのライブラリファイルへのパスを指定します
 (64ビット構成の場合は\url{win32}の代わりに\url{win64}を指定します)．
 
 今度は構成を「Debug」にします．
-「C/C++\Rarrow コード生成\Rarrow ランタイムライブラリ」を
+「C/C++\RABra コード生成\RABra ランタイムライブラリ」を
 「マルチスレッド デバッグ DLL(\url{/MDd})」にします．
-次に「リンカー\Rarrow 入力\Rarrow 追加の依存ファイル」に
+次に「リンカー\RABra 入力\RABra 追加の依存ファイル」に
 \url{Springhead15.0DWin32.lib}(または\url{Springhead15.0Dx64.lib})を追加してください．
 
 最後に構成を「Release」に切り替えて同様の設定をします．
