@@ -22,17 +22,23 @@
 \def\URL#1{#1}
 
 % html ‚Ì“ÁŽê•¶Žš‚ÉŠÖ‚·‚é’è‹`
-\catcode`\<=\active
-\catcode`\>=\active
-\ifLwarp
-  \def<{\ifmmode\langle\else\textless\fi}
-  \def>{\ifmmode\rangle\else\textgreater\fi}
-\else
-  \def<{\ifmmode\langle\else\tt{\orgLAB}\fi}
-  \def>{\ifmmode\rangle\else\tt{\orgRAB}\fi}
-\fi
-\catcode`\>=12
-\catcode`\<=12
+%\ifLwarp
+  %\catcode`\<=\active
+  %\catcode`\>=\active
+  %\def<{\ifmmode\langle\else\textless\fi}
+  %\def>{\ifmmode\rangle\else\textgreater\fi}
+  %\catcode`\<=12
+  %\catcode`\>=12
+%\else
+%  \def\orgLAB{<}
+%  \def\orgRAB{>}
+%  \catcode`\<=\active
+%  \catcode`\>=\active
+%  \def<{\ifmmode\langle\else\tt{\orgLAB}\fi}
+%  \def>{\ifmmode\rangle\else\tt{\orgRAB}\fi}
+%  \catcode`\<=12
+%  \catcode`\>=12
+%\fi
 
 % --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 %

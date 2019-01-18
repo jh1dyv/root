@@ -11,22 +11,43 @@
 \renewcommand{\figurename}{Fig.\,}
 \renewcommand{\tablename}{Table\,}
 
-\newcommand{\RABra}{\raisebox{1pt}{ $>$ }}
-\newcommand{\LABra}{\raisebox{1pt}{ $<$ }}
+\newcommand{\RABra}{\raisebox{1pt}{$>$}}
+\newcommand{\LABra}{\raisebox{1pt}{$<$}}
+\def\BS{{\tt{\symbol{'134}}}}
+\def\LAB{{\tt{\symbol{'074}}}}
+\def\RAB{{\tt{\symbol{'076}}}}
+\def\AMP{{\tt{\symbol{'046}}}}
 
 \begin{document}
 
 これはテストのための文書です。
 
-数式モード$a<b, c>d$の中、マクロ\LABra\RABra にしたもの。
+数式モードの中　$a\LAB b\AMP c\RAB d$ (symbol)
 
-テキストa<b,c>dの中
+数式モードの中　$a\LABra b\AMP c\RABra d$ (\$$<$\$ \AMP\ \$$>$\$)
+
+数式モードの中　$a\textless b\AMP c\textgreater d$ (\BS textless \AMP\ \BS textgreater)
+
+テキストモードの中　a\LAB b\AMP c\RAB d (symbol)
+
+テキストモードの中　a\LABra b\AMP c\RABra d (\$$<$\$ \AMP\ \$$>$\$)
+
+テキストモードの中　a\textless b\AMP c\textgreater d ({\BS textless \AMP\ \BS textgreater)
 
 sourcecode環境の中
 
 \begin{sourcecode}
 #include <Springhead.h>
+#include \textless Springhead.h\textgreater
 pointer->mamber
+member<-pointer
+a < b & c > d
+a <b & c> d
+a \texless b \& c \texgreater\ d
+
+#include <b&c>
+#include < b & c > d
+#includeZ <b&c>
 \end{sourcecode}
 
 \end{document}

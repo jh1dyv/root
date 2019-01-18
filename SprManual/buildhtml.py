@@ -12,6 +12,7 @@
 # ----------------------------------------------------------------------
 #  VERSION:
 #	Ver 1.0  2018/11/29 F.Kanehori	First version.
+#	Ver 1.01 2019/01/18 F.Kanehori	Bug fixed.
 # ======================================================================
 version = 1.0
 
@@ -172,6 +173,7 @@ def cp(src, dst):
 		Print('cp: %s %s' % (src, dst))
 		return 0
 
+	rc = 0
 	if os.path.isdir(src):
 		rc = __cp(src, dst)
 	else:	
