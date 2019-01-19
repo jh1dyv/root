@@ -1,0 +1,63 @@
+const TEXT, MATH, DMATH, VERBATIM
+const DESIGNATORS = {
+	'$':			MATH,
+	r'\[':			DMATH,
+	r'\begin{verbatim}':	VERBATIM,
+	r'\begin{sourcecode}':	VERBATIM
+}
+
+function split(line, ch)
+	segment = line.split(ch)
+	if len(segment) is 1 then
+		// has no 'ch'
+		return [line]
+	else
+		return [seg[0], ch.join(seg[1:])]
+end function
+
+function process(mode, line)
+	if line is empty then
+		// nothing to do
+		pass
+
+	else if mode is MATH or DMATH then
+		separator = '$' if mode is MATH else r'\]'
+		seg  = split(line, separator)
+		if len(seg) is 1 then
+			// still in (display) math mode, no need to convert
+			pass
+		else
+			// [ (d)math, text ]
+			mode, rest = process(TEXT, seg[1])
+			line = separator.join(seg[0], rest)
+
+	else if mode is VERBATIM then
+		// do not convert '#include <...>'
+		if line has '#include' then
+			// '#include <...> ...
+			seg = split(line, '>')
+			mode, rest = process(TEXT, seg[1])
+			line = separator.join(seg[0], rest)
+		else
+			// convert '<', '>' and '&'
+			line = line.replace('&', '&amp;')
+			line = line.replace('<', '&lt;')
+			line = line.replace('>', '&gt;')
+
+	else	// mode is TEXT
+		for key, val in DESIGNATORS
+			seg  = split(line, key)
+			if len(seg) is 1 then
+				// still in text mode
+				// convert '<', '>' and '&'
+				line = line.replace('&', r'\&')
+				line = line.replace('<', r'\textless')
+				line = line.replace('>', r'\textgreater)
+			else
+				// [ text, val ]
+				mode, rest = process(val, seg[1])
+				line = separator.join(seg[0], rest)
+		// end for
+	end if
+	return mode, line
+end function

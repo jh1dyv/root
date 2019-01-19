@@ -42,15 +42,23 @@ sourcecodeŠÂ‹«‚Ì’†
 \begin{sourcecode}
 #include <Springhead.h>
 #include \textless Springhead.h\textgreater
-pointer->mamber
-member<-pointer
-a < b & c > d
-a <b & c> d
-a \texless b \& c \texgreater\ d
+#include &lt;Springhead.h&gt;
+#include "Springhead.h"
 
-#include <b&c>
-#include < b & c > d
-#includeZ <b&c>
+pointer->mamber				// unescaped
+member<-pointer				// unescaped
+pointer-&gt;mamber
+member&lt;-pointer
+
+a < b & c > d				// unescaped
+a <b & c> d				// unescaped
+a \textless b \& c \textgreater\ d
+a &lt;b &amp; c&gt; d
+
+#include <b&c>				// unescaped
+#include < b & c > d			// unescaped
+#includeZ <b&c>				// unescaped
+
 \end{sourcecode}
 
 \end{document}
