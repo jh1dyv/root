@@ -100,6 +100,7 @@ if options.verbose:
 
 # ----------------------------------------------------------------------
 # for verbose
+#
 def __verbose(msg, level=1):
 	if options.verbose >= level:
 		print('%s%s' % ((' '*indent.get()), msg))
@@ -135,7 +136,6 @@ def process_oneline(mode, line):
 	indent.inc(2)
 	__verbose('IN:  [%s]' % line.strip())
 	__verbose('%s: [%s]' % (mode_str(mode), line.strip()), 2)
-	__verbose('--- end env [%s]' % end_environ, 2)
 	#
 	if mode is MD_MATH or mode is MD_DMATH:
 		__verbose('process: MATH', 2)
@@ -178,7 +178,6 @@ def process_oneline(mode, line):
 			print('%s: Panic: no environment was detected so far' % prog)
 			sys.exit(1)
 		if line.find(end_environ) >= 0:
-			# segments = [ MD_VARBATIM, MD_TEXT ]
 			__verbose('process: VERBATIM: end_environ FOUND', 2)
 			__verbose('split: [VERBATIM, TEXT]', 2)
 			segments = split(line, end_environ)
@@ -297,6 +296,8 @@ def mode_str(mode):
 	if mode is MD_MATH:	return 'MATH'
 	if mode is MD_DMATH:	return 'DMATH'
 	if mode is MD_VERBATIM:	return 'VERBATIM'
+	if mode is MD_SRCCODE:	return 'SRCCODE'
+	return ''
 
 #  1ファイル分の処理を行なう。
 #
