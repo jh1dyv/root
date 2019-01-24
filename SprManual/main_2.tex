@@ -1,0 +1,69 @@
+\documentclass[a4paper, 12pt]{jsbook}
+\usepackage{graphicx, booktabs, amsmath, amssymb, url, makeidx, color}
+
+\usepackage{sprmacros, fancybox, framed, longtable, bm, comment}
+
+% PDF目次
+\usepackage[dvipdfm,bookmarks=true,bookmarksnumbered=true,bookmarkstype=toc,colorlinks=true,urlcolor=black,linkcolor=black,citecolor=black,setpagesize=false]{hyperref}
+\ifnum 42146=\euc"A4A2
+\AtBeginDvi{\special{pdf:tounicode EUC-UCS2}}
+\else
+\AtBeginDvi{\special{pdf:tounicode 90ms-RKSJ-UCS2}}
+\fi
+
+\def\BS{{\tt{\symbol{'134}}}}
+
+\begin{document}
+
+\noindent
+これはテストのための文書です。
+
+\bigskip
+\noindent
+{\bf Text mode:}
+
+三角括弧は、typewriter fontを使って {\tt <}tag?{\tt >} とするか、
+math modeにして $<$tag?$>$ とする。
+さもないと <tag?> のように字化けする。
+
+アンパサントは、\& のようにエスケープしないとエラーとなる。
+
+Table環境では、エスケープなしのアンパサントを使用する。
+
+\medskip
+\begin{tabular}{|c|c|}\hline
+	{\bf 項目1} & {\bf 項目2} \\\hline
+	value 1	& value 2 \\\hline
+\end{tabular}
+
+\bigskip
+\noindent
+{\bf verbatim environment:}
+
+原則としてすべてそのまま書けば良いが、
+{\tt \#include <...>} だけは例外で、
+三角括弧はそのまま書く。
+ここに最初から \BS textless, \BS textgreater を使うと、
+この文字列がそのまま表示されてしまう
+(これらは\LaTeX のマクロではない)。
+\begin{verbatim}
+#include <something.h>                       // < > をそのまま記述
+#include \textless something.h\textgreater   // マクロで記述
+\end{verbatim}
+
+\bigskip
+\noindent
+{\bf sourcecode environment:}
+
+原則としてすべてそのまま書けば良いが、
+{\tt \#include <...>} だけは例外で、
+三角括弧はそのまま書く。
+ここに最初から \BS textlt, \BS textgreater を使うと、
+この文字列がそのまま表示されてしまう
+(これらは\LaTeX のマクロではない)。
+\begin{sourcecode}
+#include <something.h>                      // < > をそのまま記述
+#include \textless something.h\textgreater  // マクロで記述
+\end{sourcecode}
+
+\end{document}

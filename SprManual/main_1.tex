@@ -1,0 +1,68 @@
+\documentclass[a4paper, 12pt]{jsbook}
+\usepackage{graphicx, booktabs, amsmath, amssymb, url, makeidx, color}
+
+\usepackage{sprmacros, fancybox, framed, longtable, bm, comment}
+
+% PDF目次
+\usepackage[dvipdfm,bookmarks=true,bookmarksnumbered=true,bookmarkstype=toc,colorlinks=true,urlcolor=black,linkcolor=black,citecolor=black,setpagesize=false]{hyperref}
+\ifnum 42146=\euc"A4A2
+\AtBeginDvi{\special{pdf:tounicode EUC-UCS2}}
+\else
+\AtBeginDvi{\special{pdf:tounicode 90ms-RKSJ-UCS2}}
+\fi
+
+\renewcommand{\figurename}{Fig.\,}
+\renewcommand{\tablename}{Table\,}
+
+\newcommand{\RABra}{\raisebox{1pt}{$>$}}
+\newcommand{\LABra}{\raisebox{1pt}{$<$}}
+\def\BS{{\tt{\symbol{'134}}}}
+\def\LAB{{\tt{\symbol{'074}}}}
+\def\RAB{{\tt{\symbol{'076}}}}
+\def\AMP{{\tt{\symbol{'046}}}}
+
+\begin{document}
+
+これはテストのための文書です。
+
+数式モードの中　$a<b \& c> d$ (直接記述)
+
+数式モードの中　$a\LAB b\AMP c\RAB d$ (symbol)
+
+数式モードの中　$a\LABra b\AMP c\RABra d$ (\$$<$\$ \AMP\ \$$>$\$)
+
+数式モードの中　$a\textless b\AMP c\textgreater d$ (\BS textless \AMP\ \BS textgreater)
+
+テキストモードの中　a< b \& c >d (直接記述+\BS \AMP)
+
+テキストモードの中　a\LAB b\AMP c\RAB d (symbol)
+
+テキストモードの中　a\LABra b\AMP c\RABra d (\$$<$\$ \AMP\ \$$>$\$)
+
+テキストモードの中　a\textless b\AMP c\textgreater d ({\BS textless \AMP\ \BS textgreater)
+
+sourcecode環境の中
+
+\begin{sourcecode}
+#include <Springhead.h>
+#include \textless Springhead.h\textgreater
+#include &lt;Springhead.h&gt;
+#include "Springhead.h"
+
+pointer->mamber				// unescaped
+member<-pointer				// unescaped
+pointer-&gt;mamber
+member&lt;-pointer
+
+a < b & c > d				// unescaped
+a <b & c> d				// unescaped
+a \textless b \& c \textgreater\ d
+a &lt;b &amp; c&gt; d
+
+#include <b&c>				// unescaped
+#include < b & c > d			// unescaped
+#includeZ <b&c>				// unescaped
+
+\end{sourcecode}
+
+\end{document}
