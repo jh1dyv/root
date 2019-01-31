@@ -1,8 +1,0 @@
-\contentsline {chapter}{\numberline {1}はじめに}{7}{chapter.1}
-\contentsline {chapter}{\numberline {2}First chapter}{9}{chapter.2}
-\contentsline {chapter}{\numberline {3}C\#について}{11}{chapter.3}
-\contentsline {section}{\numberline {3.1}A section}{11}{section.3.1}
-\contentsline {section}{\numberline {3.2}C\#について さらに}{11}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}C\#について もう一度}{11}{subsection.3.2.1}
-\contentsline {subsubsection}{C\#について さらに詳しく}{11}{section*.3}
-\contentsline {section}{\numberline {3.3}Some math}{12}{section.3.3}
