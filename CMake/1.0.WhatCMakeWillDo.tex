@@ -1,16 +1,37 @@
 % 1.0.WhatCMakeWillDo.tex
-%	Last update: 2019/07/05 F.Kanehori
+%	Last update: 2019/07/10 F.Kanehori
 \newpage
 \section{CMakeとは何をするものか}
 \label{sec:WhatCMakeWillDo}
 
 \def\Anno#1{\mc{\footnotesize{ \CDots\  #1}}}
-\def\SolutionFile{\hbox{ソリューションファイル\raise.3ex\hbox{\small{$^\dagger$}}}}
-\def\ProjectFile{\hbox{プロジェクトファイル\raise.4ex\hbox{\small{$^\ddagger$}}}}
-\def\cmake{{\tt{cmake}}}
+\def\SolutionFile{\hbox{ソリューションファイル
+	{\raise 1.2ex\hbox{\scriptsize (}}%
+	\raise.3ex\hbox{\small{$^\dagger$}}%
+	{\raise 1.2ex\hbox{\scriptsize )}}%
+}}
+\def\ProjectFile{\hbox{プロジェクトファイル
+	{\raise 1.2ex\hbox{\scriptsize (}}%
+	\raise.4ex\hbox{\small{$^\ddagger$}}%
+	{\raise 1.2ex\hbox{\scriptsize )}}%
+}}
+\def\cmake{\tt{cmake}}
+\def\make{\tt{make}}
+
+\def\SprTop#1{\Path{C:/Springhead{#1}}}
 \def\build{{\it{build\/}}}
 
+\def\CMakeLists#1{\Path{CMakeLists{#1}.txt}}
+\def\CMakeOpts#1{\Path{CMakeOpts{#1}.txt}}
+\def\CMakeConf#1{\Path{CMakeConf{#1}.txt}}
+\def\CMakeTopdir#1{\Path{CMakeTopdir{#1}.txt}}
+
+
 \noindent
-まず最初に、\cmake とは何をするものかについて簡単に説明をします。
+最初に\cmake とは何をするものかについて簡単に説明をします。
+Springheadの開発に携わらない方はこの章の内容は不要です。
+\ref{sec:ForNonDevelopper}をお読みください。
+また、\cmake について理解をされている方もこの章の内容は不要です。
+\ref{sec:ForDevelopper}からお読みください。
 
 % end: 1.0.WhatCMakeWillDo.tex
