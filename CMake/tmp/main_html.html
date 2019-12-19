@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8" />
+<meta name="generator" content="LaTeX lwarp package" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<title>Springhead - How to use CMake</title>
+<link rel="stylesheet" type="text/css" href="lwarp_sagebrush.css" />
+</head>
+<body>
+<header>
+
+
+</header>
+<section class="textbody">
+<div class="titlepage">
+
+<h1> Springhead - How to use CMake</h1>
+
+<div class="author">
+
+<div class="oneauthor">
+
+</div>
+
+</div>
+
+<div class="titledate">
+
+</div>
+
+</div>
+<h3 id="autosec-3"> Contents</h3><a id="autopage-3"></a>
+
+<nav class="toc">
+
+<p><a href="2ukqrQFbNykczxHg.html#autosec-6" class="tocchapter"
+><span class="sectionnumber">1</span>&#x2001;CMakeとは何をするものか</a></p>
+
+
+<p><a href="2ukqrQFbNykczxHg.html#autosec-7" class="tocsection"
+><span class="sectionnumber">1.1</span>&#x2001;CMakeとは何をするものか</a></p>
+
+
+<p><a href="2ukqrQFbNykczxHg.html#autosec-8" class="tocsubsection"
+><span class="sectionnumber">1.1.1</span>&#x2001;従来の方法</a></p>
+
+
+<p><a href="2ukqrQFbNykczxHg.html#autosec-10" class="tocsubsection"
+><span class="sectionnumber">1.1.2</span>&#x2001;CMakeを使用した場合</a></p>
+
+
+<p><a href="2ukqrQFbNykczxHg.html#autosec-13" class="tocsubsection"
+><span class="sectionnumber">1.1.3</span>&#x2001;CMakeを使用した場合の問題点</a></p>
+
+
+<p><a href="2ukqrQFbNykczxHg.html#autosec-14" class="tocsubsection"
+><span class="sectionnumber">1.1.4</span>&#x2001;対処法</a></p>
+
+
+<p><a href="COtOfv3iniSnphzw.html#autosec-18" class="tocchapter"
+><span class="sectionnumber">2</span>&#x2001;Springheadをライブラリとして利用する方へ</a></p>
+
+
+<p><a href="COtOfv3iniSnphzw.html#autosec-19" class="tocsection"
+><span class="sectionnumber">2.1</span>&#x2001;Springheadをライブラリとして利用する方へ</a></p>
+
+
+<p><a href="COtOfv3iniSnphzw.html#autosec-20" class="tocsubsection"
+><span class="sectionnumber">2.1.1</span>&#x2001;Springheadライブラリのダウンロード</a></p>
+
+
+<p><a href="COtOfv3iniSnphzw.html#autosec-24" class="tocsubsection"
+><span class="sectionnumber">2.1.2</span>&#x2001;準備</a></p>
+
+
+<p><a href="COtOfv3iniSnphzw.html#autosec-27" class="tocsubsection"
+><span class="sectionnumber">2.1.3</span>&#x2001;cmakeの実行</a></p>
+
+
+<p><a href="COtOfv3iniSnphzw.html#autosec-31" class="tocsubsection"
+><span class="sectionnumber">2.1.4</span>&#x2001;ライブラリのビルド</a></p>
+
+
+<p><a href="2rgZt0T7lfFaxUHi.html#autosec-33" class="tocchapter"
+><span class="sectionnumber">3</span>&#x2001;Springheadを開発する方へ</a></p>
+
+
+<p><a href="2rgZt0T7lfFaxUHi.html#autosec-34" class="tocsection"
+><span class="sectionnumber">3.1</span>&#x2001;Springheadを開発する方へ</a></p>
+
+
+<p><a href="2rgZt0T7lfFaxUHi.html#autosec-35" class="tocsubsection"
+><span class="sectionnumber">3.1.1</span>&#x2001;準備</a></p>
+
+
+<p><a href="2rgZt0T7lfFaxUHi.html#autosec-40" class="tocsubsection"
+><span class="sectionnumber">3.1.2</span>&#x2001;cmakeの実行</a></p>
+
+
+<p><a href="2rgZt0T7lfFaxUHi.html#autosec-41" class="tocsubsection"
+><span class="sectionnumber">3.1.3</span>&#x2001;アプリケーションプログラムのビルド</a></p>
+
+
+</nav>
+<h3 id="autosec-4"> List of Figures</h3><a id="autopage-4"></a>
+
+<nav class="lof">
+
+<p><a href="2ukqrQFbNykczxHg.html#autoid-2" class="tocfigure"
+><span class="sectionnumber">1.1</span>&#x2001;Springhead Library構成</a></p>
+
+
+<p><a href="2ukqrQFbNykczxHg.html#autoid-3" class="tocfigure"
+><span class="sectionnumber">1.2</span>&#x2001;Application構成</a></p>
+
+
+<p><a href="2ukqrQFbNykczxHg.html#autoid-4" class="tocfigure"
+><span class="sectionnumber">1.3</span>&#x2001;ビルドの最適性への対処法</a></p>
+
+
+<p><a href="2ukqrQFbNykczxHg.html#autoid-5" class="tocfigure"
+><span class="sectionnumber">1.4</span>&#x2001;プロジェクトファイルの最適性への対処法</a></p>
+
+
+<p><a href="COtOfv3iniSnphzw.html#autoid-8" class="tocfigure"
+><span class="sectionnumber">2.1</span>&#x2001;Springheadダウンロード</a></p>
+
+
+<p><a href="COtOfv3iniSnphzw.html#autoid-12" class="tocfigure"
+><span class="sectionnumber">2.2</span>&#x2001;cmake configure</a></p>
+
+
+<p><a href="COtOfv3iniSnphzw.html#autoid-13" class="tocfigure"
+><span class="sectionnumber">2.3</span>&#x2001;cmake generator</a></p>
+
+
+</nav>
+
+</section>
+
+<footer>
+
+</footer>
+
+</body>
+</html>

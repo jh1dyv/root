@@ -1,0 +1,25 @@
+目次
+
+1　Springheadライブラリのビルド
+
+	1.1　ダウンロード
+	1.2　CMakeを使ったビルド
+	1.3　Visual Studioを使ったでビルド（非推奨）
+
+2　アプリケーションのビルド
+
+	2.1　Springheadライブラリのリンク
+	2.2　CMakeLists.txtの雛形
+
+3　Springheadの開発者向けの注意
+
+	3.1　CMakeを使ったビルド
+	3.2　Visual Studioを使ったでビルド（非推奨）
+	3.3　アプリケーションのビルド
+
+Appendix　CMakeの使用における問題点
+
+	A.1　従来の方法
+	A.2　CMakeを使用した場合
+	A.3　問題点
+	A.4　対処法

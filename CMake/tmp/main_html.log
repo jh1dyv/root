@@ -1,0 +1,2570 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2018.10.16)  7 OCT 2019 14:03
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**main_html
+(./main_html.tex
+LaTeX2e <2018-04-01> patch level 5
+(c:/texlive/2018/texmf-dist/tex/latex/base/book.cls
+Document Class: book 2014/09/29 v1.4h Standard LaTeX document class
+(c:/texlive/2018/texmf-dist/tex/latex/base/bk10.clo
+File: bk10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count80
+\c@chapter=\count81
+\c@section=\count82
+\c@subsection=\count83
+\c@subsubsection=\count84
+\c@paragraph=\count85
+\c@subparagraph=\count86
+\c@figure=\count87
+\c@table=\count88
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(./lwarp_preamble_first.tex
+(c:/texlive/2018/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2013/04/04 v0.2 Provides if(tex) conditional for PDFTeX, XeTeX, 
+and LuaTeX
+)
+(c:/texlive/2018/texmf-dist/tex/latex/bxcjkjatype/bxcjkjatype.sty
+Package: bxcjkjatype 2016/10/15 v0.3
+
+(c:/texlive/2018/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+Package bxcjkjatype Info: Driver auto-detected: pdftex on input line 144.
+
+(c:/texlive/2018/texmf-dist/tex/latex/cjk/texinput/CJK.sty
+Package: CJK 2015/04/18 4.8.4
+
+(c:/texlive/2018/texmf-dist/tex/latex/cjk/texinput/mule/MULEenc.sty
+Package: MULEenc 2015/04/18 4.8.4
+)
+(c:/texlive/2018/texmf-dist/tex/latex/cjk/texinput/CJK.enc
+File: CJK.enc 2015/04/18 4.8.4
+Now handling font encoding C00 ...
+... no UTF-8 mapping file for font encoding C00
+Now handling font encoding C05 ...
+... no UTF-8 mapping file for font encoding C05
+Now handling font encoding C09 ...
+... no UTF-8 mapping file for font encoding C09
+Now handling font encoding C10 ...
+... no UTF-8 mapping file for font encoding C10
+Now handling font encoding C20 ...
+... no UTF-8 mapping file for font encoding C20
+Now handling font encoding C19 ...
+... no UTF-8 mapping file for font encoding C19
+Now handling font encoding C40 ...
+... no UTF-8 mapping file for font encoding C40
+Now handling font encoding C42 ...
+... no UTF-8 mapping file for font encoding C42
+Now handling font encoding C43 ...
+... no UTF-8 mapping file for font encoding C43
+Now handling font encoding C50 ...
+... no UTF-8 mapping file for font encoding C50
+Now handling font encoding C52 ...
+... no UTF-8 mapping file for font encoding C52
+Now handling font encoding C49 ...
+... no UTF-8 mapping file for font encoding C49
+Now handling font encoding C60 ...
+... no UTF-8 mapping file for font encoding C60
+Now handling font encoding C61 ...
+... no UTF-8 mapping file for font encoding C61
+Now handling font encoding C63 ...
+... no UTF-8 mapping file for font encoding C63
+Now handling font encoding C64 ...
+... no UTF-8 mapping file for font encoding C64
+Now handling font encoding C65 ...
+... no UTF-8 mapping file for font encoding C65
+Now handling font encoding C70 ...
+... no UTF-8 mapping file for font encoding C70
+Now handling font encoding C31 ...
+... no UTF-8 mapping file for font encoding C31
+Now handling font encoding C32 ...
+... no UTF-8 mapping file for font encoding C32
+Now handling font encoding C33 ...
+... no UTF-8 mapping file for font encoding C33
+Now handling font encoding C34 ...
+... no UTF-8 mapping file for font encoding C34
+Now handling font encoding C35 ...
+... no UTF-8 mapping file for font encoding C35
+Now handling font encoding C36 ...
+... no UTF-8 mapping file for font encoding C36
+Now handling font encoding C37 ...
+... no UTF-8 mapping file for font encoding C37
+Now handling font encoding C80 ...
+... no UTF-8 mapping file for font encoding C80
+Now handling font encoding C81 ...
+... no UTF-8 mapping file for font encoding C81
+Now handling font encoding C01 ...
+... no UTF-8 mapping file for font encoding C01
+Now handling font encoding C11 ...
+... no UTF-8 mapping file for font encoding C11
+Now handling font encoding C21 ...
+... no UTF-8 mapping file for font encoding C21
+Now handling font encoding C41 ...
+... no UTF-8 mapping file for font encoding C41
+Now handling font encoding C62 ...
+... no UTF-8 mapping file for font encoding C62
+)
+LaTeX Info: Redefining \selectfont on input line 755.
+\CJK@indent=\box26
+)
+(c:/texlive/2018/texmf-dist/tex/latex/cjk/texinput/CJKutf8.sty
+Package: CJKutf8 2015/04/18 4.8.4
+
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2018/09/07 v3.3 Provides the ifpdf switch
+)
+(c:/texlive/2018/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2018/04/06 v1.3b Input encoding file
+\inpenc@prehook=\toks15
+\inpenc@posthook=\toks16
+)
+(c:/texlive/2018/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2017/04/05 v2.0i Standard LaTeX package
+))
+(c:/texlive/2018/texmf-dist/tex/latex/cjk/texinput/CJKspace.sty
+Package: CJKspace 2015/04/18 3.8.0
+)
+(c:/texlive/2018/texmf-dist/tex/latex/cjkpunct/CJKpunct.sty
+Package: CJKpunct 2016/05/14 4.8.4
+\CJKpunct@cnta=\count89
+\CJKpunct@cntb=\count90
+\CJKpunct@cntc=\count91
+\CJKpunct@cntd=\count92
+\CJKpunct@cnte=\count93
+   defining Unicode char U+2018 (decimal 8216)
+   defining Unicode char U+2019 (decimal 8217)
+   defining Unicode char U+201C (decimal 8220)
+   defining Unicode char U+201D (decimal 8221)
+   defining Unicode char U+2014 (decimal 8212)
+   defining Unicode char U+2026 (decimal 8230)
+
+(c:/texlive/2018/texmf-dist/tex/latex/cjkpunct/CJKpunct.spa))
+(c:/texlive/2018/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2018/08/19 v2.5f e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count94
+)
+(c:/texlive/2018/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.bdg
+File: UTF8.bdg 2015/04/18 4.8.4
+))
+(c:/texlive/2018/texmf-dist/tex/latex/lm/lmodern.sty
+Package: lmodern 2009/10/30 v1.6 Latin Modern Fonts
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/lmm/m/it on input line 23.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/lmsy/m/n on input line 24.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 25.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 26.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/lmm/b/it on input line 27.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/lmsy/b/n on input line 28.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 29.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 31.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 32.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/lmr/m/it on input line 33.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> OT1/lmss/bx/n on input line 36.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/lmr/bx/it on input line 37.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
+)
+(c:/texlive/2018/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2017/04/05 v2.0i Standard LaTeX package
+
+(c:/texlive/2018/texmf-dist/tex/latex/base/t1enc.def
+File: t1enc.def 2017/04/05 v2.0i Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
+))
+(c:/texlive/2018/texmf-dist/tex/latex/lwarp/lwarp.sty
+Package: lwarp 2018/09/19 v0.60 Allows LaTeX to directly produce HTML5 output.
+
+(c:/texlive/2018/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2017/04/05 v2.0i Standard LaTeX package
+
+(c:/texlive/2018/texmf-dist/tex/latex/base/t1enc.def
+File: t1enc.def 2017/04/05 v2.0i Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
+))
+(c:/texlive/2018/texmf-dist/tex/latex/newunicodechar/newunicodechar.sty
+Package: newunicodechar 2018/04/08 v1.2 Defining Unicode characters
+)
+
+Package newunicodechar Warning: Redefining Unicode character on input line 83.
+
+
+Package newunicodechar Warning: Redefining Unicode character on input line 84.
+
+(c:/texlive/2018/texmf-dist/tex/latex/upquote/upquote.sty
+Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
+tim
+
+(c:/texlive/2018/texmf-dist/tex/latex/base/textcomp.sty
+Package: textcomp 2017/04/05 v2.0i Standard LaTeX package
+Package textcomp Info: Sub-encoding information:
+(textcomp)               5 = only ISO-Adobe without \textcurrency
+(textcomp)               4 = 5 + \texteuro
+(textcomp)               3 = 4 + \textohm
+(textcomp)               2 = 3 + \textestimated + \textcurrency
+(textcomp)               1 = TS1 - \textcircled - \t
+(textcomp)               0 = TS1 (full)
+(textcomp)             Font families with sub-encoding setting implement
+(textcomp)             only a restricted character set as indicated.
+(textcomp)             Family '?' is the default used for unknown fonts.
+(textcomp)             See the documentation for details.
+Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 79.
+
+(c:/texlive/2018/texmf-dist/tex/latex/base/ts1enc.def
+File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
+Now handling font encoding TS1 ...
+... processing UTF-8 mapping file for font encoding TS1
+
+(c:/texlive/2018/texmf-dist/tex/latex/base/ts1enc.dfu
+File: ts1enc.dfu 2018/04/05 v1.2c UTF-8 support for inputenc
+   defining Unicode char U+00A2 (decimal 162)
+   defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00A4 (decimal 164)
+   defining Unicode char U+00A5 (decimal 165)
+   defining Unicode char U+00A6 (decimal 166)
+   defining Unicode char U+00A7 (decimal 167)
+   defining Unicode char U+00A8 (decimal 168)
+   defining Unicode char U+00A9 (decimal 169)
+   defining Unicode char U+00AA (decimal 170)
+   defining Unicode char U+00AC (decimal 172)
+   defining Unicode char U+00AE (decimal 174)
+   defining Unicode char U+00AF (decimal 175)
+   defining Unicode char U+00B0 (decimal 176)
+   defining Unicode char U+00B1 (decimal 177)
+   defining Unicode char U+00B2 (decimal 178)
+   defining Unicode char U+00B3 (decimal 179)
+   defining Unicode char U+00B4 (decimal 180)
+   defining Unicode char U+00B5 (decimal 181)
+   defining Unicode char U+00B6 (decimal 182)
+   defining Unicode char U+00B7 (decimal 183)
+   defining Unicode char U+00B9 (decimal 185)
+   defining Unicode char U+00BA (decimal 186)
+   defining Unicode char U+00BC (decimal 188)
+   defining Unicode char U+00BD (decimal 189)
+   defining Unicode char U+00BE (decimal 190)
+   defining Unicode char U+00D7 (decimal 215)
+   defining Unicode char U+00F7 (decimal 247)
+   defining Unicode char U+0192 (decimal 402)
+   defining Unicode char U+02C7 (decimal 711)
+   defining Unicode char U+02D8 (decimal 728)
+   defining Unicode char U+02DD (decimal 733)
+   defining Unicode char U+0E3F (decimal 3647)
+   defining Unicode char U+2016 (decimal 8214)
+   defining Unicode char U+2020 (decimal 8224)
+   defining Unicode char U+2021 (decimal 8225)
+   defining Unicode char U+2022 (decimal 8226)
+   defining Unicode char U+2030 (decimal 8240)
+   defining Unicode char U+2031 (decimal 8241)
+   defining Unicode char U+203B (decimal 8251)
+   defining Unicode char U+203D (decimal 8253)
+   defining Unicode char U+2044 (decimal 8260)
+   defining Unicode char U+204E (decimal 8270)
+   defining Unicode char U+2052 (decimal 8274)
+   defining Unicode char U+20A1 (decimal 8353)
+   defining Unicode char U+20A4 (decimal 8356)
+   defining Unicode char U+20A6 (decimal 8358)
+   defining Unicode char U+20A9 (decimal 8361)
+   defining Unicode char U+20AB (decimal 8363)
+   defining Unicode char U+20AC (decimal 8364)
+   defining Unicode char U+20B1 (decimal 8369)
+   defining Unicode char U+2103 (decimal 8451)
+   defining Unicode char U+2116 (decimal 8470)
+   defining Unicode char U+2117 (decimal 8471)
+   defining Unicode char U+211E (decimal 8478)
+   defining Unicode char U+2120 (decimal 8480)
+   defining Unicode char U+2122 (decimal 8482)
+   defining Unicode char U+2126 (decimal 8486)
+   defining Unicode char U+2127 (decimal 8487)
+   defining Unicode char U+212E (decimal 8494)
+   defining Unicode char U+2190 (decimal 8592)
+   defining Unicode char U+2191 (decimal 8593)
+   defining Unicode char U+2192 (decimal 8594)
+   defining Unicode char U+2193 (decimal 8595)
+   defining Unicode char U+2329 (decimal 9001)
+   defining Unicode char U+232A (decimal 9002)
+   defining Unicode char U+2422 (decimal 9250)
+   defining Unicode char U+25E6 (decimal 9702)
+   defining Unicode char U+25EF (decimal 9711)
+   defining Unicode char U+266A (decimal 9834)
+   defining Unicode char U+FEFF (decimal 65279)
+))
+LaTeX Info: Redefining \oldstylenums on input line 334.
+Package textcomp Info: Setting cmr sub-encoding to TS1/0 on input line 349.
+Package textcomp Info: Setting cmss sub-encoding to TS1/0 on input line 350.
+Package textcomp Info: Setting cmtt sub-encoding to TS1/0 on input line 351.
+Package textcomp Info: Setting cmvtt sub-encoding to TS1/0 on input line 352.
+Package textcomp Info: Setting cmbr sub-encoding to TS1/0 on input line 353.
+Package textcomp Info: Setting cmtl sub-encoding to TS1/0 on input line 354.
+Package textcomp Info: Setting ccr sub-encoding to TS1/0 on input line 355.
+Package textcomp Info: Setting ptm sub-encoding to TS1/4 on input line 356.
+Package textcomp Info: Setting pcr sub-encoding to TS1/4 on input line 357.
+Package textcomp Info: Setting phv sub-encoding to TS1/4 on input line 358.
+Package textcomp Info: Setting ppl sub-encoding to TS1/3 on input line 359.
+Package textcomp Info: Setting pag sub-encoding to TS1/4 on input line 360.
+Package textcomp Info: Setting pbk sub-encoding to TS1/4 on input line 361.
+Package textcomp Info: Setting pnc sub-encoding to TS1/4 on input line 362.
+Package textcomp Info: Setting pzc sub-encoding to TS1/4 on input line 363.
+Package textcomp Info: Setting bch sub-encoding to TS1/4 on input line 364.
+Package textcomp Info: Setting put sub-encoding to TS1/5 on input line 365.
+Package textcomp Info: Setting uag sub-encoding to TS1/5 on input line 366.
+Package textcomp Info: Setting ugq sub-encoding to TS1/5 on input line 367.
+Package textcomp Info: Setting ul8 sub-encoding to TS1/4 on input line 368.
+Package textcomp Info: Setting ul9 sub-encoding to TS1/4 on input line 369.
+Package textcomp Info: Setting augie sub-encoding to TS1/5 on input line 370.
+Package textcomp Info: Setting dayrom sub-encoding to TS1/3 on input line 371.
+Package textcomp Info: Setting dayroms sub-encoding to TS1/3 on input line 372.
+
+Package textcomp Info: Setting pxr sub-encoding to TS1/0 on input line 373.
+Package textcomp Info: Setting pxss sub-encoding to TS1/0 on input line 374.
+Package textcomp Info: Setting pxtt sub-encoding to TS1/0 on input line 375.
+Package textcomp Info: Setting txr sub-encoding to TS1/0 on input line 376.
+Package textcomp Info: Setting txss sub-encoding to TS1/0 on input line 377.
+Package textcomp Info: Setting txtt sub-encoding to TS1/0 on input line 378.
+Package textcomp Info: Setting lmr sub-encoding to TS1/0 on input line 379.
+Package textcomp Info: Setting lmdh sub-encoding to TS1/0 on input line 380.
+Package textcomp Info: Setting lmss sub-encoding to TS1/0 on input line 381.
+Package textcomp Info: Setting lmssq sub-encoding to TS1/0 on input line 382.
+Package textcomp Info: Setting lmvtt sub-encoding to TS1/0 on input line 383.
+Package textcomp Info: Setting lmtt sub-encoding to TS1/0 on input line 384.
+Package textcomp Info: Setting qhv sub-encoding to TS1/0 on input line 385.
+Package textcomp Info: Setting qag sub-encoding to TS1/0 on input line 386.
+Package textcomp Info: Setting qbk sub-encoding to TS1/0 on input line 387.
+Package textcomp Info: Setting qcr sub-encoding to TS1/0 on input line 388.
+Package textcomp Info: Setting qcs sub-encoding to TS1/0 on input line 389.
+Package textcomp Info: Setting qpl sub-encoding to TS1/0 on input line 390.
+Package textcomp Info: Setting qtm sub-encoding to TS1/0 on input line 391.
+Package textcomp Info: Setting qzc sub-encoding to TS1/0 on input line 392.
+Package textcomp Info: Setting qhvc sub-encoding to TS1/0 on input line 393.
+Package textcomp Info: Setting futs sub-encoding to TS1/4 on input line 394.
+Package textcomp Info: Setting futx sub-encoding to TS1/4 on input line 395.
+Package textcomp Info: Setting futj sub-encoding to TS1/4 on input line 396.
+Package textcomp Info: Setting hlh sub-encoding to TS1/3 on input line 397.
+Package textcomp Info: Setting hls sub-encoding to TS1/3 on input line 398.
+Package textcomp Info: Setting hlst sub-encoding to TS1/3 on input line 399.
+Package textcomp Info: Setting hlct sub-encoding to TS1/5 on input line 400.
+Package textcomp Info: Setting hlx sub-encoding to TS1/5 on input line 401.
+Package textcomp Info: Setting hlce sub-encoding to TS1/5 on input line 402.
+Package textcomp Info: Setting hlcn sub-encoding to TS1/5 on input line 403.
+Package textcomp Info: Setting hlcw sub-encoding to TS1/5 on input line 404.
+Package textcomp Info: Setting hlcf sub-encoding to TS1/5 on input line 405.
+Package textcomp Info: Setting pplx sub-encoding to TS1/3 on input line 406.
+Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 407.
+Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 408.
+Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 409.
+))
+(c:/texlive/2018/texmf-dist/tex/latex/xpatch/xpatch.sty
+(c:/texlive/2018/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2018-09-24 L3 programming layer (loader) 
+
+(c:/texlive/2018/texmf-dist/tex/latex/l3kernel/expl3-code.tex
+Package: expl3 2018-09-24 L3 programming layer (code)
+\c_max_int=\count95
+\l_tmpa_int=\count96
+\l_tmpb_int=\count97
+\g_tmpa_int=\count98
+\g_tmpb_int=\count99
+\g__kernel_prg_map_int=\count100
+\c_log_iow=\count101
+\l_iow_line_count_int=\count102
+\l__iow_line_target_int=\count103
+\l__iow_one_indent_int=\count104
+\l__iow_indent_int=\count105
+\c_zero_dim=\dimen103
+\c_max_dim=\dimen104
+\l_tmpa_dim=\dimen105
+\l_tmpb_dim=\dimen106
+\g_tmpa_dim=\dimen107
+\g_tmpb_dim=\dimen108
+\c_zero_skip=\skip43
+\c_max_skip=\skip44
+\l_tmpa_skip=\skip45
+\l_tmpb_skip=\skip46
+\g_tmpa_skip=\skip47
+\g_tmpb_skip=\skip48
+\c_zero_muskip=\muskip10
+\c_max_muskip=\muskip11
+\l_tmpa_muskip=\muskip12
+\l_tmpb_muskip=\muskip13
+\g_tmpa_muskip=\muskip14
+\g_tmpb_muskip=\muskip15
+\l_keys_choice_int=\count106
+\l__intarray_loop_int=\count107
+\c__intarray_sp_dim=\dimen109
+\g__intarray_font_int=\count108
+\c__fp_leading_shift_int=\count109
+\c__fp_middle_shift_int=\count110
+\c__fp_trailing_shift_int=\count111
+\c__fp_big_leading_shift_int=\count112
+\c__fp_big_middle_shift_int=\count113
+\c__fp_big_trailing_shift_int=\count114
+\c__fp_Bigg_leading_shift_int=\count115
+\c__fp_Bigg_middle_shift_int=\count116
+\c__fp_Bigg_trailing_shift_int=\count117
+\c__kernel_randint_max_int=\count118
+\g__fp_array_int=\count119
+\l__fp_array_loop_int=\count120
+\l__sort_length_int=\count121
+\l__sort_min_int=\count122
+\l__sort_top_int=\count123
+\l__sort_max_int=\count124
+\l__sort_true_max_int=\count125
+\l__sort_block_int=\count126
+\l__sort_begin_int=\count127
+\l__sort_end_int=\count128
+\l__sort_A_int=\count129
+\l__sort_B_int=\count130
+\l__sort_C_int=\count131
+\l__tl_analysis_normal_int=\count132
+\l__tl_analysis_index_int=\count133
+\l__tl_analysis_nesting_int=\count134
+\l__tl_analysis_type_int=\count135
+\l__regex_internal_a_int=\count136
+\l__regex_internal_b_int=\count137
+\l__regex_internal_c_int=\count138
+\l__regex_balance_int=\count139
+\l__regex_group_level_int=\count140
+\l__regex_mode_int=\count141
+\c__regex_cs_in_class_mode_int=\count142
+\c__regex_cs_mode_int=\count143
+\l__regex_catcodes_int=\count144
+\l__regex_default_catcodes_int=\count145
+\c__regex_catcode_D_int=\count146
+\c__regex_catcode_S_int=\count147
+\c__regex_catcode_L_int=\count148
+\c__regex_catcode_O_int=\count149
+\c__regex_catcode_A_int=\count150
+\c__regex_all_catcodes_int=\count151
+\l__regex_show_lines_int=\count152
+\l__regex_min_state_int=\count153
+\l__regex_max_state_int=\count154
+\l__regex_left_state_int=\count155
+\l__regex_right_state_int=\count156
+\l__regex_capturing_group_int=\count157
+\l__regex_min_pos_int=\count158
+\l__regex_max_pos_int=\count159
+\l__regex_curr_pos_int=\count160
+\l__regex_start_pos_int=\count161
+\l__regex_success_pos_int=\count162
+\l__regex_curr_char_int=\count163
+\l__regex_curr_catcode_int=\count164
+\l__regex_last_char_int=\count165
+\l__regex_case_changed_char_int=\count166
+\l__regex_curr_state_int=\count167
+\l__regex_step_int=\count168
+\l__regex_min_active_int=\count169
+\l__regex_max_active_int=\count170
+\l__regex_replacement_csnames_int=\count171
+\l__regex_match_count_int=\count172
+\l__regex_min_submatch_int=\count173
+\l__regex_submatch_int=\count174
+\l__regex_zeroth_submatch_int=\count175
+\g__regex_trace_regex_int=\count176
+\c_empty_box=\box27
+\l_tmpa_box=\box28
+\l_tmpb_box=\box29
+\g_tmpa_box=\box30
+\g_tmpb_box=\box31
+\l__box_top_dim=\dimen110
+\l__box_bottom_dim=\dimen111
+\l__box_left_dim=\dimen112
+\l__box_right_dim=\dimen113
+\l__box_top_new_dim=\dimen114
+\l__box_bottom_new_dim=\dimen115
+\l__box_left_new_dim=\dimen116
+\l__box_right_new_dim=\dimen117
+\l__box_internal_box=\box32
+\l__coffin_internal_box=\box33
+\l__coffin_internal_dim=\dimen118
+\l__coffin_offset_x_dim=\dimen119
+\l__coffin_offset_y_dim=\dimen120
+\l__coffin_x_dim=\dimen121
+\l__coffin_y_dim=\dimen122
+\l__coffin_x_prime_dim=\dimen123
+\l__coffin_y_prime_dim=\dimen124
+\c_empty_coffin=\box34
+\l__coffin_aligned_coffin=\box35
+\l__coffin_aligned_internal_coffin=\box36
+\l_tmpa_coffin=\box37
+\l_tmpb_coffin=\box38
+\l__coffin_display_coffin=\box39
+\l__coffin_display_coord_coffin=\box40
+\l__coffin_display_pole_coffin=\box41
+\l__coffin_display_offset_dim=\dimen125
+\l__coffin_display_x_dim=\dimen126
+\l__coffin_display_y_dim=\dimen127
+\g__file_internal_ior=\read1
+\l__coffin_bounding_shift_dim=\dimen128
+\l__coffin_left_corner_dim=\dimen129
+\l__coffin_right_corner_dim=\dimen130
+\l__coffin_bottom_corner_dim=\dimen131
+\l__coffin_top_corner_dim=\dimen132
+\l__coffin_scaled_total_height_dim=\dimen133
+\l__coffin_scaled_width_dim=\dimen134
+\l__seq_internal_a_int=\count177
+\l__seq_internal_b_int=\count178
+)
+(c:/texlive/2018/texmf-dist/tex/latex/l3kernel/l3pdfmode.def
+File: l3pdfmode.def 2018-09-24 v L3 Experimental driver: PDF mode
+\l__driver_color_stack_int=\count179
+))
+Package: xpatch 2012/10/02 v0.3 Extending etoolbox patching commands
+
+(c:/texlive/2018/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+Package: xparse 2018-09-24 L3 Experimental document command parser
+\l__xparse_current_arg_int=\count180
+\g__xparse_grabber_int=\count181
+\l__xparse_m_args_int=\count182
+\l__xparse_mandatory_args_int=\count183
+\l__xparse_v_nesting_int=\count184
+)
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xpatchcmd with sig. '' on line 125.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xpretocmd with sig. '' on line 126.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xapptocmd with sig. '' on line 127.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xshowcmd with sig. '' on line 128.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xpatchbibmacro with sig. 'm' on line 131.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xpretobibmacro with sig. 'm' on line 133.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xapptobibmacro with sig. 'm' on line 135.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xshowbibmacro with sig. 'm' on line 137.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xpatchfieldformat with sig. 'O{*}m' on line 139.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xpretofieldformat with sig. 'O{*}m' on line 141.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xapptofieldformat with sig. 'O{*}m' on line 143.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xshowfieldformat with sig. 'O{*}m' on line 145.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xpatchnameformat with sig. 'O{*}m' on line 147.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xpretonameformat with sig. 'O{*}m' on line 149.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xapptonameformat with sig. 'O{*}m' on line 151.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xshownameformat with sig. 'O{*}m' on line 153.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xpatchlistformat with sig. 'O{*}m' on line 155.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xpretolistformat with sig. 'O{*}m' on line 157.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xapptolistformat with sig. 'O{*}m' on line 159.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xshowlistformat with sig. 'O{*}m' on line 161.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xpatchindexfieldformat with sig. 'O{*}m' on line 163.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xpretoindexfieldformat with sig. 'O{*}m' on line 165.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xapptoindexfieldformat with sig. 'O{*}m' on line 167.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xshowindexfieldformat with sig. 'O{*}m' on line 169.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xpatchindexnameformat with sig. 'O{*}m' on line 171.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xpretoindexnameformat with sig. 'O{*}m' on line 173.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xapptoindexnameformat with sig. 'O{*}m' on line 175.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xshowindexnameformat with sig. 'O{*}m' on line 177.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xpatchindexlistformat with sig. 'O{*}m' on line 179.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xpretoindexlistformat with sig. 'O{*}m' on line 181.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xappindextolistformat with sig. 'O{*}m' on line 183.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xshowindexlistformat with sig. 'O{*}m' on line 185.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xpatchbibdriver with sig. 'm' on line 187.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xpretobibdriver with sig. 'm' on line 189.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xapptobibdriver with sig. 'm' on line 191.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xshowbibdriver with sig. 'm' on line 193.
+.................................................
+)
+(c:/texlive/2018/texmf-dist/tex/latex/ifplatform/ifplatform.sty
+Package: ifplatform 2017/10/13 v0.4a Testing for the operating system
+
+(c:/texlive/2018/texmf-dist/tex/latex/tools/shellesc.sty
+Package: shellesc 2016/06/07 v0.02a unified shell escape interface for LaTeX
+Package shellesc Info: Restricted shell escape enabled on input line 69.
+)
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2018/09/10 v0.29 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/catchfile.sty
+Package: catchfile 2016/05/16 v1.7 Catch the contents of a file (HO)
+
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+))
+
+Package ifplatform Warning: 
+    shell escape is disabled, so I can only detect \ifwindows.
+
+) (c:/texlive/2018/texmf-dist/tex/latex/oberdiek/letltxmacro.sty
+Package: letltxmacro 2016/05/16 v1.5 Let assignment for LaTeX macros (HO)
+)
+(c:/texlive/2018/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+))
+(c:/texlive/2018/texmf-dist/tex/latex/comment/comment.sty
+\CommentStream=\write3
+
+Excluding comment 'comment') Excluding comment 'testing'
+Include comment 'warpall' Excluding comment 'warpHTML'
+Include comment 'warpprint' Excluding comment 'LWR@createlwarpmk'
+Excluding 'warpHTML' comment. Excluding 'warpHTML' comment.
+Including 'warpall' comment.
+\openout3 = `comment_print.cut'.
+
+ Straight input of comment_print.cut.
+(./comment_print.cut) Excluding 'warpHTML' comment.
+Including 'warpall' comment.
+\openout3 = `comment_print.cut'.
+
+ Straight input of comment_print.cut.
+(./comment_print.cut
+(c:/texlive/2018/texmf-dist/tex/latex/filecontents/filecontents.sty
+Package: filecontents 2018/05/30 v1.4 Create an external file from within a LaT
+eX document
+))
+Excluding 'warpHTML' comment. Including 'warpall' comment.
+\openout3 = `comment_print.cut'.
+
+
+Straight input of comment_print.cut. (./comment_print.cut
+(c:/texlive/2018/texmf-dist/tex/latex/environ/environ.sty
+Package: environ 2014/05/04 v0.3 A new way to define environments
+
+(c:/texlive/2018/texmf-dist/tex/latex/trimspaces/trimspaces.sty
+Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
+)
+\@envbody=\toks17
+))
+Excluding 'warpHTML' comment. Including 'warpprint' comment.
+\openout3 = `comment_print.cut'.
+
+
+Straight input of comment_print.cut. (./comment_print.cut
+(c:/texlive/2018/texmf-dist/tex/latex/varwidth/varwidth.sty
+Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
+\@vwid@box=\box42
+\sift@deathcycles=\count185
+\@vwid@loff=\dimen135
+\@vwid@roff=\dimen136
+))
+Excluding 'warpHTML' comment. Excluding 'warpHTML' comment.
+Including 'warpall' comment.
+\openout3 = `comment_print.cut'.
+
+ Straight input of comment_print.cut.
+(./comment_print.cut
+\LWR@quickfile=\write4
+) Excluding 'warpHTML' comment.
+Excluding 'warpHTML' comment. Excluding 'warpHTML' comment.
+Including 'warpall' comment.
+\openout3 = `comment_print.cut'.
+
+ Straight input of comment_print.cut.
+(./comment_print.cut) Excluding 'warpHTML' comment.
+Including 'warpall' comment.
+\openout3 = `comment_print.cut'.
+
+ Straight input of comment_print.cut.
+(./comment_print.cut) Excluding 'warpHTML' comment.
+Excluding 'warpHTML' comment. Excluding 'warpHTML' comment.
+Including 'warpprint' comment.
+\openout3 = `comment_print.cut'.
+
+ Straight input of comment_print.cut.
+(./comment_print.cut
+lwarp: generating configuration files
+) Including 'warpprint' comment.
+\openout3 = `comment_print.cut'.
+
+ Straight input of comment_print.cut.
+(./comment_print.cut
+\openout4 = `main_html_html.tex'.
+
+) Including 'warpprint' comment.
+\openout3 = `comment_print.cut'.
+
+
+Straight input of comment_print.cut. (./comment_print.cut)
+Including 'warpprint' comment.
+\openout3 = `comment_print.cut'.
+
+ Straight input of comment_print.cut.
+(./comment_print.cut) Including 'warpprint' comment.
+\openout3 = `comment_print.cut'.
+
+
+Straight input of comment_print.cut. (./comment_print.cut)
+Including 'warpprint' comment.
+\openout3 = `comment_print.cut'.
+
+ Straight input of comment_print.cut.
+(./comment_print.cut
+
+LaTeX Warning: Overwriting file `./lwarp.css'.
+
+\openout15 = `lwarp.css'.
+
+
+) Including 'warpprint' comment.
+\openout3 = `comment_print.cut'.
+
+ Straight input of comment_print.cut.
+(./comment_print.cut
+
+LaTeX Warning: Overwriting file `./lwarp_sagebrush.css'.
+
+\openout15 = `lwarp_sagebrush.css'.
+
+
+) Including 'warpprint' comment.
+\openout3 = `comment_print.cut'.
+
+ Straight input of comment_print.cut.
+(./comment_print.cut
+
+LaTeX Warning: Overwriting file `./lwarp_formal.css'.
+
+\openout15 = `lwarp_formal.css'.
+
+
+) Including 'warpprint' comment.
+\openout3 = `comment_print.cut'.
+
+ Straight input of comment_print.cut.
+(./comment_print.cut
+
+LaTeX Warning: Overwriting file `./sample_project.css'.
+
+\openout15 = `sample_project.css'.
+
+
+) Including 'warpprint' comment.
+\openout3 = `comment_print.cut'.
+
+ Straight input of comment_print.cut.
+(./comment_print.cut
+
+LaTeX Warning: Overwriting file `./lwarp.ist'.
+
+\openout15 = `lwarp.ist'.
+
+
+) Including 'warpprint' comment.
+\openout3 = `comment_print.cut'.
+
+ Straight input of comment_print.cut.
+(./comment_print.cut
+
+LaTeX Warning: Overwriting file `./lwarp.xdy'.
+
+\openout15 = `lwarp.xdy'.
+
+
+) Including 'warpprint' comment.
+\openout3 = `comment_print.cut'.
+
+ Straight input of comment_print.cut.
+(./comment_print.cut
+
+LaTeX Warning: Overwriting file `./lwarp_one_limage.txt'.
+
+\openout15 = `lwarp_one_limage.txt'.
+
+
+) Including 'warpprint' comment.
+\openout3 = `comment_print.cut'.
+
+ Straight input of comment_print.cut.
+(./comment_print.cut
+
+LaTeX Warning: Overwriting file `./lwarp_mathjax.txt'.
+
+\openout15 = `lwarp_mathjax.txt'.
+
+
+) Excluding 'LWR@createlwarpmk' comment. Excluding 'warpHTML' comment.
+Excluding 'warpHTML' comment. Including 'warpall' comment.
+\openout3 = `comment_print.cut'.
+
+
+Straight input of comment_print.cut. (./comment_print.cut)
+Including 'warpall' comment.
+\openout3 = `comment_print.cut'.
+
+ Straight input of comment_print.cut.
+(./comment_print.cut) Excluding 'warpHTML' comment.
+Excluding 'warpHTML' comment. Including 'warpall' comment.
+\openout3 = `comment_print.cut'.
+
+
+Straight input of comment_print.cut. (./comment_print.cut)
+Excluding 'warpHTML' comment. Excluding 'warpHTML' comment.
+Excluding 'warpHTML' comment. Including 'warpprint' comment.
+\openout3 = `comment_print.cut'.
+
+
+Straight input of comment_print.cut. (./comment_print.cut)
+Excluding 'warpHTML' comment. Excluding 'warpHTML' comment.
+Excluding 'warpHTML' comment. Including 'warpprint' comment.
+\openout3 = `comment_print.cut'.
+
+
+Straight input of comment_print.cut. (./comment_print.cut
+.................................................
+. LaTeX info: "xparse/define-environment"
+. 
+. Defining environment 'BlockClass' with sig. 'o m' on line 1.
+.................................................
+)
+Excluding 'warpHTML' comment. Including 'warpall' comment.
+\openout3 = `comment_print.cut'.
+
+
+Straight input of comment_print.cut. (./comment_print.cut)
+Excluding 'warpHTML' comment. Including 'warpprint' comment.
+\openout3 = `comment_print.cut'.
+
+
+Straight input of comment_print.cut. (./comment_print.cut
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \InlineClass with sig. 'o m +m' on line 1.
+.................................................
+)
+Excluding 'warpHTML' comment. Including 'warpprint' comment.
+\openout3 = `comment_print.cut'.
+
+
+Straight input of comment_print.cut. (./comment_print.cut
+.................................................
+. LaTeX info: "xparse/define-environment"
+. 
+. Defining environment 'LWR@BlockClassWP' with sig. 'm m m' on line 1.
+.................................................
+)
+Excluding 'warpHTML' comment. Excluding 'warpHTML' comment.
+Excluding 'warpHTML' comment. Excluding 'warpHTML' comment.
+Including 'warpall' comment.
+\openout3 = `comment_print.cut'.
+
+ Straight input of comment_print.cut.
+(./comment_print.cut) Excluding 'warpHTML' comment.
+Including 'warpprint' comment.
+\openout3 = `comment_print.cut'.
+
+ Straight input of comment_print.cut.
+(./comment_print.cut) Excluding 'warpHTML' comment.
+Including 'warpall' comment.
+\openout3 = `comment_print.cut'.
+
+ Straight input of comment_print.cut.
+(./comment_print.cut) Including 'warpall' comment.
+\openout3 = `comment_print.cut'.
+
+
+Straight input of comment_print.cut. (./comment_print.cut
+\c@FootnoteDepth=\count186
+)
+Excluding 'warpHTML' comment. Excluding 'warpHTML' comment.
+Including 'warpprint' comment.
+\openout3 = `comment_print.cut'.
+
+ Straight input of comment_print.cut.
+(./comment_print.cut) Including 'warpall' comment.
+\openout3 = `comment_print.cut'.
+
+
+Straight input of comment_print.cut. (./comment_print.cut
+\c@FileDepth=\count187
+)
+Excluding 'warpHTML' comment. Including 'warpprint' comment.
+\openout3 = `comment_print.cut'.
+
+
+Straight input of comment_print.cut. (./comment_print.cut)
+Excluding 'warpHTML' comment. Excluding 'warpHTML' comment.
+Including 'warpprint' comment.
+\openout3 = `comment_print.cut'.
+
+ Straight input of comment_print.cut.
+(./comment_print.cut) Excluding 'warpHTML' comment.
+Including 'warpall' comment.
+\openout3 = `comment_print.cut'.
+
+ Straight input of comment_print.cut.
+(./comment_print.cut) Excluding 'warpHTML' comment.
+Excluding 'warpHTML' comment. Excluding 'warpHTML' comment.
+Including 'warpall' comment.
+\openout3 = `comment_print.cut'.
+
+ Straight input of comment_print.cut.
+(./comment_print.cut) Including 'warpall' comment.
+\openout3 = `comment_print.cut'.
+
+
+Straight input of comment_print.cut. (./comment_print.cut)
+Including 'warpprint' comment.
+\openout3 = `comment_print.cut'.
+
+ Straight input of comment_print.cut.
+(./comment_print.cut) Excluding 'warpHTML' comment.
+Including 'warpall' comment.
+\openout3 = `comment_print.cut'.
+
+ Straight input of comment_print.cut.
+(./comment_print.cut) Excluding 'warpHTML' comment.
+Including 'warpprint' comment.
+\openout3 = `comment_print.cut'.
+
+ Straight input of comment_print.cut.
+(./comment_print.cut) Excluding 'warpHTML' comment.
+Including 'warpall' comment.
+\openout3 = `comment_print.cut'.
+
+ Straight input of comment_print.cut.
+(./comment_print.cut) Excluding 'warpHTML' comment.
+Excluding 'warpHTML' comment. Including 'warpprint' comment.
+\openout3 = `comment_print.cut'.
+
+
+Straight input of comment_print.cut. (./comment_print.cut)
+Excluding 'warpHTML' comment. Excluding 'warpHTML' comment.
+Including 'warpall' comment.
+\openout3 = `comment_print.cut'.
+
+ Straight input of comment_print.cut.
+(./comment_print.cut
+\HTMLvleftskip=\skip49
+\HTMLleftmargini=\skip50
+) Including 'warpall' comment.
+\openout3 = `comment_print.cut'.
+
+
+Straight input of comment_print.cut. (./comment_print.cut
+\VerbatimHTMLWidth=\skip51
+)
+Excluding 'warpHTML' comment. Excluding 'warpHTML' comment.
+Excluding 'warpHTML' comment. Excluding 'warpHTML' comment.
+Excluding 'warpHTML' comment. Excluding 'warpHTML' comment.
+Including 'warpall' comment.
+\openout3 = `comment_print.cut'.
+
+ Straight input of comment_print.cut.
+(./comment_print.cut) Excluding 'warpHTML' comment.
+Including 'warpall' comment.
+\openout3 = `comment_print.cut'.
+
+ Straight input of comment_print.cut.
+(./comment_print.cut) Excluding 'warpHTML' comment.
+Including 'warpprint' comment.
+\openout3 = `comment_print.cut'.
+
+ Straight input of comment_print.cut.
+(./comment_print.cut) Excluding 'warpHTML' comment.
+Including 'warpall' comment.
+\openout3 = `comment_print.cut'.
+
+ Straight input of comment_print.cut.
+(./comment_print.cut) Including 'warpall' comment.
+\openout3 = `comment_print.cut'.
+
+
+Straight input of comment_print.cut. (./comment_print.cut)
+Excluding 'warpHTML' comment. Excluding 'warpHTML' comment.
+Excluding 'warpHTML' comment. Excluding 'warpHTML' comment.
+Including 'warpall' comment.
+\openout3 = `comment_print.cut'.
+
+ Straight input of comment_print.cut.
+(./comment_print.cut
+\c@SideTOCDepth=\count188
+) Excluding 'warpHTML' comment.
+Excluding 'warpHTML' comment. Including 'warpprint' comment.
+\openout3 = `comment_print.cut'.
+
+
+Straight input of comment_print.cut. (./comment_print.cut)
+Including 'warpall' comment.
+\openout3 = `comment_print.cut'.
+
+ Straight input of comment_print.cut.
+(./comment_print.cut) Excluding 'warpHTML' comment.
+Excluding 'warpHTML' comment. Including 'warpall' comment.
+\openout3 = `comment_print.cut'.
+
+
+Straight input of comment_print.cut. (./comment_print.cut)
+Excluding 'warpHTML' comment. Including 'warpprint' comment.
+\openout3 = `comment_print.cut'.
+
+
+Straight input of comment_print.cut. (./comment_print.cut)
+Excluding 'warpHTML' comment. Excluding 'warpHTML' comment.
+Including 'warpall' comment.
+\openout3 = `comment_print.cut'.
+
+ Straight input of comment_print.cut.
+(./comment_print.cut) Excluding 'warpHTML' comment.
+Including 'warpprint' comment.
+\openout3 = `comment_print.cut'.
+
+ Straight input of comment_print.cut.
+(./comment_print.cut
+.................................................
+. LaTeX info: "xparse/define-environment"
+. 
+. Defining environment 'lateximage' with sig. 's o o o' on line 4.
+.................................................
+) Excluding 'warpHTML' comment.
+Excluding 'warpHTML' comment. Excluding 'warpHTML' comment.
+Including 'warpprint' comment.
+\openout3 = `comment_print.cut'.
+
+ Straight input of comment_print.cut.
+(./comment_print.cut) Including 'warpall' comment.
+\openout3 = `comment_print.cut'.
+
+
+Straight input of comment_print.cut. (./comment_print.cut)
+Including 'warpprint' comment.
+\openout3 = `comment_print.cut'.
+
+ Straight input of comment_print.cut.
+(./comment_print.cut) Excluding 'warpHTML' comment.
+Excluding 'warpHTML' comment. Excluding 'warpHTML' comment.
+Including 'warpprint' comment.
+\openout3 = `comment_print.cut'.
+
+ Straight input of comment_print.cut.
+(./comment_print.cut) Excluding 'warpHTML' comment.
+Including 'warpall' comment.
+\openout3 = `comment_print.cut'.
+
+ Straight input of comment_print.cut.
+(./comment_print.cut) Excluding 'warpHTML' comment.
+Including 'warpall' comment.
+\openout3 = `comment_print.cut'.
+
+ Straight input of comment_print.cut.
+(./comment_print.cut
+\LWR@fminipagebox=\box43
+.................................................
+. LaTeX info: "xparse/define-environment"
+. 
+. Defining environment 'LWR@print@fminipage' with sig. 'O{t} o O{t} m' on line
+. 22.
+.................................................
+) Excluding 'warpHTML' comment.
+Excluding 'warpHTML' comment. Excluding 'warpHTML' comment.
+Excluding 'warpHTML' comment. Excluding 'warpHTML' comment.
+Excluding 'warpHTML' comment. Including 'warpprint' comment.
+\openout3 = `comment_print.cut'.
+
+
+Straight input of comment_print.cut. (./comment_print.cut)
+Excluding 'warpHTML' comment. Excluding 'warpHTML' comment.
+Excluding 'warpHTML' comment.)
+(c:/texlive/2018/texmf-dist/tex/latex/base/makeidx.sty
+Package: makeidx 2014/09/29 v1.0m Standard LaTeX package
+)
+\@indexfile=\write5
+\openout5 = `main_html.idx'.
+
+
+Writing index file main_html.idx
+) (c:/texlive/2018/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+
+(c:/texlive/2018/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
+
+(c:/texlive/2018/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(c:/texlive/2018/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 99.
+
+(c:/texlive/2018/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen137
+\Gin@req@width=\dimen138
+)
+(c:/texlive/2018/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2016/04/27 v1.618033 publication quality tables
+\heavyrulewidth=\dimen139
+\lightrulewidth=\dimen140
+\cmidrulewidth=\dimen141
+\belowrulesep=\dimen142
+\belowbottomsep=\dimen143
+\aboverulesep=\dimen144
+\abovetopsep=\dimen145
+\cmidrulesep=\dimen146
+\cmidrulekern=\dimen147
+\defaultaddspace=\dimen148
+\@cmidla=\count189
+\@cmidlb=\count190
+\@aboverulesep=\dimen149
+\@belowrulesep=\dimen150
+\@thisruleclass=\count191
+\@lastruleclass=\count192
+\@thisrulewidth=\dimen151
+)
+(c:/texlive/2018/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2017/09/02 v2.17a AMS math features
+\@mathmargin=\skip52
+
+For additional information on amsmath, use the `?' option.
+(c:/texlive/2018/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+
+(c:/texlive/2018/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks18
+\ex@=\dimen152
+))
+(c:/texlive/2018/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen153
+)
+(c:/texlive/2018/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count193
+LaTeX Info: Redefining \frac on input line 213.
+\uproot@=\count194
+\leftroot@=\count195
+LaTeX Info: Redefining \overline on input line 375.
+\classnum@=\count196
+\DOTSCASE@=\count197
+LaTeX Info: Redefining \ldots on input line 472.
+LaTeX Info: Redefining \dots on input line 475.
+LaTeX Info: Redefining \cdots on input line 596.
+\Mathstrutbox@=\box44
+\strutbox@=\box45
+\big@size=\dimen154
+LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
+\macc@depth=\count198
+\c@MaxMatrixCols=\count199
+\dotsspace@=\muskip16
+\c@parentequation=\count266
+\dspbrk@lvl=\count267
+\tag@help=\toks19
+\row@=\count268
+\column@=\count269
+\maxfields@=\count270
+\andhelp@=\toks20
+\eqnshift@=\dimen155
+\alignsep@=\dimen156
+\tagshift@=\dimen157
+\tagwidth@=\dimen158
+\totwidth@=\dimen159
+\lineht@=\dimen160
+\@envbody=\toks21
+\multlinegap=\skip53
+\multlinetaggap=\skip54
+\mathdisplay@stack=\toks22
+LaTeX Info: Redefining \[ on input line 2817.
+LaTeX Info: Redefining \] on input line 2818.
+)
+(c:/texlive/2018/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(c:/texlive/2018/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(c:/texlive/2018/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip17
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+(c:/texlive/2018/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2016/07/10 v1.1e Standard LaTeX Color (DPC)
+
+(c:/texlive/2018/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: pdftex.def on input line 147.
+)
+(./lwarp_macros.sty)
+(c:/texlive/2018/texmf-dist/tex/latex/fancybox/fancybox.sty
+Package: fancybox 2010/05/15 1.4
+
+Style option: `fancybox' v1.4 <2010/05/15> (tvz)
+\@fancybox=\box46
+\shadowsize=\dimen161
+\@Sbox=\box47
+\do@VerbBox=\toks23
+\the@fancyput=\toks24
+\this@fancyput=\toks25
+\EndVerbatimTokens=\toks26
+\Verbatim@Outfile=\write6
+\Verbatim@Infile=\read2
+) (c:/texlive/2018/texmf-dist/tex/latex/framed/framed.sty
+Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
+\OuterFrameSep=\skip55
+\fb@frw=\dimen162
+\fb@frh=\dimen163
+\FrameRule=\dimen164
+\FrameSep=\dimen165
+)
+(c:/texlive/2018/texmf-dist/tex/latex/tools/longtable.sty
+Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)
+\LTleft=\skip56
+\LTright=\skip57
+\LTpre=\skip58
+\LTpost=\skip59
+\LTchunksize=\count271
+\LTcapwidth=\dimen166
+\LT@head=\box48
+\LT@firsthead=\box49
+\LT@foot=\box50
+\LT@lastfoot=\box51
+\LT@cols=\count272
+\LT@rows=\count273
+\c@LT@tables=\count274
+\c@LT@chunks=\count275
+\LT@p@ftn=\toks27
+)
+(c:/texlive/2018/texmf-dist/tex/latex/tools/bm.sty
+Package: bm 2017/01/16 v1.2c Bold Symbol Support (DPC/FMi)
+\symboldoperators=\mathgroup6
+\symboldletters=\mathgroup7
+\symboldsymbols=\mathgroup8
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 141.
+LaTeX Info: Redefining \bm on input line 207.
+)
+(c:/texlive/2018/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+(c:/texlive/2018/texmf-dist/tex/latex/setspace/setspace.sty
+Package: setspace 2011/12/19 v6.7a set line spacing
+)
+(c:/texlive/2018/texmf-dist/tex/generic/dirtree/dirtree.sty
+Package: dirtree 2012/12/11 v0.32 package wrapper for dirtree
+
+(c:/texlive/2018/texmf-dist/tex/generic/dirtree/dirtree.tex
+`dirtree' v0.32, 2012/12/11 (jcc)
+\DT@offset=\dimen167
+\DT@width=\dimen168
+\DT@sep=\dimen169
+\DT@all=\dimen170
+\DT@rulewidth=\dimen171
+\DT@dotwidth=\dimen172
+\DTbaselineskip=\dimen173
+\DT@counti=\count276
+\DT@countii=\count277
+\DT@countiii=\count278
+\DT@countiv=\count279
+\DT@indent=\dimen174
+\DT@parskip=\dimen175
+\DT@baselineskip=\dimen176
+)
+File: dirtree.tex 2012/12/11 v0.32 `dirtree' (jcc)
+) (./lwarp_preamble_last.tex
+(c:/texlive/2018/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2018/09/30 v6.88a Hypertext links for LaTeX
+
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+Package: hobsub-hyperref 2016/05/16 v1.14 Bundle oberdiek, subset hyperref (HO)
+
+
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+Package: hobsub-generic 2016/05/16 v1.14 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2016/05/16 v1.14 Construct package bundles (HO)
+Package hobsub Info: Skipping package `infwarerr' (already loaded).
+Package hobsub Info: Skipping package `ltxcmds' (already loaded).
+Package hobsub Info: Skipping package `ifluatex' (already loaded).
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+Package: intcalc 2016/05/16 v1.2 Expandable calculations with integers (HO)
+Package hobsub Info: Skipping package `ifpdf' (already loaded).
+Package hobsub Info: Skipping package `etexcmds' (already loaded).
+Package hobsub Info: Skipping package `kvsetkeys' (already loaded).
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+Package hobsub Info: Skipping package `pdftexcmds' (already loaded).
+Package: pdfescape 2016/05/16 v1.14 Implements pdfTeX's escape features (HO)
+Package: bigintcalc 2016/05/16 v1.4 Expandable calculations on big integers (HO
+)
+Package: bitset 2016/05/16 v1.2 Handle bit-vector datatype (HO)
+Package: uniquecounter 2016/05/16 v1.3 Provide unlimited unique counter (HO)
+)
+Package hobsub Info: Skipping package `hobsub' (already loaded).
+Package hobsub Info: Skipping package `letltxmacro' (already loaded).
+Package: hopatch 2016/05/16 v1.3 Wrapper for package hooks (HO)
+Package: xcolor-patch 2016/05/16 xcolor patch
+Package: atveryend 2016/05/16 v1.9 Hooks at the very end of document (HO)
+Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
+Package: refcount 2016/05/16 v3.5 Data extraction from label references (HO)
+Package: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
+)
+(c:/texlive/2018/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+(c:/texlive/2018/texmf-dist/tex/latex/oberdiek/auxhook.sty
+Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
+)
+\@linkdim=\dimen177
+\Hy@linkcounter=\count280
+\Hy@pagecounter=\count281
+
+(c:/texlive/2018/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2018/09/30 v6.88a Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+)
+\Hy@SavedSpaceFactor=\count282
+
+(c:/texlive/2018/texmf-dist/tex/latex/latexconfig/hyperref.cfg
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+Package hyperref Info: Hyper figures OFF on input line 4535.
+Package hyperref Info: Link nesting OFF on input line 4540.
+Package hyperref Info: Hyper index ON on input line 4543.
+Package hyperref Info: Plain pages OFF on input line 4550.
+Package hyperref Info: Backreferencing OFF on input line 4555.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4788.
+\c@Hy@tempcnt=\count283
+LaTeX Info: Redefining \url on input line 5141.
+\XeTeXLinkMargin=\dimen178
+\Fld@menulength=\count284
+\Field@Width=\dimen179
+\Fld@charsize=\dimen180
+Package hyperref Info: Hyper figures OFF on input line 6396.
+Package hyperref Info: Link nesting OFF on input line 6401.
+Package hyperref Info: Hyper index ON on input line 6404.
+Package hyperref Info: backreferencing OFF on input line 6411.
+Package hyperref Info: Link coloring OFF on input line 6416.
+Package hyperref Info: Link coloring with OCG OFF on input line 6421.
+Package hyperref Info: PDF/A mode OFF on input line 6426.
+LaTeX Info: Redefining \ref on input line 6466.
+LaTeX Info: Redefining \pageref on input line 6470.
+\Hy@abspage=\count285
+\c@Item=\count286
+\c@Hfootnote=\count287
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+
+(c:/texlive/2018/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2018/09/30 v6.88a Hyperref driver for pdfTeX
+\Fld@listcount=\count288
+\c@bookmark@seq@number=\count289
+
+(c:/texlive/2018/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+82.
+)
+\Hy@SectionHShift=\skip60
+)
+(c:/texlive/2018/texmf-dist/tex/latex/cleveref/cleveref.sty
+Package: cleveref 2018/03/27 v0.21.4 Intelligent cross-referencing
+Package cleveref Info: `hyperref' support loaded on input line 2370.
+LaTeX Info: Redefining \cref on input line 2370.
+LaTeX Info: Redefining \Cref on input line 2370.
+LaTeX Info: Redefining \crefrange on input line 2370.
+LaTeX Info: Redefining \Crefrange on input line 2370.
+LaTeX Info: Redefining \cpageref on input line 2370.
+LaTeX Info: Redefining \Cpageref on input line 2370.
+LaTeX Info: Redefining \cpagerefrange on input line 2370.
+LaTeX Info: Redefining \Cpagerefrange on input line 2370.
+LaTeX Info: Redefining \labelcref on input line 2370.
+LaTeX Info: Redefining \labelcpageref on input line 2370.
+)) (./main_html.aux
+
+LaTeX Warning: Label `fig:DownloadTree' multiply defined.
+
+
+LaTeX Warning: Label `fig:DownloadTree@cref' multiply defined.
+
+
+LaTeX Warning: Label `fig:DownloadTree' multiply defined.
+
+
+LaTeX Warning: Label `fig:DownloadTree@cref' multiply defined.
+
+
+LaTeX Warning: Label `fig:DownloadTree' multiply defined.
+
+
+LaTeX Warning: Label `fig:DownloadTree@cref' multiply defined.
+
+
+LaTeX Warning: Label `fig:DownloadTree' multiply defined.
+
+
+LaTeX Warning: Label `fig:DownloadTree@cref' multiply defined.
+
+
+LaTeX Warning: Label `fig:DownloadTree' multiply defined.
+
+
+LaTeX Warning: Label `fig:DownloadTree@cref' multiply defined.
+
+
+LaTeX Warning: Label `fig:DownloadTree' multiply defined.
+
+
+LaTeX Warning: Label `fig:DownloadTree@cref' multiply defined.
+
+
+LaTeX Warning: Label `fig:DownloadTree' multiply defined.
+
+
+LaTeX Warning: Label `fig:DownloadTree@cref' multiply defined.
+
+
+LaTeX Warning: Label `fig:DownloadTree' multiply defined.
+
+
+LaTeX Warning: Label `fig:DownloadTree@cref' multiply defined.
+
+
+LaTeX Warning: Label `fig:SpringheadLibraryTree' multiply defined.
+
+
+LaTeX Warning: Label `fig:SpringheadLibraryTree@cref' multiply defined.
+
+)
+\openout1 = `main_html.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for C00/song/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for C05/song/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for C09/song/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for C10/song/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for C20/song/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for C19/song/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for C40/song/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for C42/song/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for C43/song/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for C50/song/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for C52/song/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for C49/song/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for C60/mj/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for C61/mj/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for C63/mj/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for C64/mj/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for C65/mj/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for C70/song/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for C31/song/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for C32/song/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for C33/song/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for C34/song/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for C35/song/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for C36/song/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for C37/song/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for C80/song/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for C81/song/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for C01/song/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for C11/song/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for C21/song/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for C41/song/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for C62/song/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 22.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 22.
+ (c:/texlive/2018/texmf-dist/tex/latex/base/ts1cmr.fd
+File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 22.
+
+(c:/texlive/2018/texmf-dist/tex/latex/lm/t1lmr.fd
+File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+(c:/texlive/2018/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.enc
+File: UTF8.enc 2015/04/18 4.8.4
+)
+(c:/texlive/2018/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.chr
+File: UTF8.chr 2015/04/18 4.8.4
+)
+\openout4 = `lwarpmk.conf'.
+
+\openout4 = `main_html.lwarpmkconf'.
+
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \LWR@print@multicolumnrow with sig. '+m +m +O{c} +m +O{0}
+. +m +O{0pt} +m' on line 22.
+.................................................
+
+(c:/texlive/2018/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count290
+\scratchdimen=\dimen181
+\scratchbox=\box52
+\nofMPsegments=\count291
+\nofMParguments=\count292
+\everyMPshowfont=\toks28
+\MPscratchCnt=\count293
+\MPscratchDim=\dimen182
+\MPnumerator=\count294
+\makeMPintoPDFobject=\count295
+\everyMPtoPDFconversion=\toks29
+) (c:/texlive/2018/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+(c:/texlive/2018/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+)
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+
+(c:/texlive/2018/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+\AtBeginShipoutBox=\box53
+Package hyperref Info: Link coloring OFF on input line 22.
+
+(c:/texlive/2018/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
+
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
+)
+\c@section@level=\count296
+)
+LaTeX Info: Redefining \ref on input line 22.
+LaTeX Info: Redefining \pageref on input line 22.
+LaTeX Info: Redefining \nameref on input line 22.
+
+(./main_html.out) (./main_html.out)
+\@outlinefile=\write7
+\openout7 = `main_html.out'.
+
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 24.
+
+(c:/texlive/2018/texmf-dist/tex/latex/lm/ot1lmr.fd
+File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 24.
+
+(c:/texlive/2018/texmf-dist/tex/latex/lm/omllmm.fd
+File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 24.
+
+
+(c:/texlive/2018/texmf-dist/tex/latex/lm/omslmsy.fd
+File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 24.
+
+
+(c:/texlive/2018/texmf-dist/tex/latex/lm/omxlmex.fd
+File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <12> on input line 24.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 24.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 24.
+LaTeX Font Info:    Try loading font information for U+msa on input line 24.
+
+(c:/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 24.
+
+(c:/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+
+LaTeX Warning: No \author given.
+
+[1
+
+
+{c:/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2
+
+]
+(./main_html.toc
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 2.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 2.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 2.
+)
+\tf@toc=\write8
+\openout8 = `main_html.toc'.
+
+ [3] [4
+
+] (./main_html.lof
+LaTeX Font Info:    Font shape `C70/mc/m/n' will be
+(Font)              scaled to size 10.0pt on input line 2.
+Package CJKpunct Info: punctuation spaces for family 'mc' do not exist. Use fam
+ily 'def' instead. on input line 4.
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 8.
+
+(c:/texlive/2018/texmf-dist/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+))
+\tf@lof=\write9
+\openout9 = `main_html.lof'.
+
+ (./chapters.tex
+(./macro.tex
+\WID=\dimen183
+) [5] [6
+
+]
+Chapter 1.
+(./1.0.WhatCMakeWillDo.tex [7]
+Overfull \hbox (5.13824pt too wide) in paragraph at lines 7--16
+|\C70/mc/m/n/10/67 ^^@ \C70/mc/m/n/10/52 ^^] \C70/mc/m/n/10/30 k\T1/lmr/m/n/10 
+Cmake|\C70/mc/m/n/10/30 h o \C70/mc/m/n/10/4f U \C70/mc/m/n/10/30 í Y ã Ç n K k
+ d D f \C70/mc/m/n/10/7c ! \C70/mc/m/n/10/53 X \C70/mc/m/n/10/30 k \C70/mc/m/n/
+10/8a ¨ \C70/mc/m/n/10/66 ^^N \C70/mc/m/n/10/30 í W ~ Y|^^B|  \T1/lmr/m/n/10 Sp
+ringhead|\C70/mc/m/n/10/30 n
+ []
+
+) (./1.1.ConventionalMethod.tex
+Package epstopdf Info: Source file: <fig/DownloadTree.eps>
+(epstopdf)                    date: 2019-08-21 11:28:10
+(epstopdf)                    size: 860003 bytes
+(epstopdf)             Output file: <fig/DownloadTree-eps-converted-to.pdf>
+(epstopdf)                    date: 2019-10-07 14:03:20
+(epstopdf)                    size: 26129 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/DownloadTree-eps-conve
+rted-to.pdf fig/DownloadTree.eps>
+(epstopdf)             \includegraphics on input line 18.
+Package epstopdf Info: Output file is already uptodate.
+<fig/DownloadTree-eps-converted-to.pdf, id=183, 712.6625pt x 198.7425pt>
+File: fig/DownloadTree-eps-converted-to.pdf Graphic file (type pdf)
+<use fig/DownloadTree-eps-converted-to.pdf>
+Package pdftex.def Info: fig/DownloadTree-eps-converted-to.pdf  used on input l
+ine 18.
+(pdftex.def)             Requested size: 310.4979pt x 86.58875pt.
+LaTeX Font Info:    Try loading font information for TS1+lmr on input line 59.
+
+(c:/texlive/2018/texmf-dist/tex/latex/lm/ts1lmr.fd
+File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)) (./1.2.WhenUsedCMake.tex
+[8 <./fig/DownloadTree-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <fig/LibraryTree.eps>
+(epstopdf)                    date: 2019-08-21 11:28:10
+(epstopdf)                    size: 3299159 bytes
+(epstopdf)             Output file: <fig/LibraryTree-eps-converted-to.pdf>
+(epstopdf)                    date: 2019-10-07 14:03:22
+(epstopdf)                    size: 71410 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/LibraryTree-eps-conver
+ted-to.pdf fig/LibraryTree.eps>
+(epstopdf)             \includegraphics on input line 37.
+Package epstopdf Info: Output file is already uptodate.
+<fig/LibraryTree-eps-converted-to.pdf, id=245, 799.98875pt x 682.55pt>
+File: fig/LibraryTree-eps-converted-to.pdf Graphic file (type pdf)
+<use fig/LibraryTree-eps-converted-to.pdf>
+Package pdftex.def Info: fig/LibraryTree-eps-converted-to.pdf  used on input li
+ne 37.
+(pdftex.def)             Requested size: 310.4979pt x 264.9124pt.
+Package epstopdf Info: Source file: <fig/ApplicationTree.eps>
+(epstopdf)                    date: 2019-08-21 11:28:10
+(epstopdf)                    size: 3593586 bytes
+(epstopdf)             Output file: <fig/ApplicationTree-eps-converted-to.pdf>
+(epstopdf)                    date: 2019-10-07 14:03:25
+(epstopdf)                    size: 82395 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/ApplicationTree-eps-co
+nverted-to.pdf fig/ApplicationTree.eps>
+(epstopdf)             \includegraphics on input line 77.
+Package epstopdf Info: Output file is already uptodate.
+<fig/ApplicationTree-eps-converted-to.pdf, id=246, 784.9325pt x 757.83125pt>
+File: fig/ApplicationTree-eps-converted-to.pdf Graphic file (type pdf)
+<use fig/ApplicationTree-eps-converted-to.pdf>
+Package pdftex.def Info: fig/ApplicationTree-eps-converted-to.pdf  used on inpu
+t line 77.
+(pdftex.def)             Requested size: 310.4979pt x 299.78526pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) (./1.3.Problems.tex
+LaTeX Font Info:    Font shape `C70/mc/bx/n'
+(Font)              in size <10> not available.
+(Font)              Font shape `C70/gt/m/n'
+(Font)              tried instead on input line 18.
+LaTeX Font Info:    Font shape `C70/gt/m/n' will be
+(Font)              scaled to size 10.0pt on input line 18.
+ [9 <./fig/LibraryTree-eps-converted-to.pdf>] [10 <./fig/ApplicationTree-eps-co
+nverted-to.pdf>]) (./1.4.Solution.tex
+Package epstopdf Info: Source file: <fig/ApproachToBuildOptimization.eps>
+(epstopdf)                    date: 2019-10-03 15:00:52
+(epstopdf)                    size: 3568379 bytes
+(epstopdf)             Output file: <fig/ApproachToBuildOptimization-eps-conver
+ted-to.pdf>
+(epstopdf)                    date: 2019-10-07 14:03:27
+(epstopdf)                    size: 72511 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/ApproachToBuildOptimiz
+ation-eps-converted-to.pdf fig/ApproachToBuildOptimization.eps>
+(epstopdf)             \includegraphics on input line 34.
+Package epstopdf Info: Output file is already uptodate.
+<fig/ApproachToBuildOptimization-eps-converted-to.pdf, id=291, 805.0075pt x 733
+.74126pt>
+File: fig/ApproachToBuildOptimization-eps-converted-to.pdf Graphic file (type p
+df)
+<use fig/ApproachToBuildOptimization-eps-converted-to.pdf>
+Package pdftex.def Info: fig/ApproachToBuildOptimization-eps-converted-to.pdf  
+used on input line 34.
+(pdftex.def)             Requested size: 310.4979pt x 283.01187pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[11]
+Package epstopdf Info: Source file: <fig/ApproachToProjfileOptimization.eps>
+(epstopdf)                    date: 2019-10-03 15:01:02
+(epstopdf)                    size: 2829674 bytes
+(epstopdf)             Output file: <fig/ApproachToProjfileOptimization-eps-con
+verted-to.pdf>
+(epstopdf)                    date: 2019-10-07 14:03:29
+(epstopdf)                    size: 56611 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/ApproachToProjfileOpti
+mization-eps-converted-to.pdf fig/ApproachToProjfileOptimization.eps>
+(epstopdf)             \includegraphics on input line 102.
+Package epstopdf Info: Output file is already uptodate.
+<fig/ApproachToProjfileOptimization-eps-converted-to.pdf, id=305, 814.04124pt x
+ 575.14874pt>
+File: fig/ApproachToProjfileOptimization-eps-converted-to.pdf Graphic file (typ
+e pdf)
+<use fig/ApproachToProjfileOptimization-eps-converted-to.pdf>
+Package pdftex.def Info: fig/ApproachToProjfileOptimization-eps-converted-to.pd
+f  used on input line 102.
+(pdftex.def)             Requested size: 310.4979pt x 219.37497pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) [12 <./fig/ApproachToBuildOptimization-eps-converted-to.pdf>] [13 <./fig/Appr
+oachToProjfileOptimization-eps-converted-to.pdf>] [14
+
+]
+Chapter 2.
+(./2.0.ForNonDevelopper.tex [15]) (./2.1.Download.tex
+Package epstopdf Info: Source file: <fig/command-2-1-a.eps>
+(epstopdf)                    date: 2019-08-21 11:28:10
+(epstopdf)                    size: 605168 bytes
+(epstopdf)             Output file: <fig/command-2-1-a-eps-converted-to.pdf>
+(epstopdf)                    date: 2019-10-07 14:03:30
+(epstopdf)                    size: 30436 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/command-2-1-a-eps-conv
+erted-to.pdf fig/command-2-1-a.eps>
+(epstopdf)             \includegraphics on input line 15.
+Package epstopdf Info: Output file is already uptodate.
+<fig/command-2-1-a-eps-converted-to.pdf, id=329, 908.39375pt x 109.40875pt>
+File: fig/command-2-1-a-eps-converted-to.pdf Graphic file (type pdf)
+<use fig/command-2-1-a-eps-converted-to.pdf>
+Package pdftex.def Info: fig/command-2-1-a-eps-converted-to.pdf  used on input 
+line 15.
+(pdftex.def)             Requested size: 345.0pt x 41.55237pt.
+Package epstopdf Info: Source file: <fig/command-2-1-b.eps>
+(epstopdf)                    date: 2019-08-21 11:28:10
+(epstopdf)                    size: 775656 bytes
+(epstopdf)             Output file: <fig/command-2-1-b-eps-converted-to.pdf>
+(epstopdf)                    date: 2019-10-07 14:03:32
+(epstopdf)                    size: 47501 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/command-2-1-b-eps-conv
+erted-to.pdf fig/command-2-1-b.eps>
+(epstopdf)             \includegraphics on input line 33.
+Package epstopdf Info: Output file is already uptodate.
+<fig/command-2-1-b-eps-converted-to.pdf, id=330, 908.39375pt x 140.525pt>
+File: fig/command-2-1-b-eps-converted-to.pdf Graphic file (type pdf)
+<use fig/command-2-1-b-eps-converted-to.pdf>
+Package pdftex.def Info: fig/command-2-1-b-eps-converted-to.pdf  used on input 
+line 33.
+(pdftex.def)             Requested size: 345.0pt x 53.37003pt.
+Package epstopdf Info: Source file: <fig/SpringheadClone1.eps>
+(epstopdf)                    date: 2019-08-21 11:28:10
+(epstopdf)                    size: 3305085 bytes
+(epstopdf)             Output file: <fig/SpringheadClone1-eps-converted-to.pdf>
+
+(epstopdf)                    date: 2019-10-07 14:02:46
+(epstopdf)                    size: 163668 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/SpringheadClone1-eps-c
+onverted-to.pdf fig/SpringheadClone1.eps>
+(epstopdf)             \includegraphics on input line 52.
+Package epstopdf Info: Output file is already uptodate.
+<fig/SpringheadClone1-eps-converted-to.pdf, id=331, 628.3475pt x 489.83pt>
+File: fig/SpringheadClone1-eps-converted-to.pdf Graphic file (type pdf)
+<use fig/SpringheadClone1-eps-converted-to.pdf>
+Package pdftex.def Info: fig/SpringheadClone1-eps-converted-to.pdf  used on inp
+ut line 52.
+(pdftex.def)             Requested size: 172.5pt x 134.46822pt.
+Package epstopdf Info: Source file: <fig/SpringheadClone2.eps>
+(epstopdf)                    date: 2019-08-21 11:28:10
+(epstopdf)                    size: 1327805 bytes
+(epstopdf)             Output file: <fig/SpringheadClone2-eps-converted-to.pdf>
+
+(epstopdf)                    date: 2019-10-07 14:02:48
+(epstopdf)                    size: 62106 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/SpringheadClone2-eps-c
+onverted-to.pdf fig/SpringheadClone2.eps>
+(epstopdf)             \includegraphics on input line 53.
+Package epstopdf Info: Output file is already uptodate.
+<fig/SpringheadClone2-eps-converted-to.pdf, id=332, 557.08125pt x 393.47pt>
+File: fig/SpringheadClone2-eps-converted-to.pdf Graphic file (type pdf)
+<use fig/SpringheadClone2-eps-converted-to.pdf>
+Package pdftex.def Info: fig/SpringheadClone2-eps-converted-to.pdf  used on inp
+ut line 53.
+(pdftex.def)             Requested size: 137.9979pt x 97.46667pt.
+)
+(./2.2.PrepareLibrary.tex
+Overfull \hbox (5.42125pt too wide) in paragraph at lines 10--14
+|\C70/mc/m/n/10/30 ~ Z|^^A| \C70/mc/m/n/10/91 M \C70/mc/m/n/10/5e ^^C \C70/mc/m
+/n/10/30 U å _ ’ ° § Î\T1/lmr/m/n/10 "\T1/lmtt/m/n/10 CMakeLists.txt.Lib.dist\T
+1/lmr/m/n/10 "|\C70/mc/m/n/10/30 í \T1/lmr/m/n/10 "\T1/lmtt/m/n/10 CMakeLists.t
+xt\T1/lmr/m/n/10 "|\C70/mc/m/n/10/30 h
+ []
+
+Package epstopdf Info: Source file: <fig/command-2-2-a.eps>
+(epstopdf)                    date: 2019-08-21 11:28:10
+(epstopdf)                    size: 429175 bytes
+(epstopdf)             Output file: <fig/command-2-2-a-eps-converted-to.pdf>
+(epstopdf)                    date: 2019-10-07 14:03:34
+(epstopdf)                    size: 23745 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/command-2-2-a-eps-conv
+erted-to.pdf fig/command-2-2-a.eps>
+(epstopdf)             \includegraphics on input line 19.
+Package epstopdf Info: Output file is already uptodate.
+<fig/command-2-2-a-eps-converted-to.pdf, id=334, 908.39375pt x 77.28876pt>
+File: fig/command-2-2-a-eps-converted-to.pdf Graphic file (type pdf)
+<use fig/command-2-2-a-eps-converted-to.pdf>
+Package pdftex.def Info: fig/command-2-2-a-eps-converted-to.pdf  used on input 
+line 19.
+(pdftex.def)             Requested size: 345.0pt x 29.35352pt.
+[16 <./fig/command-2-1-a-eps-converted-to.pdf> <./fig/command-2-1-b-eps-convert
+ed-to.pdf> <./fig/SpringheadClone1-eps-converted-to.pdf> <./fig/SpringheadClone
+2-eps-converted-to.pdf>]
+Overfull \hbox (75.14444pt too wide) in paragraph at lines 33--43
+\C70/mc/m/n/10/63 ^^G \C70/mc/m/n/10/5b ö \C70/mc/m/n/10/30 Y ã \C70/mc/m/n/10/
+58 4 \C70/mc/m/n/10/54 ^^H \C70/mc/m/n/10/30 k o|^^A|  |U â k|^^A|  |\C70/mc/m/
+n/10/91 M \C70/mc/m/n/10/5e ^^C \C70/mc/m/n/10/30 U å _ ’ ° § Î\T1/lmr/m/n/10 "
+\T1/lmtt/m/n/10 CMakeConf.txt.dist\T1/lmr/m/n/10 "|\C70/mc/m/n/10/30 í\T1/lmr/m
+/n/10 "\T1/lmtt/m/n/10 CMakeConf.txt\T1/lmr/m/n/10 "|\C70/mc/m/n/10/30 h
+ []
+
+
+Overfull \hbox (44.16962pt too wide) in paragraph at lines 33--43
+\C70/mc/m/n/10/30 D F \C70/mc/m/n/10/54 ^^M \C70/mc/m/n/10/52 M \C70/mc/m/n/10/
+30 g ≥ ‘ ¸ W f |\C70/mc/m/n/10/5f ≈ \C70/mc/m/n/10/89 Å \C70/mc/m/n/10/30 j \C7
+0/mc/m/n/10/7d Ë \C70/mc/m/n/10/96 ∆ \C70/mc/m/n/10/30 í W ~ Y|^^B|  |\C70/mc/m
+/n/10/7d Ë \C70/mc/m/n/10/96 ∆ \C70/mc/m/n/10/30 n \C70/mc/m/n/10/65 π \C70/mc/
+m/n/10/6c ’ \C70/mc/m/n/10/30 k d D f o\T1/lmr/m/n/10 "\T1/lmtt/m/n/10 CMakeCon
+f.txt\T1/lmr/m/n/10 "|\C70/mc/m/n/10/30 k
+ []
+
+
+Overfull \hbox (2.92674pt too wide) in paragraph at lines 33--43
+\C70/mc/m/n/10/8a ^^X \C70/mc/m/n/10/8f  \C70/mc/m/n/10/30 U å f D ~ Y \T1/lmr
+/m/n/10 (``\T1/lmtt/m/n/10 =ESCAPEx23=set(variable \T1/lmr/m/it/10 value\T1/lmt
+t/m/n/10 )\T1/lmr/m/n/10 ''|\C70/mc/m/n/10/30 K â\T1/lmr/m/n/10 ``\T1/lmtt/m/n/
+10 =ESCAPEx23=\T1/lmr/m/n/10 ''|\C70/mc/m/n/10/30 í
+ []
+
+Package epstopdf Info: Source file: <fig/command-2-2-b.eps>
+(epstopdf)                    date: 2019-08-21 11:28:10
+(epstopdf)                    size: 4377904 bytes
+(epstopdf)             Output file: <fig/command-2-2-b-eps-converted-to.pdf>
+(epstopdf)                    date: 2019-10-07 14:03:36
+(epstopdf)                    size: 184275 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/command-2-2-b-eps-conv
+erted-to.pdf fig/command-2-2-b.eps>
+(epstopdf)             \includegraphics on input line 50.
+Package epstopdf Info: Output file is already uptodate.
+<fig/command-2-2-b-eps-converted-to.pdf, id=351, 908.39375pt x 797.98125pt>
+File: fig/command-2-2-b-eps-converted-to.pdf Graphic file (type pdf)
+<use fig/command-2-2-b-eps-converted-to.pdf>
+Package pdftex.def Info: fig/command-2-2-b-eps-converted-to.pdf  used on input 
+line 50.
+(pdftex.def)             Requested size: 345.0pt x 303.06555pt.
+) (./2.3.CmakeLibrary.tex [17 <./fig/command-2-2-a-eps-converted-to.pdf> <./fig
+/command-2-2-b-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <fig/command-2-3.eps>
+(epstopdf)                    date: 2019-08-21 11:28:10
+(epstopdf)                    size: 605168 bytes
+(epstopdf)             Output file: <fig/command-2-3-eps-converted-to.pdf>
+(epstopdf)                    date: 2019-10-07 14:03:38
+(epstopdf)                    size: 20091 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/command-2-3-eps-conver
+ted-to.pdf fig/command-2-3.eps>
+(epstopdf)             \includegraphics on input line 22.
+Package epstopdf Info: Output file is already uptodate.
+<fig/command-2-3-eps-converted-to.pdf, id=363, 908.39375pt x 109.40875pt>
+File: fig/command-2-3-eps-converted-to.pdf Graphic file (type pdf)
+<use fig/command-2-3-eps-converted-to.pdf>
+Package pdftex.def Info: fig/command-2-3-eps-converted-to.pdf  used on input li
+ne 22.
+(pdftex.def)             Requested size: 345.0pt x 41.55237pt.
+Package epstopdf Info: Source file: <fig/CmakeConfigure1.eps>
+(epstopdf)                    date: 2019-08-21 11:28:10
+(epstopdf)                    size: 2877754 bytes
+(epstopdf)             Output file: <fig/CmakeConfigure1-eps-converted-to.pdf>
+(epstopdf)                    date: 2019-10-07 14:02:50
+(epstopdf)                    size: 83361 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/CmakeConfigure1-eps-co
+nverted-to.pdf fig/CmakeConfigure1.eps>
+(epstopdf)             \includegraphics on input line 45.
+Package epstopdf Info: Output file is already uptodate.
+<fig/CmakeConfigure1-eps-converted-to.pdf, id=365, 663.47874pt x 717.68124pt>
+File: fig/CmakeConfigure1-eps-converted-to.pdf Graphic file (type pdf)
+<use fig/CmakeConfigure1-eps-converted-to.pdf>
+Package pdftex.def Info: fig/CmakeConfigure1-eps-converted-to.pdf  used on inpu
+t line 45.
+(pdftex.def)             Requested size: 120.7521pt x 130.61162pt.
+Package epstopdf Info: Source file: <fig/CmakeConfigure2.eps>
+(epstopdf)                    date: 2019-08-21 11:28:10
+(epstopdf)                    size: 357156 bytes
+(epstopdf)             Output file: <fig/CmakeConfigure2-eps-converted-to.pdf>
+(epstopdf)                    date: 2019-10-07 14:02:52
+(epstopdf)                    size: 22987 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/CmakeConfigure2-eps-co
+nverted-to.pdf fig/CmakeConfigure2.eps>
+(epstopdf)             \includegraphics on input line 46.
+Package epstopdf Info: Output file is already uptodate.
+<fig/CmakeConfigure2-eps-converted-to.pdf, id=366, 384.43625pt x 151.56625pt>
+File: fig/CmakeConfigure2-eps-converted-to.pdf Graphic file (type pdf)
+<use fig/CmakeConfigure2-eps-converted-to.pdf>
+Package pdftex.def Info: fig/CmakeConfigure2-eps-converted-to.pdf  used on inpu
+t line 46.
+(pdftex.def)             Requested size: 68.99895pt x 27.2021pt.
+Package epstopdf Info: Source file: <fig/CmakeConfigure3.eps>
+(epstopdf)                    date: 2019-08-21 11:28:10
+(epstopdf)                    size: 1159644 bytes
+(epstopdf)             Output file: <fig/CmakeConfigure3-eps-converted-to.pdf>
+(epstopdf)                    date: 2019-10-07 14:02:54
+(epstopdf)                    size: 43125 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/CmakeConfigure3-eps-co
+nverted-to.pdf fig/CmakeConfigure3.eps>
+(epstopdf)             \includegraphics on input line 47.
+Package epstopdf Info: Output file is already uptodate.
+<fig/CmakeConfigure3-eps-converted-to.pdf, id=367, 517.935pt x 369.38pt>
+File: fig/CmakeConfigure3-eps-converted-to.pdf Graphic file (type pdf)
+<use fig/CmakeConfigure3-eps-converted-to.pdf>
+Package pdftex.def Info: fig/CmakeConfigure3-eps-converted-to.pdf  used on inpu
+t line 47.
+(pdftex.def)             Requested size: 103.50105pt x 73.81268pt.
+Package epstopdf Info: Source file: <fig/CmakeConfigure4.eps>
+(epstopdf)                    date: 2019-08-21 11:28:10
+(epstopdf)                    size: 1159644 bytes
+(epstopdf)             Output file: <fig/CmakeConfigure4-eps-converted-to.pdf>
+(epstopdf)                    date: 2019-10-07 14:02:56
+(epstopdf)                    size: 53920 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/CmakeConfigure4-eps-co
+nverted-to.pdf fig/CmakeConfigure4.eps>
+(epstopdf)             \includegraphics on input line 61.
+Package epstopdf Info: Output file is already uptodate.
+<fig/CmakeConfigure4-eps-converted-to.pdf, id=369, 517.935pt x 369.38pt>
+File: fig/CmakeConfigure4-eps-converted-to.pdf Graphic file (type pdf)
+<use fig/CmakeConfigure4-eps-converted-to.pdf>
+Package pdftex.def Info: fig/CmakeConfigure4-eps-converted-to.pdf  used on inpu
+t line 61.
+(pdftex.def)             Requested size: 103.50105pt x 73.81268pt.
+) (./2.4.BuildLibrary.tex [18 <./fig/command-2-3-eps-converted-to.pdf> <./fig/C
+makeConfigure1-eps-converted-to.pdf> <./fig/CmakeConfigure2-eps-converted-to.pd
+f> <./fig/CmakeConfigure3-eps-converted-to.pdf> <./fig/CmakeConfigure4-eps-conv
+erted-to.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 16--20
+
+ []
+
+) [19] [20
+
+]
+Chapter 3.
+(./3.0.ForDevelopper.tex [21]
+Overfull \hbox (25.1384pt too wide) in paragraph at lines 12--16
+|\C70/mc/m/n/10/30 ¢ ◊ Í ± ¸ ∑ Á Û ◊ Ì ∞ È ‡ k d D f n \C70/mc/m/n/10/4f \ \C70
+/mc/m/n/10/69 m \C70/mc/m/n/10/30 í Y ã \C70/mc/m/n/10/52 M \C70/mc/m/n/10/30 k
+|^^A|  |B â K X Å\T1/lmr/m/n/10 Springehad|\C70/mc/m/n/10/30 È
+ []
+
+
+Overfull \hbox (15.99641pt too wide) in paragraph at lines 12--16
+\C70/mc/m/n/10/30 § ÷ È Í í ¿ ¶ Û Ì ¸ … W f\T1/lmtt/m/n/10 cmake|\C70/mc/m/n/10
+/30 í \C70/mc/m/n/10/5b ü \C70/mc/m/n/10/88 L \C70/mc/m/n/10/30 W f J D f O ` U
+ D \T1/lmr/m/n/10 (``[]2.1[] Springhead|\C70/mc/m/n/10/30 í
+ []
+
+) (./3.1.PrepareApplication.tex
+Overfull \hbox (33.64146pt too wide) in paragraph at lines 15--17
+[]|\C70/mc/m/n/10/4e Â |\C70/mc/m/n/10/30 ^^A| \T1/lmr/m/n/10 Springhead|\C70/
+mc/m/n/10/30 È § ÷ È Í í ¿ ¶ Û Ì ¸ … W _ « £ Ï Ø » Í í\T1/lmr/m/n/10 "\T1/lmtt/
+m/n/10 C:/Springhead\T1/lmr/m/n/10 "
+ []
+
+
+Overfull \hbox (49.19711pt too wide) in paragraph at lines 15--17
+||\C70/mc/m/n/10/30 ^^A|  |¢ ◊ Í ± ¸ ∑ Á Û ◊ Ì ∞ È ‡ í \C70/mc/m/n/10/4f \ \C70
+/mc/m/n/10/62 ^^P \C70/mc/m/n/10/30 Y ã « £ Ï Ø » Í í\T1/lmr/m/n/10 "\T1/lmtt/m
+/n/10 C:/Develop/Application\T1/lmr/m/n/10 "|\C70/mc/m/n/10/30 h
+ []
+
+Package epstopdf Info: Source file: <fig/command-3-1-a.eps>
+(epstopdf)                    date: 2019-08-21 11:28:10
+(epstopdf)                    size: 605168 bytes
+(epstopdf)             Output file: <fig/command-3-1-a-eps-converted-to.pdf>
+(epstopdf)                    date: 2019-10-07 14:03:40
+(epstopdf)                    size: 42362 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/command-3-1-a-eps-conv
+erted-to.pdf fig/command-3-1-a.eps>
+(epstopdf)             \includegraphics on input line 32.
+Package epstopdf Info: Output file is already uptodate.
+<fig/command-3-1-a-eps-converted-to.pdf, id=407, 908.39375pt x 109.40875pt>
+File: fig/command-3-1-a-eps-converted-to.pdf Graphic file (type pdf)
+<use fig/command-3-1-a-eps-converted-to.pdf>
+Package pdftex.def Info: fig/command-3-1-a-eps-converted-to.pdf  used on input 
+line 32.
+(pdftex.def)             Requested size: 345.0pt x 41.55237pt.
+
+Overfull \hbox (30.14163pt too wide) in paragraph at lines 50--52
+[]\T1/lmr/m/n/10 Springhead|\C70/mc/m/n/10/30 È § ÷ È Í|í ¿ ¶ Û Ì ¸ … W _ « £ Ï
+ Ø » Í í\T1/lmr/m/n/10 "\T1/lmtt/m/n/10 CMakeTopdir.txt\T1/lmr/m/n/10 "|\C70/mc
+/m/n/10/30 k
+ []
+
+Package epstopdf Info: Source file: <fig/command-3-1-b.eps>
+(epstopdf)                    date: 2019-08-21 11:28:10
+(epstopdf)                    size: 572048 bytes
+(epstopdf)             Output file: <fig/command-3-1-b-eps-converted-to.pdf>
+(epstopdf)                    date: 2019-10-07 14:03:42
+(epstopdf)                    size: 19194 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/command-3-1-b-eps-conv
+erted-to.pdf fig/command-3-1-b.eps>
+(epstopdf)             \includegraphics on input line 56.
+Package epstopdf Info: Output file is already uptodate.
+<fig/command-3-1-b-eps-converted-to.pdf, id=408, 858.20625pt x 109.40875pt>
+File: fig/command-3-1-b-eps-converted-to.pdf Graphic file (type pdf)
+<use fig/command-3-1-b-eps-converted-to.pdf>
+Package pdftex.def Info: fig/command-3-1-b-eps-converted-to.pdf  used on input 
+line 56.
+(pdftex.def)             Requested size: 345.0pt x 43.98308pt.
+Package epstopdf Info: Source file: <fig/command-3-1-b.eps>
+(epstopdf)                    date: 2019-08-21 11:28:10
+(epstopdf)                    size: 572048 bytes
+(epstopdf)             Output file: <fig/command-3-1-b-eps-converted-to.pdf>
+(epstopdf)                    date: 2019-10-07 14:03:42
+(epstopdf)                    size: 19194 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/command-3-1-b-eps-conv
+erted-to.pdf fig/command-3-1-b.eps>
+(epstopdf)             \includegraphics on input line 81.
+Package epstopdf Info: Output file is already uptodate.
+File: fig/command-3-1-b-eps-converted-to.pdf Graphic file (type pdf)
+<use fig/command-3-1-b-eps-converted-to.pdf>
+Package pdftex.def Info: fig/command-3-1-b-eps-converted-to.pdf  used on input 
+line 81.
+(pdftex.def)             Requested size: 345.0pt x 43.98308pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+Package CJKpunct Info: punctuation spaces for family 'gt' do not exist. Use fam
+ily 'def' instead. on input line 120.
+
+Overfull \hbox (54.24977pt too wide) in paragraph at lines 106--164
+[][] 
+ []
+
+[22 <./fig/command-3-1-a-eps-converted-to.pdf> <./fig/command-3-1-b-eps-convert
+ed-to.pdf>]
+Overfull \hbox (65.14444pt too wide) in paragraph at lines 169--176
+\C70/mc/m/n/10/75 ( \C70/mc/m/n/10/30 Y ã \C70/mc/m/n/10/58 4 \C70/mc/m/n/10/54
+ ^^H \C70/mc/m/n/10/30 k o|^^A|  |U â k|^^A|  |\C70/mc/m/n/10/91 M \C70/mc/m/n/
+10/5e ^^C \C70/mc/m/n/10/30 U å _ ’ ° § Î\T1/lmr/m/n/10 "\T1/lmtt/m/n/10 CMakeC
+onf.txt.dist\T1/lmr/m/n/10 "|\C70/mc/m/n/10/30 í\T1/lmr/m/n/10 "\T1/lmtt/m/n/10
+ CMakeConf.txt\T1/lmr/m/n/10 "|\C70/mc/m/n/10/30 h
+ []
+
+[23]) (./3.2.CmakeApplication.tex
+Overfull \hbox (11.02646pt too wide) in paragraph at lines 18--25
+[]|\C70/mc/m/n/10/7d D \C70/mc/m/n/10/30 ^^? \C70/mc/m/n/10/8f º \C70/mc/m/n/10
+/30 ~ å f D ã\T1/lmr/m/n/10 Springhead|\C70/mc/m/n/10/30 È § ÷ È Í n \C70/mc/m/
+n/10/54 ^^D \C70/mc/m/n/10/30 ◊ Ì ∏ ß Ø » \T1/lmr/m/n/10 (|\C70/mc/m/n/10/30 S 
+S g o\T1/lmtt/m/n/10 Base|\C70/mc/m/n/10/30 í
+ []
+
+
+Overfull \hbox (51.11731pt too wide) in paragraph at lines 18--25
+|\C70/mc/m/n/10/30 h D F « £ Ï Ø » Í í \C70/mc/m/n/10/4f \ \C70/mc/m/n/10/62 ^^
+P \C70/mc/m/n/10/30 W|^^A|  \T1/lmr/m/n/10 "\T1/lmtt/m/n/10 C:/Develop/Applicat
+ion/\T1/lmr/m/it/10 build\T1/lmtt/m/n/10 /Base/Base.dir\T1/lmr/m/n/10 "|\C70/mc
+/m/n/10/30 K
+ []
+
+LaTeX Font Info:    Font shape `C70/gt/m/n' will be
+(Font)              scaled to size 9.0pt on input line 36.
+
+Overfull \hbox (31.89531pt too wide) in paragraph at lines 44--48
+[]|\C70/mc/m/n/10/30 ¢ ◊ Í ± ¸ ∑ Á Û \C70/mc/m/n/10/50 t \C70/mc/m/n/10/30 g\T1
+/lmr/m/n/10 "\T1/lmtt/m/n/10 C:/Develop/Application/\T1/lmr/m/it/10 build\T1/lm
+tt/m/n/10 /Base/Base.dir\T1/lmr/m/n/10 "|\C70/mc/m/n/10/30 í
+ []
+
+LaTeX Font Info:    Font shape `C70/mc/m/n' will be
+(Font)              scaled to size 9.0pt on input line 49.
+
+Overfull \hbox (37.51382pt too wide) in paragraph at lines 57--58
+|\C70/gt/m/n/10 S å â n \C70/gt/m/n/10 ∂ \C70/gt/m/n/10 K \C70/gt/m/n/10 í \C70
+/gt/m/n/10 „ \C70/gt/m/n/10 à \C70/gt/m/n/10 Y ã _ Å k o|^^A| ¢ ◊ Í ± ¸ ∑ Á Û \
+C70/gt/m/n/10 t \T1/lmr/bx/n/10 (|\C70/gt/m/n/10 Ç W O o\T1/lmr/bx/n/10 Springh
+ead|\C70/gt/m/n/10 È
+ []
+
+[24]
+Overfull \hbox (28.13861pt too wide) in paragraph at lines 74--78
+[]|\C70/mc/m/n/10/30 Ç W Ç ¢ ◊ Í ± ¸ ∑ Á Û \C70/mc/m/n/10/50 t \C70/mc/m/n/10/3
+0 n ◊ Ì ∏ ß Ø » ’ ° § Î n \C70/mc/m/n/10/51 Ö \C70/mc/m/n/10/5b π \C70/mc/m/n/1
+0/30 h \T1/lmr/m/n/10 Springhead|\C70/mc/m/n/10/50 t
+ []
+
+LaTeX Font Info:    Font shape `C70/mc/bx/n'
+(Font)              in size <9> not available.
+(Font)              Font shape `C70/gt/m/n'
+(Font)              tried instead on input line 114.
+) (./3.3.BuildApplication.tex [25]
+Overfull \hbox (22.669pt too wide) in paragraph at lines 65--66
+[]\T1/lmr/bx/n/10 2019/9/30 (com-mit 1d8e5ce)|\C70/gt/m/n/10 Â \C70/gt/m/n/10 M
+ \C70/gt/m/n/10 k \C70/gt/m/n/10 M \C70/gt/m/n/10 ^^C \C70/gt/m/n/10 W _\T1/lmr
+/bx/n/10 "\T1/lmtt/m/n/10 CMakeLists.txt.*.dist\T1/lmr/bx/n/10 "|\C70/gt/m/n/10
+ í
+ []
+
+
+Overfull \hbox (11.74913pt too wide) in paragraph at lines 76--77
+[]\T1/lmtt/m/n/10 python: can't open file '.../Clean.py': ... No such file
+ []
+
+Package epstopdf Info: Source file: <fig/RemoveRunSwigClean.eps>
+(epstopdf)                    date: 2019-10-03 13:47:18
+(epstopdf)                    size: 1596855 bytes
+(epstopdf)             Output file: <fig/RemoveRunSwigClean-eps-converted-to.pd
+f>
+(epstopdf)                    date: 2019-10-07 14:02:58
+(epstopdf)                    size: 89409 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig/RemoveRunSwigClean-eps
+-converted-to.pdf fig/RemoveRunSwigClean.eps>
+(epstopdf)             \includegraphics on input line 89.
+Package epstopdf Info: Output file is already uptodate.
+<fig/RemoveRunSwigClean-eps-converted-to.pdf, id=480, 580.1675pt x 454.69875pt>
+
+File: fig/RemoveRunSwigClean-eps-converted-to.pdf Graphic file (type pdf)
+<use fig/RemoveRunSwigClean-eps-converted-to.pdf>
+Package pdftex.def Info: fig/RemoveRunSwigClean-eps-converted-to.pdf  used on i
+nput line 89.
+(pdftex.def)             Requested size: 276.00105pt x 216.31024pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+)) (./lwarp_afterword.tex
+No file main_html.ind.
+) [26] [27 <./fig/RemoveRunSwigClean-eps-converted-to.pdf>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 31.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 31.
+ (./main_html.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 31.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 31.
+Package rerunfilecheck Info: File `main_html.out' has not changed.
+(rerunfilecheck)             Checksum: B6D31FEAFB7B2A5B727E8CF8B143A18C;1106.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 23559 strings out of 492639
+ 408405 string characters out of 6133087
+ 468383 words of memory out of 5000000
+ 26287 multiletter control sequences out of 15000+600000
+ 671504 words of font info for 232 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 50i,7n,65p,891b,842s stack positions out of 5000i,500n,10000p,200000b,80000s
+{c:/texlive/2018/texmf-dist/fonts/enc/dvips/ipaex-type1/ipxt1-u75.enc}{c:/tex
+live/2018/texmf-dist/fonts/enc/dvips/ipaex-type1/ipxt1-u91.enc}{c:/texlive/2018
+/texmf-dist/fonts/enc/dvips/ipaex-type1/ipxt1-u4e.enc}{c:/texlive/2018/texmf-di
+st/fonts/enc/dvips/ipaex-type1/ipxt1-u8d.enc}{c:/texlive/2018/texmf-dist/fonts/
+enc/dvips/ipaex-type1/ipxt1-u78.enc}{c:/texlive/2018/texmf-dist/fonts/enc/dvips
+/lm/lm-ec.enc}{c:/texlive/2018/texmf-dist/fonts/enc/dvips/ipaex-type1/ipxt1-u58
+.enc}{c:/texlive/2018/texmf-dist/fonts/enc/dvips/ipaex-type1/ipxt1-u5c.enc}{c:/
+texlive/2018/texmf-dist/fonts/enc/dvips/ipaex-type1/ipxt1-u5b.enc}{c:/texlive/2
+018/texmf-dist/fonts/enc/dvips/ipaex-type1/ipxt1-u5e.enc}{c:/texlive/2018/texmf
+-dist/fonts/enc/dvips/ipaex-type1/ipxt1-u50.enc}{c:/texlive/2018/texmf-dist/fon
+ts/enc/dvips/ipaex-type1/ipxt1-u6d.enc}{c:/texlive/2018/texmf-dist/fonts/enc/dv
+ips/ipaex-type1/ipxt1-u72.enc}{c:/texlive/2018/texmf-dist/fonts/enc/dvips/ipaex
+-type1/ipxt1-u62.enc}{c:/texlive/2018/texmf-dist/fonts/enc/dvips/ipaex-type1/ip
+xt1-u4f.enc}{c:/texlive/2018/texmf-dist/fonts/enc/dvips/ipaex-type1/ipxt1-u61.e
+nc}{c:/texlive/2018/texmf-dist/fonts/enc/dvips/ipaex-type1/ipxt1-u6c.enc}{c:/te
+xlive/2018/texmf-dist/fonts/enc/dvips/ipaex-type1/ipxt1-u6b.enc}{c:/texlive/201
+8/texmf-dist/fonts/enc/dvips/ipaex-type1/ipxt1-u88.enc}{c:/texlive/2018/texmf-d
+ist/fonts/enc/dvips/ipaex-type1/ipxt1-u76.enc}{c:/texlive/2018/texmf-dist/fonts
+/enc/dvips/ipaex-type1/ipxt1-u95.enc}{c:/texlive/2018/texmf-dist/fonts/enc/dvip
+s/ipaex-type1/ipxt1-u82.enc}{c:/texlive/2018/texmf-dist/fonts/enc/dvips/ipaex-t
+ype1/ipxt1-u73.enc}{c:/texlive/2018/texmf-dist/fonts/enc/dvips/ipaex-type1/ipxt
+1-u20.enc}{c:/texlive/2018/texmf-dist/fonts/enc/dvips/ipaex-type1/ipxt1-u8c.enc
+}{c:/texlive/2018/texmf-dist/fonts/enc/dvips/ipaex-type1/ipxt1-u57.enc}{c:/texl
+ive/2018/texmf-dist/fonts/enc/dvips/ipaex-type1/ipxt1-u68.enc}{c:/texlive/2018/
+texmf-dist/fonts/enc/dvips/ipaex-type1/ipxt1-u52.enc}{c:/texlive/2018/texmf-dis
+t/fonts/enc/dvips/ipaex-type1/ipxt1-u89.enc}{c:/texlive/2018/texmf-dist/fonts/e
+nc/dvips/ipaex-type1/ipxt1-u5f.enc}{c:/texlive/2018/texmf-dist/fonts/enc/dvips/
+ipaex-type1/ipxt1-u51.enc}{c:/texlive/2018/texmf-dist/fonts/enc/dvips/ipaex-typ
+e1/ipxt1-u99.enc}{c:/texlive/2018/texmf-dist/fonts/enc/dvips/ipaex-type1/ipxt1-
+u7d.enc}{c:/texlive/2018/texmf-dist/fonts/enc/dvips/ipaex-type1/ipxt1-u71.enc}{
+c:/texlive/2018/texmf-dist/fonts/enc/dvips/ipaex-type1/ipxt1-u90.enc}{c:/texliv
+e/2018/texmf-dist/fonts/enc/dvips/ipaex-type1/ipxt1-u67.enc}{c:/texlive/2018/te
+xmf-dist/fonts/enc/dvips/ipaex-type1/ipxt1-u5d.enc}{c:/texlive/2018/texmf-dist/
+fonts/enc/dvips/ipaex-type1/ipxt1-u60.enc}{c:/texlive/2018/texmf-dist/fonts/enc
+/dvips/ipaex-type1/ipxt1-u54.enc}{c:/texlive/2018/texmf-dist/fonts/enc/dvips/ip
+aex-type1/ipxt1-u65.enc}{c:/texlive/2018/texmf-dist/fonts/enc/dvips/ipaex-type1
+/ipxt1-u30.enc}{c:/texlive/2018/texmf-dist/fonts/enc/dvips/ipaex-type1/ipxt1-u7
+9.enc}{c:/texlive/2018/texmf-dist/fonts/enc/dvips/ipaex-type1/ipxt1-u7b.enc}{c:
+/texlive/2018/texmf-dist/fonts/enc/dvips/ipaex-type1/ipxt1-u97.enc}{c:/texlive/
+2018/texmf-dist/fonts/enc/dvips/ipaex-type1/ipxt1-u6e.enc}{c:/texlive/2018/texm
+f-dist/fonts/enc/dvips/ipaex-type1/ipxt1-u56.enc}{c:/texlive/2018/texmf-dist/fo
+nts/enc/dvips/ipaex-type1/ipxt1-u81.enc}{c:/texlive/2018/texmf-dist/fonts/enc/d
+vips/lm/lm-ts1.enc}{c:/texlive/2018/texmf-dist/fonts/enc/dvips/ipaex-type1/ipxt
+1-u6a.enc}{c:/texlive/2018/texmf-dist/fonts/enc/dvips/ipaex-type1/ipxt1-uff.enc
+}{c:/texlive/2018/texmf-dist/fonts/enc/dvips/ipaex-type1/ipxt1-u96.enc}{c:/texl
+ive/2018/texmf-dist/fonts/enc/dvips/ipaex-type1/ipxt1-u59.enc}{c:/texlive/2018/
+texmf-dist/fonts/enc/dvips/ipaex-type1/ipxt1-u63.enc}{c:/texlive/2018/texmf-dis
+t/fonts/enc/dvips/ipaex-type1/ipxt1-u80.enc}{c:/texlive/2018/texmf-dist/fonts/e
+nc/dvips/ipaex-type1/ipxt1-u8f.enc}{c:/texlive/2018/texmf-dist/fonts/enc/dvips/
+ipaex-type1/ipxt1-u70.enc}{c:/texlive/2018/texmf-dist/fonts/enc/dvips/ipaex-typ
+e1/ipxt1-u98.enc}{c:/texlive/2018/texmf-dist/fonts/enc/dvips/ipaex-type1/ipxt1-
+u55.enc}{c:/texlive/2018/texmf-dist/fonts/enc/dvips/ipaex-type1/ipxt1-u74.enc}{
+c:/texlive/2018/texmf-dist/fonts/enc/dvips/ipaex-type1/ipxt1-u7a.enc}{c:/texliv
+e/2018/texmf-dist/fonts/enc/dvips/ipaex-type1/ipxt1-u64.enc}{c:/texlive/2018/te
+xmf-dist/fonts/enc/dvips/ipaex-type1/ipxt1-u66.enc}{c:/texlive/2018/texmf-dist/
+fonts/enc/dvips/ipaex-type1/ipxt1-u8a.enc}{c:/texlive/2018/texmf-dist/fonts/enc
+/dvips/ipaex-type1/ipxt1-u53.enc}{c:/texlive/2018/texmf-dist/fonts/enc/dvips/ip
+aex-type1/ipxt1-u7c.enc}{c:/texlive/2018/texmf-dist/fonts/enc/dvips/ipaex-type1
+/ipxt1-u69.enc}<c:/texlive/2018/texmf-dist/fonts/type1/public/ipaex-type1/ipxg-
+r-u20.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/ipaex-type1/ipxg-r-u30
+.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/ipaex-type1/ipxg-r-u4e.pfb>
+<c:/texlive/2018/texmf-dist/fonts/type1/public/ipaex-type1/ipxg-r-u4f.pfb><c:/t
+exlive/2018/texmf-dist/fonts/type1/public/ipaex-type1/ipxg-r-u50.pfb><c:/texliv
+e/2018/texmf-dist/fonts/type1/public/ipaex-type1/ipxg-r-u51.pfb><c:/texlive/201
+8/texmf-dist/fonts/type1/public/ipaex-type1/ipxg-r-u52.pfb><c:/texlive/2018/tex
+mf-dist/fonts/type1/public/ipaex-type1/ipxg-r-u54.pfb><c:/texlive/2018/texmf-di
+st/fonts/type1/public/ipaex-type1/ipxg-r-u58.pfb><c:/texlive/2018/texmf-dist/fo
+nts/type1/public/ipaex-type1/ipxg-r-u5b.pfb><c:/texlive/2018/texmf-dist/fonts/t
+ype1/public/ipaex-type1/ipxg-r-u5e.pfb><c:/texlive/2018/texmf-dist/fonts/type1/
+public/ipaex-type1/ipxg-r-u5f.pfb><c:/texlive/2018/texmf-dist/fonts/type1/publi
+c/ipaex-type1/ipxg-r-u60.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/ipa
+ex-type1/ipxg-r-u61.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/ipaex-ty
+pe1/ipxg-r-u62.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/ipaex-type1/i
+pxg-r-u65.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/ipaex-type1/ipxg-r
+-u67.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/ipaex-type1/ipxg-r-u6b.
+pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/ipaex-type1/ipxg-r-u6c.pfb><
+c:/texlive/2018/texmf-dist/fonts/type1/public/ipaex-type1/ipxg-r-u6d.pfb><c:/te
+xlive/2018/texmf-dist/fonts/type1/public/ipaex-type1/ipxg-r-u71.pfb><c:/texlive
+/2018/texmf-dist/fonts/type1/public/ipaex-type1/ipxg-r-u72.pfb><c:/texlive/2018
+/texmf-dist/fonts/type1/public/ipaex-type1/ipxg-r-u75.pfb><c:/texlive/2018/texm
+f-dist/fonts/type1/public/ipaex-type1/ipxg-r-u76.pfb><c:/texlive/2018/texmf-dis
+t/fonts/type1/public/ipaex-type1/ipxg-r-u88.pfb><c:/texlive/2018/texmf-dist/fon
+ts/type1/public/ipaex-type1/ipxg-r-u89.pfb><c:/texlive/2018/texmf-dist/fonts/ty
+pe1/public/ipaex-type1/ipxg-r-u8d.pfb><c:/texlive/2018/texmf-dist/fonts/type1/p
+ublic/ipaex-type1/ipxg-r-u90.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public
+/ipaex-type1/ipxg-r-u91.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/ipae
+x-type1/ipxg-r-u95.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/ipaex-typ
+e1/ipxg-r-u99.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/ipaex-type1/ip
+xm-r-u30.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/ipaex-type1/ipxm-r-
+u4e.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/ipaex-type1/ipxm-r-u4f.p
+fb><c:/texlive/2018/texmf-dist/fonts/type1/public/ipaex-type1/ipxm-r-u50.pfb><c
+:/texlive/2018/texmf-dist/fonts/type1/public/ipaex-type1/ipxm-r-u51.pfb><c:/tex
+live/2018/texmf-dist/fonts/type1/public/ipaex-type1/ipxm-r-u52.pfb><c:/texlive/
+2018/texmf-dist/fonts/type1/public/ipaex-type1/ipxm-r-u53.pfb><c:/texlive/2018/
+texmf-dist/fonts/type1/public/ipaex-type1/ipxm-r-u54.pfb><c:/texlive/2018/texmf
+-dist/fonts/type1/public/ipaex-type1/ipxm-r-u55.pfb><c:/texlive/2018/texmf-dist
+/fonts/type1/public/ipaex-type1/ipxm-r-u56.pfb><c:/texlive/2018/texmf-dist/font
+s/type1/public/ipaex-type1/ipxm-r-u57.pfb><c:/texlive/2018/texmf-dist/fonts/typ
+e1/public/ipaex-type1/ipxm-r-u58.pfb><c:/texlive/2018/texmf-dist/fonts/type1/pu
+blic/ipaex-type1/ipxm-r-u59.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/
+ipaex-type1/ipxm-r-u5b.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/ipaex
+-type1/ipxm-r-u5c.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/ipaex-type
+1/ipxm-r-u5d.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/ipaex-type1/ipx
+m-r-u5e.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/ipaex-type1/ipxm-r-u
+5f.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/ipaex-type1/ipxm-r-u60.pf
+b><c:/texlive/2018/texmf-dist/fonts/type1/public/ipaex-type1/ipxm-r-u61.pfb><c:
+/texlive/2018/texmf-dist/fonts/type1/public/ipaex-type1/ipxm-r-u62.pfb><c:/texl
+ive/2018/texmf-dist/fonts/type1/public/ipaex-type1/ipxm-r-u63.pfb><c:/texlive/2
+018/texmf-dist/fonts/type1/public/ipaex-type1/ipxm-r-u64.pfb><c:/texlive/2018/t
+exmf-dist/fonts/type1/public/ipaex-type1/ipxm-r-u65.pfb><c:/texlive/2018/texmf-
+dist/fonts/type1/public/ipaex-type1/ipxm-r-u66.pfb><c:/texlive/2018/texmf-dist/
+fonts/type1/public/ipaex-type1/ipxm-r-u67.pfb><c:/texlive/2018/texmf-dist/fonts
+/type1/public/ipaex-type1/ipxm-r-u68.pfb><c:/texlive/2018/texmf-dist/fonts/type
+1/public/ipaex-type1/ipxm-r-u69.pfb><c:/texlive/2018/texmf-dist/fonts/type1/pub
+lic/ipaex-type1/ipxm-r-u6a.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/i
+paex-type1/ipxm-r-u6b.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/ipaex-
+type1/ipxm-r-u6c.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/ipaex-type1
+/ipxm-r-u6d.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/ipaex-type1/ipxm
+-r-u6e.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/ipaex-type1/ipxm-r-u7
+0.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/ipaex-type1/ipxm-r-u71.pfb
+><c:/texlive/2018/texmf-dist/fonts/type1/public/ipaex-type1/ipxm-r-u72.pfb><c:/
+texlive/2018/texmf-dist/fonts/type1/public/ipaex-type1/ipxm-r-u73.pfb><c:/texli
+ve/2018/texmf-dist/fonts/type1/public/ipaex-type1/ipxm-r-u74.pfb><c:/texlive/20
+18/texmf-dist/fonts/type1/public/ipaex-type1/ipxm-r-u75.pfb><c:/texlive/2018/te
+xmf-dist/fonts/type1/public/ipaex-type1/ipxm-r-u76.pfb><c:/texlive/2018/texmf-d
+ist/fonts/type1/public/ipaex-type1/ipxm-r-u78.pfb><c:/texlive/2018/texmf-dist/f
+onts/type1/public/ipaex-type1/ipxm-r-u79.pfb><c:/texlive/2018/texmf-dist/fonts/
+type1/public/ipaex-type1/ipxm-r-u7a.pfb><c:/texlive/2018/texmf-dist/fonts/type1
+/public/ipaex-type1/ipxm-r-u7b.pfb><c:/texlive/2018/texmf-dist/fonts/type1/publ
+ic/ipaex-type1/ipxm-r-u7c.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/ip
+aex-type1/ipxm-r-u7d.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/ipaex-t
+ype1/ipxm-r-u80.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/ipaex-type1/
+ipxm-r-u81.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/ipaex-type1/ipxm-
+r-u82.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/ipaex-type1/ipxm-r-u88
+.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/ipaex-type1/ipxm-r-u89.pfb>
+<c:/texlive/2018/texmf-dist/fonts/type1/public/ipaex-type1/ipxm-r-u8a.pfb><c:/t
+exlive/2018/texmf-dist/fonts/type1/public/ipaex-type1/ipxm-r-u8c.pfb><c:/texliv
+e/2018/texmf-dist/fonts/type1/public/ipaex-type1/ipxm-r-u8d.pfb><c:/texlive/201
+8/texmf-dist/fonts/type1/public/ipaex-type1/ipxm-r-u8f.pfb><c:/texlive/2018/tex
+mf-dist/fonts/type1/public/ipaex-type1/ipxm-r-u90.pfb><c:/texlive/2018/texmf-di
+st/fonts/type1/public/ipaex-type1/ipxm-r-u91.pfb><c:/texlive/2018/texmf-dist/fo
+nts/type1/public/ipaex-type1/ipxm-r-u95.pfb><c:/texlive/2018/texmf-dist/fonts/t
+ype1/public/ipaex-type1/ipxm-r-u96.pfb><c:/texlive/2018/texmf-dist/fonts/type1/
+public/ipaex-type1/ipxm-r-u97.pfb><c:/texlive/2018/texmf-dist/fonts/type1/publi
+c/ipaex-type1/ipxm-r-u98.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/ipa
+ex-type1/ipxm-r-u99.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/ipaex-ty
+pe1/ipxm-r-uff.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/lm/lmbx10.pfb
+><c:/texlive/2018/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/texlive/2018/
+texmf-dist/fonts/type1/public/lm/lmbx9.pfb><c:/texlive/2018/texmf-dist/fonts/ty
+pe1/public/lm/lmr10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/lm/lmr17
+.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/lm/lmr5.pfb><c:/texlive/201
+8/texmf-dist/fonts/type1/public/lm/lmr7.pfb><c:/texlive/2018/texmf-dist/fonts/t
+ype1/public/lm/lmr9.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/lm/lmri1
+0.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/lm/lmro10.pfb><c:/texlive/
+2018/texmf-dist/fonts/type1/public/lm/lmtt10.pfb><c:/texlive/2018/texmf-dist/fo
+nts/type1/public/lm/lmtt8.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/lm
+/lmtt9.pfb>
+Output written on main_html.pdf (27 pages, 2115093 bytes).
+PDF statistics:
+ 908 PDF objects out of 1000 (max. 8388607)
+ 663 compressed objects within 7 object streams
+ 64 named destinations out of 1000 (max. 500000)
+ 488 words of extra memory for PDF output out of 10000 (max. 10000000)
+
