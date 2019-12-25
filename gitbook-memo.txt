@@ -1,0 +1,17 @@
+https://nodejs.org/ja/  からNode.jsをインストール
+npm install -g gitbook-cli
+
+----verify----
+mkdir .../javascript
+git clone https://github.com/GitbookIO/javascript
+gitbook init
+gitbook serve
+http://localhost:4000
+
+----to make doc----
+mkdir test-dir
+gitbook init
+edit README.md
+
+gitbook build ./ docs/
+
