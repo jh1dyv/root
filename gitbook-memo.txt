@@ -24,3 +24,15 @@ https://daringfireball.net/projects/markdown/syntax
 https://sugarnaoming.github.io/markdown_manual/
 https://github.com/github/linguist/blob/master/lib/linguist/languages.yml
 https://gist.github.com/mignonstyle/083c9e1651d7734f84c99b8cf49d57fa
+
+
+ソースファイルを更新するとローカルWEBサーバーが異常終了してしまうのをとりあえず解決する方法
+----
+git serve でWEBサーバーが起動したあと、出力フォルダ（デフォルトで _book）を一度消せば、その後正常動作する
+----
+https://takamints.hatenablog.jp/entry/avoid-a-gitbook-bug-on-windows
+
+
+
+GitBookでドキュメントを作ってGithub Pagesで公開する方法
+https://casualdevelopers.com/tech-tips/how-to-publish-gitbook-documents-with-github-pages/
