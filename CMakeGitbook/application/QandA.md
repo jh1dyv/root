@@ -39,8 +39,8 @@ Springehad Library をビルドすると、ソースツリー上に
 また、Springhead Library 側で cmake (configure) を実行していないと
 上記のディレクトリが作成されていないため、同じエラーが発生します。
 
-**このような状態を解消するためには、アプリケーション側または Springhead Library 側
-で再度 cmake を実行する必要があります。**
+**この問題を解消するためには、アプリケーション側または Springhead Library 側で
+再度 cmake を実行する必要があります。**
 
 ----
 ** ビルドの最適性が崩れる **
@@ -52,8 +52,8 @@ Springehad Library をビルドすると、ソースツリー上に
 > 無駄なビルドが発生するだけで、ビルド自体は正常に行なえます。<br>
 “ビルドの最適性”については [問題点](/application/Problems.md) を参照してください。
 
-**このような状態を解消するためには、アプリケーション側または Springhead Library 側
-で再度 cmake を実行する必要があります。**
+**この問題を解消するためには、アプリケーション側または Springhead Library 側で
+再度 cmake を実行する必要があります。**
 
 ----
 ** sync configuration でファイルオープンエラーが発生する **
@@ -73,6 +73,6 @@ Springhead Library 側で "*build*/Base" 下にあるプロジェクトファイ
 ```
 のようなエラーが発生します。
 
-**この状態を解消するためには、Springhead Library 側で再度 cmake を実行する
+**この問題を解消するためには、Springhead Library 側で再度 cmake を実行する
 必要があります (アプリケーション側では駄目)。**
 

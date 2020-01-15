@@ -15,10 +15,10 @@ CMake は out of source (out of place) によるビルドに対応していま�
 ```
 C:/Springhead/core/src/　…　ソースツリー
     +-- CMakeLists.txt　…　ライブラリ全体のCMakeパラメータファイル
-    +-- Base/　… [1]
+    +-- Base/　… (1)
     |    +-- CMakeLists.txt　…　プロジェクトBaseのCMakeパラメータファイル
     |    +-- :
-    +-- Collision/　… [2]
+    +-- Collision/　… (2)
     :
     +-- build/　…　ビルドツリー (他の場所でも構わない)
          +-- Springhead.sln　…　生成されたソリューションファイル
@@ -38,8 +38,8 @@ C:/Develop/Application/　…　ソースツリー
     +-- sub/
     |    +-- CMakeLists.txt　…　サブモジュールのCMakeパラメータファイル
     |    +-- sub.cpp
-    +-- Base/　… Springeheadソースツリーの(1)を指すようにする
-    +-- Collision/　… Springeheadソースツリーの(2)を指すようにする
+    +-- Base/　… 上図ソースツリーの(1)を add_subdirectory する
+    +-- Collision/　… 上図ソースツリーの(2)を指すようにする
     :
     +-- build/　…　ビルドツリー (他の場所でも構わない)
          +-- Application.sln　…　生成されたソリューションファイル
