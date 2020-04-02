@@ -1,0 +1,15 @@
+remote desktop user：	kanehori@haselab.net
+
+
+接続
+
+Windowsアクセサリ - リモートデスクトップ接続
+
+コンピューター		kanehori-PC	(192.168.91.180) -> 
+pw			same
+
+
+コンピューター		kanehori-Workstation	(192.168.91.154) -> 
+pw			same
+
+
