@@ -1,0 +1,5 @@
+host設定
+https://pc-karuma.net/windows-10-enable-remote-desktop-services/
+
+client設定
+https://pc-karuma.net/windows-10-remote-desktop-client/

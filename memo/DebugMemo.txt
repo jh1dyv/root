@@ -1,0 +1,111 @@
+embed/SprPythonDLL
+
+	Windows		現状　cmake版	Release/Trace はOK
+			CMakeLists.txt を書き直す必要あり	Settingsを使う版
+	unix		--.so化する
+
+src/EmbPython　STANDALONE
+	Windows		cmake版　OK
+	unix		.so	まだ	Spsringheadの.so化が先
+			
+	BoxStack		run で core
+	MyEPapp,PythonSpr	compile error
+
+document
+	CMakeGitBookは終了
+	CMakeは途中　　1.5.EmbPython.tex　途中
+
+
+==================================================================================
+https://qiita.com/osamu0329/items/134de918c0ffa7f0557b
+https://gitlab.kitware.com/cmake/community/wikis/doc/tutorials/How-to-create-a-ProjectConfig.cmake-file
+
+==================================================================================
+DailyBuild on unix
+
+src/tests/以下
+次のエラーは、	failed to open display ''　によるもの
+過去で実行成功となっているのは、cron からではなく実行したものかもしれない
+
+Collision:	CDContGJK, CDTestStage
+FileIO:		FICollada, FILoadGRScene, FILoadMesh, FILoader
+Framework:	FWAppBoxStack
+Graphics:	GRColorSpheres, GRSimple
+Physics:	PHConstraintTest, PHPenaltyTest, PHShapeGL
+
+==================================================================================
+
+CMake
+	> cd .../core/src
+	> mkdir build
+	> cd build
+	> cmake .. -G "Visual Studio 15 2017 Win64"
+
+
+・cleanができない
+
+-------------------------------------------------------------------
+cmake
+　変数			https://qiita.com/mrk_21/items/186439952a6665184444
+　メタプログラミング	https://qiita.com/mrk_21/items/550d8f6bd1d68896998f
+
+-------------------------------------------------------------------
+texlive 2018
+	fmtutil-sys --all	を実行する
+？	mktexlsr		管理者として実行
+	kanji-config-updmap -user ipaex
+-------------------------------------------------------------------
+prog = os.path.basename(sys.argv[0]).split('.')[0]
+
+****************************************************************************
+**  git clone --recurse-submodules https://github.com/sprphys/Springhead  **
+****************************************************************************
+**  または                                                                **
+**  git clone https://github.com/sprphys/Springhead                       **
+**	この時点で buildtool,dependency はディレクトリのみできる          **
+**  git submodule update --init --checkout buildtool                      **
+**  git submodule update --init --checkout dependency                     **
+**                                              ****************************
+**************************************************
+**  git clean -fdx	(-n でチェック)  	**
+**  git checkout <file>                  	**
+**                                       	**
+**************************************************
+**  commit の取り消し                    	**
+**	git reset --hard HEAD^           	**
+**	    --hard  Work dirの内容も書き換える	**
+**	    --soft  Work dirの内容はそのまま	**
+**	    HEAD^	直前のコミット		**
+**	    HEAD~{n}	n個前のコミット		**
+**	HEAD~ HEAD^ @^ は同じ			**
+**	HEAD^^^ HEAD~3 HEAD~~~ HEAD~{3} は同じ	**
+**************************************************
+**  --------                             **
+**  GitHub                               **
+**	Kanehori                         **
+**	same                             **
+**	sprphys                          **
+**	Ha.0                             **
+*******************************************
+
+
+-------------------------------------------------------------------
+CXXFLAGS	:= $(CXXFLAGS) \
+		$(call add_inc,${SPR_GL_INC}) \
+		-D__cdecl= \
+		-std=gnu++11
+
+LDFLAGS		:= \
+		$(call add_lib,${SPR_LINUX_LIB}) \
+		$(LDFLAGS) \
+		-llapack
+-------------------------------------------------------------------
+
+Choreonoid
+	Ubuntu Linux: 14.04 16.04
+	Windows 7, 8(8.1), 10
+	32bit, 64bit
+
+https://ja.wikipedia.org/wiki/GitHub
+http://ichiro-maruta.blogspot.jp/2013/03/latex.html
+
