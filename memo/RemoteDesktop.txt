@@ -9,3 +9,10 @@ https://linux.just4fun.biz/?Ubuntu/Windows%E3%81%8B%E3%82%89Ubuntu%E3%81%AB%E3%8
 
 Windows10からUbuntu16.04へリモートデスクトップ接続する設定
 http://watarisein.hatenablog.com/entry/2017/06/24/235551
+
+
+
+vnc
+UltraVNC_1_2_40_X64_Setup
+https://pcmanabu.com/windows-10-%E3%83%8D%E3%83%83%E3%83%88%E3%83%AF%E3%83%BC%E3%82%AF%E7%B5%8C%E7%94%B1%E3%81%A7%E6%93%8D%E4%BD%9C%E3%81%99%E3%82%8B%EF%BC%88vnc%E7%B7%A8%EF%BC%89/#STEP2VNC
+
