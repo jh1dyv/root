@@ -1,0 +1,46 @@
+# install.def
+
+[root]
+SrcDir	= .
+InsDir	= C:/Users/kane/htdocs/develop
+Files	= portal.php
+Files	= portal.css
+
+[Common]
+SrcDir	= ./common
+InsDir	= C:/Users/kane/htdocs/develop/Common
+Files	= *.css
+Files	= *.php
+
+[Framework]
+SrcDir	= ./Framework
+InsDir	= C:/Users/kane/htdocs/develop/Framework
+Files	= *.css
+Files	= *.php
+Files	= *.js
+
+[AddressBook]
+SrcDir	= ./AddressBook
+InsDir	= C:/Users/kane/htdocs/develop/AddressBook
+Files	= *.css
+Files	= *.php
+
+[DiscLibrary]
+SrcDir	= ./DiscLibrary
+InsDir	= C:/Users/kane/htdocs/develop/DiscLibrary
+Files	= *.css
+Files	= *.php
+
+[BookShelf]
+SrcDir	= ./BookShelf
+InsDir	= C:/Users/kane/htdocs/develop/BookShelf
+Files	= *.css
+Files	= *.php
+
+[test]
+SrcDir	= ./test
+InsDir	= C:/Users/kane/htdocs/develop
+Files	= *.css
+Files	= *.php
+
+# end: install.def
