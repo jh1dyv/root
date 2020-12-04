@@ -12,12 +12,13 @@
 #       引数で指定されたファイルを削除する. 引数 -e を指定しないときは削除は
 #       実行せずに, 削除対象となるファイルをリストアップする.
 #
-#  VERSION:
-#       Ver 1.00  2014/11/20 F.Kanehori	初版
-#       Ver 1.001 2015/02/08 F.Kanehori	Displays file time as well as date
-#       Ver 1.002 2020/12/02 F.Kanehori	Bug fixed.
+#  Version:
+#     Ver 1.00  2014/11/20 F.Kanehori	初版
+#     Ver 1.01  2015/02/08 F.Kanehori	Displays file time as well as date
+#     Ver 1.02  2019/02/04 F.Kanehori	Change python path.
+#     Ver 1.021 2020/12/02 F.Kanehori	Bug fixed.
 # ==============================================================================
-version = 1.002
+version = 1.021
 import os
 import sys
 import optparse
@@ -142,7 +143,10 @@ for file in files:
     try:
         ftime = os.path.getmtime(file)
     except PermissionError:
-        print('  access denied ' + file)
+        print('  access denied: ' + file)
+        continue
+    except FileNotFoundError:
+        print('  file not found: ' + file)
         continue
     ftime_str = str(datetime.fromtimestamp(ftime))[0:19].replace('-', '/')
     mark = ' '
