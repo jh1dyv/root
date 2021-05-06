@@ -36,3 +36,4 @@ https://takamints.hatenablog.jp/entry/avoid-a-gitbook-bug-on-windows
 
 GitBookでドキュメントを作ってGithub Pagesで公開する方法
 https://casualdevelopers.com/tech-tips/how-to-publish-gitbook-documents-with-github-pages/
+
